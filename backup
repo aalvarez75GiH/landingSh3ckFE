@@ -1,0 +1,113 @@
+// if (mobil2.screenWidth < 768 || mobil ){
+    //     return (
+    //         <div 
+    //         className="infoContainer"
+    //         style={{ 
+    //             backgroundColor:`${lightBg ? '#ffffff': '#010606'}`  
+    //         }}
+    //         >
+    //             <div className="infoWrapper">
+    //                 <div  
+    //                 className="infoRowMobil">
+    //                     {imgStart}
+    //                     <div className="column1">
+    //                         <div className="textWrapper">
+    //                             <p
+    //                             style={{
+    //                                 color: `${ lightText ? '#FF810A' : darkText }`
+    //                             }} 
+    //                             className="topLine">{ topLine }</p>
+    //                             <h1
+    //                             style={{
+    //                                 color: `${ lightText ? '#FFFFFF' : darkText }`
+    //                             }} 
+    //                             // className="heading">{headLine}</h1>
+    //                             className="heading">testing</h1>
+    //                             <p 
+    //                             style={{
+    //                                 color: `${ lightText ? '#FFFFFF' : darkText }`
+    //                             }}
+    //                             className="subTitle">{description}</p>
+    //                             <div className="btnWrap">
+    //                                 <Button
+    //                                 btnBG={ '#FAD570' }
+    //                                 fontColor={ true }
+    //                                 big={ true }
+    //                                 fontBig = { false }
+    //                                 >
+    //                                     { buttonLabel }
+    //                                 </Button>
+    //                             </div>
+    //                         </div>
+    
+    //                     </div>
+    //                     <div className="column2">
+    //                         <div className="imgWrap">
+    //                             <img src={imgSrc} alt={alt} />
+    //                         </div>
+    
+    //                     </div>
+                        
+    
+    //                 </div>
+    
+    //             </div>
+                
+    //         </div>
+    //     )
+    // }   
+    // return (
+    //     <div 
+    //     className="infoContainer"
+    //     style={{ 
+    //         backgroundColor:`${lightBg ? '#ffffff': '#010606'}`  
+    //     }}
+    //     >
+    //         <div className="infoWrapper">
+    //             <div  
+    //             className="infoRow">
+    //                 {imgStart}
+    //                 <div className="column1">
+    //                     <div className="textWrapper">
+    //                         <p
+    //                         style={{
+    //                             color: `${ lightText ? '#FF810A' : darkText }`
+    //                         }} 
+    //                         className="topLine">{ topLine }</p>
+    //                         <h1
+    //                         style={{
+    //                             color: `${ lightText ? '#FFFFFF' : darkText }`
+    //                         }} 
+    //                         className="heading">{headLine}</h1>
+    //                         <p 
+    //                         style={{
+    //                             color: `${ lightText ? '#FFFFFF' : darkText }`
+    //                         }}
+    //                         className="subTitle">{description}</p>
+    //                         <div className="btnWrap">
+    //                             <Button
+    //                             btnBG={ '#FAD570' }
+    //                             fontColor={ true }
+    //                             big={ true }
+    //                             fontBig = { false }
+    //                             >
+    //                                 { buttonLabel }
+    //                             </Button>
+    //                         </div>
+    //                     </div>
+
+    //                 </div>
+    //                 <div className="column2">
+    //                     <div className="imgWrap">
+    //                         <img src={imgSrc} alt={alt} />
+    //                     </div>
+
+    //                 </div>
+                    
+
+    //             </div>
+
+    //         </div>
+            
+    //     </div>
+    // )

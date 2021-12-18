@@ -1,0 +1,5233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Encode Sans Expanded', sans-serif; */
+    font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-size: 62.50%; */
+  }
+/*************** NavBar ****************************** */
+  .nav {
+      background-color: transparent;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+  }
+
+  .scrollNav {
+    background-color: #010606;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+  .navBarContainer {
+    display: flex;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+  } 
+  
+  .navLogo {
+    color:#ffffff;
+    justify-self: flex-start;
+    cursor: pointer;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    margin-left: 2%; /* this was 70px before */
+    font-weight: bold;
+    text-decoration: none;
+  }
+   
+  .mobileIcon {
+      display: none;
+
+  }
+
+  .navMenu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      text-align: center;
+      margin-right: -22px;
+      position: absolute;
+      left: 62%;
+
+  }
+
+  .navItem {
+      height: 80px;
+  }
+
+  .navLinks {
+      color: transparent;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      height: 100%;
+      cursor: pointer;
+  }
+  
+  .navLinks.active {
+      border-bottom: 3px solid #FAD570;
+  }
+
+  .loggedInIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    left: 80%;
+    position: relative;
+    color: #ffffff;
+    font-size: 1.8rem;
+    height: 60%;
+    margin-top: 1%;
+    border-radius: 45px;
+    background-color: #010606;
+    padding-left: 0.5%;
+    
+  }
+
+  .loggedInIconContainer:hover {
+      cursor: pointer;
+  }
+
+  .loggedInUserIcon {
+      font-size: 30px;
+      /* width: 50%;
+      height: 40%; */
+  }
+
+  .navBtn {
+      position: absolute;
+      left: 80%;
+      top: 20%;
+  }
+
+  .navBtn:hover .userIcon {
+      color: #010606
+  }
+
+  .navBtnLink {
+      border-radius: 50px;
+      background-color: #010606;
+      white-space: nowrap;
+      padding: 10px 22px;
+      color: #ffffff;
+      font-size: 16px;
+      outline: none;
+      /* border: 2px solid #ffffff; */
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 200px; 
+  }
+
+  .navBtnLink:hover {   
+    transition: all 0.2s ease-in-out;
+    background-color: #FAD570;
+    color: #0C0920;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* *********************NavBarMobil ************ */
+
+
+.navBarContainerMobil {
+    background-color: #010606;
+    display: flex;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+} 
+
+.navLogoMobil {
+  color:#ffffff;
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2%; 
+  font-weight: bold;
+  text-decoration: none;
+}
+ 
+
+.navLinksMobil {
+    color: #010606;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+  /* ********************************************* */
+/*************** SideBar ****************************** */
+
+.sideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #010606;
+    display: grid;
+    align-items: center;
+    left: 0;
+    transition: 0.6s ease-in-out;
+    top: -100%;
+    opacity:0%;
+}
+
+.sideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #010606;
+    display: grid;
+    align-items: center;
+    left: 0;
+    transition: 0.6s ease-in-out;
+    top: 0%;
+    opacity: 100%;
+}
+
+.sideBarIcon {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.closeIcon {
+    color: #ffffff;
+    
+}
+
+.sideBarWrapper {
+    color: #ffffff;
+}
+
+.sideBarMenu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 80px);
+    text-align: center;
+}
+
+
+.sideBarLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.2s ease-in-out;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.sideBarLink:hover {
+    color: #FF810A;
+    transition: 0.2s ease-in-out;
+}
+
+.sideBtnWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.sideBarRoute {
+    border-radius: 50px;
+    background-color: #FF810A;
+    white-space: nowrap;
+    padding: 16px 64px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.sideBarRoute:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #FAD570;
+    color: #0C0920;
+}
+
+/*************** LoginSideBar ****************************** */
+           
+/*** Open  ***/
+.loginSideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left:100%;
+    right: 0;
+    transition: 0.6s ease-in-out;
+    opacity:0%;
+}
+
+.loginSideBarContainerOpen {  /** Open  **/
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity: 100%;
+}
+
+.loginContactForms {       /** Open and Closed **/
+    position: relative;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.loginContactForms h2 {
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 3%;
+}
+
+.loginSideBarIcon {     /** Open and Closed **/
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.loginCloseIcon {       /** Open and Closed **/
+    color: #ffffff;
+    
+}
+
+.loginSideHeader {    /** Open and Closed **/
+    width: 100%;
+    height: 80px;
+    background-color: #010606;
+}
+.loginSideBarFormTitle {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 100%;
+    height: 12%;
+    font-size: 3rem;
+    margin-left: 8%;
+}
+.loginSideBarFormDescription {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    margin-left: 8%;
+}
+
+.loginSideBarFormDescription p {
+    width: 100%;
+}
+
+.loginSideBoxContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    background-color: #ffffff;
+    width: 34%;
+    margin-left: 8%;
+}
+
+
+/* .loginSideBarWrapper {
+    color: #ffffff;
+} */
+
+
+
+
+/*************** LogoutSideBar ****************************** */
+.logoutSideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left:100%;
+    right: 0;
+    transition: 0.6s ease-in-out;
+    opacity:0%;
+}
+
+.logoutSideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity: 100%;
+}
+.logoutContactForms {       /** Open and Closed **/
+    position: relative;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.logoutSideBarIcon {     /** Open and Closed **/
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.logoutCloseIcon {
+    color:#ffffff;
+}
+
+.logoutSideHeader {    /** Open and Closed **/
+    width: 100%;
+    height: 80px;
+    background-color: #010606;
+}
+
+.logoutSideBarFormTitle {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 100%;
+    height: 12%;
+    font-size: 3rem;
+    margin-left: 8%;
+}
+
+.logoutSideBarFormDescription {
+    display: flex;
+    align-items: center;
+    width: 35%;
+    height: 5%;
+    margin-left: 8%;
+    line-height: 25px ;
+}
+.logoutSideBarFormDescription p {
+    width: 100%;
+}
+
+.logoutContactForms h2 {
+    margin-left: 8%;
+    margin-top: 5%;
+}
+.userInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 5%;
+    border: 1px solid #010606;
+    margin-left: 8%;
+    border-radius: 30px;
+    margin-top: 3%;
+}
+
+.userInfo p {
+    font-size: 18px;
+}
+.logoutSideBarTitleWrapperLoggedIn{
+    height: 19%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 8%;
+    margin-top: 3%;
+}
+.logoutSideBarFormTitleLoggedIn {
+    color: #010606;
+    height: 20%;
+    font-size: 1rem;
+    margin-bottom: 2%;
+}
+.closeSessionBtn {
+    height: 30%;
+    width: 50%;
+    background-color: #FAD570;
+    color: #010606;
+    border-style: none;
+    font-size: 1rem;
+    border-radius: 30px;
+
+}
+
+/* ************ MainSideBar *******************************/
+.mainSideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left:100%;
+    right: 0;
+    transition: 0.6s ease-in-out;
+    opacity:0%;
+}
+.mainSideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity: 100%;
+}
+.mainSideContactForms {
+    position: relative;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.mainSideBarIcon {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+.mainSideCloseIcon {
+    color:#ffffff;
+}
+.mainSideHeader {
+    width: 100%;
+    height: 80px;
+    background-color: #010606;
+}
+
+
+.mainSideBarContent {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 600px;
+    padding-top: 2%;
+    padding-left: 5%;
+}
+.mainSideBarContentUser {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 100%;
+    height: 20%;
+    font-size: 3rem;
+    
+}
+.mainSideBarUserIcon {
+    display: flex;
+    align-items: center;
+    margin-right: 1%;
+    width: 5%;
+}
+
+.mainSideBarUserName {
+    font-size: 2rem;
+}
+
+.mainSideBarContentOptions {
+    margin-left: 5%;
+    height: 50%;
+}
+.mainSideBarContentItems {
+    display: flex;
+    font-size: 1.6rem;
+    margin-bottom: 1%;
+    border-bottom: 1px solid #eeeeee;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 1%;
+}
+.mainSideBarUserOptionsIcon {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+}
+
+.closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 30%;
+    background-color: #FAD570;
+    margin-top: 3%;
+    border-radius: 65px;
+    font-size: 1.4rem;
+}
+
+/*************** heroSection ****************************** */
+.heroContainer {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    height: 990px;
+    /* height: 847px; */
+    z-index: 1;
+}
+
+.heroBG {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imageBG {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    background: #232a34;
+}
+
+.heroContent {
+    z-index: 3;
+    max-width: 1200px;
+    position: absolute;
+    padding: 8px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 44%;
+    top: 25%;
+    /* margin-left: 875px; */
+
+}
+
+.heroH1 {
+    color: #000000;
+    font-size: 3rem;
+    text-align: center;
+    margin-left: 260px;
+}
+
+.heroP {
+    margin-top: 24px;
+    color: #01bf71;
+    font-size: 24px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.heroBtnWrapper {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-left: 284px;  
+}
+
+.button {
+    border-radius: 50px;
+    white-space: nowrap;
+    padding: 12px 30px; 
+    font-size: 20px; 
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0ms.2s ease-in-out;
+    border: none;
+}
+.arrowForward {
+    margin-left: 8px;
+    font-size: 20px;
+}
+.arrowRight {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+/*************** VideoSection ****************************** */
+.infoContainer {
+    color:#ffffff;
+    margin-top: 3%;
+    height: 650px;
+    border-bottom: 2px solid #eeedec;
+}
+
+.infoWrapper {
+    height: 100%;
+}
+
+.infoRow {
+    display: grid;
+    width: 100%;
+    height: 650px;
+    grid-template: 600px / 40% 60%;
+    grid-template-areas: "title video video";
+    gap: 5px;
+}
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video {
+    grid-area: "video";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.square {
+    width: 600px;
+    height: 400px;
+    background-color: #0C0920;
+    margin-left: 20%;
+    margin-top: 13%;
+}
+
+.textWrapper {
+    max-width: 540px;
+    padding-top: 0;
+    padding-bottom: 60px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.topLine {
+    color: #01bf71;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.heading {
+    margin-bottom: 24px;
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #010606 ;
+}
+.subTitle {
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #010606
+}
+
+/* .btnWrap {
+    display: flex;
+    justify-content: flex-start;
+} */
+
+.videoBtnWrap {
+    margin-top: 4%;
+}
+
+
+.videoPlayer {
+    width: 85%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/*************** hiwSection ****************************** */
+.hiwContainer {
+    max-width: 100%;
+    height: 800px;
+    background-color: #eeeeee;
+}
+
+.hiwH1 {
+    font-size: 2.5rem;
+    margin-left: 4%;
+    padding-top: 5%;
+    
+}
+
+.hiwWrapper {
+    max-width: 1000px;
+    margin-top: 5%;
+    /* margin: 0 auto; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr ) ;
+    align-items: center;
+    gap: 16px;
+    padding: 0 27px;
+}
+
+.hiwCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    max-height: 390px;
+    padding: 30px;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out; */
+}
+
+.hiwCard:hover {
+    transform: scale(1.06);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.hiwInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+}
+
+.hiwInfoH2 {
+    margin-bottom: 10px;
+    font-size: 3rem;
+    font-weight: 600;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #010606;
+}
+
+.hiwInfoP {
+    font-size: 18px;
+    text-align: center;
+}
+
+.hiwBtnWrap {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-left: 284px;
+}
+
+
+/* *************** contactSection ***********************/  
+
+
+.contactContainer {
+    width: 100%;
+    height: 1000px;
+    /* background-color: red; */
+}
+
+.contactWrapper {
+    display: flex; 
+    width: 100%;
+    height: 1000px;
+    justify-content: space-between;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    background-color: #FAD570;
+}
+
+.contactInfoTitleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+    /* background-color: #01bf71; */
+}
+
+
+
+.contactInfoTopLine {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-left: 8%;
+}
+
+.contactInfoTitle1 {
+    width: 70%;
+    font-size: 3.6rem;
+    margin-top: 1%;
+    margin-left: 8%;
+}
+.contactInfoTitle2 {
+    width: 70%;
+    font-size: 3.6rem;
+    margin-top: 1%;
+    margin-left: 18%;
+}
+
+.contactInfoTitle3 {
+    width: 70%;
+    font-size: 3.6rem;
+    margin-top: 1%;
+    margin-left: 35%;
+}
+
+.contactInfoImageContainer {
+    width: 100%;
+    height: 40%;
+}
+
+.contactInfoImageContainer img {
+    margin-top: 3%;
+    margin-left: 29%;
+    width: 37%;
+}
+.contactInfoDescContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 96%;
+    height: 20%;
+}
+
+.contactInfoOption1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+.contactInfoOption2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+.contactInfoOption3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+
+.contactInfoDescContainer p {
+    /* width: 85%; */
+    /* font-size: 1.2rem; */
+    margin-top: 2%;
+}
+
+
+
+.effectTest {
+    width: 300px;
+    height: 300px;
+    background-color: #ef476f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.effectTest button {
+    width: 100px;
+    height: 70px;
+    background-color: #01bf71;
+    border: none;
+    border-radius: 15px;
+}
+
+.contactForms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    
+}
+
+
+
+.optionsWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    height: 10%;
+    background-color: #eeeeee;
+    color: #010606;
+    /* margin-bottom: 30px; */
+}
+.notifyMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    /* border-right: 2px solid black; */
+    
+
+}
+
+.checkAProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.titleWrapper {
+    height: 11%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 5%;
+}
+
+.formTitle {
+    color: #010606;
+    height: 56%;
+    margin-top: 5%;
+}
+
+.formDescription {
+    color: #010606;
+}
+
+.boxContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    background-color: #ffffff;
+    width: 70%;
+    margin-bottom: 20%;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+
+}
+.input {
+    height: 15%;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #eeeeee;
+    border-style: none;
+    font-size: 1rem;
+    padding-left: 5%;
+    outline: none;
+}
+/* ************** checkSection ************** */
+
+.checkSectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    background-color: #eeeeee;
+}
+
+.checkSection-BtnWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-top: 7%;
+}
+
+.checkSectionBtn-toCheck {
+    width: 40%;
+    height: 90px;
+    background-color: #010606;
+    border-style: none;
+    border-radius: 60px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-left: 5%;
+}
+
+.checkSection-notNow {
+    margin-left: 7%;
+    margin-top: 3%;
+}
+/* ************** dropDownList ************** */
+
+
+.dropdown {
+    width: 100%;
+    height: 115px;
+    margin: 0px auto;
+    position: relative;
+    user-select: none;
+    z-index: 1;
+}
+.dropdownOnError {
+    width: 100%;
+    height: 115px;
+    margin: 100px auto;
+    position: relative;
+    user-select: none;
+    border-bottom: 2px solid red;
+}
+
+.dropdown .dropdown-btn{
+    padding: 15px 20px;
+    background-color: #eeeeee;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 6%;
+    font-size: 1.3rem;
+}
+.dropdown .dropdown-btn .arrowDown {
+    font-size: 25px;
+}
+.dropdown .dropdown-content {
+    position: absolute;
+    top: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 10px 6px rgba(0,0,0,.06);
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+    left: 0;
+
+}
+.dropdown .dropdown-content .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s;
+
+}
+.dropdown .dropdown-content .dropdown-item:hover {
+    background-color:#eeeeee;
+}
+
+
+
+/* ******************************************* */
+
+.formContainer button {
+    height: 115px;
+    width: 100%;
+    color: #010606;
+    background-color: #FAD570;
+    margin-top: 10px;
+    border-style: none;
+    font-size: 1.4rem;
+}
+.formContainer .regButton{
+    height: 115px;
+    width: 100%;
+    color: #ffffff;
+    background-color: #FF810A;
+    margin-top: 10px;
+    border-style: none;
+    font-size: 1.4rem;
+}
+
+.notificationBox {
+    width: 70%;
+    height: 100px;
+    border: 1px solid black;
+}
+
+
+/***************Loading Spinners ******************  */
+
+/* Spinner 1 */
+
+.loadingSpinnerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  rgba(0,0,0,.8);
+    position: absolute;
+    z-index: 999;
+}
+
+.circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+    width: 50%;
+    height: 5%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin-right: 10px;
+    margin-top: 2%;
+    animation: circle .5s ease infinite alternate ;
+
+}
+
+.circle_1 {
+    background-color: #FF810A;
+}
+.circle_2 {
+    animation-delay: 0.1s;
+    background-color: #FAD570;
+}
+
+.circle_3 {
+    background-color: #FF810A;
+    animation-delay: 0.2s;
+}
+
+@keyframes circle {
+    to {
+        transform: translateY(-20px);
+    }
+}
+.customText {
+    font-weight: 100;
+    color: #ffffff;
+}
+
+/* ************ Notification Screens ********************/
+
+.notificationContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 2;
+}
+
+.closeIconContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 7%;
+    height: 3%;
+    color: #010606;
+    position: absolute;
+    left: 90%;
+    top: 2%;
+    font-size: 2rem;
+
+
+}
+
+.notificationWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 80%;
+    height: 60%;
+    margin-top: 20%;
+}
+.notificationWrapper img {
+    width: 30%;
+}
+.notificationName {
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+.notificationSpan {
+    font-size: 3rem;
+    /* margin-left: 2%; */
+}
+
+.notificationResponse {
+    margin-bottom: 5%;
+    font-size: 1rem;
+}
+.notificationBtn {
+    width: 35%;
+    height: 10%;
+    background-color: #010606;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+
+}
+
+ /* *************Footer Section ************************* */
+
+ .footerContainer {
+     width: 100%;
+     height: 505px;
+     background-color: #232a34;
+ }
+ .footerWrap {
+    padding: 48px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 1100px; */
+    margin: 0 auto;
+ }
+ .footerLinksContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+ }
+ .footerLinksWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+ }
+ .footerLinkItems {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 33%;
+    box-sizing: border-box;
+    color: #ffffff;
+ }
+ .footerLinkTitle {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+ }
+ .footerLink {
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+ }
+
+ .socialMedia {
+    max-width: 1000px;
+    width: 100%;
+ }
+
+ .socialMediaWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 49px auto 0 auto;
+ }
+
+ .socialLogo {
+    color: #ffffff;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-weight: bold;
+ }
+
+ .socialMediaWrap small {
+    color: #ffffff;
+    margin-bottom: 16px;
+ }
+
+ .socialIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+ }
+
+ .socialIconLink {
+    color: #ffffff;
+    font-size: 24px;
+ }
+
+
+
+/* *************** Responsive design ***********************/
+/* ********  Desktop Responsive Design ******************* */
+
+@media (max-width:1920px) and (min-width:1536px){
+    
+    .navMenu{
+        left: 68%;
+    }
+    .navBtn {
+        left: 87%;
+    }
+    .navMenuMobil{
+        left: 50%;
+    }
+
+    .loggedInIconContainer {
+        left: 80%;
+        color: #ffffff;
+    }
+
+    .navBtnMobil {
+        left: 87%;
+    }
+    .heroContent{
+        left: 50%;
+        top: 30%;
+        width: 45%;
+    }
+    .heroH1{
+        font-size: 4rem;
+    }
+    .infoWrapper {
+        height: 100%;
+    }
+
+    .hiwWrapper {
+        max-width: 100%; 
+        display: grid;
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        align-items: center;
+        gap: 16px;
+        padding: 0 40px;
+    }
+    
+    .hiwBtnWrap {
+        margin-top: 70px;
+        margin-left: 10px;
+    }
+    .formTitle {
+        font-size: 0.9rem;
+    }
+
+    .input {
+        height: 115px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 115px;
+    }
+/*********** Info *******************  */
+    .contactInfoTopLine {
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        margin-left: 8%;
+    }
+    
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 3.6rem;
+        margin-top: 1%;
+        margin-left: 8%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 3.6rem;
+        margin-top: 1%;
+        margin-left: 18%;
+    }
+    
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 3.6rem;
+        margin-top: 1%;
+        margin-left: 35%;
+    }
+    
+    .contactInfoImageContainer {
+        width: 100%;
+        height: 40%;
+    }
+    
+    .contactInfoImageContainer img {
+        margin-top: 3%;
+        margin-left: 29%;
+        width: 37%;
+    }
+    .contactInfoDescContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 96%;
+        height: 20%;
+    }
+    
+    .contactInfoOption1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+    }
+    .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+    }
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+    }
+    /******************************  */
+
+    
+}
+
+
+@media (max-width:1536px) and (min-width:1366px){
+    
+    .navMenu{
+        left: 62%;
+    }
+    .navBtn {
+        left: 85%;
+    }
+    .loggedInIconContainer {
+        left: 80%;
+    }
+
+    .navMenuMobil{
+        left: 45%;
+    }
+    .navBtnMobil {
+        left: 85%;
+    }
+    .heroContent{
+        left: 40%;
+        top: 30%;
+        width: 60%;
+    }
+    .heroH1{
+        font-size: 3.5rem;
+    }
+    .infoWrapper {
+        height: 100%;
+    }
+
+    .videoBtnWrap {
+        margin-top: 1%;
+    }
+    .hiwWrapper {
+        max-width: 100%; 
+        display: grid;
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        align-items: center;
+        gap: 16px;
+        padding: 0 20px;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 70px;
+    }
+    .formTitle {
+        font-size: 0.9rem;
+    }
+    .loginSideBarFormDescription p {
+        font-size: 1.5rem;
+    }
+    .loginSideBoxContainer {
+        width: 45%
+    }
+     
+    .input {
+        height: 115px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 115px;
+    }
+    
+    
+    .contactInfoImageContainer img {
+        margin-top: 2%;
+        margin-left: 21%;
+        width: 48%;
+    }
+    
+    
+    .contactInfoOption1 {
+        margin-bottom: 2%;
+    }
+    
+    .closeBtn {
+        width: 38%;
+        height: 22%;
+    }
+
+    /* .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #eeeeee;
+    } */
+    
+    /* .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    } */
+    
+    /* .checkSectionBtn-toCheck {
+        width: 50%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    } */
+    
+    /* .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    } */
+    
+  
+}
+
+@media (max-width:1366px) and (min-width:1280px){
+    
+    .navMenu{
+        left: 57%;
+    }
+    .loggedInIconContainer {
+        left: 80%;
+    }
+    .navBtn {
+        left: 80%;
+    }
+    .navMobil{
+        left: 40%;
+    }
+  
+    .navBtnMobil {
+        left: 80%;
+    }
+    .heroH1{
+        font-size: 3rem;
+    }
+    .infoWrapper {
+        height: 100%;
+    }
+    .videoBtnWrap {
+        margin-top: 2%;
+    }
+    .hiwWrapper {
+        max-width: 100%; 
+        display: grid;
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        align-items: center;
+        gap: 16px;
+        padding: 0 45px;
+    }
+    .hiwBtnWrap {
+        margin-top: 100px;
+        margin-left: 3%;
+    }
+
+    .notifyMe{
+        font-size: 1rem;
+    }
+    .checkAProduct {
+        font-size: 1rem;
+    }
+
+    .formTitle {
+        font-size: 0.8rem;
+    }
+
+    .loginSideBarFormDescription p {
+        font-size: 1.5rem;
+    }
+    .loginSideBoxContainer {
+        width: 52%
+    }
+    
+   
+    .input {
+        height: 115px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 115px;
+    }
+
+    /*********** Info *******************  */
+    
+    
+    .contactInfoImageContainer img {
+        margin-top: 2%;
+        margin-left: 21%;
+        width: 55%;
+    }
+        
+    .contactInfoOption1 {
+        margin-bottom: 2%;
+    }
+    
+    /******************************  */
+
+    /* *****  MainSideBar *********** */
+    .closeBtn {
+        
+        width: 38%;
+        height: 22%;
+    }
+
+    /* *****  checkSection *********** */
+    /* .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #eeeeee;
+    } */
+    .checkSection-formTitle {
+        width: 60%;
+        margin-left: 5%;
+    }
+    
+    .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    }
+    
+    .checkSectionBtn-toCheck {
+        width: 60%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    }
+    
+    .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    }
+    
+
+}
+
+
+@media (max-width:1280px) and (min-width:1098px){
+    .navMenu{
+        left: 53%;
+    }
+    .loggedInIconContainer {
+        left: 80%;
+    }
+    .navMobil{
+        left: 33%;
+    }
+
+    .heroContent{
+        left: 37%;
+        top: 30%;
+    }
+    .heroH1{
+        font-size: 3rem;
+    }
+    .infoWrapper {
+        height: 100%;
+    }
+ 
+    .hiwWrapper {
+        max-width: 100%; 
+        display: grid;
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        align-items: center;
+        gap: 16px;
+        padding: 0 45px;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 100px;
+    }
+    .checkAProduct {
+        font-size: 1rem;
+        padding-left: 10%;
+    }
+    .titleWrapper{
+        margin-bottom: 4%;
+    }
+    .formTitle {
+        font-size: 0.8rem;
+    }
+
+    .loginSideBarFormDescription p {
+        font-size: 1.5rem;
+    }
+    .loginSideBoxContainer {
+        width: 55%
+    }
+    
+    
+    .input {
+        height: 115px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 115px;
+    }
+
+    /*********** Info *******************  */
+        
+    .contactInfoImageContainer img {
+        margin-top: 2%;
+        margin-left: 19%;
+        width: 59%;
+    }
+    
+    
+    .contactInfoOption1 {
+        margin-bottom: 2%;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+        margin-bottom: 1.7%;
+        margin-right: 3%;
+    }
+    
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 32%;
+        margin-bottom: 1%;
+    } 
+   
+    /* *****  MainSideBar *********** */
+    
+    
+    .mainSideBarContent {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        height: 600px;
+        padding-top: 2%;
+        padding-left: 5%;
+    }
+
+    /* *****  checkSection *********** */
+    /* .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #eeeeee;
+    } */
+    .checkSection-formTitle {
+        margin-left: 15%;
+        width: 70%;
+    }
+    
+    .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    }
+    
+    .checkSectionBtn-toCheck {
+        width: 60%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    }
+    
+    .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    }
+    
+}
+
+/* ********  Tablets Responsive Design ******************* */
+
+@media (max-width:1098px) and (min-width: 768px){
+    .navMobil {
+        background-color: #ffffff;
+        height: 179px;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    
+    }
+ 
+   
+    .mobileIconMobil {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 103px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+
+    }
+
+    .faUserIcon {
+        position: absolute;
+        left: 15px;
+
+    }
+    .faBarsIcon {
+        position: absolute;
+        left: 67%;
+    }
+
+    
+    .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 1fr); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 50%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navLinksMobil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .heroContent{
+        left: 33%;
+        top: 40%;
+    }
+ 
+
+    .heroContainerMobil {
+        background-color: #FAD570;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 800px;
+    }
+    
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 30%;
+
+    }
+    .heroH1Mobil {
+        font-size: 3rem;
+        font-family: 'Blinker', sans-serif;
+        font-weight: 700;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+    .infoContainer {
+        height: 1000px;
+    }
+
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 400px 550px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        
+    }
+
+    .textWrapper {
+        margin-top: 2%;
+        margin-left: 15%;
+    }
+
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .video {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .videoPlayer {
+        width: 100%;
+        padding-right: 0;
+        height: 434px;
+        
+    }
+
+    .videoBtnWrap {
+        margin-top: 3%;
+    }
+
+    .hiwContainer {
+        height: 1600px;
+    }
+    .hiwWrapper {
+        margin: 5% auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 0 27px;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 100px;
+    }
+
+    /*********** Info *******************  */
+    .contactContainer {
+        width: 100%;
+        height: 2200px;
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 2200px;
+    }
+ 
+
+    .contactInfo {
+        justify-content: unset;
+        align-items: unset;
+        width: 100%;
+        height: 1400px;
+        background-color: #FAD570;
+    }
+    
+    .contactInfoTitleContainer {
+        width: 100%;
+        height: 21%;
+        margin-top: 8%;
+        
+    }
+        
+    
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 5rem;
+        margin-top: 1%;
+        margin-left: 8%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 5rem;
+        margin-top: 1%;
+        margin-left: 18%;
+    }
+    
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 5rem;
+        margin-top: 1%;
+        margin-left: 30%;
+    }
+    
+    .contactInfoImageContainer {
+        width: 100%;
+        height: 40%;
+        margin-top: 10%;
+    }
+    
+    .contactInfoImageContainer img {
+        margin-top: 2%;
+        margin-left: 23%;
+        width: 54%;
+    }
+    .contactInfoDescContainer {
+        margin-top: 6%;
+        margin-left: 2%;
+    } 
+    
+    .contactInfoOption1 {
+        margin-bottom: 4%;
+    }
+    .contactInfoOption1 h3 {
+        font-size: 2rem;
+    }
+    .contactInfoOption1 p {
+        font-size: 1.2rem;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+        margin-bottom: 2.3%;
+        margin-right: 3%;
+        margin-left: 1%;
+    }
+    .contactInfoOption2 h3 {
+        font-size: 2rem;
+    }
+    .contactInfoOption2 p {
+        font-size: 1.2rem;
+    }
+    
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 32%;
+        margin-bottom: 2%;
+    } 
+    .contactInfoOption3 h3 {
+        font-size: 2rem;
+    }
+    .contactInfoOption3 p {
+        font-size: 1.2rem;
+    }
+    /******************************  */
+
+
+
+    
+    .contactForms {
+        width: 100%;
+        height: 800px;
+        position: unset; 
+    }
+
+    .optionsWrapper {
+        width: 75%;
+        margin-top: 5%;
+
+    }
+    .titleWrapper {
+        width: 75%;
+    }
+    .formTitle {
+        font-size: 0.8rem;
+    }
+ 
+    .formDescription {
+        margin-top: 2%;
+    }
+    .boxContainer {
+        width: 75%;
+        margin-bottom: 5%;
+    }
+    .input {
+        height: 115px;
+        margin-bottom: 15px;
+    }
+    .formContainer button {
+        height: 115px;
+        width: 100%;
+        color: #010606;
+        background-color: #FAD570;
+        margin-top: 10px;
+        border-style: none;
+        font-size: 1.4rem;
+    }
+
+    .formContainer .regButton{
+        height: 115px;
+        
+    }
+    .loginSideBarFormDescription p {
+        font-size: 1.5rem;
+    }
+    .loginSideBoxContainer {
+        width: 65%
+    }
+
+    .input {
+        height: 115px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 115px;
+    }
+    
+    /* *****  MainSideBar *********** */
+    
+    
+    
+    .mainSideBarContent {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        height: 600px;
+        padding-top: 2%;
+        padding-left: 5%;
+    }
+    
+    
+    .closeBtn {
+        width: 28%;
+        height: 23%;
+    }
+  
+}
+
+
+@media (max-width:768px) and (min-width: 560px){
+
+    .navMenuMobil {
+        display: none;
+    } 
+    .navBtnMobil {
+        display: none;
+    }
+   
+ 
+    .navMobil {
+        background-color: #ffffff;
+        height: 179px;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    
+    }
+    
+    .mobileIconMobil {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 103px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+
+    }
+    .faUserIcon {
+        position: absolute;
+        left: 15px;
+
+    }
+    .faBarsIcon {
+        position: absolute;
+        left: 67%;
+    }
+
+    .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 1fr); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 50%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton1";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navLinksMobil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+   
+    .heroContainerMobil {
+        background-color: #FAD570;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 800px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 30%;
+
+    }
+    .heroH1Mobil {
+        font-size: 3rem;
+        font-family: 'Blinker', sans-serif;
+        font-weight: 700;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+
+    .infoContainer {
+        height: 1000px;
+    }
+
+    
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 420px 500px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        
+    }
+    
+    .textWrapper {
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .videoPlayer {
+        width: 100%;
+        padding-right: 0;
+        height: 400px;
+    }
+
+    .videoBtnWrap {
+        margin-top: 5%;
+    }
+    
+    .hiwContainer {
+        height: 2300px;
+    }
+
+    .hiwWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 0 27px;
+    }
+    .hiwCard {
+        justify-self: center;
+        max-width: 65%;
+    }
+    
+    .hiwCard:hover {
+        transform:none;
+        transition: none;
+        cursor: pointer;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 50px;
+    }
+
+     /*********** Info *******************  */
+     .contactContainer {
+        width: 100%;
+        height: 2000px;
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 2000px;
+    }
+ 
+
+    .contactInfo {
+        justify-content: unset;
+        align-items: unset;
+        width: 100%;
+        height: 1200px;
+        background-color: #FAD570;
+    }
+    
+    .contactInfoTitleContainer {
+        width: 100%;
+        height: 21%;
+        margin-top: 10%;
+        
+    }
+        
+    
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 5rem;
+        margin-top: 1%;
+        margin-left: 8%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 5rem;
+        margin-top: 1%;
+        margin-left: 14%;
+    }
+    
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 5rem;
+        margin-top: 1%;
+        margin-left: 22%;
+    }
+    
+    .contactInfoImageContainer {
+        width: 100%;
+        height: 40%;
+        margin-top: 10%;
+    }
+    
+    .contactInfoImageContainer img {
+        margin-top: 2%;
+        margin-left: 13%;
+        width: 70%;
+    }
+    .contactInfoDescContainer {
+        margin-left: 2%;
+        margin-top: 9%;
+    } 
+    
+    .contactInfoOption1 {
+        margin-bottom: 2%;
+        margin-left: 2%;
+    }
+    .contactInfoOption1 h3 {
+        font-size: 1.2rem;
+    }
+    .contactInfoOption1 p {
+        font-size: 1.2rem;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+        margin-bottom: 2%;
+        margin-right: 3%;
+        margin-left: 1%;
+    }
+    .contactInfoOption2 h3 {
+        font-size: 1.2rem;
+    }
+    .contactInfoOption2 p {
+        font-size: 1.2rem;
+    }
+    
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 32%;
+        margin-bottom: 2%;
+    } 
+    .contactInfoOption3 h3 {
+        font-size: 1.2rem;
+    }
+    .contactInfoOption3 p {
+        font-size: 1.2rem;
+    }
+    /******************************  */
+   
+    .contactForms {
+        width: 100%;
+        height: 800px;
+        position: unset;
+        
+        
+    }
+    .optionsWrapper {
+        width: 85%;
+    }
+    .titleWrapper {
+        width: 85%;
+        margin-bottom: 5%;
+    }
+    .formTitle {
+        font-size: 0.8rem;
+        margin-top: 3%;
+    }
+    .title_1 {
+        font-size: 2.4rem;
+
+    }
+    .title_3 {
+        font-size: 2.2rem;
+    }
+    .title_4 {
+        font-size: 4rem;
+    }
+    .formDescription {
+        margin-top: 6%;
+    }
+    .boxContainer {
+        width: 85%;
+        height: 55%;
+        margin-top: 4%;
+        margin-bottom: 0;
+
+    }
+    .input {
+        height: 115px;
+        margin-bottom: 15px;
+    }
+    .formContainer button {
+        height: 115px;
+        width: 100%;
+        color: #010606;
+        background-color: #FAD570;
+        margin-top: 10px;
+        border-style: none;
+        font-size: 1.4rem;
+    }
+
+    .formContainer .regButton{
+        height: 115px;
+        
+    }
+    
+    .loginSideBarFormDescription p {
+        font-size: 1.3rem;
+    }
+    .loginSideBoxContainer {
+        width: 80%
+    }
+    
+    
+    .input {
+        height: 115px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 115px;
+    }
+
+    /* *****  MainSideBar *********** */
+        
+    
+    .mainSideBarContent {
+        width: 95%;
+        height: 100%;
+        padding-top: 2%;
+        padding-left: 0%;
+    }
+    .mainSideBarContentUser {
+        margin-left: 3%;    
+    }
+    .mainSideBarContentOptions {
+        margin-left: 5%;
+        height: 100%;
+        width: 100%;
+    }
+    .mainSideBarContentItems {
+        display: flex;
+        align-items: center;
+        height: 15%;
+    }
+    
+    .closeBtn {
+        height: 10%;
+    }
+
+    /* *****  checkSection *********** */
+    /* .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #eeeeee;
+    } */
+    .checkSection-formTitle {
+        margin-left: 15%;
+        width: 100%;
+    }
+    
+    .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    }
+    
+    .checkSectionBtn-toCheck {
+        width: 50%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    }
+    
+    .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    }
+
+    /* ************ FooterSection **************************** */
+
+    .footerContainer {
+        width: 100%;
+        height: 605px;
+        background-color: #232a34;
+    }
+    .footerWrap {
+       padding: 48px 24px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       /* max-width: 1100px; */
+       margin: 0 auto;
+    }
+    .footerLinksContainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       width: 100%;
+       margin-bottom: 3%;
+       margin-top: 3%;
+    }
+    .footerLinksWrapper {
+       display: flex;
+       width: 100%;
+       justify-content: space-around;
+   
+    }
+    .footerLinkItems {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin: 16px;
+       text-align: left;
+       width: 33%;
+       box-sizing: border-box;
+       color: #ffffff;
+    }
+    .footerLinkTitle {
+       font-size: 1.2rem;
+       margin-bottom: 16px;
+    }
+    .footerLink {
+       color: #ffffff;
+       text-decoration: none;
+       margin-bottom: 0.5rem;
+       font-size: 1rem;
+    }
+   
+    .socialMedia {
+       /* max-width: 1000px; */
+       width: 95%;
+    }
+   
+    .socialMediaWrap {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       max-width: 1100px;
+       margin: 49px auto 0 auto;
+    }
+   
+    .socialLogo {
+       color: #ffffff;
+       justify-self: start;
+       cursor: pointer;
+       text-decoration: none;
+       font-size: 1.5rem;
+       display: flex;
+       align-items: center;
+       margin-bottom: 16px;
+       font-weight: bold;
+    }
+   
+    .socialMediaWrap small {
+        margin-left: 13%;
+       color: #ffffff;
+       margin-bottom: 16px;
+    }
+   
+    .socialIcons {
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       width: 200px;
+    }
+   
+    .socialIconLink {
+       color: #ffffff;
+       font-size: 24px;
+    }
+
+}
+/* ********  Phones Responsive Design ******************* */
+@media (max-width:560px) and (min-width: 480px){
+ 
+    .navMenuMobil {
+        display: none;
+    } 
+    .navBtnMobil {
+        display: none;
+    }
+
+    
+
+    .navMobil {
+        background-color: #ffffff;
+        height: 148px;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    
+    }
+
+    .mobileIconMobil {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 103px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+
+    }
+
+    .faUserIcon {
+        position: absolute;
+        left: 15px;
+
+    }
+    .faBarsIcon {
+        position: absolute;
+        left: 67%;
+    }
+
+    .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 20%); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 46%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .navLinksMobil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 5%;
+    }
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    .faIcon {
+        font-size: 18px;
+    }
+   
+    .heroContainerMobil {
+        height: 645px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 2.6rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 20px;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+    
+
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+
+    .infoContainer {
+        height: 820px;
+    }
+
+    
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 380px 368px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        
+    }
+    
+    .textWrapper {
+        margin-top: 15%;
+        margin-left: 5%;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .videoPlayer {
+        width: 85%;
+        padding-right: 0;
+        height: 265px;
+    }
+
+    .videoBtnWrap {
+        margin-top: 7%;
+    }
+
+    .hiwContainer {
+        height: 2300px;
+    }
+
+    .hiwWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 0 27px;
+    }
+    .hiwCard {
+        justify-self: center;
+        max-width: 75%;
+    }
+
+    .hiwCard:hover {
+        transform:none;
+        transition: none;
+        cursor: pointer;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 50px;
+    }
+    
+
+    /*********** Info *******************  */
+    .contactContainer {
+        width: 100%;
+        height: 2500px;
+        
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        height: 2500px;
+        justify-content: space-between;
+    }
+
+    .contactInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        width: 100%;
+        height: 1700px;
+        background-color: #FAD570;
+    }
+    
+        
+    .contactInfoTitleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 20%;
+        margin-top: 10%;
+    }
+    .contactInfoTopLine {
+        font-size: 1.2rem;
+        margin-left: 7%;
+        
+    }
+    
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 3.8rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 3.8rem;
+        margin-left: 6%;
+    }
+    
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 3.8rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+    
+    .contactInfoImageContainer {
+        margin-top: 10%;
+        height: 35%;
+    }
+    
+    .contactInfoImageContainer img {
+        margin-top: 4%;
+        margin-left: 2%;
+        width: 96%;
+    }
+    .contactInfoDescContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 29%;
+        margin-left: 6%;
+        margin-top: 10%;
+    } 
+    
+    .contactInfoOption1 {
+        width: 70%;
+        margin-bottom: 4%;
+        
+    }
+    .contactInfoOption1 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption1 p {
+        font-size: 1.2rem;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-bottom: 2.3%;
+        margin-right: 3%;
+        margin-top: 10%;
+    }
+    .contactInfoOption2 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption2 p {
+        font-size: 1.2rem;
+    }
+    
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-top: 10%;
+    } 
+    .contactInfoOption3 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption3 p {
+        font-size: 1.2rem;
+    }
+    /******************************  */
+    
+    .contactForms {
+        width: 100%;
+        height: 800px;
+        position: unset;
+        
+        
+    }
+    .optionsWrapper {
+        width: 90%;
+    }
+    .titleWrapper {
+        width: 90%;
+        margin-bottom: 1%;
+        height: 16%;
+    }
+    .formTitle {
+        font-size: 0.8rem;
+    }
+    .title_1 {
+        font-size: 2rem;
+
+    }
+    .title_3 {
+        font-size: 2.2rem;
+    }
+    .title_4 {
+        font-size: 4rem;
+    }
+    .formDescription {
+        margin-top: 2%;
+    }
+    .boxContainer {
+        width: 90%;
+        height: auto;
+        margin-top: 4%;
+        margin-bottom: 0;
+
+    }
+    .input {
+        height: 65px;
+        margin-bottom: 15px;
+    }
+    .formContainer button {
+        height: 65px;
+        width: 100%;
+        color: #010606;
+        background-color: #FAD570;
+        margin-top: 10px;
+        border-style: none;
+        font-size: 1.4rem;
+    }
+
+    .formContainer .regButton{
+        height: 65px;
+        
+    }
+
+    .loginSideBarFormDescription {
+        width: 95%;
+    }
+    .loginSideBarFormDescription p {
+        font-size: 1.5rem;
+    }
+    .loginSideBoxContainer {
+        width: 85%
+    }
+    
+    .loginSideBoxContainer { 
+        height: auto;
+        margin-top: 10%;
+    }
+    
+    .input {
+        height: 85px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 85px;
+    }
+
+    /* *****  MainSideBar *********** */
+    
+    
+    .mainSideBarContent {
+        width: 100%;
+        height: 100%;
+        padding-top: 2%;
+        padding-left: 0%;
+    }
+    .mainSideBarContentUser {
+        display: flex;
+        align-items: center;
+        color: #010606;
+        width: 100%;
+        height: 10%;
+        font-size: 3rem;
+        margin-left: 0%;
+        margin-top: 2%;  
+        padding-left: 4%;  
+    }
+    .mainSideBarUserIcon {
+        width: 7%;
+    }
+    
+    .mainSideBarUserName {
+        margin-left: 3%;
+        font-size: 1.5rem;
+    }
+    
+    .mainSideBarContentOptions {
+        width: 90%;
+        height: 100%;
+    }
+    .mainSideBarContentItems {
+        display: flex;
+        align-items: center;
+        font-size: 1.7rem;
+        margin-bottom: 1%;
+        border-bottom: 1px solid #eeeeee;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 3%;
+        width: 90%;
+        height: 16%;
+    }
+    .mainSideBarUserOptionsIcon {
+        margin-right: 4%;
+    }
+    
+    .closeBtn {
+        width: 70%;
+        margin-top: 5%;
+        margin-left: 13%;
+        height: 10%;
+    }
+
+    /* ******* DropDownList ************** */
+
+    .dropdown {
+        height: 85px;
+    }
+    .dropdownOnError {
+        height: 85px;
+    }
+    
+    /* *****  checkSection *********** */
+    /* .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #eeeeee;
+    } */
+    .checkSection-formTitle {
+        margin-left: 15%;
+        width: 100%;
+    }
+    
+    .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    }
+    
+    .checkSectionBtn-toCheck {
+        width: 70%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    }
+    
+    .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    }
+
+    /* ************ FooterSection **************************** */
+
+    .footerContainer {
+        width: 100%;
+        height: 630px;
+        background-color: #232a34;
+    }
+    .footerWrap {
+       padding: 48px 24px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       /* max-width: 1100px; */
+       margin: 0 auto;
+    }
+    .footerLinksContainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       width: 100%;
+       margin-bottom: 3%;
+       margin-top: 3%;
+    }
+    .footerLinksWrapper {
+       display: flex;
+       width: 100%;
+       justify-content: space-around;
+   
+    }
+    .footerLinkItems {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin: 16px;
+       text-align: left;
+       width: 33%;
+       box-sizing: border-box;
+       color: #ffffff;
+    }
+    .footerLinkTitle {
+       font-size: 1.2rem;
+       margin-bottom: 16px;
+    }
+    .footerLink {
+       color: #ffffff;
+       text-decoration: none;
+       margin-bottom: 0.5rem;
+       font-size: 1rem;
+    }
+   
+    .socialMedia {
+       /* max-width: 1000px; */
+       width: 95%;
+    }
+   
+    .socialMediaWrap {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       max-width: 1100px;
+       margin: 49px auto 0 auto;
+    }
+   
+    .socialLogo {
+       color: #ffffff;
+       justify-self: start;
+       cursor: pointer;
+       text-decoration: none;
+       font-size: 1.5rem;
+       display: flex;
+       align-items: center;
+       margin-bottom: 16px;
+       font-weight: bold;
+    }
+   
+    .socialMediaWrap small {
+        margin-left: 13%;
+       color: #ffffff;
+       margin-bottom: 16px;
+    }
+   
+    .socialIcons {
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       width: 200px;
+    }
+   
+    .socialIconLink {
+       color: #ffffff;
+       font-size: 24px;
+    }
+}
+
+@media (max-width:480px) and (min-width: 414px){
+
+    .navMenuMobil {
+        display: none;
+    } 
+    .navBtnMobil {
+        display: none;
+    }
+   
+    .navMobil {
+        background-color: #ffffff;
+        height: 148px;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    
+    }
+
+    .mobileIconMobil {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 103px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+
+    }
+
+    .faUserIcon {
+        position: absolute;
+        left: 15px;
+
+    }
+    .faBarsIcon {
+        position: absolute;
+        left: 67%;
+    }
+
+    .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 25%); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 46%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton1";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .navLinksMobil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 5%;
+    }
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    
+    .faIcon {
+        font-size: 18px;
+    }
+    .heroContainerMobil {
+        height: 645px;
+    }
+
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 2.2rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 1rem;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+  
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+
+    .infoContainer {
+        height: 765px;
+    }
+
+
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 345px 365px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        
+    }
+    
+    .textWrapper {
+        margin-top: 20%;
+        margin-left: 3%;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .videoPlayer {
+        width: 100%;
+        padding-right: 0;
+        height: 265px;
+    }
+
+    .videoBtnWrap {
+        margin-top: 7%;
+    }
+    
+    .hiwContainer {
+        height: 2300px;
+    }
+    
+    .hiwWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 0 27px;
+    }
+    
+    .hiwCard {
+        max-width: 100%;
+    }
+    
+    .hiwCard:hover {
+        transform:none;
+        transition: none;
+        cursor: pointer;
+    }
+
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 70px;
+    }
+    
+    /*********** Info *******************  */
+    .contactContainer {
+        width: 100%;
+        height: 2500px;
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        height: 2500px;
+        justify-content: space-between;
+    }
+
+    .contactInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        width: 100%;
+        height: 1700px;
+        background-color: #FAD570;
+    }
+
+
+    .contactInfoTitleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 20%;
+        margin-top: 20%;
+    }
+    .contactInfoTopLine {
+        font-size: 1.2rem;
+        margin-left: 7%;
+
+    }
+
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 3.8rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 3.8rem;
+        margin-left: 6%;
+    }
+
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 3.8rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+
+    .contactInfoImageContainer {
+        margin-top: 10%;
+        height: 30%;
+    }
+
+    .contactInfoImageContainer img {
+        margin-top: 4%;
+        margin-left: 2%;
+        width: 96%;
+    }
+    .contactInfoDescContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 29%;
+        margin-left: 6%;
+        margin-top: 15%;
+    } 
+
+    .contactInfoOption1 {
+        width: 70%;
+        margin-bottom: 4%;
+
+    }
+    .contactInfoOption1 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption1 p {
+        font-size: 1.2rem;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-bottom: 2.3%;
+        margin-right: 3%;
+        margin-top: 10%;
+    }
+    .contactInfoOption2 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption2 p {
+        font-size: 1.2rem;
+    }
+
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-top: 10%;
+    } 
+    .contactInfoOption3 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption3 p {
+        font-size: 1.2rem;
+    }
+    /******************************  */
+    .contactForms {
+        width: 100%;
+        height: 800px;
+        position: unset;
+    }
+
+    .optionsWrapper {
+        width: 95%;
+    }
+    .titleWrapper {
+        width: 90%;
+        height: 20%;
+        margin-bottom: 5%;
+    }
+    .formTitle {
+        font-size: 2.2rem;
+    }
+    .title_1 {
+        font-size: 2.4rem;
+
+    }
+    .title_3 {
+        font-size: 2.2rem;
+    }
+    .title_4 {
+        font-size: 4rem;
+    }
+    .formDescription {
+        font-size: 15px;
+        margin-top: 0;
+    }
+
+    .formDescription p {
+        margin-top: 3%;
+    }
+  
+    .checkAProduct p {
+        width: 65%;
+    }
+    .boxContainer {
+        width: 90%;
+        height: auto;
+        margin-bottom: 15%;
+    }
+    
+    .loginSideBarFormDescription {
+        width: 95%;
+    }
+    .loginSideBarFormDescription p {
+        font-size: 1.5rem;
+    }
+    .loginSideBoxContainer {
+        width: 85%
+    }
+    
+    .loginSideBoxContainer { 
+        height: auto;
+        margin-top: 10%;
+    }
+    
+    .input {
+        height: 85px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 85px;
+    }
+    .formContainer .regButton {
+        height: 85px;
+    }
+
+    /* *****  MainSideBar *********** */
+    
+    
+    .mainSideBarContent {
+        width: 100%;
+        height: 100%;
+        padding-top: 2%;
+        padding-left: 0%;
+    }
+    .mainSideBarContentUser {
+        display: flex;
+        align-items: center;
+        color: #010606;
+        width: 100%;
+        height: 10%;
+        font-size: 3rem;
+        margin-left: 0%;
+        margin-top: 2%;  
+        padding-left: 4%;  
+    }
+    .mainSideBarUserIcon {
+        width: 7%;
+    }
+    
+    .mainSideBarUserName {
+        margin-left: 3%;
+        font-size: 1.5rem;
+    }
+    
+    .mainSideBarContentOptions {
+        width: 90%;
+        height: 100%;
+    }
+    .mainSideBarContentItems {
+        display: flex;
+        align-items: center;
+        font-size: 1.7rem;
+        margin-bottom: 1%;
+        border-bottom: 1px solid #eeeeee;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 3%;
+        width: 90%;
+        height: 16%;
+    }
+    .mainSideBarUserOptionsIcon {
+        margin-right: 4%;
+    }
+    
+    .closeBtn {
+        width: 70%;
+        margin-top: 5%;
+        margin-left: 13%;
+        height: 10%;
+    }
+
+    /* ******* DropDownList ************** */
+
+    .dropdown {
+        
+        height: 85px;
+        
+    }
+    .dropdownOnError {
+        
+        height: 85px;
+        
+    }
+
+    /* *****  checkSection *********** */
+    /* .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #eeeeee;
+    } */
+    .checkSection-formTitle {
+        width: 83%;
+    }
+    
+    .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    }
+    
+    .checkSectionBtn-toCheck {
+        width: 80%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    }
+    
+    .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    }
+
+    /* ************ FooterSection **************************** */
+
+    .footerContainer {
+        width: 100%;
+        height: 1016px;
+        background-color: #232a34;
+    }
+    .footerWrap {
+       padding: 48px 24px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       /* max-width: 1100px; */
+       margin: 0 auto;
+    }
+    .footerLinksContainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       width: 100%;
+       margin-bottom: 3%;
+       margin-top: 3%;
+    }
+    .footerLinksWrapper {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+       justify-content: space-around;
+   
+    }
+    .footerLinkItems {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin: 16px;
+       text-align: left;
+       width: 33%;
+       box-sizing: border-box;
+       color: #ffffff;
+    }
+    .footerLinkTitle {
+       font-size: 1.2rem;
+       margin-bottom: 16px;
+    }
+    .footerLink {
+       color: #ffffff;
+       text-decoration: none;
+       margin-bottom: 0.5rem;
+       font-size: 1rem;
+    }
+   
+    .socialMedia {
+       /* max-width: 1000px; */
+       width: 95%;
+    }
+   
+    .socialMediaWrap {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       max-width: 1100px;
+       margin: 49px auto 0 auto;
+    }
+   
+    .socialLogo {
+       color: #ffffff;
+       justify-self: start;
+       cursor: pointer;
+       text-decoration: none;
+       font-size: 1.5rem;
+       display: flex;
+       align-items: center;
+       margin-bottom: 16px;
+       font-weight: bold;
+    }
+   
+    .socialMediaWrap small {
+        margin-left: 13%;
+       color: #ffffff;
+       margin-bottom: 16px;
+    }
+   
+    .socialIcons {
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       width: 200px;
+    }
+   
+    .socialIconLink {
+       color: #ffffff;
+       font-size: 24px;
+    }
+   
+}
+
+@media (max-width:414px) and (min-width: 360px){
+  
+    .navMenuMobil {
+        display: none;
+    } 
+    .navBtnMobil {
+        display: none;
+    }
+
+
+    .navMobil {
+        background-color: #ffffff;
+        height: 148px;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    
+    }
+
+    .mobileIconMobil {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 103px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+
+    }
+
+    .faUserIcon {
+        position: absolute;
+        left: 15px;
+
+    }
+    .faBarsIcon {
+        position: absolute;
+        left: 67%;
+    }
+
+    .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 25%); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 46%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton1";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .navLinksMobil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 5%;
+    }
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4px;
+    
+    }
+
+    
+
+    .faIcon {
+        font-size: 20px;
+    }
+     
+    .heroContainerMobil {
+        height: 645px;
+    }
+
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 1.9rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 1rem;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+
+    .infoContainer {
+        height: 820px;
+    }
+
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 445px 330px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        
+    }
+    
+    .textWrapper {
+        margin-top: 15%;
+        margin-left: 3%;
+    }
+    .formTitle {
+        font-size: 0.6rem;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .videoPlayer {
+        width: 98%;
+        padding-right: 0;
+        height: 265px;
+    }
+    .btnWrap {
+        margin-top: 45px;
+    }
+
+    .hiwContainer {
+        height: 2300px;
+    }
+
+    .hiwWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 0 27px;
+    }
+    .hiwCard:hover {
+        transform:none;
+        transition: none;
+        cursor: pointer;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 50px;
+    }
+    /*********** Info *******************  */
+    .contactContainer {
+        width: 100%;
+        height: 2600px;
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        height: 2600px;
+        justify-content: space-between;
+    }
+
+    .contactInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        width: 100%;
+        height: 1800px;
+        background-color: #FAD570;
+    }
+
+
+    .contactInfoTitleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 20%;
+        margin-top: 20%;
+    }
+    .contactInfoTopLine {
+        font-size: 1.2rem;
+        margin-left: 7%;
+
+    }
+
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 3.5rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 3.5rem;
+        margin-left: 6%;
+    }
+
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 3.5rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+
+    .contactInfoImageContainer {
+        margin-top: 10%;
+        height: 25%;
+    }
+
+    .contactInfoImageContainer img {
+        margin-top: 4%;
+        margin-left: 2%;
+        width: 96%;
+    }
+    .contactInfoDescContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 36%;
+        margin-left: 6%;
+        margin-top: 15%;
+    } 
+
+    .contactInfoOption1 {
+        width: 70%;
+        margin-bottom: 4%;
+
+    }
+    .contactInfoOption1 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption1 p {
+        font-size: 1.2rem;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-bottom: 2.3%;
+        margin-right: 3%;
+        margin-top: 10%;
+    }
+    .contactInfoOption2 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption2 p {
+        font-size: 1.2rem;
+    }
+
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-top: 10%;
+    } 
+    .contactInfoOption3 h3 {
+        font-size: 2.5rem;
+    }
+    .contactInfoOption3 p {
+        font-size: 1.2rem;
+    }
+    /******************************  */
+    .contactForms {
+        width: 100%;
+        height: 800px;
+        position: unset;    
+    }
+
+    .optionsWrapper {
+        width: 90%;
+    }
+    .titleWrapper {
+        width: 90%;
+        height: 20%;
+        margin-bottom: 5%;
+    }
+    
+    .formTitle {
+        display: flex;
+        align-items: center;
+    }
+    .title_1 {
+        font-size: 1.8rem;
+
+    }
+    .title_3 {
+        font-size: 2.2rem;
+    }
+    .title_4 {
+        font-size: 4rem;
+    }
+    .formDescription {
+        font-size: 15px;
+    }
+
+    .formDescription p {
+        margin-top: 3%;
+    }
+  
+    .checkAProduct p {
+        width: 65%;
+    }
+    .boxContainer {
+        width: 90%;
+        height: auto;
+        margin-bottom: 0%;
+    }
+    .input {
+        height: 65px;
+        margin-bottom: 15px;
+    }
+    .formContainer button {
+        height: 65px;
+    }
+
+    .formContainer .regButton{
+        height: 65px;
+        
+    }
+    .loginSideBarFormTitle {
+        margin-top: 6%;
+        font-size: 2.5rem;
+    }
+    .loginSideBarFormDescription {
+        width: 95%;
+    }
+    .loginSideBarFormDescription p {
+        font-size: 1.2rem;
+    }
+    .loginSideBoxContainer {
+        width: 85%
+    }
+    
+    .loginSideBoxContainer { 
+        height: auto;
+        margin-top: 10%;
+    }
+    
+    .input {
+        height: 85px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 85px;
+    }
+    .formContainer .regButton {
+        height: 85px;
+    }
+
+    /* *****  MainSideBar *********** */
+    
+    
+    .mainSideBarContent {
+        /* display: flex; */
+        /* flex-direction: column; */
+        width: 100%;
+        height: 100%;
+        padding-top: 2%;
+        padding-left: 0%;
+    }
+    .mainSideBarContentUser {
+        display: flex;
+        align-items: center;
+        color: #010606;
+        width: 100%;
+        height: 10%;
+        font-size: 3rem;
+        margin-left: 0%;
+        margin-top: 2%;  
+        padding-left: 4%;  
+    }
+    .mainSideBarUserIcon {
+        width: 7%;
+    }
+    
+    .mainSideBarUserName {
+        margin-left: 3%;
+        font-size: 1.5rem;
+    }
+    
+    .mainSideBarContentOptions {
+        width: 90%;
+        height: 100%;
+    }
+    .mainSideBarContentItems {
+        display: flex;
+        align-items: center;
+        font-size: 1.7rem;
+        margin-bottom: 1%;
+        border-bottom: 1px solid #eeeeee;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 3%;
+        width: 90%;
+        height: 16%;
+    }
+    .mainSideBarUserOptionsIcon {
+        margin-right: 4%;
+    }
+    
+    .closeBtn {
+        width: 70%;
+        margin-top: 10%;
+        margin-left: 13%;
+        height: 10%;
+    }
+
+    /* ******* DropDownList ************** */
+
+    .dropdown {
+        height: 85px;
+    }
+    .dropdownOnError {
+        height: 85px;
+    }
+
+    /* *****  checkSection *********** */
+    .checkSectionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #eeeeee;
+    }
+    .checkSection-formTitle {
+        width: 86%;
+    }
+    
+    .checkSection-BtnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 7%;
+    }
+    
+    .checkSectionBtn-toCheck {
+        width: 90%;
+        height: 90px;
+        background-color: #010606;
+        border-style: none;
+        border-radius: 60px;
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-left: 5%;
+    }
+    
+    .checkSection-notNow {
+        margin-left: 7%;
+        margin-top: 3%;
+    }
+
+    /* ************ FooterSection **************************** */
+
+    .footerContainer {
+        width: 100%;
+        height: 1016px;
+        background-color: #232a34;
+    }
+    .footerWrap {
+       padding: 48px 24px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
+    }
+    .footerLinksContainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       width: 100%;
+       margin-bottom: 3%;
+       margin-top: 3%;
+    }
+    .footerLinksWrapper {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+       justify-content: space-around;
+   
+    }
+    .footerLinkItems {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin: 16px;
+       text-align: left;
+       width: 85%;
+       box-sizing: border-box;
+       color: #ffffff;
+    }
+    .footerLinkTitle {
+       font-size: 1.2rem;
+       margin-bottom: 16px;
+    }
+    .footerLink {
+       color: #ffffff;
+       text-decoration: none;
+       margin-bottom: 0.5rem;
+       font-size: 1rem;
+    }
+   
+    .socialMedia {
+     
+       width: 95%;
+    }
+   
+    .socialMediaWrap {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       max-width: 1100px;
+       margin: 49px auto 0 auto;
+    }
+   
+    .socialLogo {
+       color: #ffffff;
+       justify-self: start;
+       cursor: pointer;
+       text-decoration: none;
+       font-size: 1.5rem;
+       display: flex;
+       align-items: center;
+       margin-bottom: 16px;
+       font-weight: bold;
+    }
+   
+    .socialMediaWrap small {
+        margin-left: 13%;
+       color: #ffffff;
+       margin-bottom: 16px;
+    }
+   
+    .socialIcons {
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       width: 200px;
+    }
+   
+    .socialIconLink {
+       color: #ffffff;
+       font-size: 24px;
+    }
+
+    /* ************ Notification Screens ********************/
+
+.notificationContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 2;
+}
+
+.closeIconContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 7%;
+    height: 3%;
+    color: #010606;
+    position: absolute;
+    left: 90%;
+    top: 2%;
+    font-size: 2rem;
+
+
+}
+
+.notificationWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 80%;
+    height: 60%;
+    margin-top: 20%;
+}
+.notificationWrapper img {
+    width: 30%;
+}
+.notificationName {
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+.notificationSpan {
+    font-size: 2.3rem;
+    /* margin-left: 2%; */
+}
+
+.notificationResponse {
+    margin-bottom: 5%;
+    font-size: 1rem;
+}
+.notificationBtn {
+    width: 55%;
+    height: 10%;
+    background-color: #010606;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+
+}
+    
+}
+
+@media (max-width: 360px) and (min-width: 320px){
+  
+    .navMenuMobil {
+        display: none;
+    } 
+    .navBtnMobil {
+        display: none;
+    }
+
+    .navMobil {
+        background-color: #ffffff;
+        height: 148px;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    
+    }
+
+    .mobileIconMobil {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 103px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+
+    }
+
+    .faUserIcon {
+        position: absolute;
+        left: 15px;
+
+    }
+    .faBarsIcon {
+        position: absolute;
+        left: 67%;
+    }
+
+    .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 25%); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 46%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton1";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .navLinksMobil {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .navLinksMobil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 5%;
+    }
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+
+    /* ************************************ */
+    /* .navMenuButtonsContainer {
+        display: grid;
+        gap: 10px;
+        grid-template: 100% / repeat(3, 25%); 
+        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
+        width: 100%;
+        height: 46%;
+        margin-top: 1% ;
+        background-color: #ffffff;
+        border-bottom: 2px solid #eeedec;
+    }
+    .navMenuButton {
+        grid-area: "naMenuButton1";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+
+    .iconMobilContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4px;
+    
+    } */
+     
+    .heroContainerMobil {
+        height: 840px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 1.6rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 0.9rem;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+    
+    .infoContainer {
+        height: 686px;
+    }
+
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 335px 288px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        
+    }
+    
+    .textWrapper {
+        margin-top: 15%;
+        margin-left: 3%;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .heading {
+        font-size: 1.6rem;
+    }
+
+    .videoPlayer {
+        width: 98%;
+        padding-right: 0;
+        height: 265px;
+    }
+    .btnWrap {
+        margin-top: 30px;
+    }
+
+    .hiwContainer {
+        height: 2300px;
+    }
+
+    .hiwWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 0 27px;
+    }
+    .hiwCard:hover {
+        transform:none;
+        transition: none;
+        cursor: pointer;
+    }
+    .hiwBtnWrap {
+        margin-left: 3%;
+        margin-top: 50px;
+    }
+    /*********** Info *******************  */
+    .contactContainer {
+        width: 100%;
+        height: 2400px;
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        height: 2400px;
+        justify-content: space-between;
+    }
+
+    .contactInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        width: 100%;
+        height: 1600px;
+        background-color: #FAD570;
+    }
+
+
+    .contactInfoTitleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 15%;
+        margin-top: 20%;
+    }
+    .contactInfoTopLine {
+        font-size: 1.2rem;
+        margin-left: 7%;
+
+    }
+
+    .contactInfoTitle1 {
+        width: 70%;
+        font-size: 3.1rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+    .contactInfoTitle2 {
+        width: 70%;
+        font-size: 3.1rem;
+        margin-left: 6%;
+    }
+
+    .contactInfoTitle3 {
+        width: 70%;
+        font-size: 3.1rem;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+
+    .contactInfoImageContainer {
+        margin-top: 10%;
+        height: 22%;
+    }
+
+    .contactInfoImageContainer img {
+        margin-top: 4%;
+        margin-left: 2%;
+        width: 96%;
+    }
+    .contactInfoDescContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 41%;
+        margin-top: 15%;
+    } 
+
+    .contactInfoOption1 {
+        width: 70%;
+        margin-bottom: 4%;
+
+    }
+    .contactInfoOption1 h3 {
+        font-size: 2rem;
+    }
+    .contactInfoOption1 p {
+        font-size: 1.2rem;
+    }
+     .contactInfoOption2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-bottom: 2.3%;
+        margin-right: 3%;
+        margin-top: 10%;
+    }
+    .contactInfoOption2 h3 {
+        font-size: 2rem;
+    }
+    .contactInfoOption2 p {
+        font-size: 1.2rem;
+    }
+
+    .contactInfoOption3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin-top: 10%;
+    } 
+    .contactInfoOption3 h3 {
+        font-size: 2rem;
+    }
+    .contactInfoOption3 p {
+        font-size: 1.2rem;
+    }
+    /******************************  */
+    .contactForms {
+        width: 100%;
+        height: 800px;
+        position: unset;
+    }
+
+    .optionsWrapper {
+        width: 90%;
+    }
+    .titleWrapper {
+        width: 90%;
+        height: 20%;
+        margin-bottom: 5%;
+    }
+    
+    .formTitle {
+        display: flex;
+        align-items: center;
+    }
+    .title_1 {
+        font-size: 1.8rem;
+
+    }
+    .title_3 {
+        font-size: 2.2rem;
+    }
+    .title_4 {
+        font-size: 3rem;
+    }
+    .formDescription {
+        font-size: 15px;
+    }
+
+    .formDescription p {
+        margin-top: 3%;
+    }
+  
+    .checkAProduct p {
+        width: 85%;
+    }
+    .boxContainer {
+        width: 90%;
+        height: auto;
+        margin-bottom: 15%;
+    }
+    .input {
+        height: 65px;
+        margin-bottom: 15px;
+    }
+    .formContainer button {
+        height: 65px;
+    }
+
+    .formContainer .regButton{
+        height: 65px;
+        
+    }
+    .loginSideBarFormTitle {
+        margin-top: 6%;
+        font-size: 2rem;
+    }
+    .loginSideBarFormDescription {
+        width: 90%;
+    }
+    .loginSideBarFormDescription p {
+        font-size: 1rem;
+    }
+    .loginSideBoxContainer {
+        width: 85%
+    }
+    
+    .loginSideBoxContainer { 
+        height: auto;
+        margin-top: 10%;
+    }
+    
+    .input {
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    .formContainer button {
+        height: 60px;
+    }
+    /* *****  MainSideBar *********** */
+    
+    
+    .mainSideBarContent {
+        width: 100%;
+        height: 100%;
+        padding-top: 2%;
+        padding-left: 0%;
+    }
+    .mainSideBarContentUser {
+        display: flex;
+        align-items: center;
+        color: #010606;
+        width: 100%;
+        height: 10%;
+        font-size: 3rem;
+        margin-left: 0%;
+        margin-top: 2%;  
+        padding-left: 4%;  
+    }
+    .mainSideBarUserIcon {
+        width: 7%;
+    }
+    
+    .mainSideBarUserName {
+        margin-left: 3%;
+        font-size: 1.5rem;
+    }
+    
+    .mainSideBarContentOptions {
+        width: 90%;
+        margin-left: 4%;
+        height: 100%;
+    }
+    .mainSideBarContentItems {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        margin-bottom: 1%;
+        border-bottom: 1px solid #eeeeee;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 3%;
+        width: 100%;
+        height: 16%;
+    }
+    .mainSideBarUserOptionsIcon {
+        margin-right: 4%;
+    }
+    
+    .closeBtn {
+        width: 77%;
+        margin-top: 10%;
+        margin-left: 11%;
+        height: 9%;
+    }
+
+    /* ************ FooterSection **************************** */
+
+    .footerContainer {
+        width: 100%;
+        height: 1016px;
+        background-color: #232a34;
+    }
+    .footerWrap {
+       padding: 48px 24px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
+    }
+    .footerLinksContainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       width: 100%;
+       margin-bottom: 3%;
+       margin-top: 3%;
+    }
+    .footerLinksWrapper {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+       justify-content: space-around;
+   
+    }
+    .footerLinkItems {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin: 16px;
+       text-align: left;
+       width: 85%;
+       box-sizing: border-box;
+       color: #ffffff;
+    }
+    .footerLinkTitle {
+       font-size: 1.2rem;
+       margin-bottom: 16px;
+    }
+    .footerLink {
+       color: #ffffff;
+       text-decoration: none;
+       margin-bottom: 0.5rem;
+       font-size: 1rem;
+    }
+   
+    .socialMedia {
+     
+       width: 95%;
+    }
+   
+    .socialMediaWrap {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       max-width: 1100px;
+       margin: 49px auto 0 auto;
+    }
+   
+    .socialLogo {
+       color: #ffffff;
+       justify-self: start;
+       cursor: pointer;
+       text-decoration: none;
+       font-size: 1.5rem;
+       display: flex;
+       align-items: center;
+       margin-bottom: 16px;
+       font-weight: bold;
+    }
+   
+    .socialMediaWrap small {
+        margin-left: 13%;
+       color: #ffffff;
+       margin-bottom: 16px;
+    }
+   
+    .socialIcons {
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       width: 200px;
+    }
+   
+    .socialIconLink {
+       color: #ffffff;
+       font-size: 24px;
+    }
+}
+
+
+
+
+
+
+
+

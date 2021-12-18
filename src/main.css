@@ -1,0 +1,849 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Encode Sans Expanded', sans-serif; */
+    font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-size: 62.50%; */
+  }
+/*************** NavBar ****************************** */
+  .nav {
+      background-color: #010606;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+  }
+
+  .navBarContainer {
+    display: flex;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+  } 
+  
+  .navLogo {
+    color:#ffffff;
+    justify-self: flex-start;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 2%; /* this was 70px before */
+    font-weight: bold;
+    text-decoration: none;
+  }
+   
+  .mobileIcon {
+      display: none;
+
+  }
+
+  .navMenu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      text-align: center;
+      margin-right: -22px;
+      position: absolute;
+      left: 38%;
+
+  }
+
+  .navItem {
+      height: 80px;
+  }
+
+  .navLinks {
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      height: 100%;
+      cursor: pointer;
+  }
+  
+  .navLinks.active {
+      border-bottom: 3px solid #01bf71;
+  }
+
+  .navBtn {
+      position: absolute;
+      left: 80%;
+      top: 20%;
+      
+  }
+
+  .navBtn:hover .userIcon {
+      color: #010606
+  }
+
+  .navBtnLink {
+      border-radius: 50px;
+      background-color: #010606;
+      white-space: nowrap;
+      padding: 10px 22px;
+      color: #ffffff;
+      font-size: 16px;
+      outline: none;
+      border: 2px solid #ffffff;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 200px; 
+  }
+
+  .navBtnLink:hover {   
+    transition: all 0.2s ease-in-out;
+    background-color: #FAD570;
+    color: #0C0920;
+    border: none;
+  }
+
+  /* .userIcon {
+      color: #ffffff;
+      font-size: 16px;
+  } */
+  
+/*************** SideBar ****************************** */
+
+.sideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #010606;
+    display: grid;
+    align-items: center;
+    left: 0;
+    transition: 0.3s ease-in-out;
+    top: -100%;
+    opacity:0%;
+}
+
+.sideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #010606;
+    display: grid;
+    align-items: center;
+    left: 0;
+    transition: 0.3s ease-in-out;
+    top: 0%;
+    opacity: 100%;
+}
+
+.sideBarIcon {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.closeIcon {
+    color: #ffffff;
+    
+}
+
+.sideBarWrapper {
+    color: #ffffff;
+}
+
+.sideBarMenu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 80px);
+    text-align: center;
+}
+
+.sideBarLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.2s ease-in-out;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.sideBarLink:hover {
+    color: #FF810A;
+    transition: 0.2s ease-in-out;
+}
+
+.sideBtnWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.sideBarRoute {
+    border-radius: 50px;
+    background-color: #FF810A;
+    white-space: nowrap;
+    padding: 16px 64px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.sideBarRoute:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #FAD570;
+    color: #0C0920;
+}
+
+
+
+/*************** heroSection ****************************** */
+.heroContainer {
+    background-color: #FAD570;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    height: 850px;
+    position: relative;
+    z-index: 1;
+}
+
+.heroBG {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imageBG {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    background: #232a34;
+}
+
+.heroContent {
+    z-index: 3;
+    max-width: 1200px;
+    position: absolute;
+    padding: 8px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 44%;
+    top: 25%;
+    /* margin-left: 875px; */
+
+}
+
+.heroH1 {
+    color: #000000;
+    font-size: 3rem;
+    text-align: center;
+    margin-left: 260px;
+}
+
+.heroP {
+    margin-top: 24px;
+    color: #01bf71;
+    font-size: 24px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.heroBtnWrapper {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-left: 284px;  
+}
+
+.button {
+    border-radius: 50px;
+    white-space: nowrap;
+    padding: 12px 30px; 
+    font-size: 20px; 
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0ms.2s ease-in-out;
+    border: none;
+}
+.arrowForward {
+    margin-left: 8px;
+    font-size: 20px;
+}
+.arrowRight {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+/*************** VideoSection ****************************** */
+.infoContainer {
+    color:#ffffff;
+    /* background: ${({ lightBg })=> (lightBg ? '#f9f9f9' : '#010606')} ; */
+}
+
+
+/* ********************************************* */
+.infoRow {
+    display: grid;
+    width: 100%;
+    height: 850px;
+    grid-template: 400px 400px / 40% 60%;
+    grid-template-areas: "title video video";
+    gap: 5px;
+    background-color: red;
+}
+
+
+.title {
+    /* background-color: #01bf71; */
+    grid-area: "title";
+}
+.video {
+    grid-area: "video";
+    /* background-color: #FF810A; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    width: 600px;
+    height: 400px;
+    background-color: #0C0920;
+}
+
+.videoPlayer {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+    height: 363px;
+    background-color: #07d2c8;
+}
+
+
+/* *********************************************** */
+
+.textWrapper {
+    max-width: 540px;
+    padding-top: 0;
+    padding-bottom: 60px;
+}
+
+.topLine {
+    color: #01bf71;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.heading {
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 600;
+    /* color: ${({ lightText })=> (lightText ? '#f7f8fa' : '#010606')}; */
+    color: #010606 ;
+}
+.subTitle {
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 24px;
+    /* color: ${({ darkText })=> (darkText ? '#010606' : '#ffffff')};  */
+    color: #010606
+}
+
+.btnWrap {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.videoWrap {
+    max-width: 555px;
+    height: 100%;
+
+    
+}
+
+.videoWrap img {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+}
+
+
+
+
+
+/* *************** Responsive design ***********************/
+/* ********  Desktop Responsive Design ******************* */
+
+@media (max-width:1920px) and (min-width:1536px){
+    
+    .navMenu{
+        left: 50%;
+    }
+    .navBtn {
+        left: 87%;
+    }
+    .heroContent{
+        left: 50%;
+        top: 30%;
+        width: 45%;
+    }
+    .heroH1{
+        font-size: 4rem;
+    }
+ 
+}
+
+
+@media (max-width:1536px) and (min-width:1366px){
+    
+    .navMenu{
+        left: 45%;
+    }
+    .navBtn {
+        left: 85%;
+    }
+    .heroContent{
+        left: 40%;
+        top: 30%;
+        width: 60%;
+    }
+    .heroH1{
+        font-size: 3.5rem;
+    }
+
+   
+ 
+}
+
+@media (max-width:1366px) and (min-width:1280px){
+    
+    .navMenu{
+        left: 40%;
+    }
+    .navBtn {
+        left: 80%;
+    }
+    .heroH1{
+        font-size: 3rem;
+    }
+
+    .videoPlayer {
+        width: 120%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 335px;
+    }
+}
+
+
+@media (max-width:1280px) and (min-width:1098px){
+    .navMenu{
+        left: 33%;
+    }
+
+    .heroContent{
+        left: 37%;
+        top: 30%;
+    }
+    .heroH1{
+        font-size: 3rem;
+    }
+    .videoPlayer {
+        width: 109%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 305px;
+    }
+}
+
+/* ********  Tablets Responsive Design ******************* */
+
+@media (max-width:1098px) and (min-width: 768px){
+    
+    .navMenu {
+        display: none;
+    } 
+    .navBtn {
+        display: none;
+    }
+    .mobileIcon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+    }
+    
+    .heroContent{
+        left: 33%;
+        top: 40%;
+    }
+    .heroH1{
+        font-size: 40px;
+    }
+
+    .heroContainerMobil {
+        background-color: #FAD570;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 800px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 30%;
+
+    }
+    .heroH1Mobil {
+        font-size: 3rem;
+        font-family: 'Blinker', sans-serif;
+        font-weight: 700;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+
+    .infoContainer{
+        padding: 50px 0;
+    }
+    
+    .videoPlayer {
+        width: 143%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 434px;
+    }
+    
+
+    .infoRowMobil {
+        display: grid;
+        width: 100%;
+        height: 850px;
+        grid-template: 400px 400px / 100%;
+        grid-template-areas: "title" 
+                            "video" ;
+        gap: 5px;
+        background-color: red;
+    }
+
+}
+
+
+@media (max-width:768px) and (min-width: 560px){
+    .navMenu {
+        display: none;
+    } 
+    .navBtn {
+        display: none;
+    }
+   
+    .mobileIcon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+    }
+ 
+    .heroContainerMobil {
+        background-color: #FAD570;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 800px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 30%;
+
+    }
+    .heroH1Mobil {
+        font-size: 3rem;
+        font-family: 'Blinker', sans-serif;
+        font-weight: 700;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+
+    .infoContainer{
+        padding: 50px 0;
+    }
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+
+    .infoContainer{
+        padding: 100px 0;
+    }
+
+    .videoPlayer {
+        width: 93%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 282px;
+    }
+
+    
+
+}
+/* ********  Phones Responsive Design ******************* */
+@media (max-width:560px) and (min-width: 480px){
+    .navMenu {
+        display: none;
+    } 
+    .navBtn {
+        display: none;
+    }
+    .mobileIcon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+    }
+   
+    .heroContainerMobil {
+        height: 645px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 2.6rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 20px;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+    .infoContainer{
+        padding: 50px 0;
+    }
+
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+    
+    .videoPlayer {
+        width: 81%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 220px;
+    }
+
+}
+
+@media (max-width:480px) and (min-width: 414px){
+    .navMenu {
+        display: none;
+    } 
+    .navBtn {
+        display: none;
+    }
+    .mobileIcon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+    }
+   
+    .heroContainerMobil {
+        height: 645px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 1.9rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 1rem;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+    .infoContainer{
+        padding: 50px 0;
+    }
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+    .videoPlayer {
+        width: 84%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 190px;
+    }
+}
+
+@media (max-width:414px) and (min-width: 360px){
+    .navMenu {
+        display: none;
+    } 
+    .navBtn {
+        display: none;
+    }
+    .mobileIcon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+    }
+   
+    .heroContainerMobil {
+        height: 645px;
+    }
+    .heroContentMobil {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items:baseline;
+        width: 100%;
+        background-color: #ffffff;
+        height: 32%;
+        font-family: 'Blinker', sans-serif;
+    }
+    .heroH1Mobil {
+        font-size: 1.9rem;
+        font-family: inherit;
+        margin-left: 20px;
+    }
+    .heroPMobil {
+        font-size: 1rem;
+        margin-left: 20px;
+        font-family: inherit;
+    }
+
+    .heroBGMobil {
+        width: 100%;
+        background-color: red;
+        height: 70%;
+    }
+
+    .heroBtnWrapperMobil {
+        margin-left: 2%;
+    }
+    .videoPlayer {
+        width: 103%;
+        margin: 0 0 10px 0;
+        padding-right: 0;
+        height: 195px;
+    }
+}
+
