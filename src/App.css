@@ -400,7 +400,7 @@
     left:100%;
     right: 0;
     transition: 0.6s ease-in-out;
-    opacity:0%;
+    opacity:0;
 }
 
 .logoutSideBarContainerOpen {
@@ -413,7 +413,7 @@
     align-items: center;
     right: 0%;
     transition: 0.6s ease-in-out;
-    opacity: 100%;
+    opacity: 1;
 }
 .logoutContactForms {       /** Open and Closed **/
     position: relative;
@@ -522,7 +522,7 @@
     left:100%;
     right: 0;
     transition: 0.6s ease-in-out;
-    opacity:0%;
+    opacity:0;
 }
 .mainSideBarContainerOpen {
     position: fixed;
@@ -534,7 +534,7 @@
     align-items: center;
     right: 0%;
     transition: 0.6s ease-in-out;
-    opacity: 100%;
+    opacity: 1;
 }
 .mainSideContactForms {
     position: relative;
