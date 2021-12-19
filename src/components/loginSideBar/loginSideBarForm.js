@@ -6,7 +6,7 @@ import * as yup from 'yup'
 
 const validationSchema = yup.object({
     email: yup.string().email('Por favor introduce una dirección de email válida').required(),
-    password: yup.string().min(6).max(200).required(),   
+    pin: yup.string().min(4).max(4).required(),   
 })
 
 
@@ -15,14 +15,13 @@ const LoginSideBarForm = ({
 }) => {
 
     const onSubmit = async(values) => {
-        
         handlingLogin(values)
     }
 
     const formik = useFormik({
         initialValues: {
             email: "",
-            password: ""
+            pin: ""
         },
         validateOnBlur: true,
         onSubmit,
@@ -54,15 +53,15 @@ const LoginSideBarForm = ({
                 />
                 <input
                 className="input"
-                name="password"
+                name="pin"
                 autoComplete="on"
-                placeholder="Contraseña" 
+                placeholder="#PIN (solo 4 dígitos)" 
                 type="password" 
-                value={formik.values.password}
+                value={formik.values.pin}
                 onChange={formik.handleChange}                
                 onBlur={formik.handleBlur}
                 style={{
-                    borderBottom: `${formik.touched.city && formik.errors.city ? '2px solid red' : '1px solid rgba(200,200,200, 0.3 )'}`
+                    borderBottom: `${formik.touched.pin && formik.errors.pin ? '2px solid red' : '1px solid rgba(200,200,200, 0.3 )'}`
                 }}
                 />
                 <button
