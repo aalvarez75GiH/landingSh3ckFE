@@ -198,7 +198,7 @@
     left: 0;
     transition: 0.6s ease-in-out;
     top: -100%;
-    opacity:0%;
+    opacity:0;
 }
 
 .sideBarContainerOpen {
@@ -212,7 +212,7 @@
     left: 0;
     transition: 0.6s ease-in-out;
     top: 0%;
-    opacity: 100%;
+    opacity: 1;
 }
 
 .sideBarIcon {
