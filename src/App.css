@@ -296,9 +296,9 @@
     display: grid;
     align-items: center;
     left:100%;
-    right: 0;
+    right: 0%;
     transition: 0.6s ease-in-out;
-    opacity:0%;
+    opacity:0;
 }
 
 .loginSideBarContainerOpen {  /** Open  **/
@@ -309,9 +309,10 @@
     background-color: #eeeeee;
     display: grid;
     align-items: center;
+    left:0%;
     right: 0%;
     transition: 0.6s ease-in-out;
-    opacity: 100%;
+    opacity: 1;
 }
 
 .loginContactForms {       /** Open and Closed **/
