@@ -8,7 +8,8 @@ export const responseDataRegister = {
     errorCode: 409,
     errorMessage:`Ya te encuentras registrado con nosotros . Si quieres chequear un producto solo inicia sesión y haz click en Quiero chequear un producto`,
     successCode: 201,
-    successMessage:`Listo, te hemos registrado. Si deseas chequear un producto solo haz click en Quiero chequear un producto`
+    // successMessage:`Listo, te hemos registrado. Si deseas chequear un producto solo haz click en Quiero chequear un producto`
+    successMessage:`Listo, estás registrado. Te hemos enviado un número PIN de 4 dígitos a tu correo. Inicia sesión para que podamos chequear productos para ti`
 }
 export const responseDataLogin = {
     errorCode: 400,
