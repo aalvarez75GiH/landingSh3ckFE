@@ -1105,6 +1105,32 @@
     padding-left: 5%;
     outline: none;
 }
+.inputPassword {
+    height: 100%;
+    width: 80%;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #eeeeee;
+    border-style: none;
+    font-size: 1rem;
+    padding-left: 5%;
+    outline: none;
+}
+
+.inputWrapper {
+    display: flex;
+    height: 85px;
+}
+.eyeWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: #eeeeee;
+}
+.eyeIcon {
+    font-size: 1.5rem;
+}
 /* ************** checkSection ************** */
 
 .checkSectionContainer {
