@@ -4,6 +4,7 @@ import { Link as LinkR } from 'react-router-dom'
 import { Link as LinkS } from 'react-scroll'
 import { IoMdCart } from 'react-icons/io'
 import { BiUser, BiUserCheck, BiRun } from 'react-icons/bi'
+import { FaPuzzlePiece } from 'react-icons/fa' 
 import { OffsetHandler } from '../../utils/settingOffsets'
 
 
@@ -38,6 +39,40 @@ const NavBarMobil = ({
                     </div>
                 </div>
                 <div className="navMenuButtonsContainer">
+                <div className="navMenuButton">
+                        <LinkS 
+                        to="contactSection" 
+                        className="navLinksMobil" 
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={OffsetHandler('startNow')}
+                        duration={1000}
+                        >
+                        <div className="iconMobilContainer">
+                                <BiRun className="faIcon"/>
+                        </div>
+                        Comienza
+                        </LinkS>
+                    </div>
+                    
+                    <div className="navMenuButton">
+                        <LinkS 
+                        to="contactSection" 
+                        className="navLinksMobil" 
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={OffsetHandler('howItWorks')}
+                        duration={1000}
+                        >
+                        <div className="iconMobilContainer">
+                                <FaPuzzlePiece className="faIcon"/>
+                        </div>
+                        Como funciona
+                        </LinkS>
+                    </div>
+                    
                     <div className="navMenuButton">
                         <LinkS 
                         to="contactSection" 
@@ -55,22 +90,8 @@ const NavBarMobil = ({
                         </LinkS>
                         
                     </div>
-                    <div className="navMenuButton">
-                        <LinkS 
-                        to="contactSection" 
-                        className="navLinksMobil" 
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={OffsetHandler('startNow')}
-                        duration={1000}
-                        >
-                        <div className="iconMobilContainer">
-                                <BiRun className="faIcon"/>
-                        </div>
-                        Comienza
-                        </LinkS>
-                    </div>
+                    
+                    
                     <div className="navMenuButton">
                         <LinkS 
                         to="contactSection" 

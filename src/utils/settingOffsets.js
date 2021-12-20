@@ -25,24 +25,47 @@ export const OffsetHandler = (option) => {
         }
         if (option === 'startNow'){
             if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){
-                return -180
+                return -3460
             }
             if (mobil1.screenWidth <= 768 && mobil1.screenWidth > 560 ){
-                return -180
+                return -4160
             }
             if (mobil1.screenWidth <= 560 && mobil1.screenWidth > 480){
-                return -150
+                return -3820
             }
             if (mobil1.screenWidth <= 480 && mobil1.screenWidth > 414){
-                return -150
+                return -3770
             }
             if (mobil1.screenWidth <= 414 && mobil1.screenWidth > 360){
-                return -150
+                return -3800
             }
             if (mobil1.screenWidth <= 360 && mobil1.screenWidth > 280){
-                return -150
+                return -3830
             }
         }
+
+        if (option === 'howItWorks'){
+            if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){
+                return -1760
+            }
+            if (mobil1.screenWidth <= 768 && mobil1.screenWidth > 560 ){
+                return -2470
+            }
+            if (mobil1.screenWidth <= 560 && mobil1.screenWidth > 480){
+                return -2450
+            }
+            if (mobil1.screenWidth <= 480 && mobil1.screenWidth > 414){
+                return -2450
+            }
+            if (mobil1.screenWidth <= 414 && mobil1.screenWidth > 360){
+                return -2450
+            }
+            if (mobil1.screenWidth <= 360 && mobil1.screenWidth > 280){
+                return -3830
+            }
+        }
+
+
 }
 
 
@@ -79,8 +102,5 @@ export const OffsetHandlerNavBar = (option) => {
             }
         }
 }
-
-    
-
 
 

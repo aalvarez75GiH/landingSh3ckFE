@@ -192,7 +192,7 @@
     z-index: 999;
     width: 100%;
     height: 100%;
-    background-color: #010606;
+    background-color: #010606;             
     display: grid;
     align-items: center;
     left: 0;
@@ -309,7 +309,7 @@
     background-color: #eeeeee;
     display: grid;
     align-items: center;
-    left:0%;
+    left: 0%;
     right: 0%;
     transition: 0.6s ease-in-out;
     opacity: 1;
@@ -2014,7 +2014,7 @@
     .navMenuButtonsContainer {
         display: grid;
         gap: 10px;
-        grid-template: 100% / repeat(3, 1fr); 
+        grid-template: 100% / repeat(4, 1fr); 
         grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
         width: 100%;
         height: 50%;
@@ -2247,9 +2247,6 @@
         font-size: 1.2rem;
     }
     /******************************  */
-
-
-
     
     .contactForms {
         width: 100%;
@@ -2379,7 +2376,7 @@
     .navMenuButtonsContainer {
         display: grid;
         gap: 10px;
-        grid-template: 100% / repeat(3, 1fr); 
+        grid-template: 100% / repeat(4, 1fr); 
         grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
         width: 100%;
         height: 50%;
@@ -2902,7 +2899,7 @@
     .navMenuButtonsContainer {
         display: grid;
         gap: 10px;
-        grid-template: 100% / repeat(3, 20%); 
+        grid-template: 100% / repeat(4, 1fr); 
         grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
         width: 100%;
         height: 46%;
@@ -2922,7 +2919,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: 0.8rem;
         font-weight: 600;
         margin-top: 5%;
     }
@@ -3485,7 +3482,7 @@
     .navMenuButtonsContainer {
         display: grid;
         gap: 10px;
-        grid-template: 100% / repeat(3, 25%); 
+        grid-template: 100% / repeat(4, 23%); 
         grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
         width: 100%;
         height: 46%;
@@ -3505,9 +3502,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: 0.7rem;
         font-weight: 600;
         margin-top: 5%;
+        padding: 0 0.5rem;
     }
 
     .iconMobilContainer {
@@ -4062,8 +4060,8 @@
 
     .navMenuButtonsContainer {
         display: grid;
-        gap: 10px;
-        grid-template: 100% / repeat(3, 25%); 
+        gap: 3px;
+        grid-template: 100% / repeat(4, 24%); 
         grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
         width: 100%;
         height: 46%;
@@ -4083,9 +4081,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: 0.8rem;
         font-weight: 600;
         margin-top: 5%;
+        padding: 0 0.1rem;
     }
 
     .iconMobilContainer {
@@ -4713,8 +4712,8 @@
 
     .navMenuButtonsContainer {
         display: grid;
-        gap: 10px;
-        grid-template: 100% / repeat(3, 25%); 
+        gap: 2px;
+        grid-template: 100% / repeat(4, 24%); 
         grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
         width: 100%;
         height: 46%;
@@ -4738,9 +4737,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: 0.7rem;
         font-weight: 600;
         margin-top: 5%;
+        padding: 0 0.1rem;
     }
 
     .iconMobilContainer {
@@ -5224,11 +5224,6 @@
        font-size: 24px;
     }
 }
-
-
-
-
-
 
 
 
