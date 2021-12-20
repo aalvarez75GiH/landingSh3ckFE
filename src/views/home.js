@@ -17,6 +17,7 @@ import NavBarMobil from '../components/navBar/navBarMobil'
 import ContactSection from '../components/contactSection/contactSection'
 // import StyledFooterSection from '../components/footerSection/styledFooterSection'
 import FooterSection from '../components/footerSection/footerSection'
+import LoadingSpinner from '../utils/loadingSpinner'
 
 const Home = () => {
 
@@ -25,9 +26,9 @@ const Home = () => {
     const [ loggedOut, setLoggedOut ] = useState(true)
     const [currentUser, setCurrentUser ] = useState('')
     const [ loginSideBarOpen, setLoginSideBarOpen ] = useState(false)
-    // const [ logoutSideBarOpen, setLogoutSideBarOpen ] = useState(false)
     const [ mainSideBarOpen, setMainSideBarOpen ] = useState(false)
     const [ loginResponse, setLoginResponse ] = useState(null)
+    const [ loading, setLoading ] = useState(false)
     
     
     const mobil = useMobilDetect()
@@ -57,35 +58,38 @@ const Home = () => {
 
     },[])
 
-    const handlingSubmitLoginUser = async(user) => {
-            try {
-                const { data } = await axios.post(url_userLoginITC, user)
-                console.log(data)
-                localStorage.setItem('SH3CK_TOKEN', data.token)
-                // ******************************************
-                const response = await axios.get('https://intense-atoll-00786.herokuapp.com/api/users/me', {
-                    headers:{
-                        // 'Content-Type': 'application/json',
-                        Authorization: `Bearer ${data.token}` 
-                    } 
-                })
-                setLoginResponse(response)
-                console.log(response.data)
-                setCurrentUser(response.data)
-                setLoggedIn(true)
-                setLoggedOut(false)
-                console.log('Usuaurio encontrado y hace login')    
-            } catch (error) {
-                console.log(error)
-                setLoginResponse(error.response)
-            }
-        
+    const handlingSubmitLoginUser = async(user) => {    
+        try {
+            setLoading(true)
+            const { data } = await axios.post(url_userLoginITC, user)
+            console.log(data)
+            localStorage.setItem('SH3CK_TOKEN', data.token)
+            // ******************************************
+            const response = await axios.get('https://intense-atoll-00786.herokuapp.com/api/users/me', {
+                headers:{
+                    // 'Content-Type': 'application/json',
+                    Authorization: `Bearer ${data.token}` 
+                } 
+            })
+            setLoginResponse(response)
+            console.log(response.data)
+            setCurrentUser(response.data)
+            setLoggedIn(true)
+            setLoggedOut(false)
+            console.log('Usuaurio encontrado y hace login')    
+        } catch (error) {
+            console.log(error)
+            setLoginResponse(error.response)
+        }
     }
 
     const handlingLogin = (user) => {
-        console.log('handling Login...')
-        handlingSubmitLoginUser(user)
-        setLoginSideBarOpen(!loginSideBarOpen)
+        setLoading(true)
+        setTimeout(async() => {
+            handlingSubmitLoginUser(user)
+            setLoading(false)
+            setLoginSideBarOpen(!loginSideBarOpen)
+        }, 2000);
     }
 
     const handlingSubmitLogOutUser = () => {
@@ -103,18 +107,11 @@ const Home = () => {
     } 
     const toggleLoginSideBar = () => {
         setLoginSideBarOpen(!loginSideBarOpen)
-        // console.log(loggedIn)
-        // console.log(loggedOut)
-        // console.log(loginSideBarOpen)
+        
     }
-    // const toggleLogoutSideBar = () => {
-    //     setLogoutSideBarOpen(!logoutSideBarOpen)
-    // }
+    
     const toggleMainSideBar = () => {
         setMainSideBarOpen(!mainSideBarOpen)
-        // console.log(loggedIn)
-        // console.log(loggedOut)
-        // console.log(mainSideBarOpen)
     } 
     const toggleNotification = () => {
         setLoginResponse(null)
@@ -125,6 +122,12 @@ const Home = () => {
     
     return (
         <>
+            { loading ?
+            <LoadingSpinner/>
+            :
+            null
+            }
+            
             {/* {!loggedIn && loginSideBarOpen ? */}
             <LoginSideBar
             loginSideBarOpen={ loginSideBarOpen } 
@@ -132,6 +135,7 @@ const Home = () => {
             loggedIn={loggedIn}
             loggedOut={loggedOut}
             handlingLogin={handlingLogin}
+            loading = {loading}
             />
             {/* : null */}
             {/* } */}
