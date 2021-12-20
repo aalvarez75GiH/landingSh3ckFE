@@ -74,6 +74,7 @@ const Home = () => {
             setLoginResponse(response)
             console.log(response.data)
             setCurrentUser(response.data)
+            setLoading(false)
             setLoggedIn(true)
             setLoggedOut(false)
             console.log('Usuaurio encontrado y hace login')    
