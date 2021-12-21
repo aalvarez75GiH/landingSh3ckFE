@@ -60,7 +60,6 @@ const Home = () => {
 
     const handlingSubmitLoginUser = async(user) => {    
         try {
-            setLoading(true)
             const { data } = await axios.post(url_userLoginITC, user)
             console.log(data)
             localStorage.setItem('SH3CK_TOKEN', data.token)
