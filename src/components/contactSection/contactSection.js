@@ -160,7 +160,7 @@ const togglingResponseData = () => {
                         <div className="contactInfoOption1">
                             <h3>Estamos listos!</h3>
                             <p className="contactInfoDesc">
-                                Estamos listos para ayudarte. Aún asi estamos listos para ayudarte</p>
+                                A pesar de estar trabajando aún en nuestra app ya estámos listos para ayudarte</p>
                         </div>
                         <div className="contactInfoOption2">
                             <h3><b> Déjanos tus datos. </b></h3>

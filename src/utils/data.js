@@ -26,7 +26,7 @@ export const infoVideo = {
     LightTextDesc: true,
     topLine:'No te pierdas de nada...',
     headLine:'En este video te explicamos de que trata nuestro servicio...',
-    description: 'Pronto nuestra aplicaión móvil estará disponible a nivel nacional. ¿Quieres saber cuándo? mas adelánte podrás enviarnos tus datos y te avisaremos',
+    description: 'Imagina que quieres comprar algo a un super buen précio pero témez que pueda ser una estáfa o dudas de la calidad del producto. En Sh3ck tenemos la solución para ti...',
     videoSrc: video,
     darkText: '#010606', 
     buttonLabel: 'Como funciona',
