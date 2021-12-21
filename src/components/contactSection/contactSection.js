@@ -26,6 +26,7 @@ const ContactSection = ({
     const [ active , setActive ] = useState('interested') 
     const [ regView, setRegView ] = useState(false)
     const [response, setResponse ] = useState(null)
+    const [ forgotPIN, setForgotPIN ] = useState(false)
     // const url_interestedUsers = "http://192.168.1.102:5000/api/interestedUsers"
     // const url_users = "http://192.168.1.102:5000/api/users"
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
@@ -36,6 +37,7 @@ const ContactSection = ({
     const switchToCheck = () => {
         setActive('check')
         setRegView(false)
+        setForgotPIN(false)
     }
 
     const switchToSignIn = () => {
@@ -52,6 +54,12 @@ const ContactSection = ({
         setResponse(null)
         setRegView(false)
     }
+
+    const toggleForgotSection = () => {
+        setForgotPIN(!forgotPIN)
+    }
+
+
 
     const handlingLoginUser = (values) => {
         setUpLoadingUser(true)
@@ -196,6 +204,7 @@ const togglingResponseData = () => {
                 active = {active}
                 loggedIn={loggedIn}
                 regView={regView}
+                forgotPIN={forgotPIN}
                 />
                 </>
                 :
@@ -228,6 +237,8 @@ const togglingResponseData = () => {
                 toggleRegView={toggleRegView}
                 handlingSubmitUser={handlingSubmitUser}
                 handlingLoginUser={handlingLoginUser}
+                forgotPIN={forgotPIN}
+                toggleForgotSection = {toggleForgotSection}
                 />
                 :
                 null

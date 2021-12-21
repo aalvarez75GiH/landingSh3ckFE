@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import RegisterForm from './registerForm'
 import { FaEye } from 'react-icons/fa'
+import ForgotPINSection from './forgotPINSection'
 import {MdOutlineVisibility} from 'react-icons/md'
 
 
@@ -17,7 +18,9 @@ const LoginForm = ({
     handlingLoginUser,
     regView, 
     toggleRegView,
-    handlingSubmitUser
+    handlingSubmitUser,
+    forgotPIN,
+    toggleForgotSection,
 }) => {
 
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
@@ -50,6 +53,12 @@ const LoginForm = ({
             />
         )
     }
+
+    if (forgotPIN){
+        return <ForgotPINSection/>
+    }
+
+
 
     return (
         <div className="boxContainer">
@@ -95,6 +104,7 @@ const LoginForm = ({
                 
                 
                 <button
+                className="sendDataBtn"
                 type="submit"
                 >Enviar</button>
                 <button
@@ -102,6 +112,9 @@ const LoginForm = ({
                 className="regButton"
                 type="submit"
                 >Regístrate</button>
+                <span
+                onClick={toggleForgotSection} 
+                className="forgotPINSpan">Se me olvidó mi número PIN</span>
             </form>
 
         </div>

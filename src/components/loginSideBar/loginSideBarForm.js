@@ -104,6 +104,7 @@ const LoginSideBarForm = ({
                 
                 </div> */}
                 <button
+                className="sendDataBtn"
                 type="submit"
                 >Enviar</button>
             </form>

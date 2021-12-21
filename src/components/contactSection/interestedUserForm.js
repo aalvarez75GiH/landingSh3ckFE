@@ -91,6 +91,7 @@ const InterestedUserForm = ({ handlingSubmitInterestedUser }) => {
                 setCityError={setCityError}
                 />
                 <button
+                className="sendDataBtn"
                 type="submit"
                 >Enviar</button>
             </form>

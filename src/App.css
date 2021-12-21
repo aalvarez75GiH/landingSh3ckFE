@@ -1131,6 +1131,16 @@
 .eyeIcon {
     font-size: 1.5rem;
 }
+.comeBackBtn {
+    height: 115px;
+    width: 100%;
+    color: #ffffff;
+    background-color: #010606;
+    margin-top: 10px;
+    border-style: none;
+    font-size: 1.4rem;
+
+}
 /* ************** checkSection ************** */
 
 .checkSectionContainer {
@@ -1227,7 +1237,7 @@
 
 /* ******************************************* */
 
-.formContainer button {
+.formContainer .sendDataBtn {
     height: 115px;
     width: 100%;
     color: #010606;
@@ -1250,6 +1260,14 @@
     width: 70%;
     height: 100px;
     border: 1px solid black;
+}
+
+.forgotPINSpan {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    text-decoration: underline;
+    font-size: 0.9rem;
 }
 
 
@@ -4388,10 +4406,7 @@
         height: 65px;
         margin-bottom: 15px;
     }
-    .formContainer button {
-        height: 65px;
-    }
-
+  
     .formContainer .regButton{
         height: 65px;
         
@@ -4419,10 +4434,15 @@
         height: 85px;
         font-size: 1.3rem;
     }
-    .formContainer button {
+    .formContainer .sendDataBtn {
         height: 85px;
     }
     .formContainer .regButton {
+        height: 85px;
+    }
+
+    .comeBackBtn {
+        background-color: #010606;
         height: 85px;
     }
 
