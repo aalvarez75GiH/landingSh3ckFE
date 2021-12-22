@@ -374,7 +374,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 35%;
+    height: 45%;
     background-color: #ffffff;
     width: 34%;
     margin-left: 8%;
@@ -1097,7 +1097,7 @@
 .input {
     height: 15%;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     padding: 10px;
     background-color: #eeeeee;
     border-style: none;
@@ -1105,6 +1105,7 @@
     padding-left: 5%;
     outline: none;
 }
+
 .inputPassword {
     height: 100%;
     width: 80%;
@@ -1119,7 +1120,7 @@
 
 .inputWrapper {
     display: flex;
-    height: 85px;
+    height: 115px;
 }
 .eyeWrapper {
     display: flex;
@@ -1131,6 +1132,7 @@
 .eyeIcon {
     font-size: 1.5rem;
 }
+
 .comeBackBtn {
     height: 115px;
     width: 100%;
@@ -1255,6 +1257,7 @@
     border-style: none;
     font-size: 1.4rem;
 }
+
 
 .notificationBox {
     width: 70%;
@@ -3269,14 +3272,30 @@
         height: auto;
         margin-top: 10%;
     }
-    
     .input {
         height: 85px;
         font-size: 1.3rem;
     }
-    .formContainer button {
+    .inputWrapper {
         height: 85px;
     }
+    .formContainer .sendDataBtn {
+        height: 85px;
+    }
+    .formContainer .regButton {
+        height: 85px;
+    }
+
+    .comeBackBtn {
+        background-color: #010606;
+        height: 85px;
+
+    }
+
+    .forgotPINSpan {
+        font-size: 1rem;
+    }
+    
 
     /* *****  MainSideBar *********** */
     
@@ -3843,13 +3862,28 @@
     .input {
         height: 85px;
         font-size: 1.3rem;
+        margin-bottom: 15px;
     }
-    .formContainer button {
+    .inputWrapper {
+        height: 85px;
+    }
+    .formContainer .sendDataBtn {
         height: 85px;
     }
     .formContainer .regButton {
         height: 85px;
     }
+
+    .comeBackBtn {
+        background-color: #010606;
+        height: 85px;
+
+    }
+
+    .forgotPINSpan {
+        font-size: 1rem;
+    }
+    
 
     /* *****  MainSideBar *********** */
     
@@ -4402,15 +4436,11 @@
         height: auto;
         margin-bottom: 0%;
     }
-    .input {
+    /* .input {
         height: 65px;
         margin-bottom: 15px;
-    }
-  
-    .formContainer .regButton{
-        height: 65px;
-        
-    }
+    } */
+    
     .loginSideBarFormTitle {
         margin-top: 6%;
         font-size: 2.5rem;
@@ -4434,6 +4464,9 @@
         height: 85px;
         font-size: 1.3rem;
     }
+    .inputWrapper {
+        height: 85px;
+    }
     .formContainer .sendDataBtn {
         height: 85px;
     }
@@ -4444,7 +4477,14 @@
     .comeBackBtn {
         background-color: #010606;
         height: 85px;
+
     }
+
+    .forgotPINSpan {
+        font-size: 1rem;
+    }
+
+  
 
     /* *****  MainSideBar *********** */
     
@@ -5112,12 +5152,26 @@
         margin-top: 10%;
     }
     
-    .input {
-        height: 60px;
+    input {
+        height: 85px;
         font-size: 1.3rem;
     }
-    .formContainer button {
-        height: 60px;
+    .inputWrapper {
+        height: 65px;
+    }
+    .formContainer .sendDataBtn {
+        height: 85px;
+    }
+    .formContainer .regButton {
+        height: 85px;
+    }
+
+   .formContainer .sendDataBtn {
+       height: 65px;
+   }
+
+    .forgotPINSpan {
+        font-size: 1rem;
     }
     /* *****  MainSideBar *********** */
     
@@ -5270,6 +5324,11 @@
        font-size: 24px;
     }
 }
+
+
+
+
+
 
 
 
