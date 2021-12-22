@@ -9,16 +9,14 @@ const validationSchema = yup.object({
 })
 
 
-const ForgotPINSection = ({ handlingSubmitUser }) => {
+const ForgotPINSection = ({ handlingNewPINRequest, toggleForgotSection }) => {
 
     const onSubmit = (values) => {
-        handlingSubmitUser(values)
+        handlingNewPINRequest(values)
     }
 
     const formik = useFormik({
         initialValues: {
-            fullName: "",
-            // password: "",
             email: "",
             phoneNumber: ""
         },
@@ -67,7 +65,7 @@ const ForgotPINSection = ({ handlingSubmitUser }) => {
                 type="submit"
                 >Enviar</button>
                 <button
-                // onClick={toggleRegView}
+                onClick={toggleForgotSection}
                 className="comeBackBtn"
                 type="submit"
                 >Volver</button>

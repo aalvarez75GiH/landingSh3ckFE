@@ -21,6 +21,8 @@ const LoginForm = ({
     handlingSubmitUser,
     forgotPIN,
     toggleForgotSection,
+    handlingNewPINRequest
+    
 }) => {
 
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
@@ -55,7 +57,14 @@ const LoginForm = ({
     }
 
     if (forgotPIN){
-        return <ForgotPINSection/>
+        return(
+            <ForgotPINSection
+            handlingNewPINRequest={handlingNewPINRequest}
+            toggleForgotSection={toggleForgotSection}
+            
+            />
+        ) 
+        
     }
 
 

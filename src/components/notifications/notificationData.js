@@ -17,3 +17,9 @@ export const responseDataLogin = {
     successCode: 201,
     successMessage:`Bienvenido, ¿Te gustaría chequear un producto?`
 }
+export const responseDataNewPIN = {
+    errorCode: 400,
+    errorMessage:` No te encontramos en nuestra Base de datos. Para poder generar un nuevo PIN de 4 dígitos debes estar registrado con nosotros`,
+    successCode: 200,
+    successMessage:`Listo, hemos generado un número PIN de 4 dígitos y te lo hemos enviado a tu correo electrónico`
+}
