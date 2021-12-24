@@ -173,7 +173,7 @@ const Home = () => {
         />
             }
             <HeroSection language={language} />
-            <VideoSection {...infoVideo}/>
+            <VideoSection language={language}/>
             <HiwSection {...infoHIW}/>
             <ContactSection 
             {...infoContact} 

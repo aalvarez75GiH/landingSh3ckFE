@@ -32,7 +32,14 @@ export const infoVideo = {
     videoSrc: video,
     darkText: '#010606', 
     buttonLabel: 'Como funciona',
-    linkedTo: 'hiwSection' 
+    linkedTo: 'hiwSection', 
+
+    // English
+    topLine_EN: `Don't miss anything...`,
+    headLine_EN: `In this video we explain what our service is about ...`,
+    description_EN: `Imagine that you want to buy something at a super good price but fear that it could be a scam or doubts about the quality of the product. At Sh3ck we have the solution for you ...`,
+    buttonLabel_EN:`How it works`
+
 }
 
 export const infoHIW = {

@@ -3,19 +3,9 @@ import Button from '../buttons/button'
 import useMobilDetection from '../../utils/mobilDetection'
 import useMobilDetect from '../../utils/mobilHook'
 import VideoJS from '../../components/video'
+import { infoVideo } from '../../utils/data'
 
-const VideoSection = ({
-    id,
-    lightBg,
-    topLine,
-    lightText,
-    headLine,
-    darkText,
-    description,
-    buttonLabel,
-    videoSrc,
-    linkedTo 
-}) => {
+const VideoSection = ({language}) => {
     const mobil = useMobilDetect()
     const mobil2 = useMobilDetection() 
     // console.log(mobil2.screenWidth)
@@ -24,9 +14,9 @@ const VideoSection = ({
     return (
         <div 
         className="infoContainer"
-        id={id}
+        id={infoVideo.id}
         style={{ 
-            backgroundColor:`${lightBg ? '#ffffff': '#010606'}`  
+            backgroundColor:`${infoVideo.lightBg ? '#ffffff': '#010606'}`  
         }}
         >
             <div className="infoWrapper">
@@ -35,31 +25,31 @@ const VideoSection = ({
                         <div className="textWrapper">
                             <p
                             style={{
-                                color: `${ lightText ? '#FF810A' : darkText }`
+                                color: `${ infoVideo.lightText ? '#FF810A' : infoVideo.darkText }`
                             }} 
-                            className="topLine">{ topLine }</p>
+                            className="topLine">{language === 'spanish' ? infoVideo.topLine : infoVideo.topLine_EN  }</p>
                             <h1
                             style={{
-                                color: `${ lightText ? '#FFFFFF' : darkText }`
+                                color: `${ infoVideo.lightText ? '#FFFFFF' : infoVideo.darkText }`
                             }} 
-                            className="heading">{headLine}</h1>
+                            className="heading">{language === 'spanish' ? infoVideo.headLine : infoVideo.headLine_EN}</h1>
                             <p 
                             style={{
-                                color: `${ lightText ? '#FFFFFF' : darkText }`
+                                color: `${ infoVideo.lightText ? '#FFFFFF' : infoVideo.darkText }`
                             }}
-                            className="subTitle">{description}</p>
+                            className="subTitle">{language === 'spanish' ? infoVideo.description : infoVideo.description_EN}</p>
                         </div>  
                     </div>
                     <div className="video">
-                        <VideoJS videoSrc={videoSrc}/>
+                        <VideoJS videoSrc={infoVideo.videoSrc}/>
                         <div className="videoBtnWrap">
                                     <Button
                                     btnBG={ '#FAD570' }
                                     fontColor={ true }
                                     big={ true }
                                     fontBig = { false }
-                                    buttonLabel={ buttonLabel }
-                                    linkedTo={linkedTo}
+                                    buttonLabel={ language === 'spanish' ?  infoVideo.buttonLabel : infoVideo.buttonLabel_EN }
+                                    linkedTo={infoVideo.linkedTo}
                                     offSet={-100}
                                     >
                                     </Button>
@@ -77,9 +67,5 @@ const VideoSection = ({
 }
 
 export default VideoSection
-
-
-
-
 
 
