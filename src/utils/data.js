@@ -7,18 +7,20 @@ import hiwImage5 from '../images/5thStep.png'
 
 export const infoHero = {
     id:'heroSection',
-    lightBg: true,
-    lightText: false,
-    LightTextDesc: true,
-    topLine:'No te pierdas de nada...',
-    headLine:'En este video te explicamos de que trata nuestro servicio...',
-    description: 'Pronto nuestra aplicaión móvil estará disponible a nivel nacional. ¿Quieres saber cuándo? mas adelánte podrás enviarnos tus datos y te avisaremos',
-    videoSrc: video,
-    darkText: '#010606', 
+    heroH1: 'Somos la nueva forma de comprar sin miedo',
+    heroH1_2: 'por internet',
     buttonLabel: 'Ver Video',
-    linkedTo: 'videoSection'
-
+    linkedTo: 'videoSection',
+    heroH1Mobil: 'Compra sin miedo por internet',
+    heroPMobil: 'Nosotros chequeamos los productos que tu quieres comprar...',
+    // English
+    heroH1_EN: 'We are the new way of buying without fear',
+    heroH1_2_EN:'online',    
+    heroH1Mobil_EN: 'Buy without fear online',
+    heroPMobil_EN: 'We check the products you want to buy',
+    buttonLabel_EN: 'See Video'
 }
+
 export const infoVideo = {
     id:'videoSection',
     lightBg: true,

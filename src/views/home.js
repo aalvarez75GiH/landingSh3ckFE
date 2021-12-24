@@ -29,6 +29,7 @@ const Home = () => {
     const [ mainSideBarOpen, setMainSideBarOpen ] = useState(false)
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
+    const [ language, setLanguage ] = useState('spanish')
     
     
     const mobil = useMobilDetect()
@@ -171,7 +172,7 @@ const Home = () => {
             // onLogin={ onLogin }
         />
             }
-            <HeroSection {...infoHero} />
+            <HeroSection language={language} />
             <VideoSection {...infoVideo}/>
             <HiwSection {...infoHIW}/>
             <ContactSection 
