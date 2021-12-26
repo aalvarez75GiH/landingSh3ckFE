@@ -15,15 +15,15 @@ const mobil2 = useMobilDetection()
         return ( 
             <div className="heroContainerMobil">
                 <div className="heroContentMobil">
-                    <h1 className="heroH1Mobil">{language === 'spanish' ? infoHero.heroH1Mobil : infoHero.heroH1Mobil_EN }</h1>
-                    <p className="heroPMobil">{language === 'spanish' ? infoHero.heroPMobil : infoHero.heroPMobil_EN}</p>
+                    <h1 className="heroH1Mobil">{language === 'ES' ? infoHero.heroH1Mobil : infoHero.heroH1Mobil_EN }</h1>
+                    <p className="heroPMobil">{language === 'ES' ? infoHero.heroPMobil : infoHero.heroPMobil_EN}</p>
                     <div className="heroBtnWrapperMobil">
                            <Button 
                             btnBG={ '#FAD570' }
                             fontColor={ true }
                             big={ true }
                             fontBig = { true }
-                            buttonLabel= {language === 'spanish' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
+                            buttonLabel= {language === 'ES' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
                             linkedTo={infoHero.linkedTo}
                             offSet={-170}
                             >
@@ -54,15 +54,15 @@ const mobil2 = useMobilDetection()
                  </div>
                  
                     <div className="heroContent">
-                        <h1 className="heroH1">{language === 'spanish' ? infoHero.heroH1 : infoHero.heroH1_EN}</h1>
-                        <h1 className="heroH1">{language === 'spanish' ? infoHero.heroH1_2 : infoHero.heroH1_2_EN}</h1>
+                        <h1 className="heroH1">{language === 'ES' ? infoHero.heroH1 : infoHero.heroH1_EN}</h1>
+                        <h1 className="heroH1">{language === 'ES' ? infoHero.heroH1_2 : infoHero.heroH1_2_EN}</h1>
                         <div className="heroBtnWrapper">
                            <Button 
                             btnBG={ '#FAD570' }
                             fontColor={ true }
                             big={ true }
                             fontBig = { true }
-                            buttonLabel= {language === 'spanish' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
+                            buttonLabel= {language === 'ES' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
                             linkedTo={infoHero.linkedTo}
                             offSet={-150}
                             // offSet={OffsetHandlerSections('heroSection')}

@@ -27,17 +27,17 @@ const VideoSection = ({language}) => {
                             style={{
                                 color: `${ infoVideo.lightText ? '#FF810A' : infoVideo.darkText }`
                             }} 
-                            className="topLine">{language === 'spanish' ? infoVideo.topLine : infoVideo.topLine_EN  }</p>
+                            className="topLine">{language === 'ES' ? infoVideo.topLine : infoVideo.topLine_EN  }</p>
                             <h1
                             style={{
                                 color: `${ infoVideo.lightText ? '#FFFFFF' : infoVideo.darkText }`
                             }} 
-                            className="heading">{language === 'spanish' ? infoVideo.headLine : infoVideo.headLine_EN}</h1>
+                            className="heading">{language === 'ES' ? infoVideo.headLine : infoVideo.headLine_EN}</h1>
                             <p 
                             style={{
                                 color: `${ infoVideo.lightText ? '#FFFFFF' : infoVideo.darkText }`
                             }}
-                            className="subTitle">{language === 'spanish' ? infoVideo.description : infoVideo.description_EN}</p>
+                            className="subTitle">{language === 'ES' ? infoVideo.description : infoVideo.description_EN}</p>
                         </div>  
                     </div>
                     <div className="video">
@@ -48,7 +48,7 @@ const VideoSection = ({language}) => {
                                     fontColor={ true }
                                     big={ true }
                                     fontBig = { false }
-                                    buttonLabel={ language === 'spanish' ?  infoVideo.buttonLabel : infoVideo.buttonLabel_EN }
+                                    buttonLabel={ language === 'ES' ?  infoVideo.buttonLabel : infoVideo.buttonLabel_EN }
                                     linkedTo={infoVideo.linkedTo}
                                     offSet={-100}
                                     >
