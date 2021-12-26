@@ -11,10 +11,10 @@ import axios from 'axios'
 import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
 import FormHeader from './formHeader'
 import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../notifications/notificationData'
-
+import { infoContact } from '../../utils/data'
 
 const ContactSection = ({
-    id,
+    language,
     loggedIn,
     handlingSubmitLoginUser,
     loginResponse,
@@ -148,132 +148,132 @@ const togglingResponseData = () => {
     } 
 }
 
-    if (upLoadingUser){
-        return (
-            <div 
-            id={id}
-            className="contactContainer">
-                <div className="contactWrapper">
-                    <motion.div className="contactInfo"></motion.div>
-                    <div className="contactForms">
-                        <LoadingSpinner/>
-                        <OptionsForms/>
-                        <FormHeader/>
-                        { active === 'interested' && loggedIn ? <InterestedUsersForm/>:null}
-                        { active === 'interested' && loggedIn === false ? <InterestedUsersForm/>:null}
-                        { active === 'check' && loggedIn  ? <InterestedUsersForm/>:null}
-                        { active === 'check' && loggedIn === false  ? <LoginForm/>:null}
+if (upLoadingUser){
+    return (
+        <div 
+        id={infoContact.id}
+        className="contactContainer">
+            <div className="contactWrapper">
+                <motion.div className="contactInfo"></motion.div>
+                <div className="contactForms">
+                    <LoadingSpinner/>
+                    <OptionsForms/>
+                    <FormHeader/>
+                    { active === 'interested' && loggedIn ? <InterestedUsersForm/>:null}
+                    { active === 'interested' && loggedIn === false ? <InterestedUsersForm/>:null}
+                    { active === 'check' && loggedIn  ? <InterestedUsersForm/>:null}
+                    { active === 'check' && loggedIn === false  ? <LoginForm/>:null}
+                </div>
+            </div>
+        </div>
+    )    
+}
+console.log(active)
+return (
+    <div 
+    id={infoContact.id}
+    className="contactContainer">
+        <div className="contactWrapper">
+            <div className="contactInfo">
+                <div className="contactInfoTitleContainer">
+                    <p className="contactInfoTopLine">
+                        {language === 'ES' ? infoContact.contactInfoTopLine : infoContact.contactInfoTopLine_EN}
+                    </p>
+                    <h1 className="contactInfoTitle1"> {language === 'ES' ? infoContact.contactInfoTitle1 : infoContact.contactInfoTitle1_EN} </h1>
+                    <h1 className="contactInfoTitle2"> {language === 'ES' ? infoContact.contactInfoTitle2 : infoContact.contactInfoTitle2_EN}</h1>
+                    <h1 className="contactInfoTitle3"> {language === 'ES' ? infoContact.contactInfoTitle3 : infoContact.contactInfoTitle3_EN}</h1>
+                </div>
+                <div className="contactInfoImageContainer">
+                    <img 
+                    className="contactInfoImage"
+                    src={picture} alt="" />
+                </div>
+                <div className="contactInfoDescContainer">
+                    <div className="contactInfoOption1">
+                        <h3>{language === 'ES' ? infoContact.contactInfoOption1_h3 : infoContact.contactInfoOption1_h3_EN}</h3>
+                        <p className="contactInfoDesc">
+                        {language === 'ES' ? infoContact.contactInfoOption1_desc : infoContact.contactInfoOption1_desc_EN}</p>
+                    </div>
+                    <div className="contactInfoOption2">
+                        <h3><b> {language === 'ES' ? infoContact.contactInfoOption2_h3 : infoContact.contactInfoOption2_h3_EN} </b></h3>
+                        <p className="contactInfoDesc">{language === 'ES' ? infoContact.contactInfoOption2_desc : infoContact.contactInfoOption2_desc_EN}</p>     
+                    </div>
+                    <div className="contactInfoOption3">
+                        <h3><b>{language === 'ES' ? infoContact.contactInfoOption3_h3 : infoContact.contactInfoOption3_h3_EN}</b></h3>
+                        <p className="contactInfoDesc">{language === 'ES' ? infoContact.contactInfoOption3_desc : infoContact.contactInfoOption3_desc_EN}</p>    
                     </div>
                 </div>
             </div>
-        )    
-    }
-    console.log(active)
-    return (
-        <div 
-        id={id}
-        className="contactContainer">
-            <div className="contactWrapper">
-                <div className="contactInfo">
-                    <div className="contactInfoTitleContainer">
-                        <p className="contactInfoTopLine">
-                            Pronto a nivel nacional
-                        </p>
-                        <h1 className="contactInfoTitle1"> Estamos</h1>
-                        <h1 className="contactInfoTitle2"> construyendo</h1>
-                        <h1 className="contactInfoTitle3"> nuestra App...</h1>
-                    </div>
-                    <div className="contactInfoImageContainer">
-                        <img 
-                        className="contactInfoImage"
-                        src={picture} alt="" />
-                    </div>
-                    <div className="contactInfoDescContainer">
-                        <div className="contactInfoOption1">
-                            <h3>Estamos listos!</h3>
-                            <p className="contactInfoDesc">
-                                A pesar de estar trabajando aún en nuestra app ya estámos listos para ayudarte</p>
-                        </div>
-                        <div className="contactInfoOption2">
-                            <h3><b> Déjanos tus datos. </b></h3>
-                            <p className="contactInfoDesc">Te notificaremos cuando nuestra app esté lista. Queremos saber en que ciudad estás</p>     
-                        </div>
-                        <div className="contactInfoOption3">
-                            <h3><b>Chequea un producto</b></h3>
-                            <p className="contactInfoDesc">Podemos ayudarte desde ya a chequear ese producto que quieres comprar. Compra seguro</p>    
-                        </div>
-                    </div>
-                </div>
+            
+            <div className="contactForms">
+             
+             {response || loginResponse ?
+            <NotificationBox
+             toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
+             response={response ? response : loginResponse }
+             responseData={togglingResponseData()} 
+             switchToCheck={switchToCheck}
+             />
+             : null
+             }
+            
+            { !loggedIn  ? 
+            <>
+            <OptionsForms
+            active={active === 'interested' ? 'interested' : 'signUp' } 
+            switchToSignIn={switchToSignIn}
+            switchToCheck={switchToCheck}
+            />
+            <FormHeader
+            active = {active}
+            loggedIn={loggedIn}
+            regView={regView}
+            forgotPIN = {forgotPIN}
+            />
+            </>
+            :
+            null
+            }
+            
+            { loggedIn ? 
+             <>
+             <CheckSection/>
+             </>
+             
+             :
+             null
+            }
+            
                 
-                <div className="contactForms">
-                 
-                 {response || loginResponse ?
-                <NotificationBox
-                 toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
-                 response={response ? response : loginResponse }
-                 responseData={togglingResponseData()} 
-                 switchToCheck={switchToCheck}
-                 />
-                 : null
-                 }
-                
-                { !loggedIn  ? 
-                <>
-                <OptionsForms
-                active={active === 'interested' ? 'interested' : 'signUp' } 
-                switchToSignIn={switchToSignIn}
-                switchToCheck={switchToCheck}
-                />
-                <FormHeader
-                active = {active}
-                loggedIn={loggedIn}
-                regView={regView}
-                forgotPIN={forgotPIN}
-                />
-                </>
-                :
-                null
-                }
-                
-                { loggedIn ? 
-                 <>
-                 <CheckSection/>
-                 </>
-                 
-                 :
-                 null
-                }
-                
-                    
-                { active === 'interested' && !loggedIn ? 
-                 <>
-                 <InterestedUsersForm 
-                 handlingSubmitInterestedUser={handlingSubmitInterestedUser}
-                 />
-                </>                     
-                 :
-                 null
-                }
-                
-                { active === 'check' && !loggedIn  ? 
-                <LoginForm
-                regView={regView}
-                toggleRegView={toggleRegView}
-                handlingSubmitUser={handlingSubmitUser}
-                handlingLoginUser={handlingLoginUser}
-                handlingNewPINRequest={handlingNewPINRequest}
-                forgotPIN={forgotPIN}
-                toggleForgotSection = {toggleForgotSection}
-                />
-                :
-                null
-                }
-                </div>
-                
+            { active === 'interested' && !loggedIn ? 
+             <>
+             <InterestedUsersForm 
+             handlingSubmitInterestedUser={handlingSubmitInterestedUser}
+             />
+            </>                     
+             :
+             null
+            }
+            
+            { active === 'check'  && !loggedIn  ? 
+            <LoginForm
+            regView={regView}
+            forgotPIN = {forgotPIN}
+            toggleRegView={toggleRegView}
+            handlingSubmitUser={handlingSubmitUser}
+            handlingLoginUser={handlingLoginUser}
+            handlingNewPINRequest={handlingNewPINRequest}
+            toggleForgotSection={toggleForgotSection}
+            />
+            :
+            null
+            }
             </div>
             
         </div>
-    )
+        
+    </div>
+)
 }
 
 export default ContactSection

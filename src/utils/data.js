@@ -84,15 +84,35 @@ export const infoHIW = {
     alt4_EN:'Finish the order',
     alt5_EN:'Real time video',
 }
-export const infoContact = {
+
+    export const infoContact = {
     id:'contactSection',
-    lightBg: true,
-    lightText: true,
-    LightTextDesc: true,
-    topLine:'¿Estas listo para comenzar?',
-    headLine:'Nuestra App móvil estará lista prónto, mientras tanto...',
-    description: 'Estamos trabajando duro para llevarte la mejor experiencia móvil, aún asi puedes comunicarte con nosotros, dejarnos tus datos para informarte cuando esté activa o chequear un producto desde ya...',
-    darkText: '#010606', 
-    linkedTo: 'hiwSection' 
-}
+    linkedTo: 'hiwSection', 
+
+    // Spanish
+    contactInfoTopLine:'Pronto a nivel nacional',
+    contactInfoTitle1:'Estamos',
+    contactInfoTitle2:'construyendo',
+    contactInfoTitle3:'nuestra App...',
+    contactInfoOption1_h3:'Estamos listos!',
+    contactInfoOption1_desc:'A pesar de estar trabajando aún en nuestra app ya estámos listos para ayudarte',
+    contactInfoOption2_h3:'Déjanos tus datos.',
+    contactInfoOption2_desc:'Te notificaremos cuando nuestra app esté lista. Queremos saber en que ciudad estás',
+    contactInfoOption3_h3:'Chequea un producto',
+    contactInfoOption3_desc:'Podemos ayudarte desde ya a chequear ese producto que quieres comprar. Compra seguro',
+
+    // English
+    contactInfoTopLine_EN:'Nationwide very soon',
+    contactInfoTitle1_EN:'We are',
+    contactInfoTitle2_EN:'building',
+    contactInfoTitle3_EN:'our App...',
+    contactInfoOption1_h3_EN:'We are ready!',
+    contactInfoOption1_desc_EN:'even though we are building our app we are ready to help you',
+    contactInfoOption2_h3_EN:'Leave us your info.',
+    contactInfoOption2_desc_EN:'We`ll notify you when our app is ready to go. We want to know also the city you are from',
+    contactInfoOption3_h3_EN:'Check a product',
+    contactInfoOption3_desc_EN:'We can help you from the very begining to check a product that you wanna buy. Buy safe',
+    }
+    
+
 

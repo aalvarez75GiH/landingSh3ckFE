@@ -176,7 +176,7 @@ const Home = () => {
             <VideoSection language={language}/>
             <HiwSection language={language}/>
             <ContactSection 
-            {...infoContact} 
+            language={language}
             loggedIn={loggedIn}
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
