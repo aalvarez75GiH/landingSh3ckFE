@@ -230,6 +230,7 @@ return (
             loggedIn={loggedIn}
             regView={regView}
             forgotPIN = {forgotPIN}
+            language={language}
             />
             </>
             :
@@ -250,6 +251,7 @@ return (
              <>
              <InterestedUsersForm 
              handlingSubmitInterestedUser={handlingSubmitInterestedUser}
+             language={language}
              />
             </>                     
              :

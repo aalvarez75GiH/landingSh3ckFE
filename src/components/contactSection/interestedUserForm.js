@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useFormik, Formik } from 'formik'
 import * as yup from 'yup'
 import DropDownList from './dropDownList'
+import { infoContact } from '../../utils/data'
 
 
 const validationSchema = yup.object({
@@ -10,9 +11,9 @@ const validationSchema = yup.object({
 })
 
 
-const InterestedUserForm = ({ handlingSubmitInterestedUser }) => {
+const InterestedUserForm = ({ handlingSubmitInterestedUser, language }) => {
 
-    const [ city, setCity ] = useState('Ciudad')
+    const [ city, setCity ] = useState(language === 'ES' ? infoContact.intUsersFormPH3 : infoContact.intUsersFormPH3_EN)
     const [ cityError, setCityError ] = useState(false)
     const options = ['Caracas', 'Barquisimeto', 'Valencia', 'Maracaibo', 'Athens']
     
@@ -60,7 +61,7 @@ const InterestedUserForm = ({ handlingSubmitInterestedUser }) => {
                 <input
                 className="input"
                 name="fullName"
-                placeholder="Nombre completo" 
+                placeholder={language === 'ES' ? infoContact.intUsersFormPH1 : infoContact.intUsersFormPH1_EN}
                 type="text" 
                 value={formik.values.fullName}
                 onChange={formik.handleChange}
@@ -73,7 +74,7 @@ const InterestedUserForm = ({ handlingSubmitInterestedUser }) => {
                 <input
                 className="input"
                 name="email"
-                placeholder="Correo electrónico" 
+                placeholder={language === 'ES' ? infoContact.intUsersFormPH2 : infoContact.intUsersFormPH2_EN}
                 type="email" 
                 autoComplete="on"
                 value={formik.values.email}
@@ -93,7 +94,7 @@ const InterestedUserForm = ({ handlingSubmitInterestedUser }) => {
                 <button
                 className="sendDataBtn"
                 type="submit"
-                >Enviar</button>
+                >{language === 'ES' ? infoContact.intUsersFormBtnLabel : infoContact.intUsersFormBtnLabel_EN}</button>
             </form>
             </Formik>
             

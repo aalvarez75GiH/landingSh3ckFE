@@ -125,6 +125,10 @@ export const infoHIW = {
     genPIN_p: 'Introduce estos datos y te enviamos un nuevo PIN automáticamente a tu correo',
     login_h1: 'Inicia sesión',
     login_p: 'Haz login o regístrate para que podamos chequear productos para ti',
+    intUsersFormPH1: 'Nombre completo',
+    intUsersFormPH2: 'Correo electrónico',
+    intUsersFormPH3: 'Ciudad',
+    intUsersFormBtnLabel: 'Enviar',
     // English
     notifyMe_EN:'Just notify me',
     checkAProduct_EN: 'I want to check a product',
@@ -136,7 +140,10 @@ export const infoHIW = {
     genPIN_p_EN: 'Enter these info and we`ll send to you a new PIN number to your email address',
     login_h1_EN: 'Log In',
     login_p_EN: 'Do login o get an account in order to check products for you',
-
+    intUsersFormPH1_EN: 'Full Name',
+    intUsersFormPH2_EN: 'Email address',
+    intUsersFormPH3_EN: 'City',
+    intUsersFormBtnLabel_EN: 'Send',
 }
     
 
