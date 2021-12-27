@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import RegisterForm from './registerForm'
-import { FaEye } from 'react-icons/fa'
-import ForgotPINSection from './forgotPINSection'
+import ForgotPINForm from './forgotPINForm'
 import {MdOutlineVisibility} from 'react-icons/md'
 import { infoContact } from '../../utils/data'
 
@@ -60,10 +59,10 @@ const LoginForm = ({
 
     if (forgotPIN){
         return(
-            <ForgotPINSection
+            <ForgotPINForm
             handlingNewPINRequest={handlingNewPINRequest}
             toggleForgotSection={toggleForgotSection}
-            
+            language={language}
             />
         ) 
         

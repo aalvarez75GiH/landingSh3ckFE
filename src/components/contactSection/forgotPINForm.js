@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
+import { infoContact } from '../../utils/data'
 
 
 const validationSchema = yup.object({
@@ -9,7 +10,11 @@ const validationSchema = yup.object({
 })
 
 
-const ForgotPINSection = ({ handlingNewPINRequest, toggleForgotSection }) => {
+const ForgotPINForm = ({ 
+    handlingNewPINRequest, 
+    toggleForgotSection,
+    language 
+}) => {
 
     const onSubmit = (values) => {
         handlingNewPINRequest(values)
@@ -37,7 +42,7 @@ const ForgotPINSection = ({ handlingNewPINRequest, toggleForgotSection }) => {
                 <input
                 className="input"
                 name="email"
-                placeholder="Correo electrónico" 
+                placeholder={language === 'ES' ? infoContact.forgotPINFormPH1 : infoContact.forgotPINFormPH1_EN} 
                 type="text" 
                 autoComplete="on"
                 value={formik.values.email}
@@ -50,7 +55,7 @@ const ForgotPINSection = ({ handlingNewPINRequest, toggleForgotSection }) => {
                 <input
                 className="input"
                 name="phoneNumber"
-                placeholder="Teléfono" 
+                placeholder={language === 'ES' ? infoContact.forgotPINFormPH2 : infoContact.forgotPINFormPH2_EN} 
                 type="text" 
                 autoComplete="on"
                 value={formik.values.phoneNumber}
@@ -63,16 +68,16 @@ const ForgotPINSection = ({ handlingNewPINRequest, toggleForgotSection }) => {
                 <button
                 className="sendDataBtn"
                 type="submit"
-                >Enviar</button>
+                >{language === 'ES' ? infoContact.forgotPINFormSendBtn : infoContact.forgotPINFormSendBtn_EN}</button>
                 <button
                 onClick={toggleForgotSection}
                 className="comeBackBtn"
                 type="submit"
-                >Volver</button>
+                >{language === 'ES' ? infoContact.forgotPINFormBackBtn : infoContact.forgotPINFormBackBtn_EN}</button>
             </form>
 
         </div>
     )
 }
 
-export default ForgotPINSection
+export default ForgotPINForm
