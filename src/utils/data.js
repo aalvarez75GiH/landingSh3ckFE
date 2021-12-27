@@ -112,7 +112,15 @@ export const infoHIW = {
     contactInfoOption2_desc_EN:'We`ll notify you when our app is ready to go. We want to know also the city you are from',
     contactInfoOption3_h3_EN:'Check a product',
     contactInfoOption3_desc_EN:'We can help you from the very begining to check a product that you wanna buy. Buy safe',
-    }
+
+     // contactForms
+    // Spanish
+    notifyMe: 'Solo notificame',
+    checkAProduct: 'Quiero chequear un producto',
+    // English
+    notifyMe_EN:'Just notify me',
+    checkAProduct_EN: 'I want to check a product',
+}
     
 
 

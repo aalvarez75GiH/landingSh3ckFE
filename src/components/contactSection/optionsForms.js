@@ -1,7 +1,7 @@
 import React from 'react'
+import { infoContact } from '../../utils/data'
 
-
-const OptionsForms = ({ switchToSignIn, switchToCheck, active  }) => {
+const OptionsForms = ({ switchToSignIn, switchToCheck, active, language  }) => {
     return (
         <>
         <div className="optionsWrapper">
@@ -11,7 +11,7 @@ const OptionsForms = ({ switchToSignIn, switchToCheck, active  }) => {
             }} 
             onClick={switchToSignIn}
             className="notifyMe">
-                <p>Solo notificame</p>
+                <p>{language === 'ES' ? infoContact.notifyMe : infoContact.notifyMe_EN}</p>
             </div>
             <div
             style={{
@@ -19,7 +19,7 @@ const OptionsForms = ({ switchToSignIn, switchToCheck, active  }) => {
             }} 
             onClick={switchToCheck}
             className="checkAProduct">
-                <p>Quiero chequear un producto</p>
+                <p>{language === 'ES' ? infoContact.checkAProduct : infoContact.checkAProduct_EN}</p>
             </div>
         </div>
         

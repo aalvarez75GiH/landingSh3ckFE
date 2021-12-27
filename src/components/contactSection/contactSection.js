@@ -223,6 +223,7 @@ return (
             active={active === 'interested' ? 'interested' : 'signUp' } 
             switchToSignIn={switchToSignIn}
             switchToCheck={switchToCheck}
+            language={language}
             />
             <FormHeader
             active = {active}
