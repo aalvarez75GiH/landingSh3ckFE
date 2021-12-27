@@ -1,35 +1,30 @@
 import React from 'react'
+import { infoContact } from '../../utils/data'
 
-const FormHeader = ({ active, loggedIn, regView, forgotPIN }) => {
+const FormHeader = ({ active, loggedIn, regView, forgotPIN, language  }) => {
+    console.log(language)
     return (
         <>
         { active === 'interested' && (loggedIn || !loggedIn) ? 
         <div className="titleWrapper">
             <div className="formTitle">
-                <h1 className="title_1">¿Quieres saber cuando nuestra app esté lista? </h1>
+                <h1 className="title_1">{language === 'ES' ? infoContact.intUsers_h1 : infoContact.intUsers_h1_EN}</h1>
             </div>
             <div className="formDescription">
-                <p>Llena estos datos, sabremos que estas interesado y te notificaremos</p>
+                <p>{language === 'ES' ? infoContact.intUsers_p : infoContact.intUsers_p_EN}</p>
             </div>
         </div>
         : null}
-        {/* {active === 'check' && loggedIn === true ?
-        <div className="titleWrapper">
-            <div className="formTitle">
-                <h1 className="title">Estas listo para Chequear tu producto? </h1>
-            </div>
-        </div>
-        :null
-        } */}
+        
         {active === 'check' && loggedIn === false ?
         <div className="titleWrapper">
             {regView ? 
             <>
                 <div className="formTitle">
-                    <h1 className="title_3">Registrate con nosotros </h1>
+                    <h1 className="title_3">{language === 'ES' ? infoContact.users_h1 : infoContact.users_h1_EN}</h1>
                 </div>
                 <div className="formDescription">
-                    <p>Con solo estos 3 datos estarás listo para comenzar a chequear tus productos</p>
+                    <p>{language === 'ES' ? infoContact.users_p : infoContact.users_p_EN}</p>
                 </div>
             </>
             
@@ -37,27 +32,29 @@ const FormHeader = ({ active, loggedIn, regView, forgotPIN }) => {
             forgotPIN ?
                 <>
                     <div className="formTitle">
-                        <h1 className="title_4"> Genera PIN </h1>
+                        <h1 className="title_4"> {language === 'ES' ? infoContact.genPIN_h1 : infoContact.genPIN_h1_EN} </h1>
                     </div>
                     <div className="formDescription">
-                        <p>Introduce estos datos y te enviamos un nuevo PIN automáticamente a tu correo</p>
+                        <p>{language === 'ES' ? infoContact.genPIN_p : infoContact.genPIN_p_EN}</p>
                     </div>
                 </>
                 :
                 <>
                     <div className="formTitle">
-                        <h1 className="title_4">Inicia sesión </h1>
+                        <h1 className="title_4">{language === 'ES' ? infoContact.login_h1 : infoContact.login_h1_EN} </h1>
                     </div>
                     <div className="formDescription">
-                        <p>Haz login o regístrate para que podamos chequear productos para ti</p>
+                        <p>{language === 'ES' ? infoContact.login_p : infoContact.login_p_EN}</p>
                     </div>
                 </>
                 
             }
+            
         </div>
         :null
         }
-        </>
+        
+        </> 
     )
 }
 

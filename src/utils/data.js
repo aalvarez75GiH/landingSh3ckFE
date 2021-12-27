@@ -117,9 +117,26 @@ export const infoHIW = {
     // Spanish
     notifyMe: 'Solo notificame',
     checkAProduct: 'Quiero chequear un producto',
+    intUsers_h1: '¿Quieres saber cuando nuestra app esté lista?',
+    intUsers_p: 'Llena estos datos, sabremos que estas interesado y te notificaremos',
+    users_h1: 'Registrate con nosotros',
+    users_p: 'Con solo estos 3 datos estarás listo para comenzar a chequear tus productos',
+    genPIN_h1: 'Genera PIN',
+    genPIN_p: 'Introduce estos datos y te enviamos un nuevo PIN automáticamente a tu correo',
+    login_h1: 'Inicia sesión',
+    login_p: 'Haz login o regístrate para que podamos chequear productos para ti',
     // English
     notifyMe_EN:'Just notify me',
     checkAProduct_EN: 'I want to check a product',
+    intUsers_h1_EN: 'Do you wanna know when our app is ready to go?',
+    intUsers_p_EN: 'Fill in this information, we will know that you are interested and we will notify you',
+    users_h1_EN: 'Create an account with us',
+    users_p_EN: 'With only these 3 fields you are gonna be ready to go and check products',
+    genPIN_h1_EN: 'Get a new PIN',
+    genPIN_p_EN: 'Enter these info and we`ll send to you a new PIN number to your email address',
+    login_h1_EN: 'Log In',
+    login_p_EN: 'Do login o get an account in order to check products for you',
+
 }
     
 
