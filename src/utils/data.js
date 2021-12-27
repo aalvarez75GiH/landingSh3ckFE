@@ -134,6 +134,10 @@ export const infoHIW = {
     loginFormSendBtn: 'Enviar',
     loginFormRegBtn: 'Regístrate',
     loginFormSpan: 'Se me olvidó mi número PIN',
+    forgotPINFormPH1: 'Correo electrónico',
+    forgotPINFormPH2: 'Teléfono',
+    forgotPINFormSendBtn: 'Enviar',
+    forgotPINFormBackBtn: 'Volver',
     // English
     notifyMe_EN:'Just notify me',
     checkAProduct_EN: 'I want to check a product',
@@ -154,6 +158,10 @@ export const infoHIW = {
     loginFormSendBtn_EN: 'Send',
     loginFormRegBtn_EN: 'Sign Up',
     loginFormSpan_EN: 'I forgot my PIN number',
+    orgotPINFormPH1_EN: 'Email address',
+    forgotPINFormPH2_EN: 'Phone number',
+    forgotPINFormSendBtn_EN: 'Send',
+    forgotPINFormBackBtn_EN: 'Come back',
 }
     
 
