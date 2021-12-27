@@ -141,7 +141,7 @@ export const infoHIW = {
     intUsers_p_EN: 'Fill in this information, we will know that you are interested and we will notify you',
     users_h1_EN: 'Create an account with us',
     users_p_EN: 'With only these 3 fields you are gonna be ready to go and check products',
-    genPIN_h1_EN: 'Get a new PIN',
+    genPIN_h1_EN: 'New PIN',
     genPIN_p_EN: 'Enter these info and we`ll send to you a new PIN number to your email address',
     login_h1_EN: 'Log In',
     login_p_EN: 'Do login o get an account in order to check products for you',
