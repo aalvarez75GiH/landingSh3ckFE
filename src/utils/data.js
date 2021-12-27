@@ -129,6 +129,11 @@ export const infoHIW = {
     intUsersFormPH2: 'Correo electrónico',
     intUsersFormPH3: 'Ciudad',
     intUsersFormBtnLabel: 'Enviar',
+    loginFormPH1: 'Correo electrónico',
+    loginFormPH2: '#PIN (solo 4 dígitos)',
+    loginFormSendBtn: 'Enviar',
+    loginFormRegBtn: 'Regístrate',
+    loginFormSpan: 'Se me olvidó mi número PIN',
     // English
     notifyMe_EN:'Just notify me',
     checkAProduct_EN: 'I want to check a product',
@@ -144,6 +149,11 @@ export const infoHIW = {
     intUsersFormPH2_EN: 'Email address',
     intUsersFormPH3_EN: 'City',
     intUsersFormBtnLabel_EN: 'Send',
+    loginFormPH1_EN: 'Email address',
+    loginFormPH2_EN: '#PIN (only 4 digits)',
+    loginFormSendBtn_EN: 'Send',
+    loginFormRegBtn_EN: 'Sign Up',
+    loginFormSpan_EN: 'I forgot my PIN number',
 }
     
 

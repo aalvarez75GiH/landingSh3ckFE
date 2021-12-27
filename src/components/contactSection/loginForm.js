@@ -5,6 +5,7 @@ import RegisterForm from './registerForm'
 import { FaEye } from 'react-icons/fa'
 import ForgotPINSection from './forgotPINSection'
 import {MdOutlineVisibility} from 'react-icons/md'
+import { infoContact } from '../../utils/data'
 
 
 
@@ -21,7 +22,8 @@ const LoginForm = ({
     handlingSubmitUser,
     forgotPIN,
     toggleForgotSection,
-    handlingNewPINRequest
+    handlingNewPINRequest,
+    language
     
 }) => {
 
@@ -79,7 +81,7 @@ const LoginForm = ({
                 className="input"
                 autoComplete="on"
                 name="email"
-                placeholder="Correo electrónico" 
+                placeholder={language === 'ES' ? infoContact.loginFormPH1 : infoContact.loginFormPH1_EN} 
                 type="email" 
                 value={formik.values.email}
                 onChange={formik.handleChange}
@@ -93,7 +95,7 @@ const LoginForm = ({
                 className="inputPassword"
                 name="pin"
                 autoComplete="on"
-                placeholder="#PIN (solo 4 dígitos)" 
+                placeholder={language === 'ES' ? infoContact.loginFormPH2 : infoContact.loginFormPH2_EN} 
                 type={!typeOfPIN ? 'password' : 'text'} 
                 value={formik.values.pin}
                 onChange={formik.handleChange}                
@@ -115,15 +117,15 @@ const LoginForm = ({
                 <button
                 className="sendDataBtn"
                 type="submit"
-                >Enviar</button>
+                >{language === 'ES' ? infoContact.loginFormSendBtn : infoContact.loginFormSendBtn_EN}</button>
                 <button
                 onClick={toggleRegView}
                 className="regButton"
                 type="submit"
-                >Regístrate</button>
+                >{language === 'ES' ? infoContact.loginFormRegBtn : infoContact.loginFormRegBtn_EN}</button>
                 <span
                 onClick={toggleForgotSection} 
-                className="forgotPINSpan">Se me olvidó mi número PIN</span>
+                className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
             </form>
 
         </div>

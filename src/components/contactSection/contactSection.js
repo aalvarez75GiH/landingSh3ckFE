@@ -267,6 +267,7 @@ return (
             handlingLoginUser={handlingLoginUser}
             handlingNewPINRequest={handlingNewPINRequest}
             toggleForgotSection={toggleForgotSection}
+            language={language}
             />
             :
             null
