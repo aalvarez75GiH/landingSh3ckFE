@@ -158,7 +158,7 @@ export const infoHIW = {
     loginFormSendBtn_EN: 'Send',
     loginFormRegBtn_EN: 'Sign Up',
     loginFormSpan_EN: 'I forgot my PIN number',
-    orgotPINFormPH1_EN: 'Email address',
+    forgotPINFormPH1_EN: 'Email address',
     forgotPINFormPH2_EN: 'Phone number',
     forgotPINFormSendBtn_EN: 'Send',
     forgotPINFormBackBtn_EN: 'Come back',
