@@ -4,13 +4,13 @@ import { Link as LinkS } from 'react-scroll'
 import { FaRegUser } from 'react-icons/fa'
 import { BiUserCheck } from 'react-icons/bi'
 import { OffsetHandlerNavBar } from '../../utils/settingOffsets'
+import { infoNavBar } from '../../utils/data'
 
 const NavBar = ({  
     login, 
     toggleLoginSideBar,
-    toggleMainSideBar
-    
-
+    toggleMainSideBar,
+    language
 }) => {
     
     
@@ -51,7 +51,7 @@ const NavBar = ({
                             smooth={true}
                             offset={OffsetHandlerNavBar('hiwSection')}
                             duration={500}
-                            >Como funciona</LinkS>
+                            >{language === 'ES' ? infoNavBar.navBarLi1 : infoNavBar.navBarLi1_EN}</LinkS>
                         </li>
                         <li className="navItem">
                             <LinkS
@@ -65,7 +65,7 @@ const NavBar = ({
                             smooth={true}
                             offset={OffsetHandlerNavBar('contactSection')}
                             duration={500}
-                            >Quiero chequear</LinkS>
+                            >{language === 'ES' ? infoNavBar.navBarLi2 : infoNavBar.navBarLi2_EN}</LinkS>
                         </li>
                     </ul>
                     <div 
@@ -102,7 +102,7 @@ const NavBar = ({
                                 smooth={true}
                                 offset={OffsetHandlerNavBar('hiwSection')}
                                 duration={500}
-                                >Como funciona
+                                >{language === 'ES' ? infoNavBar.navBarLi1 : infoNavBar.navBarLi1_EN}
                                 </LinkS>
                             </li>
                             <li className="navItem">
@@ -118,7 +118,7 @@ const NavBar = ({
                                 offset={OffsetHandlerNavBar('contactSection')}
                                 duration={500}
                                 
-                                >Quiero Chequear</LinkS>
+                                >{language === 'ES' ? infoNavBar.navBarLi2 : infoNavBar.navBarLi2_EN}</LinkS>
                             </li>
                         </ul>
                         <nav 
@@ -127,11 +127,12 @@ const NavBar = ({
                             to="loginSession"
                             onClick={toggleLoginSideBar} 
                             style={{
-                                border: `${scrollNav ? '2px solid #ffffff' : 'none'}`
+                                border: `${scrollNav ? '2px solid #ffffff' : 'none'}`,
+                                padding: `${language === 'ES' ? '10px 22px' : '10px 60px'}`
                             }} 
                             className="navBtnLink">
                                 <FaRegUser className="userIcon"/>
-                                Inicio de Sesión
+                                {language === 'ES' ? infoNavBar.navBarNav : infoNavBar.navBarNav_EN}
                             </LinkS>
                         </nav>
                     </div>

@@ -38,9 +38,6 @@ const LoginSideBarForm = ({
 
     })
 
-    // console.log(formik.values)
-    // console.log(formik.errors)
-
     return (
         <div className="loginSideBoxContainer">
             <form 

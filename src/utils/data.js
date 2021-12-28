@@ -226,3 +226,12 @@ export const infoLoginSB = {
     loginSBBtnLabel: 'Enviar',
     loginSBBtnLabel_EN: 'Send',
 }
+
+export const infoNavBar = {
+    navBarLi1: 'Como funciona',
+    navBarLi2: 'Quiero chequear',
+    navBarNav: 'Inicio de sesión',
+    navBarLi1_EN: 'How it works',
+    navBarLi2_EN: 'I wanna check',
+    navBarNav_EN: 'Log in'
+}

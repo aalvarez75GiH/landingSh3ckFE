@@ -172,6 +172,7 @@ const Home = () => {
             toggleMainSideBar={toggleMainSideBar} 
             username={currentUser}
             login={ loggedIn }
+            language={language}
             // onLogin={ onLogin }
         />
             }
