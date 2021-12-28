@@ -1,6 +1,7 @@
 import React from 'react'
+import { infoSpinner } from './data'
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({language}) => {
     return (
         <div className="loadingSpinnerContainer">
             <div className="circles">
@@ -8,7 +9,7 @@ const LoadingSpinner = () => {
                 <div className="circle circle_2"></div>
                 <div className="circle circle_3"></div>
             </div>
-            <span className="customText">Espera...</span>
+            <span className="customText">{language === 'ES' ? infoSpinner.customText : infoSpinner.customText_EN}</span>
                 
         </div>
     )

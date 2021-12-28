@@ -137,6 +137,7 @@ const Home = () => {
             loggedOut={loggedOut}
             handlingLogin={handlingLogin}
             loading = {loading}
+            language={language}
             />
             {/* : null */}
             {/* } */}

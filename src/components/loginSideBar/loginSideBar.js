@@ -10,7 +10,8 @@ const LoginSideBar = ({
     handlingLogin,
     loggedIn, 
     loggedOut,
-    loading
+    loading,
+    language
 }) => {
     console.log(loggedIn)
     console.log(loggedOut)
@@ -22,7 +23,7 @@ const LoginSideBar = ({
             <>
             <aside
             className={`${loginSideBarOpen ? "loginSideBarContainerOpen" : "loginSideBarContainer" }`}>
-                <LoadingSpinner/>
+                <LoadingSpinner language={language}/>
                 <div className="loginContactForms">
                 <div 
                     className="loginSideBarIcon"

@@ -156,7 +156,7 @@ if (upLoadingUser){
             <div className="contactWrapper">
                 <motion.div className="contactInfo"></motion.div>
                 <div className="contactForms">
-                    <LoadingSpinner/>
+                    <LoadingSpinner language={language}/>
                     <OptionsForms/>
                     <FormHeader/>
                     { active === 'interested' && loggedIn ? <InterestedUsersForm/>:null}

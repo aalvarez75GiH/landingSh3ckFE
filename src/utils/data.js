@@ -173,4 +173,7 @@ export const infoHIW = {
 }
     
 
-
+export const infoSpinner = {
+    customText: 'Espera...',
+    customText_EN: 'Wait...'
+}
