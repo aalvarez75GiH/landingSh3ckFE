@@ -53,6 +53,7 @@ const LoginForm = ({
         return(
             <RegisterForm 
             handlingSubmitUser={handlingSubmitUser}
+            language={language}
             />
         )
     }

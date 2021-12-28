@@ -138,6 +138,10 @@ export const infoHIW = {
     forgotPINFormPH2: 'Teléfono',
     forgotPINFormSendBtn: 'Enviar',
     forgotPINFormBackBtn: 'Volver',
+    regUsersFormPH1: 'Nombre Completo',
+    regUsersFormPH2: 'Correo electrónico',
+    regUsersFormPH3: 'Teléfono',
+    regUsersFormSendBtn: 'Enviar',
     // English
     notifyMe_EN:'Just notify me',
     checkAProduct_EN: 'I want to check a product',
@@ -162,6 +166,10 @@ export const infoHIW = {
     forgotPINFormPH2_EN: 'Phone number',
     forgotPINFormSendBtn_EN: 'Send',
     forgotPINFormBackBtn_EN: 'Come back',
+    regUsersFormPH1_EN: 'Full Name',
+    regUsersFormPH2_EN: 'Email address',
+    regUsersFormPH3_EN: 'Phone number',
+    regUsersFormSendBtn_EN: 'Send',
 }
     
 

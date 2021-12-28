@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
+import { infoContact } from '../../utils/data'
 
 
 // const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
@@ -21,7 +22,7 @@ const validationSchema = yup.object({
 })
 
 
-const RegisterForm = ({ handlingSubmitUser }) => {
+const RegisterForm = ({ handlingSubmitUser, language }) => {
 
     const onSubmit = (values) => {
         handlingSubmitUser(values)
@@ -51,7 +52,7 @@ const RegisterForm = ({ handlingSubmitUser }) => {
                 <input
                 className="input"
                 name="fullName"
-                placeholder="Nombre completo" 
+                placeholder={language === 'ES' ? infoContact.regUsersFormPH1 : infoContact.regUsersFormPH1_EN} 
                 autoComplete="on"
                 type="text" 
                 value={formik.values.fullName}
@@ -64,7 +65,7 @@ const RegisterForm = ({ handlingSubmitUser }) => {
                 <input
                 className="input"
                 name="email"
-                placeholder="Correo electrónico" 
+                placeholder={language === 'ES' ? infoContact.regUsersFormPH2 : infoContact.regUsersFormPH2_EN} 
                 type="text" 
                 autoComplete="on"
                 value={formik.values.email}
@@ -77,7 +78,7 @@ const RegisterForm = ({ handlingSubmitUser }) => {
                 <input
                 className="input"
                 name="phoneNumber"
-                placeholder="Teléfono" 
+                placeholder={language === 'ES' ? infoContact.regUsersFormPH3 : infoContact.regUsersFormPH3_EN} 
                 type="text" 
                 autoComplete="on"
                 value={formik.values.phoneNumber}
@@ -103,7 +104,7 @@ const RegisterForm = ({ handlingSubmitUser }) => {
                 <button
                 className="sendDataBtn"
                 type="submit"
-                >Enviar</button>
+                >{language === 'ES' ? infoContact.regUsersFormSendBtn : infoContact.regUsersFormSendBtn_EN}</button>
             </form>
 
         </div>
