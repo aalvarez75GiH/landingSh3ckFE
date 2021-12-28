@@ -177,3 +177,12 @@ export const infoSpinner = {
     customText: 'Espera...',
     customText_EN: 'Wait...'
 }
+
+export const infoCheck = {
+    checkSectionTitle: '¿Estas listo para Chequear un producto?',
+    checkSectionTitle_EN: 'Are you ready to check a product?',
+    checkSectionBtnLabel: 'Si, Quiero chequear un producto',
+    checkSectionBtnLabel_EN: 'Yes, I wanna check a product',
+    notNowlabel: 'No ahora',
+    notNowlabel_EN: 'Not now'
+}

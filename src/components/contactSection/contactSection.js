@@ -240,7 +240,7 @@ return (
             
             { loggedIn ? 
              <>
-             <CheckSection/>
+             <CheckSection language={language}/>
              </>
              
              :

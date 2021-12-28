@@ -28,7 +28,7 @@ const NotificationBox = ({
                     <img src={foundImage} alt="successImage" />
                     <div className="notificationName"> 
                         <span className="notificationSpan">
-                            <b>Hola {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">
@@ -53,7 +53,7 @@ const NotificationBox = ({
                     <img src={foundImage} alt="successImage" />
                     <div className="notificationName"> 
                         <span className="notificationSpan">
-                            <b>Hola {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">
@@ -78,7 +78,7 @@ const NotificationBox = ({
                     <img src={successImage} alt="successImage" />
                     <div className="notificationName">
                         <span className="notificationSpan">
-                            <b>Hola {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">
@@ -105,7 +105,7 @@ const NotificationBox = ({
                     <img src={successImage} alt="successImage" />
                     <div className="notificationName">
                         <span className="notificationSpan">
-                            <b>Hola {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">

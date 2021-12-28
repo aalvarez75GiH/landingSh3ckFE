@@ -1,20 +1,20 @@
 import React from 'react'
-import Button from '../buttons/button'
+import { infoCheck } from '../../utils/data'
 
-const CheckSection = () => {
+const CheckSection = ({language}) => {
     return (
         <div className="checkSectionContainer">
             <div className="checkSection-formTitle">
-                <h1 className="checkSection-title">Estas listo para Chequear un producto? </h1>
+                <h1 className="checkSection-title">{language === 'ES' ? infoCheck.checkSectionTitle : infoCheck.checkSectionTitle_EN}</h1>
             </div>
 
             <div className="checkSection-BtnWrap">
                     <button className="checkSectionBtn-toCheck">
-                        Si, Quiero chequear un producto
+                    {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
                     </button>
             </div>
             <div className="checkSection-notNow">   
-                <p>No ahora</p>
+                <p>{language === 'ES' ? infoCheck.notNowlabel : infoCheck.notNowlabel_EN}</p>
             </div>
             
         </div>
