@@ -186,3 +186,14 @@ export const infoCheck = {
     notNowlabel: 'No ahora',
     notNowlabel_EN: 'Not now'
 }
+
+export const infoNavBarMobil = {
+    option1Copy: 'Comienza',
+    option2Copy: 'Como funciona',
+    option3Copy: 'Notifícame',
+    option4Copy: 'Chequéa',
+    option1Copy_EN: 'Start',
+    option2Copy_EN: 'How it works',
+    option3Copy_EN: 'Notify me',
+    option4Copy_EN: 'Check it',
+}

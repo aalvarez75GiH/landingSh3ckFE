@@ -164,6 +164,7 @@ const Home = () => {
                 toggleSideBar={ toggleSideBar }  
                 username={currentUser}
                 login={ loggedIn }
+                language={language}
                 // onLogin={ onLogin }
             /> : <NavBar
             toggleLoginSideBar={toggleLoginSideBar}
