@@ -2,7 +2,7 @@ import React from 'react'
 import successImage from '../../images/ok_success_icon.svg'
 import foundImage from '../../images/ok_success_verified_icon.svg'
 import { FaTimes } from 'react-icons/fa'
-
+import { regularCopy } from './notificationData'
 
 
 
@@ -10,9 +10,7 @@ const NotificationBox = ({
     response, 
     responseData, 
     toggleNotification,
-    toggleNotificationLogin,
-    switchToCheck 
-
+    language,
 }) => {
     console.log(response)
     let responseSplitted = response.data.split(' ')
@@ -34,11 +32,11 @@ const NotificationBox = ({
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                        {responseData.errorMessage}
+                    {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN}
                     </div>
                     <button className="notificationBtn"
                     onClick={toggleNotification}
-                    >Continuar</button>
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</button>
                 </div>
             </div>   
             )
@@ -59,11 +57,11 @@ const NotificationBox = ({
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                        {responseData.errorMessage}
+                    {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN}
                     </div>
                     <button className="notificationBtn"
                     onClick={toggleNotification}
-                    >Continuar</button>
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</button>
                 </div>
             </div>   
             )
@@ -84,12 +82,12 @@ const NotificationBox = ({
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                        {responseData.successMessage}
+                    {language === 'ES' ? responseData.successMessage : responseData.successMessage_EN }
                     </div>
                     <button
                     className="notificationBtn"
                     onClick={toggleNotification}
-                    >Continuar</button>
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</button>
                 </div>
                 
             </div>
@@ -111,12 +109,12 @@ const NotificationBox = ({
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                        {responseData.successMessage}
+                        {language === 'ES' ? responseData.successMessage : responseData.successMessage_EN }
                     </div>
                     <button
                     className="notificationBtn"
                     onClick={toggleNotification}
-                    >Continuar</button>
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</button>
                 </div>
                 
             </div>
@@ -125,7 +123,7 @@ const NotificationBox = ({
         if (response.status === 500) {
             return (
                 <div>
-                    <b>ha ocurrido interno en nuestro servidor, pedimos disculpas...</b>
+                    <b>{language === 'Es' ? regularCopy.error500Copy : regularCopy.continueBtnCopy_EN}</b>
                 </div>
             )
         }
