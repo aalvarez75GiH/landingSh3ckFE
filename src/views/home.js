@@ -150,6 +150,7 @@ const Home = () => {
             loggedOut={loggedOut}
             handlingSubmitLogOutUser={handlingSubmitLogOutUser}
             username={currentUser}
+            language={language}
            
             />
             {/* : null */}

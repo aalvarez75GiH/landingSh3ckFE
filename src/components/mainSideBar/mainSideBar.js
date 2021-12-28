@@ -2,6 +2,7 @@ import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { BiUserCheck, BiUserCircle, BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
 import { IoMdCart } from 'react-icons/io'
+import { infoMainSideBar } from '../../utils/data'
 
 // import LoginForm from '../contactSection/loginForm'
 
@@ -13,6 +14,7 @@ const MainSideBar = ({
     loggedOut,
     loggedIn,
     handlingSubmitLogOutUser, 
+    language
 }) => {
     console.log(loggedIn)
     console.log(loggedOut)
@@ -38,37 +40,37 @@ const MainSideBar = ({
                                 <BiUserCheck />
                             </div>
                             
-                            <h1 className="mainSideBarUserName">Hola, <b>{username}</b> </h1>
+                            <h1 className="mainSideBarUserName">{language === 'ES' ? infoMainSideBar.hola : infoMainSideBar.hello} <b>{username}</b> </h1>
                         </div>
                         <div className="mainSideBarContentOptions">
                             <div  className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <BiUserCircle/>
                                 </div>
-                                Mi cuenta
+                                {language === 'ES' ? infoMainSideBar.option1Copy : infoMainSideBar.option1Copy_EN}
                             </div>
                             <div className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <IoMdCart/>
                                 </div>
-                                Mis chequeos
+                                {language === 'ES' ? infoMainSideBar.option2Copy : infoMainSideBar.option2Copy_EN}
                             </div>
                             <div className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <BiHelpCircle/>
                                 </div>
-                                Ayuda
+                                {language === 'ES' ? infoMainSideBar.option3Copy : infoMainSideBar.option3Copy_EN}
                             </div>
                             <div className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <BiQuestionMark/>
                                 </div>
-                                Preguntas y respuestas
+                                {language === 'ES' ? infoMainSideBar.option4Copy : infoMainSideBar.option4Copy_EN}
                             </div>
                             <div
                             onClick={handlingSubmitLogOutUser} 
                             className="closeBtn">
-                                Cerrar sesión
+                                {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
                             </div>
                         </div>
                     </div>

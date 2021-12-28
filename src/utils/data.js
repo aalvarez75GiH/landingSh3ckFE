@@ -197,3 +197,19 @@ export const infoNavBarMobil = {
     option3Copy_EN: 'Notify me',
     option4Copy_EN: 'Check it',
 }
+
+
+export const infoMainSideBar = {
+    option1Copy: 'Mi cuenta',
+    option2Copy: 'Mis chequeos',
+    option3Copy: 'Ayúda',
+    option4Copy: 'Preguntas y respuestas',
+    option1Copy_EN: 'My account',
+    option2Copy_EN: 'My checks orders',
+    option3Copy_EN: 'Help',
+    option4Copy_EN: 'Questions & Answers',
+    hola: 'Hola',
+    hello: 'Hello',
+    mainSidebarBtnLabel:'Cerrar sesión',
+    mainSidebarBtnLabel_EN: 'Log out'
+}
