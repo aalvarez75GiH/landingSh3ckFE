@@ -213,3 +213,16 @@ export const infoMainSideBar = {
     mainSidebarBtnLabel:'Cerrar sesión',
     mainSidebarBtnLabel_EN: 'Log out'
 }
+
+export const infoLoginSB = {
+    title: 'Inicia sesión',
+    description: 'Para que podamos chequear productos debes hacer inicio de sesión',
+    title_EN: 'Login',
+    description_EN: 'Log In and check products',
+    loginSBPH1: 'Correo electrónico',
+    loginSBPH2: '#PIN (solo 4 dígitos)',
+    loginSBPH1_EN: 'Email address',
+    loginSBPH2_EN: '#PIN (only 4 digits)',
+    loginSBBtnLabel: 'Enviar',
+    loginSBBtnLabel_EN: 'Send',
+}

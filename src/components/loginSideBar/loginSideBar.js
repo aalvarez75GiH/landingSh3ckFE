@@ -2,6 +2,9 @@ import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import LoginSideBarForm from './loginSideBarForm'
 import LoadingSpinner from '../../utils/loadingSpinner'
+import { infoLoginSB } from '../../utils/data'
+
+
 
 
 const LoginSideBar = ({ 
@@ -16,7 +19,6 @@ const LoginSideBar = ({
     console.log(loggedIn)
     console.log(loggedOut)
     console.log(loginSideBarOpen)
-    
     
     if (loading) {
         return (
@@ -35,10 +37,10 @@ const LoginSideBar = ({
 
                 </div>
                 <div className="loginSideBarFormTitle">
-                    <h1 className="loginSideBarTitle">Inicia sesión </h1>
+                    <h1 className="loginSideBarTitle">{language === 'ES' ? infoLoginSB.title : infoLoginSB.title_EN} </h1>
                 </div>
                 <div className="loginSideBarFormDescription">
-                    <p>Para que podamos chequear productos debes hacer inicio de sesión</p>
+                    <p>{language === 'ES' ? infoLoginSB.description : infoLoginSB.description_EN}</p>
                 </div>
                     
                 <LoginSideBarForm
@@ -50,46 +52,40 @@ const LoginSideBar = ({
             </>
         )   
     }
-    
+
     if (loggedOut){
         return (
-            <>
             <aside
             className={`${loginSideBarOpen ? "loginSideBarContainerOpen" : "loginSideBarContainer" }`}>
                 <div className="loginContactForms">
-                <div 
-                    className="loginSideBarIcon"
-                    onClick={ toggleLoginSideBar }
-                >
-                    <FaTimes className="loginCloseIcon"/>
+                    <div 
+                        className="loginSideBarIcon"
+                        onClick={ toggleLoginSideBar }
+                    >
+                        <FaTimes className="loginCloseIcon"/>
+                    </div>
+                    <div className="loginSideHeader">
+    
+                    </div>
+                    <div className="loginSideBarFormTitle">
+                        <h1 className="loginSideBarTitle">{language === 'ES' ? infoLoginSB.title : infoLoginSB.title_EN}</h1>
+                    </div>
+                    <div className="loginSideBarFormDescription">
+                        <p>{language === 'ES' ? infoLoginSB.description : infoLoginSB.description_EN}</p>
+                    </div>
+                        
+                    <LoginSideBarForm
+                    handlingLogin={handlingLogin}
+                    language={language}
+                    />
+                        
                 </div>
-                <div className="loginSideHeader">
-
-                </div>
-                <div className="loginSideBarFormTitle">
-                    <h1 className="loginSideBarTitle">Inicia sesión </h1>
-                </div>
-                <div className="loginSideBarFormDescription">
-                    <p>Para que podamos chequear productos debes hacer inicio de sesión</p>
-                </div>
-                    
-                <LoginSideBarForm
-                handlingLogin={handlingLogin}
-                />
-                    
-            </div>
             </aside>
-            </>
-            
         )
     }else{
         return null
-
     }
-
     
 }
-    
-
 
 export default LoginSideBar
