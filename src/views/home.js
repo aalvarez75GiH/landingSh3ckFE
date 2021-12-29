@@ -186,7 +186,7 @@ const Home = () => {
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}
             />
-            <FooterSection/>
+            <FooterSection language={language}/>
         </>
     )
 }

@@ -1,41 +1,43 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { infoFooter } from '../../utils/data'
 
-const FooterSection = () => {
+
+const FooterSection = ({language}) => {
     return (
         <div className="footerContainer">
             <div className="footerWrap">
                 <div className="footerLinksContainer">
                     <div className="footerLinksWrapper">
                         <div className="footerLinkItems">
-                            <h1 className="footerLinkTitle">Algunas cosas sobre nosotros</h1>
-                            <p className="footerLink">¿Quienes Somos?</p>
-                            <p className="footerLink">¿Que hacemos?</p>
-                            <p className="footerLink">¿Porque lo hacemos?</p>
-                            <p className="footerLink">Preguntas y respuestas</p>
+                            <h1 className="footerLinkTitle">{language === 'ES' ? infoFooter.footerH1 : infoFooter.footerH1_EN}</h1>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH1P1 : infoFooter.footerH1P1_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH1P2 : infoFooter.footerH1P2_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH1P3 : infoFooter.footerH1P3_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH1P4 : infoFooter.footerH1P4_EN}</p>
                         </div>
                         <div className="footerLinkItems">
-                            <h1 className="footerLinkTitle">Contáctanos</h1>
-                            <p className="footerLink">Contácto</p>
-                            <p className="footerLink">Soporte</p>
-                            <p className="footerLink">Trabaja con nosotros</p>
-                            <p className="footerLink">Video explicativo</p>
+                            <h1 className="footerLinkTitle">{language === 'ES' ? infoFooter.footerH2 : infoFooter.footerH2_EN}</h1>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH2P1 : infoFooter.footerH2P1_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH2P2 : infoFooter.footerH2P2_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH2P3 : infoFooter.footerH2P3_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH2P4 : infoFooter.footerH2P4_EN}</p>
                         </div>
                     </div>
                     <div className="footerLinksWrapper">
                         <div className="footerLinkItems">
-                            <h1 className="footerLinkTitle">Social Media</h1>
-                            <p className="footerLink">Facebook</p>
-                            <p className="footerLink">Instagram</p>
-                            <p className="footerLink">YouTube</p>
-                            <p className="footerLink">Twitter</p>
+                            <h1 className="footerLinkTitle">{infoFooter.footerH3}</h1>
+                            <p className="footerLink">{infoFooter.footerH3P1}</p>
+                            <p className="footerLink">{infoFooter.footerH3P2}</p>
+                            <p className="footerLink">{infoFooter.footerH3P3}</p>
+                            <p className="footerLink">{infoFooter.footerH3P4}</p>
                         </div>
                         <div className="footerLinkItems">
-                            <h1 className="footerLinkTitle">Contáctanos</h1>
-                            <p className="footerLink">Contácto</p>
-                            <p className="footerLink">Soporte</p>
-                            <p className="footerLink">Trabaja con nosotros</p>
-                            <p className="footerLink">Video explicativo</p>
+                            <h1 className="footerLinkTitle">{language === 'ES' ? infoFooter.footerH4 : infoFooter.footerH4_EN}</h1>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P1 : infoFooter.footerH4P1_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P2 : infoFooter.footerH4P2_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P4 : infoFooter.footerH4P3_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P1 : infoFooter.footerH4P4_EN}</p>
                         </div>
 
                     </div>
@@ -43,9 +45,9 @@ const FooterSection = () => {
                 <section className="socialMedia">
                     <div className="socialMediaWrap">
                         <p className="socialLogo">
-                            Sh3ck
+                        {infoFooter.companyName}
                         </p>
-                        <small>Sh3ck @{new Date().getFullYear()}</small>
+                        <small>{infoFooter.copyRight}{new Date().getFullYear()}</small>
                         <div className="socialIcons">
                             <a 
                             className="socialIconLink"

@@ -235,3 +235,47 @@ export const infoNavBar = {
     navBarLi2_EN: 'I wanna check',
     navBarNav_EN: 'Log in'
 }
+
+export const infoFooter = {
+    footerH1: 'Algunas cosas sobre nosotros',
+    footerH1P1: '¿Quienes somos?',
+    footerH1P2: '¿Que hacemos?',
+    footerH1P3: '¿Porque lo hacemos?',
+    footerH1P4: '¿Preguntas y respuestas',
+    footerH1_EN: 'Somethings about us',
+    footerH1P1_EN: 'Who we are?',
+    footerH1P2_EN: 'What we do?',
+    footerH1P3_EN: 'Why we do it?',
+    footerH1P4_EN: 'Questions & Answers',
+    // *******
+    footerH2: 'Contáctanos',
+    footerH2P1: 'Contácto',
+    footerH2P2: 'Soporte',
+    footerH2P3: 'Trabaja con nosotros',
+    footerH2P4: 'Video explicativo',
+    footerH2_EN: 'Contact us',
+    footerH2P1_EN: 'Contact',
+    footerH2P2_EN: 'Support',
+    footerH2P3_EN: 'Work with us',
+    footerH2P4_EN: 'Explainer video',
+    // *********
+    footerH3: 'Social Media',
+    footerH3P1: 'Facebook',
+    footerH3P2: 'Instagram',
+    footerH3P3: 'YouTube',
+    footerH3P4: 'Twitter',
+    // *******
+    footerH4: 'Ingeniería',
+    footerH4P1: 'Tecnologías',
+    footerH4P2: 'Diseño de producto',
+    footerH4P3: 'Nuestro equipo',
+    footerH4P4: 'Contácta al Dpto de ingeniería',
+    footerH4_EN: 'Engineering',
+    footerH4P1_EN: 'Technologies',
+    footerH4P2_EN: 'Product design',
+    footerH4P3_EN: 'Our engineering team',
+    footerH4P4_EN: 'Contact Engnieering Dpt',
+    // ******
+    companyName: 'Sh3ck',
+    copyRight: 'Sh3ck @'
+}
