@@ -2,20 +2,20 @@ import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
 import { GrLanguage } from 'react-icons/gr'
-// import { Link as LinkR } from 'react-router-dom'
-// import { Link as LinkS } from 'react-scroll'
+import { infoSideBar } from '../../utils/data'
 
 const SideBar = ({ 
     toggleSideBar, 
     isOpen, 
-    language,
-    toggleLanguage 
+    language, 
+    toggleLanguage  
 }) => {
 
     const togglingLanguage = () => {
         toggleLanguage()
         toggleSideBar()
     }
+
 
     return ( 
         <aside
@@ -35,11 +35,11 @@ const SideBar = ({
                         <div className="mainSideBarUserOptionsIcon">
                             <GrLanguage/>
                         </div>
-                        Idioma 
-                        <div
+                        {language === 'ES' ? infoSideBar.sideBarLink1 : infoSideBar.sideBarLink1_EN} 
+                        <div 
                         onClick={togglingLanguage}
                         className="changeLanDiv">
-                            (cambiar a español)
+                            {language === 'ES' ? infoSideBar.toggleCopy_EN : infoSideBar.toggleCopy}
                         </div>
                     </div>
                     <div
@@ -49,7 +49,7 @@ const SideBar = ({
                         <div className="mainSideBarUserOptionsIcon">
                             <BiQuestionMark/>
                         </div>
-                        Questions & Answers
+                        {language === 'ES' ? infoSideBar.sideBarLink2 : infoSideBar.sideBarLink2_EN}
                     </div>
                     
                     <div 
@@ -59,14 +59,15 @@ const SideBar = ({
                         <div className="mainSideBarUserOptionsIcon">
                             <BiHelpCircle/>
                         </div>
-                        Help
+                        {language === 'ES' ? infoSideBar.sideBarLink3 : infoSideBar.sideBarLink3_EN}
                     </div>
                 </div>
                 <div className="sideBtnWrap">
                     <div
+                    onClick={toggleSideBar}
                     className="sideBarRoute" 
                     to="/signin">
-                        Cerrar
+                        {language === 'ES' ? infoSideBar.sideBarBtnLabel : infoSideBar.sideBarBtnLabel_EN}
                     </div>
                 </div>
 

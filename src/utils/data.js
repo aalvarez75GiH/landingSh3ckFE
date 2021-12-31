@@ -279,3 +279,17 @@ export const infoFooter = {
     companyName: 'Sh3ck',
     copyRight: 'Sh3ck @'
 }
+
+export const infoSideBar = {
+    sideBarLink1: 'Idioma',
+    sideBarLink2: 'Preguntas y Respuestas',
+    sideBarLink3: 'Ayuda',
+    sideBarLink1_EN: 'Language',
+    sideBarLink2_EN: 'Questions & Answers',
+    sideBarLink3_EN: 'Help',
+    toggleCopy: '(cambiar a Español)',
+    toggleCopy_EN:'(Switch to English)',
+    sideBarBtnLabel: 'Cerrar',
+    sideBarBtnLabel_EN: 'Close'
+
+}
