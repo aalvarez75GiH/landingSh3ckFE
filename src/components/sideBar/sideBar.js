@@ -5,49 +5,19 @@ import { GrLanguage } from 'react-icons/gr'
 // import { Link as LinkR } from 'react-router-dom'
 // import { Link as LinkS } from 'react-scroll'
 
-const SideBar = ({ toggleSideBar, isOpen, language }) => {
+const SideBar = ({ 
+    toggleSideBar, 
+    isOpen, 
+    language,
+    toggleLanguage 
+}) => {
+
+    const togglingLanguage = () => {
+        toggleLanguage()
+        toggleSideBar()
+    }
+
     return ( 
-        // <aside
-        // className={`${isOpen ? "sideBarContainerOpen" : "sideBarContainer" }`}>
-        //     <div 
-        //     className="sideBarIcon"
-        //     onClick={ toggleSideBar }
-        //     >
-        //         <FaTimes className="closeIcon"/>
-        //     </div>
-        //     <div className="sideBarWrapper">
-        //         <ul className="sideBarMenu">
-        //             <LinkS
-        //             onClick={ toggleSideBar }
-        //             to="about" 
-        //             className="sideBarLink" >
-        //                 ¿Quieres saber más?
-        //             </LinkS>
-        //             <LinkS 
-        //             onClick={ toggleSideBar }
-        //             to="discover" 
-        //             className="sideBarLink" >
-        //                 ¿Como funciona?
-        //             </LinkS>
-        //             <LinkS 
-        //             onClick={ toggleSideBar }
-        //             to="services" 
-        //             className="sideBarLink" >
-        //                 ¿Quiéres ser parte?
-        //             </LinkS>
-        //         </ul>
-        //         <div className="sideBtnWrap">
-        //             <LinkR
-        //             className="sideBarRoute" 
-        //             to="/signin">
-        //                 Cerrar
-        //             </LinkR>
-        //         </div>
-
-        //     </div>
-
-
-        // </aside>
         <aside
         className={`${isOpen ? "sideBarContainerOpen" : "sideBarContainer" }`}>
             <div 
@@ -66,7 +36,9 @@ const SideBar = ({ toggleSideBar, isOpen, language }) => {
                             <GrLanguage/>
                         </div>
                         Idioma 
-                        <div className="changeLanDiv">
+                        <div
+                        onClick={togglingLanguage}
+                        className="changeLanDiv">
                             (cambiar a español)
                         </div>
                     </div>
