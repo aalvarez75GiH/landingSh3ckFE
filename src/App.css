@@ -206,7 +206,7 @@
     z-index: 999;
     width: 100%;
     height: 100%;
-    background-color: #010606;
+    background-color: #ffffff;
     display: grid;
     align-items: center;
     left: 0;
@@ -226,37 +226,33 @@
 }
 
 .closeIcon {
-    color: #ffffff;
+    color: #010606;
     
 }
 
 .sideBarWrapper {
-    color: #ffffff;
+    color: #010606;
 }
 
 .sideBarMenu {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 80px);
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: repeat(4, 80px); */
     text-align: center;
 }
 
 
 .sideBarLink {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    list-style: none;
-    transition: 0.2s ease-in-out;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.sideBarLink:hover {
-    color: #FF810A;
-    transition: 0.2s ease-in-out;
+    font-size: 1.6rem;
+    margin-bottom: 1%;
+    border-bottom: 1px solid #eeeeee;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 1%;
+    margin-left: 5%;
 }
 
 .sideBtnWrap {
@@ -266,7 +262,7 @@
 
 .sideBarRoute {
     border-radius: 50px;
-    background-color: #FF810A;
+    background-color: #FAD570;
     white-space: nowrap;
     padding: 16px 64px;
     color: #010606;
@@ -278,10 +274,13 @@
     text-decoration: none;
 }
 
-.sideBarRoute:hover {
-    transition: all 0.2s ease-in-out;
-    background-color: #FAD570;
-    color: #0C0920;
+
+.changeLanDiv {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    text-decoration: underline;
+    margin-left: 20%;
 }
 
 /*************** LoginSideBar ****************************** */
