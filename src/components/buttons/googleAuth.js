@@ -37,8 +37,8 @@ class GoogleAuth extends React.Component {
         console.log(this.auth.currentUser.get().Du.tf)
     }
 
-    onSignOutClick = async() => {
-        await this.auth.signOut()
+    onSignOutClick = () => {
+        this.auth.signOut()
     }
     
     renderGoogleAuthButton() {
