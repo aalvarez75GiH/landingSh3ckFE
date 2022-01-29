@@ -9,7 +9,7 @@ import './App.css'
 const App = () => {
     return (
         <Router>
-            <GoogleAuth/>
+            <GoogleAuth2/>
            {/* <Home/>  */}
         </Router>
         
