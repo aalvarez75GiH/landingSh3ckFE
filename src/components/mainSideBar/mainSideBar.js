@@ -3,6 +3,7 @@ import { FaTimes } from 'react-icons/fa'
 import { BiUserCheck, BiUserCircle, BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
 import { IoMdCart } from 'react-icons/io'
 import { infoMainSideBar } from '../../utils/data'
+import GoogleAuthButtons from '../buttons/googleAuthButtons'
 
 // import LoginForm from '../contactSection/loginForm'
 
@@ -14,12 +15,16 @@ const MainSideBar = ({
     loggedOut,
     loggedIn,
     handlingSubmitLogOutUser, 
-    language
+    language,
+    loginData,
+    handleGoogleLogin,
+    handleGoogleFailure,
+    handleGoogleLogout,
+    showloginButton,
+    showlogoutButton
 }) => {
-    console.log(loggedIn)
-    console.log(loggedOut)
-    console.log(mainSideBarOpen)
-      
+    console.log(loginData)
+    
     if (loggedIn && mainSideBarOpen){
        return (
        <aside
@@ -36,9 +41,16 @@ const MainSideBar = ({
                     </div>
                     <div className="mainSideBarContent">
                         <div className="mainSideBarContentUser">
-                            <div className="mainSideBarUserIcon">
-                                <BiUserCheck />
-                            </div>
+                            {
+                               !loginData ?  
+                                <div className="mainSideBarUserIcon">
+                                    <BiUserCheck />
+                                </div>
+                                :
+                                <div className="mainSideBarUserImage">
+                                    <img src={loginData.imageUrl || loginData.picture} alt="cdcdcdc" className="avatar" />
+                                </div>
+                            }
                             
                             <h1 className="mainSideBarUserName">{language === 'ES' ? infoMainSideBar.hola : infoMainSideBar.hello} <b>{username}</b> </h1>
                         </div>
@@ -67,11 +79,30 @@ const MainSideBar = ({
                                 </div>
                                 {language === 'ES' ? infoMainSideBar.option4Copy : infoMainSideBar.option4Copy_EN}
                             </div>
-                            <div
-                            onClick={handlingSubmitLogOutUser} 
-                            className="closeBtn">
+
+                            {/* <div
+                                onClick={handlingSubmitLogOutUser} 
+                                className="closeBtn">
                                 {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
-                            </div>
+                            </div> */}
+                            
+                            {
+                                !loginData ?
+                                <div
+                                onClick={handlingSubmitLogOutUser} 
+                                className="closeBtn">
+                                {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
+                                </div>  
+                                :
+                                <GoogleAuthButtons
+                                handleGoogleLogin={handleGoogleLogin}
+                                handleGoogleLogout={handleGoogleLogout}
+                                handleGoogleFailure={handleGoogleFailure}
+                                showloginButton={showloginButton}
+                                showlogoutButton={showlogoutButton}
+                                />
+                            }
+                            
                         </div>
                     </div>
                 </div>

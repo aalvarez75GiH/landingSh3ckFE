@@ -30,6 +30,13 @@ const Home = () => {
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
     const [ language, setLanguage ] = useState('EN')
+
+    // Google OAuth States *****************************************
+    const [GULoggedIn, setGULoggedIn] = useState(false)
+    const [ loginData, setLoginData ] = useState(null)
+    const [showloginButton, setShowloginButton] = useState(true)
+    const [showlogoutButton, setShowlogoutButton] = useState(false)
+    // **************************************************************
     
     
     const mobil = useMobilDetect()
@@ -130,6 +137,62 @@ const Home = () => {
     }
 
   
+  //  ************* Google OAuth Process and functions ****************
+
+  const handleGoogleLogin = async(googleData) => {
+    console.log('Login Success:', googleData.profileObj)
+    setLoginData(googleData.profileObj.name)
+    try {
+        console.log('handling Login with Google...')
+        console.log(googleData.name)
+        const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
+            method: 'POST',
+            body: JSON.stringify({
+              token: googleData.tokenId,
+            }),
+            headers:{
+              'Content-Type': 'application/json'
+            }
+          })
+          const data = await res.json()
+          console.log(data)
+          setLoginData(data)   
+          setShowloginButton(false)
+          setShowlogoutButton(true)
+          setCurrentUser(data.fullName)
+          setLoggedIn(true) 
+          setLoggedOut(false)
+    } catch (error) {
+        console.log(error)
+        setCurrentUser(googleData.profileObj.name)
+        setLoginData(googleData.profileObj)
+        setShowloginButton(false)
+        setShowlogoutButton(true)
+        setLoggedIn(true) 
+        setLoggedOut(false)
+    }
+}
+
+console.log(loginData)
+const handleGoogleFailure = (res) => {
+    console.log('handling Failure...', res)
+}
+
+const handleGoogleLogout = () => {
+    alert("You have been logged out successfully");
+    console.clear()
+    setMainSideBarOpen(!mainSideBarOpen)
+    setLoginData(null)
+    setLoggedIn(false)
+    setLoggedOut(true)
+    setShowloginButton(true)
+    setShowlogoutButton(false)
+
+}
+
+
+//  *****************************************************************
+
     
     return (
         <>
@@ -161,6 +224,12 @@ const Home = () => {
             handlingSubmitLogOutUser={handlingSubmitLogOutUser}
             username={currentUser}
             language={language}
+            loginData={loginData}
+            handleGoogleLogin={handleGoogleLogin}
+            handleGoogleFailure={handleGoogleFailure}
+            handleGoogleLogout={handleGoogleLogout}
+            showloginButton={showloginButton}
+            showlogoutButton={showlogoutButton}
            
             />
             {/* : null */}
@@ -200,6 +269,11 @@ const Home = () => {
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}
+            handleGoogleLogin={handleGoogleLogin}
+            handleGoogleFailure={handleGoogleFailure}
+            handleGoogleLogout={handleGoogleLogout}
+            showloginButton={showloginButton}
+            showlogoutButton={showlogoutButton}
             />
             <FooterSection language={language}/>
         </>

@@ -642,6 +642,14 @@
     font-size: 1.4rem;
 }
 
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
 /*************** heroSection ****************************** */
 .heroContainer {
     background-color: #ffffff;
@@ -4768,6 +4776,33 @@
     border-radius: 30px;
     font-size: 1.2rem;
 
+}
+
+/* Google Auth Button */
+.g-signin {
+    width: 100%;
+    margin-top: 6%;
+    border-top: unset;
+    height: 85px;
+}
+.g-signin button {
+    width: 100%;
+    border-style: none;
+    background-color: #FAD570;
+    height: 100%;
+}
+
+.g-signin span {
+    font-size: 1.4rem;
+    margin-left: 15%;
+    
+}
+.g-signin svg {
+    margin-left: 20%;
+}
+
+.g-signin div {
+    background-color: #4285f4;
 }
     
 }

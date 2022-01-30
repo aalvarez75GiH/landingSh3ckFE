@@ -18,7 +18,12 @@ const ContactSection = ({
     loggedIn,
     handlingSubmitLoginUser,
     loginResponse,
-    toggleNotificationLogin
+    toggleNotificationLogin,
+    handleGoogleLogin,
+    handleGoogleLogout,
+    handleGoogleFailure,
+    showloginButton,
+    showlogoutButton
 
 }) => {
    
@@ -269,6 +274,11 @@ return (
             handlingNewPINRequest={handlingNewPINRequest}
             toggleForgotSection={toggleForgotSection}
             language={language}
+            handleGoogleLogin={handleGoogleLogin}
+            handleGoogleLogout={handleGoogleLogout}
+            handleGoogleFailure={handleGoogleFailure}
+            showloginButton={showloginButton}
+            showlogoutButton={showlogoutButton}
             />
             :
             null

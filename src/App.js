@@ -9,8 +9,8 @@ import './App.css'
 const App = () => {
     return (
         <Router>
-            <GoogleAuth2/>
-           {/* <Home/>  */}
+            {/* <GoogleAuth2/> */}
+           <Home/> 
         </Router>
         
     )

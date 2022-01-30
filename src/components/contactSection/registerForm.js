@@ -2,6 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import { infoContact } from '../../utils/data'
+import GoogleAuthButtons from '../buttons/googleAuthButtons'
 
 
 // const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
@@ -22,7 +23,16 @@ const validationSchema = yup.object({
 })
 
 
-const RegisterForm = ({ handlingSubmitUser, language }) => {
+const RegisterForm = ({ 
+    handlingSubmitUser, 
+    language,
+    handleGoogleLogin,
+    handleGoogleLogout,
+    handleGoogleFailure,
+    showloginButton,
+    showlogoutButton 
+
+}) => {
 
     const onSubmit = (values) => {
         handlingSubmitUser(values)
@@ -88,23 +98,21 @@ const RegisterForm = ({ handlingSubmitUser, language }) => {
                     borderBottom: `${formik.touched.phoneNumber && formik.errors.phoneNumber ? '2px solid red' : '1px solid rgba(200,200,200, 0.3 )'}`
                 }}
                 />
-                {/* <input
-                className="input"
-                name="password"
-                placeholder="Contraseña" 
-                type="password" 
-                autoComplete="on"
-                value={formik.values.password}
-                onChange={formik.handleChange}                
-                onBlur={formik.handleBlur}
-                style={{
-                    borderBottom: `${formik.touched.password && formik.errors.password ? '2px solid red' : '1px solid rgba(200,200,200, 0.3 )'}`
-                }}
-                /> */}
                 <button
                 className="sendDataBtn"
                 type="submit"
                 >{language === 'ES' ? infoContact.regUsersFormSendBtn : infoContact.regUsersFormSendBtn_EN}</button>
+            
+                <div className="g-signin">
+                    <GoogleAuthButtons
+                    handleGoogleLogin={handleGoogleLogin}
+                    handleGoogleLogout={handleGoogleLogout}
+                    handleGoogleFailure={handleGoogleFailure}
+                    showloginButton={showloginButton}
+                    showlogoutButton={showlogoutButton}
+                    />
+                </div>
+            
             </form>
 
         </div>
