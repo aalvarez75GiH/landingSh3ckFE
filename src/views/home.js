@@ -19,6 +19,10 @@ import ContactSection from '../components/contactSection/contactSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 
+
+// f31c5fee13aef74568ac client id
+// 5029d96a85c6c31586054f0c2d8d3010d8fdae69  client secret
+
 const Home = () => {
 
     const [ isOpen, setIsOpen ] = useState(false)
@@ -70,7 +74,7 @@ const Home = () => {
         try {
             const { data } = await axios.post(url_userLoginITC, user)
             console.log(data)
-            localStorage.setItem('SH3CK_TOKEN', data.token)
+            localStorage.setItem('SH3C_TOKEN', data.token)
             // ******************************************
             const response = await axios.get('https://intense-atoll-00786.herokuapp.com/api/users/me', {
                 headers:{
