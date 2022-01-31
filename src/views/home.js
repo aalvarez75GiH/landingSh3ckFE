@@ -194,9 +194,29 @@ const handleGoogleLogout = () => {
 
 }
 
-
 //  *****************************************************************
+//  **********************Google Login New **************************
 
+//   const user = auth.currentUser.get()
+        //   console.log(user)
+        //   const profile = user.getBasicProfile()
+        //   console.log(profile)
+        //   const email = profile.getEmail()
+        //   console.log(email)
+        //   const imageUrl = profile.getImageUrl()
+        //   console.log(imageUrl)
+
+const googleTest = (auth) => {
+    const user = auth.currentUser.get()
+    const profile = user.getBasicProfile()
+    const email = profile.getEmail()
+    const imageUrl = profile.getImageUrl()
+    const token_id = auth.currentUser.get().wc.id_token
+    alert('We are in the good way...')
+    setLoginData(token_id)
+}
+
+console.log(loginData)
     
     return (
         <>
@@ -278,6 +298,8 @@ const handleGoogleLogout = () => {
             handleGoogleLogout={handleGoogleLogout}
             showloginButton={showloginButton}
             showlogoutButton={showlogoutButton}
+            googleTest={googleTest}
+            
             />
             <FooterSection language={language}/>
         </>

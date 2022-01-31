@@ -23,7 +23,8 @@ const ContactSection = ({
     handleGoogleLogout,
     handleGoogleFailure,
     showloginButton,
-    showlogoutButton
+    showlogoutButton,
+    googleTest
 
 }) => {
    
@@ -279,6 +280,7 @@ return (
             handleGoogleFailure={handleGoogleFailure}
             showloginButton={showloginButton}
             showlogoutButton={showlogoutButton}
+            googleTest={googleTest}
             />
             :
             null

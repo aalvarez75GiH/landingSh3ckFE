@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // import '../../bookface.css'
 
-const GoogleAuth3 = () => {
+const GoogleAuth3 = ({googleTest}) => {
     
     useEffect(()=> {
         insertGapiScript()
@@ -26,6 +26,7 @@ const GoogleAuth3 = () => {
         }).then(()=> {
           console.log('gapi initialized...')
           const auth = window.gapi.auth2.getAuthInstance()
+          console.log(auth)
           const isSignedIn = auth.isSignedIn.get()
           setIsSignedIn(isSignedIn)
           console.log(isSignedIn)
@@ -40,8 +41,10 @@ const GoogleAuth3 = () => {
             }
             window.gapi.signin2.render('loginButton', params )
         })
+        
         })
     })
+    
 }
 
     if (isSignedIn === null){
