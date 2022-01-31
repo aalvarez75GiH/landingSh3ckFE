@@ -4116,6 +4116,41 @@
        color: #ffffff;
        font-size: 24px;
     }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background: black;
+        color: white;
+        height: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      nav > img {
+        height: auto;
+        width: 40px;
+        padding-right: 10px;
+      }
+      .push {
+        margin-left: auto;
+      }
+    
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+      }
+      .container > img {
+        height: 200px;
+        width: 200px;
+      }
+    
+      .push {
+        margin-left: auto;
+      }
    
 }
 
@@ -4804,6 +4839,41 @@
 .g-signin div {
     background-color: #4285f4;
 }
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: black;
+    color: white;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  nav > img {
+    height: auto;
+    width: 40px;
+    padding-right: 10px;
+  }
+  .push {
+    margin-left: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+  .container > img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .push {
+    margin-left: auto;
+  }
     
 }
 
