@@ -30,14 +30,17 @@ const GoogleAuth3 = ({googleTest}) => {
           const isSignedIn = auth.isSignedIn.get()
           setIsSignedIn(isSignedIn)
           console.log(isSignedIn)
+        //   googleTest(isSignedIn)
           auth.isSignedIn.listen(isSignedIn => {
             setIsSignedIn(isSignedIn)
           })
           window.gapi.load('signin2', ()=> {
             const params = {
-                onSucess: () => {
+                onsuccess: () => {
+                    googleTest(isSignedIn)
                     console.log('user has finished signing in...')
-                }
+                },
+                'theme': 'dark'
             }
             window.gapi.signin2.render('loginButton', params )
         })

@@ -25,6 +25,7 @@ const LoginFormTest = ({
     toggleForgotSection,
     handlingNewPINRequest,
     language,
+    googleTest
 }) => {
 
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
@@ -127,7 +128,9 @@ const LoginFormTest = ({
                 <span
                 onClick={toggleForgotSection} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
-                <GoogleAuth3/>
+                <GoogleAuth3
+                googleTest={googleTest}
+                />
             </form>
 
         </div>

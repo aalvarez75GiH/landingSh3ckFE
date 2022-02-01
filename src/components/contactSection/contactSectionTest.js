@@ -20,6 +20,8 @@ const ContactSectionTest = ({
     handlingSubmitLoginUser,
     loginResponse,
     toggleNotificationLogin,
+    googleTest
+
 }) => {
    
     const [ upLoadingUser, setUpLoadingUser ] = useState(false)
@@ -269,6 +271,7 @@ return (
             handlingNewPINRequest={handlingNewPINRequest}
             toggleForgotSection={toggleForgotSection}
             language={language}
+            googleTest={googleTest}
             />
             :
             null

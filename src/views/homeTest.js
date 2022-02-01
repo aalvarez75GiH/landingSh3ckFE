@@ -200,14 +200,20 @@ const handleGoogleLogout = () => {
         //   const imageUrl = profile.getImageUrl()
         //   console.log(imageUrl)
 
-const googleTest = (auth) => {
-    const user = auth.currentUser.get()
-    const profile = user.getBasicProfile()
-    const email = profile.getEmail()
-    const imageUrl = profile.getImageUrl()
-    const token_id = auth.currentUser.get().wc.id_token
-    alert('We are in the good way...')
-    setLoginData(token_id)
+const googleTest = (isSignedIn) => {
+    if (isSignedIn){
+        console.log('Here is my baby...')
+    }else{
+        console.log('poor baby...')
+    }
+    return 
+    // const user = auth.currentUser.get()
+    // const profile = user.getBasicProfile()
+    // const email = profile.getEmail()
+    // const imageUrl = profile.getImageUrl()
+    // const token_id = auth.currentUser.get().wc.id_token
+    // alert('We are in the good way...')
+    // setLoginData(token_id)
     
 }
 
@@ -282,6 +288,7 @@ console.log(loginData)
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}
+            googleTest={googleTest}
             />
             <FooterSection language={language}/>
         </>
