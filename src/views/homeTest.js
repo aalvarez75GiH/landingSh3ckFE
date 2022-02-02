@@ -252,8 +252,8 @@ const HomeTest = () => {
           })
           
         }
-            const googleTest = (auth) => {
-                console.log('poor baby...')
+            const googleTest = (user) => {
+                console.log(user)
                 setLoggedIn(true)
                 setLoggedOut(false)
                 // const user = auth.currentUser.get()

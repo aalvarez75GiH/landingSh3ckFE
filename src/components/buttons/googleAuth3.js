@@ -7,11 +7,13 @@ const GoogleAuth3 = ({isSignedIn, googleTest}) => {
     useEffect(()=> {
         window.gapi.load('signin2', () => {
             const params = {
-                onsuccess: () => {
+                onsuccess: (user) => {
                     console.log('Google test must be executed...')
-                    googleTest()
+                    googleTest(user)
                 },
-                'theme': 'dark'
+                'theme': 'dark',
+                'width': 455,
+                'height': 85,
             }
             window.gapi.signin2.render('loginButton', params )
           })
