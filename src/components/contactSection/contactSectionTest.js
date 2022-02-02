@@ -20,6 +20,7 @@ const ContactSectionTest = ({
     handlingSubmitLoginUser,
     loginResponse,
     toggleNotificationLogin,
+    isSignedIn,
     googleTest
 
 }) => {
@@ -34,8 +35,8 @@ const ContactSectionTest = ({
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
     const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
-    console.log(loginResponse)
-   
+    // console.log(loginResponse)
+   console.log(isSignedIn)
 
     const switchToCheck = () => {
         setActive('check')
@@ -170,7 +171,7 @@ if (upLoadingUser){
         </div>
     )    
 }
-console.log(active)
+// console.log(active)
 return (
     <div 
     id={infoContact.id}
@@ -271,6 +272,7 @@ return (
             handlingNewPINRequest={handlingNewPINRequest}
             toggleForgotSection={toggleForgotSection}
             language={language}
+            isSignedIn={isSignedIn}
             googleTest={googleTest}
             />
             :

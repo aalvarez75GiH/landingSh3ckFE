@@ -62,13 +62,14 @@ const Home = () => {
                 return setLoggedIn(true)
             }
             setLoggedIn(false)
-            setLoggedOut(true)
-            
-            
+            setLoggedOut(true) 
         }   
         getToken()
 
     },[])
+
+
+  
 
     const handlingSubmitLoginUser = async(user) => {    
         try {
@@ -214,6 +215,7 @@ const googleTest = (auth) => {
     const token_id = auth.currentUser.get().wc.id_token
     alert('We are in the good way...')
     setLoginData(token_id)
+
 }
 
 console.log(loginData)

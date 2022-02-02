@@ -25,9 +25,10 @@ const LoginFormTest = ({
     toggleForgotSection,
     handlingNewPINRequest,
     language,
+    isSignedIn,
     googleTest
 }) => {
-
+    console.log(isSignedIn)
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
     
     const onSubmit = async(values) => {
@@ -56,6 +57,7 @@ const LoginFormTest = ({
             <RegisterFormTest 
             handlingSubmitUser={handlingSubmitUser}
             language={language}
+            isSignedIn={isSignedIn}
             />
         )
     }
@@ -129,6 +131,7 @@ const LoginFormTest = ({
                 onClick={toggleForgotSection} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
                 <GoogleAuth3
+                isSignedIn={isSignedIn}
                 googleTest={googleTest}
                 />
             </form>

@@ -38,9 +38,16 @@ const HomeTest = () => {
     const [ language, setLanguage ] = useState('EN')
 
     // Google OAuth States *****************************************
-    const [GULoggedIn, setGULoggedIn] = useState(false)
+    const [googleUser, setGoogleUser] = useState({
+        fullName: '',
+        email: '',
+        id: '',
+        imageUrl: '',
+        token_id: ''
+    })
     const [ loginData, setLoginData ] = useState(null)
-    
+    const [isSignedIn, setIsSignedIn] = useState(null)
+    console.log(isSignedIn)
     // **************************************************************
     
     
@@ -48,7 +55,14 @@ const HomeTest = () => {
     const mobil2 = useMobilDetection()
     const url_userLogin = "http://192.168.1.102:5000/api/users/login"
     const url_userLoginITC = "https://intense-atoll-00786.herokuapp.com/api/users/login"
+    let auth
     useEffect(() => {
+        gettingTokenForLocalSignIn()
+        insertGapiScript()
+
+    },[])
+
+    const gettingTokenForLocalSignIn = () => {
         const getToken = async() => {
             const token = localStorage.getItem('SH3CK_TOKEN')
             if (token){
@@ -68,14 +82,15 @@ const HomeTest = () => {
             
         }   
         getToken()
+    }
 
-    },[])
+    
 
     const handlingSubmitLoginUser = async(user) => {    
         try {
             const { data } = await axios.post(url_userLoginITC, user)
             console.log(data)
-            localStorage.setItem('SH3C_TOKEN', data.token)
+            localStorage.setItem('SH3CK_TOKEN', data.token)
             // ******************************************
             const response = await axios.get('https://intense-atoll-00786.herokuapp.com/api/users/me', {
                 headers:{
@@ -105,11 +120,20 @@ const HomeTest = () => {
         }, 2000);
     }
 
-    const handlingSubmitLogOutUser = () => {
-        localStorage.removeItem('SH3CK_TOKEN')
-        setMainSideBarOpen(!mainSideBarOpen)
-        setLoggedIn(false)
-        setLoggedOut(true)
+    const handlingSubmitLogOutUser = async() => {
+        if (isSignedIn) {
+            const auth = window.gapi.auth2.getAuthInstance()
+            await auth.signOut()
+            setIsSignedIn(false)
+            setMainSideBarOpen(!mainSideBarOpen)
+        }
+        if (loggedIn){
+            localStorage.removeItem('SH3CK_TOKEN')
+            setMainSideBarOpen(!mainSideBarOpen)
+            setLoggedIn(false)
+            setLoggedOut(true)
+        }
+        
         
     }
  
@@ -142,51 +166,53 @@ const HomeTest = () => {
     }
 
   
-  //  ************* Google OAuth Process and functions ****************
+  //  ************* Google OAuth Processes and functions ****************
 
-  const handleGoogleLogin = async(googleData) => {
-    console.log('Login Success:', googleData.profileObj)
-    setLoginData(googleData.profileObj.name)
-    try {
-        console.log('handling Login with Google...')
-        console.log(googleData.name)
-        const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
-            method: 'POST',
-            body: JSON.stringify({
-              token: googleData.tokenId,
-            }),
-            headers:{
-              'Content-Type': 'application/json'
-            }
-          })
-          const data = await res.json()
-          console.log(data)
-          setLoginData(data)   
-          setCurrentUser(data.fullName)
-          setLoggedIn(true) 
-          setLoggedOut(false)
-    } catch (error) {
-        console.log(error)
-        setCurrentUser(googleData.profileObj.name)
-        setLoginData(googleData.profileObj)
-        setLoggedIn(true) 
-        setLoggedOut(false)
-    }
-}
+//   const handleGoogleLogin = async(googleData) => {
+//     console.log('Login Success:', googleData.profileObj)
+//     setLoginData(googleData.profileObj.name)
+//     try {
+//         console.log('handling Login with Google...')
+//         console.log(googleData.name)
+//         const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
+//             method: 'POST',
+//             body: JSON.stringify({
+//               token: googleData.tokenId,
+//             }),
+//             headers:{
+//               'Content-Type': 'application/json'
+//             }
+//           })
+//           const data = await res.json()
+//           console.log(data)
+//           setLoginData(data)   
+//           setCurrentUser(data.fullName)
+//           setLoggedIn(true) 
+//           setLoggedOut(false)
+//     } catch (error) {
+//         console.log(error)
+//         setCurrentUser(googleData.profileObj.name)
+//         setLoginData(googleData.profileObj)
+//         setLoggedIn(true) 
+//         setLoggedOut(false)
+//     }
+// }
 
-console.log(loginData)
-const handleGoogleFailure = (res) => {
-    console.log('handling Failure...', res)
-}
+// console.log(loginData)
+// const handleGoogleFailure = (res) => {
+//     console.log('handling Failure...', res)
+// }
 
-const handleGoogleLogout = () => {
-    alert("You have been logged out successfully");
-    console.clear()
-    setMainSideBarOpen(!mainSideBarOpen)
-    setLoginData(null)
-    setLoggedIn(false)
-    setLoggedOut(true)
-}
+// const handleGoogleLogout = () => {
+//     alert("You have been logged out successfully");
+//     console.clear()
+//     setMainSideBarOpen(!mainSideBarOpen)
+//     setLoginData(null)
+//     setLoggedIn(false)
+//     setLoggedOut(true)
+// }
+
+
 
 //  *****************************************************************
 //  **********************Google Login New **************************
@@ -199,24 +225,60 @@ const handleGoogleLogout = () => {
         //   console.log(email)
         //   const imageUrl = profile.getImageUrl()
         //   console.log(imageUrl)
+        const insertGapiScript = () => {
+            const script = document.createElement('script')
+            script.src = "https://apis.google.com/js/platform.js"
+            script.onload = () => {
+                initializeGooglesignIn()
+            }
+            document.body.appendChild(script)
+          } 
+          
+          const initializeGooglesignIn = () => {
+            window.gapi.load('client:auth2', () => {
+              window.gapi.client.init({
+                client_id: '915460618193-dcl1a1f3en6f3h22evu9jqk2aqdh1lcj.apps.googleusercontent.com',
+                scope:'profile'
+              }).then(()=> {
+              console.log('gapi initialized...')
+              auth = window.gapi.auth2.getAuthInstance()
+              const isSignedIn = auth.isSignedIn.get()
+              setIsSignedIn(isSignedIn)
+              console.log(isSignedIn)
+              auth.isSignedIn.listen(isSignedIn => {
+                  setIsSignedIn(auth.isSignedIn.get())
+              })   
+              })
+          })
+          
+        }
+            const googleTest = (auth) => {
+                console.log('poor baby...')
+                setLoggedIn(true)
+                setLoggedOut(false)
+                // const user = auth.currentUser.get()
+                // console.log(user)
+                // const profile = user.getBasicProfile()
+                // const email = profile.getEmail()
+                // console.log(email)
+                // const fullName = profile.getName()
+                // const imageUrl = profile.getImageUrl()
+                // const token_id = auth.currentUser.get().wc.id_token
+                // const id = profile.getId()
+                // setGoogleUser({
+                //     fullName: fullName,
+                //     email: email,
+                //     id: id,
+                //     imageUrl: imageUrl,
+                //     // token_id: token_id
+                // })    
+                // setCurrentUser(googleUser.fullName)
+                // setLoginData(googleUser)
+                // setLoggedIn(true) 
+                // setLoggedOut(false)
+            }
 
-const googleTest = (isSignedIn) => {
-    if (isSignedIn){
-        console.log('Here is my baby...')
-    }else{
-        console.log('poor baby...')
-    }
-    return 
-    // const user = auth.currentUser.get()
-    // const profile = user.getBasicProfile()
-    // const email = profile.getEmail()
-    // const imageUrl = profile.getImageUrl()
-    // const token_id = auth.currentUser.get().wc.id_token
-    // alert('We are in the good way...')
-    // setLoginData(token_id)
-    
-}
-
+console.log(googleUser)
 console.log(loginData)
     
     return (
@@ -285,6 +347,7 @@ console.log(loginData)
             <ContactSectionTest 
             language={language}
             loggedIn={loggedIn}
+            isSignedIn={isSignedIn}
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}

@@ -16,6 +16,8 @@ const validationSchema = yup.object({
 const RegisterFormTest = ({ 
     handlingSubmitUser, 
     language,
+    googleTest,
+    isSignedIn
 }) => {
 
     const onSubmit = (values) => {
@@ -85,7 +87,10 @@ const RegisterFormTest = ({
                 type="submit"
                 >{language === 'ES' ? infoContact.regUsersFormSendBtn : infoContact.regUsersFormSendBtn_EN}</button>
 
-                <GoogleAuth3/>
+                <GoogleAuth3
+                googleTest={googleTest}
+                isSignedIn={isSignedIn}
+                />
                 
                 
             
