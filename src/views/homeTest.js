@@ -59,7 +59,6 @@ const HomeTest = () => {
     useEffect(() => {
         gettingTokenForLocalSignIn()
         insertGapiScript()
-
     },[])
 
     const gettingTokenForLocalSignIn = () => {
@@ -241,8 +240,11 @@ const HomeTest = () => {
                 scope:'profile'
               }).then(()=> {
               console.log('gapi initialized...')
+            //   const response = window.gapi.auth2.getAuthResponse()
+            //   console.log(response)
               auth = window.gapi.auth2.getAuthInstance()
               const isSignedIn = auth.isSignedIn.get()
+              {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
               setIsSignedIn(isSignedIn)
               console.log(isSignedIn)
               auth.isSignedIn.listen(isSignedIn => {
@@ -252,32 +254,49 @@ const HomeTest = () => {
           })
           
         }
-            const googleTest = (user) => {
-                console.log(user)
-                setLoggedIn(true)
-                setLoggedOut(false)
-                // const user = auth.currentUser.get()
-                // console.log(user)
-                // const profile = user.getBasicProfile()
-                // const email = profile.getEmail()
-                // console.log(email)
-                // const fullName = profile.getName()
-                // const imageUrl = profile.getImageUrl()
-                // const token_id = auth.currentUser.get().wc.id_token
-                // const id = profile.getId()
-                // setGoogleUser({
-                //     fullName: fullName,
-                //     email: email,
-                //     id: id,
-                //     imageUrl: imageUrl,
-                //     // token_id: token_id
-                // })    
-                // setCurrentUser(googleUser.fullName)
-                // setLoginData(googleUser)
-                // setLoggedIn(true) 
-                // setLoggedOut(false)
-            }
+        const googleTest = (user) => {
+            // const test = JSON.parse(user)
+            console.log(user)
 
+            // console.log(user.currentUser.get().wc.id_token)
+            //  try {
+            //     console.log('Punching backend End Point')
+            //     console.log(user)
+            //     const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
+            //         method: 'POST',
+            //         body: JSON.stringify({
+            //           token: googleData.tokenId,
+            //         }),
+            //         headers:{
+            //           'Content-Type': 'application/json'
+            //         }
+            //       })
+            // }
+            
+            setLoggedIn(true)
+            setLoggedOut(false)
+            
+            // const user = auth.currentUser.get()
+            // console.log(user)
+            // const profile = user.getBasicProfile()
+            // const email = profile.getEmail()
+            // console.log(email)
+            // const fullName = profile.getName()
+            // const imageUrl = profile.getImageUrl()
+            // const token_id = auth.currentUser.get().wc.id_token
+            // const id = profile.getId()
+            // setGoogleUser({
+            //     fullName: fullName,
+            //     email: email,
+            //     id: id,
+            //     imageUrl: imageUrl,
+            //     // token_id: token_id
+            // })    
+            // setCurrentUser(googleUser.fullName)
+            // setLoginData(googleUser)
+            // setLoggedIn(true) 
+            // setLoggedOut(false)
+        }
 console.log(googleUser)
 console.log(loginData)
     
