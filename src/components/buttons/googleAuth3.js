@@ -12,7 +12,7 @@ const GoogleAuth3 = ({isSignedIn, googleTest}) => {
                     googleTest(user)
                 },
                 'theme': 'dark',
-                'width': 455,
+                'width': 370,
                 'height': 85,
             }
             window.gapi.signin2.render('loginButton', params )
