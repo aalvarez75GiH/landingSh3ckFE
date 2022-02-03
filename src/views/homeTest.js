@@ -260,7 +260,7 @@ const HomeTest = () => {
             try {
                 console.log('Sending request to BackEnd api...')
                 console.log(token)
-                const res = await axios.post('http://localhost:5000/api/extUsers/google', {
+                const res = await axios.post('https://intense-atoll-00786.herokuapp.com/api/extUsers/google', {
                     token,
                     headers:{
                         'Content-Type': 'application/json',
