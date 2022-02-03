@@ -23,7 +23,7 @@ const MainSideBar = ({
     showloginButton,
     showlogoutButton
 }) => {
-    console.log(loginData)
+    // console.log(loginData)
     
     if (loggedIn && mainSideBarOpen){
        return (

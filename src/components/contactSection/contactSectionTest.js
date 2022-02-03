@@ -36,7 +36,7 @@ const ContactSectionTest = ({
     const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
     // console.log(loginResponse)
-   console.log(isSignedIn)
+//    console.log(isSignedIn)
 
     const switchToCheck = () => {
         setActive('check')

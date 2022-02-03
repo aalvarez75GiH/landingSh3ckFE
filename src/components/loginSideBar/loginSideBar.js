@@ -16,9 +16,9 @@ const LoginSideBar = ({
     loading,
     language
 }) => {
-    console.log(loggedIn)
-    console.log(loggedOut)
-    console.log(loginSideBarOpen)
+    // console.log(loggedIn)
+    // console.log(loggedOut)
+    // console.log(loginSideBarOpen)
     
     if (loading) {
         return (

@@ -7,11 +7,10 @@ const GoogleAuth3 = ({isSignedIn, googleTest}) => {
         window.gapi.load('signin2', () => {
             const params = {
                 onsuccess: (user) => {
-                    // let name = user.getName()
                     console.log(user)
                     let response = user.getAuthResponse()
                     console.log(response)
-                    googleTest(user)
+                    googleTest(user, response.id_token)
                 },
                 'theme': 'dark',
                 'width': 370,

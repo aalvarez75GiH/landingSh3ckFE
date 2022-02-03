@@ -15,7 +15,6 @@ const DropDownList = ({
     //     window.addEventListener('blur', setIsActive(!isActive))
     // },[])
     
-    console.log(cityError)
     const [ isActive, setIsActive ] = useState(false)
     
     const toggleDropDownList = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import { infoContact } from '../../utils/data'
 
 const FormHeader = ({ active, loggedIn, regView, forgotPIN, language  }) => {
-    console.log(language)
+    // console.log(language)
     return (
         <>
         { active === 'interested' && (loggedIn || !loggedIn) ? 

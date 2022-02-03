@@ -50,7 +50,7 @@ const InterestedUserForm = ({ handlingSubmitInterestedUser, language }) => {
     })
 
     // console.log(formik.values)
-    console.log(formik.errors)
+    // console.log(formik.errors)
     
     return (
         <div className="boxContainer">

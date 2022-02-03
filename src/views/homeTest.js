@@ -11,7 +11,7 @@ import HeroSection from '../components/heroSection/heroSection'
 // import StyledHeroSection from '../components/heroSection/styledHeroSection'
 import VideoSection from '../components/videoSection/videoSection'
 import HiwSection from '../components/hiwSection/hiwSection'
-import { infoHero, infoVideo, infoHIW, infoContact  } from '../utils/data'
+// import { infoHero, infoVideo, infoHIW, infoContact  } from '../utils/data'
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
@@ -35,7 +35,7 @@ const HomeTest = () => {
     const [ mainSideBarOpen, setMainSideBarOpen ] = useState(false)
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
-    const [ language, setLanguage ] = useState('EN')
+    const [ language, setLanguage ] = useState('ES')
 
     // Google OAuth States *****************************************
     const [googleUser, setGoogleUser] = useState({
@@ -47,13 +47,13 @@ const HomeTest = () => {
     })
     const [ loginData, setLoginData ] = useState(null)
     const [isSignedIn, setIsSignedIn] = useState(null)
-    console.log(isSignedIn)
+    // console.log(isSignedIn)
     // **************************************************************
     
     
     const mobil = useMobilDetect()
     const mobil2 = useMobilDetection()
-    const url_userLogin = "http://192.168.1.102:5000/api/users/login"
+    // const url_userLogin = "http://192.168.1.102:5000/api/users/login"
     const url_userLoginITC = "https://intense-atoll-00786.herokuapp.com/api/users/login"
     let auth
     useEffect(() => {
@@ -170,31 +170,31 @@ const HomeTest = () => {
 //   const handleGoogleLogin = async(googleData) => {
 //     console.log('Login Success:', googleData.profileObj)
 //     setLoginData(googleData.profileObj.name)
-//     try {
-//         console.log('handling Login with Google...')
-//         console.log(googleData.name)
-//         const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
-//             method: 'POST',
-//             body: JSON.stringify({
-//               token: googleData.tokenId,
-//             }),
-//             headers:{
-//               'Content-Type': 'application/json'
-//             }
-//           })
-//           const data = await res.json()
-//           console.log(data)
-//           setLoginData(data)   
-//           setCurrentUser(data.fullName)
-//           setLoggedIn(true) 
-//           setLoggedOut(false)
-//     } catch (error) {
-//         console.log(error)
-//         setCurrentUser(googleData.profileObj.name)
-//         setLoginData(googleData.profileObj)
-//         setLoggedIn(true) 
-//         setLoggedOut(false)
-//     }
+    // try {
+    //     console.log('handling Login with Google...')
+    //     console.log(googleData.name)
+    //     const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //           token: googleData.tokenId,
+    //         }),
+    //         headers:{
+    //           'Content-Type': 'application/json'
+    //         }
+    //       })
+    //       const data = await res.json()
+    //       console.log(data)
+    //       setLoginData(data)   
+    //       setCurrentUser(data.fullName)
+    //       setLoggedIn(true) 
+    //       setLoggedOut(false)
+    // } catch (error) {
+    //     console.log(error)
+    //     setCurrentUser(googleData.profileObj.name)
+    //     setLoginData(googleData.profileObj)
+    //     setLoggedIn(true) 
+    //     setLoggedOut(false)
+    // }
 // }
 
 // console.log(loginData)
@@ -254,51 +254,43 @@ const HomeTest = () => {
           })
           
         }
-        const googleTest = (user) => {
+        const googleTest = async(user, token) => {
             // const test = JSON.parse(user)
-            console.log(user)
-
-            // console.log(user.currentUser.get().wc.id_token)
-            //  try {
-            //     console.log('Punching backend End Point')
-            //     console.log(user)
-            //     const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
-            //         method: 'POST',
-            //         body: JSON.stringify({
-            //           token: googleData.tokenId,
-            //         }),
-            //         headers:{
-            //           'Content-Type': 'application/json'
-            //         }
-            //       })
-            // }
+            // *****************************************
+            try {
+                console.log('Sending request to BackEnd api...')
+                console.log(token)
+                const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
+                // const res = await fetch('http://localhost:5000/api/extUsers/google',{
+                    method: 'POST',
+                    body: JSON.stringify({
+                      token: token,
+                    }),
+                    headers:{
+                      'Content-Type': 'application/json'
+                    }
+                  })
+                  const data = await res.json()
+                  console.log(data)
+                //   setLoginData(data)   
+                //   setCurrentUser(data.fullName)
+                  setLoggedIn(true) 
+                  setLoggedOut(false)
+            } catch (error) {
+                console.log(error)
+                // setCurrentUser(googleData.profileObj.name)
+                // setLoginData(googleData.profileObj)
+                setLoggedIn(true) 
+                setLoggedOut(false)
+            }
+            // *************************************************
             
-            setLoggedIn(true)
-            setLoggedOut(false)
-            
-            // const user = auth.currentUser.get()
-            // console.log(user)
-            // const profile = user.getBasicProfile()
-            // const email = profile.getEmail()
-            // console.log(email)
-            // const fullName = profile.getName()
-            // const imageUrl = profile.getImageUrl()
-            // const token_id = auth.currentUser.get().wc.id_token
-            // const id = profile.getId()
-            // setGoogleUser({
-            //     fullName: fullName,
-            //     email: email,
-            //     id: id,
-            //     imageUrl: imageUrl,
-            //     // token_id: token_id
-            // })    
-            // setCurrentUser(googleUser.fullName)
-            // setLoginData(googleUser)
-            // setLoggedIn(true) 
+            // setLoggedIn(true)
             // setLoggedOut(false)
+            
         }
-console.log(googleUser)
-console.log(loginData)
+// console.log(googleUser)
+// console.log(loginData)
     
     return (
         <>

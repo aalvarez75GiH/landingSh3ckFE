@@ -18,8 +18,8 @@ const MainSideBarTest = ({
     language,
     loginData,
 }) => {
-    console.log(loginData)
-    console.log(loggedIn)
+    // console.log(loginData)
+    // console.log(loggedIn)
     
     if (loggedIn && mainSideBarOpen){
        return (
