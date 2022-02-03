@@ -18,7 +18,7 @@ const MainSideBarTest = ({
     language,
     loginData,
 }) => {
-    // console.log(loginData)
+    console.log(loginData)
     // console.log(loggedIn)
     
     if (loggedIn && mainSideBarOpen){
@@ -76,7 +76,7 @@ const MainSideBarTest = ({
                                 {language === 'ES' ? infoMainSideBar.option4Copy : infoMainSideBar.option4Copy_EN}
                             </div>
                             
-                            {
+                            {/* {
                                 !loginData ?
                                 <div
                                 onClick={handlingSubmitLogOutUser} 
@@ -85,7 +85,15 @@ const MainSideBarTest = ({
                                 </div>  
                                 :
                                 <GoogleAuth3/>
-                            }
+                            } */}
+                            
+                            <div
+                            onClick={handlingSubmitLogOutUser} 
+                            className="closeBtn">
+                            {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
+                            </div>  
+                                
+                            
                             
                         </div>
                     </div>

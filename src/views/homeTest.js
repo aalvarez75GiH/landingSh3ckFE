@@ -260,26 +260,27 @@ const HomeTest = () => {
             try {
                 console.log('Sending request to BackEnd api...')
                 console.log(token)
-                const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
-                // const res = await fetch('http://localhost:5000/api/extUsers/google',{
-                    method: 'POST',
-                    body: JSON.stringify({
-                      token: token,
-                    }),
+                const res = await axios.post('http://localhost:5000/api/extUsers/google', {
+                    token,
                     headers:{
-                      'Content-Type': 'application/json'
-                    }
-                  })
-                  const data = await res.json()
-                  console.log(data)
-                //   setLoginData(data)   
-                //   setCurrentUser(data.fullName)
-                  setLoggedIn(true) 
-                  setLoggedOut(false)
+                        'Content-Type': 'application/json',
+                    },
+                })
+                console.log(res)
+                // const res = await axios.post('http://localhost:5000/api/extUsers/google',token)
+                const data = await res.data
+                if (res.status === 201){
+                    console.log(data)
+                    setLoginData(data)   
+                    setCurrentUser(data.fullName)
+                    setLoggedIn(true) 
+                    setLoggedOut(false)
+                    return res.status
+                }
             } catch (error) {
-                console.log(error)
-                // setCurrentUser(googleData.profileObj.name)
-                // setLoginData(googleData.profileObj)
+                console.log(error.response.data)
+                setCurrentUser(error.response.data.fullName)
+                setLoginData(error.response.data)
                 setLoggedIn(true) 
                 setLoggedOut(false)
             }
