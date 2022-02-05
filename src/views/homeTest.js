@@ -278,6 +278,7 @@ const HomeTest = () => {
                     return res.status
                 }
             } catch (error) {
+                console.log(error)
                 console.log(error.response.data)
                 setCurrentUser(error.response.data.fullName)
                 setLoginData(error.response.data)
