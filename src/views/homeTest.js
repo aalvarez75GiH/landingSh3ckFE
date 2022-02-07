@@ -165,65 +165,9 @@ const HomeTest = () => {
     }
 
   
-  //  ************* Google OAuth Processes and functions ****************
+  //  ************* Google OAuth Processes and functions (with googleAuth3) ****************
 
-//   const handleGoogleLogin = async(googleData) => {
-//     console.log('Login Success:', googleData.profileObj)
-//     setLoginData(googleData.profileObj.name)
-    // try {
-    //     console.log('handling Login with Google...')
-    //     console.log(googleData.name)
-    //     const res = await fetch('https://intense-atoll-00786.herokuapp.com/api/extUsers/google',{
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //           token: googleData.tokenId,
-    //         }),
-    //         headers:{
-    //           'Content-Type': 'application/json'
-    //         }
-    //       })
-    //       const data = await res.json()
-    //       console.log(data)
-    //       setLoginData(data)   
-    //       setCurrentUser(data.fullName)
-    //       setLoggedIn(true) 
-    //       setLoggedOut(false)
-    // } catch (error) {
-    //     console.log(error)
-    //     setCurrentUser(googleData.profileObj.name)
-    //     setLoginData(googleData.profileObj)
-    //     setLoggedIn(true) 
-    //     setLoggedOut(false)
-    // }
-// }
-
-// console.log(loginData)
-// const handleGoogleFailure = (res) => {
-//     console.log('handling Failure...', res)
-// }
-
-// const handleGoogleLogout = () => {
-//     alert("You have been logged out successfully");
-//     console.clear()
-//     setMainSideBarOpen(!mainSideBarOpen)
-//     setLoginData(null)
-//     setLoggedIn(false)
-//     setLoggedOut(true)
-// }
-
-
-
-//  *****************************************************************
-//  **********************Google Login New **************************
-
-//   const user = auth.currentUser.get()
-        //   console.log(user)
-        //   const profile = user.getBasicProfile()
-        //   console.log(profile)
-        //   const email = profile.getEmail()
-        //   console.log(email)
-        //   const imageUrl = profile.getImageUrl()
-        //   console.log(imageUrl)
+ 
         const insertGapiScript = () => {
             const script = document.createElement('script')
             script.src = "https://apis.google.com/js/platform.js"

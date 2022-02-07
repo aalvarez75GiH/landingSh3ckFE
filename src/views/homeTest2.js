@@ -5,19 +5,14 @@ import SideBar from '../components/sideBar/sideBar'
 import LoginSideBar from '../components/loginSideBar/loginSideBar'
 // import MainSideBar from '../components/mainSideBar/mainSideBar'
 import MainSideBarTest from '../components/mainSideBar/mainSideBarTest'
-// import StyledSideBar from '../components/sideBar/styledSideBar'
 import HeroSection from '../components/heroSection/heroSection'
-// import StyledNavBar from '../components/navBar/styledNavbar'
-// import StyledHeroSection from '../components/heroSection/styledHeroSection'
 import VideoSection from '../components/videoSection/videoSection'
 import HiwSection from '../components/hiwSection/hiwSection'
-// import { infoHero, infoVideo, infoHIW, infoContact  } from '../utils/data'
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
 // import ContactSection from '../components/contactSection/contactSection'
 import ContactSectionTest from '../components/contactSection/contactSectionTest'
-// import StyledFooterSection from '../components/footerSection/styledFooterSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 
@@ -47,9 +42,6 @@ const HomeTest2 = () => {
     })
     const [ loginData, setLoginData ] = useState(null)
     const [isSignedIn, setIsSignedIn] = useState(null)
-    // console.log(isSignedIn)
-    // **************************************************************
-    
     
     const mobil = useMobilDetect()
     const mobil2 = useMobilDetection()
@@ -172,43 +164,7 @@ const HomeTest2 = () => {
     }
 
   
-//  *****************************************************************
-//  **********************Google Login *** **************************
-
-        // const insertGapiScript = () => {
-        //     console.log('insertGapiScript')
-        //     const script = document.createElement('script')
-        //     script.src = "https://accounts.google.com/gsi/client"
-        //     script.onload = () => {
-        //         initializeGooglesignIn()
-        //     }
-        //     document.body.appendChild(script)
-        //   } 
-          
-          const initializeGooglesignIn = () => {
-
-            
-
-        //     window.gapi.load('client:auth2', () => {
-        //       window.gapi.client.init({
-        //         client_id: '915460618193-dcl1a1f3en6f3h22evu9jqk2aqdh1lcj.apps.googleusercontent.com',
-        //         scope:'profile'
-        //       }).then(()=> {
-        //       console.log('gapi initialized...')
-        //     //   const response = window.gapi.auth2.getAuthResponse()
-        //     //   console.log(response)
-        //       auth = window.gapi.auth2.getAuthInstance()
-        //       const isSignedIn = auth.isSignedIn.get()
-        //       {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
-        //       setIsSignedIn(isSignedIn)
-        //       console.log(isSignedIn)
-        //       auth.isSignedIn.listen(isSignedIn => {
-        //           setIsSignedIn(auth.isSignedIn.get())
-        //       })   
-        //       })
-        //   })
-          
-        }
+//  ************* Google OAuth Processes and functions (with googleAuth4) ****************
 
         const handleCredentialResponse = async(response) => {
             console.log("Encoded JWT ID token: " + response.credential)
@@ -243,38 +199,6 @@ const HomeTest2 = () => {
         }
         }
 
-        // const googleTest = async(user, token) => {
-            
-        //     try {
-        //         console.log('Sending request to BackEnd api...')
-        //         console.log(token)
-        //         const res = await axios.post('https://intense-atoll-00786.herokuapp.com/api/extUsers/google', {
-        //             token,
-        //             headers:{
-        //                 'Content-Type': 'application/json',
-        //             },
-        //         })
-        //         console.log(res)
-        //         const data = await res.data
-        //         if (res.status === 201){
-        //             console.log(data)
-        //             setLoginData(data)   
-        //             setCurrentUser(data.fullName)
-        //             setLoggedIn(true) 
-        //             setLoggedOut(false)
-        //             return res.status
-        //         }
-        //     } catch (error) {
-        //         console.log(error)
-        //         console.log(error.response.data)
-        //         setCurrentUser(error.response.data.fullName)
-        //         setLoginData(error.response.data)
-        //         setLoggedIn(true) 
-        //         setLoggedOut(false)
-        //     }
-            
-            
-        // }
 
     
     return (

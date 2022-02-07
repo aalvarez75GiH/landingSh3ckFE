@@ -29,6 +29,9 @@
     color: #ffffff;
     font-weight: 600;
 }
+#buttonDiv {
+    margin-top: 4%;
+}
 
 /*************** NavBar ****************************** */
   .nav {
