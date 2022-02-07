@@ -21,7 +21,8 @@
 }
 .googleAuthBtn {
     width: 80%;
-    height: 25%;
+    /* height: 25%; */
+    height: 70px;
     font-size: 1.3rem;
     border-style: none;
     background-color: #ef476f;
