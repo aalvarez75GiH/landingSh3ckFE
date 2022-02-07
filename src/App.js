@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 // import Home from './views/home'
 import HomeTest from './views/homeTest'
-import GoogleAuth from './components/buttons/googleAuth'
+import HomeTest2 from './views/homeTest2'
+// import GoogleAuth from './components/buttons/googleAuth'
 // import GoogleAuth2 from './components/buttons/googleAuth2'
 // import GoogleAuth3 from './components/buttons/googleAuth3'
 // import GoogleAuth4 from './components/buttons/googleAuth4'
@@ -12,8 +13,8 @@ import './App.css'
 const App = () => {
     return (
         <Router>
-            <GoogleAuth/>
-           {/* <HomeTest/>  */}
+            {/* <GoogleAuth/> */}
+           <HomeTest2/> 
         </Router>
         
     )

@@ -6,7 +6,8 @@ import RegisterFormTest from './registerFormTest'
 import ForgotPINForm from './forgotPINForm'
 import {MdOutlineVisibility} from 'react-icons/md'
 import { infoContact } from '../../utils/data'
-import GoogleAuth3 from '../buttons/googleAuth3'
+// import GoogleAuth3 from '../buttons/googleAuth3'
+import GoogleAuth41 from '../buttons/googleAuth41'
 
 
 
@@ -130,9 +131,9 @@ const LoginFormTest = ({
                 <span
                 onClick={toggleForgotSection} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
-                <GoogleAuth3
-                isSignedIn={isSignedIn}
-                googleTest={googleTest}
+                <GoogleAuth41
+                // isSignedIn={isSignedIn}
+                // googleTest={googleTest}
                 />
             </form>
 
