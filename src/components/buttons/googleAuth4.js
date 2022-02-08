@@ -14,7 +14,7 @@ const GoogleAuth4 = () => {
                 type: 'standard',
                 theme: "filled_blue", 
                 size: "large", 
-                text:'signup_with',
+                text: "continue_with",
                 width: `${mobil2.screenWidth <= 414 ? '260' : '400'}`,
                 height: 100,
                 logo_alignment: 'left',

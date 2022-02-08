@@ -8,6 +8,7 @@ import {MdOutlineVisibility} from 'react-icons/md'
 import { infoContact } from '../../utils/data'
 import GoogleAuth3 from '../buttons/googleAuth3'
 import GoogleAuth4 from '../buttons/googleAuth4'
+import GoogleAuth5 from '../buttons/googleAuth5'
 
 
 
@@ -47,7 +48,7 @@ const LoginFormTest = ({
 
     })
 
-    console.log(formik.errors)
+    // console.log(formik.errors)
 
     const togglingPINVisibility = () => {
         setTypeOfPIN(!typeOfPIN)
@@ -131,9 +132,9 @@ const LoginFormTest = ({
                 <span
                 onClick={toggleForgotSection} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
-                <GoogleAuth4
-                // isSignedIn={isSignedIn}
-                // googleTest={googleTest}
+                <GoogleAuth5
+                isSignedIn={isSignedIn}
+                googleTest={googleTest}
                 />
             </form>
 
