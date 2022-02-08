@@ -4,6 +4,7 @@ import * as yup from 'yup'
 import { infoContact } from '../../utils/data'
 import GoogleAuth3 from '../buttons/googleAuth3'
 import GoogleAuth4 from '../buttons/googleAuth4'
+import GoogleAuth5 from '../buttons/googleAuth5'
 
 
 const validationSchema = yup.object({
@@ -93,7 +94,7 @@ const RegisterFormTest = ({
                 type="submit"
                 >{language === 'ES' ? infoContact.regUsersFormSendBtn : infoContact.regUsersFormSendBtn_EN}</button>
 
-                <GoogleAuth4
+                <GoogleAuth3
                  googleTest={googleTest}
                  isSignedIn={isSignedIn}
                 />
