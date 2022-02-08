@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { FcGoogle } from 'react-icons/fc'
 // import '../../bookface.css'
 
-const GoogleAuth5 = ({googleTest}) => {
+const GoogleAuth5 = ({isSignedIn ,googleTest}) => {
 
     // var googleUser = {}
     
@@ -35,11 +36,16 @@ const GoogleAuth5 = ({googleTest}) => {
 
     return (
         <>
-        <div className="googleAuthContainer">
+        {/* <div className="googleAuthContainer"> */}
             <div
             id="googleAuth5"
-            >Sign In with Google</div>
-        </div>  
+            >
+                <div className="googleIcon">
+                <FcGoogle/>
+
+                </div>
+                Inicia con Google</div>
+        {/* </div>   */}
 
          
         

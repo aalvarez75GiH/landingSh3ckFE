@@ -50,9 +50,21 @@
     height: 70px;
     font-size: 1.3rem;
     border-style: none;
-    background-color: #ef476f;
+    background-color: #1a73e8;
     color: #ffffff;
     font-weight: 600;
+    margin-top: 3%;
+}
+
+.googleIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    margin-right: 6%;
+    border-radius: 10px;
 }
 /* googleAuth 5 */
 /* #loginButton {
