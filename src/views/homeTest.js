@@ -179,26 +179,24 @@ const HomeTest = () => {
           
           const initializeGooglesignIn = () => {
             window.gapi.load('client:auth2', () => {
-              window.gapi.client.init({
-                client_id: '915460618193-dcl1a1f3en6f3h22evu9jqk2aqdh1lcj.apps.googleusercontent.com',
-                scope:'profile'
-              }).then(()=> {
-              console.log('gapi initialized...')
-            //   const response = window.gapi.auth2.getAuthResponse()
-            //   console.log(response)
-              auth = window.gapi.auth2.getAuthInstance()
-              const isSignedIn = auth.isSignedIn.get()
-              {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
-              setIsSignedIn(isSignedIn)
-              console.log(isSignedIn)
-              auth.isSignedIn.listen(isSignedIn => {
-                  setIsSignedIn(auth.isSignedIn.get())
-              })   
-              })
+            window.gapi.client.init({
+              client_id: '915460618193-dcl1a1f3en6f3h22evu9jqk2aqdh1lcj.apps.googleusercontent.com',
+              scope:'profile'
+            }).then(()=> {
+            console.log('gapi initialized...')
+            auth = window.gapi.auth2.getAuthInstance()
+            const isSignedIn = auth.isSignedIn.get()
+            {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
+            setIsSignedIn(isSignedIn)
+            console.log(isSignedIn)
+            auth.isSignedIn.listen(isSignedIn => {
+                setIsSignedIn(auth.isSignedIn.get())
+            })   
+            })
           })
           
         }
-        const googleTest = async(user, token) => {
+        const googleTest = async(token) => {
             // const test = JSON.parse(user)
             // *****************************************
             try {

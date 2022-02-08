@@ -94,9 +94,10 @@ const RegisterFormTest = ({
                 type="submit"
                 >{language === 'ES' ? infoContact.regUsersFormSendBtn : infoContact.regUsersFormSendBtn_EN}</button>
 
-                <GoogleAuth3
+                <GoogleAuth5
                  googleTest={googleTest}
                  isSignedIn={isSignedIn}
+                 language={language}
                 />
                 
                 

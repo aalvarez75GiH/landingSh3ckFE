@@ -10,7 +10,7 @@ const GoogleAuth3 = ({isSignedIn, googleTest}) => {
                     console.log(user)
                     let response = user.getAuthResponse()
                     console.log(response)
-                    googleTest(user, response.id_token)
+                    googleTest(response.id_token)
                 },
                 'theme': 'dark',
                 'width': 370,

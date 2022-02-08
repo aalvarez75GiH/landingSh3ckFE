@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { FcGoogle } from 'react-icons/fc'
+import { infoContact } from '../../utils/data'
 // import '../../bookface.css'
 
-const GoogleAuth5 = ({isSignedIn ,googleTest}) => {
+const GoogleAuth5 = ({isSignedIn ,googleTest, language}) => {
 
     // var googleUser = {}
     
@@ -44,7 +45,7 @@ const GoogleAuth5 = ({isSignedIn ,googleTest}) => {
                 <FcGoogle/>
 
                 </div>
-                Inicia con Google</div>
+                {language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div>
         {/* </div>   */}
 
          
