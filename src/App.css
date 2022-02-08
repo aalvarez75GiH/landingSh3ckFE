@@ -30,7 +30,12 @@
     font-weight: 600;
 }
 #buttonDiv {
+    display: flex;
+    justify-content: center;
+    background-color: #1a73e8;
+    align-items: center;
     margin-top: 4%;
+    height: 115px;
 }
 
 /*************** NavBar ****************************** */
@@ -3329,6 +3334,16 @@
     .forgotPINSpan {
         font-size: 1rem;
     }
+
+    /* GoogleAuth4 */
+    #buttonDiv {
+        display: flex;
+        justify-content: center;
+        background-color: #1a73e8;
+        align-items: center;
+        margin-top: 4%;
+        height: 85px;
+    }
     
 
     /* *****  MainSideBar *********** */
@@ -3916,6 +3931,16 @@
 
     .forgotPINSpan {
         font-size: 1rem;
+    }
+    
+     /* GoogleAuth4 */
+     #buttonDiv {
+        /* display: flex;
+        justify-content: center;
+        background-color: #1a73e8;
+        align-items: center;
+        margin-top: 4%; */
+        height: 85px;
     }
     
 
@@ -4516,6 +4541,16 @@
 
     .forgotPINSpan {
         font-size: 1rem;
+    }
+
+      /* GoogleAuth4 */
+      #buttonDiv {
+        display: flex;
+        justify-content: center;
+        background-color: #1a73e8;
+        align-items: center;
+        margin-top: 4%;
+        height: 85px;
     }
 
   
@@ -5234,6 +5269,17 @@
     .forgotPINSpan {
         font-size: 1rem;
     }
+
+    /* GoogleAuth4 */
+    #buttonDiv {
+        display: flex;
+        justify-content: center;
+        background-color: #1a73e8;
+        align-items: center;
+        margin-top: 4%;
+        height: 85px;
+    }
+
     /* *****  MainSideBar *********** */
     
     

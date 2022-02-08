@@ -1,6 +1,12 @@
 import React, {useEffect} from 'react'
+import useMobilDetection from '../../utils/mobilDetection'
+
 
 const GoogleAuth4 = () => {
+
+    const mobil2 = useMobilDetection() 
+    console.log(mobil2)
+    
     useEffect(() => {
         window.google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
@@ -9,7 +15,7 @@ const GoogleAuth4 = () => {
                 theme: "filled_blue", 
                 size: "large", 
                 text:'signup_with',
-                width: '370',
+                width: `${mobil2.screenWidth <= 414 ? '260' : '400'}`,
                 height: 100,
                 logo_alignment: 'left',
                 
