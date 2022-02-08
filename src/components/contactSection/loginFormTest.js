@@ -132,10 +132,10 @@ const LoginFormTest = ({
                 <span
                 onClick={toggleForgotSection} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
-                <GoogleAuth5
+                <GoogleAuth4
                 isSignedIn={isSignedIn}
                 googleTest={googleTest}
-                language={language}
+                // language={language}
                 />
             </form>
 
