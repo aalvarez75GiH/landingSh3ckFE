@@ -33,10 +33,11 @@ const GoogleAuth5 = ({googleTest, language}) => {
             id="googleAuth5"
             >
                 <div className="googleIcon">
-                <FcGoogle/>
+                <FcGoogle className="fcGoogle"/>
 
                 </div>
-                {language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div>
+                <div className="googleAuth5_label">{language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div></div>
+                {/* {language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div> */}
         {/* </div>   */}
 
          
