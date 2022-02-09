@@ -2,9 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* font-family: 'Encode Sans Expanded', sans-serif; */
     font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* font-size: 62.50%; */
+    
   }
 
   /* ******************** Google Auth ***************************/
@@ -41,13 +40,13 @@
     margin-top: 4%;
     height: 115px;
 }
+/* googleAuth5 */
 #googleAuth5 {
     display: flex;
     /* justify-content: center; */
     align-items: center;
     width: 100%;
-    height: 85px;
-    height: 70px;
+    height: 115px;
     font-size: 1.1rem;
     border-style: none;
     background-color: #1a73e8;
@@ -67,43 +66,6 @@
     margin-left: 18%;
     border-radius: 10px;
 }
-/* googleAuth 5 */
-/* #loginButton {
-    display: inline-block;
-    background: white;
-    color: #444;
-    width: 190px;
-    border-radius: 5px;
-    border: thin solid #888;
-    box-shadow: 1px 1px 1px grey;
-    white-space: nowrap;
-}  */
-
-/* #loginButton:hover {
-    cursor: pointer;
-} */
-
-/* span.label {
-    font-family: serif;
-    font-weight: normal;
-  } */
-/* span.icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 42px;
-    height: 42px;
-} */
-
-/* span.buttonText {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 42px;
-    padding-right: 42px;
-    font-size: 14px;
-    font-weight: bold;
-     font-family: 'Roboto', sans-serif;
-  } */
-
 
 /*************** NavBar ****************************** */
   .nav {
@@ -208,8 +170,6 @@
 
   .loggedInUserIcon {
       font-size: 30px;
-      /* width: 50%;
-      height: 40%; */
   }
 
   .navBtn {
@@ -337,8 +297,6 @@
     display: flex;
     flex-direction: column;
     height: 500px;
-    /* grid-template-columns: 1fr; */
-    /* grid-template-rows: repeat(4, 80px); */
     text-align: center;
 }
 
@@ -735,7 +693,6 @@
     align-items: center;
     padding: 0 30px;
     height: 990px;
-    /* height: 847px; */
     z-index: 1;
 }
 
@@ -768,8 +725,6 @@
     align-items: center;
     left: 44%;
     top: 25%;
-    /* margin-left: 875px; */
-
 }
 
 .heroH1 {
@@ -893,11 +848,6 @@
     color: #010606
 }
 
-/* .btnWrap {
-    display: flex;
-    justify-content: flex-start;
-} */
-
 .videoBtnWrap {
     margin-top: 4%;
 }
@@ -945,8 +895,6 @@
     background-color: #e0e0e0;
     max-height: 390px;
     padding: 30px;
-    /* box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out; */
 }
 
 .hiwCard:hover {
@@ -1095,8 +1043,6 @@
 }
 
 .contactInfoDescContainer p {
-    /* width: 85%; */
-    /* font-size: 1.2rem; */
     margin-top: 2%;
 }
 
@@ -1141,7 +1087,6 @@
     height: 10%;
     background-color: #eeeeee;
     color: #010606;
-    /* margin-bottom: 30px; */
 }
 .notifyMe {
     display: flex;
@@ -1149,9 +1094,6 @@
     align-items: center;
     width: 50%;
     height: 100%;
-    /* border-right: 2px solid black; */
-    
-
 }
 
 .checkAProduct {
@@ -1516,7 +1458,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* max-width: 1100px; */
     margin: 0 auto;
  }
  .footerLinksContainer {
@@ -1722,8 +1663,6 @@
         justify-content: center;
         width: 30%;
     }
-    /******************************  */
-
     
 }
 
@@ -1807,42 +1746,7 @@
         width: 38%;
         height: 22%;
     }
-
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: #eeeeee;
-    } */
-    
-    /* .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        margin-top: 7%;
-    } */
-    
-    /* .checkSectionBtn-toCheck {
-        width: 50%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    } */
-    
-    /* .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    } */
-    
+  
   
 }
 
@@ -1936,15 +1840,7 @@
     }
 
     /* *****  checkSection *********** */
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: #eeeeee;
-    } */
+ 
     .checkSection-formTitle {
         width: 60%;
         margin-left: 5%;
@@ -2082,15 +1978,7 @@
     }
 
     /* *****  checkSection *********** */
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: #eeeeee;
-    } */
+  
     .checkSection-formTitle {
         margin-left: 15%;
         width: 70%;
@@ -2867,15 +2755,7 @@
     }
 
     /* *****  checkSection *********** */
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: #eeeeee;
-    } */
+  
     .checkSection-formTitle {
         margin-left: 15%;
         width: 100%;
@@ -3411,7 +3291,23 @@
         margin-top: 4%;
         height: 85px;
     }
+    /* GoogleAuth5 */
+    #googleAuth5 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 85px;
+        font-size: 1.1rem;
+        border-style: none;
+        background-color: #1a73e8;
+        color: #ffffff;
+        font-weight: 400;
+        margin-top: 3%;
+    }
     
+    .googleIcon {
+        margin-right: 12%;
+    }
 
     /* *****  MainSideBar *********** */
     
@@ -3479,15 +3375,7 @@
     }
     
     /* *****  checkSection *********** */
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: #eeeeee;
-    } */
+  
     .checkSection-formTitle {
         margin-left: 15%;
         width: 100%;
@@ -4002,12 +3890,15 @@
     
      /* GoogleAuth4 */
      #buttonDiv {
-        /* display: flex;
-        justify-content: center;
-        background-color: #1a73e8;
-        align-items: center;
-        margin-top: 4%; */
         height: 85px;
+    }
+    /* GoogleAuth5 */
+    #googleAuth5 {
+      height: 85px;
+    }
+    
+    .googleIcon {
+      margin-right: 10%;
     }
     
 
@@ -4081,15 +3972,7 @@
     }
 
     /* *****  checkSection *********** */
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: #eeeeee;
-    } */
+
     .checkSection-formTitle {
         width: 83%;
     }
@@ -4562,10 +4445,6 @@
         height: auto;
         margin-bottom: 0%;
     }
-    /* .input {
-        height: 65px;
-        margin-bottom: 15px;
-    } */
     
     .loginSideBarFormTitle {
         margin-top: 6%;
@@ -4620,14 +4499,20 @@
         height: 85px;
     }
 
+    #googleAuth5 {
+        height: 85px;
+    }
+    
+    .googleIcon {
+       margin-right: 7%;
+    }
+
   
 
     /* *****  MainSideBar *********** */
     
     
     .mainSideBarContent {
-        /* display: flex; */
-        /* flex-direction: column; */
         width: 100%;
         height: 100%;
         padding-top: 2%;
@@ -4884,33 +4769,6 @@
     font-size: 1.2rem;
 
 }
-
-/* Google Auth Button */
-.g-signin {
-    width: 100%;
-    margin-top: 6%;
-    border-top: unset;
-    height: 85px;
-}
-.g-signin button {
-    width: 100%;
-    border-style: none;
-    background-color: #FAD570;
-    height: 100%;
-}
-
-.g-signin span {
-    font-size: 1.4rem;
-    margin-left: 15%;
-    
-}
-.g-signin svg {
-    margin-left: 20%;
-}
-
-.g-signin div {
-    background-color: #4285f4;
-}
     
 }
 
@@ -4999,35 +4857,6 @@
         margin-bottom: 4px;
     }
 
-    /* ************************************ */
-    /* .navMenuButtonsContainer {
-        display: grid;
-        gap: 10px;
-        grid-template: 100% / repeat(3, 25%); 
-        grid-template-areas: "navMenuButton navMenuButton navMenuButton";   
-        width: 100%;
-        height: 46%;
-        margin-top: 1% ;
-        background-color: #ffffff;
-        border-bottom: 2px solid #eeedec;
-    }
-    .navMenuButton {
-        grid-area: "naMenuButton1";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-
-    .iconMobilContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 4px;
-    
-    } */
-     
     .heroContainerMobil {
         height: 840px;
     }
@@ -5345,6 +5174,15 @@
         align-items: center;
         margin-top: 4%;
         height: 85px;
+    }
+    /* GoogleAuth5 */
+    #googleAuth5 {
+       height: 85px;
+        margin-top: 7%;
+    }
+    
+    .googleIcon {
+       margin-right: 5%; 
     }
 
     /* *****  MainSideBar *********** */
