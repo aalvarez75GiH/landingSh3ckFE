@@ -1,19 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import { infoContact } from '../../utils/data'
-import GoogleAuthButtons from '../buttons/googleAuthButtons'
+import GoogleAuth3 from '../buttons/googleAuth3'
+import GoogleAuth4 from '../buttons/googleAuth4'
+import GoogleAuth5 from '../buttons/googleAuth5'
 
-
-// const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-
-// const validationSchema = yup.object({
-//     fullName: yup.string().min(3).max(100).required('Debes colocar tu nombre completo'),
-//     password: yup.string().min(6).max(200).matches(PASSWORD_REGEX, "Por favor coloca un password más fuerte").required(),
-//     email: yup.string().email('Por favor introduce una dirección de email válida').required(),
-//     phoneNumber: yup.string().length(11).pattern(/^[0-9]+$/).required()
-       
-// })
 
 const validationSchema = yup.object({
     fullName: yup.string().min(3).max(100).required('hola, no te olvides de colocar tu nombre completo'),
@@ -26,13 +18,14 @@ const validationSchema = yup.object({
 const RegisterForm = ({ 
     handlingSubmitUser, 
     language,
-    handleGoogleLogin,
-    handleGoogleLogout,
-    handleGoogleFailure,
-    showloginButton,
-    showlogoutButton 
-
+    googleTest,
+    isSignedIn
 }) => {
+
+    // useEffect(() => {
+     
+
+    // },[])
 
     const onSubmit = (values) => {
         handlingSubmitUser(values)
@@ -41,7 +34,6 @@ const RegisterForm = ({
     const formik = useFormik({
         initialValues: {
             fullName: "",
-            // password: "",
             email: "",
             phoneNumber: ""
         },
@@ -51,8 +43,7 @@ const RegisterForm = ({
 
     })
 
-    // console.log(formik.values)
-    console.log(formik.errors)
+    // console.log(formik.errors)
 
     return (
         <div className="boxContainer">
@@ -102,16 +93,14 @@ const RegisterForm = ({
                 className="sendDataBtn"
                 type="submit"
                 >{language === 'ES' ? infoContact.regUsersFormSendBtn : infoContact.regUsersFormSendBtn_EN}</button>
-            
-                <div className="g-signin">
-                    <GoogleAuthButtons
-                    handleGoogleLogin={handleGoogleLogin}
-                    handleGoogleLogout={handleGoogleLogout}
-                    handleGoogleFailure={handleGoogleFailure}
-                    showloginButton={showloginButton}
-                    showlogoutButton={showlogoutButton}
-                    />
-                </div>
+
+                <GoogleAuth5
+                 googleTest={googleTest}
+                 isSignedIn={isSignedIn}
+                language={language}
+                />
+                
+                
             
             </form>
 

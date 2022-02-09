@@ -6,6 +6,8 @@ import ForgotPINForm from './forgotPINForm'
 import {MdOutlineVisibility} from 'react-icons/md'
 import { infoContact } from '../../utils/data'
 import GoogleAuth3 from '../buttons/googleAuth3'
+import GoogleAuth4 from '../buttons/googleAuth4'
+import GoogleAuth5 from '../buttons/googleAuth5'
 
 
 
@@ -24,15 +26,10 @@ const LoginForm = ({
     toggleForgotSection,
     handlingNewPINRequest,
     language,
-    handleGoogleLogin,
-    handleGoogleLogout,
-    handleGoogleFailure,
-    showloginButton,
-    showlogoutButton,
+    isSignedIn,
     googleTest
-    
 }) => {
-
+    console.log(isSignedIn)
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
     
     const onSubmit = async(values) => {
@@ -50,7 +47,7 @@ const LoginForm = ({
 
     })
 
-    console.log(formik.errors)
+    // console.log(formik.errors)
 
     const togglingPINVisibility = () => {
         setTypeOfPIN(!typeOfPIN)
@@ -61,11 +58,7 @@ const LoginForm = ({
             <RegisterForm 
             handlingSubmitUser={handlingSubmitUser}
             language={language}
-            handleGoogleLogin={handleGoogleLogin}
-            handleGoogleLogout={handleGoogleLogout}
-            handleGoogleFailure={handleGoogleFailure}
-            showloginButton={showloginButton}
-            showlogoutButton={showlogoutButton}
+            isSignedIn={isSignedIn}
             />
         )
     }
@@ -80,8 +73,6 @@ const LoginForm = ({
         ) 
         
     }
-
-
 
     return (
         <div className="boxContainer">
@@ -138,8 +129,10 @@ const LoginForm = ({
                 <span
                 onClick={toggleForgotSection} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
-                <GoogleAuth3
+                <GoogleAuth5
+                isSignedIn={isSignedIn}
                 googleTest={googleTest}
+                language={language}
                 />
             </form>
 

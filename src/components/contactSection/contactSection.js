@@ -6,6 +6,7 @@ import CheckSection from './checkSection'
 import LoadingSpinner from '../../utils/loadingSpinner' 
 import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
+// import LoginFormTest from './loginFormTest'
 import NotificationBox from '../notifications/NotificationBox'
 import axios from 'axios'
 import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
@@ -19,11 +20,7 @@ const ContactSection = ({
     handlingSubmitLoginUser,
     loginResponse,
     toggleNotificationLogin,
-    handleGoogleLogin,
-    handleGoogleLogout,
-    handleGoogleFailure,
-    showloginButton,
-    showlogoutButton,
+    isSignedIn,
     googleTest
 
 }) => {
@@ -38,8 +35,8 @@ const ContactSection = ({
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
     const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
-    console.log(loginResponse)
-   
+    // console.log(loginResponse)
+//    console.log(isSignedIn)
 
     const switchToCheck = () => {
         setActive('check')
@@ -174,7 +171,7 @@ if (upLoadingUser){
         </div>
     )    
 }
-console.log(active)
+// console.log(active)
 return (
     <div 
     id={infoContact.id}
@@ -275,11 +272,7 @@ return (
             handlingNewPINRequest={handlingNewPINRequest}
             toggleForgotSection={toggleForgotSection}
             language={language}
-            handleGoogleLogin={handleGoogleLogin}
-            handleGoogleLogout={handleGoogleLogout}
-            handleGoogleFailure={handleGoogleFailure}
-            showloginButton={showloginButton}
-            showlogoutButton={showlogoutButton}
+            isSignedIn={isSignedIn}
             googleTest={googleTest}
             />
             :
@@ -294,4 +287,3 @@ return (
 }
 
 export default ContactSection
-

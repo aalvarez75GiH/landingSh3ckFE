@@ -3,7 +3,7 @@ import { FaTimes } from 'react-icons/fa'
 import { BiUserCheck, BiUserCircle, BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
 import { IoMdCart } from 'react-icons/io'
 import { infoMainSideBar } from '../../utils/data'
-import GoogleAuthButtons from '../buttons/googleAuthButtons'
+
 
 // import LoginForm from '../contactSection/loginForm'
 
@@ -17,13 +17,9 @@ const MainSideBar = ({
     handlingSubmitLogOutUser, 
     language,
     loginData,
-    handleGoogleLogin,
-    handleGoogleFailure,
-    handleGoogleLogout,
-    showloginButton,
-    showlogoutButton
 }) => {
-    // console.log(loginData)
+    console.log(loginData)
+    // console.log(loggedIn)
     
     if (loggedIn && mainSideBarOpen){
        return (
@@ -79,14 +75,8 @@ const MainSideBar = ({
                                 </div>
                                 {language === 'ES' ? infoMainSideBar.option4Copy : infoMainSideBar.option4Copy_EN}
                             </div>
-
-                            {/* <div
-                                onClick={handlingSubmitLogOutUser} 
-                                className="closeBtn">
-                                {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
-                            </div> */}
                             
-                            {
+                            {/* {
                                 !loginData ?
                                 <div
                                 onClick={handlingSubmitLogOutUser} 
@@ -94,14 +84,16 @@ const MainSideBar = ({
                                 {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
                                 </div>  
                                 :
-                                <GoogleAuthButtons
-                                handleGoogleLogin={handleGoogleLogin}
-                                handleGoogleLogout={handleGoogleLogout}
-                                handleGoogleFailure={handleGoogleFailure}
-                                showloginButton={showloginButton}
-                                showlogoutButton={showlogoutButton}
-                                />
-                            }
+                                <GoogleAuth3/>
+                            } */}
+                            
+                            <div
+                            onClick={handlingSubmitLogOutUser} 
+                            className="closeBtn">
+                            {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
+                            </div>  
+                                
+                            
                             
                         </div>
                     </div>

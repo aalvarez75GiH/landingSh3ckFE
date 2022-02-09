@@ -3,16 +3,14 @@ import axios from 'axios'
 import NavBar from '../components/navBar/navBar'
 import SideBar from '../components/sideBar/sideBar'
 import LoginSideBar from '../components/loginSideBar/loginSideBar'
-// import MainSideBar from '../components/mainSideBar/mainSideBar'
-import MainSideBarTest from '../components/mainSideBar/mainSideBarTest'
+import MainSideBar from '../components/mainSideBar/mainSideBar'
 import HeroSection from '../components/heroSection/heroSection'
 import VideoSection from '../components/videoSection/videoSection'
 import HiwSection from '../components/hiwSection/hiwSection'
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
-// import ContactSection from '../components/contactSection/contactSection'
-import ContactSectionTest from '../components/contactSection/contactSectionTest'
+import ContactSection from '../components/contactSection/contactSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 
@@ -227,7 +225,7 @@ const HomeTest2 = () => {
             {/* } */}
 
             {/* {!loggedOut && logoutSideBarOpen ? */}
-            <MainSideBarTest
+            <MainSideBar
             mainSideBarOpen={mainSideBarOpen}
             toggleMainSideBar={toggleMainSideBar}
             loggedIn={loggedIn}
@@ -268,14 +266,14 @@ const HomeTest2 = () => {
             <HeroSection language={language} />
             <VideoSection language={language}/>
             <HiwSection language={language}/>
-            <ContactSectionTest 
+            <ContactSection 
             language={language}
             loggedIn={loggedIn}
             isSignedIn={isSignedIn}
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}
-            // googleTest={googleTest}
+            
             />
             <FooterSection language={language}/>
         </>

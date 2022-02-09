@@ -3,21 +3,16 @@ import axios from 'axios'
 import NavBar from '../components/navBar/navBar'
 import SideBar from '../components/sideBar/sideBar'
 import LoginSideBar from '../components/loginSideBar/loginSideBar'
-// import MainSideBar from '../components/mainSideBar/mainSideBar'
-import MainSideBarTest from '../components/mainSideBar/mainSideBarTest'
-// import StyledSideBar from '../components/sideBar/styledSideBar'
+import MainSideBar from '../components/mainSideBar/mainSideBar'
+
 import HeroSection from '../components/heroSection/heroSection'
-// import StyledNavBar from '../components/navBar/styledNavbar'
-// import StyledHeroSection from '../components/heroSection/styledHeroSection'
 import VideoSection from '../components/videoSection/videoSection'
 import HiwSection from '../components/hiwSection/hiwSection'
-// import { infoHero, infoVideo, infoHIW, infoContact  } from '../utils/data'
+
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
-// import ContactSection from '../components/contactSection/contactSection'
-import ContactSectionTest from '../components/contactSection/contactSectionTest'
-// import StyledFooterSection from '../components/footerSection/styledFooterSection'
+import ContactSection from '../components/contactSection/contactSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 
@@ -258,7 +253,7 @@ const HomeTest = () => {
             {/* } */}
 
             {/* {!loggedOut && logoutSideBarOpen ? */}
-            <MainSideBarTest
+            <MainSideBar
             mainSideBarOpen={mainSideBarOpen}
             toggleMainSideBar={toggleMainSideBar}
             loggedIn={loggedIn}
@@ -299,7 +294,7 @@ const HomeTest = () => {
             <HeroSection language={language} />
             <VideoSection language={language}/>
             <HiwSection language={language}/>
-            <ContactSectionTest 
+            <ContactSection 
             language={language}
             loggedIn={loggedIn}
             isSignedIn={isSignedIn}

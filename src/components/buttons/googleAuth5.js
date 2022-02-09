@@ -3,7 +3,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { infoContact } from '../../utils/data'
 // import '../../bookface.css'
 
-const GoogleAuth5 = ({isSignedIn ,googleTest, language}) => {
+const GoogleAuth5 = ({googleTest, language}) => {
 
     // var googleUser = {}
     
@@ -22,15 +22,6 @@ const GoogleAuth5 = ({isSignedIn ,googleTest, language}) => {
                     googleTest(googleUser, response.id_token)
             })
         },[])
-        
-    // const attachSignin = (element) => {
-    //     console.log(element.id);
-    //     window.gapi.attachClickHandler(element, {}, (googleUser) => {
-    //           document.getElementById('name').innerText = "Signed in: " +
-    //               googleUser.getBasicProfile().getName();
-    //         }, function(error) {
-    //           alert(JSON.stringify(error, undefined, 2));
-    //         });
     })
 
 
