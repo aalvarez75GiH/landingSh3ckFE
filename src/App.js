@@ -16,7 +16,7 @@ const App = () => {
     return (
         <Router>
             {/* <GoogleAuth5/> */}
-           <Home/> 
+           <HomeTest2/> 
         </Router>
         
     )
