@@ -10,16 +10,16 @@ import HiwSection from '../components/hiwSection/hiwSection'
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
-import ContactSection from '../components/contactSection/contactSection'
+// import ContactSection from '../components/contactSection/contactSection'
+import ContactSectionTest from '../components/contactSection/contactSectionTest'
 import NextStepSection from '../components/nextStepSection.js/nextStepSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 
 
-// f31c5fee13aef74568ac client id
-// 5029d96a85c6c31586054f0c2d8d3010d8fdae69  client secret
+// Home version for testing separation of NextStepSection and ContactSection
 
-const Home = () => {
+const HomeTest4 = () => {
 
     const [ isOpen, setIsOpen ] = useState(false)
     const [ loggedIn, setLoggedIn ] = useState(false)
@@ -295,18 +295,21 @@ const Home = () => {
             <HeroSection language={language} />
             <VideoSection language={language}/>
             <HiwSection language={language}/>
-            <ContactSection 
+            <NextStepSection 
             language={language}
+            />
+            <ContactSectionTest
             loggedIn={loggedIn}
             isSignedIn={isSignedIn}
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}
             googleTest={googleTest}
+            language={language}
             />
             <FooterSection language={language}/>
         </>
     )
 }
 
-export default Home
+export default HomeTest4

@@ -84,6 +84,21 @@ export const infoHIW = {
     alt4_EN:'Finish the order',
     alt5_EN:'Real time video',
 }
+export const infoNextStep = {
+    id: 'nextStepSection',
+    linkedTo:'',
+    // Spanish
+    nextStepInfoTopLine:"¿Estas interesad@?",
+    nextStepInfoTitle1: "¿Que podemos hacer por ti hoy?",
+    nextStepInfoTitle2: "por ti hoy?",
+    nextStepInfoTitle3: "por ti hoy?",
+    // Spanish
+    nextStepInfoTopLine_EN:"Are you interested?",
+    nextStepInfoTitle1_EN: "What can we",
+    nextStepInfoTitle2_EN: "do for you",
+    nextStepInfoTitle3_EN: "today?"
+    
+}
 
     export const infoContact = {
     id:'contactSection',

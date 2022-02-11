@@ -864,7 +864,7 @@
 /*************** hiwSection ****************************** */
 .hiwContainer {
     max-width: 100%;
-    height: 800px;
+    height: 850px;
     background-color: #eeeeee;
 }
 
@@ -936,6 +936,130 @@
     flex-direction: column;
     align-items: center; 
     margin-left: 284px;
+}
+/* *************** NextStepSection ***********************/
+.nextStepContainer {
+    width: 100%;
+    height: 835px;
+}
+
+.nextStepWrapper {
+    display: flex; 
+    width: 100%;
+    height: 835px;
+}
+.nextStepInfo {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 50%;
+    height: auto;
+    background-color: #FAD570;
+}
+
+
+
+.nextStepInfoTitleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    margin-top: 8%;
+}
+.nextStepInfoTopLine {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-left: 9%;
+}
+.nextStepInfoTitle1 {
+    width: 70%;
+    font-size: 2.5rem;
+    margin-top: 1%;
+    margin-left: 8%;
+}
+
+
+.nextStepInfoImageContainer {
+    width: 100%;
+    height: 53%;
+    /* margin-top: 8%; */
+}
+
+.nextStepInfoImageContainer img {
+    margin-top: 3%;
+    margin-left: 21%;
+    width: 39%;
+}
+
+.NextStepOptionsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #FAD570;
+}
+.NextStepOptionsButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.nextStepOption1_container {
+    width: 70%;
+    display: flex;
+}
+.nextStepOption1_icon {
+    width: 20%;
+    background-color: #010606;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nextStepOption2_container {
+    width: 70%;
+    display: flex;
+    margin-top: 5%;
+}
+.nextStepOption2_icon {
+    width: 20%;
+    background-color: #010606;
+    height: auto;
+}
+.nextStepOption1 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 115px;
+    border-style: none;
+}
+
+.nextStepOption1 span {
+    font-size: 1.2rem;
+    margin-left: 10%;
+}
+.nextStepOption2 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 115px;
+    border-style: none;
+}
+.nextStepOption2 span {
+    font-size: 1.2rem;
+    margin-left: 10%;
+}
+
+.nextStepInfoIcon {
+    width: 50%;
+    height: 50%;
 }
 
 /* *************** contactSection ***********************/  
