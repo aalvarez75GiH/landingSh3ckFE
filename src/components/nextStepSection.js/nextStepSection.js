@@ -6,8 +6,10 @@ import  { motion } from 'framer-motion'
 
 import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
 import icon1 from '../../images/1783048_content_mobile_notification_push_icon.svg'
-import icon2 from '../../images/8824455_check_box_package_checking_logistics_icon.svg'
+import icon2 from '../../images/7681162_courier_delivery_scooter_box_icon.svg'
+import arrow from '../../images/3927254_arrow_arrow right_caret_caret right_chevron_icon.svg'
 import FormHeader from '../contactSection/formHeader'
+
 import { infoNextStep } from '../../utils/data'
 
 const NextStepSection = ({
@@ -51,14 +53,20 @@ return (
                     {/* <h1 className="nextStepInfoTitle2"> {language === 'ES' ? infoNextStep.nextStepInfoTitle2 : infoNextStep.nextStepInfoTitle2_EN}</h1> */}
                     {/* <h1 className="nextStepInfoTitle3"> {language === 'ES' ? infoNextStep.nextStepInfoTitle3 : infoNextStep.nextStepInfoTitle3_EN}</h1> */}
                 </div>
+                {/* <div className="nextStepInfoImageContainer">
+                    <img 
+                    className="nextStepInfoImage"
+                    src={picture} alt="" />
+                </div> */}
+                
+            </div>
+            <div className="NextStepOptionsContainer">
                 <div className="nextStepInfoImageContainer">
                     <img 
                     className="nextStepInfoImage"
                     src={picture} alt="" />
                 </div>
                 
-            </div>
-            <div className="NextStepOptionsContainer">
                 <div className="NextStepOptionsButtonsContainer">
                     <div className="nextStepOption1_container">
                         <div className="nextStepOption1_icon">
@@ -72,6 +80,11 @@ return (
                         >
                         <span>Notificame cuando la app este lista</span>
                         </button>
+                        <div className="nextStepOption1_arrow">
+                            <img 
+                                className="nextStepInfoArrow"
+                                src={arrow} alt="" />
+                        </div>
                     </div>
                     <div className="nextStepOption2_container">
                         <div className="nextStepOption2_icon">
@@ -83,8 +96,13 @@ return (
                         className="nextStepOption2"
                         type="submit"
                         >
-                            <span>Quiero chequear un Producto</span>
-                            </button>
+                            <span>Quiero chequear un Producto ahora</span>
+                        </button>
+                        <div className="nextStepOption2_arrow">
+                            <img 
+                                className="nextStepInfoArrow"
+                                src={arrow} alt="" />
+                        </div>
                     </div>
 
                 </div>

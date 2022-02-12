@@ -940,21 +940,23 @@
 /* *************** NextStepSection ***********************/
 .nextStepContainer {
     width: 100%;
-    height: 835px;
+    height: 800px;
 }
 
 .nextStepWrapper {
-    display: flex; 
+    display: flex;
+    flex-direction: column; 
     width: 100%;
-    height: 835px;
+    height: 800px;
 }
 .nextStepInfo {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    width: 50%;
-    height: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    /* height: auto; */
     background-color: #FAD570;
 }
 
@@ -965,8 +967,8 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 15%;
-    margin-top: 8%;
+    height: 40%;
+    /* margin-top: 8%; */
 }
 .nextStepInfoTopLine {
     font-size: 16px;
@@ -993,64 +995,81 @@
 .nextStepInfoImageContainer img {
     margin-top: 3%;
     margin-left: 21%;
-    width: 39%;
+    width: 45%;
 }
 
 .NextStepOptionsContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50%;
+    /* align-items: center; */
+    width: 100%;
+    height: 600px;
     background-color: #FAD570;
 }
 .NextStepOptionsButtonsContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    margin-top: 6%;
     width: 100%;
 }
 .nextStepOption1_container {
     width: 70%;
     display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 125px;
+    background-color: #FBE29D;
 }
 .nextStepOption1_icon {
     width: 20%;
     background-color: #010606;
-    height: auto;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 3%;
     
 }
 .nextStepOption2_container {
     width: 70%;
     display: flex;
-    margin-top: 5%;
+    /* justify-content: center; */
+    align-items: center;
+    height: 125px;
+    background-color: #FBE29D;
+    margin-top: 2%;
 }
 .nextStepOption2_icon {
     width: 20%;
     background-color: #010606;
-    height: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3%;
 }
 .nextStepOption1 {
     display: flex;
     align-items: center;
-    width: 80%;
-    height: 115px;
+    width: 60%;
+    height: 100px;
     border-style: none;
+    background-color: #FBE29D;
 }
 
 .nextStepOption1 span {
     font-size: 1.2rem;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 .nextStepOption2 {
     display: flex;
     align-items: center;
-    width: 80%;
-    height: 115px;
+    width: 60%;
+    height: 100px;
     border-style: none;
+    background-color: #FBE29D;
 }
 .nextStepOption2 span {
     font-size: 1.2rem;
@@ -1060,6 +1079,11 @@
 .nextStepInfoIcon {
     width: 50%;
     height: 50%;
+}
+
+.nextStepInfoArrow {
+    width: 50px;
+    height: 50px;
 }
 
 /* *************** contactSection ***********************/  
@@ -1835,6 +1859,26 @@
         margin-left: 3%;
         margin-top: 70px;
     }
+    
+    .nextStepContainer {
+        height: 700px;
+    }
+    
+    .nextStepWrapper {
+        height: 700px;
+    }
+
+    .NextStepOptionsContainer {
+        height: 500px;
+    }
+    .nextStepOption1_arrow, .nextStepOption2_arrow {
+        margin-left: 5%;
+    }
+    
+    .nextStepInfoArrow {
+        width: 35px;
+        height: 35px;
+    }
     .formTitle {
         font-size: 0.9rem;
     }
@@ -1913,6 +1957,17 @@
         margin-left: 3%;
     }
 
+    .NextStepOptionsButtonsContainer {
+        margin-top: 3%;
+    }
+    .nextStepOption1_arrow, .nextStepOption2_arrow {
+        margin-left: 5%;
+    }
+    
+    .nextStepInfoArrow {
+        width: 35px;
+        height: 35px;
+    }
     .notifyMe{
         font-size: 1rem;
     }
@@ -2306,6 +2361,52 @@
         margin-top: 100px;
     }
 
+    /* *************** NextStepSection ***********************/
+.nextStepContainer {
+    height: 620px; 
+}
+
+.nextStepWrapper {
+    height: 620px; 
+}
+
+
+.nextStepInfoImageContainer {
+    width: 40%; 
+}
+
+.nextStepInfoImageContainer img {
+    width: 67%; 
+}
+
+.NextStepOptionsContainer {
+   height: 420px; 
+   
+}
+.NextStepOptionsButtonsContainer {
+    margin-top: 3%; 
+    width: 60%; 
+}
+
+.nextStepOption1 {
+    width: 85%; 
+}
+
+
+.nextStepOption2 {
+  width: 85%; 
+  
+}
+
+.nextStepOption1_arrow, .nextStepOption2_arrow {
+    margin-left: 5%;
+}
+
+.nextStepInfoArrow {
+    width: 35px;
+    height: 35px;
+}
+
     /*********** Info *******************  */
     .contactContainer {
         width: 100%;
@@ -2669,6 +2770,48 @@
         margin-left: 3%;
         margin-top: 50px;
     }
+
+       /* *************** NextStepSection ***********************/
+.nextStepContainer {
+    height: 1100px;  
+}
+
+.nextStepWrapper {
+    height: 1100px;  
+}
+
+
+.nextStepInfoImageContainer {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;  
+    margin-bottom: 3%; 
+}
+
+.nextStepInfoImageContainer img {
+    margin-top: unset; 
+    margin-left: unset; 
+    width: 50%;  
+}
+
+.NextStepOptionsContainer {
+    
+    flex-direction: column; 
+    height: 900px; 
+}
+.NextStepOptionsButtonsContainer {
+    width: 100%; 
+}
+
+.nextStepOption1_arrow, .nextStepOption2_arrow {
+    margin-left: 5%;
+}
+
+.nextStepInfoArrow {
+    width: 35px;
+    height: 35px;
+}
 
      /*********** Info *******************  */
      .contactContainer {
@@ -3186,7 +3329,71 @@
         margin-left: 3%;
         margin-top: 50px;
     }
-    
+
+           /* *************** NextStepSection ***********************/
+.nextStepContainer {
+    height: 1200px;  
+    background-color: #FAD570;
+}
+
+.nextStepWrapper {
+    height: 1200px;  
+}
+
+
+.nextStepInfoTitleContainer {
+    height: 58%; 
+    margin-top: 14%; 
+}
+
+.nextStepInfoTitle1 {
+    width: 90%; 
+    margin-left: 4%; 
+}
+
+.nextStepInfoImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nextStepInfoImageContainer img {
+    margin-top: unset;
+    margin-left: unset;
+    width: 90%;   
+}
+
+.NextStepOptionsButtonsContainer {
+    margin-top: 11%;
+}
+.NextStepOptionsContainer {
+    justify-content: flex-start; 
+    flex-direction: column;
+    height: 1000px; 
+    margin-top: 5%; 
+}
+
+.nextStepOption1_container {
+    width: 95%; 
+}
+
+
+.nextStepOption2_container {
+    width: 95%; 
+}
+
+.nextStepInfoArrow {
+    width: 50px;
+    height: 50px;
+}
+
+.nextStepOption1_arrow, .nextStepOption2_arrow {
+    margin-left: 5%;
+}
+
+.nextStepInfoArrow {
+    width: 35px;
+    height: 35px;
+}
 
     /*********** Info *******************  */
     .contactContainer {
@@ -3805,6 +4012,76 @@
         margin-left: 3%;
         margin-top: 70px;
     }
+
+              /* *************** NextStepSection ***********************/
+.nextStepContainer {
+    height: 1200px;  
+    background-color: #FAD570;
+}
+
+.nextStepWrapper {
+    height: 1200px;  
+}
+
+
+.nextStepInfoTitleContainer {
+    height: 58%; 
+    margin-top: 14%; 
+}
+
+.nextStepInfoTitle1 {
+    width: 90%; 
+    margin-left: 4%; 
+}
+
+.nextStepInfoImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nextStepInfoImageContainer img {
+    margin-top: unset;
+    margin-left: unset;
+    width: 90%;   
+}
+
+.NextStepOptionsButtonsContainer {
+    margin-top: 11%;
+}
+.NextStepOptionsContainer {
+    justify-content: flex-start; 
+    flex-direction: column;
+    height: 1000px; 
+    margin-top: 5%; 
+}
+
+.nextStepOption1_container {
+    width: 95%; 
+}
+
+
+.nextStepOption2_container {
+    width: 95%; 
+}
+
+.nextStepInfoArrow {
+    width: 50px;
+    height: 50px;
+}
+.nextStepInfoArrow {
+    width: 50px;
+    height: 50px;
+}
+
+
+.nextStepOption1_arrow, .nextStepOption2_arrow {
+    margin-left: 5%;
+}
+
+.nextStepInfoArrow {
+    width: 35px;
+    height: 35px;
+}
     
     /*********** Info *******************  */
     .contactContainer {
@@ -4403,6 +4680,80 @@
         margin-left: 3%;
         margin-top: 50px;
     }
+
+              /* *************** NextStepSection ***********************/
+.nextStepContainer {
+    height: 1000px;  
+    background-color: #FAD570;
+}
+
+.nextStepWrapper {
+    height: 1000px;  
+}
+.nextStepInfo {
+    height: 200px;
+}
+
+.nextStepInfoTitleContainer {
+    height: 58%; 
+    margin-top: 14%; 
+}
+.nextStepInfoTopLine {
+    margin-left: 4%;
+}
+.nextStepInfoTitle1 {
+    font-size: 1.9rem;
+    width: 90%; 
+    margin-left: 4%; 
+}
+
+.nextStepInfoImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48%;
+}
+.nextStepInfoImageContainer img {
+    margin-top: unset;
+    margin-left: unset;
+    width: 90%;   
+}
+
+.NextStepOptionsButtonsContainer {
+    margin-top: 15%;
+}
+.NextStepOptionsContainer {
+    justify-content: flex-start; 
+    flex-direction: column;
+    height: 800px; 
+    margin-top: 5%; 
+}
+
+.nextStepOption1_container {
+    width: 95%; 
+}
+
+
+.nextStepOption2_container {
+    width: 95%; 
+}
+.nextStepOption1 span {
+    color: #000000
+}
+.nextStepOption2 span {
+    color: #000000
+}
+.nextStepOption1_arrow, .nextStepOption2_arrow {
+    margin-left: 5%;
+}
+
+.nextStepInfoArrow {
+    width: 35px;
+    height: 35px;
+}
+
+
+
     /*********** Info *******************  */
     .contactContainer {
         width: 100%;
