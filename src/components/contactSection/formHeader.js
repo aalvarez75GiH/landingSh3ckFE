@@ -10,9 +10,9 @@ const FormHeader = ({ active, loggedIn, regView, forgotPIN, language  }) => {
             <div className="formTitle">
                 <h1 className="title_1">{language === 'ES' ? infoContact.intUsers_h1 : infoContact.intUsers_h1_EN}</h1>
             </div>
-            <div className="formDescription">
+            {/* <div className="formDescription">
                 <p>{language === 'ES' ? infoContact.intUsers_p : infoContact.intUsers_p_EN}</p>
-            </div>
+            </div> */}
         </div>
         : null}
         
@@ -23,9 +23,9 @@ const FormHeader = ({ active, loggedIn, regView, forgotPIN, language  }) => {
                 <div className="formTitle">
                     <h1 className="title_3">{language === 'ES' ? infoContact.users_h1 : infoContact.users_h1_EN}</h1>
                 </div>
-                <div className="formDescription">
+                {/* <div className="formDescription">
                     <p>{language === 'ES' ? infoContact.users_p : infoContact.users_p_EN}</p>
-                </div>
+                </div> */}
             </>
             
             : 
@@ -34,18 +34,18 @@ const FormHeader = ({ active, loggedIn, regView, forgotPIN, language  }) => {
                     <div className="formTitle">
                         <h1 className="title_4"> {language === 'ES' ? infoContact.genPIN_h1 : infoContact.genPIN_h1_EN} </h1>
                     </div>
-                    <div className="formDescription">
+                    {/* <div className="formDescription">
                         <p>{language === 'ES' ? infoContact.genPIN_p : infoContact.genPIN_p_EN}</p>
-                    </div>
+                    </div> */}
                 </>
                 :
                 <>
                     <div className="formTitle">
                         <h1 className="title_4">{language === 'ES' ? infoContact.login_h1 : infoContact.login_h1_EN} </h1>
                     </div>
-                    <div className="formDescription">
+                    {/* <div className="formDescription">
                         <p>{language === 'ES' ? infoContact.login_p : infoContact.login_p_EN}</p>
-                    </div>
+                    </div> */}
                 </>
                 
             }

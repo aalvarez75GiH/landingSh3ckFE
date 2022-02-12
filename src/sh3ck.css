@@ -1091,17 +1091,18 @@
 
 .contactContainer {
     width: 100%;
-    height: 1000px;
+    height: 950px;
     /* background-color: red; */
 }
 
 .contactWrapper {
     display: flex; 
     width: 100%;
-    height: 1000px;
-    justify-content: space-between;
+    height: 950px;
+    justify-content: center; /* 8888 */
+    align-items: center; /* 8888 */
 }
-
+/*  ******  Probably for deletion (start)  ********* */
 .contactInfo {
     display: flex;
     flex-direction: column;
@@ -1211,6 +1212,8 @@
     border-radius: 15px;
 }
 
+/*  ******  Probably for deletion (End)  ********* */
+
 .contactForms {
     display: flex;
     flex-direction: column;
@@ -1218,13 +1221,13 @@
     align-items: center;
     position: relative;
     width: 50%;
-    height: 100%;
+    height: 90%;
     background-color: #ffffff;
     
 }
 
 
-
+/*  ******  Probably for deletion (Start)  ********* */
 .optionsWrapper {
     display: flex;
     justify-content: space-evenly;
@@ -1250,8 +1253,9 @@
     width: 50%;
     height: 100%;
 }
-
+/*  ******  Probably for deletion (End)  ********* */
 .titleWrapper {
+    font-size: 1.9rem;
     height: 11%;
     width: 70%;
     display: flex;
@@ -1262,7 +1266,7 @@
 
 .formTitle {
     color: #010606;
-    height: 56%;
+    height: 100%;
     margin-top: 5%;
 }
 
@@ -1275,7 +1279,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 68%; /* 8888 */ 
     background-color: #ffffff;
     width: 70%;
     margin-bottom: 20%;
@@ -1733,10 +1737,7 @@
         margin-top: 70px;
         margin-left: 10px;
     }
-    .formTitle {
-        font-size: 0.9rem;
-    }
-
+   
     .input {
         height: 115px;
         font-size: 1.3rem;
@@ -1879,9 +1880,9 @@
         width: 35px;
         height: 35px;
     }
-    .formTitle {
+    /* .formTitle {
         font-size: 0.9rem;
-    }
+    } */
     .loginSideBarFormDescription p {
         font-size: 1.5rem;
     }
@@ -1968,6 +1969,7 @@
         width: 35px;
         height: 35px;
     }
+    /*  ******  Probably for deletion (Start)  ********* */
     .notifyMe{
         font-size: 1rem;
     }
@@ -1975,10 +1977,14 @@
         font-size: 1rem;
     }
 
-    .formTitle {
+    /* .formTitle {
         font-size: 0.8rem;
+    } */
+    /*  ******  Probably for deletion (End)  ********* */
+    .titleWrapper {
+        font-size: 1.8rem;
+        margin-bottom: 2%;
     }
-
     .loginSideBarFormDescription p {
         font-size: 1.5rem;
     }
@@ -2087,16 +2093,17 @@
         margin-left: 3%;
         margin-top: 100px;
     }
-    .checkAProduct {
-        font-size: 1rem;
-        padding-left: 10%;
+ 
+    .contactContainer, .contactWrapper {
+        height: 900px;
     }
     .titleWrapper{
         margin-bottom: 4%;
+        font-size: 1.7rem;
     }
-    .formTitle {
+    /* .formTitle {
         font-size: 0.8rem;
-    }
+    } */
 
     .loginSideBarFormDescription p {
         font-size: 1.5rem;
@@ -2410,14 +2417,14 @@
     /*********** Info *******************  */
     .contactContainer {
         width: 100%;
-        height: 2200px;
+        height: 900px;
     }
 
     .contactWrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 2200px;
+        height: 900px;
     }
  
 
@@ -2527,10 +2534,10 @@
     .titleWrapper {
         width: 75%;
     }
-    .formTitle {
+    /* .formTitle {
         font-size: 0.8rem;
     }
- 
+  */
     .formDescription {
         margin-top: 2%;
     }
@@ -2816,17 +2823,17 @@
      /*********** Info *******************  */
      .contactContainer {
         width: 100%;
-        height: 2000px;
+        height: 900px;
     }
 
     .contactWrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 2000px;
+        height: 900px;
     }
  
-
+/*  ******  Probably for deletion (Start)  ********* */
     .contactInfo {
         justify-content: unset;
         align-items: unset;
@@ -2918,42 +2925,30 @@
     .contactInfoOption3 p {
         font-size: 1.2rem;
     }
-    /******************************  */
+    /*  ******  Probably for deletion (End)  ********* */
+  
    
     .contactForms {
         width: 100%;
-        height: 800px;
+        height: 100%;
         position: unset;
         
         
     }
-    .optionsWrapper {
-        width: 85%;
-    }
+ 
     .titleWrapper {
         width: 85%;
         margin-bottom: 5%;
+        font-size: 2.1rem;
     }
-    .formTitle {
-        font-size: 0.8rem;
-        margin-top: 3%;
-    }
-    .title_1 {
-        font-size: 2.4rem;
+  
 
-    }
-    .title_3 {
-        font-size: 2.2rem;
-    }
-    .title_4 {
-        font-size: 4rem;
-    }
     .formDescription {
         margin-top: 6%;
     }
     .boxContainer {
         width: 85%;
-        height: 55%;
+        height: 70%;
         margin-top: 4%;
         margin-bottom: 0;
 
@@ -3398,7 +3393,7 @@
     /*********** Info *******************  */
     .contactContainer {
         width: 100%;
-        height: 2500px;
+        height: 900px; /* 8888 */
         
     }
 
@@ -3406,116 +3401,10 @@
         display: flex;
         flex-direction: column; 
         width: 100%;
-        height: 2500px;
+        height: 900px;
         justify-content: space-between;
     }
 
-    .contactInfo {
-        display: flex;
-        flex-direction: column;
-        justify-content: unset;
-        align-items: unset;
-        width: 100%;
-        height: 1700px;
-        background-color: #FAD570;
-    }
-    
-        
-    .contactInfoTitleContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 20%;
-        margin-top: 10%;
-    }
-    .contactInfoTopLine {
-        font-size: 1.2rem;
-        margin-left: 7%;
-        
-    }
-    
-    .contactInfoTitle1 {
-        width: 70%;
-        font-size: 3.8rem;
-        margin-top: 1%;
-        margin-left: 6%;
-    }
-    .contactInfoTitle2 {
-        width: 70%;
-        font-size: 3.8rem;
-        margin-left: 6%;
-    }
-    
-    .contactInfoTitle3 {
-        width: 70%;
-        font-size: 3.8rem;
-        margin-top: 1%;
-        margin-left: 6%;
-    }
-    
-    .contactInfoImageContainer {
-        margin-top: 10%;
-        height: 35%;
-    }
-    
-    .contactInfoImageContainer img {
-        margin-top: 4%;
-        margin-left: 2%;
-        width: 96%;
-    }
-    .contactInfoDescContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 90%;
-        height: 29%;
-        margin-left: 6%;
-        margin-top: 10%;
-    } 
-    
-    .contactInfoOption1 {
-        width: 70%;
-        margin-bottom: 4%;
-        
-    }
-    .contactInfoOption1 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption1 p {
-        font-size: 1.2rem;
-    }
-     .contactInfoOption2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-        margin-bottom: 2.3%;
-        margin-right: 3%;
-        margin-top: 10%;
-    }
-    .contactInfoOption2 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption2 p {
-        font-size: 1.2rem;
-    }
-    
-    .contactInfoOption3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-        margin-top: 10%;
-    } 
-    .contactInfoOption3 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption3 p {
-        font-size: 1.2rem;
-    }
-    /******************************  */
     
     .contactForms {
         width: 100%;
@@ -3524,33 +3413,19 @@
         
         
     }
-    .optionsWrapper {
-        width: 90%;
-    }
+
     .titleWrapper {
         width: 90%;
         margin-bottom: 1%;
         height: 16%;
     }
-    .formTitle {
-        font-size: 0.8rem;
-    }
-    .title_1 {
-        font-size: 2rem;
 
-    }
-    .title_3 {
-        font-size: 2.2rem;
-    }
-    .title_4 {
-        font-size: 4rem;
-    }
     .formDescription {
         margin-top: 2%;
     }
     .boxContainer {
         width: 90%;
-        height: auto;
+        height: 60%;
         margin-top: 4%;
         margin-bottom: 0;
 
@@ -4086,126 +3961,21 @@
     /*********** Info *******************  */
     .contactContainer {
         width: 100%;
-        height: 2500px;
+        height: 800px;
     }
 
     .contactWrapper {
         display: flex;
         flex-direction: column; 
         width: 100%;
-        height: 2500px;
+        height: 800px;
         justify-content: space-between;
     }
 
-    .contactInfo {
-        display: flex;
-        flex-direction: column;
-        justify-content: unset;
-        align-items: unset;
-        width: 100%;
-        height: 1700px;
-        background-color: #FAD570;
-    }
-
-
-    .contactInfoTitleContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 20%;
-        margin-top: 20%;
-    }
-    .contactInfoTopLine {
-        font-size: 1.2rem;
-        margin-left: 7%;
-
-    }
-
-    .contactInfoTitle1 {
-        width: 70%;
-        font-size: 3.8rem;
-        margin-top: 1%;
-        margin-left: 6%;
-    }
-    .contactInfoTitle2 {
-        width: 70%;
-        font-size: 3.8rem;
-        margin-left: 6%;
-    }
-
-    .contactInfoTitle3 {
-        width: 70%;
-        font-size: 3.8rem;
-        margin-top: 1%;
-        margin-left: 6%;
-    }
-
-    .contactInfoImageContainer {
-        margin-top: 10%;
-        height: 30%;
-    }
-
-    .contactInfoImageContainer img {
-        margin-top: 4%;
-        margin-left: 2%;
-        width: 96%;
-    }
-    .contactInfoDescContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 90%;
-        height: 29%;
-        margin-left: 6%;
-        margin-top: 15%;
-    } 
-
-    .contactInfoOption1 {
-        width: 70%;
-        margin-bottom: 4%;
-
-    }
-    .contactInfoOption1 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption1 p {
-        font-size: 1.2rem;
-    }
-     .contactInfoOption2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-        margin-bottom: 2.3%;
-        margin-right: 3%;
-        margin-top: 10%;
-    }
-    .contactInfoOption2 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption2 p {
-        font-size: 1.2rem;
-    }
-
-    .contactInfoOption3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-        margin-top: 10%;
-    } 
-    .contactInfoOption3 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption3 p {
-        font-size: 1.2rem;
-    }
-    /******************************  */
+    
     .contactForms {
         width: 100%;
-        height: 800px;
+        height: 100%;
         position: unset;
     }
 
@@ -4214,38 +3984,16 @@
     }
     .titleWrapper {
         width: 90%;
-        height: 20%;
+        height: 15%;
         margin-bottom: 5%;
-    }
-    .formTitle {
-        font-size: 2.2rem;
-    }
-    .title_1 {
-        font-size: 2.4rem;
-
-    }
-    .title_3 {
-        font-size: 2.2rem;
-    }
-    .title_4 {
-        font-size: 4rem;
-    }
-    .formDescription {
-        font-size: 15px;
-        margin-top: 0;
-    }
-
-    .formDescription p {
-        margin-top: 3%;
+        font-size: 1.7rem;
+        margin-top: 10%;
     }
   
-    .checkAProduct p {
-        width: 65%;
-    }
     .boxContainer {
         width: 90%;
-        height: auto;
-        margin-bottom: 15%;
+        height: 80%;
+        margin-bottom: 30%;
     }
     
     .loginSideBarFormDescription {
@@ -4642,9 +4390,9 @@
         margin-top: 15%;
         margin-left: 3%;
     }
-    .formTitle {
+    /* .formTitle {
         font-size: 0.6rem;
-    }
+    } */
     
     .title {
         display: flex;
@@ -4757,163 +4505,34 @@
     /*********** Info *******************  */
     .contactContainer {
         width: 100%;
-        height: 2600px;
+        height: 800px;
     }
 
     .contactWrapper {
         display: flex;
         flex-direction: column; 
         width: 100%;
-        height: 2600px;
+        height: 800px;
         justify-content: space-between;
     }
 
-    .contactInfo {
-        display: flex;
-        flex-direction: column;
-        justify-content: unset;
-        align-items: unset;
-        width: 100%;
-        height: 1800px;
-        background-color: #FAD570;
-    }
-
-
-    .contactInfoTitleContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 20%;
-        margin-top: 20%;
-    }
-    .contactInfoTopLine {
-        font-size: 1.2rem;
-        margin-left: 7%;
-
-    }
-
-    .contactInfoTitle1 {
-        width: 70%;
-        font-size: 3.5rem;
-        margin-top: 1%;
-        margin-left: 6%;
-    }
-    .contactInfoTitle2 {
-        width: 70%;
-        font-size: 3.5rem;
-        margin-left: 6%;
-    }
-
-    .contactInfoTitle3 {
-        width: 70%;
-        font-size: 3.5rem;
-        margin-top: 1%;
-        margin-left: 6%;
-    }
-
-    .contactInfoImageContainer {
-        margin-top: 10%;
-        height: 25%;
-    }
-
-    .contactInfoImageContainer img {
-        margin-top: 4%;
-        margin-left: 2%;
-        width: 96%;
-    }
-    .contactInfoDescContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 90%;
-        height: 36%;
-        margin-left: 6%;
-        margin-top: 15%;
-    } 
-
-    .contactInfoOption1 {
-        width: 70%;
-        margin-bottom: 4%;
-
-    }
-    .contactInfoOption1 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption1 p {
-        font-size: 1.2rem;
-    }
-     .contactInfoOption2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-        margin-bottom: 2.3%;
-        margin-right: 3%;
-        margin-top: 10%;
-    }
-    .contactInfoOption2 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption2 p {
-        font-size: 1.2rem;
-    }
-
-    .contactInfoOption3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-        margin-top: 10%;
-    } 
-    .contactInfoOption3 h3 {
-        font-size: 2.5rem;
-    }
-    .contactInfoOption3 p {
-        font-size: 1.2rem;
-    }
-    /******************************  */
+    
     .contactForms {
         width: 100%;
-        height: 800px;
-        position: unset;    
+        height: 80%;
+        position: unset;
     }
 
-    .optionsWrapper {
-        width: 90%;
-    }
+
     .titleWrapper {
         width: 90%;
-        height: 20%;
+        height: 15%;
         margin-bottom: 5%;
+        font-size: 1.7rem;
+        margin-top: 10%;
     }
     
-    .formTitle {
-        display: flex;
-        align-items: center;
-    }
-    .title_1 {
-        font-size: 1.8rem;
 
-    }
-    .title_3 {
-        font-size: 2.2rem;
-    }
-    .title_4 {
-        font-size: 4rem;
-    }
-    .formDescription {
-        font-size: 15px;
-    }
-
-    .formDescription p {
-        margin-top: 3%;
-    }
-  
-    .checkAProduct p {
-        width: 65%;
-    }
     .boxContainer {
         width: 90%;
         height: auto;

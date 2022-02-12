@@ -27,7 +27,8 @@ const LoginForm = ({
     handlingNewPINRequest,
     language,
     isSignedIn,
-    googleTest
+    googleTest,
+    toggleForgotPINState
 }) => {
     console.log(isSignedIn)
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
@@ -67,8 +68,8 @@ const LoginForm = ({
         return(
             <ForgotPINForm
             handlingNewPINRequest={handlingNewPINRequest}
-            toggleForgotSection={toggleForgotSection}
             language={language}
+            toggleForgotPINState={toggleForgotPINState}
             />
         ) 
         
@@ -127,7 +128,7 @@ const LoginForm = ({
                 type="submit"
                 >{language === 'ES' ? infoContact.loginFormRegBtn : infoContact.loginFormRegBtn_EN}</button>
                 <span
-                onClick={toggleForgotSection} 
+                onClick={toggleForgotPINState} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
                 <GoogleAuth5
                 isSignedIn={isSignedIn}

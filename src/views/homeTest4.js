@@ -30,15 +30,11 @@ const HomeTest4 = () => {
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
     const [ language, setLanguage ] = useState('ES')
+    const [ active , setActive ] = useState(null) 
+    const [ regView, setRegView ] = useState(false)
+    const [ forgotPIN, setForgotPIN ] = useState(false)
 
     // Google OAuth States *****************************************
-    const [googleUser, setGoogleUser] = useState({
-        fullName: '',
-        email: '',
-        id: '',
-        imageUrl: '',
-        token_id: ''
-    })
     const [ loginData, setLoginData ] = useState(null)
     const [isSignedIn, setIsSignedIn] = useState(null)
     // console.log(isSignedIn)
@@ -77,7 +73,33 @@ const HomeTest4 = () => {
         getToken()
     }
 
-    
+    // **************************************************************
+
+    const handlingInterestedUser = () => {
+        setActive('interested')
+        setRegView(false)
+    }
+
+    const handlingCheckUser = () => {
+        setActive('check')
+        setRegView(false)
+        setForgotPIN(false)
+    }
+
+    const toggleRegView = () => {
+        // setResponse(null)
+        setRegView(true)
+    }
+
+    const settinRegViewAndForgotPINToFalse = () => {
+        setRegView(false)
+        setForgotPIN(false)
+    }
+    const toggleForgotPINState = () => {
+        setForgotPIN(!forgotPIN)
+    }
+    // ***************************************************************
+
 
     const handlingSubmitLoginUser = async(user) => {    
         try {
@@ -295,18 +317,49 @@ const HomeTest4 = () => {
             <HeroSection language={language} />
             <VideoSection language={language}/>
             <HiwSection language={language}/>
-            <NextStepSection 
+            <NextStepSection
+            handlingInterestedUser={handlingInterestedUser}
+            handlingCheckUser={handlingCheckUser} 
             language={language}
             />
-            <ContactSectionTest
-            loggedIn={loggedIn}
-            isSignedIn={isSignedIn}
-            handlingSubmitLoginUser={ handlingSubmitLoginUser}
-            loginResponse={loginResponse}
-            toggleNotificationLogin={toggleNotification}
-            googleTest={googleTest}
-            language={language}
-            />
+
+            { active === 'interested' ?
+                <ContactSectionTest
+                active={active}
+                regView={regView}
+                forgotPIN={forgotPIN}
+                loggedIn={loggedIn}
+                isSignedIn={isSignedIn}
+                handlingSubmitLoginUser={ handlingSubmitLoginUser}
+                loginResponse={loginResponse}
+                toggleNotificationLogin={toggleNotification}
+                googleTest={googleTest}
+                language={language}
+                toggleRegView={toggleRegView}
+                settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
+                toggleForgotPINState={toggleForgotPINState}
+                />
+            : 
+                active === 'check' ?
+                    <ContactSectionTest
+                    regView={regView}
+                    active={active}
+                    forgotPIN={forgotPIN}
+                    loggedIn={loggedIn}
+                    isSignedIn={isSignedIn}
+                    handlingSubmitLoginUser={ handlingSubmitLoginUser}
+                    loginResponse={loginResponse}
+                    toggleNotificationLogin={toggleNotification}
+                    googleTest={googleTest}
+                    language={language}
+                    toggleRegView={toggleRegView}
+                    settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
+                    toggleForgotPINState={toggleForgotPINState}
+                    /> 
+                :
+                null
+
+            }
             <FooterSection language={language}/>
         </>
     )

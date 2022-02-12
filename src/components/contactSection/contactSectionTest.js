@@ -21,49 +21,36 @@ const ContactSectionTest = ({
     loginResponse,
     toggleNotificationLogin,
     isSignedIn,
-    googleTest
+    googleTest,
+    active,
+    regView,
+    forgotPIN,
+    toggleRegView,
+    settinRegViewAndForgotPINToFalse,
+    toggleForgotPINState
 
 }) => {
    
     const [ upLoadingUser, setUpLoadingUser ] = useState(false)
-    const [ active , setActive ] = useState('interested') 
-    const [ regView, setRegView ] = useState(false)
+    // const [ active , setActive ] = useState('interested') 
+    // const [ regView, setRegView ] = useState(false)
     const [response, setResponse ] = useState(null)
-    const [ forgotPIN, setForgotPIN ] = useState(false)
+    // const [ forgotPIN, setForgotPIN ] = useState(false)
     // const url_interestedUsers = "http://192.168.1.102:5000/api/interestedUsers"
     // const url_users = "http://192.168.1.102:5000/api/users"
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
     const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
     // console.log(loginResponse)
-//    console.log(isSignedIn)
+    //    console.log(isSignedIn)
 
-    const switchToCheck = () => {
-        setActive('check')
-        setRegView(false)
-        setForgotPIN(false)
-    }
-
-    const switchToSignIn = () => {
-        setActive('interested')
-    }
-
-
-    const toggleRegView = () => {
-        setResponse(null)
-        setRegView(true)
-    }
+ 
 
     const toggleNotification = () => {
         setResponse(null)
-        setRegView(false)
-        setForgotPIN(!forgotPIN)
+        // setRegView(false)
+        // setForgotPIN(!forgotPIN)
     }
-
-    const toggleForgotSection = () => {
-        setForgotPIN(!forgotPIN)
-    }
-
 
 
     const handlingLoginUser = (values) => {
@@ -105,7 +92,7 @@ const ContactSectionTest = ({
                     if (response.status === 201){
                         setResponse(response)
                         setUpLoadingUser(false)
-                        setRegView(false)
+                        settinRegViewAndForgotPINToFalse()
                         console.log('Gracias por registrarte')
                         return response.status
                     }
@@ -184,7 +171,7 @@ return (
              toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
              response={response ? response : loginResponse }
              responseData={togglingResponseData()} 
-             switchToCheck={switchToCheck}
+            //  switchToCheck={switchToCheck}
              language={language}
              />
              : null
@@ -192,12 +179,6 @@ return (
             
             { !loggedIn  ? 
             <>
-            <OptionsForms
-            active={active === 'interested' ? 'interested' : 'signUp' } 
-            switchToSignIn={switchToSignIn}
-            switchToCheck={switchToCheck}
-            language={language}
-            />
             <FormHeader
             active = {active}
             loggedIn={loggedIn}
@@ -239,10 +220,10 @@ return (
             handlingSubmitUser={handlingSubmitUser}
             handlingLoginUser={handlingLoginUser}
             handlingNewPINRequest={handlingNewPINRequest}
-            toggleForgotSection={toggleForgotSection}
             language={language}
             isSignedIn={isSignedIn}
             googleTest={googleTest}
+            toggleForgotPINState={toggleForgotPINState}
             />
             :
             null

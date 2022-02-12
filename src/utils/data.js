@@ -132,7 +132,8 @@ export const infoNextStep = {
     // Spanish
     notifyMe: 'Solo notificame',
     checkAProduct: 'Quiero chequear un producto',
-    intUsers_h1: '¿Quieres saber cuando nuestra app esté lista?',
+    // intUsers_h1: '¿Quieres saber cuando nuestra app esté lista?',
+    intUsers_h1: 'Ing. tus datos',
     intUsers_p: 'Llena estos datos, sabremos que estas interesado y te notificaremos',
     users_h1: 'Registrate con nosotros',
     users_p: 'Con solo estos 3 datos estarás listo para comenzar a chequear tus productos',

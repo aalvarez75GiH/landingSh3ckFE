@@ -13,7 +13,9 @@ import FormHeader from '../contactSection/formHeader'
 import { infoNextStep } from '../../utils/data'
 
 const NextStepSection = ({
-    language
+    language,
+    handlingInterestedUser,
+    handlingCheckUser
 }) => {
    
      
@@ -50,15 +52,7 @@ return (
                         {language === 'ES' ? infoNextStep.nextStepInfoTopLine : infoNextStep.nextStepInfoTopLine_EN}
                     </p>
                     <h1 className="nextStepInfoTitle1"> {language === 'ES' ? infoNextStep.nextStepInfoTitle1 : infoNextStep.nextStepInfoTitle1_EN} </h1>
-                    {/* <h1 className="nextStepInfoTitle2"> {language === 'ES' ? infoNextStep.nextStepInfoTitle2 : infoNextStep.nextStepInfoTitle2_EN}</h1> */}
-                    {/* <h1 className="nextStepInfoTitle3"> {language === 'ES' ? infoNextStep.nextStepInfoTitle3 : infoNextStep.nextStepInfoTitle3_EN}</h1> */}
                 </div>
-                {/* <div className="nextStepInfoImageContainer">
-                    <img 
-                    className="nextStepInfoImage"
-                    src={picture} alt="" />
-                </div> */}
-                
             </div>
             <div className="NextStepOptionsContainer">
                 <div className="nextStepInfoImageContainer">
@@ -77,6 +71,7 @@ return (
                         <button
                         className="nextStepOption1"
                         type="submit"
+                        onClick={handlingInterestedUser}
                         >
                         <span>Notificame cuando la app este lista</span>
                         </button>
@@ -95,6 +90,7 @@ return (
                         <button
                         className="nextStepOption2"
                         type="submit"
+                        onClick={handlingCheckUser}
                         >
                             <span>Quiero chequear un Producto ahora</span>
                         </button>

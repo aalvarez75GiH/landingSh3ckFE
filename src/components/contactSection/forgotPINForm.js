@@ -12,7 +12,7 @@ const validationSchema = yup.object({
 
 const ForgotPINForm = ({ 
     handlingNewPINRequest, 
-    toggleForgotSection,
+    toggleForgotPINState,
     language 
 }) => {
 
@@ -70,7 +70,7 @@ const ForgotPINForm = ({
                 type="submit"
                 >{language === 'ES' ? infoContact.forgotPINFormSendBtn : infoContact.forgotPINFormSendBtn_EN}</button>
                 <button
-                onClick={toggleForgotSection}
+                onClick={toggleForgotPINState}
                 className="comeBackBtn"
                 type="submit"
                 >{language === 'ES' ? infoContact.forgotPINFormBackBtn : infoContact.forgotPINFormBackBtn_EN}</button>
