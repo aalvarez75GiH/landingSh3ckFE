@@ -84,6 +84,7 @@ const HomeTest4 = () => {
 
     const handlingCheckUser = () => {
         setActive('check')
+        setContactSectionOpen(true)
         setRegView(false)
         setForgotPIN(false)
     }

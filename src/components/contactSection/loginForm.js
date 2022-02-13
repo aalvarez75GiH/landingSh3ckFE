@@ -23,7 +23,6 @@ const LoginForm = ({
     toggleRegView,
     handlingSubmitUser,
     forgotPIN,
-    toggleForgotSection,
     handlingNewPINRequest,
     language,
     isSignedIn,
@@ -133,7 +132,7 @@ const LoginForm = ({
                 <GoogleAuth5
                 isSignedIn={isSignedIn}
                 googleTest={googleTest}
-                // language={language}
+                language={language}
                 />
             </form>
 

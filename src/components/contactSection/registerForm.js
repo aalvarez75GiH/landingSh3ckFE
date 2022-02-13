@@ -97,7 +97,7 @@ const RegisterForm = ({
                 <GoogleAuth5
                  googleTest={googleTest}
                  isSignedIn={isSignedIn}
-                // language={language}
+                 language={language}
                 />
                 
                 
