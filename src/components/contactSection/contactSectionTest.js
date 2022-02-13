@@ -32,24 +32,16 @@ const ContactSectionTest = ({
 }) => {
    
     const [ upLoadingUser, setUpLoadingUser ] = useState(false)
-    // const [ active , setActive ] = useState('interested') 
-    // const [ regView, setRegView ] = useState(false)
     const [response, setResponse ] = useState(null)
-    // const [ forgotPIN, setForgotPIN ] = useState(false)
     // const url_interestedUsers = "http://192.168.1.102:5000/api/interestedUsers"
     // const url_users = "http://192.168.1.102:5000/api/users"
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
     const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
-    // console.log(loginResponse)
-    //    console.log(isSignedIn)
-
- 
+    
 
     const toggleNotification = () => {
         setResponse(null)
-        // setRegView(false)
-        // setForgotPIN(!forgotPIN)
     }
 
 
@@ -159,6 +151,7 @@ if (upLoadingUser){
     )    
 }
 // console.log(active)
+console.log(infoContact.id)
 return (
     <div 
     id={infoContact.id}
@@ -217,13 +210,13 @@ return (
             regView={regView}
             forgotPIN = {forgotPIN}
             toggleRegView={toggleRegView}
+            toggleForgotPINState={toggleForgotPINState}
             handlingSubmitUser={handlingSubmitUser}
             handlingLoginUser={handlingLoginUser}
             handlingNewPINRequest={handlingNewPINRequest}
             language={language}
             isSignedIn={isSignedIn}
             googleTest={googleTest}
-            toggleForgotPINState={toggleForgotPINState}
             />
             :
             null

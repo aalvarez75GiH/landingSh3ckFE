@@ -43,11 +43,12 @@ const NavBarMobil = ({
                 <div className="navMenuButtonsContainer">
                 <div className="navMenuButton">
                         <LinkS 
-                        to="contactSection" 
+                        to="videoSection" 
                         className="navLinksMobil" 
                         activeClass="active"
                         spy={true}
                         smooth={true}
+                        // offset={100}
                         offset={OffsetHandler('startNow')}
                         duration={1000}
                         >
@@ -60,7 +61,7 @@ const NavBarMobil = ({
 
                     <div className="navMenuButton">
                         <LinkS 
-                        to="contactSection" 
+                        to="hiwSection" 
                         className="navLinksMobil" 
                         activeClass="active"
                         spy={true}
@@ -77,7 +78,7 @@ const NavBarMobil = ({
                     
                     <div className="navMenuButton">
                         <LinkS 
-                        to="contactSection" 
+                        to="nextStepSection" 
                         className="navLinksMobil" 
                         activeClass="active"
                         spy={true}
@@ -95,7 +96,7 @@ const NavBarMobil = ({
                     
                     <div className="navMenuButton">
                         <LinkS 
-                        to="contactSection" 
+                        to="nextStepSection" 
                         className="navLinksMobil" 
                         activeClass="active"
                         spy={true}

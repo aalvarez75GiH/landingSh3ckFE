@@ -101,7 +101,7 @@ export const infoNextStep = {
 }
 
     export const infoContact = {
-    id:'contactSection',
+    id:'contactSectionTest',
     linkedTo: 'hiwSection', 
 
     // Spanish
