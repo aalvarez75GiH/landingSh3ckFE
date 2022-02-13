@@ -30,9 +30,10 @@ const HomeTest4 = () => {
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
     const [ language, setLanguage ] = useState('ES')
-    const [ active , setActive ] = useState(null) 
     const [ regView, setRegView ] = useState(false)
     const [ forgotPIN, setForgotPIN ] = useState(false)
+    const [ active , setActive ] = useState(null) 
+    const [ contactSectionOpen, setContactSectionOpen ] = useState(false)
 
     // Google OAuth States *****************************************
     const [ loginData, setLoginData ] = useState(null)
@@ -77,6 +78,7 @@ const HomeTest4 = () => {
 
     const handlingInterestedUser = () => {
         setActive('interested')
+        setContactSectionOpen(true)
         setRegView(false)
     }
 
@@ -262,6 +264,8 @@ const HomeTest4 = () => {
             null
             }
             
+            
+
             {/* {!loggedIn && loginSideBarOpen ? */}
             <LoginSideBar
             loginSideBarOpen={ loginSideBarOpen } 
@@ -322,8 +326,24 @@ const HomeTest4 = () => {
             handlingCheckUser={handlingCheckUser} 
             language={language}
             />
-
-            { active === 'interested' ?
+            <ContactSectionTest
+                active={active}
+                regView={regView}
+                forgotPIN={forgotPIN}
+                loggedIn={loggedIn}
+                isSignedIn={isSignedIn}
+                handlingSubmitLoginUser={ handlingSubmitLoginUser}
+                loginResponse={loginResponse}
+                toggleNotificationLogin={toggleNotification}
+                googleTest={googleTest}
+                language={language}
+                toggleRegView={toggleRegView}
+                settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
+                toggleForgotPINState={toggleForgotPINState}
+                contactSectionOpen={contactSectionOpen}
+                />
+                
+            {/* { active === 'interested' ?
                 <ContactSectionTest
                 active={active}
                 regView={regView}
@@ -339,9 +359,9 @@ const HomeTest4 = () => {
                 settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
                 toggleForgotPINState={toggleForgotPINState}
                 />
-            : 
-                active === 'check' ?
-                    <ContactSectionTest
+             :  
+                 active === 'check' ?
+                     <ContactSectionTest
                     regView={regView}
                     active={active}
                     forgotPIN={forgotPIN}
@@ -356,10 +376,10 @@ const HomeTest4 = () => {
                     settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
                     toggleForgotPINState={toggleForgotPINState}
                     /> 
-                :
-                null
+                : 
+                null 
 
-            }
+             }  */}
             <FooterSection language={language}/>
         </>
     )

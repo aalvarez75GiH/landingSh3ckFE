@@ -27,7 +27,8 @@ const ContactSectionTest = ({
     forgotPIN,
     toggleRegView,
     settinRegViewAndForgotPINToFalse,
-    toggleForgotPINState
+    toggleForgotPINState,
+    contactSectionOpen
 
 }) => {
    
@@ -155,8 +156,8 @@ console.log(infoContact.id)
 return (
     <div 
     id={infoContact.id}
-    className="contactContainer">
-        <div className="contactWrapper">
+    className={contactSectionOpen ? 'contactContainer_open' : 'contactContainer' }>
+        <div className={contactSectionOpen ? 'contactWrapper_open' : 'contactWrapper' }>
             <div className="contactForms">
              
              {response || loginResponse ?

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import  { motion } from 'framer-motion'
+import { Link as LinkS } from 'react-scroll'
 
 
 // import LoginFormTest from './loginFormTest'
@@ -68,13 +68,26 @@ return (
                             className="nextStepInfoIcon"
                             src={icon1} alt="" />
                         </div>
-                        <button
+                        <LinkS
+                        to="contactSectionTest"  
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-100}
+                        duration={500}
                         className="nextStepOption1"
                         type="submit"
                         onClick={handlingInterestedUser}
                         >
                         <span>Notificame cuando la app este lista</span>
-                        </button>
+                        </LinkS>
+                        {/* <button
+                        className="nextStepOption1"
+                        type="submit"
+                        onClick={handlingInterestedUser}
+                        >
+                        <span>Notificame cuando la app este lista</span>
+                        </button> */}
                         <div className="nextStepOption1_arrow">
                             <img 
                                 className="nextStepInfoArrow"
@@ -87,13 +100,19 @@ return (
                             className="nextStepInfoIcon"
                             src={icon2} alt="" />
                         </div>
-                        <button
+                        <LinkS
+                        to="contactSectionTest"  
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-100}
+                        duration={500}
                         className="nextStepOption2"
                         type="submit"
                         onClick={handlingCheckUser}
                         >
                             <span>Quiero chequear un Producto ahora</span>
-                        </button>
+                        </LinkS>
                         <div className="nextStepOption2_arrow">
                             <img 
                                 className="nextStepInfoArrow"
