@@ -90,13 +90,13 @@ export const infoNextStep = {
     // Spanish
     nextStepInfoTopLine:"¿Estas interesad@?",
     nextStepInfoTitle1: "¿Que podemos hacer por ti hoy?",
-    nextStepInfoTitle2: "por ti hoy?",
-    nextStepInfoTitle3: "por ti hoy?",
+    nextStepButtonLabel_1: "Notifícame cuando la app este lista",
+    nextStepButtonLabel_2: "Quiero chequear un producto ahora",
     // Spanish
     nextStepInfoTopLine_EN:"Are you interested?",
-    nextStepInfoTitle1_EN: "What can we",
-    nextStepInfoTitle2_EN: "do for you",
-    nextStepInfoTitle3_EN: "today?"
+    nextStepInfoTitle1_EN: "What can we do for you today?",
+    nextStepButtonLabel_1_EN: "Let me know when the app is ready to go",
+    nextStepButtonLabel_2_EN: "I wanna check a product today"
     
 }
 

@@ -79,7 +79,7 @@ return (
                         type="submit"
                         onClick={handlingInterestedUser}
                         >
-                        <span>Notificame cuando la app este lista</span>
+                        <span>{language === 'ES' ? infoNextStep.nextStepButtonLabel_1 : infoNextStep.nextStepButtonLabel_1_EN}</span>
                         </LinkS>
                         {/* <button
                         className="nextStepOption1"
@@ -111,7 +111,7 @@ return (
                         type="submit"
                         onClick={handlingCheckUser}
                         >
-                            <span>Quiero chequear un Producto ahora</span>
+                            <span>{language === 'ES' ? infoNextStep.nextStepButtonLabel_2 : infoNextStep.nextStepButtonLabel_2_EN}</span>
                         </LinkS>
                         <div className="nextStepOption2_arrow">
                             <img 
