@@ -73,7 +73,7 @@ return (
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-100}
+                        offset={-130}
                         duration={500}
                         className="nextStepOption1"
                         type="submit"
@@ -105,7 +105,7 @@ return (
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-100}
+                        offset={-140}
                         duration={500}
                         className="nextStepOption2"
                         type="submit"
