@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import  { motion } from 'framer-motion'
 
 import InterestedUsersForm from '../contactSection/interestedUserForm'
-import CheckSection from './checkSection'
 import LoadingSpinner from '../../utils/loadingSpinner' 
 import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
@@ -153,16 +152,6 @@ return (
             null
             }
             
-            { loggedIn ? 
-             <>
-             <CheckSection language={language}/>
-             </>
-             
-             :
-             null
-            }
-            
-                
             { active === 'interested' && !loggedIn ? 
              <>
              <InterestedUsersForm 

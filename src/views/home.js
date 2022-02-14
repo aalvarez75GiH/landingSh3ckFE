@@ -142,12 +142,14 @@ const Home = () => {
             await auth.signOut()
             setIsSignedIn(false)
             setMainSideBarOpen(!mainSideBarOpen)
+            setLoginResponse(null)
         }
         if (loggedIn){
             localStorage.removeItem('SH3CK_TOKEN')
             setMainSideBarOpen(!mainSideBarOpen)
             setLoggedIn(false)
             setLoggedOut(true)
+            setLoginResponse(null)
         }
         
         

@@ -15,6 +15,7 @@ import ContactSectionTest from '../components/contactSection/contactSectionTest'
 import NextStepSection from '../components/nextStepSection.js/nextStepSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
+import CheckSection from '../components/checkSection/checkSection'
 
 
 // Home version for testing separation of NextStepSection and ContactSection
@@ -137,28 +138,39 @@ const HomeTest3 = () => {
     }
 
     const handlingSubmitLogOutUser = async() => {
-        console.log(isSignedIn)
-        console.log(loggedIn)
+        
         if (isSignedIn) {
-            console.log('paso por isSignedIn')
+            console.log('pasa por isSignedIn')
             const auth = window.gapi.auth2.getAuthInstance()
             await auth.signOut()
             setIsSignedIn(false)
+            setActive(null)
             setMainSideBarOpen(!mainSideBarOpen)
             setLoginResponse(null)
+            setContactSectionOpen(false)
         }
         if (loggedIn){
-            console.log('paso por loggedIn')
+            console.log('pasa por loggedIn')
             localStorage.removeItem('SH3CK_TOKEN')
             setLoginResponse(null)
+            setActive(null)
             setMainSideBarOpen(!mainSideBarOpen)
             setLoggedIn(false)
             setLoggedOut(true)
+            setContactSectionOpen(false)
         }
         
         
     }
  
+    const gettingOutOfCheckApp = async() => {
+        setIsSignedIn(false)
+        setLoggedIn(false)
+        setActive(null)
+        setContactSectionOpen(false)
+        setRegView(false)
+        
+    }
     
     const toggleSideBar = () => {
         setIsOpen(!isOpen)
@@ -265,39 +277,10 @@ const HomeTest3 = () => {
 // console.log(loginData)
     
     return (
+    <>
+    {
+        loggedIn ?
         <>
-            <LoadingSpinner 
-            loading={loading}
-            language={language}
-            />
-
-            
-            {/* { loading ?
-            <LoadingSpinner
-            language={language}
-            />
-            :
-            null
-            } */}
-            
-            
-
-            {/* {!loggedIn && loginSideBarOpen ? */}
-            <LoginSideBar
-            loginSideBarOpen={loginSideBarOpen}
-            toggleLoginSideBarToClose={ toggleLoginSideBarToClose }
-            loggedIn={loggedIn}
-            loggedOut={loggedOut}
-            // handlingLogin={handlingLogin}
-            loading = {loading}
-            language={language}
-            loginSideBarLoading={loginSideBarLoading}
-            handlingSubmitLoginUser={ handlingSubmitLoginUser}
-            />
-            {/* : null */}
-            {/* } */}
-
-            {/* {!loggedOut && logoutSideBarOpen ? */}
             <MainSideBar
             mainSideBarOpen={mainSideBarOpen}
             toggleMainSideBar={toggleMainSideBar}
@@ -308,8 +291,59 @@ const HomeTest3 = () => {
             language={language}
             loginData={loginData}           
             />
-            {/* : null */}
-            {/* } */}
+            { mobil2.screenWidth <= 1098 || mobil ?  
+                <NavBarMobil 
+                toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
+                toggleMainSideBar={toggleMainSideBar}
+                toggleSideBar={ toggleSideBar }  
+                login={ loggedIn }
+                language={language}
+                
+            /> : <NavBar
+            toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
+            toggleMainSideBar={toggleMainSideBar} 
+            login={ loggedIn }
+            language={language}
+            />
+            }
+
+            <CheckSection 
+            gettingOutOfCheckApp={gettingOutOfCheckApp}
+            language={language}
+            />
+        </>
+    : null
+    }
+      
+    {
+        !loggedIn ?
+        <>
+            <LoadingSpinner 
+            loading={loading}
+            language={language}
+            />
+   
+            <LoginSideBar
+            loginSideBarOpen={loginSideBarOpen}
+            toggleLoginSideBarToClose={ toggleLoginSideBarToClose }
+            loggedIn={loggedIn}
+            loggedOut={loggedOut}
+            loading = {loading}
+            language={language}
+            loginSideBarLoading={loginSideBarLoading}
+            handlingSubmitLoginUser={ handlingSubmitLoginUser}
+            />
+           
+            <MainSideBar
+            mainSideBarOpen={mainSideBarOpen}
+            toggleMainSideBar={toggleMainSideBar}
+            loggedIn={loggedIn}
+            loggedOut={loggedOut}
+            handlingSubmitLogOutUser={handlingSubmitLogOutUser}
+            username={currentUser}
+            language={language}
+            loginData={loginData}           
+            />
             
             <SideBar 
             isOpen={ isOpen } 
@@ -331,8 +365,7 @@ const HomeTest3 = () => {
             toggleMainSideBar={toggleMainSideBar} 
             login={ loggedIn }
             language={language}
-            
-        />
+            />
             }
             <HeroSection language={language} />
             <VideoSection language={language}/>
@@ -342,7 +375,9 @@ const HomeTest3 = () => {
             handlingCheckUser={handlingCheckUser} 
             language={language}
             />
-            <ContactSectionTest
+            {
+                !loggedIn ?
+                <ContactSectionTest
                 active={active}
                 regView={regView}
                 forgotPIN={forgotPIN}
@@ -358,9 +393,16 @@ const HomeTest3 = () => {
                 toggleForgotPINState={toggleForgotPINState}
                 contactSectionOpen={contactSectionOpen}
                 />
-                
+                :
+                null
+            }
             <FooterSection language={language}/>
         </>
+        : null
+            
+    }
+        
+    </>
     )
 }
 

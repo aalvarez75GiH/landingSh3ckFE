@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import  { motion } from 'framer-motion'
 
 import InterestedUsersForm from '../contactSection/interestedUserForm'
-import CheckSection from './checkSection'
 import LoadingSpinner from '../../utils/loadingSpinner' 
 import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
@@ -17,8 +16,8 @@ const ContactSectionTest = ({
     language,
     loggedIn,
     handlingSubmitLoginUser,
-    loginResponse,
-    toggleNotificationLogin,
+    // loginResponse,
+    // toggleNotificationLogin,
     isSignedIn,
     googleTest,
     active,
@@ -117,9 +116,9 @@ const togglingResponseData = () => {
     if (response && active === 'check'){
         return responseDataRegister
     }
-    if (loginResponse && active === 'check'){
-        return responseDataLogin
-    } 
+    // if (loginResponse && active === 'check'){
+    //     return responseDataLogin
+    // } 
 }
 
 return (
@@ -129,7 +128,7 @@ return (
         <div className={contactSectionOpen ? 'contactWrapper_open' : 'contactWrapper' }>
             <div className="contactForms">
              
-             {response || loginResponse ?
+             {/* {response || loginResponse ?
             <NotificationBox
              toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
              response={response ? response : loginResponse }
@@ -137,7 +136,7 @@ return (
              language={language}
              />
              : null
-             }
+             } */}
             
             { !loggedIn  ? 
             <>
@@ -152,17 +151,7 @@ return (
             :
             null
             }
-            
-            { loggedIn ? 
-             <>
-             <CheckSection language={language}/>
-             </>
-             
-             :
-             null
-            }
-            
-                
+                  
             { active === 'interested' && !loggedIn ? 
              <>
              <InterestedUsersForm 

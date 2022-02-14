@@ -18,28 +18,6 @@ const NextStepSection = ({
     handlingCheckUser
 }) => {
    
-     
-// if (upLoadingUser){
-//     return (
-//         <div 
-//         id={infoContact.id}
-//         className="contactContainer">
-//             <div className="contactWrapper">
-//                 <motion.div className="contactInfo"></motion.div>
-//                 <div className="contactForms">
-//                     <LoadingSpinner language={language}/>
-//                     <OptionsForms/>
-//                     <FormHeader/>
-//                     { active === 'interested' && loggedIn ? <InterestedUsersForm/>:null}
-//                     { active === 'interested' && loggedIn === false ? <InterestedUsersForm/>:null}
-//                     { active === 'check' && loggedIn  ? <InterestedUsersForm/>:null}
-//                     { active === 'check' && loggedIn === false  ? <LoginForm/>:null}
-//                 </div>
-//             </div>
-//         </div>
-//     )    
-// }
-// console.log(active)
 return (
    
     <div 
