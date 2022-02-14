@@ -6,7 +6,6 @@ import CheckSection from './checkSection'
 import LoadingSpinner from '../../utils/loadingSpinner' 
 import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
-// import LoginFormTest from './loginFormTest'
 import NotificationBox from '../notifications/NotificationBox'
 import axios from 'axios'
 import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
@@ -21,58 +20,30 @@ const ContactSection = ({
     loginResponse,
     toggleNotificationLogin,
     isSignedIn,
-    googleTest
+    googleTest,
+    active,
+    regView,
+    forgotPIN,
+    toggleRegView,
+    settinRegViewAndForgotPINToFalse,
+    toggleForgotPINState,
+    contactSectionOpen
 
 }) => {
    
     const [ upLoadingUser, setUpLoadingUser ] = useState(false)
-    const [ active , setActive ] = useState('interested') 
-    const [ regView, setRegView ] = useState(false)
     const [response, setResponse ] = useState(null)
-    const [ forgotPIN, setForgotPIN ] = useState(false)
     // const url_interestedUsers = "http://192.168.1.102:5000/api/interestedUsers"
     // const url_users = "http://192.168.1.102:5000/api/users"
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
     const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
-    // console.log(loginResponse)
-//    console.log(isSignedIn)
-
-    const switchToCheck = () => {
-        setActive('check')
-        setRegView(false)
-        setForgotPIN(false)
-    }
-
-    const switchToSignIn = () => {
-        setActive('interested')
-    }
-
-
-    const toggleRegView = () => {
-        setResponse(null)
-        setRegView(true)
-    }
+    
 
     const toggleNotification = () => {
         setResponse(null)
-        setRegView(false)
-        setForgotPIN(!forgotPIN)
     }
 
-    const toggleForgotSection = () => {
-        setForgotPIN(!forgotPIN)
-    }
-
-
-
-    const handlingLoginUser = (values) => {
-        setUpLoadingUser(true)
-        setTimeout(async() => {
-            handlingSubmitLoginUser(values)
-            setUpLoadingUser(false)
-        },2000)
-    } 
 
     const handlingSubmitInterestedUser = (interestedUser) => {
         
@@ -105,7 +76,7 @@ const ContactSection = ({
                     if (response.status === 201){
                         setResponse(response)
                         setUpLoadingUser(false)
-                        setRegView(false)
+                        settinRegViewAndForgotPINToFalse()
                         console.log('Gracias por registrarte')
                         return response.status
                     }
@@ -151,63 +122,11 @@ const togglingResponseData = () => {
     } 
 }
 
-if (upLoadingUser){
-    return (
-        <div 
-        id={infoContact.id}
-        className="contactContainer">
-            <div className="contactWrapper">
-                <motion.div className="contactInfo"></motion.div>
-                <div className="contactForms">
-                    <LoadingSpinner language={language}/>
-                    <OptionsForms/>
-                    <FormHeader/>
-                    { active === 'interested' && loggedIn ? <InterestedUsersForm/>:null}
-                    { active === 'interested' && loggedIn === false ? <InterestedUsersForm/>:null}
-                    { active === 'check' && loggedIn  ? <InterestedUsersForm/>:null}
-                    { active === 'check' && loggedIn === false  ? <LoginForm/>:null}
-                </div>
-            </div>
-        </div>
-    )    
-}
-// console.log(active)
 return (
     <div 
     id={infoContact.id}
-    className="contactContainer">
-        <div className="contactWrapper">
-            <div className="contactInfo">
-                <div className="contactInfoTitleContainer">
-                    <p className="contactInfoTopLine">
-                        {language === 'ES' ? infoContact.contactInfoTopLine : infoContact.contactInfoTopLine_EN}
-                    </p>
-                    <h1 className="contactInfoTitle1"> {language === 'ES' ? infoContact.contactInfoTitle1 : infoContact.contactInfoTitle1_EN} </h1>
-                    <h1 className="contactInfoTitle2"> {language === 'ES' ? infoContact.contactInfoTitle2 : infoContact.contactInfoTitle2_EN}</h1>
-                    <h1 className="contactInfoTitle3"> {language === 'ES' ? infoContact.contactInfoTitle3 : infoContact.contactInfoTitle3_EN}</h1>
-                </div>
-                <div className="contactInfoImageContainer">
-                    <img 
-                    className="contactInfoImage"
-                    src={picture} alt="" />
-                </div>
-                <div className="contactInfoDescContainer">
-                    <div className="contactInfoOption1">
-                        <h3>{language === 'ES' ? infoContact.contactInfoOption1_h3 : infoContact.contactInfoOption1_h3_EN}</h3>
-                        <p className="contactInfoDesc">
-                        {language === 'ES' ? infoContact.contactInfoOption1_desc : infoContact.contactInfoOption1_desc_EN}</p>
-                    </div>
-                    <div className="contactInfoOption2">
-                        <h3><b> {language === 'ES' ? infoContact.contactInfoOption2_h3 : infoContact.contactInfoOption2_h3_EN} </b></h3>
-                        <p className="contactInfoDesc">{language === 'ES' ? infoContact.contactInfoOption2_desc : infoContact.contactInfoOption2_desc_EN}</p>     
-                    </div>
-                    <div className="contactInfoOption3">
-                        <h3><b>{language === 'ES' ? infoContact.contactInfoOption3_h3 : infoContact.contactInfoOption3_h3_EN}</b></h3>
-                        <p className="contactInfoDesc">{language === 'ES' ? infoContact.contactInfoOption3_desc : infoContact.contactInfoOption3_desc_EN}</p>    
-                    </div>
-                </div>
-            </div>
-            
+    className={contactSectionOpen ? 'contactContainer_open' : 'contactContainer' }>
+        <div className={contactSectionOpen ? 'contactWrapper_open' : 'contactWrapper' }>
             <div className="contactForms">
              
              {response || loginResponse ?
@@ -215,7 +134,6 @@ return (
              toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
              response={response ? response : loginResponse }
              responseData={togglingResponseData()} 
-             switchToCheck={switchToCheck}
              language={language}
              />
              : null
@@ -223,12 +141,6 @@ return (
             
             { !loggedIn  ? 
             <>
-            <OptionsForms
-            active={active === 'interested' ? 'interested' : 'signUp' } 
-            switchToSignIn={switchToSignIn}
-            switchToCheck={switchToCheck}
-            language={language}
-            />
             <FormHeader
             active = {active}
             loggedIn={loggedIn}
@@ -267,10 +179,10 @@ return (
             regView={regView}
             forgotPIN = {forgotPIN}
             toggleRegView={toggleRegView}
+            toggleForgotPINState={toggleForgotPINState}
             handlingSubmitUser={handlingSubmitUser}
-            handlingLoginUser={handlingLoginUser}
+            handlingSubmitLoginUser={handlingSubmitLoginUser}
             handlingNewPINRequest={handlingNewPINRequest}
-            toggleForgotSection={toggleForgotSection}
             language={language}
             isSignedIn={isSignedIn}
             googleTest={googleTest}

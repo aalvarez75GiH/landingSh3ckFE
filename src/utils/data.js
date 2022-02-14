@@ -133,7 +133,7 @@ export const infoNextStep = {
     notifyMe: 'Solo notificame',
     checkAProduct: 'Quiero chequear un producto',
     // intUsers_h1: '¿Quieres saber cuando nuestra app esté lista?',
-    intUsers_h1: 'Ing. tus datos',
+    intUsers_h1: 'Llena esto...',
     intUsers_p: 'Llena estos datos, sabremos que estas interesado y te notificaremos',
     users_h1: 'Registrate',
     users_p: 'Con solo estos 3 datos estarás listo para comenzar a chequear tus productos',
@@ -162,7 +162,7 @@ export const infoNextStep = {
     // English
     notifyMe_EN:'Just notify me',
     checkAProduct_EN: 'I want to check a product',
-    intUsers_h1_EN: 'Do you wanna know when our app is ready to go?',
+    intUsers_h1_EN: 'Fill this info...',
     intUsers_p_EN: 'Fill in this information, we will know that you are interested and we will notify you',
     users_h1_EN: 'Sign Up',
     users_p_EN: 'With only these 3 fields you are gonna be ready to go and check products',

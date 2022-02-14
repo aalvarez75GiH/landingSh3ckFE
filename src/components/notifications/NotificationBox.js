@@ -14,7 +14,7 @@ const NotificationBox = ({
 }) => {
     console.log(response)
     let responseSplitted = response.data.split(' ')
-    console.log('splitting response: ', responseSplitted[0])
+    // console.log('splitting response: ', responseSplitted[0])
     if (response){
         if (response.status === 400){
             return (

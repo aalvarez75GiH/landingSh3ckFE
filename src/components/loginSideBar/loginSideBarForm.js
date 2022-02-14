@@ -13,14 +13,14 @@ const validationSchema = yup.object({
 
 
 const LoginSideBarForm = ({ 
-    handlingLogin,
-    language
+    language,
+    handlingSubmitLoginUser
 }) => {
 
     const [ typeOfPIN, setTypeOfPIN ] = useState(false)
 
     const onSubmit = async(values) => {
-        handlingLogin(values)
+        handlingSubmitLoginUser(values)
     }
 
     const togglingPINVisibility = () => {

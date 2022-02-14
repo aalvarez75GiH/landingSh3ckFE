@@ -10,8 +10,9 @@ import HiwSection from '../components/hiwSection/hiwSection'
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
-import ContactSection from '../components/contactSection/contactSection'
+import ContactSectionTest from '../components/contactSection/contactSectionTest'
 import FooterSection from '../components/footerSection/footerSection'
+import NextStepSection from '../components/nextStepSection.js/nextStepSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 
 
@@ -29,15 +30,14 @@ const HomeTest2 = () => {
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
     const [ language, setLanguage ] = useState('ES')
+    const [ regView, setRegView ] = useState(false)
+    const [ active , setActive ] = useState(null)
+    const [ contactSectionOpen, setContactSectionOpen ] = useState(false)
+    const [ forgotPIN, setForgotPIN ] = useState(false)
+
 
     // Google OAuth States *****************************************
-    const [googleUser, setGoogleUser] = useState({
-        fullName: '',
-        email: '',
-        id: '',
-        imageUrl: '',
-        token_id: ''
-    })
+  
     const [ loginData, setLoginData ] = useState(null)
     const [isSignedIn, setIsSignedIn] = useState(null)
     
@@ -135,6 +135,31 @@ const HomeTest2 = () => {
         
     }
  
+    const toggleRegView = () => {
+        // setResponse(null)
+        setRegView(true)
+    }
+
+    const handlingCheckUser = () => {
+        setActive('check')
+        setContactSectionOpen(true)
+        setRegView(false)
+        setForgotPIN(false)
+    }
+
+    const handlingInterestedUser = () => {
+        setActive('interested')
+        setContactSectionOpen(true)
+        setRegView(false)
+    }
+    const settinRegViewAndForgotPINToFalse = () => {
+        setRegView(false)
+        setForgotPIN(false)
+    }
+
+    const toggleForgotPINState = () => {
+        setForgotPIN(!forgotPIN)
+    }
     
     const toggleSideBar = () => {
         setIsOpen(!isOpen)
@@ -253,26 +278,38 @@ const HomeTest2 = () => {
                 username={currentUser}
                 login={ loggedIn }
                 language={language}
-                // onLogin={ onLogin }
+                
             /> : <NavBar
             toggleLoginSideBar={toggleLoginSideBar}
             toggleMainSideBar={toggleMainSideBar} 
             username={currentUser}
             login={ loggedIn }
             language={language}
-            // onLogin={ onLogin }
+            
         />
             }
             <HeroSection language={language} />
             <VideoSection language={language}/>
             <HiwSection language={language}/>
-            <ContactSection 
+            <NextStepSection
+            handlingInterestedUser={handlingInterestedUser}
+            handlingCheckUser={handlingCheckUser} 
+            language={language}
+            />
+            <ContactSectionTest 
             language={language}
             loggedIn={loggedIn}
             isSignedIn={isSignedIn}
             handlingSubmitLoginUser={ handlingSubmitLoginUser}
             loginResponse={loginResponse}
             toggleNotificationLogin={toggleNotification}
+            active={active}
+            regView={regView}
+            contactSectionOpen={contactSectionOpen}  
+            forgotPIN={forgotPIN}
+            toggleRegView={toggleRegView}
+            settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
+            toggleForgotPINState={toggleForgotPINState}
             
             />
             <FooterSection language={language}/>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { infoSpinner } from './data'
 
-const LoadingSpinner = ({language}) => {
+const LoadingSpinner = ({language, loading}) => {
+    console.log('Spinner running...')
     return (
-        <div className="loadingSpinnerContainer">
+        <div className={loading ? 'loadingSpinnerContainer_open' : 'loadingSpinnerContainer'}>
             <div className="circles">
                 <div className="circle circle_1"></div>
                 <div className="circle circle_2"></div>

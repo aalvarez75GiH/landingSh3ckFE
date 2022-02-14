@@ -11,7 +11,7 @@ const GoogleAuth5 = ({googleTest, language}) => {
         window.gapi.load('auth2', () => {
             // Retrieve the singleton for the GoogleAuth library and set up the client.
             const auth = window.gapi.auth2.getAuthInstance()
-            console.log(auth)
+            // console.log(auth)
             const element = document.getElementById('googleAuth5')
             auth.attachClickHandler(element, {},
                 function(googleUser) {
@@ -23,8 +23,6 @@ const GoogleAuth5 = ({googleTest, language}) => {
             })
         },[])
     })
-
-
 
     return (
         <>

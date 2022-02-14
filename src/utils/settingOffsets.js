@@ -3,7 +3,7 @@ import useMobilDetection from './mobilDetection'
 
 export const OffsetHandler = (option) => {
     const mobil1 = useMobilDetection() 
-    console.log(mobil1)   
+    // console.log(mobil1)   
         
         if (option === 'startNow'){
             if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){

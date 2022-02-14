@@ -6,7 +6,6 @@ import CheckSection from './checkSection'
 import LoadingSpinner from '../../utils/loadingSpinner' 
 import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
-// import LoginFormTest from './loginFormTest'
 import NotificationBox from '../notifications/NotificationBox'
 import axios from 'axios'
 import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
@@ -45,14 +44,6 @@ const ContactSectionTest = ({
         setResponse(null)
     }
 
-
-    const handlingLoginUser = (values) => {
-        setUpLoadingUser(true)
-        setTimeout(async() => {
-            handlingSubmitLoginUser(values)
-            setUpLoadingUser(false)
-        },2000)
-    } 
 
     const handlingSubmitInterestedUser = (interestedUser) => {
         
@@ -131,28 +122,6 @@ const togglingResponseData = () => {
     } 
 }
 
-if (upLoadingUser){
-    return (
-        <div 
-        id={infoContact.id}
-        className="contactContainer">
-            <div className="contactWrapper">
-                <motion.div className="contactInfo"></motion.div>
-                <div className="contactForms">
-                    <LoadingSpinner language={language}/>
-                    <OptionsForms/>
-                    <FormHeader/>
-                    { active === 'interested' && loggedIn ? <InterestedUsersForm/>:null}
-                    { active === 'interested' && loggedIn === false ? <InterestedUsersForm/>:null}
-                    { active === 'check' && loggedIn  ? <InterestedUsersForm/>:null}
-                    { active === 'check' && loggedIn === false  ? <LoginForm/>:null}
-                </div>
-            </div>
-        </div>
-    )    
-}
-// console.log(active)
-console.log(infoContact.id)
 return (
     <div 
     id={infoContact.id}
@@ -165,7 +134,6 @@ return (
              toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
              response={response ? response : loginResponse }
              responseData={togglingResponseData()} 
-            //  switchToCheck={switchToCheck}
              language={language}
              />
              : null
@@ -213,7 +181,7 @@ return (
             toggleRegView={toggleRegView}
             toggleForgotPINState={toggleForgotPINState}
             handlingSubmitUser={handlingSubmitUser}
-            handlingLoginUser={handlingLoginUser}
+            handlingSubmitLoginUser={handlingSubmitLoginUser}
             handlingNewPINRequest={handlingNewPINRequest}
             language={language}
             isSignedIn={isSignedIn}

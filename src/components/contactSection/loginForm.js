@@ -18,7 +18,7 @@ const validationSchema = yup.object({
 
 
 const LoginForm = ({ 
-    handlingLoginUser,
+    // handlingLoginUser,
     regView, 
     toggleRegView,
     handlingSubmitUser,
@@ -27,13 +27,14 @@ const LoginForm = ({
     language,
     isSignedIn,
     googleTest,
-    toggleForgotPINState
+    toggleForgotPINState,
+    handlingSubmitLoginUser
 }) => {
-    console.log(isSignedIn)
+    // console.log(isSignedIn)
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
     
     const onSubmit = async(values) => {
-        handlingLoginUser(values)
+        handlingSubmitLoginUser(values)
     }
 
     const formik = useFormik({

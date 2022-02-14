@@ -8,7 +8,7 @@ import { infoNavBar } from '../../utils/data'
 
 const NavBar = ({  
     login, 
-    toggleLoginSideBar,
+    toggleLoginSideBarToOpen,
     toggleMainSideBar,
     language
 }) => {
@@ -69,7 +69,7 @@ const NavBar = ({
                         </li>
                     </ul>
                     <div 
-                    onClick={toggleMainSideBar}
+                    onClick={toggleLoginSideBarToOpen}
                     className="loggedInIconContainer">
                         <BiUserCheck 
                         className="loggedInUserIcon"/>
@@ -125,7 +125,7 @@ const NavBar = ({
                         className="navBtn">
                             <LinkS
                             to="loginSession"
-                            onClick={toggleLoginSideBar} 
+                            onClick={toggleLoginSideBarToOpen} 
                             style={{
                                 border: `${scrollNav ? '2px solid #ffffff' : 'none'}`,
                                 padding: `${language === 'ES' ? '10px 22px' : '10px 60px'}`

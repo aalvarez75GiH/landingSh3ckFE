@@ -12,9 +12,10 @@ import { infoNavBarMobil } from '../../utils/data'
 const NavBarMobil = ({ 
     toggleSideBar, 
     login, 
-    toggleLoginSideBar,
     toggleMainSideBar,
-    language
+    language,
+    toggleLoginSideBarToOpen
+
 }) => {
     
         return (
@@ -32,7 +33,7 @@ const NavBarMobil = ({
                         className="faUserIcon"/> 
                          :   
                         <BiUser 
-                        onClick={toggleLoginSideBar}
+                        onClick={toggleLoginSideBarToOpen}
                         className="faUserIcon" />
                         }
                         <FaBars 
