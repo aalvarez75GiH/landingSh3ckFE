@@ -136,24 +136,21 @@ const HomeTest3 = () => {
         
     }
 
-    // const handlingLogin = (user) => {
-    //     setLoginSideBarLoading(true)
-    //     setTimeout(async() => {
-    //         handlingSubmitLoginUser(user)
-    //         setLoginSideBarLoading(false)
-    //         setLoginSideBarOpen(!loginSideBarOpen)
-    //     }, 2000);
-    // }
-
     const handlingSubmitLogOutUser = async() => {
+        console.log(isSignedIn)
+        console.log(loggedIn)
         if (isSignedIn) {
+            console.log('paso por isSignedIn')
             const auth = window.gapi.auth2.getAuthInstance()
             await auth.signOut()
             setIsSignedIn(false)
             setMainSideBarOpen(!mainSideBarOpen)
+            setLoginResponse(null)
         }
         if (loggedIn){
+            console.log('paso por loggedIn')
             localStorage.removeItem('SH3CK_TOKEN')
+            setLoginResponse(null)
             setMainSideBarOpen(!mainSideBarOpen)
             setLoggedIn(false)
             setLoggedOut(true)

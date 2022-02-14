@@ -19,7 +19,7 @@ import LoadingSpinner from '../utils/loadingSpinner'
 
 // Home version for testing separation of NextStepSection and ContactSection
 
-const HomeTest3 = () => {
+const Home = () => {
 
     const [ isOpen, setIsOpen ] = useState(false)
     const [ loggedIn, setLoggedIn ] = useState(false)
@@ -358,4 +358,4 @@ const HomeTest3 = () => {
     )
 }
 
-export default HomeTest3
+export default Home
