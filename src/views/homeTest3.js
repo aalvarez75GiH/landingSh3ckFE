@@ -91,6 +91,11 @@ const HomeTest3 = () => {
         setForgotPIN(false)
     }
 
+    const handlingClosingOfContactSection = () => {
+        setActive(null)
+        setContactSectionOpen(false)
+    }
+
     const toggleRegView = () => {
         // setResponse(null)
         setRegView(true)
@@ -413,6 +418,7 @@ const HomeTest3 = () => {
                 toggleForgotPINState={toggleForgotPINState}
                 contactSectionOpen={contactSectionOpen}
                 workingSpinner={workingSpinner}
+                handlingClosingOfContactSection={handlingClosingOfContactSection}
                 />
                 :
                 null

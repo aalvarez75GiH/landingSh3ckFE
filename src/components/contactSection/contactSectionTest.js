@@ -21,7 +21,8 @@ const ContactSectionTest = ({
     settinRegViewAndForgotPINToFalse,
     toggleForgotPINState,
     contactSectionOpen,
-    workingSpinner
+    workingSpinner,
+    handlingClosingOfContactSection
 
 }) => {
    
@@ -141,6 +142,7 @@ return (
             regView={regView}
             forgotPIN = {forgotPIN}
             language={language}
+            handlingClosingOfContactSection={handlingClosingOfContactSection}
             />
             </>
             :
