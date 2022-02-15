@@ -228,7 +228,7 @@ const HomeTest3 = () => {
             //   console.log(response)
               auth = window.gapi.auth2.getAuthInstance()
               const isSignedIn = auth.isSignedIn.get()
-              {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
+            //   {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
               setIsSignedIn(isSignedIn)
               console.log(isSignedIn)
               auth.isSignedIn.listen(isSignedIn => {
