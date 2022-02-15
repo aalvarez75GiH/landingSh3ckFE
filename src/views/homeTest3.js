@@ -143,6 +143,7 @@ const HomeTest3 = () => {
             console.log('pasa por isSignedIn')
             const auth = window.gapi.auth2.getAuthInstance()
             await auth.signOut()
+            setLoginData(null)
             setIsSignedIn(false)
             setActive(null)
             setMainSideBarOpen(!mainSideBarOpen)
@@ -169,6 +170,7 @@ const HomeTest3 = () => {
         setActive(null)
         setContactSectionOpen(false)
         setRegView(false)
+        setLoginData(null)
         
     }
     
@@ -250,7 +252,7 @@ const HomeTest3 = () => {
                 })
                 console.log(res)
                 // const res = await axios.post('http://localhost:5000/api/extUsers/google',token)
-                const data = await res.data
+                const data = res.data
                 if (res.status === 201){
                     console.log(data)
                     setLoginData(data)   
