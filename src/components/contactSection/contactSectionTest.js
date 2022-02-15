@@ -22,12 +22,11 @@ const ContactSectionTest = ({
     toggleForgotPINState,
     contactSectionOpen,
     workingSpinner,
-    handlingClosingOfContactSection
+    handlingClosingOfContactSection,
+    handlingContactSectionResponse
 
 }) => {
    
-    const [ upLoadingUser, setUpLoadingUser ] = useState(false)
-    const [response, setResponse ] = useState(null)
     // const url_interestedUsers = "http://192.168.1.102:5000/api/interestedUsers"
     // const url_users = "http://192.168.1.102:5000/api/users"
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
@@ -35,11 +34,7 @@ const ContactSectionTest = ({
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
     
 
-    const toggleNotification = () => {
-        setResponse(null)
-    }
-
-
+    
     const handlingSubmitInterestedUser = (interestedUser) => {
         
         workingSpinner('activate')
@@ -48,7 +43,7 @@ const ContactSectionTest = ({
                 const response = await axios.post(url_interestedUsersInTheCloud, interestedUser)
                     console.log(response)
                     if (response.status === 201){
-                        setResponse(response)
+                        handlingContactSectionResponse(response)
                         workingSpinner('close')
                         console.log('Gracias por enviarnos tus datos, estaremos en contacto...')
                         return response.status
@@ -56,7 +51,7 @@ const ContactSectionTest = ({
             } catch (error) {
                 console.log(error.response)
                 workingSpinner('close')
-                setResponse(error.response)
+                handlingContactSectionResponse(error.response)
             }
         },2000)
         
@@ -69,7 +64,7 @@ const ContactSectionTest = ({
                 const response = await axios.post(url_usersInTheCloud, user)
                     console.log(response)
                     if (response.status === 201){
-                        setResponse(response)
+                        handlingContactSectionResponse(response)
                         workingSpinner('close')
                         settinRegViewAndForgotPINToFalse()
                         console.log('Gracias por registrarte')
@@ -78,7 +73,7 @@ const ContactSectionTest = ({
             } catch (error) {
                 console.log(error)
                 workingSpinner('close')
-                setResponse(error.response)
+                handlingContactSectionResponse(error.response)
             }
         },2000)
     } 
@@ -91,31 +86,18 @@ const ContactSectionTest = ({
             console.log(response.status)
             if (response.status === 200){
                 console.log(response)
-                setResponse(response)
+                handlingContactSectionResponse(response)
                 workingSpinner('close')
                 return response.status
             }
         } catch (error) {
             console.log(error)
             workingSpinner('close')
-            setResponse(response.error)
+            handlingContactSectionResponse(error.response)
         }
     }
 
-const togglingResponseData = () => {
-    if (response && active === 'interested'){
-        return responseDataInterested
-    }
-    if (response && forgotPIN){
-        return responseDataNewPIN
-    }
-    if (response && active === 'check'){
-        return responseDataRegister
-    }
-    // if (loginResponse && active === 'check'){
-    //     return responseDataLogin
-    // } 
-}
+
 
 return (
     <div 

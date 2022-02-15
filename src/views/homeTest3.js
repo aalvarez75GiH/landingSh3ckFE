@@ -16,7 +16,8 @@ import NextStepSection from '../components/nextStepSection.js/nextStepSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
 import CheckSection from '../components/checkSection/checkSection'
-
+import NotificationBox from '../components/notifications/NotificationBox'
+import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../components/notifications/notificationData'
 
 // Home version for testing separation of NextStepSection and ContactSection
 
@@ -36,6 +37,8 @@ const HomeTest3 = () => {
     const [ active , setActive ] = useState(null) 
     const [ contactSectionOpen, setContactSectionOpen ] = useState(false)
     const [ loginSideBarLoading, setLoginSideBarLoading ] = useState(false)
+    const [response, setResponse ] = useState(null)
+
 
     // Google OAuth States *****************************************
     const [ loginData, setLoginData ] = useState(null)
@@ -107,6 +110,33 @@ const HomeTest3 = () => {
     }
     const toggleForgotPINState = () => {
         setForgotPIN(!forgotPIN)
+    }
+    
+    const toggleNotification = () => {
+        setResponse(null)
+    }
+    const toggleNotificationLogin = () => {
+        setLoginResponse(null)
+    }
+
+
+    const handlingContactSectionResponse = (response) => {
+        setResponse(response)
+    }
+    
+    const togglingResponseData = () => {
+        if (response && active === 'interested'){
+            return responseDataInterested
+        }
+        if (response && forgotPIN){
+            return responseDataNewPIN
+        }
+        if (response && active === 'check'){
+            return responseDataRegister
+        }
+        // if (loginResponse && active === 'check'){
+        //     return responseDataLogin
+        // } 
     }
     // ***************************************************************
 
@@ -195,9 +225,9 @@ const HomeTest3 = () => {
     const toggleMainSideBar = () => {
         setMainSideBarOpen(!mainSideBarOpen)
     } 
-    const toggleNotification = () => {
-        setLoginResponse(null)
-    }
+    // const toggleNotification = () => {
+    //     setLoginResponse(null)
+    // }
 
     const toggleLanguage = () => {
         if (language === 'ES') {
@@ -347,6 +377,17 @@ const HomeTest3 = () => {
             loading={loading}
             language={language}
             />
+            {response || loginResponse ?
+            <NotificationBox
+            toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
+            response={response ? response : null }
+            responseData={togglingResponseData()} 
+            language={language}
+             />
+             :
+             null
+            }
+            
    
             <LoginSideBar
             loginSideBarOpen={loginSideBarOpen}
@@ -419,6 +460,7 @@ const HomeTest3 = () => {
                 contactSectionOpen={contactSectionOpen}
                 workingSpinner={workingSpinner}
                 handlingClosingOfContactSection={handlingClosingOfContactSection}
+                handlingContactSectionResponse={handlingContactSectionResponse}
                 />
                 :
                 null

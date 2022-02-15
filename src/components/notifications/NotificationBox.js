@@ -18,7 +18,8 @@ const NotificationBox = ({
     if (response){
         if (response.status === 400){
             return (
-            <div className="notificationContainer">
+            // <div className="notificationContainer">
+            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <div 
                 onClick={toggleNotification}
                 className="closeIconContainer">
@@ -43,7 +44,7 @@ const NotificationBox = ({
         }
         if (response.status === 409){
             return (
-            <div className="notificationContainer">
+            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <div 
                 onClick={toggleNotification}
                 className="closeIconContainer">
@@ -68,7 +69,7 @@ const NotificationBox = ({
         }
         if (response.status === 201){
             return (
-            <div className="notificationContainer">
+            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <div 
                 onClick={toggleNotification}
                 className="closeIconContainer">
@@ -95,7 +96,7 @@ const NotificationBox = ({
         }
         if (response.status === 200){
             return (
-            <div className="notificationContainer">
+            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <div 
                 onClick={toggleNotification}
                 className="closeIconContainer">
