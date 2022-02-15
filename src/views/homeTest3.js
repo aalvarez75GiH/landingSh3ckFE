@@ -165,6 +165,7 @@ const HomeTest3 = () => {
     }
  
     const gettingOutOfCheckApp = async() => {
+        localStorage.removeItem('SH3CK_TOKEN')
         setIsSignedIn(false)
         setLoggedIn(false)
         setActive(null)
