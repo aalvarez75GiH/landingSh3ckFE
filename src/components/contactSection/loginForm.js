@@ -28,7 +28,7 @@ const LoginForm = ({
     isSignedIn,
     googleTest,
     toggleForgotPINState,
-    handlingSubmitLoginUser
+    handlingSubmitLoginUser,
 }) => {
     // console.log(isSignedIn)
     const [typeOfPIN, setTypeOfPIN ] = useState(false)

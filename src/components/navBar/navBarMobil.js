@@ -1,10 +1,9 @@
-import React from 'react'
-import { FaBars,FaSign } from 'react-icons/fa'
+import React, {useState, useEffect} from 'react'
+import { FaBars,FaSign,FaPuzzlePiece, FaVideo, FaHome } from 'react-icons/fa'
 import { Link as LinkR } from 'react-router-dom'
 import { Link as LinkS } from 'react-scroll'
 import { IoMdCart } from 'react-icons/io'
-import { BiUser, BiUserCheck, BiRun } from 'react-icons/bi'
-import { FaPuzzlePiece, FaVideo } from 'react-icons/fa' 
+import { BiUser, BiUserCheck } from 'react-icons/bi'
 import { OffsetHandler } from '../../utils/settingOffsets'
 import { infoNavBarMobil } from '../../utils/data'
 
@@ -17,10 +16,12 @@ const NavBarMobil = ({
     toggleLoginSideBarToOpen
 
 }) => {
-    
+
+
         return (
             <>
-                <nav className="navMobil" >
+                <nav 
+                className="navMobil" >
                 <div className="navBarContainerMobil">
                     <LinkR to="/" className="navLogoMobil">sh3ck</LinkR>
                     <div 
@@ -50,7 +51,7 @@ const NavBarMobil = ({
                         spy={true}
                         smooth={true}
                         // offset={100}
-                        offset={OffsetHandler('startNow')}
+                        offset={OffsetHandler('video')}
                         duration={1000}
                         >
                         <div className="iconMobilContainer">
@@ -84,24 +85,6 @@ const NavBarMobil = ({
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset= { OffsetHandler('notifyMe')}
-                        duration={1000}
-                        >
-                            <div className="iconMobilContainer">
-                                <FaSign className="faIcon"/>
-                            </div>
-                            {language === 'ES' ? infoNavBarMobil.option3Copy : infoNavBarMobil.option3Copy_EN}
-                        </LinkS>
-                        
-                    </div>
-                    
-                    <div className="navMenuButton">
-                        <LinkS 
-                        to="nextStepSection" 
-                        className="navLinksMobil" 
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
                         offset={OffsetHandler('checkAProduct')}
                         duration={1000}
                         >
@@ -111,6 +94,27 @@ const NavBarMobil = ({
                         {language === 'ES' ? infoNavBarMobil.option4Copy : infoNavBarMobil.option4Copy_EN}
                         </LinkS>
                     </div>
+
+                    <div className="navMenuButton">
+                        <LinkS 
+                        to="nextStepSection" 
+                        className="navLinksMobil" 
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset= { OffsetHandler('home')}
+                        duration={1000}
+                        >
+                            <div 
+                            className="iconMobilContainer">
+                                <FaHome className="faIcon"/>
+                            </div>
+                            {language === 'ES' ? infoNavBarMobil.option3Copy : infoNavBarMobil.option3Copy_EN}
+                        </LinkS>
+                        
+                    </div>
+                    
+                    
                     
                 </div>
             </nav>

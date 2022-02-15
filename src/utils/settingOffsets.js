@@ -5,7 +5,7 @@ export const OffsetHandler = (option) => {
     const mobil1 = useMobilDetection() 
     // console.log(mobil1)   
         
-        if (option === 'startNow'){
+        if (option === 'video'){
             if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){
                 return -180
             }
@@ -48,7 +48,7 @@ export const OffsetHandler = (option) => {
             }
         }
 
-        if (option === 'notifyMe' || option === 'checkAProduct'){
+        if (option === 'checkAProduct'){
             if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){
                 return -180
             }
@@ -63,6 +63,27 @@ export const OffsetHandler = (option) => {
             }
             if (mobil1.screenWidth <= 414 && mobil1.screenWidth > 360){
                 return 260
+            }
+            if (mobil1.screenWidth <= 360 && mobil1.screenWidth > 280){
+                return 260
+            }
+        }
+        
+        if (option === 'home'){
+            if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){
+                return -100
+            }
+            if (mobil1.screenWidth <= 768 && mobil1.screenWidth > 560 ){
+                return -160
+            }
+            if (mobil1.screenWidth <= 560 && mobil1.screenWidth > 480){
+                return -150
+            }
+            if (mobil1.screenWidth <= 480 && mobil1.screenWidth > 414){
+                return -140
+            }
+            if (mobil1.screenWidth <= 414 && mobil1.screenWidth > 360){
+                return -5000
             }
             if (mobil1.screenWidth <= 360 && mobil1.screenWidth > 280){
                 return 260

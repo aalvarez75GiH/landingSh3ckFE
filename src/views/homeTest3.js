@@ -205,6 +205,23 @@ const HomeTest3 = () => {
         } 
     }
 
+    const workingSpinner = (option) => {
+        console.log(option)
+        switch (option) {
+            case 'activate':
+                setLoading(true)
+                break
+            case 'close':
+                setLoading(false)
+                break
+            default:
+                setLoading(false)
+                break;
+        }
+        
+    } 
+    
+
   
   //  ************* Google OAuth Processes and functions (with googleAuth5) ****************
 
@@ -395,6 +412,7 @@ const HomeTest3 = () => {
                 settinRegViewAndForgotPINToFalse={settinRegViewAndForgotPINToFalse}
                 toggleForgotPINState={toggleForgotPINState}
                 contactSectionOpen={contactSectionOpen}
+                workingSpinner={workingSpinner}
                 />
                 :
                 null

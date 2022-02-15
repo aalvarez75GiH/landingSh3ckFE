@@ -208,11 +208,11 @@ export const infoCheck = {
 export const infoNavBarMobil = {
     option1Copy: 'Video',
     option2Copy: 'Como funciona',
-    option3Copy: 'Notifícame',
+    option3Copy: 'Inicio',
     option4Copy: 'Chequéa',
     option1Copy_EN: 'Video',
     option2Copy_EN: 'How it works',
-    option3Copy_EN: 'Notify me',
+    option3Copy_EN: 'Home',
     option4Copy_EN: 'Check it',
 }
 

@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
-import  { motion } from 'framer-motion'
-
 import InterestedUsersForm from '../contactSection/interestedUserForm'
-import LoadingSpinner from '../../utils/loadingSpinner' 
-import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
-import NotificationBox from '../notifications/NotificationBox'
 import axios from 'axios'
-import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
 import FormHeader from './formHeader'
 import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../notifications/notificationData'
 import { infoContact } from '../../utils/data'
@@ -26,7 +20,8 @@ const ContactSectionTest = ({
     toggleRegView,
     settinRegViewAndForgotPINToFalse,
     toggleForgotPINState,
-    contactSectionOpen
+    contactSectionOpen,
+    workingSpinner
 
 }) => {
    
@@ -46,20 +41,20 @@ const ContactSectionTest = ({
 
     const handlingSubmitInterestedUser = (interestedUser) => {
         
-        setUpLoadingUser(true)
+        workingSpinner('activate')
         setTimeout(async()=> {
             try {
                 const response = await axios.post(url_interestedUsersInTheCloud, interestedUser)
                     console.log(response)
                     if (response.status === 201){
                         setResponse(response)
-                        setUpLoadingUser(false)
+                        workingSpinner('close')
                         console.log('Gracias por enviarnos tus datos, estaremos en contacto...')
                         return response.status
                     }
             } catch (error) {
                 console.log(error.response)
-                setUpLoadingUser(false)
+                workingSpinner('close')
                 setResponse(error.response)
             }
         },2000)
@@ -67,21 +62,21 @@ const ContactSectionTest = ({
     }
 
     const handlingSubmitUser = async(user) => {
-        setUpLoadingUser(true)
+        workingSpinner('activate')
         setTimeout(async()=> {
             try {
                 const response = await axios.post(url_usersInTheCloud, user)
                     console.log(response)
                     if (response.status === 201){
                         setResponse(response)
-                        setUpLoadingUser(false)
+                        workingSpinner('close')
                         settinRegViewAndForgotPINToFalse()
                         console.log('Gracias por registrarte')
                         return response.status
                     }
             } catch (error) {
                 console.log(error)
-                setUpLoadingUser(false)
+                workingSpinner('close')
                 setResponse(error.response)
             }
         },2000)
@@ -89,19 +84,19 @@ const ContactSectionTest = ({
 
     const handlingNewPINRequest = async(dataToRequest) => {
         // console.log(dataToRequest)
-        setUpLoadingUser(true)
+        workingSpinner('activate')
         try {
             const response = await axios.put(url_generatePIN_ITC, dataToRequest)
             console.log(response.status)
             if (response.status === 200){
                 console.log(response)
                 setResponse(response)
-                setUpLoadingUser(false)
+                workingSpinner('close')
                 return response.status
             }
         } catch (error) {
             console.log(error)
-            setUpLoadingUser(false)
+            workingSpinner('close')
             setResponse(response.error)
         }
     }
