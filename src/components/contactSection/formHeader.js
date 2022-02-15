@@ -18,6 +18,7 @@ const FormHeader = ({ active, loggedIn, regView, forgotPIN, language  }) => {
         
         {active === 'check' && loggedIn === false ?
         <div className="titleWrapper">
+            <span className="contactForms_comeBackLink">Volver</span>
             {regView ? 
             <>
                 <div className="formTitle">
