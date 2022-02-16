@@ -19,7 +19,16 @@ const NotificationBox = ({
     const url_regUsers = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_interestedUsers = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
 
-    let responseSplitted = response.data.split(' ')
+    const capitalizeFirstLetter = (string) => {
+        // const str = 'flexiple';
+        const str2 = string.charAt(0).toUpperCase() + string.slice(1)
+        console.log(str2.split(' ')[0]);
+        return str2.split(' ')[0]    
+    }
+
+      
+    
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(response.data)
     // console.log('splitting response: ', responseSplitted[0])
     if (response){
         if (response.status === 400){
@@ -41,7 +50,8 @@ const NotificationBox = ({
                     <img src={foundImage} alt="successImage" />
                     <div className="notificationName"> 
                         <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
+                            {/* <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b> */}
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">
@@ -80,7 +90,8 @@ const NotificationBox = ({
                     <img src={foundImage} alt="successImage" />
                     <div className="notificationName"> 
                         <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>
+                            {/* <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>      */}
                         </span>    
                     </div>
                     <div className="notificationResponse">
@@ -118,7 +129,7 @@ const NotificationBox = ({
                     <img src={successImage} alt="successImage" />
                     <div className="notificationName">
                         <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">
@@ -157,7 +168,7 @@ const NotificationBox = ({
                     <img src={successImage} alt="successImage" />
                     <div className="notificationName">
                         <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>    
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>    
                         </span>    
                     </div>
                     <div className="notificationResponse">

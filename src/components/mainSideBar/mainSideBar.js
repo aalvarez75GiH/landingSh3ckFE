@@ -21,6 +21,14 @@ const MainSideBar = ({
     console.log(loginData)
     // console.log(loggedIn)
     
+    const capitalizeFirstLetter = (string) => {
+        // const str = 'flexiple';
+        const str2 = string.charAt(0).toUpperCase() + string.slice(1)
+        console.log(str2.split(' ')[0]);
+        return str2.split(' ')[0]    
+    }
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(username)
+
     if (loggedIn && mainSideBarOpen){
        return (
        <aside
@@ -48,7 +56,7 @@ const MainSideBar = ({
                                 </div>
                             }
                             
-                            <h1 className="mainSideBarUserName">{language === 'ES' ? infoMainSideBar.hola : infoMainSideBar.hello} <b>{username}</b> </h1>
+                            <h1 className="mainSideBarUserName">{language === 'ES' ? infoMainSideBar.hola : infoMainSideBar.hello} <b>{nameSplittedAndCapitalized}</b> </h1>
                         </div>
                         <div className="mainSideBarContentOptions">
                             <div  className="mainSideBarContentItems">
