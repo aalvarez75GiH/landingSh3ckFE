@@ -1,10 +1,14 @@
+const url = "https://intense-atoll-00786.herokuapp.com/api/users"
+
+
 export const responseDataInterested = {
     errorCode: 409,
-    errorMessage:`Ya tus datos fueron suministrados anteriormente y nos contenta. Si quieres chequear un producto haz click en Quiero chequear un producto`,
+    errorMessage:`Ya tus datos fueron suministrados anteriormente y nos contenta. Si quieres chequear un producto haz click en "Quiero chequear un producto ahora"`,
     errorMessage_EN:`We already have your information and we are glad of it. If you want to check a product click I want to check a product`,
     successCode: 201,
     successMessage:`Listo, que bueno que estas interesado. Te estaremos notificando pronto sobre nuestra app`,
-    successMessage_EN: `Ready, We are glad you are interested. We'll notify you very soon about our app`
+    successMessage_EN: `Ready, We are glad you are interested. We'll notify you very soon about our app`,
+    offset: -5000
 }
 export const responseDataRegister = {
     errorCode: 409,

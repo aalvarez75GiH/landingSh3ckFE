@@ -1521,6 +1521,9 @@
     font-size: 1rem;
 }
 .notificationBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 35%;
     height: 10%;
     background-color: #010606;
