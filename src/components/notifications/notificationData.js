@@ -1,5 +1,3 @@
-const url = "https://intense-atoll-00786.herokuapp.com/api/users"
-
 
 export const responseDataInterested = {
     errorCode: 409,
