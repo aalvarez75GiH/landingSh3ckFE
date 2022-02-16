@@ -112,12 +112,12 @@ const HomeTest3 = () => {
         setForgotPIN(!forgotPIN)
     }
     
-    const toggleNotification = () => {
-        setResponse(null)
-    }
-    const toggleNotificationLogin = () => {
-        setLoginResponse(null)
-    }
+    // const toggleNotification = () => {
+    //     setResponse(null)
+    // }
+    // const toggleNotificationLogin = () => {
+    //     setLoginResponse(null)
+    // }
 
 
     const handlingContactSectionResponse = (response) => {
@@ -134,9 +134,9 @@ const HomeTest3 = () => {
         if (response && active === 'check'){
             return responseDataRegister
         }
-        // if (loginResponse && active === 'check'){
-        //     return responseDataLogin
-        // } 
+        if (loginResponse && active === 'check'){
+            return responseDataLogin
+        } 
     }
     // ***************************************************************
 
@@ -156,10 +156,11 @@ const HomeTest3 = () => {
                         Authorization: `Bearer ${data.token}` 
                     } 
                 })
-                setLoading(false)
+                console.log(response.data)
                 setLoginResponse(response)
                 // console.log(response.data)
                 setCurrentUser(response.data)
+                setLoading(false)
                 setLoggedIn(true)
                 setLoggedOut(false)
                 console.log('Usuaurio encontrado y hace login')    
@@ -207,6 +208,8 @@ const HomeTest3 = () => {
         setContactSectionOpen(false)
         setRegView(false)
         setLoginData(null)
+        setLoginResponse(null)
+        setResponse(null)
         
     }
     
@@ -225,9 +228,15 @@ const HomeTest3 = () => {
     const toggleMainSideBar = () => {
         setMainSideBarOpen(!mainSideBarOpen)
     } 
-    // const toggleNotification = () => {
-    //     setLoginResponse(null)
-    // }
+    const toggleNotification = () => {
+        setResponse(null)
+        setLoginResponse(null)
+        // setActive('check')
+        // setLoggedIn(false)
+
+        setActive(null)
+        setContactSectionOpen(false)
+    }
 
     const toggleLanguage = () => {
         if (language === 'ES') {
@@ -330,7 +339,7 @@ const HomeTest3 = () => {
         }
 // console.log(googleUser)
 // console.log(loginData)
-    
+    console.log(loggedIn)
     return (
     <>
     {
@@ -379,8 +388,9 @@ const HomeTest3 = () => {
             />
             {response || loginResponse ?
             <NotificationBox
-            toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
-            response={response ? response : null }
+            toggleNotification={toggleNotification} 
+            // response={response ? response : null }
+            response={response ? response : loginResponse }
             responseData={togglingResponseData()} 
             language={language}
              />
@@ -450,7 +460,7 @@ const HomeTest3 = () => {
                 loggedIn={loggedIn}
                 isSignedIn={isSignedIn}
                 handlingSubmitLoginUser={ handlingSubmitLoginUser}
-                loginResponse={loginResponse}
+                // loginResponse={loginResponse}
                 toggleNotificationLogin={toggleNotification}
                 googleTest={googleTest}
                 language={language}

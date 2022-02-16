@@ -3,7 +3,8 @@ import successImage from '../../images/ok_success_icon.svg'
 import foundImage from '../../images/ok_success_verified_icon.svg'
 import { FaTimes } from 'react-icons/fa'
 import { regularCopy } from './notificationData'
-
+import { Link as LinkS } from 'react-scroll'
+import { OffsetHandler } from '../../utils/settingOffsets'
 
 
 const NotificationBox = ({ 
@@ -20,11 +21,17 @@ const NotificationBox = ({
             return (
             // <div className="notificationContainer">
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
-                <div 
+                <LinkS 
                 onClick={toggleNotification}
+                to="nextStepSection"  
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={OffsetHandler('checkAProduct')}
+                duration={500} 
                 className="closeIconContainer">
                     <FaTimes/>
-                </div>
+                </LinkS>
                 <div className="notificationWrapper">
                     <img src={foundImage} alt="successImage" />
                     <div className="notificationName"> 
@@ -35,9 +42,17 @@ const NotificationBox = ({
                     <div className="notificationResponse">
                     {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN}
                     </div>
-                    <button className="notificationBtn"
+                    
+                    <LinkS 
+                    className="notificationBtn"
                     onClick={toggleNotification}
-                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</button>
+                    to="nextStepSection"  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={OffsetHandler('checkAProduct')}
+                    duration={500}
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>     
                 </div>
             </div>   
             )
