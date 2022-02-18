@@ -10,6 +10,7 @@ import HiwSection from '../components/hiwSection/hiwSection'
 import useMobilDetection from '../utils/mobilDetection'
 import useMobilDetect from '../utils/mobilHook'
 import NavBarMobil from '../components/navBar/navBarMobil'
+import NavBarForCS from '../components/navBar/navBarForCS'
 // import ContactSection from '../components/contactSection/contactSection'
 import ContactSectionTest from '../components/contactSection/contactSectionTest'
 import NextStepSection from '../components/nextStepSection.js/nextStepSection'
@@ -355,23 +356,28 @@ const HomeTest3 = () => {
             language={language}
             loginData={loginData}           
             />
-            { mobil2.screenWidth <= 1098 || mobil ?  
-                <NavBarMobil 
+            {/* { mobil2.screenWidth <= 1098 || mobil ?   */}
+                <NavBarForCS
                 toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
                 toggleMainSideBar={toggleMainSideBar}
                 toggleSideBar={ toggleSideBar }  
                 login={ loggedIn }
                 language={language}
                 
-            /> : <NavBar
+            /> 
+            {/* : <NavBar
             toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
             toggleMainSideBar={toggleMainSideBar} 
             login={ loggedIn }
             language={language}
-            />
-            }
+            /> */}
+            {/* } */}
 
             <CheckSection 
+             toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
+             toggleMainSideBar={toggleMainSideBar}
+             toggleSideBar={ toggleSideBar }  
+             login={ loggedIn }
             gettingOutOfCheckApp={gettingOutOfCheckApp}
             language={language}
             />

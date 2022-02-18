@@ -1128,7 +1128,7 @@
 
 
 /*  ******  Probably for deletion (Start)  ********* */
-.optionsWrapper {
+/* .optionsWrapper {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -1152,7 +1152,7 @@
     align-items: center;
     width: 50%;
     height: 100%;
-}
+} */
 /*  ******  Probably for deletion (End)  ********* */
 .titleWrapper {
     font-size: 1.9rem;
@@ -1252,18 +1252,23 @@
     width: 90%;
     height: 1000px;
     background-color: #eeeeee;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .checkSection-BtnWrap {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 300px;
     margin-top: 7%;
+    
 }
 
-.checkSectionBtn-toCheck {
+
+.checkSection-checkBtn {
     width: 40%;
     height: 90px;
     background-color: #010606;
@@ -1274,6 +1279,18 @@
     margin-left: 5%;
 }
 
+.checkSection-exitBtn {
+    width: 40%;
+    height: 90px;
+    background-color: #FAD570;
+    border-style: none;
+    border-radius: 60px;
+    color: #010606;
+    font-size: 1.2rem;
+    color: #010606;
+    margin-left: 5%;
+    margin-top: 5%;
+}
 .checkSection-notNow {
     margin-left: 7%;
     margin-top: 3%;
@@ -1625,7 +1642,11 @@
     font-size: 24px;
  }
 
-
+ .contactForms_comeBackLink {
+    font-size: 1rem;
+    border-bottom: 1px solid #010606;
+    margin-left: 87%;
+}
 
 /* *************** Responsive design ***********************/
 /* ********  Desktop Responsive Design ******************* */
@@ -1683,8 +1704,11 @@
     .formContainer button {
         height: 115px;
     }
+
+
+
 /*********** Info *******************  */
-    .contactInfoTopLine {
+    /* .contactInfoTopLine {
         font-size: 16px;
         line-height: 16px;
         font-weight: 700;
@@ -1748,7 +1772,9 @@
         flex-direction: column;
         justify-content: center;
         width: 30%;
-    }
+    } */
+    /* ContactContainer */
+  
     
 }
 
@@ -1961,39 +1987,6 @@
         height: 22%;
     }
 
-    /* *****  checkSection *********** */
- 
-    .checkSection-formTitle {
-        width: 60%;
-        margin-left: 5%;
-    }
-    
-    .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        margin-top: 7%;
-    }
-    
-    .checkSectionBtn-toCheck {
-        width: 60%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    }
-    
-    .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    }
-    
-
 }
 
 
@@ -2114,38 +2107,6 @@
         padding-left: 5%;
     }
 
-    /* *****  checkSection *********** */
-  
-    .checkSection-formTitle {
-        margin-left: 15%;
-        width: 70%;
-    }
-    
-    .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        margin-top: 7%;
-    }
-    
-    .checkSectionBtn-toCheck {
-        width: 60%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    }
-    
-    .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    }
-    
 }
 
 /* ********  Tablets Responsive Design ******************* */
@@ -2824,7 +2785,10 @@
         margin-bottom: 5%;
         font-size: 2.1rem;
     }
-  
+    .contactForms_comeBackLink {
+        font-size: 1.2rem;
+    }
+    
 
     .formDescription {
         margin-top: 6%;
@@ -2900,35 +2864,15 @@
 
     /* *****  checkSection *********** */
   
-    .checkSection-formTitle {
-        margin-left: 15%;
-        width: 100%;
-    }
-    
-    .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        margin-top: 7%;
-    }
-    
-    .checkSectionBtn-toCheck {
-        width: 50%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    }
-    
-    .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    }
+    /* ************** checkSection ************** */
+
+.checkSection-checkBtn {
+    width: 60%;
+}
+
+.checkSection-exitBtn {
+    width: 60%;
+}
 
     /* ************ FooterSection **************************** */
 
@@ -3471,39 +3415,28 @@
     .dropdownOnError {
         height: 85px;
     }
-    
-    /* *****  checkSection *********** */
-  
-    .checkSection-formTitle {
-        margin-left: 15%;
-        width: 100%;
-    }
-    
-    .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        margin-top: 7%;
-    }
-    
-    .checkSectionBtn-toCheck {
-        width: 70%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    }
-    
-    .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    }
 
+        /* ************** checkSection ************** */
+
+.checkSectionContainer {
+    width: 100%;
+    margin-top: unset;
+    margin-left: unset;
+}
+.checkSection-formTitle h1 {
+    font-size: 1.6rem;
+}
+
+
+.checkSection-checkBtn {
+    width: 80%;
+}
+
+.checkSection-exitBtn {
+    width: 80%;
+  
+}
+    
     /* ************ FooterSection **************************** */
 
     .footerContainer {
@@ -3906,6 +3839,13 @@
         font-size: 1.7rem;
         margin-top: 10%;
     }
+
+    .contactForms_comeBackLink {
+        font-size: 1.1rem;
+        border-bottom: 1px solid #010606;
+        margin-left: 87%;
+    }
+    
   
     .boxContainer {
         width: 90%;
@@ -4038,34 +3978,28 @@
 
     /* *****  checkSection *********** */
 
-    .checkSection-formTitle {
-        width: 83%;
-    }
-    
-    .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        margin-top: 7%;
-    }
-    
-    .checkSectionBtn-toCheck {
-        width: 80%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    }
-    
-    .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    }
+            /* ************** checkSection ************** */
+
+.checkSectionContainer {
+    width: 100%;
+    margin-top: unset;
+    margin-left: unset;
+}
+.checkSection-formTitle h1 {
+    font-size: 1.5rem;
+}
+
+
+
+.checkSection-checkBtn {
+    width: 80%;
+
+}
+
+.checkSection-exitBtn {
+    width: 80%;
+}
+   
 
     /* ************ FooterSection **************************** */
 
@@ -4612,18 +4546,93 @@
         height: 85px;
     }
 
+            /* ************** checkSection ************** */
+.navMobilForCS {
+    background-color: #ffffff;
+    height: 80px;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.checkSectionContainer {
+    width: 100%;
+    height: 650px;
+    background-color: #eeeeee;
+    margin-top: 0%;
+    margin-left: unset;
+}
+.checkSectionWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 650px;
+    background-image: url('./images/7918685_delivery_logistics_deliveryboy_order_manager_icon.svg');
+    /* background-color: #ef476f; */
+    background-size: 74% 68%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+.checkSection-formTitle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 3%;
+    margin-top: 25%;
+}
+.checkSection-formTitle h1 {
+    font-size: 1.2rem;
+}
+.checkSection-BtnWrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 96%;
+    margin-top: 86%;
+    
+}
+
+
+.checkSection-checkBtn {
+    width: 80%;
+    /* height: 90px;
+    background-color: #010606;
+    border-style: none;
+    border-radius: 60px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-left: 5%; */
+}
+
+.checkSection-exitBtn {
+    width: 80%;
+    margin-top: 2%;
+    /* height: 90px;
+    background-color: #FAD570;
+    border-style: none;
+    border-radius: 60px;
+    color: #010606;
+    font-size: 1.2rem;
+    color: #010606;
+    margin-left: 5%;
+    margin-top: 5%; */
+}
+   
     /* *****  checkSection *********** */
-    .checkSectionContainer {
+    /* .checkSectionContainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
         /* height: 100%; */
-        height: 1000px;
-        background-color: #eeeeee;
-    }
-    .checkSection-formTitle {
+        /* height: 1000px;
+        background-color: #eeeeee; */
+    /* } */
+    /* .checkSection-formTitle {
         width: 86%;
     }
     
@@ -4637,7 +4646,7 @@
         margin-top: 7%;
     }
     
-    .checkSectionBtn-toCheck {
+    .checkSection-checkBtn {
         width: 90%;
         height: 90px;
         background-color: #010606;
@@ -4648,7 +4657,7 @@
         margin-left: 5%;
     }
     
-    .checkSectionBtn-toLeave {
+    .checkSection-exitBtn {
         width: 90%;
         height: 90px;
         background-color: #FAD570;
@@ -4664,7 +4673,7 @@
     .checkSection-notNow {
         margin-left: 7%;
         margin-top: 3%;
-    }
+    }  */
 
     /* ************ FooterSection **************************** */
 
@@ -5306,6 +5315,30 @@
         margin-left: 11%;
         height: 9%;
     }
+
+               /* ************** checkSection ************** */
+
+.checkSectionContainer {
+    width: 100%;
+    margin-top: unset;
+    margin-left: unset;
+}
+.checkSection-formTitle {
+    margin-left: 10%;
+}
+.checkSection-formTitle h1 {
+    font-size: 1.2rem;
+}
+
+.checkSection-checkBtn {
+    width: 95%;
+}
+
+.checkSection-exitBtn {
+    width: 95%;
+ 
+}
+   
 
     /* ************ FooterSection **************************** */
 
