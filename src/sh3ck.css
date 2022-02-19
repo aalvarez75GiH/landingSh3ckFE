@@ -4704,6 +4704,9 @@
         margin-top: 0%;
         margin-left: unset;
     }
+    .checkSectionWrapper {
+        height: 100%;
+    }
     
     .checkSection-BtnWrap {
         margin-top: 95%;
