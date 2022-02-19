@@ -1250,13 +1250,24 @@
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 1000px;
+    height: 1100px;
     background-color: #eeeeee;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-left: 5%;
 }
 
-.checkSection-BtnWrap {
+.checkSectionWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1000px;
+    background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
+    background-size: 74% 68%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+/* .checkSection-BtnWrap {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1265,36 +1276,62 @@
     height: 300px;
     margin-top: 7%;
     
+} */
+.checkSection-BtnWrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    margin-top: 45%;
+    
 }
 
 
 .checkSection-checkBtn {
     width: 40%;
-    height: 60px;
+    height: 115px;
     background-color: #010606;
     border-style: none;
     /* border-radius: 60px; */
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #ffffff;
     margin-left: 5%;
 }
 
+
 .checkSection-exitBtn {
     width: 40%;
-    height: 60px;
+    height: 115px;
     background-color: #FAD570;
     border-style: none;
     /* border-radius: 60px; */
     color: #010606;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #010606;
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 .checkSection-notNow {
     margin-left: 7%;
     margin-top: 3%;
 }
+
+.navMobilForCS {
+    background-color: #ffffff;
+    height: 80px;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+
+
+
 /* ************** dropDownList ************** */
 
 
@@ -1844,6 +1881,17 @@
         width: 35px;
         height: 35px;
     }
+
+    .checkSection-BtnWrap {
+        /* display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 500px; */
+        margin-top: 55%;
+        
+    }
     /* .formTitle {
         font-size: 0.9rem;
     } */
@@ -1877,6 +1925,10 @@
     .closeBtn {
         width: 38%;
         height: 22%;
+    }
+
+    .googleIcon {
+        margin-left: 30%;
     }
   
   
@@ -1933,18 +1985,6 @@
         width: 35px;
         height: 35px;
     }
-    /*  ******  Probably for deletion (Start)  ********* */
-    .notifyMe{
-        font-size: 1rem;
-    }
-    .checkAProduct {
-        font-size: 1rem;
-    }
-
-    /* .formTitle {
-        font-size: 0.8rem;
-    } */
-    /*  ******  Probably for deletion (End)  ********* */
     .titleWrapper {
         font-size: 1.8rem;
         margin-bottom: 2%;
@@ -1964,6 +2004,83 @@
     .formContainer button {
         height: 115px;
     }
+    
+
+    /* ************** checkSection ************** */
+
+
+/* .checkSectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 1100px;
+    background-color: #eeeeee;
+    margin-top: 10%;
+    margin-left: 5%;
+} */
+
+/* .checkSectionWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1000px;
+    background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
+    background-size: 74% 68%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+} */
+
+
+.checkSection-BtnWrap {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px; */
+    margin-top: 60%;
+    
+}
+
+/* 
+.checkSection-checkBtn {
+    width: 40%;
+    height: 115px;
+    background-color: #010606;
+    border-style: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-left: 5%;
+}
+
+
+.checkSection-exitBtn {
+    width: 40%;
+    height: 115px;
+    background-color: #FAD570;
+    border-style: none;
+    color: #010606;
+    font-size: 1.5rem;
+    color: #010606;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+.checkSection-notNow {
+    margin-left: 7%;
+    margin-top: 3%;
+}
+
+.navMobilForCS {
+    background-color: #ffffff;
+    height: 80px;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+} */
+
 
     /*********** Info *******************  */
     
@@ -2105,6 +2222,17 @@
         height: 600px;
         padding-top: 2%;
         padding-left: 5%;
+    }
+    /****** CheckSection  ******/
+    .checkSection-BtnWrap {
+        /* display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 500px; */
+        margin-top: 65%;
+        
     }
 
 }
@@ -2521,6 +2649,20 @@
         width: 28%;
         height: 23%;
     }
+
+        /****** CheckSection  ******/
+        .checkSection-BtnWrap {
+            margin-top: 75%;
+            
+        }
+        .checkSection-checkBtn {
+            width: 45%;
+        }
+        
+        
+        .checkSection-exitBtn {
+            width: 45%;
+        }
   
 }
 
@@ -2861,18 +3003,19 @@
     .closeBtn {
         height: 10%;
     }
-
-    /* *****  checkSection *********** */
   
     /* ************** checkSection ************** */
 
-.checkSection-checkBtn {
-    width: 60%;
-}
+    .checkSection-BtnWrap {
+        margin-top: 90%;
+    }
+    .checkSection-checkBtn {
+        width: 60%;
+    }
 
-.checkSection-exitBtn {
-    width: 60%;
-}
+    .checkSection-exitBtn {
+        width: 60%;
+    }
 
     /* ************ FooterSection **************************** */
 
@@ -3427,6 +3570,9 @@
     font-size: 1.6rem;
 }
 
+.checkSection-BtnWrap {
+    margin-top: 95%;
+}
 
 .checkSection-checkBtn {
     width: 80%;
@@ -3989,6 +4135,9 @@
     font-size: 1.5rem;
 }
 
+.checkSection-BtnWrap {
+    margin-top: 95%;
+}
 
 
 .checkSection-checkBtn {
@@ -4546,135 +4695,32 @@
         height: 85px;
     }
 
-            /* ************** checkSection ************** */
-.navMobilForCS {
-    background-color: #ffffff;
-    height: 80px;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.checkSectionContainer {
-    width: 100%;
-    height: 650px;
-    background-color: #eeeeee;
-    margin-top: 0%;
-    margin-left: unset;
-}
-.checkSectionWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 650px;
-    background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
-    /* background-color: #ef476f; */
-    background-size: 74% 68%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-}
-.checkSection-formTitle {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 3%;
-    margin-top: 25%;
-}
-.checkSection-formTitle h1 {
-    font-size: 1.2rem;
-}
-.checkSection-BtnWrap {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 96%;
-    margin-top: 95%;
-    
-}
-
-
-.checkSection-checkBtn {
-    width: 80%;
-    height: 60px;
-    /* background-color: #010606;
-    border-style: none;
-    border-radius: 60px;
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-left: 5%; */
-}
-
-.checkSection-exitBtn {
-    width: 80%;
-    margin-top: 2%;
-    height: 60px;
-    /* background-color: #FAD570;
-    border-style: none;
-    border-radius: 60px;
-    color: #010606;
-    font-size: 1.2rem;
-    color: #010606;
-    margin-left: 5%;
-    margin-top: 5%; */
-}
-   
-    /* *****  checkSection *********** */
-    /* .checkSectionContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    /* ************** checkSection ************** */
+  
+    .checkSectionContainer {
         width: 100%;
-        /* height: 100%; */
-        /* height: 1000px;
-        background-color: #eeeeee; */
-    /* } */
-    /* .checkSection-formTitle {
-        width: 86%;
+        height: 650px;
+        background-color: #eeeeee;
+        margin-top: 0%;
+        margin-left: unset;
     }
     
     .checkSection-BtnWrap {
-        display: flex;
-        justify-content: center;
-        flex-direction:column;
-        align-items: center;
-        width: 100%;
-        height: 20%;
-        margin-top: 7%;
+        margin-top: 80%;
     }
-    
-    .checkSection-checkBtn {
-        width: 90%;
-        height: 90px;
-        background-color: #010606;
-        border-style: none;
-        border-radius: 60px;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-left: 5%;
-    }
-    
-    .checkSection-exitBtn {
-        width: 90%;
-        height: 90px;
-        background-color: #FAD570;
-        border-style: none;
-        border-radius: 60px;
-        color: #010606;
-        font-size: 1.2rem;
-        color: #010606;
-        margin-left: 5%;
-        margin-top: 5%;
-    }
-    
-    .checkSection-notNow {
-        margin-left: 7%;
-        margin-top: 3%;
-    }  */
 
+
+    .checkSection-checkBtn {
+        width: 80%;
+        height: 70px;
+    }
+
+    .checkSection-exitBtn {
+        width: 80%;
+        margin-top: 2%;
+        height: 70px;
+    }
+   
     /* ************ FooterSection **************************** */
 
     .footerContainer {
@@ -5317,27 +5363,32 @@
     }
 
                /* ************** checkSection ************** */
-
-.checkSectionContainer {
+   /* ************** checkSection ************** */
+  
+   .checkSectionContainer {
     width: 100%;
-    margin-top: unset;
+    height: 650px;
+    background-color: #eeeeee;
+    margin-top: 0%;
     margin-left: unset;
 }
-.checkSection-formTitle {
-    margin-left: 10%;
-}
-.checkSection-formTitle h1 {
-    font-size: 1.2rem;
+
+.checkSection-BtnWrap {
+    margin-top: 80%;
 }
 
+
 .checkSection-checkBtn {
-    width: 95%;
+    width: 80%;
+    height: 70px;
 }
 
 .checkSection-exitBtn {
-    width: 95%;
- 
+    width: 80%;
+    margin-top: 2%;
+    height: 70px;
 }
+
    
 
     /* ************ FooterSection **************************** */
