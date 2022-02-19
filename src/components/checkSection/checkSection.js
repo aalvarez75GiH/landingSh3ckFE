@@ -20,7 +20,8 @@ const CheckSection = ({
                         <button 
                         onClick={gettingOutOfCheckApp}
                         className="checkSection-exitBtn">
-                        Salir de la app
+                        {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN}
+        
                         </button>
                 </div>
                 {/* <div className="checkSection-notNow">   

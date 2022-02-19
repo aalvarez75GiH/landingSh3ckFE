@@ -1270,10 +1270,10 @@
 
 .checkSection-checkBtn {
     width: 40%;
-    height: 90px;
+    height: 60px;
     background-color: #010606;
     border-style: none;
-    border-radius: 60px;
+    /* border-radius: 60px; */
     font-size: 1.2rem;
     color: #ffffff;
     margin-left: 5%;
@@ -1281,10 +1281,10 @@
 
 .checkSection-exitBtn {
     width: 40%;
-    height: 90px;
+    height: 60px;
     background-color: #FAD570;
     border-style: none;
-    border-radius: 60px;
+    /* border-radius: 60px; */
     color: #010606;
     font-size: 1.2rem;
     color: #010606;
@@ -4568,7 +4568,7 @@
     flex-direction: column;
     width: 100%;
     height: 650px;
-    background-image: url('./images/7918685_delivery_logistics_deliveryboy_order_manager_icon.svg');
+    background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
     /* background-color: #ef476f; */
     background-size: 74% 68%;
     background-repeat: no-repeat;
@@ -4591,15 +4591,15 @@
     align-items: center;
     width: 100%;
     height: 96%;
-    margin-top: 86%;
+    margin-top: 95%;
     
 }
 
 
 .checkSection-checkBtn {
     width: 80%;
-    /* height: 90px;
-    background-color: #010606;
+    height: 60px;
+    /* background-color: #010606;
     border-style: none;
     border-radius: 60px;
     font-size: 1.2rem;
@@ -4610,8 +4610,8 @@
 .checkSection-exitBtn {
     width: 80%;
     margin-top: 2%;
-    /* height: 90px;
-    background-color: #FAD570;
+    height: 60px;
+    /* background-color: #FAD570;
     border-style: none;
     border-radius: 60px;
     color: #010606;

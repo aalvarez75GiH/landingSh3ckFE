@@ -201,10 +201,11 @@ export const infoSpinner = {
 export const infoCheck = {
     checkSectionTitle: '¿Estas listo para Chequear un producto?',
     checkSectionTitle_EN: 'Are you ready to check a product?',
-    checkSectionBtnLabel: 'Coloca una orden de chequeo',
-    checkSectionBtnLabel_EN: 'Place a check order',
-    notNowlabel: 'No ahora',
-    notNowlabel_EN: 'Not now'
+    checkSectionBtnLabel: 'Comienza',
+    checkSectionBtnLabel_EN: 'Start',
+    checkSectionExitBtn: 'Salir',
+    checkSectionExitBtn_EN: 'Exit'
+    
 }
 
 export const infoNavBarMobil = {
