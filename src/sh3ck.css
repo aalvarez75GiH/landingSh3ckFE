@@ -2318,12 +2318,12 @@
  
 
     .heroContainerMobil {
-        background-color: #FAD570;
+        background-color: #ffffff;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        height: 800px;
+        height: auto;
     }
     
     .heroContentMobil {
@@ -2341,16 +2341,53 @@
         font-family: 'Blinker', sans-serif;
         font-weight: 700;
         margin-left: 20px;
+        margin-top: 2%;
     }
     .heroPMobil {
         font-size: 20px;
         margin-left: 20px;
+        margin-top: 2%;
     }
+
+       /* **** heroSction **** WWD  */
+   .heroButtonsWrapper {
+    display: flex;  
+    margin-top: 2%;   
+    }
+
+    .heroBtnWrapperMobil {
+        margin-left: 3%;
+    }
+
+    .heroBtnWrapperMobil a {
+        background-color: #010606;
+        color: #ffffff;
+        padding: 17px 40px;
+        font-size: 16px;
+    }
+    .heroSection_WWD {
+        width: 100%;
+        height: 0;
+        margin-top: 3%;
+    }
+    .heroSection_WWD_open {
+        width: 100%;
+        height: 200px;
+        background-color: #eeeeee;
+        margin-top: 4%;
+    }
+    .heroSection_WWD_CloseIcon {
+        width: 25px;
+        height: 25px;
+        margin-left: 90%;
+        margin-top: 3%;
+    }
+/* ************************ */
 
     .heroBGMobil {
         width: 100%;
         background-color: red;
-        height: 70%;
+        height: 520px;
     }
     .infoContainer {
         height: 1000px;
@@ -2747,12 +2784,11 @@
     }
    
     .heroContainerMobil {
-        background-color: #FAD570;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        height: 800px;
+        height: auto;
     }
     .heroContentMobil {
         display: flex;
@@ -2761,7 +2797,7 @@
         align-items:baseline;
         width: 100%;
         background-color: #ffffff;
-        height: 30%;
+        
 
     }
     .heroH1Mobil {
@@ -2769,36 +2805,41 @@
         font-family: 'Blinker', sans-serif;
         font-weight: 700;
         margin-left: 20px;
+        margin-top: 2%;
     }
     .heroPMobil {
         font-size: 20px;
         margin-left: 20px;
+        margin-top: 2%;
     }
 
     .heroButtonsWrapper {
-        display: flex;     
+        display: flex; 
+        margin-top: 2%;    
     }
 
     .heroSection_WWD {
         width: 100%;
         height: 0;
+        margin-top: 3%;
     }
     .heroSection_WWD_open {
         width: 100%;
         height: 200px;
         background-color: #eeeeee;
+        margin-top: 3%;
     }
     .heroSection_WWD_CloseIcon {
         width: 25px;
         height: 25px;
         margin-left: 90%;
-        margin-top: 3%;
+        margin-top: 6%;
     }
 
     .heroBGMobil {
         width: 100%;
         background-color: red;
-        height: 70%;
+        height: 560px;
     }
     .heroBtnWrapperMobil {
         margin-left: 5%;
@@ -3226,7 +3267,7 @@
     }
    
     .heroContainerMobil {
-        height: 645px;
+        height: auto;
     }
     .heroContentMobil {
         display: flex;
@@ -3234,29 +3275,32 @@
         flex-direction: column;
         align-items:baseline;
         width: 100%;
+        height: auto;
         background-color: #ffffff;
-        height: 32%;
         font-family: 'Blinker', sans-serif;
     }
     .heroH1Mobil {
         font-size: 2.6rem;
         font-family: inherit;
         margin-left: 20px;
+        margin-top: 3%;
     }
     .heroPMobil {
         font-size: 20px;
         margin-left: 20px;
         font-family: inherit;
+        margin-top: 3%;
     }
 
     .heroBGMobil {
         width: 100%;
         background-color: red;
-        height: 70%;
+        height: 452px;
     }
    
     .heroButtonsWrapper {
-        display: flex;     
+        display: flex;
+        margin-top: 3%;     
     }
     
     .heroBtnWrapperMobil {
@@ -3273,6 +3317,7 @@
     .heroSection_WWD {
         width: 100%;
         height: 0;
+        margin-top: 3%;
     }
     .heroSection_WWD_open {
         width: 100%;
@@ -3816,7 +3861,7 @@
         font-size: 18px;
     }
     .heroContainerMobil {
-        height: 645px;
+        height: auto;
     }
 
     .heroContentMobil {
@@ -3833,22 +3878,25 @@
         font-size: 2.2rem;
         font-family: inherit;
         margin-left: 20px;
+        margin-top: 3%;
     }
     .heroPMobil {
         font-size: 1rem;
         margin-left: 20px;
         font-family: inherit;
+        margin-top: 3%;
     }
 
     .heroBGMobil {
         width: 100%;
         background-color: red;
-        height: 70%;
+        height: 452px;
     }
   
     /* **** heroSction **** WWD  */
     .heroButtonsWrapper {
-        display: flex;     
+        display: flex; 
+        margin-top: 3%;    
     }
     
     .heroBtnWrapperMobil {
@@ -3864,11 +3912,13 @@
     .heroSection_WWD {
         width: 100%;
         height: 0;
+        margin-top: 3%;
     }
     .heroSection_WWD_open {
         width: 100%;
         height: 200px;
         background-color: #eeeeee;
+        margin-top: 3%;
     }
     .heroSection_WWD_CloseIcon {
         width: 25px;
@@ -4418,9 +4468,9 @@
     }
      
     .heroContainerMobil {
-        height: 645px;
+        height: auto;
     }
-
+   
     .heroContentMobil {
         display: flex;
         justify-content: space-evenly;
@@ -4431,27 +4481,31 @@
         height: 32%;
         font-family: 'Blinker', sans-serif;
     }
+    
     .heroH1Mobil {
         font-size: 1.9rem;
         font-family: inherit;
         margin-left: 20px;
+        margin-top: 3%;
     }
     .heroPMobil {
         font-size: 1rem;
         margin-left: 20px;
         font-family: inherit;
+        margin-top: 3%;
     }
 
     .heroBGMobil {
         width: 100%;
         background-color: red;
-        height: 70%;
+        height: 452px;
     }
 
    /* **** heroSction **** WWD  */
    .heroButtonsWrapper {
-    display: flex;     
-}
+    display: flex;  
+    margin-top: 3%;   
+    }
 
 .heroBtnWrapperMobil {
     margin-left: 3%;
@@ -4460,12 +4514,13 @@
 .heroBtnWrapperMobil a {
     background-color: #010606;
     color: #ffffff;
-    padding: 17px 40px;
-    font-size: 16px;
+    padding: 14px 35px;
+    font-size: 18px;
 }
 .heroSection_WWD {
     width: 100%;
     height: 0;
+    margin-top: 6%;
 }
 .heroSection_WWD_open {
     width: 100%;
@@ -4476,7 +4531,7 @@
     width: 25px;
     height: 25px;
     margin-left: 90%;
-    margin-top: 3%;
+    margin-top: 6%;
 }
 /* ************************ */
 
@@ -5079,7 +5134,7 @@
     }
 
     .heroContainerMobil {
-        height: 840px;
+        height: auto;
     }
     .heroContentMobil {
         display: flex;
@@ -5095,22 +5150,58 @@
         font-size: 1.6rem;
         font-family: inherit;
         margin-left: 20px;
+        margin-top: 3%;
     }
     .heroPMobil {
         font-size: 0.9rem;
         margin-left: 20px;
         font-family: inherit;
+        margin-top: 3%;
     }
 
     .heroBGMobil {
         width: 100%;
         background-color: red;
-        height: 70%;
+        height: 450px;
     }
 
     .heroBtnWrapperMobil {
         margin-left: 2%;
+        margin-top: 3%;
     }
+
+    /* **** heroSction **** WWD  */
+   .heroButtonsWrapper {
+    display: flex;  
+    margin-top: 3%;   
+    }
+
+.heroBtnWrapperMobil {
+    margin-left: 2%;
+}
+
+.heroBtnWrapperMobil a {
+    background-color: #010606;
+    color: #ffffff;
+    padding: 16px 16px;
+    font-size: 18px;
+}
+.heroSection_WWD {
+    width: 100%;
+    height: 0;
+    margin-top: 6%;
+}
+.heroSection_WWD_open {
+    width: 100%;
+    height: 200px;
+    background-color: #eeeeee;
+}
+.heroSection_WWD_CloseIcon {
+    width: 25px;
+    height: 25px;
+    margin-left: 90%;
+    margin-top: 10%;
+}
     
     .infoContainer {
         height: 686px;

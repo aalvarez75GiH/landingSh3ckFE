@@ -32,7 +32,7 @@ const Button = ({
         backgroundColor: `${ hover  ? '#FF810A' : btnBG }`,
         color:`${ fontColor ? '#010606' : '#ffffff'}`,
         padding: `${ big ? '14px 48px' : '12px 30px' }` ,
-        fontSize: `${ fontBig ? '20px' : '18px' }`,
+        fontSize: `${ fontBig ? '20px' : '16px' }`,
         }}
         onMouseEnter={ handlingHover }
         onMouseLeave={ handlingHover }
