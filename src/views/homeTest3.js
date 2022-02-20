@@ -356,6 +356,12 @@ const HomeTest3 = () => {
             language={language}
             loginData={loginData}           
             />
+              <SideBar 
+            isOpen={ isOpen } 
+            toggleSideBar={ toggleSideBar }
+            language={language}
+            toggleLanguage={toggleLanguage}
+            />
             {/* { mobil2.screenWidth <= 1098 || mobil ?   */}
                 <NavBarForCS
                 toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}

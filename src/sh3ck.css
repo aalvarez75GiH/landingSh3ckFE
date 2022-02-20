@@ -2775,13 +2775,40 @@
         margin-left: 20px;
     }
 
+    .heroButtonsWrapper {
+        display: flex;     
+    }
+
+    .heroSection_WWD {
+        width: 100%;
+        height: 0;
+    }
+    .heroSection_WWD_open {
+        width: 100%;
+        height: 200px;
+        background-color: #eeeeee;
+    }
+    .heroSection_WWD_CloseIcon {
+        width: 25px;
+        height: 25px;
+        margin-left: 90%;
+        margin-top: 3%;
+    }
+
     .heroBGMobil {
         width: 100%;
         background-color: red;
         height: 70%;
     }
     .heroBtnWrapperMobil {
-        margin-left: 2%;
+        margin-left: 5%;
+    }
+    .heroBtnWrapperMobil a {
+        background-color: #010606;
+        color: #ffffff;
+        padding: 14px 48px;
+        font-size: 20px;
+
     }
 
     .infoContainer {
@@ -3227,10 +3254,36 @@
         background-color: red;
         height: 70%;
     }
+   
+    .heroButtonsWrapper {
+        display: flex;     
+    }
     
-
     .heroBtnWrapperMobil {
-        margin-left: 2%;
+        margin-left: 5%;
+    }
+
+    .heroBtnWrapperMobil a {
+        background-color: #010606;
+        color: #ffffff;
+        padding: 14px 48px;
+        font-size: 20px;
+    }
+   
+    .heroSection_WWD {
+        width: 100%;
+        height: 0;
+    }
+    .heroSection_WWD_open {
+        width: 100%;
+        height: 200px;
+        background-color: #eeeeee;
+    }
+    .heroSection_WWD_CloseIcon {
+        width: 25px;
+        height: 25px;
+        margin-left: 90%;
+        margin-top: 3%;
     }
 
     .infoContainer {
@@ -3793,9 +3846,37 @@
         height: 70%;
     }
   
-    .heroBtnWrapperMobil {
-        margin-left: 2%;
+    /* **** heroSction **** WWD  */
+    .heroButtonsWrapper {
+        display: flex;     
     }
+    
+    .heroBtnWrapperMobil {
+        margin-left: 5%;
+    }
+
+    .heroBtnWrapperMobil a {
+        background-color: #010606;
+        color: #ffffff;
+        padding: 14px 48px;
+        font-size: 20px;
+    }
+    .heroSection_WWD {
+        width: 100%;
+        height: 0;
+    }
+    .heroSection_WWD_open {
+        width: 100%;
+        height: 200px;
+        background-color: #eeeeee;
+    }
+    .heroSection_WWD_CloseIcon {
+        width: 25px;
+        height: 25px;
+        margin-left: 90%;
+        margin-top: 3%;
+    }
+    /* ************************ */
 
     .infoContainer {
         height: 765px;
@@ -4367,9 +4448,37 @@
         height: 70%;
     }
 
-    .heroBtnWrapperMobil {
-        margin-left: 2%;
-    }
+   /* **** heroSction **** WWD  */
+   .heroButtonsWrapper {
+    display: flex;     
+}
+
+.heroBtnWrapperMobil {
+    margin-left: 3%;
+}
+
+.heroBtnWrapperMobil a {
+    background-color: #010606;
+    color: #ffffff;
+    padding: 17px 40px;
+    font-size: 16px;
+}
+.heroSection_WWD {
+    width: 100%;
+    height: 0;
+}
+.heroSection_WWD_open {
+    width: 100%;
+    height: 200px;
+    background-color: #eeeeee;
+}
+.heroSection_WWD_CloseIcon {
+    width: 25px;
+    height: 25px;
+    margin-left: 90%;
+    margin-top: 3%;
+}
+/* ************************ */
 
     .infoContainer {
         height: 820px;
@@ -4699,7 +4808,7 @@
   
     .checkSectionContainer {
         width: 100%;
-        height: 700px;
+        height: 100%;
         background-color: #eeeeee;
         margin-top: 0%;
         margin-left: unset;

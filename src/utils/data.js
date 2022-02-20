@@ -1,4 +1,4 @@
-import video from '../videos/sh3ck-1080p-210928.mp4'
+import video from '../videos/VIDEO-2022-02-19-15-44-12.mp4'
 import hiwImage1 from '../images/1stStep.png'
 import hiwImage2 from '../images/2ndStep.png'
 import hiwImage3 from '../images/3rdStep.png'
@@ -10,7 +10,9 @@ export const infoHero = {
     heroH1: 'Somos la nueva forma de comprar sin miedo',
     heroH1_2: 'por internet',
     buttonLabel: 'Ver Video',
+    buttonLabel_2: '¿Que hacemos?',
     linkedTo: 'videoSection',
+    internalLinkedTo:'wwdSection',
     heroH1Mobil: 'Compra sin miedo por internet',
     heroPMobil: 'Nosotros chequeamos los productos que tu quieres comprar...',
     // English
@@ -18,7 +20,8 @@ export const infoHero = {
     heroH1_2_EN:'online',    
     heroH1Mobil_EN: 'Buy without fear online',
     heroPMobil_EN: 'We check the products you want to buy',
-    buttonLabel_EN: 'See Video'
+    buttonLabel_EN: 'See Video',
+    buttonLabel_2_EN: 'What we do',
 }
 
 export const infoVideo = {

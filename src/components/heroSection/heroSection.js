@@ -1,34 +1,80 @@
-import React   from 'react'
+import React, {useState}   from 'react'
+import { Link as LinkS } from 'react-scroll'
 import Button from '../buttons/button'
 import useMobilDetect from '../../utils/mobilHook'
 import useMobilDetection from '../../utils/mobilDetection'
 import Image_2 from '../../images/pexels-chica-triste-medium.jpg'
 import { infoHero } from '../../utils/data'
+import { FaTimes } from 'react-icons/fa'
 
 const HeroSection = ({ language }) => {
 const mobil = useMobilDetect()
 const mobil2 = useMobilDetection()  
 
+const [ WWD, setWWD ] = useState(false)
 // console.log(mobil2.screenWidth)
-
-    if (mobil2.screenWidth < 768 || mobil) {
+const internalOpening = () => {
+    setWWD(!WWD)
+    console.log('i am internal')
+}
+if (mobil2.screenWidth < 768 || mobil) {
+        console.log(WWD)
         return ( 
-            <div className="heroContainerMobil">
+            <div 
+            id="heroSection"
+            className="heroContainerMobil">
                 <div className="heroContentMobil">
                     <h1 className="heroH1Mobil">{language === 'ES' ? infoHero.heroH1Mobil : infoHero.heroH1Mobil_EN }</h1>
                     <p className="heroPMobil">{language === 'ES' ? infoHero.heroPMobil : infoHero.heroPMobil_EN}</p>
-                    <div className="heroBtnWrapperMobil">
-                           <Button 
-                            btnBG={ '#FAD570' }
-                            fontColor={ true }
-                            big={ true }
-                            fontBig = { true }
-                            buttonLabel= {language === 'ES' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
-                            linkedTo={infoHero.linkedTo}
-                            offSet={-170}
-                            >
-                            </Button>
+                    <div className="heroButtonsWrapper">
+                        <div className="heroBtnWrapperMobil">
+                               <Button 
+                                btnBG={ '#FAD570' }
+                                fontColor={ true }
+                                big={ true }
+                                fontBig = { true }
+                                buttonLabel= {language === 'ES' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
+                                linkedTo={infoHero.linkedTo}
+                                offSet={-170}
+                                >
+                                </Button>
                         </div>
+                        <div className="heroBtnWrapperMobil">
+                                <LinkS
+                                to={infoHero.internalLinkedTo}  
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                offset={-150}
+                                duration={500}
+                                className="button"
+                                type="submit"
+                                onClick={internalOpening}
+                                >
+                                    {language === 'ES' ? infoHero.buttonLabel_2 : infoHero.buttonLabel_2_EN}
+                        </LinkS>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div 
+                id="wwdSection"
+                className={ !WWD ? 'heroSection_WWD' : 'heroSection_WWD_open'}>
+                    <LinkS
+                    to={'heroSection'}  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={-5000}
+                    duration={2000}
+                    onClick={internalOpening}
+                    >
+                        <FaTimes
+                        className="heroSection_WWD_CloseIcon"
+                        
+                        />
+                    </LinkS>
+                    
                 </div>
                 <div className="heroBGMobil">
                     <img
