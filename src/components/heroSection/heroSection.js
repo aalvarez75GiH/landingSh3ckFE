@@ -6,6 +6,11 @@ import useMobilDetection from '../../utils/mobilDetection'
 import Image_2 from '../../images/pexels-chica-triste-medium.jpg'
 import { infoHero } from '../../utils/data'
 import { FaTimes } from 'react-icons/fa'
+import wwd_icon_1 from '../../images/4229080_criminal_robber_robbery_theft_thief_icon.svg'
+import wwd_icon_2 from '../../images/ok_success_icon.svg'
+
+
+
 
 const HeroSection = ({ language }) => {
 const mobil = useMobilDetect()
@@ -81,6 +86,32 @@ if (mobil2.screenWidth < 768 || mobil) {
                         
                         />
                     </LinkS>
+                    <div className="wwdSection_explanation">
+                        <div className='icons_containers'>
+                        <div className="wwdSection_explanation_icon">
+                            <img src={wwd_icon_1} alt="heu" />
+
+                        </div>
+                        <div className="wwdSection_explanation_icon">
+                            <img src={wwd_icon_2} alt="heu" />
+
+                        </div>
+                        </div>
+                        
+                        <div className="wwdSection_explanation_p">
+                            <p className="explanation_p1">
+                                ¿Has escuchado de personas que compran un producto por internet
+                                y son estafados, no reciben el producto correcto o no se encuentra
+                                en la condición que lo vieron?  
+                            </p>
+                            <p className="explanation_p2">
+                                Nosotros te conectámos con personas 
+                                que pueden chequear el producto que quieres comprar en la ciudad 
+                                donde éste se encuentra para que esto no te suceda
+                            </p>
+                        </div>
+                       
+                    </div>
                     
                 </div>
                 <div className="heroBGMobil">
