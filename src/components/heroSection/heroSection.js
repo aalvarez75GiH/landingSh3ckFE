@@ -12,9 +12,12 @@ const mobil = useMobilDetect()
 const mobil2 = useMobilDetection()  
 
 const [ WWD, setWWD ] = useState(false)
+const [ curtain, setCurtain ] = useState(false)
+
 // console.log(mobil2.screenWidth)
 const internalOpening = () => {
     setWWD(!WWD)
+    setCurtain(!curtain)
     console.log('i am internal')
 }
 if (mobil2.screenWidth < 768 || mobil) {
@@ -81,11 +84,14 @@ if (mobil2.screenWidth < 768 || mobil) {
                     
                 </div>
                 <div className="heroBGMobil">
+                    <div className={!curtain ? 'hero_Curtain' : 'hero_Curtain_active'}>
+
+                    </div>
                     <img
                            className="imageBG"
                            alt="this is a test"
                            src={Image_2}
-                           />
+                    />
                 </div>
             </div>
                 
