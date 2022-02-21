@@ -29,7 +29,7 @@ const Button = ({
         duration={500}
         className="button" 
         style={{  
-        backgroundColor: `${ hover  ? '#FF810A' : btnBG }`,
+        backgroundColor: `${ btnBG }`,
         color:`${ fontColor ? '#010606' : '#ffffff'}`,
         padding: `${ big ? '14px 48px' : '12px 30px' }` ,
         fontSize: `${ fontBig ? '20px' : '16px' }`,

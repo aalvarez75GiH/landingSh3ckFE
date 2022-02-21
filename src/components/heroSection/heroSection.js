@@ -28,16 +28,19 @@ if (mobil2.screenWidth < 768 || mobil) {
                     <p className="heroPMobil">{language === 'ES' ? infoHero.heroPMobil : infoHero.heroPMobil_EN}</p>
                     <div className="heroButtonsWrapper">
                         <div className="heroBtnWrapperMobil">
-                               <Button 
-                                btnBG={ '#FAD570' }
-                                fontColor={ true }
-                                big={ true }
-                                fontBig = { true }
-                                buttonLabel= {language === 'ES' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
-                                linkedTo={infoHero.linkedTo}
-                                offSet={-170}
+                            <LinkS
+                                to={infoHero.linkedTo}  
+                                activeClass="active"
+                                spy={true}
+                                smooth={true}
+                                offset={-160}
+                                duration={500}
+                                className="video_button"
+                                type="submit"
                                 >
-                                </Button>
+                                    {language === 'ES' ? infoHero.buttonLabel : infoHero.buttonLabel_EN}
+                            </LinkS>
+                               
                         </div>
                         <div className="heroBtnWrapperMobil">
                                 <LinkS
@@ -47,12 +50,13 @@ if (mobil2.screenWidth < 768 || mobil) {
                                 smooth={true}
                                 offset={-150}
                                 duration={500}
-                                className="button"
+                                className="WWD_button"
                                 type="submit"
                                 onClick={internalOpening}
                                 >
                                     {language === 'ES' ? infoHero.buttonLabel_2 : infoHero.buttonLabel_2_EN}
-                        </LinkS>
+                                </LinkS>
+                                
                         </div>
                     </div>
                     
