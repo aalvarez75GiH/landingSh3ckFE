@@ -100,14 +100,10 @@ if (mobil2.screenWidth < 768 || mobil) {
                         
                         <div className="wwdSection_explanation_p">
                             <p className="explanation_p1">
-                                ¿Has escuchado de personas que compran un producto por internet
-                                y son estafados, no reciben el producto correcto o no se encuentra
-                                en la condición que lo vieron?  
+                                {language === 'ES' ? infoHero.explanation_p1 : infoHero.explanation_p1_EN}  
                             </p>
                             <p className="explanation_p2">
-                                Nosotros te conectámos con personas 
-                                que pueden chequear el producto que quieres comprar en la ciudad 
-                                donde éste se encuentra para que esto no te suceda
+                            {language === 'ES' ? infoHero.explanation_p2 : infoHero.explanation_p2_EN}
                             </p>
                         </div>
                        

@@ -11,6 +11,8 @@ export const infoHero = {
     heroH1_2: 'por internet',
     buttonLabel: 'Ver Video',
     buttonLabel_2: '¿Que hacemos?',
+    explanation_p1: '¿Has escuchado de personas que compran un producto por internet y son estafados, no reciben el producto correcto o no se encuentra en la condición que lo vieron?',
+    explanation_p2:'Nosotros te conectámos con personas que pueden chequear el producto que quieres comprar en la ciudad donde éste se encuentra para que esto no te suceda',    
     linkedTo: 'videoSection',
     internalLinkedTo:'wwdSection',
     heroH1Mobil: 'Compra sin miedo por internet',
@@ -22,6 +24,8 @@ export const infoHero = {
     heroPMobil_EN: 'We check the products you want to buy',
     buttonLabel_EN: 'See Video',
     buttonLabel_2_EN: 'What we do',
+    explanation_p1_EN: 'have you heard of people that buy a product online and they have been scammed, they don`t recieve the correct product or it`s not in the good condition the thought it was?',
+    explanation_p2_EN: 'We connect you with people that will check the product you want to buy at the city where it`s located so that won`t happen to you'
 }
 
 export const infoVideo = {
