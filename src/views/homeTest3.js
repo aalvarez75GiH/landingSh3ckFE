@@ -362,7 +362,6 @@ const HomeTest3 = () => {
             language={language}
             toggleLanguage={toggleLanguage}
             />
-            {/* { mobil2.screenWidth <= 1098 || mobil ?   */}
                 <NavBarForCS
                 toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
                 toggleMainSideBar={toggleMainSideBar}
@@ -371,19 +370,12 @@ const HomeTest3 = () => {
                 language={language}
                 
             /> 
-            {/* : <NavBar
-            toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
-            toggleMainSideBar={toggleMainSideBar} 
-            login={ loggedIn }
-            language={language}
-            /> */}
-            {/* } */}
-
+         
             <CheckSection 
-             toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
-             toggleMainSideBar={toggleMainSideBar}
-             toggleSideBar={ toggleSideBar }  
-             login={ loggedIn }
+            toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
+            toggleMainSideBar={toggleMainSideBar}
+            toggleSideBar={ toggleSideBar }  
+            login={ loggedIn }
             gettingOutOfCheckApp={gettingOutOfCheckApp}
             language={language}
             />
