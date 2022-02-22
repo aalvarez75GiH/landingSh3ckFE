@@ -4533,7 +4533,7 @@
     }
     .wwdSection_explanation {
         display: flex;
-        height: 35%;
+        height: 40%;
     }
     .icons_containers {
         width: 20%;
@@ -4552,7 +4552,7 @@
         justify-content: center;
         align-items: center;
         width: 60%;
-        height: 245px;
+        height: 325px;
         margin-left: 12%;
         margin-top: 7%;
     }
@@ -4563,9 +4563,9 @@
         margin-top: 12%;
     }
 
-    .wwdSection_closeBtn {
-        width: 150px;
-        height: 50px;
+    .wwdSection_iwantToCheck {
+        width: 190px;
+        height: 60px;
         background-color: #010606;
         color: #ffffff;
         margin-left: 32%;

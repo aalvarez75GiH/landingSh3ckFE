@@ -447,7 +447,9 @@ const HomeTest3 = () => {
             language={language}
             />
             }
-            <HeroSection language={language} />
+            <HeroSection 
+            handlingCheckUser={handlingCheckUser}
+            language={language} />
             <VideoSection language={language}/>
             <HiwSection language={language}/>
             <NextStepSection

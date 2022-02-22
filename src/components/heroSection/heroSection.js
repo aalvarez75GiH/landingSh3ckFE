@@ -12,7 +12,7 @@ import wwd_icon_2 from '../../images/ok_success_icon.svg'
 
 
 
-const HeroSection = ({ language }) => {
+const HeroSection = ({ language, handlingCheckUser }) => {
 const mobil = useMobilDetect()
 const mobil2 = useMobilDetection()  
 
@@ -25,6 +25,11 @@ const internalOpening = () => {
     setCurtain(!curtain)
     console.log('i am internal')
 }
+const handlingContactSection = () => {
+    internalOpening()
+    handlingCheckUser()
+}
+
 if (mobil2.screenWidth < 768 || mobil) {
         console.log(WWD)
         return ( 
@@ -104,6 +109,9 @@ if (mobil2.screenWidth < 768 || mobil) {
                             <p className="explanation_p2">
                                 {language === 'ES' ? infoHero.explanation_p2 : infoHero.explanation_p2_EN}
                             </p>
+                            <p className="explanation_p2">
+                            {language === 'ES' ? infoHero.explanation_p2b : infoHero.explanation_p2b_EN}
+                            </p>
                         </div>
                         
                     </div>
@@ -112,11 +120,11 @@ if (mobil2.screenWidth < 768 || mobil) {
                      activeClass="active"
                      spy={true}
                      smooth={true}
-                     offset={-5000}
-                     duration={2000}
-                     onClick={internalOpening} 
+                     offset={4630}
+                     duration={1000}
+                     onClick={handlingContactSection} 
                     >
-                        <button className='wwdSection_closeBtn'>Cerrar</button>
+                        <button className='wwdSection_iwantToCheck'>{language === 'ES' ? infoHero.iwantToCheckBtn : infoHero.iwantToCheckBtn_EN}</button>
                     </LinkS>
                     
                 </div>
