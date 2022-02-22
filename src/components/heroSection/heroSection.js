@@ -109,7 +109,7 @@ if (mobil2.screenWidth < 768 || mobil) {
                             <p className="explanation_p2">
                                 {language === 'ES' ? infoHero.explanation_p2 : infoHero.explanation_p2_EN}
                             </p>
-                            <p className="explanation_p2">
+                            <p className="explanation_p3">
                             {language === 'ES' ? infoHero.explanation_p2b : infoHero.explanation_p2b_EN}
                             </p>
                         </div>
