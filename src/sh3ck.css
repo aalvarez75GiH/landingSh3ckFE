@@ -3505,7 +3505,7 @@
             background-color: #010606;
             color: #ffffff;
             margin-left: 27%;
-            margin-top: 5%;
+            margin-top: 25%;
             border-style: none;
             font-size: 1rem;
     
@@ -4162,7 +4162,7 @@
             background-color: #010606;
             color: #ffffff;
             margin-left: 27%;
-            margin-top: 8%;
+            margin-top: 25%;
             border-style: none;
             font-size: 1rem;
     
@@ -4827,14 +4827,14 @@
     }
 
     .wwdSection_iwantToCheck {
-        width: 190px;
+        width: 200px;
         height: 60px;
         background-color: #010606;
         color: #ffffff;
         margin-left: 32%;
         border-style: none;
         font-size: 1rem;
-        margin-top: 12%;
+        margin-top: 25%;
 
     }
 
