@@ -88,14 +88,13 @@ if (mobil2.screenWidth < 768 || mobil) {
                     </LinkS>
                     <div className="wwdSection_explanation">
                         <div className='icons_containers'>
-                        <div className="wwdSection_explanation_icon">
-                            <img src={wwd_icon_1} alt="heu" />
+                            <div className="wwdSection_explanation_icon">
+                                <img src={wwd_icon_1} alt="heu" />
 
-                        </div>
-                        <div className="wwdSection_explanation_icon">
-                            <img src={wwd_icon_2} alt="heu" />
-
-                        </div>
+                            </div>
+                            <div className="wwdSection_explanation_icon">
+                                    <img src={wwd_icon_2} alt="heu" />
+                            </div>
                         </div>
                         
                         <div className="wwdSection_explanation_p">
@@ -103,11 +102,22 @@ if (mobil2.screenWidth < 768 || mobil) {
                                 {language === 'ES' ? infoHero.explanation_p1 : infoHero.explanation_p1_EN}  
                             </p>
                             <p className="explanation_p2">
-                            {language === 'ES' ? infoHero.explanation_p2 : infoHero.explanation_p2_EN}
+                                {language === 'ES' ? infoHero.explanation_p2 : infoHero.explanation_p2_EN}
                             </p>
                         </div>
-                       
+                        
                     </div>
+                    <LinkS
+                     to={'heroSection'}  
+                     activeClass="active"
+                     spy={true}
+                     smooth={true}
+                     offset={-5000}
+                     duration={2000}
+                     onClick={internalOpening} 
+                    >
+                        <button className='wwdSection_closeBtn'>Cerrar</button>
+                    </LinkS>
                     
                 </div>
                 <div className="heroBGMobil">
