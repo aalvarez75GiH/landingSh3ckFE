@@ -313,12 +313,14 @@ export const infoFooter = {
 }
 
 export const infoSideBar = {
-    sideBarLink1: 'Idioma',
+    sideBarLink1: 'Inicio',
     sideBarLink2: 'Preguntas y Respuestas',
     sideBarLink3: 'Ayuda',
-    sideBarLink1_EN: 'Language',
+    sideBarLink4: 'idioma',
+    sideBarLink1_EN: 'Home',
     sideBarLink2_EN: 'Questions & Answers',
     sideBarLink3_EN: 'Help',
+    sideBarLink4_EN: 'Language',
     toggleCopy: '(cambiar a Español)',
     toggleCopy_EN:'(Switch to English)',
     sideBarBtnLabel: 'Cerrar',

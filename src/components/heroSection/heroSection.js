@@ -8,6 +8,7 @@ import { infoHero } from '../../utils/data'
 import { FaTimes } from 'react-icons/fa'
 import wwd_icon_1 from '../../images/4229080_criminal_robber_robbery_theft_thief_icon.svg'
 import wwd_icon_2 from '../../images/ok_success_icon.svg'
+import { OffsetHandler } from '../../utils/settingOffsets'
 
 
 
@@ -15,6 +16,7 @@ import wwd_icon_2 from '../../images/ok_success_icon.svg'
 const HeroSection = ({ language, handlingCheckUser }) => {
 const mobil = useMobilDetect()
 const mobil2 = useMobilDetection()  
+const screenWidth = mobil2.screenWidth
 
 const [ WWD, setWWD ] = useState(false)
 const [ curtain, setCurtain ] = useState(false)
@@ -28,6 +30,28 @@ const internalOpening = () => {
 const handlingContactSection = () => {
     internalOpening()
     handlingCheckUser()
+}
+
+ const detectingOffset = () => {
+     console.log(screenWidth)
+     if (screenWidth <= 1098 && screenWidth > 768){
+        return 100
+    }
+    if (screenWidth <= 768 && screenWidth > 560 ){
+        return 100
+    }
+    if (screenWidth <= 560 && screenWidth > 480){
+        return 160
+    }
+    if (screenWidth <= 480 && screenWidth > 414){
+        return 150
+    }
+    if (screenWidth <= 414 && screenWidth > 360){
+        return -20
+    }
+    if (screenWidth <= 360 && screenWidth > 280){
+        return -70
+    }
 }
 
 if (mobil2.screenWidth < 768 || mobil) {
@@ -116,11 +140,12 @@ if (mobil2.screenWidth < 768 || mobil) {
                         
                     </div>
                     <LinkS
-                     to={'heroSection'}  
+                     to={'nextStepSection'}  
+                    //  to={'contactSectionTest'}
                      activeClass="active"
                      spy={true}
                      smooth={true}
-                     offset={4630}
+                     offset={detectingOffset()}
                      duration={1000}
                      onClick={handlingContactSection} 
                     >

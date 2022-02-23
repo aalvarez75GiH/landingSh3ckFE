@@ -68,25 +68,25 @@ export const OffsetHandler = (option) => {
                 return 260
             }
         }
-        
-        if (option === 'home'){
+
+        if (option === 'WWD'){
             if (mobil1.screenWidth <= 1098 && mobil1.screenWidth > 768){
-                return -100
+                return 100
             }
             if (mobil1.screenWidth <= 768 && mobil1.screenWidth > 560 ){
-                return -160
+                return 100
             }
             if (mobil1.screenWidth <= 560 && mobil1.screenWidth > 480){
-                return -150
+                return 160
             }
             if (mobil1.screenWidth <= 480 && mobil1.screenWidth > 414){
-                return -140
+                return 150
             }
             if (mobil1.screenWidth <= 414 && mobil1.screenWidth > 360){
-                return -5000
+                return -20
             }
             if (mobil1.screenWidth <= 360 && mobil1.screenWidth > 280){
-                return 260
+                return -70
             }
         }
 

@@ -35,9 +35,9 @@ const NavBarForCS = ({
                         onClick={toggleLoginSideBarToOpen}
                         className="faUserIcon" />
                         }
-                        <FaBars 
+                        {/* <FaBars 
                         onClick={toggleSideBar}
-                        className="faBarsIcon"/>
+                        className="faBarsIcon"/> */}
                     </div>
                 </div>
             </nav>

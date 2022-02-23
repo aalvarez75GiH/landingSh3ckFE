@@ -296,7 +296,7 @@
 .sideBarMenu {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: auto;
     text-align: center;
 }
 
@@ -304,7 +304,8 @@
 .sideBarLink {
     display: flex;
     font-size: 1.6rem;
-    margin-bottom: 1%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     border-bottom: 1px solid #eeeeee;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -315,6 +316,7 @@
 .sideBtnWrap {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
 
 .sideBarRoute {
@@ -5476,6 +5478,99 @@
         font-family: inherit;
         margin-top: 3%;
     }
+    /* **** heroSection **** WWD  */
+   /* .heroButtonsWrapper {
+    display: flex;  
+    margin-top: 5%;   
+    } */
+
+    /* .heroBtnWrapperMobil {
+        margin-left: 3%;
+    } */
+    .video_button {
+        font-size: 1rem;
+    }
+    .WWD_button {
+        padding: 12px 27px;
+        font-size: 1rem;
+    }
+
+    /* .heroSection_WWD {
+        width: 100%;
+        height: 0;
+        margin-top: 6%;
+    } */
+    /* .heroSection_WWD_open {
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        margin-top: 3%;
+    } */
+    /* .heroSection_WWD_CloseIcon {
+        width: 25px;
+        height: 25px;
+        margin-left: 90%;
+        margin-top: 6%;
+    }
+    .wwdSection_explanation {
+        display: flex;
+        height: 40%;
+    }
+    .icons_containers {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+    .wwdSection_explanation_icon {
+        width: 84%;
+        height: 80px;
+        margin-left: 30%;
+        margin-top: 60%;
+    }
+    .wwdSection_explanation_p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 325px;
+        margin-left: 12%;
+        margin-top: 7%;
+    }
+    .explanation_p1 {
+        font-weight: bold;
+    }
+    .explanation_p2 {
+        margin-top: 12%;
+    } */
+    /* .explanation_p3 {
+        margin-top: 12%;
+    }
+
+    .wwdSection_iwantToCheck {
+        width: 200px;
+        height: 60px;
+        background-color: #010606;
+        color: #ffffff;
+        margin-left: 32%;
+        border-style: none;
+        font-size: 1rem;
+        margin-top: 18%;
+
+    }
+
+    .hero_Curtain {
+        position: absolute;
+        width: 100%;
+        height: 453px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .hero_Curtain_active {
+        position: absolute;
+        width: 100%;
+        height: 453px;
+        background-color: rgba(4, 21, 44, .75);
+    } */
 
     .heroBGMobil {
         width: 100%;
@@ -5488,39 +5583,7 @@
         margin-top: 3%;
     }
 
-    /* **** heroSction **** WWD  */
-   .heroButtonsWrapper {
-    display: flex;  
-    margin-top: 3%;   
-    }
-
-    .heroBtnWrapperMobil {
-        margin-left: 2%;
-    }
-
-
-    .heroSection_WWD {
-        width: 100%;
-        height: 0;
-        margin-top: 6%;
-    }
-
-    .video_button, .WWD_button {
-        padding: 12px 25px;
-        font-size: 16px;
-    }
-    .heroSection_WWD_open {
-        width: 100%;
-        height: 200px;
-        background-color: #eeeeee;
-    }
-    .heroSection_WWD_CloseIcon {
-        width: 25px;
-        height: 25px;
-        margin-left: 90%;
-        margin-top: 10%;
-    }
-    
+  
     .infoContainer {
         height: 686px;
     }

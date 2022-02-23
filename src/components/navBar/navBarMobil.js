@@ -25,10 +25,8 @@ const NavBarMobil = ({
                 <div className="navBarContainerMobil">
                     <LinkR to="/" className="navLogoMobil">sh3ck</LinkR>
                     <div 
-                    // onClick={ toggleSideBar }
                     className="mobileIconMobil">
-                        {/* <FaRegUser className="faIcon"/> */}
-                        {login ?
+                        {/* {login ?
                         <BiUserCheck 
                         onClick={toggleMainSideBar}
                         className="faUserIcon"/> 
@@ -36,14 +34,14 @@ const NavBarMobil = ({
                         <BiUser 
                         onClick={toggleLoginSideBarToOpen}
                         className="faUserIcon" />
-                        }
+                        } */}
                         <FaBars 
                         onClick={toggleSideBar}
                         className="faBarsIcon"/>
                     </div>
                 </div>
                 <div className="navMenuButtonsContainer">
-                <div className="navMenuButton">
+                    <div className="navMenuButton">
                         <LinkS 
                         to="videoSection" 
                         className="navLinksMobil" 
@@ -102,7 +100,7 @@ const NavBarMobil = ({
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset= { OffsetHandler('home')}
+                        offset= {-5000}
                         duration={1000}
                         >
                             <div 

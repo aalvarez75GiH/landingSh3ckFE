@@ -2,7 +2,9 @@ import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
 import { GrLanguage } from 'react-icons/gr'
+import { FaHome } from 'react-icons/fa'
 import { infoSideBar } from '../../utils/data'
+import { Link as LinkS } from 'react-scroll'
 
 const SideBar = ({ 
     toggleSideBar, 
@@ -28,20 +30,30 @@ const SideBar = ({
             </div>
             <div className="sideBarWrapper">
                 <div className="sideBarMenu">
+                    <LinkS
+                    to={'heroSection'}  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={-5000}
+                    duration={1000}
+                    >
                     <div 
-                    // onClick={ toggleSideBar }
+                    onClick={ toggleSideBar }
                     to="discover" 
                     className="sideBarLink" >
                         <div className="mainSideBarUserOptionsIcon">
-                            <GrLanguage/>
+                            <FaHome/>
                         </div>
                         {language === 'ES' ? infoSideBar.sideBarLink1 : infoSideBar.sideBarLink1_EN} 
-                        <div 
+                        {/* <div 
                         onClick={togglingLanguage}
                         className="changeLanDiv">
                             {language === 'ES' ? infoSideBar.toggleCopy_EN : infoSideBar.toggleCopy}
-                        </div>
+                        </div> */}
                     </div>
+                    </LinkS>
+                    
                     <div
                     // onClick={ toggleSideBar }
                     to="about" 
@@ -60,6 +72,19 @@ const SideBar = ({
                             <BiHelpCircle/>
                         </div>
                         {language === 'ES' ? infoSideBar.sideBarLink3 : infoSideBar.sideBarLink3_EN}
+                    </div>
+                    <div 
+                    to="discover" 
+                    className="sideBarLink" >
+                        <div className="mainSideBarUserOptionsIcon">
+                            <GrLanguage/>
+                        </div>
+                        {language === 'ES' ? infoSideBar.sideBarLink4 : infoSideBar.sideBarLink4_EN} 
+                        <div 
+                        onClick={togglingLanguage}
+                        className="changeLanDiv">
+                            {language === 'ES' ? infoSideBar.toggleCopy_EN : infoSideBar.toggleCopy}
+                        </div>
                     </div>
                 </div>
                 <div className="sideBtnWrap">
