@@ -5190,12 +5190,15 @@
     }
 
       /* *****  SideBar *********** */
-      .sideBarContainerOpen {
+    .sideBarContainerOpen {
         align-items: flex-start;
 
     }
     .sideBarWrapper {
         margin-top: 20%;
+    }
+    .sideBarLink {
+        font-size: 1.6rem;
     }
 
     /* ******* DropDownList ************** */
