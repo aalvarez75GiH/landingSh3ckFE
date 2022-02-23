@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
+import {FiLogIn} from 'react-icons/fi'
 import { GrLanguage } from 'react-icons/gr'
 import { FaHome } from 'react-icons/fa'
 import { infoSideBar } from '../../utils/data'
@@ -10,7 +11,8 @@ const SideBar = ({
     toggleSideBar, 
     isOpen, 
     language, 
-    toggleLanguage  
+    toggleLanguage,
+    handlingCheckUser  
 }) => {
 
     const togglingLanguage = () => {
@@ -18,7 +20,10 @@ const SideBar = ({
         toggleSideBar()
     }
 
-
+    const handlingContactSection = () => {
+        toggleSideBar()
+        handlingCheckUser()
+    }
     return ( 
         <aside
         className={`${isOpen ? "sideBarContainerOpen" : "sideBarContainer" }`}>
@@ -29,6 +34,24 @@ const SideBar = ({
                 <FaTimes className="closeIcon"/>
             </div>
             <div className="sideBarWrapper">
+                <LinkS
+                to={'nextStepSection'}  
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={900}
+                duration={1000}
+                >
+                <div
+                onClick={  handlingContactSection }
+                className="sideBarLink" >
+                    <div className="mainSideBarUserOptionsIcon">
+                        <FiLogIn/>
+                    </div>
+                    {language === 'ES' ? infoSideBar.sideBarLink0 : infoSideBar.sideBarLink0_EN}
+                </div>
+                </LinkS>
+                    
                 <div className="sideBarMenu">
                     <LinkS
                     to={'heroSection'}  

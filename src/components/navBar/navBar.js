@@ -10,7 +10,8 @@ const NavBar = ({
     login, 
     toggleLoginSideBarToOpen,
     toggleMainSideBar,
-    language
+    language,
+    toggleSideBar
 }) => {
     
     
@@ -69,7 +70,7 @@ const NavBar = ({
                         </li>
                     </ul>
                     <div 
-                    onClick={toggleLoginSideBarToOpen}
+                    onClick={toggleSideBar}
                     className="loggedInIconContainer">
                         <BiUserCheck 
                         className="loggedInUserIcon"/>
@@ -125,7 +126,7 @@ const NavBar = ({
                         className="navBtn">
                             <LinkS
                             to="loginSession"
-                            onClick={toggleLoginSideBarToOpen} 
+                            onClick={toggleSideBar} 
                             style={{
                                 border: `${scrollNav ? '2px solid #ffffff' : 'none'}`,
                                 padding: `${language === 'ES' ? '10px 22px' : '10px 60px'}`

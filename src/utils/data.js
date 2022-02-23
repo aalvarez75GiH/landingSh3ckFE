@@ -313,10 +313,12 @@ export const infoFooter = {
 }
 
 export const infoSideBar = {
-    sideBarLink1: 'Inicio',
+    sideBarLink1: 'Ir al comienzo',
     sideBarLink2: 'Preguntas y Respuestas',
     sideBarLink3: 'Ayuda',
     sideBarLink4: 'idioma',
+    sideBarLink0: 'Inicia sesión',
+    sideBarLink0_EN: 'Log In',
     sideBarLink1_EN: 'Home',
     sideBarLink2_EN: 'Questions & Answers',
     sideBarLink3_EN: 'Help',

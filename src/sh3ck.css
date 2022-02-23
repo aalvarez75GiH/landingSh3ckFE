@@ -303,9 +303,9 @@
 
 .sideBarLink {
     display: flex;
-    font-size: 1.6rem;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    font-size: 2.6rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
     border-bottom: 1px solid #eeeeee;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -437,13 +437,6 @@
     width: 34%;
     margin-left: 8%;
 }
-
-
-/* .loginSideBarWrapper {
-    color: #ffffff;
-} */
-
-
 
 
 /*************** LogoutSideBar ****************************** */
@@ -2287,7 +2280,7 @@
         cursor: pointer;
         color: #ffffff;
         margin-top: 5px;
-        width: 103px ;
+        width: 50px ;
         left: 95%;
         top: 7px;
         height: 28px;
@@ -2773,19 +2766,26 @@
         height: 23%;
     }
 
-        /****** CheckSection  ******/
-        .checkSection-BtnWrap {
-            margin-top: 75%;
-            
-        }
-        .checkSection-checkBtn {
-            width: 45%;
-        }
+    /****** CheckSection  ******/
+    .checkSection-BtnWrap {
+        margin-top: 75%;
         
-        
-        .checkSection-exitBtn {
-            width: 45%;
-        }
+    }
+    .checkSection-checkBtn {
+        width: 45%;
+    }
+    
+    
+    .checkSection-exitBtn {
+        width: 45%;
+    }
+    /* *****  SideBar *********** */
+
+    .sideBarLink {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
   
 }
 
@@ -2819,7 +2819,7 @@
         cursor: pointer;
         color: #ffffff;
         margin-top: 5px;
-        width: 103px ;
+        width: 60px ;
         left: 95%;
         top: 7px;
         height: 28px;
@@ -3214,7 +3214,18 @@
     .closeBtn {
         height: 10%;
     }
-  
+
+    /* *****  SideBar *********** */
+    .sideBarContainerOpen {
+        align-items: flex-start;
+
+    }
+    .sideBarWrapper {
+        margin-top: 10%;
+    }
+    .sideBarLink {
+        font-size: 2rem;
+    }
     /* ************** checkSection ************** */
 
     .checkSection-BtnWrap {
@@ -3354,7 +3365,7 @@
         cursor: pointer;
         color: #ffffff;
         margin-top: 5px;
-        width: 103px ;
+        width: 60px ;
         left: 95%;
         top: 7px;
         height: 28px;
@@ -3852,7 +3863,13 @@
         margin-left: 13%;
         height: 10%;
     }
-
+  /* *****  SideBar *********** */
+    .sideBarContainerOpen {
+        align-items: flex-start;
+    }
+    .sideBarWrapper {
+        margin-top: 10%;
+    }
     /* ******* DropDownList ************** */
 
     .dropdown {
@@ -4009,7 +4026,7 @@
         cursor: pointer;
         color: #ffffff;
         margin-top: 5px;
-        width: 103px ;
+        width: 60px ;
         left: 95%;
         top: 7px;
         height: 28px;
@@ -4505,6 +4522,10 @@
         height: 10%;
     }
 
+    /* ******  SideBar *********** */
+    .sideBarLink {
+        font-size: 1.6rem;
+    }
     /* ******* DropDownList ************** */
 
     .dropdown {
@@ -4520,7 +4541,6 @@
 
     /* *****  checkSection *********** */
 
-            /* ************** checkSection ************** */
 
 .checkSectionContainer {
     width: 100%;
@@ -4672,7 +4692,7 @@
         cursor: pointer;
         color: #ffffff;
         margin-top: 5px;
-        width: 103px ;
+        width: 90px ;
         left: 95%;
         top: 7px;
         height: 28px;
@@ -5169,6 +5189,15 @@
         height: 10%;
     }
 
+      /* *****  SideBar *********** */
+      .sideBarContainerOpen {
+        align-items: flex-start;
+
+    }
+    .sideBarWrapper {
+        margin-top: 20%;
+    }
+
     /* ******* DropDownList ************** */
 
     .dropdown {
@@ -5396,7 +5425,7 @@
         cursor: pointer;
         color: #ffffff;
         margin-top: 5px;
-        width: 103px ;
+        width: 60px ;
         left: 95%;
         top: 7px;
         height: 28px;
@@ -5940,6 +5969,10 @@
         margin-right: 4%;
     }
     
+      /* ******  SideBar *********** */
+      .sideBarLink {
+        font-size: 1.4rem;
+    }
     .closeBtn {
         width: 77%;
         margin-top: 10%;

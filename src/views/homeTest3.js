@@ -101,7 +101,6 @@ const HomeTest3 = () => {
     }
 
     const toggleRegView = () => {
-        // setResponse(null)
         setRegView(true)
     }
 
@@ -113,13 +112,6 @@ const HomeTest3 = () => {
         setForgotPIN(!forgotPIN)
     }
     
-    // const toggleNotification = () => {
-    //     setResponse(null)
-    // }
-    // const toggleNotificationLogin = () => {
-    //     setLoginResponse(null)
-    // }
-
 
     const handlingContactSectionResponse = (response) => {
         setResponse(response)
@@ -159,7 +151,6 @@ const HomeTest3 = () => {
                 })
                 console.log(response.data)
                 setLoginResponse(response)
-                // console.log(response.data)
                 setCurrentUser(response.data)
                 setLoading(false)
                 setLoggedIn(true)
@@ -217,24 +208,13 @@ const HomeTest3 = () => {
     const toggleSideBar = () => {
         setIsOpen(!isOpen)
         
-    } 
-    const toggleLoginSideBarToOpen = () => {
-        setLoginSideBarOpen(true)
-        
-    }
-    const toggleLoginSideBarToClose = () => {
-        setLoginSideBarOpen(false)
-    }
-    
+    }     
     const toggleMainSideBar = () => {
         setMainSideBarOpen(!mainSideBarOpen)
     } 
     const toggleNotification = () => {
         setResponse(null)
         setLoginResponse(null)
-        // setActive('check')
-        // setLoggedIn(false)
-
         setActive(null)
         setContactSectionOpen(false)
     }
@@ -287,11 +267,8 @@ const HomeTest3 = () => {
                 scope:'profile'
               }).then(()=> {
               console.log('gapi initialized...')
-            //   const response = window.gapi.auth2.getAuthResponse()
-            //   console.log(response)
               auth = window.gapi.auth2.getAuthInstance()
               const isSignedIn = auth.isSignedIn.get()
-            //   {isSignedIn ? setLoggedIn(true) : setLoggedIn(false)}
               setIsSignedIn(isSignedIn)
               console.log(isSignedIn)
               auth.isSignedIn.listen(isSignedIn => {
@@ -332,15 +309,8 @@ const HomeTest3 = () => {
                 setLoggedIn(true) 
                 setLoggedOut(false)
             }
-            // *************************************************
+    }
             
-            // setLoggedIn(true)
-            // setLoggedOut(false)
-            
-        }
-// console.log(googleUser)
-// console.log(loginData)
-    console.log(loggedIn)
     return (
     <>
     {
@@ -363,7 +333,6 @@ const HomeTest3 = () => {
             toggleLanguage={toggleLanguage}
             />
                 <NavBarForCS
-                toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
                 toggleMainSideBar={toggleMainSideBar}
                 toggleSideBar={ toggleSideBar }  
                 login={ loggedIn }
@@ -372,7 +341,6 @@ const HomeTest3 = () => {
             /> 
          
             <CheckSection 
-            toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
             toggleMainSideBar={toggleMainSideBar}
             toggleSideBar={ toggleSideBar }  
             login={ loggedIn }
@@ -402,18 +370,7 @@ const HomeTest3 = () => {
              null
             }
             
-   
-            <LoginSideBar
-            loginSideBarOpen={loginSideBarOpen}
-            toggleLoginSideBarToClose={ toggleLoginSideBarToClose }
-            loggedIn={loggedIn}
-            loggedOut={loggedOut}
-            loading = {loading}
-            language={language}
-            loginSideBarLoading={loginSideBarLoading}
-            handlingSubmitLoginUser={ handlingSubmitLoginUser}
-            />
-           
+      
             <MainSideBar
             mainSideBarOpen={mainSideBarOpen}
             toggleMainSideBar={toggleMainSideBar}
@@ -430,18 +387,18 @@ const HomeTest3 = () => {
             toggleSideBar={ toggleSideBar }
             language={language}
             toggleLanguage={toggleLanguage}
+            handlingCheckUser={handlingCheckUser}
             />
             
             { mobil2.screenWidth <= 1098 || mobil ?  
                 <NavBarMobil 
-                toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
                 toggleMainSideBar={toggleMainSideBar}
                 toggleSideBar={ toggleSideBar }  
                 login={ loggedIn }
                 language={language}
                 
             /> : <NavBar
-            toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
+            toggleSideBar={toggleSideBar}
             toggleMainSideBar={toggleMainSideBar} 
             login={ loggedIn }
             language={language}
@@ -466,7 +423,6 @@ const HomeTest3 = () => {
                 loggedIn={loggedIn}
                 isSignedIn={isSignedIn}
                 handlingSubmitLoginUser={ handlingSubmitLoginUser}
-                // loginResponse={loginResponse}
                 toggleNotificationLogin={toggleNotification}
                 googleTest={googleTest}
                 language={language}
@@ -490,5 +446,6 @@ const HomeTest3 = () => {
     </>
     )
 }
+
 
 export default HomeTest3

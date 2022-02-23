@@ -35,7 +35,7 @@ const NavBarMobil = ({
                         onClick={toggleLoginSideBarToOpen}
                         className="faUserIcon" />
                         } */}
-                        <FaBars 
+                        <BiUser 
                         onClick={toggleSideBar}
                         className="faBarsIcon"/>
                     </div>
