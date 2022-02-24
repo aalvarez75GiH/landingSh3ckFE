@@ -322,7 +322,7 @@ export const infoSideBar = {
     sideBarLink2: 'Preguntas y Respuestas',
     sideBarLink3: 'Ayuda',
     sideBarLink4: 'idioma',
-    sideBarLink5: 'Salir',
+    sideBarLink5: 'Atrás',
     sideBarLink0: 'Chequéa un producto',
     sideBarLink1_EN: 'Home',
     sideBarLink2_EN: 'Questions & Answers',
