@@ -655,6 +655,9 @@
     padding-left: 1%;
     height: 100px;
 }
+.exitDiv {
+    color: #ef476f;
+}
 .mainSideBarUserOptionsIcon {
     display: flex;
     align-items: center;
@@ -2287,6 +2290,20 @@
         height: 28px;
 
     }
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+    }
 
     .faUserIcon {
         position: absolute;
@@ -2826,6 +2843,21 @@
         height: 28px;
 
     }
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+    }
+    
     .faUserIcon {
         position: absolute;
         left: 15px;
@@ -3213,10 +3245,13 @@
         align-items: center;
         height: 15%;
     }
-    
-    .closeBtn {
-        height: 10%;
+    .exitDiv {
+        color: #ef476f;
     }
+    
+    /* .closeBtn {
+        height: 10%;
+    } */
 
     /* *****  SideBar *********** */
     .sideBarContainerOpen {
@@ -3373,6 +3408,20 @@
         top: 7px;
         height: 28px;
 
+    }
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;    
     }
 
     .faUserIcon {
@@ -3857,6 +3906,9 @@
         width: 90%;
         /* height: 16%; */
     }
+    .exitDiv {
+        color: #ef476f;
+    }
     .mainSideBarUserOptionsIcon {
         margin-right: 7%;
     }
@@ -4039,6 +4091,20 @@
         top: 7px;
         height: 28px;
 
+    }
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
     }
 
     .faUserIcon {
@@ -4508,6 +4574,9 @@
         width: 90%;
         /* height: 16%; */
     }
+    .exitDiv {
+        color: #ef476f;
+    }
     .mainSideBarUserOptionsIcon {
         margin-right: 7%;
     }
@@ -4701,7 +4770,20 @@
         height: 28px;
 
     }
-
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 60px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+    }
     .faUserIcon {
         position: absolute;
         left: 15px;

@@ -24,7 +24,7 @@ const NavBarForCS = ({
                     <LinkR to="/" className="navLogoMobil">sh3ck</LinkR>
                     <div 
                     // onClick={ toggleSideBar }
-                    className="mobileIconMobil">
+                    className="mobileIconMobilForCS">
                         {/* <FaRegUser className="faIcon"/> */}
                         {login ?
                         <BiUserCheck 

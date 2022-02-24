@@ -26,15 +26,6 @@ const NavBarMobil = ({
                     <LinkR to="/" className="navLogoMobil">sh3ck</LinkR>
                     <div 
                     className="mobileIconMobil">
-                        {/* {login ?
-                        <BiUserCheck 
-                        onClick={toggleMainSideBar}
-                        className="faUserIcon"/> 
-                         :   
-                        <BiUser 
-                        onClick={toggleLoginSideBarToOpen}
-                        className="faUserIcon" />
-                        } */}
                         <BiUser 
                         onClick={toggleSideBar}
                         className="faBarsIcon"/>
