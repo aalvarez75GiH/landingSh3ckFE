@@ -38,23 +38,7 @@ const SideBar = ({
                 <FaTimes className="closeIcon"/>
             </div>
             <div className="sideBarWrapper">
-                <LinkS
-                to={'nextStepSection'}  
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={900}
-                duration={1000}
-                >
-                <div
-                onClick={  handlingContactSection }
-                className="sideBarLink" >
-                    <div className="mainSideBarUserOptionsIcon">
-                        <BsBox/>
-                    </div>
-                    {language === 'ES' ? infoSideBar.sideBarLink0 : infoSideBar.sideBarLink0_EN}
-                </div>
-                </LinkS>
+                
                     
                 <div className="sideBarMenu">
                     <LinkS
@@ -73,6 +57,23 @@ const SideBar = ({
                             <FiHome/>
                         </div>
                         {language === 'ES' ? infoSideBar.sideBarLink1 : infoSideBar.sideBarLink1_EN} 
+                    </div>
+                    </LinkS>
+                    <LinkS
+                    to={'nextStepSection'}  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={900}
+                    duration={1000}
+                    >
+                    <div
+                    onClick={  handlingContactSection }
+                    className="sideBarLink" >
+                        <div className="mainSideBarUserOptionsIcon">
+                            <BsBox/>
+                        </div>
+                        {language === 'ES' ? infoSideBar.sideBarLink0 : infoSideBar.sideBarLink0_EN}
                     </div>
                     </LinkS>
                     
