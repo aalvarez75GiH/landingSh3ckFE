@@ -318,7 +318,7 @@ export const infoFooter = {
 
 export const infoSideBar = {
     sideBarLink0_EN: 'Check a product',
-    sideBarLink1: 'Ir al comienzo',
+    sideBarLink1: 'Ir al inicio',
     sideBarLink2: 'Preguntas y Respuestas',
     sideBarLink3: 'Ayuda',
     sideBarLink4: 'idioma',
