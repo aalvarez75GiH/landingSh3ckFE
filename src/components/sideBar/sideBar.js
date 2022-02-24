@@ -4,7 +4,11 @@ import { BiHelpCircle, BiQuestionMark } from 'react-icons/bi'
 import {FiLogIn} from 'react-icons/fi'
 import { GrLanguage } from 'react-icons/gr'
 import { FaHome } from 'react-icons/fa'
+import { FiHome } from 'react-icons/fi'
+import { BsBox } from 'react-icons/bs'
+import { CgCloseO } from 'react-icons/cg'
 import { infoSideBar } from '../../utils/data'
+import {HiArrowLeft} from 'react-icons/hi'
 import { Link as LinkS } from 'react-scroll'
 
 const SideBar = ({ 
@@ -46,7 +50,7 @@ const SideBar = ({
                 onClick={  handlingContactSection }
                 className="sideBarLink" >
                     <div className="mainSideBarUserOptionsIcon">
-                        <FiLogIn/>
+                        <BsBox/>
                     </div>
                     {language === 'ES' ? infoSideBar.sideBarLink0 : infoSideBar.sideBarLink0_EN}
                 </div>
@@ -66,19 +70,13 @@ const SideBar = ({
                     to="discover" 
                     className="sideBarLink" >
                         <div className="mainSideBarUserOptionsIcon">
-                            <FaHome/>
+                            <FiHome/>
                         </div>
                         {language === 'ES' ? infoSideBar.sideBarLink1 : infoSideBar.sideBarLink1_EN} 
-                        {/* <div 
-                        onClick={togglingLanguage}
-                        className="changeLanDiv">
-                            {language === 'ES' ? infoSideBar.toggleCopy_EN : infoSideBar.toggleCopy}
-                        </div> */}
                     </div>
                     </LinkS>
                     
                     <div
-                    // onClick={ toggleSideBar }
                     to="about" 
                     className="sideBarLink" >
                         <div className="mainSideBarUserOptionsIcon">
@@ -87,8 +85,7 @@ const SideBar = ({
                         {language === 'ES' ? infoSideBar.sideBarLink2 : infoSideBar.sideBarLink2_EN}
                     </div>
                     
-                    <div 
-                    // onClick={ toggleSideBar }
+                    <div
                     to="services" 
                     className="sideBarLink" >
                         <div className="mainSideBarUserOptionsIcon">
@@ -109,15 +106,24 @@ const SideBar = ({
                             {language === 'ES' ? infoSideBar.toggleCopy_EN : infoSideBar.toggleCopy}
                         </div>
                     </div>
+                    <div 
+                    to="discover"
+                    onClick={toggleSideBar} 
+                    className="sideBarLink" >
+                        <div className="mainSideBarUserOptionsIcon">
+                            <HiArrowLeft/>
+                        </div>
+                        {language === 'ES' ? infoSideBar.sideBarLink5 : infoSideBar.sideBarLink5_EN}
+                    </div>
                 </div>
-                <div className="sideBtnWrap">
+                {/* <div className="sideBtnWrap">
                     <div
                     onClick={toggleSideBar}
                     className="sideBarRoute" 
                     to="/signin">
                         {language === 'ES' ? infoSideBar.sideBarBtnLabel : infoSideBar.sideBarBtnLabel_EN}
                     </div>
-                </div>
+                </div> */}
 
             </div>
 

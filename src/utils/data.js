@@ -236,10 +236,14 @@ export const infoMainSideBar = {
     option2Copy: 'Mis chequeos',
     option3Copy: 'Ayúda',
     option4Copy: 'Preguntas y respuestas',
+    option5Copy: 'Salir y guardar',
+    option6Copy: 'Salir',
     option1Copy_EN: 'My account',
     option2Copy_EN: 'My checks orders',
     option3Copy_EN: 'Help',
     option4Copy_EN: 'Questions & Answers',
+    option5Copy_EN: 'Logout and save',
+    option6Copy_EN: 'Logout',
     hola: 'Hola',
     hello: 'Hello',
     mainSidebarBtnLabel:'Cerrar sesión',
@@ -313,19 +317,21 @@ export const infoFooter = {
 }
 
 export const infoSideBar = {
+    sideBarLink0_EN: 'Check a product',
     sideBarLink1: 'Ir al comienzo',
     sideBarLink2: 'Preguntas y Respuestas',
     sideBarLink3: 'Ayuda',
     sideBarLink4: 'idioma',
-    sideBarLink0: 'Inicia sesión',
-    sideBarLink0_EN: 'Log In',
+    sideBarLink5: 'Salir',
+    sideBarLink0: 'Chequéa un producto',
     sideBarLink1_EN: 'Home',
     sideBarLink2_EN: 'Questions & Answers',
     sideBarLink3_EN: 'Help',
     sideBarLink4_EN: 'Language',
+    sideBarLink5_EN: 'Exit',
     toggleCopy: '(cambiar a Español)',
     toggleCopy_EN:'(Switch to English)',
-    sideBarBtnLabel: 'Cerrar',
+    sideBarBtnLabel: 'Cerrar esta ventana',
     sideBarBtnLabel_EN: 'Close'
 
 }
