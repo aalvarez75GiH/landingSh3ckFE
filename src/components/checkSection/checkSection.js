@@ -9,10 +9,6 @@ const CheckSection = ({
     return (
         <div className="checkSectionContainer">
             <div className="checkSectionWrapper">
-                {/* <div className="checkSection-formTitle">
-                    <h1 className="checkSection-title">{language === 'ES' ? infoCheck.checkSectionTitle : infoCheck.checkSectionTitle_EN}</h1>
-                </div> */}
-
                 <div className="checkSection-BtnWrap">
                         <button className="checkSection-checkBtn">
                         {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
@@ -24,11 +20,20 @@ const CheckSection = ({
         
                         </button>
                 </div>
-                {/* <div className="checkSection-notNow">   
-                    <p>{language === 'ES' ? infoCheck.notNowlabel : infoCheck.notNowlabel_EN}</p>
-                </div> */}
             </div>
         </div>
+        // <div className="checkSectionTestContainer">
+        //     <div className="checkSectionTestWrapper">
+        //         <div className="checkSectionTest-BtnWrap">
+
+        //         </div>
+        //     </div>
+        //     <div className="checkSectionTestWrapper">
+        //         <div className="checkSectionTest-BtnWrap">
+
+        //         </div>
+        //     </div>
+        // </div>
     )   
 }
 

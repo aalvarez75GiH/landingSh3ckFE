@@ -315,7 +315,7 @@ const HomeTest3 = () => {
     <>
     {
         loggedIn ?
-        <>
+        <div className="superContainer">
             <MainSideBar
             mainSideBarOpen={mainSideBarOpen}
             toggleMainSideBar={toggleMainSideBar}
@@ -347,7 +347,7 @@ const HomeTest3 = () => {
             gettingOutOfCheckApp={gettingOutOfCheckApp}
             language={language}
             />
-        </>
+        </div>
     : null
     }
       
