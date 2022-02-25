@@ -1286,6 +1286,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     background-color: #eeeeee;
     margin-top: 10%;
     margin-left: 5%;
+    position: fixed;
 }
 
 .checkSectionWrapper {
@@ -5317,6 +5318,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         background-color: #eeeeee;
         margin-top: 0%;
         margin-left: unset;
+        /* position: fixed; */
     }
     /* **************test ****************** */
     .superContainer {
