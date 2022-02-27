@@ -353,7 +353,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 /*************** LoginSideBar ****************************** */
            
 /*** Open  ***/
-.loginSideBarContainer {
+/* .loginSideBarContainer {
     position: fixed;
     z-index: 999;
     width: 30%;
@@ -367,7 +367,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     opacity:0;
 }
 
-.loginSideBarContainerOpen {  /** Open  **/
+.loginSideBarContainerOpen {  
     position: fixed;
     z-index: 999;
     width: 100%;
@@ -381,7 +381,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     opacity: 1;
 }
 
-.loginContactForms {       /** Open and Closed **/
+.loginContactForms {       
     position: relative;
     left: 0%;
     width: 100%;
@@ -394,7 +394,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-bottom: 3%;
 }
 
-.loginSideBarIcon {     /** Open and Closed **/
+.loginSideBarIcon {     
     position: absolute;
     top: 1.2rem;
     right: 1.5rem;
@@ -404,32 +404,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     outline: none;
 }
 
-.loginCloseIcon {       /** Open and Closed **/
+.loginCloseIcon {       
     color: #ffffff;
     
 }
 
-.loginSideHeader {    /** Open and Closed **/
+.loginSideHeader {    
     width: 100%;
     height: 80px;
     background-color: #010606;
 }
-.loginSideBarFormTitle {
-    display: flex;
-    align-items: center;
-    color: #010606;
-    width: 100%;
-    height: 12%;
-    font-size: 3rem;
-    margin-left: 8%;
-}
-.loginSideBarFormDescription {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 5%;
-    margin-left: 8%;
-}
+
 
 .loginSideBarFormDescription p {
     width: 100%;
@@ -445,44 +430,43 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     width: 34%;
     margin-left: 8%;
 }
-
-
-/*************** LogoutSideBar ****************************** */
-.logoutSideBarContainer {
-    position: fixed;
+************** QASideBar ****************************** */
+.QASideBarContainer {
+    /* position: fixed; */
     z-index: 999;
     width: 30%;
-    height: 100%;
-    background-color: #eeeeee;
+    height: auto;
+    background-color: #ffffff;
     display: grid;
     align-items: center;
     left:100%;
-    right: 0;
+    right: 0%;
     transition: 0.6s ease-in-out;
     opacity:0;
 }
-
-.logoutSideBarContainerOpen {
-    position: fixed;
+.QASideBarContainerOpen {
+    /* position: fixed; */
     z-index: 999;
     width: 100%;
-    height: 100%;
-    background-color: #eeeeee;
+    height: auto;
+    background-color: #ffffff;
     display: grid;
     align-items: center;
+    left: 0%;
     right: 0%;
     transition: 0.6s ease-in-out;
     opacity: 1;
 }
-.logoutContactForms {       /** Open and Closed **/
+
+.QAContactForms {     
     position: relative;
     left: 0%;
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: #ffffff;
 }
 
-.logoutSideBarIcon {     /** Open and Closed **/
+.QASideBarIcon {     
     position: absolute;
     top: 1.2rem;
     right: 1.5rem;
@@ -490,83 +474,42 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-size: 2rem;
     cursor: pointer;
     outline: none;
+    margin-top: 2%;
 }
 
-.logoutCloseIcon {
-    color:#ffffff;
+.QACloseIcon {       
+    color: #ffffff;
+    
 }
 
-.logoutSideHeader {    /** Open and Closed **/
+.QASideHeader {    
     width: 100%;
     height: 80px;
     background-color: #010606;
 }
 
-.logoutSideBarFormTitle {
+.QASideBarFormTitle {
     display: flex;
     align-items: center;
     color: #010606;
     width: 100%;
-    height: 12%;
+    height: 200px;
     font-size: 3rem;
     margin-left: 8%;
 }
-
-.logoutSideBarFormDescription {
+.QASideBarFormDescription {
+    font-size: 2rem;
     display: flex;
     align-items: center;
-    width: 35%;
-    height: 5%;
-    margin-left: 8%;
-    line-height: 25px ;
-}
-.logoutSideBarFormDescription p {
     width: 100%;
-}
-
-.logoutContactForms h2 {
-    margin-left: 8%;
-    margin-top: 5%;
-}
-.userInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
     height: 5%;
-    border: 1px solid #010606;
     margin-left: 8%;
-    border-radius: 30px;
-    margin-top: 3%;
 }
 
-.userInfo p {
-    font-size: 18px;
-}
-.logoutSideBarTitleWrapperLoggedIn{
-    height: 19%;
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    margin-left: 8%;
-    margin-top: 3%;
-}
-.logoutSideBarFormTitleLoggedIn {
-    color: #010606;
-    height: 20%;
-    font-size: 1rem;
-    margin-bottom: 2%;
-}
-.closeSessionBtn {
-    height: 30%;
-    width: 50%;
-    background-color: #FAD570;
-    color: #010606;
-    border-style: none;
-    font-size: 1rem;
-    border-radius: 30px;
-
+.Accordion {
+    width: 100%;
+    height: 200px;
+    background-color: #ef476f;
 }
 
 /* ************ MainSideBar *******************************/
@@ -3273,6 +3216,26 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .sideBarLink {
         font-size: 2rem;
     }
+
+    /*************** QASideBar ****************************** */
+
+.QASideBarFormTitle {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 100%;
+    height: 200px;
+    font-size: 2.4rem;
+    margin-left: 3%;
+}
+.QASideBarFormDescription {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    margin-left: 3%;
+}
     /* ************** checkSection ************** */
 
     .checkSection-BtnWrap {
@@ -3804,7 +3767,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         
     }
 
-    .loginSideBarFormDescription {
+    /* .loginSideBarFormDescription {
         width: 95%;
     }
     .loginSideBarFormDescription p {
@@ -3817,7 +3780,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .loginSideBoxContainer { 
         height: auto;
         margin-top: 10%;
-    }
+    } */
     .input {
         height: 85px;
         font-size: 1.3rem;
@@ -3837,7 +3800,50 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 85px;
 
     }
-
+    /*************** QASideBar ****************************** */
+/* .QASideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: auto;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left:100%;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity:0;
+} */
+/* .QASideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: auto;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left: 0%;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+} */
+.QASideBarFormTitle {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 100%;
+    height: 200px;
+    font-size: 1.8rem;
+    margin-left: 8%;
+}
+.QASideBarFormDescription {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    margin-left: 8%;
+}
     .forgotPINSpan {
         font-size: 1rem;
     }
@@ -4484,7 +4490,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         margin-bottom: 30%;
     }
     
-    .loginSideBarFormDescription {
+    /* .loginSideBarFormDescription {
         width: 95%;
     }
     .loginSideBarFormDescription p {
@@ -4497,8 +4503,54 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .loginSideBoxContainer { 
         height: auto;
         margin-top: 10%;
-    }
+    } */
     
+    /*************** QASideBar ****************************** */
+/* .QASideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: auto;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left:100%;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity:0;
+} */
+/* .QASideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: auto;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left: 0%;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+} */
+.QASideBarFormTitle {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 100%;
+    height: 200px;
+    font-size: 1.7rem;
+    margin-left: 3%;
+}
+.QASideBarFormDescription {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    margin-left: 8%;
+}
+
+/********************************************* */
     .input {
         height: 85px;
         font-size: 1.3rem;
@@ -5163,7 +5215,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: auto;
         margin-bottom: 0%;
     }
-    
+/*     
     .loginSideBarFormTitle {
         margin-top: 6%;
         font-size: 2.5rem;
@@ -5181,7 +5233,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .loginSideBoxContainer { 
         height: auto;
         margin-top: 10%;
-    }
+    } */
+ 
+
+
     
     .input {
         height: 85px;
@@ -5297,6 +5352,52 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .sideBarLink {
         font-size: 1.6rem;
     }
+
+       /*************** QASideBar ****************************** */
+/* .QASideBarContainer {
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: auto;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left:100%;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity:0;
+} */
+/* .QASideBarContainerOpen {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: auto;
+    background-color: #eeeeee;
+    display: grid;
+    align-items: center;
+    left: 0%;
+    right: 0%;
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+} */
+
+.QASideBarFormTitle {
+    display: flex;
+    align-items: center;
+    color: #010606;
+    width: 97%;
+    height: 130px;
+    font-size: 1.5rem;
+    margin-left: 3%;
+}
+.QASideBarFormDescription {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    width: 97%;
+    height: 5%;
+    margin-left: 3%;
+}
 
     /* ******* DropDownList ************** */
 
@@ -5644,15 +5745,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         font-family: inherit;
         margin-top: 3%;
     }
-    /* **** heroSection **** WWD  */
-   /* .heroButtonsWrapper {
-    display: flex;  
-    margin-top: 5%;   
-    } */
-
-    /* .heroBtnWrapperMobil {
-        margin-left: 3%;
-    } */
+  
     .video_button {
         font-size: 1rem;
     }
@@ -6026,7 +6119,51 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         width: 100%;
         /* height: 16%; */
     }
- 
+        /*************** QASideBar ****************************** */
+    /* .QASideBarContainer {
+        position: fixed;
+        z-index: 999;
+        width: 30%;
+        height: auto;
+        background-color: #eeeeee;
+        display: grid;
+        align-items: center;
+        left:100%;
+        right: 0%;
+        transition: 0.6s ease-in-out;
+        opacity:0;
+    } */
+    /* .QASideBarContainerOpen {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: auto;
+        background-color: #eeeeee;
+        display: grid;
+        align-items: center;
+        left: 0%;
+        right: 0%;
+        transition: 0.6s ease-in-out;
+        opacity: 1;
+    } */
+
+    .QASideBarFormTitle {
+        display: flex;
+        align-items: center;
+        color: #010606;
+        width: 100%;
+        height: 130px;
+        font-size: 1.3rem;
+        margin-left: 2%;
+    }
+    .QASideBarFormDescription {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 5%;
+        margin-left: 3%;
+    }
       /* ******  SideBar *********** */
       .sideBarLink {
         font-size: 1.4rem;

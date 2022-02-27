@@ -16,7 +16,8 @@ const SideBar = ({
     isOpen, 
     language, 
     toggleLanguage,
-    handlingCheckUser  
+    handlingCheckUser,
+    toggleLoginSideBarToOpen
 }) => {
 
     const togglingLanguage = () => {
@@ -37,9 +38,7 @@ const SideBar = ({
             >
                 <FaTimes className="closeIcon"/>
             </div>
-            <div className="sideBarWrapper">
-                
-                    
+            <div className="sideBarWrapper"> 
                 <div className="sideBarMenu">
                     <LinkS
                     to={'heroSection'}  
@@ -77,9 +76,10 @@ const SideBar = ({
                     </div>
                     </LinkS>
                     
-                    <div
-                    to="about" 
-                    className="sideBarLink" >
+                    <div 
+                    className="sideBarLink" 
+                    onClick={toggleLoginSideBarToOpen}
+                    >
                         <div className="mainSideBarUserOptionsIcon">
                             <BiQuestionMark/>
                         </div>
@@ -117,15 +117,6 @@ const SideBar = ({
                         {language === 'ES' ? infoSideBar.sideBarLink5 : infoSideBar.sideBarLink5_EN}
                     </div>
                 </div>
-                {/* <div className="sideBtnWrap">
-                    <div
-                    onClick={toggleSideBar}
-                    className="sideBarRoute" 
-                    to="/signin">
-                        {language === 'ES' ? infoSideBar.sideBarBtnLabel : infoSideBar.sideBarBtnLabel_EN}
-                    </div>
-                </div> */}
-
             </div>
 
 

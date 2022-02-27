@@ -19,6 +19,7 @@ const MainSideBar = ({
     handlingSubmitLogOutUser, 
     language,
     loginData,
+    toggleLoginSideBarToOpen
 }) => {
     console.log(loginData)
     // console.log(loggedIn)
@@ -79,7 +80,9 @@ const MainSideBar = ({
                                 </div>
                                 {language === 'ES' ? infoMainSideBar.option3Copy : infoMainSideBar.option3Copy_EN}
                             </div>
-                            <div className="mainSideBarContentItems">
+                            <div 
+                            onClick={toggleLoginSideBarToOpen}
+                            className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <BiQuestionMark/>
                                 </div>
