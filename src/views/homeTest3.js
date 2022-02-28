@@ -291,8 +291,6 @@ const HomeTest3 = () => {
         }
         const googleTest = async(user, token) => {
             setLoading(true)
-            // const test = JSON.parse(user)
-            // *****************************************
             try {
                 console.log('Sending request to BackEnd api...')
                 console.log(token)
@@ -348,20 +346,13 @@ const HomeTest3 = () => {
             loginData={loginData} 
             toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}        
             />
-              <SideBar 
-            isOpen={ isOpen } 
-            toggleSideBar={ toggleSideBar }
+            <NavBarForCS
+            toggleMainSideBar={toggleMainSideBar}
+            toggleSideBar={ toggleSideBar }  
+            login={ loggedIn }
             language={language}
-            toggleLanguage={toggleLanguage}
-            />
-                <NavBarForCS
-                toggleMainSideBar={toggleMainSideBar}
-                toggleSideBar={ toggleSideBar }  
-                login={ loggedIn }
-                language={language}
                 
             /> 
-         
             <CheckSection 
             toggleMainSideBar={toggleMainSideBar}
             toggleSideBar={ toggleSideBar }  
@@ -399,9 +390,7 @@ const HomeTest3 = () => {
                          null
                         }
                         
-                        
-                  
-                        <MainSideBar
+                        {/* <MainSideBar
                         mainSideBarOpen={mainSideBarOpen}
                         toggleMainSideBar={toggleMainSideBar}
                         loggedIn={loggedIn}
@@ -410,7 +399,7 @@ const HomeTest3 = () => {
                         username={currentUser}
                         language={language}
                         loginData={loginData}           
-                        />
+                        /> */}
                         
                         <SideBar 
                         isOpen={ isOpen } 
