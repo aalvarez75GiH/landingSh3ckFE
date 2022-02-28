@@ -290,6 +290,7 @@ const HomeTest3 = () => {
           
         }
         const googleTest = async(user, token) => {
+            setLoading(true)
             // const test = JSON.parse(user)
             // *****************************************
             try {
@@ -306,6 +307,7 @@ const HomeTest3 = () => {
                 const data = res.data
                 if (res.status === 201){
                     console.log(data)
+                    setLoading(false)
                     setLoginData(data)   
                     setCurrentUser(data.fullName)
                     setLoggedIn(true) 
@@ -315,6 +317,7 @@ const HomeTest3 = () => {
             } catch (error) {
                 console.log(error)
                 console.log(error.response.data)
+                setLoading(false)
                 setCurrentUser(error.response.data.fullName)
                 setLoginData(error.response.data)
                 setLoggedIn(true) 
