@@ -1,4 +1,4 @@
-import video from '../videos/Sh3ck_Maqueta_1.mp4'
+import video from '../videos/Sh3ck new voice over 2.mp4'
 import hiwImage1 from '../images/1stStep.png'
 import hiwImage2 from '../images/2ndStep.png'
 import hiwImage3 from '../images/3rdStep.png'
