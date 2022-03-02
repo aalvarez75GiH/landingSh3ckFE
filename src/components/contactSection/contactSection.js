@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
-import  { motion } from 'framer-motion'
-
 import InterestedUsersForm from '../contactSection/interestedUserForm'
-import LoadingSpinner from '../../utils/loadingSpinner' 
-import OptionsForms from './optionsForms'
 import LoginForm from './loginForm'
-import NotificationBox from '../notifications/NotificationBox'
 import axios from 'axios'
-import picture from '../../images/2034873_chat_app_media_mobile_social_icon.svg'
 import FormHeader from './formHeader'
 import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../notifications/notificationData'
 import { infoContact } from '../../utils/data'
@@ -16,8 +10,8 @@ const ContactSection = ({
     language,
     loggedIn,
     handlingSubmitLoginUser,
-    loginResponse,
-    toggleNotificationLogin,
+    // loginResponse,
+    // toggleNotificationLogin,
     isSignedIn,
     googleTest,
     active,
@@ -26,12 +20,13 @@ const ContactSection = ({
     toggleRegView,
     settinRegViewAndForgotPINToFalse,
     toggleForgotPINState,
-    contactSectionOpen
+    contactSectionOpen,
+    workingSpinner,
+    handlingClosingOfContactSection,
+    handlingContactSectionResponse
 
 }) => {
    
-    const [ upLoadingUser, setUpLoadingUser ] = useState(false)
-    const [response, setResponse ] = useState(null)
     // const url_interestedUsers = "http://192.168.1.102:5000/api/interestedUsers"
     // const url_users = "http://192.168.1.102:5000/api/users"
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
@@ -39,87 +34,70 @@ const ContactSection = ({
     const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
     
 
-    const toggleNotification = () => {
-        setResponse(null)
-    }
-
-
+    
     const handlingSubmitInterestedUser = (interestedUser) => {
         
-        setUpLoadingUser(true)
+        workingSpinner('activate')
         setTimeout(async()=> {
             try {
                 const response = await axios.post(url_interestedUsersInTheCloud, interestedUser)
                     console.log(response)
                     if (response.status === 201){
-                        setResponse(response)
-                        setUpLoadingUser(false)
+                        handlingContactSectionResponse(response)
+                        workingSpinner('close')
                         console.log('Gracias por enviarnos tus datos, estaremos en contacto...')
                         return response.status
                     }
             } catch (error) {
                 console.log(error.response)
-                setUpLoadingUser(false)
-                setResponse(error.response)
+                workingSpinner('close')
+                handlingContactSectionResponse(error.response)
             }
         },2000)
         
     }
 
     const handlingSubmitUser = async(user) => {
-        setUpLoadingUser(true)
+        workingSpinner('activate')
         setTimeout(async()=> {
             try {
                 const response = await axios.post(url_usersInTheCloud, user)
                     console.log(response)
                     if (response.status === 201){
-                        setResponse(response)
-                        setUpLoadingUser(false)
+                        handlingContactSectionResponse(response)
+                        workingSpinner('close')
                         settinRegViewAndForgotPINToFalse()
                         console.log('Gracias por registrarte')
                         return response.status
                     }
             } catch (error) {
                 console.log(error)
-                setUpLoadingUser(false)
-                setResponse(error.response)
+                workingSpinner('close')
+                handlingContactSectionResponse(error.response)
             }
         },2000)
     } 
 
     const handlingNewPINRequest = async(dataToRequest) => {
         // console.log(dataToRequest)
-        setUpLoadingUser(true)
+        workingSpinner('activate')
         try {
             const response = await axios.put(url_generatePIN_ITC, dataToRequest)
             console.log(response.status)
             if (response.status === 200){
                 console.log(response)
-                setResponse(response)
-                setUpLoadingUser(false)
+                handlingContactSectionResponse(response)
+                workingSpinner('close')
                 return response.status
             }
         } catch (error) {
             console.log(error)
-            setUpLoadingUser(false)
-            setResponse(response.error)
+            workingSpinner('close')
+            handlingContactSectionResponse(error.response)
         }
     }
 
-const togglingResponseData = () => {
-    if (response && active === 'interested'){
-        return responseDataInterested
-    }
-    if (response && forgotPIN){
-        return responseDataNewPIN
-    }
-    if (response && active === 'check'){
-        return responseDataRegister
-    }
-    if (loginResponse && active === 'check'){
-        return responseDataLogin
-    } 
-}
+
 
 return (
     <div 
@@ -128,7 +106,7 @@ return (
         <div className={contactSectionOpen ? 'contactWrapper_open' : 'contactWrapper' }>
             <div className="contactForms">
              
-             {response || loginResponse ?
+             {/* {response || loginResponse ?
             <NotificationBox
              toggleNotification={response ? toggleNotification : toggleNotificationLogin} 
              response={response ? response : loginResponse }
@@ -136,7 +114,7 @@ return (
              language={language}
              />
              : null
-             }
+             } */}
             
             { !loggedIn  ? 
             <>
@@ -146,12 +124,13 @@ return (
             regView={regView}
             forgotPIN = {forgotPIN}
             language={language}
+            handlingClosingOfContactSection={handlingClosingOfContactSection}
             />
             </>
             :
             null
             }
-            
+                  
             { active === 'interested' && !loggedIn ? 
              <>
              <InterestedUsersForm 
@@ -186,5 +165,6 @@ return (
     </div>
 )
 }
+
 
 export default ContactSection

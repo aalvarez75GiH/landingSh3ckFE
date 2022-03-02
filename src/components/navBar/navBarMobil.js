@@ -14,10 +14,7 @@ const NavBarMobil = ({
     toggleMainSideBar,
     language,
     toggleLoginSideBarToOpen
-
 }) => {
-
-
         return (
             <>
                 <nav 
@@ -32,6 +29,25 @@ const NavBarMobil = ({
                     </div>
                 </div>
                 <div className="navMenuButtonsContainer">
+                <div className="navMenuButton">
+                        <LinkS 
+                        to="nextStepSection" 
+                        className="navLinksMobil" 
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset= {-5000}
+                        duration={1000}
+                        >
+                            <div 
+                            className="iconMobilContainer">
+                                <FaHome className="faIcon"/>
+                            </div>
+                            {language === 'ES' ? infoNavBarMobil.option3Copy : infoNavBarMobil.option3Copy_EN}
+                        </LinkS>
+                        
+                    </div>
+                    
                     <div className="navMenuButton">
                         <LinkS 
                         to="videoSection" 
@@ -84,27 +100,6 @@ const NavBarMobil = ({
                         </LinkS>
                     </div>
 
-                    <div className="navMenuButton">
-                        <LinkS 
-                        to="nextStepSection" 
-                        className="navLinksMobil" 
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset= {-5000}
-                        duration={1000}
-                        >
-                            <div 
-                            className="iconMobilContainer">
-                                <FaHome className="faIcon"/>
-                            </div>
-                            {language === 'ES' ? infoNavBarMobil.option3Copy : infoNavBarMobil.option3Copy_EN}
-                        </LinkS>
-                        
-                    </div>
-                    
-                    
-                    
                 </div>
             </nav>
             </>
