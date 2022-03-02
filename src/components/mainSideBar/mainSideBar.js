@@ -14,12 +14,11 @@ const MainSideBar = ({
     toggleMainSideBar, 
     mainSideBarOpen, 
     username,
-    loggedOut,
     loggedIn,
     handlingSubmitLogOutUser, 
     language,
     loginData,
-    toggleLoginSideBarToOpen
+    toggleQASideBarToOpen
 }) => {
     console.log(loginData)
     // console.log(loggedIn)
@@ -81,7 +80,7 @@ const MainSideBar = ({
                                 {language === 'ES' ? infoMainSideBar.option3Copy : infoMainSideBar.option3Copy_EN}
                             </div>
                             <div 
-                            onClick={toggleLoginSideBarToOpen}
+                            onClick={toggleQASideBarToOpen}
                             className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <BiQuestionMark/>
@@ -103,11 +102,7 @@ const MainSideBar = ({
                                 {language === 'ES' ? infoMainSideBar.option6Copy : infoMainSideBar.option6Copy_EN}
                                 
                             </div>
-                            {/* <div
-                            onClick={handlingSubmitLogOutUser} 
-                            className="closeBtn">
-                            {language === 'ES' ? infoMainSideBar.mainSidebarBtnLabel : infoMainSideBar.mainSidebarBtnLabel_EN}
-                            </div>   */}
+
                         </div>
                     </div>
                 </div>

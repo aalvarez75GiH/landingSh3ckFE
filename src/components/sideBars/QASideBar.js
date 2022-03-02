@@ -1,24 +1,23 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { infoLoginSB } from '../../utils/data'
 import QAAccordion from './QaAccordion'
 
 
 
 
 const QASideBar = ({ 
-    loginSideBarOpen,  
+    QASideBarOpen,  
     language,
-    toggleLoginSideBarToClose
+    toggleQASideBarToClose
 }) => {
     return (
         <aside
-        className={`${loginSideBarOpen ? "QASideBarContainerOpen" : "QASideBarContainer" }`}>
+        className={`${QASideBarOpen ? "QASideBarContainerOpen" : "QASideBarContainer" }`}>
         {/* className="QASideBarContainerOpen"> */}
             <div className="QAContactForms">
                 <div 
                     className="QASideBarIcon"
-                    onClick={ toggleLoginSideBarToClose }
+                    onClick={ toggleQASideBarToClose }
                 >
                     <FaTimes className="QACloseIcon"/>
                 </div>

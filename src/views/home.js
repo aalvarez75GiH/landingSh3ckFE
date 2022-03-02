@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import NavBar from '../components/navBar/navBar'
 import SideBar from '../components/sideBar/sideBar'
-import LoginSideBar from '../components/loginSideBar/loginSideBar'
 import MainSideBar from '../components/mainSideBar/mainSideBar'
 import HeroSection from '../components/heroSection/heroSection'
 import VideoSection from '../components/videoSection/videoSection'
@@ -29,7 +28,7 @@ const Home = () => {
     const [ loggedIn, setLoggedIn ] = useState(false)
     const [ loggedOut, setLoggedOut ] = useState(true)
     const [currentUser, setCurrentUser ] = useState('')
-    const [ loginSideBarOpen, setLoginSideBarOpen ] = useState(false)
+    const [ QASideBarOpen, setQASideBarOpen ] = useState(false)
     const [ mainSideBarOpen, setMainSideBarOpen ] = useState(false)
     const [ loginResponse, setLoginResponse ] = useState(null)
     const [ loading, setLoading ] = useState(false)
@@ -38,7 +37,6 @@ const Home = () => {
     const [ forgotPIN, setForgotPIN ] = useState(false)
     const [ active , setActive ] = useState(null) 
     const [ contactSectionOpen, setContactSectionOpen ] = useState(false)
-    const [ loginSideBarLoading, setLoginSideBarLoading ] = useState(false)
     const [response, setResponse ] = useState(null)
 
 
@@ -136,7 +134,7 @@ const Home = () => {
 
 
     const handlingSubmitLoginUser = async(user) => {
-        setLoginSideBarOpen(false)   
+        setQASideBarOpen(false)   
         setLoading(true)
         setTimeout(async() => {
             try {
@@ -210,14 +208,13 @@ const Home = () => {
         setIsOpen(!isOpen)
         
     } 
-    const toggleLoginSideBarToOpen = () => {
-        // setIsOpen(!isOpen)
-        setLoginSideBarOpen(true)
+    const toggleQASideBarToOpen = () => {
+        setQASideBarOpen(true)
         
     }
-    const toggleLoginSideBarToClose = () => {
+    const toggleQASideBarToClose = () => {
         console.log('tratando de cerrar')
-        setLoginSideBarOpen(false)
+        setQASideBarOpen(false)
     }
 
     const toggleMainSideBar = () => {
@@ -327,10 +324,10 @@ const Home = () => {
     <>
             
     {
-        loginSideBarOpen && loggedIn ?
+        QASideBarOpen && loggedIn ?
         <QASideBar
-        loginSideBarOpen={loginSideBarOpen}
-        toggleLoginSideBarToClose={toggleLoginSideBarToClose}
+        QASideBarOpen={QASideBarOpen}
+        toggleQASideBarToClose={toggleQASideBarToClose}
         />
         : 
         loggedIn  ?
@@ -344,7 +341,7 @@ const Home = () => {
             username={currentUser}
             language={language}
             loginData={loginData} 
-            toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}        
+            toggleQASideBarToOpen={toggleQASideBarToOpen}        
             />
             <NavBarForCS
             toggleMainSideBar={toggleMainSideBar}
@@ -364,10 +361,10 @@ const Home = () => {
     : null
     }
             {
-                loginSideBarOpen && !loggedIn ?
+                QASideBarOpen && !loggedIn ?
                 <QASideBar
-                loginSideBarOpen={loginSideBarOpen}
-                toggleLoginSideBarToClose={toggleLoginSideBarToClose}
+                QASideBarOpen={QASideBarOpen}
+                toggleQASideBarToClose={toggleQASideBarToClose}
                 />
                 : 
 
@@ -396,8 +393,8 @@ const Home = () => {
                         language={language}
                         toggleLanguage={toggleLanguage}
                         handlingCheckUser={handlingCheckUser}
-                        toggleLoginSideBarToOpen={toggleLoginSideBarToOpen}
-                        toggleLoginSideBarToClose={toggleLoginSideBarToClose}
+                        toggleQASideBarToOpen={toggleQASideBarToOpen}
+                        toggleQASideBarToClose={toggleQASideBarToClose}
                         />
                         
                         { mobil2.screenWidth <= 1098 || mobil ?  

@@ -17,7 +17,7 @@ const SideBar = ({
     language, 
     toggleLanguage,
     handlingCheckUser,
-    toggleLoginSideBarToOpen
+    toggleQASideBarToOpen
 }) => {
 
     const togglingLanguage = () => {
@@ -78,7 +78,7 @@ const SideBar = ({
                     
                     <div 
                     className="sideBarLink" 
-                    onClick={toggleLoginSideBarToOpen}
+                    onClick={toggleQASideBarToOpen}
                     >
                         <div className="mainSideBarUserOptionsIcon">
                             <BiQuestionMark/>
