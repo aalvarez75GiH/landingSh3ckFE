@@ -1,48 +1,31 @@
-import React, {useState, useEffect} from 'react'
-import { FaBars,FaSign,FaPuzzlePiece, FaVideo, FaHome } from 'react-icons/fa'
+import React from 'react'
 import { Link as LinkR } from 'react-router-dom'
-import { Link as LinkS } from 'react-scroll'
-import { IoMdCart } from 'react-icons/io'
-import { BiUser, BiUserCheck } from 'react-icons/bi'
-import { OffsetHandler } from '../../utils/settingOffsets'
-import { infoNavBarMobil } from '../../utils/data'
+import { BiUserCheck } from 'react-icons/bi'
+import { actionCreators } from '../../state'
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from '@reduxjs/toolkit'
 
-
-const NavBarForCS = ({ 
-    toggleSideBar, 
-    login, 
-    toggleMainSideBar,
-    toggleLoginSideBarToOpen
-
-}) => {
-
-        return (
-            <>
-                <nav 
-                className="navMobilForCS" >
-                <div className="navBarContainerMobil">
-                    <LinkR to="/" className="navLogoMobil">sh3ck</LinkR>
-                    <div 
-                    // onClick={ toggleSideBar }
-                    className="mobileIconMobilForCS">
-                        {/* <FaRegUser className="faIcon"/> */}
-                        {login ?
-                        <BiUserCheck 
-                        onClick={toggleMainSideBar}
-                        className="faUserIcon"/> 
-                         :   
-                        <BiUser 
-                        onClick={toggleLoginSideBarToOpen}
-                        className="faUserIcon" />
-                        }
-                        {/* <FaBars 
-                        onClick={toggleSideBar}
-                        className="faBarsIcon"/> */}
-                    </div>
+const NavBarForCS = ({ toggleMainSideBar }) => {
+    const dispatch = useDispatch()
+    const {  openingMainSideBar } = bindActionCreators(actionCreators, dispatch)
+    const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
+    console.log(mainSideBarOpen)
+    
+    return (
+        <>
+            <nav 
+            className="navMobilForCS" >
+            <div className="navBarContainerMobil">
+                <LinkR to="/" className="navLogoMobil">sh3ck</LinkR>
+                <div className="mobileIconMobilForCS">
+                    <BiUserCheck 
+                    onClick={() => openingMainSideBar(!mainSideBarOpen)}
+                    className="faUserIcon"/> 
                 </div>
-            </nav>
-            </>
-        )
+            </div>
+        </nav>
+        </>
+    )
 }
     
 export default NavBarForCS

@@ -594,10 +594,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
 .mainSideBarContentOptions {
     margin-left: 5%;
+    margin-top: 4%;
     height: auto;
 }
 .mainSideBarContentItems {
     display: flex;
+    align-items: center;
     font-size: 1.6rem;
     margin-bottom: 1%;
     border-bottom: 1px solid #eeeeee;
@@ -1227,7 +1229,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     width: 90%;
     height: 1100px;
     background-color: #eeeeee;
-    margin-top: 10%;
+    margin-top: 2%;
     margin-left: 5%;
     position: fixed;
 }
@@ -1238,7 +1240,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     width: 100%;
     height: 1000px;
     background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
-    background-size: 74% 68%;
+    background-size: 60% 60%;
     background-repeat: no-repeat;
     background-position-x: center;
 }
@@ -1260,7 +1262,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     align-items: center;
     width: 100%;
     height: 500px;
-    margin-top: 45%;
+    margin-top: 38%;
     
 }
 
@@ -1676,6 +1678,21 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         left: 50%;
     }
 
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+    }
+
     .loggedInIconContainer {
         left: 80%;
         color: #ffffff;
@@ -1717,76 +1734,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .formContainer button {
         height: 115px;
     }
-
-
-
-/*********** Info *******************  */
-    /* .contactInfoTopLine {
-        font-size: 16px;
-        line-height: 16px;
-        font-weight: 700;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-        margin-left: 8%;
-    }
-    
-    .contactInfoTitle1 {
-        width: 70%;
-        font-size: 3.6rem;
-        margin-top: 1%;
-        margin-left: 8%;
-    }
-    .contactInfoTitle2 {
-        width: 70%;
-        font-size: 3.6rem;
-        margin-top: 1%;
-        margin-left: 18%;
-    }
-    
-    .contactInfoTitle3 {
-        width: 70%;
-        font-size: 3.6rem;
-        margin-top: 1%;
-        margin-left: 35%;
-    }
-    
-    .contactInfoImageContainer {
-        width: 100%;
-        height: 40%;
-    }
-    
-    .contactInfoImageContainer img {
-        margin-top: 3%;
-        margin-left: 29%;
-        width: 37%;
-    }
-    .contactInfoDescContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 96%;
-        height: 20%;
-    }
-    
-    .contactInfoOption1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 30%;
-    }
-    .contactInfoOption2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 30%;
-    }
-    .contactInfoOption3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 30%;
-    } */
-    /* ContactContainer */
   
     
 }
@@ -1806,6 +1753,21 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     .navMenuMobil{
         left: 45%;
+    }
+
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
     }
     .navBtnMobil {
         left: 85%;
@@ -1859,18 +1821,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     }
 
     .checkSection-BtnWrap {
-        /* display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 500px; */
-        margin-top: 55%;
-        
+        margin-top: 45%;
     }
-    /* .formTitle {
-        font-size: 0.9rem;
-    } */
+  
     .loginSideBarFormDescription p {
         font-size: 1.5rem;
     }
@@ -1906,8 +1859,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .googleIcon {
         margin-left: 30%;
     }
-  
-  
+
+    .checkSectionWrapper {
+       background-size: 40% 60%;
+        
+    }
+
 }
 
 @media (max-width:1366px) and (min-width:1280px){
@@ -1923,6 +1880,21 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     }
     .navMobil{
         left: 40%;
+    }
+
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
     }
   
     .navBtnMobil {
@@ -2016,7 +1988,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     align-items: center;
     width: 100%;
     height: 500px; */
-    margin-top: 60%;
+    margin-top: 45%;
     
 }
 
@@ -2093,7 +2065,20 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .navMobil{
         left: 33%;
     }
-
+    .mobileIconMobilForCS {
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #ffffff;
+        margin-top: 5px;
+        width: 50px ;
+        left: 95%;
+        top: 7px;
+        height: 28px;
+    }
     .heroContent{
         left: 37%;
         top: 30%;
@@ -2207,7 +2192,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         align-items: center;
         width: 100%;
         height: 500px; */
-        margin-top: 65%;
+        margin-top: 55%;
         
     }
 
@@ -2738,7 +2723,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     /****** CheckSection  ******/
     .checkSection-BtnWrap {
-        margin-top: 75%;
+        margin-top: 65%;
         
     }
     .checkSection-checkBtn {
@@ -3239,7 +3224,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     /* ************** checkSection ************** */
 
     .checkSection-BtnWrap {
-        margin-top: 90%;
+        margin-top: 65%;
     }
     .checkSection-checkBtn {
         width: 60%;

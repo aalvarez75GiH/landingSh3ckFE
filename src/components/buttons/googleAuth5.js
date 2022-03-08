@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { infoContact } from '../../utils/data'
-// import '../../bookface.css'
+import { useSelector } from 'react-redux'
 
-const GoogleAuth5 = ({googleTest, language}) => {
+const GoogleAuth5 = ({ googleTest }) => {
 
+    const language = useSelector((state) => state.sideBarState.language)
     // var googleUser = {}
     
     useEffect(()=> {
@@ -26,24 +27,17 @@ const GoogleAuth5 = ({googleTest, language}) => {
 
     return (
         <>
-        {/* <div className="googleAuthContainer"> */}
-            <div
+        <div
             id="googleAuth5"
-            >
-                <div className="googleIcon">
+        >
+            <div className="googleIcon">
                 <FcGoogle className="fcGoogle"/>
-
-                </div>
-                <div className="googleAuth5_label">{language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div></div>
-                {/* {language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div> */}
-        {/* </div>   */}
-
-         
-        
+            </div>
+            <div className="googleAuth5_label">{language === 'ES' ? infoContact.loginFormGoogleButton : infoContact.loginFormGoogleButton_EN}</div></div>
         </>
     )
     
-    // return isSignedIn ? <h1>You are logged in</h1> : <h1>You are NOT logged in</h1>
+   
   
 }
 

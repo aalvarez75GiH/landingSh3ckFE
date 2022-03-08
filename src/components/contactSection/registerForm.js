@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react'
+import React from 'react'
+import axios from 'axios'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import { infoContact } from '../../utils/data'
-import GoogleAuth3 from '../buttons/googleAuth3'
-import GoogleAuth4 from '../buttons/googleAuth4'
 import GoogleAuth5 from '../buttons/googleAuth5'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { actionCreators } from '../../state'
+import { bindActionCreators } from '@reduxjs/toolkit'
 
 const validationSchema = yup.object({
     fullName: yup.string().min(3).max(100).required('hola, no te olvides de colocar tu nombre completo'),
@@ -15,21 +16,47 @@ const validationSchema = yup.object({
 })
 
 
-const RegisterForm = ({ 
-    handlingSubmitUser, 
-    language,
-    googleTest,
-    isSignedIn
-}) => {
-
-    // useEffect(() => {
-     
-
-    // },[])
+const RegisterForm = ({ googleTest }) => {
+    const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
+    const dispatch = useDispatch()
+    const {   
+        openingRegView, openingContactSection, 
+        activatingSpinner, settingResponse,
+        openingForgotPINView,  
+    } = bindActionCreators(actionCreators, dispatch)
+    const language = useSelector((state) => state.sideBarState.language)
 
     const onSubmit = (values) => {
         handlingSubmitUser(values)
     }
+
+    const settinRegViewAndForgotPINToFalse = () => {
+        openingRegView(false) //action creator
+        openingForgotPINView(false) //action creator
+    }
+
+    const handlingSubmitUser = async(user) => {
+        activatingSpinner(true)
+        setTimeout(async()=> {
+            try {
+                const response = await axios.post(url_usersInTheCloud, user)
+                    console.log(response)
+                    if (response.status === 201){
+                        settingResponse(response)
+                        activatingSpinner(false)
+                        openingContactSection(false)
+                        settinRegViewAndForgotPINToFalse()
+                        console.log('Gracias por registrarte')
+                        return response.status
+                    }
+            } catch (error) {
+                console.log(error)
+                activatingSpinner(false)
+                settingResponse(error.response)
+            }
+        },2000)
+    } 
+
 
     const formik = useFormik({
         initialValues: {
@@ -96,8 +123,6 @@ const RegisterForm = ({
 
                 <GoogleAuth5
                 googleTest={googleTest}
-                isSignedIn={isSignedIn}
-                language={language}
                 />
                 
                 

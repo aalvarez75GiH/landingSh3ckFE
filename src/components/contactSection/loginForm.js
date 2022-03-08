@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import RegisterForm from './registerForm'
 import ForgotPINForm from './forgotPINForm'
 import {MdOutlineVisibility} from 'react-icons/md'
 import { infoContact } from '../../utils/data'
-import GoogleAuth3 from '../buttons/googleAuth3'
-import GoogleAuth4 from '../buttons/googleAuth4'
 import GoogleAuth5 from '../buttons/googleAuth5'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { actionCreators } from '../../state'
+import { bindActionCreators } from '@reduxjs/toolkit'
+import { verifyingTokenRequest } from '../../requestsToApi'
 
 
 const validationSchema = yup.object({
@@ -17,24 +20,49 @@ const validationSchema = yup.object({
 })
 
 
-const LoginForm = ({ 
-    // handlingLoginUser,
-    regView, 
-    toggleRegView,
-    handlingSubmitUser,
-    forgotPIN,
-    handlingNewPINRequest,
-    language,
-    isSignedIn,
-    googleTest,
-    toggleForgotPINState,
-    handlingSubmitLoginUser,
-}) => {
-    // console.log(isSignedIn)
+const LoginForm = ({ googleTest }) => {
+    const dispatch = useDispatch()
+    const {   
+        openingRegView, openingForgotPINView,   
+        activatingSpinner,openingQASideBar,
+        settingCurrentUser, gettingLoginResponseData, 
+        handlingIsLoggedIn, handlingIsLoggedOut,
+} = bindActionCreators(actionCreators, dispatch)
+    const regView = useSelector((state) => state.contactSectionState.regView)
+    const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
+    const language = useSelector((state) => state.sideBarState.language)
+
     const [typeOfPIN, setTypeOfPIN ] = useState(false)
+    const url_userLoginITC = "https://intense-atoll-00786.herokuapp.com/api/users/login"
     
+
     const onSubmit = async(values) => {
         handlingSubmitLoginUser(values)
+    }
+
+    const handlingSubmitLoginUser = async(user) => {
+        openingQASideBar(false) //action  
+        activatingSpinner(true) //action
+        setTimeout(async() => {
+            try {
+                const { data } = await axios.post(url_userLoginITC, user)
+                console.log(data)
+                localStorage.setItem('SH3CK_TOKEN', data.token)
+                const response = await verifyingTokenRequest(data.token)
+                console.log(response)
+                settingCurrentUser(response.data) //action
+                gettingLoginResponseData(response)  //action
+                activatingSpinner(false) //action
+                handlingIsLoggedIn(true)
+                handlingIsLoggedOut(false) //action
+                console.log('Usuaurio encontrado y hace login')    
+            } catch (error) {
+                console.log(error)
+                gettingLoginResponseData(error.response)
+                activatingSpinner(false) //action
+            }
+        },3000)
+        
     }
 
     const formik = useFormik({
@@ -56,21 +84,13 @@ const LoginForm = ({
 
     if (regView){
         return(
-            <RegisterForm 
-            handlingSubmitUser={handlingSubmitUser}
-            language={language}
-            isSignedIn={isSignedIn}
-            />
+            <RegisterForm />
         )
     }
 
     if (forgotPIN){
         return(
-            <ForgotPINForm
-            handlingNewPINRequest={handlingNewPINRequest}
-            language={language}
-            toggleForgotPINState={toggleForgotPINState}
-            />
+            <ForgotPINForm />
         ) 
         
     }
@@ -121,19 +141,21 @@ const LoginForm = ({
                 <button
                 className="sendDataBtn"
                 type="submit"
-                >{language === 'ES' ? infoContact.loginFormSendBtn : infoContact.loginFormSendBtn_EN}</button>
+                >
+                    {/* <Link to={`/app`}> */}
+                        {language === 'ES' ? infoContact.loginFormSendBtn : infoContact.loginFormSendBtn_EN}
+                    {/* </Link> */}
+                </button>
                 <button
-                onClick={toggleRegView}
+                onClick={() => openingRegView(!regView)}
                 className="regButton"
                 type="submit"
                 >{language === 'ES' ? infoContact.loginFormRegBtn : infoContact.loginFormRegBtn_EN}</button>
                 <span
-                onClick={toggleForgotPINState} 
+                onClick={() => openingForgotPINView(!forgotPIN)} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
                 <GoogleAuth5
-                isSignedIn={isSignedIn}
                 googleTest={googleTest}
-                language={language}
                 />
             </form>
 

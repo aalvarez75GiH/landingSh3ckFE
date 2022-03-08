@@ -1,8 +1,12 @@
 import React from 'react'
 import Button from '../buttons/button'
 import { infoHIW } from '../../utils/data'
+import { useSelector } from 'react-redux'
 
-const HiwSection = ({ language }) => {
+const HiwSection = () => {
+    
+    const language = useSelector((state) => state.sideBarState.language)
+    
     return (
         <>
             <div 

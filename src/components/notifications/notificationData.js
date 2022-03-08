@@ -20,9 +20,9 @@ export const responseDataLogin = {
     errorCode: 400,
     errorMessage:` No te encontramos en nuestra Base de datos. Pueden ser dos cosas: usuario/PIN incorrectos o no estas registrado.`,
     errorMessage_EN: 'We are sorry, we couldn`t find you at our Data Base. It can be weather your entered a invalid pin number or you are not registered',
-    successCode: 201,
-    successMessage:`Bienvenido, ¿Te gustaría chequear un producto?`,
-    successMessage_EN:'Would you like to check a product with us?',
+    // successCode: 201,
+    // successMessage:`Bienvenido, ¿Te gustaría chequear un producto?`,
+    // successMessage_EN:'Would you like to check a product with us?',
 }
 export const responseDataNewPIN = {
     errorCode: 400,

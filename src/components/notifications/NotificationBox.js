@@ -5,29 +5,66 @@ import { FaTimes } from 'react-icons/fa'
 import { regularCopy } from './notificationData'
 import { Link as LinkS } from 'react-scroll'
 import { OffsetHandler } from '../../utils/settingOffsets'
+import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../../components/notifications/notificationData'
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../state'
+import { useEffect } from 'react'
 
-
-const NotificationBox = ({ 
-    response, 
-    responseData, 
-    toggleNotification,
-    language,
+const NotificationBox = ({  
+    // toggleNotification,
 }) => {
+    let responseData
+    const dispatch = useDispatch()
+    const {  
+        settingResponse,
+        activatingForm, 
+        gettingLoginResponseData,
+        openingContactSection 
+    } = bindActionCreators(actionCreators, dispatch)
+
+    const language = useSelector((state) => state.sideBarState.language)
+    const active = useSelector((state) => state.contactSectionState.active)
+    const loginResponse = useSelector((state) => state.homeState.loginResponse)
+    // const response = useSelector((state) => state.contactSectionState.response)
+    const response = useSelector((state) => loginResponse ? loginResponse : state.contactSectionState.response)
+    const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
     console.log(response)
     console.log(response.config)
+    console.log(loginResponse)
     const url = response.config.url
-    const url_regUsers = "https://intense-atoll-00786.herokuapp.com/api/users"
+    // const url_regUsers = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_interestedUsers = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
+   
+    
+    if (response && active === 'interested'){
+        responseData = responseDataInterested 
+    }
+    if (response && forgotPIN){
+        responseData = responseDataNewPIN
+    }
+    if (response && active === 'check'){
+        responseData = responseDataRegister
+    }
+    if (loginResponse && active === 'check'){
+        responseData = responseDataLogin
+    } 
+    
 
+    
     const capitalizeFirstLetter = (string) => {
-        // const str = 'flexiple';
         const str2 = string.charAt(0).toUpperCase() + string.slice(1)
         console.log(str2.split(' ')[0]);
         return str2.split(' ')[0]    
     }
 
-      
-    
+    const closingNotification = () => {
+        settingResponse(null)
+        gettingLoginResponseData(null) //action
+        activatingForm(null) //action
+        openingContactSection(false) //action
+    }
+
     const nameSplittedAndCapitalized = capitalizeFirstLetter(response.data)
     // console.log('splitting response: ', responseSplitted[0])
     if (response){
@@ -36,7 +73,7 @@ const NotificationBox = ({
             // <div className="notificationContainer">
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS 
-                onClick={toggleNotification}
+                onClick={closingNotification}
                 to="nextStepSection"  
                 activeClass="active"
                 spy={true}
@@ -60,7 +97,7 @@ const NotificationBox = ({
                     
                     <LinkS 
                     className="notificationBtn"
-                    onClick={toggleNotification}
+                    onClick={closingNotification}
                     to="nextStepSection"  
                     activeClass="active"
                     spy={true}
@@ -76,7 +113,7 @@ const NotificationBox = ({
             return (
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS 
-                onClick={toggleNotification}
+                onClick={closingNotification}
                 to="nextStepSection"  
                 activeClass="active"
                 spy={true}
@@ -105,7 +142,7 @@ const NotificationBox = ({
                     offset={OffsetHandler('checkAProduct')}
                     duration={500} 
                     className="notificationBtn"
-                    onClick={toggleNotification}
+                    onClick={closingNotification}
                     >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
                 </div>
             </div>   
@@ -121,7 +158,7 @@ const NotificationBox = ({
                 smooth={true}
                 offset={url === url_interestedUsers ? -5000 : OffsetHandler('checkAProduct') }
                 duration={url === url_interestedUsers ? 1000 : 500} 
-                onClick={toggleNotification}
+                onClick={closingNotification}
                 className="closeIconContainer">
                     <FaTimes/>
                 </LinkS>
@@ -143,7 +180,7 @@ const NotificationBox = ({
                     offset={url === url_interestedUsers ? -5000 : OffsetHandler('checkAProduct') }
                     duration={url === url_interestedUsers ? 1000 : 500} 
                     className="notificationBtn"
-                    onClick={toggleNotification}
+                    onClick={closingNotification}
                     >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
                 </div>
                 
@@ -160,7 +197,7 @@ const NotificationBox = ({
                 smooth={true}
                 offset={OffsetHandler('checkAProduct')}
                 duration={500} 
-                onClick={toggleNotification}
+                onClick={closingNotification}
                 className="closeIconContainer">
                     <FaTimes/>
                 </LinkS>
@@ -182,7 +219,7 @@ const NotificationBox = ({
                     offset={OffsetHandler('checkAProduct')}
                     duration={500}
                     className="notificationBtn"
-                    onClick={toggleNotification}
+                    onClick={closingNotification}
                     >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
                 </div>
                 

@@ -1,15 +1,20 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import QAAccordion from './QaAccordion'
+import { useSelector, useDispatch } from 'react-redux'
+import { actionCreators } from '../../state'
+import { bindActionCreators } from '@reduxjs/toolkit'
 
 
+const QASideBar = ({ language }) => {
+    const dispatch = useDispatch()
+    const {  openingQASideBar } = bindActionCreators(actionCreators, dispatch)
+    const QASideBarOpen = useSelector((state) => state.sideBarState.QASideBarOpen)
 
+     const toggleQASideBarToClose = () => {
+        openingQASideBar(false)
+    }
 
-const QASideBar = ({ 
-    QASideBarOpen,  
-    language,
-    toggleQASideBarToClose
-}) => {
     return (
         <aside
         className={`${QASideBarOpen ? "QASideBarContainerOpen" : "QASideBarContainer" }`}>

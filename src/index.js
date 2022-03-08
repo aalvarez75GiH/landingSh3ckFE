@@ -1,15 +1,29 @@
 import React from 'react'
-import  ReactDOM  from 'react-dom'
 import App from './App'
-// import Application from './components/buttons/applications'
+import { Provider } from 'react-redux'
+import configureAppStore from './state/configureStore'
+import { render } from 'react-dom'
+// import { store } from './state/configureStore'
+
+const store = configureAppStore()
+
 
 const container = document.getElementById('root')
 
-ReactDOM.render(
 
-<React.StrictMode>
-    <App/>
-</React.StrictMode>,
-container
+const renderApp = () => {
+    render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    container
+    )
+}
 
-)
+if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('./App', renderApp)
+}
+renderApp()
+
+
+

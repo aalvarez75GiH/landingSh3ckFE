@@ -1,9 +1,11 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { infoFooter } from '../../utils/data'
+import { useSelector } from 'react-redux'
 
 
-const FooterSection = ({language}) => {
+const FooterSection = () => {
+    const language = useSelector((state) => state.sideBarState.language)
     return (
         <div className="footerContainer">
             <div className="footerWrap">

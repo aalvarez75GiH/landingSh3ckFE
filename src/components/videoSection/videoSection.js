@@ -4,13 +4,12 @@ import useMobilDetection from '../../utils/mobilDetection'
 import useMobilDetect from '../../utils/mobilHook'
 import VideoJS from '../../components/video'
 import { infoVideo } from '../../utils/data'
+import { useSelector } from 'react-redux'
 
-const VideoSection = ({language}) => {
+const VideoSection = () => {
     const mobil = useMobilDetect()
     const mobil2 = useMobilDetection() 
-    // console.log(mobil2.screenWidth)
-    // console.log(mobil)
-
+    const language = useSelector((state) => state.sideBarState.language)
     return (
         <div 
         className="infoContainer"

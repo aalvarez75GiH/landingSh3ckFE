@@ -7,21 +7,32 @@ import { MdSaveAlt } from 'react-icons/md'
 import { infoMainSideBar } from '../../utils/data'
 
 
+import { actionCreators } from '../../state'
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from '@reduxjs/toolkit'
+
 // import LoginForm from '../contactSection/loginForm'
 
 
 const MainSideBar = ({ 
-    toggleMainSideBar, 
-    mainSideBarOpen, 
-    username,
-    loggedIn,
-    handlingSubmitLogOutUser, 
-    language,
-    loginData,
-    toggleQASideBarToOpen
+    // handlingSubmitLogOutUser 
 }) => {
-    console.log(loginData)
-    // console.log(loggedIn)
+    const dispatch = useDispatch()
+    // const {  openingMainSideBar, openingQASideBar } = bindActionCreators(actionCreators, dispatch)
+    const {  
+        openingMainSideBar, openingQASideBar,
+        handlingIsSignedInGoogle, activatingForm,
+        gettingLoginResponseData, handlingIsLoggedIn,
+        handlingIsLoggedOut, openingContactSection,
+        settingCurrentUser,
+    } = bindActionCreators(actionCreators, dispatch)
+    const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
+    const username = useSelector((state) => state.homeState.currentUser)
+    const language = useSelector((state) => state.sideBarState.language)
+    const loginResponse = useSelector((state) => state.homeState.loginResponse)
+    const loggedIn = useSelector((state) => state.homeState.loggedIn)
+    const loginData = useSelector((state) => state.homeState.loginData)
+    const isSignedIn = useSelector((state) => state.homeState.isSignedIn)
     
     const capitalizeFirstLetter = (string) => {
         // const str = 'flexiple';
@@ -29,7 +40,35 @@ const MainSideBar = ({
         console.log(str2.split(' ')[0]);
         return str2.split(' ')[0]    
     }
-    const nameSplittedAndCapitalized = capitalizeFirstLetter(username)
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(username ? username : loginResponse.data )
+
+    const handlingSubmitLogOutUser = async() => {
+        
+        if (isSignedIn) {
+            console.log('pasa por isSignedIn')
+            const auth = window.gapi.auth2.getAuthInstance()
+            await auth.signOut()
+            
+            handlingIsSignedInGoogle(false) //action
+            activatingForm(null) //action
+            openingMainSideBar(!mainSideBarOpen)  //action
+            gettingLoginResponseData(null) //action
+            openingContactSection(false) //action
+        }
+        if (loggedIn){
+            console.log('pasa por loggedIn')
+            localStorage.removeItem('SH3CK_TOKEN')
+            gettingLoginResponseData(null) //action
+            activatingForm(null) //action
+            openingMainSideBar(!mainSideBarOpen) //action
+            handlingIsLoggedIn(false) //action
+            handlingIsLoggedOut(true) //action
+            openingContactSection(false) //action
+            settingCurrentUser(null) //action
+        }
+        
+        
+    }
 
     if (loggedIn && mainSideBarOpen){
        return (
@@ -38,7 +77,7 @@ const MainSideBar = ({
                 <div className="mainSideContactForms">
                     <div 
                         className="mainSideBarIcon"
-                        onClick={ toggleMainSideBar }
+                        onClick={ () => openingMainSideBar(!mainSideBarOpen) }
                     >
                         <FaTimes className="mainSideCloseIcon"/>
                     </div>
@@ -80,7 +119,7 @@ const MainSideBar = ({
                                 {language === 'ES' ? infoMainSideBar.option3Copy : infoMainSideBar.option3Copy_EN}
                             </div>
                             <div 
-                            onClick={toggleQASideBarToOpen}
+                            onClick={() => openingQASideBar(true)}
                             className="mainSideBarContentItems">
                                 <div className="mainSideBarUserOptionsIcon">
                                     <BiQuestionMark/>

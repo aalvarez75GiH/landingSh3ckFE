@@ -1,21 +1,27 @@
-import React, {useState, useEffect} from 'react'
-import { FaBars,FaSign,FaPuzzlePiece, FaVideo, FaHome } from 'react-icons/fa'
+import React from 'react'
+import { FaPuzzlePiece, FaVideo, FaHome } from 'react-icons/fa'
 import { Link as LinkR } from 'react-router-dom'
 import { Link as LinkS } from 'react-scroll'
 import { IoMdCart } from 'react-icons/io'
-import { BiUser, BiUserCheck } from 'react-icons/bi'
+import { BiUser } from 'react-icons/bi'
 import { OffsetHandler } from '../../utils/settingOffsets'
 import { infoNavBarMobil } from '../../utils/data'
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../state'
+console.log(actionCreators)
 
 
 const NavBarMobil = ({ 
     toggleSideBar, 
-    login, 
-    toggleMainSideBar,
-    language,
-    toggleLoginSideBarToOpen
 }) => {
-        return (
+    const isOpen = useSelector((state) => state.sideBarState.isOpen )
+    const language = useSelector((state) => state.sideBarState.language)
+    const dispatch = useDispatch()
+    const { openingSideBar } = bindActionCreators(actionCreators, dispatch)
+    // let myAction = openingSideBar(!isOpen)
+        
+    return (
             <>
                 <nav 
                 className="navMobil" >
@@ -24,12 +30,13 @@ const NavBarMobil = ({
                     <div 
                     className="mobileIconMobil">
                         <BiUser 
-                        onClick={toggleSideBar}
+                        // onClick={toggleSideBar}
+                        onClick={() => openingSideBar(!isOpen)}
                         className="faBarsIcon"/>
                     </div>
                 </div>
                 <div className="navMenuButtonsContainer">
-                <div className="navMenuButton">
+                    <div className="navMenuButton">
                         <LinkS 
                         to="nextStepSection" 
                         className="navLinksMobil" 
