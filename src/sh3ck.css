@@ -1221,7 +1221,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 }
 /* ************** checkSection ************** */
 
-.checkSectionContainer {
+/* .checkSectionContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1245,16 +1245,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     background-position-x: center;
 }
 
-/* .checkSection-BtnWrap {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 300px;
-    margin-top: 7%;
-    
-} */
+
 .checkSection-BtnWrap {
     display: flex;
     justify-content: center;
@@ -1272,7 +1263,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     height: 115px;
     background-color: #010606;
     border-style: none;
-    /* border-radius: 60px; */
     font-size: 1.5rem;
     color: #ffffff;
     margin-left: 5%;
@@ -1284,17 +1274,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     height: 115px;
     background-color: #FAD570;
     border-style: none;
-    /* border-radius: 60px; */
     color: #010606;
     font-size: 1.5rem;
     color: #010606;
     margin-left: 5%;
     margin-top: 1%;
-}
-.checkSection-notNow {
-    margin-left: 7%;
-    margin-top: 3%;
-}
+} */
 
 .navMobilForCS {
     background-color: #ffffff;
@@ -1304,11 +1289,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     top: 0;
     z-index: 10;
 }
-
-
-
-
-
 
 /* ************** dropDownList ************** */
 
@@ -1988,7 +1968,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     align-items: center;
     width: 100%;
     height: 500px; */
-    margin-top: 45%;
+    /* margin-top: 45%; */
     
 }
 
@@ -2722,18 +2702,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     }
 
     /****** CheckSection  ******/
-    .checkSection-BtnWrap {
+    /* .checkSection-BtnWrap {
         margin-top: 65%;
         
-    }
-    .checkSection-checkBtn {
+    } */
+    /* .checkSection-checkBtn {
         width: 45%;
-    }
+    } */
     
     
-    .checkSection-exitBtn {
+    /* .checkSection-exitBtn {
         width: 45%;
-    }
+    } */
     /* *****  SideBar *********** */
 
     .sideBarLink {
@@ -3223,7 +3203,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 }
     /* ************** checkSection ************** */
 
-    .checkSection-BtnWrap {
+    /* .checkSection-BtnWrap {
         margin-top: 65%;
     }
     .checkSection-checkBtn {
@@ -3232,7 +3212,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     .checkSection-exitBtn {
         width: 60%;
-    }
+    } */
 
     /* ************ FooterSection **************************** */
 
@@ -3941,7 +3921,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
         /* ************** checkSection ************** */
 
-.checkSectionContainer {
+/* .checkSectionContainer {
     width: 100%;
     margin-top: unset;
     margin-left: unset;
@@ -3961,7 +3941,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .checkSection-exitBtn {
     width: 80%;
   
-}
+} */
     
     /* ************ FooterSection **************************** */
 
@@ -4660,7 +4640,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     /* *****  checkSection *********** */
 
 
-.checkSectionContainer {
+/* .checkSectionContainer {
     width: 100%;
     margin-top: unset;
     margin-left: unset;
@@ -4682,7 +4662,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .checkSection-exitBtn {
     width: 80%;
 }
-   
+    */
 
     /* ************ FooterSection **************************** */
 
@@ -5438,13 +5418,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         margin-top: 10%;
     }
      /* ************************************* */
-    .checkSectionWrapper {
+    /* .checkSectionWrapper {
         height: 100%;
         background-size: 60% 42%;
     }
     
     .checkSection-BtnWrap {
-        /* margin-top: 95%; */
+        
         margin-top: 20%;
         height: 100%;
     }
@@ -5460,7 +5440,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         margin-top: 2%;
         height: 70px;
     }
-   
+    */
     /* ************ FooterSection **************************** */
 
     .footerContainer {
@@ -6167,7 +6147,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     height: 100vh;
     background-color: #eeeeee;
 }  
-   .checkSectionContainer {
+   /* .checkSectionContainer {
     width: 100%;
     height: 650px;
     background-color: #eeeeee;
@@ -6193,7 +6173,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     width: 80%;
     margin-top: 2%;
     height: 70px;
-}
+} */
 
    
 

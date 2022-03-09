@@ -3,6 +3,12 @@ import { infoCheck } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
+import { 
+    CheckSectionContainer, CheckSectionWrapper, 
+    CheckSectionBtnWrap,CheckSectionCheckBtn,
+    CheckSectionExitBtn
+
+} from './checkSectionElements'
 
 
 const CheckSection = () => {
@@ -30,21 +36,36 @@ const CheckSection = () => {
     }
 
     return (
-        <div className="checkSectionContainer">
-            <div className="checkSectionWrapper">
-                <div className="checkSection-BtnWrap">
-                        <button className="checkSection-checkBtn">
-                        {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
-                        </button>
-                        <button 
-                        onClick={gettingOutOfCheckApp}
-                        className="checkSection-exitBtn">
-                        {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN}
+        // <div className="checkSectionContainer">
+        //     <div className="checkSectionWrapper">
+        //         <div className="checkSection-BtnWrap">
+        //                 <button className="checkSection-checkBtn">
+        //                 {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
+        //                 </button>
+        //                 <button 
+        //                 onClick={gettingOutOfCheckApp}
+        //                 className="checkSection-exitBtn">
+        //                 {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN}
         
-                        </button>
-                </div>
-            </div>
-        </div>
+        //                 </button>
+        //         </div>
+        //     </div>
+        // </div>
+
+        <CheckSectionContainer>
+            <CheckSectionWrapper>
+                <CheckSectionBtnWrap>
+                    <CheckSectionCheckBtn>
+                        {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
+                    </CheckSectionCheckBtn>
+                    <CheckSectionExitBtn
+                    onClick={gettingOutOfCheckApp}
+                    >
+                        {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN}
+                    </CheckSectionExitBtn>    
+                </CheckSectionBtnWrap>
+            </CheckSectionWrapper>
+        </CheckSectionContainer>
     )   
 }
 
