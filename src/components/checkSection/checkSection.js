@@ -56,8 +56,7 @@ const CheckSection = () => {
             <CheckSectionWrapper>
                 <CheckSectionBtnWrap>
                     <CheckSectionCheckBtn>
-                        Dale pues
-                        {/* {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN} */}
+                        {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
                     </CheckSectionCheckBtn>
                     <CheckSectionExitBtn
                     onClick={gettingOutOfCheckApp}
