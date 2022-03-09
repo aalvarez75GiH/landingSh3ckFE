@@ -56,7 +56,8 @@ const CheckSection = () => {
             <CheckSectionWrapper>
                 <CheckSectionBtnWrap>
                     <CheckSectionCheckBtn>
-                        {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
+                        Nojoda
+                        {/* {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN} */}
                     </CheckSectionCheckBtn>
                     <CheckSectionExitBtn
                     onClick={gettingOutOfCheckApp}
