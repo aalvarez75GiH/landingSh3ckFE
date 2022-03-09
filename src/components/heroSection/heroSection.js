@@ -23,13 +23,13 @@ const screenWidth = mobil2.screenWidth
 
 const language = useSelector((state) => state.sideBarState.language)
 const curtain_open = useSelector((state) => state.heroSection.curtain_active)
-const isOpen = useSelector((state) => state.heroSection.WWD_Open)
+const WWD_Open = useSelector((state) => state.heroSection.WWD_Open)
 
 
 
 // console.log(mobil2.screenWidth)
 const internalOpening = () => {
-    openingHeroSection_WWD(!isOpen)
+    openingHeroSection_WWD(!WWD_Open)
     heroSection_curtain(!curtain_open)
 }
 const handlingContactSection = () => {
@@ -105,7 +105,7 @@ if (mobil2.screenWidth < 768 || mobil) {
                 </div>
                 <div 
                 id="wwdSection"
-                className={ !isOpen ? 'heroSection_WWD' : 'heroSection_WWD_open'}>
+                className={ !WWD_Open ? 'heroSection_WWD' : 'heroSection_WWD_open'}>
                     <LinkS
                     to={'heroSection'}  
                     activeClass="active"
