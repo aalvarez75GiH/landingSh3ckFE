@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import image from '../../images/8443731_business_start_up_launch_rocket_icon.svg'
 
+//  ***********StartSh3ckProcess **************************
 export const CheckSectionContainer = styled.div `
     display: flex;
     flex-direction: column;
@@ -173,5 +174,128 @@ export const CheckSectionExitBtn = styled.button `
         margin-top: 2%;
         height: 70px;
     }
+
+`
+
+//  *********** CitySection **************************
+
+export const CitySectionContainer = styled.div `
+    position: fixed;
+    z-index: 999;
+    width: ${({ isOpen })=> (isOpen ? '100%' : '30%')} ;
+    height: 100%;
+    background-color: red;
+    display: grid;
+    align-items: center;
+    left:${({ isOpen })=> (isOpen ? '0%' : '100%')};
+    right: 0;
+    transition: 0.6s ease-in-out;
+    opacity:${({ isOpen })=> (isOpen ? '1' : '1')};
+    
+`
+
+// .mainSideBarContainerOpen {
+//     position: fixed;
+//     z-index: 999;
+//     width: 100%;
+//     height: 100%;
+//     background-color: #eeeeee;
+//     display: grid;
+//     align-items: center;
+//     right: 0%;
+//     transition: 0.6s ease-in-out;
+//     opacity: 1;
+// }
+export const CitySectionWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1000px;
+    background-colr: #010606;
+    
+    
+`
+
+export const CitySectionBtnWrapp = styled.div `
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    margin-top: 38%;
+
+`
+export const CitySectionBtn = styled.button `
+    width: 40%;
+    height: 115px;
+    background-color: #FAD570;
+    border-style: none;
+    /* border-radius: 60px; */
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-left: 5%;
+
+`
+
+//  *********** CheckerSection **************************
+
+
+export const CheckerSectionContainer = styled.div `
+    position: fixed;
+    z-index: 999;
+    width: ${({ isOpen })=> (isOpen ? '100%' : '30%')} ;
+    height: 100%;
+    background-color: blue;
+    display: grid;
+    align-items: center;
+    left:${({ isOpen })=> (isOpen ? '0%' : '100%')};
+    right: 0;
+    transition: 0.6s ease-in-out;
+    opacity:${({ isOpen })=> (isOpen ? '1' : '1')};
+    
+`
+
+// .mainSideBarContainerOpen {
+//     position: fixed;
+//     z-index: 999;
+//     width: 100%;
+//     height: 100%;
+//     background-color: #eeeeee;
+//     display: grid;
+//     align-items: center;
+//     right: 0%;
+//     transition: 0.6s ease-in-out;
+//     opacity: 1;
+// }
+export const CheckerSectionWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1000px;
+    background-colr: #010606;
+    
+    
+`
+
+export const CheckerSectionBtnWrapp = styled.div `
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    margin-top: 38%;
+
+`
+export const CheckerSectionBtn = styled.button `
+    width: 40%;
+    height: 115px;
+    background-color: #FAD570;
+    border-style: none;
+    /* border-radius: 60px; */
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-left: 5%;
 
 `

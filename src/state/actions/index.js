@@ -165,6 +165,57 @@ export const gettingGoogleLoginData = (value) => {
     }
 } 
 
+// ****** CheckSection Actions creators ***************
+
+export const settingLevel = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'level',
+            payload: value
+        })
+    }
+}
+
+export const settingisOpen = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'isOpen',
+            payload: status
+        })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
