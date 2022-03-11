@@ -1,6 +1,7 @@
 const checkSectionReducer = (
     state={
         level: 'Starting',
+        previous_level: '',
         user: '',
         checker:'',
         creation_time: '',
@@ -18,8 +19,10 @@ const checkSectionReducer = (
         
         case 'level':
             return  {...state, level: action.payload}
-        // case 'level':
-        //     return  {...state, level: action.payload}
+        
+        case 'previous_level':
+            return  {...state, previous_level: action.payload}
+
         case 'isOpen':
             return  {...state, isOpen: action.payload}
         default:

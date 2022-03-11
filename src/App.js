@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './views/home'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// import CitiesSection from './components/checkApp/citiesSection'
-// import CheckersSection from './components/checkApp/checkersSection'
-// import CheckStarting from './components/checkApp/checkStarting'
-
+import Home from './views/home'
+import CitiesSection from './components/checkApp/citiesSection'
+import CheckersSection from './components/checkApp/checkersSection'
+import ContactSection from './components/contactSection/contactSection'
+import CheckStarting from './components/checkApp/checkStarting'
 import './sh3ck.css'
 
 const App = () => {
@@ -12,13 +12,12 @@ const App = () => {
     return (
         <Router>
             <Home/>
-            {/* <Routes>
-                <Route path="/" exact={true} element={<Home />}/> 
-                <Route path="/startingPoint"  element={<CheckStarting  />}/>
-                <Route path="/firstStep"  element={<CitiesSection  />}/>
-                <Route path="/secondStep" element={<CheckersSection />}/>
-                
-            </Routes> */}
+            <Routes>
+                {/* <Route path="/" exact={true} element={<Home />}/> */}
+                {/* <Route path="/checkStarting" exact={true} element={<CheckStarting />}/>
+                <Route path="/citiesSection"  element={<CitiesSection />}/>
+                <Route path="/checkersSection"  element={<CheckersSection />}/>  */}
+            </Routes>
         </Router>
     )
 }

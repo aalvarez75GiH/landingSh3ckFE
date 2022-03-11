@@ -4,57 +4,56 @@ import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
 import { 
-    CitySectionContainer, CitySectionWrapper,
-    CitySectionBtnWrapp, CitySectionBtn
+    CategorySectionContainer, CategorySectionWrapper,
+    CategorySectionBtnWrapp, CategorySectionBtn
  
 
 } from './checkAppElements'
 
 
-const CitiesSection = () => {
+const CategorySection = () => {
     
     const dispatch = useDispatch()
     const {
-        settingLevel, settingisOpen, settingPreviousLevel    
+        settingLevel, settingPreviousLevel    
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
     const test = () => {
-        settingLevel('level2')
-        settingPreviousLevel('level1')
+        settingLevel('level3')
+        settingPreviousLevel('level2')
     }
   
     const comeBack = () => {
-        settingLevel('Starting')
-        settingPreviousLevel('level1')
+        settingLevel('level1')
+        settingPreviousLevel('level2')
     }
     
     return (
         
-        <CitySectionContainer
-        initial={previous_level === 'level2' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
+        <CategorySectionContainer
+        initial={previous_level === 'level3' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}
         exit={{ opacity: 0 }}
         >
-            <CitySectionWrapper>
-                <CitySectionBtnWrapp>
-                <CitySectionBtn
+            <CategorySectionWrapper>
+                <CategorySectionBtnWrapp>
+                <CategorySectionBtn
                     onClick={test}
                     >
                         Continuar
                         {/* {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN} */}
-                    </CitySectionBtn> 
-                    <CitySectionBtn
+                    </CategorySectionBtn> 
+                    <CategorySectionBtn
                     onClick={comeBack}
                     >
                         Volver
-                    </CitySectionBtn>    
-                </CitySectionBtnWrapp>
-            </CitySectionWrapper>
-        </CitySectionContainer>
+                    </CategorySectionBtn>    
+                </CategorySectionBtnWrapp>
+            </CategorySectionWrapper>
+        </CategorySectionContainer>
 
     )   
 }
 
-export default CitiesSection
-
+export default CategorySection

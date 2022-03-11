@@ -23,6 +23,7 @@ const CheckStarting = () => {
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
+    const previous_level = useSelector((state) => state.checkSectionState.previous_level)
 
     const gettingOutOfCheckApp = async() => {
         localStorage.removeItem('SH3CK_TOKEN')
@@ -38,16 +39,16 @@ const CheckStarting = () => {
     }
 
     const test = () => {
-        settingisOpen(true)
+        // settingisOpen(true)
         settingLevel('level1')
     }
     return (
     
         <CheckSectionContainer
-        // initial={{ x: '100vw' }}
-        // animate={{ x: 0 }}
-        // transition={{ stiffness: 33 }}
-        // isOpen={true}
+        initial={previous_level === 'level1' ? { x: '-100vw', opacity: 1  } : { x: '100vw', opacity: 1  }}
+        animate={{ x: 0 }}
+        transition={{ stiffness: 33 }}
+        
         >
             <CheckSectionWrapper>
                 <CheckSectionBtnWrap>

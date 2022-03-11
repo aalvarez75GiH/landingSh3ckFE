@@ -176,6 +176,15 @@ export const settingLevel = (value) => {
     }
 }
 
+export const settingPreviousLevel = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'previous_level',
+            payload: value
+        })
+    }
+}
+
 export const settingisOpen = (status) => {
     return(dispatch) => {
         dispatch({

@@ -17,35 +17,24 @@ const CheckersSection = () => {
     
     const dispatch = useDispatch()
     const {  
-        activatingForm, openingRegView,  
-        settingCurrentUser, gettingLoginResponseData,
-        openingContactSection,handlingIsLoggedIn, 
-        handlingIsSignedInGoogle, settingResponse, 
-        gettingGoogleLoginData, settingisOpen,
-        settingLevel
+        settingLevel, settingPreviousLevel
 
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
-
-    const gettingOutOfCheckApp = async() => {
-        localStorage.removeItem('SH3CK_TOKEN')
-        handlingIsSignedInGoogle(false) //action
-        handlingIsLoggedIn(false) //action
-        activatingForm(null) //action
-        openingContactSection(false) //action
-        openingRegView(false) //action 
-        gettingGoogleLoginData(null)
-        gettingLoginResponseData(null) //action
-        settingResponse(null)
-        settingCurrentUser(null) //action
-        settingisOpen(false)
-        settingLevel('Starting')
+    const previous_level = useSelector((state) => state.checkSectionState.previous_level)
+    
+    const test = () => {
+        settingLevel('level4')
+        settingPreviousLevel('level3')
     }
-
+    const comeBack = () => {
+        settingLevel('level2')
+        settingPreviousLevel('level3')
+    }
     return (
         <CheckerSectionContainer
-        initial={{ x: '100vw', opacity: 0  }} 
+        initial={previous_level === 'level4' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}
         exit={{ opacity: 0 }}
@@ -53,9 +42,15 @@ const CheckersSection = () => {
             <CheckerSectionWrapper>
                 <CheckerSectionBtnWrapp>
                     <CheckerSectionBtn
-                    onClick={gettingOutOfCheckApp}
+                    onClick={test}
                     >
                         Continuar
+                        {/* {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN} */}
+                    </CheckerSectionBtn> 
+                    <CheckerSectionBtn
+                    onClick={comeBack}
+                    >
+                        Volver
                         {/* {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN} */}
                     </CheckerSectionBtn>    
                 </CheckerSectionBtnWrapp>

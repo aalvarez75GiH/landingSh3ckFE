@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import InterestedUsersForm from '../contactSection/interestedUserForm'
 import LoginForm from './loginForm'
 import axios from 'axios'
@@ -11,6 +11,7 @@ import { actionCreators } from '../../state'
 
 
 const ContactSection = ({ googleTest }) => {
+    
     const dispatch = useDispatch()
     const {    
         settingResponse, openingContactSection,
@@ -49,8 +50,10 @@ const ContactSection = ({ googleTest }) => {
 return (
     <div 
     id={infoContact.id}
-    className={isContactSectionOpen ? 'contactContainer_open' : 'contactContainer' }>
+    className={ isContactSectionOpen ? 'contactContainer_open' : 'contactContainer' }>
+        
         <div className={ isContactSectionOpen ? 'contactWrapper_open' : 'contactWrapper' }>
+        
             <div className="contactForms">
              
             { !loggedIn  ? 
