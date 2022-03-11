@@ -185,16 +185,12 @@ export const CitySectionContainer = styled(motion.div) `
     position: fixed;
     z-index: 999;
     width: 100%;
-    /* width: ${({ isOpen })=> (isOpen ? '100%' : '30%')} ; */
     height: 100%;
     background-color: red;
     display: grid;
     align-items: center;
     left: 0;
-    /* left:${({ isOpen })=> (isOpen ? '0%' : '100%')}; */
     right: 0;
-    /* opacity: 0; */
-    /* opacity:${({ isOpen })=> (isOpen ? '1' : '0')}; */
     
 `
 
@@ -238,22 +234,19 @@ export const CheckerSectionContainer = styled(motion.div) `
     position: fixed;
     z-index: 999;
     width: 100%;
-    /* width: ${({ isOpen })=> (isOpen ? '100%' : '30%')} ; */
     height: 100%;
     background-color: blue;
     display: grid;
     align-items: center;
     left: 0;
-    
+    right: 0;    
 `
 export const CheckerSectionWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 1000px;
-    background-colr: #010606;
-    
-    
+    background-color: #010606;
 `
 
 export const CheckerSectionBtnWrapp = styled.div `
