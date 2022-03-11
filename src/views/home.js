@@ -15,7 +15,8 @@ import ContactSection from '../components/contactSection/contactSection'
 import NextStepSection from '../components/nextStepSection.js/nextStepSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
-import CheckSection from '../components/checkSection/checkSection'
+// import CheckSection from '../components/checkSection/checkSection'
+import CheckApp from '../components/checkApp/checkApp'
 import NotificationBox from '../components/notifications/NotificationBox'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../components/notifications/notificationData'
 import { verifyingTokenRequest } from '../requestsToApi'
@@ -144,7 +145,7 @@ console.log(response)
         <div className="superContainer">
             <MainSideBar />
             <NavBarForCS /> 
-            <CheckSection />
+            <CheckApp />
         </div>
     : null
     }
