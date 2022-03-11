@@ -11,7 +11,7 @@ import GoogleAuth5 from '../buttons/googleAuth5'
 import { useSelector, useDispatch } from 'react-redux'
 import { actionCreators } from '../../state'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { verifyingTokenRequest } from '../../requestsToApi'
+import { verifyingTokenRequest, requestToLoginUsers } from '../../requestsToApi'
 
 
 const validationSchema = yup.object({
@@ -28,13 +28,12 @@ const LoginForm = ({ googleTest }) => {
         settingCurrentUser, gettingLoginResponseData, 
         handlingIsLoggedIn, handlingIsLoggedOut,
 } = bindActionCreators(actionCreators, dispatch)
-    const regView = useSelector((state) => state.contactSectionState.regView)
-    const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
-    const language = useSelector((state) => state.sideBarState.language)
+const regView = useSelector((state) => state.contactSectionState.regView)
+const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
+const language = useSelector((state) => state.sideBarState.language)
 
-    const [typeOfPIN, setTypeOfPIN ] = useState(false)
-    const url_userLoginITC = "https://intense-atoll-00786.herokuapp.com/api/users/login"
-    
+const [typeOfPIN, setTypeOfPIN ] = useState(false)
+
 
     const onSubmit = async(values) => {
         handlingSubmitLoginUser(values)
@@ -45,7 +44,7 @@ const LoginForm = ({ googleTest }) => {
         activatingSpinner(true) //action
         setTimeout(async() => {
             try {
-                const { data } = await axios.post(url_userLoginITC, user)
+                const { data } = await requestToLoginUsers(user)
                 console.log(data)
                 localStorage.setItem('SH3CK_TOKEN', data.token)
                 const response = await verifyingTokenRequest(data.token)

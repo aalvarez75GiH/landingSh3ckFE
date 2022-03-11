@@ -6,6 +6,7 @@ import { infoContact } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { actionCreators } from '../../state'
 import { bindActionCreators } from '@reduxjs/toolkit'
+import { requestToGenerateNewPIN } from '../../requestsToApi'
 
 
 const validationSchema = yup.object({
@@ -17,7 +18,7 @@ const validationSchema = yup.object({
 const ForgotPINForm = ({ 
     language 
 }) => {
-    const url_generatePIN_ITC = "https://intense-atoll-00786.herokuapp.com/api/users/newPIN"
+ 
     const dispatch = useDispatch()
     const {   openingForgotPINView, activatingSpinner, settingResponse  } = bindActionCreators(actionCreators, dispatch)
     const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
@@ -30,7 +31,7 @@ const ForgotPINForm = ({
         // console.log(dataToRequest)
         activatingSpinner(true)
         try {
-            const response = await axios.put(url_generatePIN_ITC, dataToRequest)
+            const response = await requestToGenerateNewPIN(dataToRequest)
             console.log(response.status)
             if (response.status === 200){
                 console.log(response)

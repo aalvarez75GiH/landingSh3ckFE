@@ -7,6 +7,7 @@ import GoogleAuth5 from '../buttons/googleAuth5'
 import { useSelector, useDispatch } from 'react-redux'
 import { actionCreators } from '../../state'
 import { bindActionCreators } from '@reduxjs/toolkit'
+import { addingRegularUsersToDB } from '../../requestsToApi'
 
 const validationSchema = yup.object({
     fullName: yup.string().min(3).max(100).required('hola, no te olvides de colocar tu nombre completo'),
@@ -17,7 +18,7 @@ const validationSchema = yup.object({
 
 
 const RegisterForm = ({ googleTest }) => {
-    const url_usersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/users"
+    
     const dispatch = useDispatch()
     const {   
         openingRegView, openingContactSection, 
@@ -39,7 +40,7 @@ const RegisterForm = ({ googleTest }) => {
         activatingSpinner(true)
         setTimeout(async()=> {
             try {
-                const response = await axios.post(url_usersInTheCloud, user)
+                const response = await addingRegularUsersToDB(user)
                     console.log(response)
                     if (response.status === 201){
                         settingResponse(response)

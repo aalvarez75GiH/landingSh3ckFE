@@ -3,6 +3,7 @@ import InterestedUsersForm from '../contactSection/interestedUserForm'
 import LoginForm from './loginForm'
 import axios from 'axios'
 import FormHeader from './formHeader'
+import { addingInterestedUserToDB } from '../../requestsToApi'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../notifications/notificationData'
 import { infoContact } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
@@ -21,14 +22,14 @@ const ContactSection = ({ googleTest }) => {
     const active = useSelector((state) => state.contactSectionState.active)
     const loggedIn = useSelector((state) => state.homeState.loggedIn)
     const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
-    
+    const URL_LOCAL_BACKEND = 'http://192.168.1.102:5000'
  
   
     const handlingSubmitInterestedUser = (interestedUser) => {
         activatingSpinner(true)
         setTimeout(async()=> {
             try {
-                const response = await axios.post(url_interestedUsersInTheCloud, interestedUser)
+                const response = await addingInterestedUserToDB(interestedUser)
                     console.log(response)
                     if (response.status === 201){
                         settingResponse(response)

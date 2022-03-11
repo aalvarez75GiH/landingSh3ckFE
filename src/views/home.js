@@ -19,7 +19,7 @@ import LoadingSpinner from '../utils/loadingSpinner'
 import CheckApp from '../components/checkApp/checkApp'
 import NotificationBox from '../components/notifications/NotificationBox'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../components/notifications/notificationData'
-import { verifyingTokenRequest } from '../requestsToApi'
+import { verifyingTokenRequest, addingGoogleUserToDB } from '../requestsToApi'
 // ************************* Redux imports
 import { actionCreators } from '../state'
 import { useSelector, useDispatch } from 'react-redux'
@@ -47,7 +47,7 @@ const Home = () => {
     const mobil = useMobilDetect()
     const mobil2 = useMobilDetection()
     // const url_userLogin = "http://192.168.1.102:5000/api/users/login"
-    const url_userLoginITC = "https://intense-atoll-00786.herokuapp.com/api/users/login"
+    
     let auth
     useEffect(() => {
         gettingTokenForLocalSignIn()
@@ -105,14 +105,8 @@ const Home = () => {
         try {
             console.log('Sending request to BackEnd api...')
             console.log(token)
-            const res = await axios.post('https://intense-atoll-00786.herokuapp.com/api/extUsers/google', {
-                token,
-                headers:{
-                    'Content-Type': 'application/json',
-                },
-            })
+            const res = await addingGoogleUserToDB(token)
             console.log(res)
-            // const res = await axios.post('http://localhost:5000/api/extUsers/google',token)
             const data = res.data
             if (res.status === 201){
                 console.log(data)
