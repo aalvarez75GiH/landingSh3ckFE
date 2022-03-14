@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import { useFormik } from 'formik'
 import * as yup from 'yup' 
 import { infoContact } from '../../utils/data'

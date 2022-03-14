@@ -1,6 +1,5 @@
 import React from 'react'
 // import { useSelector } from 'react-redux'
-import { infoCheck } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
@@ -13,7 +12,7 @@ import {
 
 
 const CheckersSection = () => {
-    const isOpen = useSelector((state) => state.checkSectionState.isOpen) 
+    // const isOpen = useSelector((state) => state.checkSectionState.isOpen) 
     
     const dispatch = useDispatch()
     const {  
@@ -21,7 +20,7 @@ const CheckersSection = () => {
 
     } = bindActionCreators(actionCreators, dispatch)
     
-    const language = useSelector((state) => state.sideBarState.language)
+    // const language = useSelector((state) => state.sideBarState.language)
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
     
     const test = () => {

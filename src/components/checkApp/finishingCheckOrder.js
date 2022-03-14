@@ -1,7 +1,6 @@
 import React from 'react'
 // import { useSelector } from 'react-redux'
-import { infoCheck } from '../../utils/data'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
 import { 
@@ -13,7 +12,6 @@ import {
 
 
 const FinishingCheckOrder = () => {
-    const isOpen = useSelector((state) => state.checkSectionState.isOpen) 
     
     const dispatch = useDispatch()
     const {  
@@ -26,7 +24,7 @@ const FinishingCheckOrder = () => {
 
     } = bindActionCreators(actionCreators, dispatch)
     
-    const language = useSelector((state) => state.sideBarState.language)
+    // const language = useSelector((state) => state.sideBarState.language)
 
     const gettingOutOfCheckApp = async() => {
         localStorage.removeItem('SH3CK_TOKEN')

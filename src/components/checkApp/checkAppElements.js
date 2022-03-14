@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro'
 import image from '../../images/8443731_business_start_up_launch_rocket_icon.svg'
 import { motion } from 'framer-motion'
-import { Link as LinkR } from 'react-router-dom'
 
 //  ***********StartSh3ckProcess **************************
 export const CheckSectionContainer = styled(motion.div) `

@@ -1,4 +1,3 @@
-import axios from 'axios'
 
 // ****** sideBar Actions creators ***************
 export const openingSideBar = (status) => {

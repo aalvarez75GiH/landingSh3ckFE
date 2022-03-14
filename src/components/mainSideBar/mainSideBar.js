@@ -14,9 +14,7 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 // import LoginForm from '../contactSection/loginForm'
 
 
-const MainSideBar = ({ 
-    // handlingSubmitLogOutUser 
-}) => {
+const MainSideBar = () => {
     const dispatch = useDispatch()
     // const {  openingMainSideBar, openingQASideBar } = bindActionCreators(actionCreators, dispatch)
     const {  

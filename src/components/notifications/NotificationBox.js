@@ -9,11 +9,8 @@ import { responseDataInterested, responseDataRegister, responseDataLogin, respon
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../state'
-import { useEffect } from 'react'
 
-const NotificationBox = ({  
-    // toggleNotification,
-}) => {
+const NotificationBox = () => {
     let responseData
     const dispatch = useDispatch()
     const {  

@@ -3,7 +3,6 @@ import { infoCheck } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
-import { Link } from 'react-router-dom'
 import { 
     CheckSectionContainer, CheckSectionWrapper, 
     CheckSectionBtnWrap,CheckSectionCheckBtn,
@@ -15,8 +14,7 @@ import {
 const CheckStarting = () => {
     const dispatch = useDispatch()
     const {
-        settingLevel, settingisOpen,  
-        activatingForm, openingRegView,  
+        settingLevel, activatingForm, openingRegView,  
         settingCurrentUser, gettingLoginResponseData,
         openingContactSection,handlingIsLoggedIn, 
         handlingIsSignedInGoogle, settingResponse, gettingGoogleLoginData,  
@@ -39,7 +37,6 @@ const CheckStarting = () => {
     }
 
     const test = () => {
-        // settingisOpen(true)
         settingLevel('level1')
     }
     return (

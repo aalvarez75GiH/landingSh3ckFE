@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import InterestedUsersForm from '../contactSection/interestedUserForm'
 import LoginForm from './loginForm'
-import axios from 'axios'
 import FormHeader from './formHeader'
 import { addingInterestedUserToDB } from '../../requestsToApi'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../notifications/notificationData'
@@ -21,10 +20,7 @@ const ContactSection = ({ googleTest }) => {
     const isContactSectionOpen = useSelector((state) => state.contactSectionState.isContactSectionOpen)
     const active = useSelector((state) => state.contactSectionState.active)
     const loggedIn = useSelector((state) => state.homeState.loggedIn)
-    const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
-    const URL_LOCAL_BACKEND = 'http://192.168.1.102:5000'
- 
-  
+    
     const handlingSubmitInterestedUser = (interestedUser) => {
         activatingSpinner(true)
         setTimeout(async()=> {

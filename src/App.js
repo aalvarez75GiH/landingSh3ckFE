@@ -1,10 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './views/home'
-import CitiesSection from './components/checkApp/citiesSection'
-import CheckersSection from './components/checkApp/checkersSection'
-import ContactSection from './components/contactSection/contactSection'
-import CheckStarting from './components/checkApp/checkStarting'
+// import CitiesSection from './components/checkApp/citiesSection'
+// import CheckersSection from './components/checkApp/checkersSection'
+// import ContactSection from './components/contactSection/contactSection'
+// import CheckStarting from './components/checkApp/checkStarting'
 import './sh3ck.css'
 
 const App = () => {

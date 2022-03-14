@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useFormik, Formik } from 'formik'
 import * as yup from 'yup'
 import DropDownList from './dropDownList'
 import { infoContact } from '../../utils/data'
-import { useSelector, useDispatch } from 'react-redux'
-import { actionCreators } from '../../state'
-import { bindActionCreators } from '@reduxjs/toolkit'
+import { useSelector } from 'react-redux'
 
 
 const validationSchema = yup.object({
@@ -18,18 +15,13 @@ const validationSchema = yup.object({
 const InterestedUserForm = ({ 
     handlingSubmitInterestedUser,
 }) => {
-    // const url_interestedUsersInTheCloud = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
+    
     const language = useSelector((state) => state.sideBarState.language)
     const [ city, setCity ] = useState(language === 'ES' ? infoContact.intUsersFormPH3 : infoContact.intUsersFormPH3_EN)
     const [ cityError, setCityError ] = useState(false)
     const options = ['Caracas', 'Barquisimeto', 'Valencia', 'Maracaibo', 'Athens']
     
-    // const dispatch = useDispatch
-    // const {   
-    //     activatingSpinner, settingResponse,
-    //     openingContactSection,     
-    // } = bindActionCreators(actionCreators, dispatch)
-    
+
 
     const onSubmit = (values) => {
         console.log(values)
@@ -60,14 +52,8 @@ const InterestedUserForm = ({
 
     })
   
- 
 
-
- 
-
-    // console.log(formik.values)
-    // console.log(formik.errors)
-    
+   
     return (
         <div className="boxContainer">
             <Formik>
