@@ -2,13 +2,13 @@ import React from 'react'
 // import { infoCheck } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { actionCreators } from '../../state'
+import { actionCreators } from '../../../state'
 import { 
     CategorySectionContainer, CategorySectionWrapper,
     CategorySectionBtnWrapp, CategorySectionBtn
  
 
-} from './checkAppElements'
+} from './categoryElements.js'
 
 
 const CategorySection = () => {

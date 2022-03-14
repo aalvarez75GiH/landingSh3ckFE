@@ -35,3 +35,15 @@ export const addingRegularUsersToDB = async(user) => {
 export const requestToGenerateNewPIN = async(dataToRequest) => {
     return await axios.put(`${URL_LOCAL_BACKEND}/api/users/newPIN`, dataToRequest)
 }
+
+export const getRequestToCities = async() => {
+    const token = localStorage.getItem("SH3CK_TOKEN")
+    console.log(token)
+    const response = await axios.get(`${URL_LOCAL_BACKEND}/api/cities`, {
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }, 
+    })
+    return response.data
+}

@@ -2,13 +2,13 @@ import React from 'react'
 // import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { actionCreators } from '../../state'
+import { actionCreators } from '../../../state'
 import { 
     FinishingOrderContainer, FinishingOrderWrapper,
     FinishingOrderBtnWrapp, FinishingOrderBtn
  
 
-} from './checkAppElements'
+} from '../checkAppElements'
 
 
 const FinishingCheckOrder = () => {

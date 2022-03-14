@@ -1,9 +1,9 @@
 import React from 'react'
-import CheckStarting from './checkStarting'
-import CitiesSection from './citiesSection'
-import CategorySection from './categorySection'
-import CheckersSection from './checkersSection'
-import FinishingCheckOrder from './finishingCheckOrder'
+import CheckStarting from './starting/checkStarting'
+import CitiesSection from './city/citiesSection'
+import CategorySection from './categories/categorySection'
+import CheckersSection from './checkers/checkersSection'
+import FinishingCheckOrder from './summary/finishingCheckOrder'
 import { useSelector } from 'react-redux'
 
 const CheckApp = () => {

@@ -2,13 +2,13 @@ import React from 'react'
 // import { useSelector } from 'react-redux'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { actionCreators } from '../../state'
+import { actionCreators } from '../../../state'
 import { 
     CheckerSectionContainer, CheckerSectionWrapper,
     CheckerSectionBtnWrapp, CheckerSectionBtn
  
 
-} from './checkAppElements'
+} from './checkersElements.js'
 
 
 const CheckersSection = () => {

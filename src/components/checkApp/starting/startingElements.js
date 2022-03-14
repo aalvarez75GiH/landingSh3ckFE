@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro'
-import image from '../../images/8443731_business_start_up_launch_rocket_icon.svg'
 import { motion } from 'framer-motion'
+import image from '../../../images/8443731_business_start_up_launch_rocket_icon.svg'
 
-//  ***********StartSh3ckProcess **************************
+
 export const CheckSectionContainer = styled(motion.div) `
     display: flex;
     flex-direction: column;
@@ -15,8 +15,6 @@ export const CheckSectionContainer = styled(motion.div) `
     margin-left: 5%;
     position: fixed;
     left: 0;
-
-
 
     @media (max-width:560px) and (min-width: 480px){
         width: 100%;
@@ -178,146 +176,5 @@ export const CheckSectionExitBtn = styled.button `
         margin-top: 2%;
         height: 70px;
     }
-
-`
-
-//  *********** CitySection **************************
-
-
-//  *********** Category Section **************************
-
-export const CategorySectionContainer = styled(motion.div) `
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    display: grid;
-    align-items: center;
-    left: 0;
-    right: 0;
-    
-`
-
-export const CategorySectionWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1000px;
-    background-color: #ef476f;
-    
-    
-`
-
-export const CategorySectionBtnWrapp = styled.div `
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 38%;
-
-`
-export const CategorySectionBtn = styled.button `
-    width: 40%;
-    height: 115px;
-    background-color: #097654;
-    border-style: none;
-    /* border-radius: 60px; */
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: 5%;
-
-`
-
-
-
-
-//  *********** CheckerSection **************************
-
-
-export const CheckerSectionContainer = styled(motion.div) `
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    display: grid;
-    align-items: center;
-    left: 0;
-    right: 0;    
-`
-export const CheckerSectionWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1000px;
-    background-color: blueviolet;
-`
-
-export const CheckerSectionBtnWrapp = styled.div `
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 38%;
-
-`
-export const CheckerSectionBtn = styled.button `
-    width: 40%;
-    height: 115px;
-    background-color: #FAD570;
-    border-style: none;
-    /* border-radius: 60px; */
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: 5%;
-
-`
-
-//  *********** Finishing Check Order **************************
-
-
-export const FinishingOrderContainer = styled(motion.div) `
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    display: grid;
-    align-items: center;
-    left: 0;
-    right: 0;    
-`
-export const FinishingOrderWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1000px;
-    background-color: #FF810A;
-`
-
-export const FinishingOrderBtnWrapp = styled.div `
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 38%;
-
-`
-export const FinishingOrderBtn = styled.button `
-    width: 40%;
-    height: 115px;
-    background-color: #010606;
-    border-style: none;
-    /* border-radius: 60px; */
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: 5%;
 
 `

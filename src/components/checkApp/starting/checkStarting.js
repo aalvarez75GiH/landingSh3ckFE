@@ -1,14 +1,14 @@
 import React from 'react'
-import { infoCheck } from '../../utils/data'
+import { infoCheck } from '../../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { actionCreators } from '../../state'
+import { actionCreators } from '../../../state'
 import { 
     CheckSectionContainer, CheckSectionWrapper, 
     CheckSectionBtnWrap,CheckSectionCheckBtn,
     CheckSectionExitBtn
 
-} from './checkAppElements'
+} from '../checkAppElements'
 
 
 const CheckStarting = () => {
