@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const URL_LOCAL_BACKEND = 'http://192.168.1.102:5000'
-const URL_CLOUD_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
+const URL_CLOUD_BACKEND = 'http://192.168.1.102:5000'
+// const URL_CLOUD_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
 
 export const verifyingTokenRequest = async(token) => {
     return await axios.get(`${URL_CLOUD_BACKEND}/api/users/me`, {
