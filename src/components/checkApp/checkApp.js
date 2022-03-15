@@ -14,15 +14,15 @@ const CheckApp = () => {
         case 'Starting':
             return <CheckStarting />
         
-            case 'level1':
+            case 'city':
             return <CitiesSection />
 
-        case 'level2':
+        case 'category':
             return <CategorySection />
         
-        case 'level3':
+        case 'checkers':
             return <CheckersSection />
-        case 'level4': 
+        case 'summary': 
         return <FinishingCheckOrder />
         
         default:

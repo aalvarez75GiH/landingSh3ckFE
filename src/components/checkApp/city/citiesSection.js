@@ -32,6 +32,7 @@ const CitiesSection = () => {
         activatingCitySectionButton    
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
+    console.log(previous_level)
     const cities = useSelector((state) => state.cityState.cities)
     const active = useSelector((state) => state.cityState.active_city)
     const button_activated = useSelector((state) => state.cityState.button_activated)
@@ -47,15 +48,15 @@ const CitiesSection = () => {
     },[])
     
     
-    console.log(cities)
+    // console.log(cities)
     const handlinglevels = () => {
-        settingLevel('level2')
-        settingPreviousLevel('level1')
+        settingLevel('category')
+        settingPreviousLevel('city')
     }
   
     const comeBack = () => {
         settingLevel('Starting')
-        settingPreviousLevel('level1')
+        settingPreviousLevel('city')
     }
 
     const toggleActive = (city, index) => {
@@ -133,11 +134,11 @@ const CitiesSection = () => {
         )
     })
   
-    
+    console.log(previous_level)
     return (
         
         <CitySectionContainer
-        initial={previous_level === 'level2' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
+        initial={previous_level === 'category' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}
         exit={{ opacity: 0 }}

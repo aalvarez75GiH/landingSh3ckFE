@@ -19,7 +19,7 @@ const CheckStarting = () => {
         settingCurrentUser, gettingLoginResponseData,
         openingContactSection,handlingIsLoggedIn, 
         handlingIsSignedInGoogle, settingResponse, gettingGoogleLoginData,
-        gettingCities  
+        gettingCities,settingPreviousLevel  
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
@@ -38,13 +38,14 @@ const CheckStarting = () => {
         settingCurrentUser(null) //action
     }
 
-    const test = async() => {
-        settingLevel('level1')
+    const startingProcess = async() => {
+        settingLevel('city')
+        settingPreviousLevel('Starting')
     }
     return (
     
         <CheckSectionContainer
-        initial={previous_level === 'level1' ? { x: '-100vw', opacity: 1  } : { x: '100vw', opacity: 1  }}
+        initial={previous_level === 'city' ? { x: '-100vw', opacity: 1  } : { x: '100vw', opacity: 1  }}
         animate={{ x: 0 }}
         transition={{ stiffness: 33 }}
         
@@ -52,7 +53,7 @@ const CheckStarting = () => {
             <CheckSectionWrapper>
                 <CheckSectionBtnWrap>
                     <CheckSectionCheckBtn
-                    onClick={test}
+                    onClick={startingProcess}
                     >
                         {language === 'ES' ? infoCheck.checkSectionBtnLabel : infoCheck.checkSectionBtnLabel_EN}
                     </CheckSectionCheckBtn>

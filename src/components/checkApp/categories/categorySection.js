@@ -19,19 +19,19 @@ const CategorySection = () => {
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
     const test = () => {
-        settingLevel('level3')
-        settingPreviousLevel('level2')
+        settingLevel('checkers')
+        settingPreviousLevel('category')
     }
   
     const comeBack = () => {
-        settingLevel('level1')
-        settingPreviousLevel('level2')
+        settingLevel('city')
+        settingPreviousLevel('category')
     }
     
     return (
         
         <CategorySectionContainer
-        initial={previous_level === 'level3' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
+        initial={previous_level === 'checkers' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}
         exit={{ opacity: 0 }}

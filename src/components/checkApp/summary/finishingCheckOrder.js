@@ -20,7 +20,9 @@ const FinishingCheckOrder = () => {
         openingContactSection,handlingIsLoggedIn, 
         handlingIsSignedInGoogle, settingResponse, 
         gettingGoogleLoginData, settingisOpen,
-        settingLevel, settingPreviousLevel
+        settingLevel, settingPreviousLevel,
+        settingCityOfCheckOrder, settingCityIDAtCheckOrder,
+        activatingCitySectionButton, cityChose
 
     } = bindActionCreators(actionCreators, dispatch)
     
@@ -40,11 +42,15 @@ const FinishingCheckOrder = () => {
         settingisOpen(false)
         settingLevel('Starting')
         settingPreviousLevel('')
+        settingCityOfCheckOrder('')
+        settingCityIDAtCheckOrder('')
+        activatingCitySectionButton(false)
+        cityChose('')
     }
 
     const comeBack = () => {
-        settingLevel('level3')
-        settingPreviousLevel('level4')
+        settingLevel('checkers')
+        settingPreviousLevel('summary')
     }
     return (
         <FinishingOrderContainer

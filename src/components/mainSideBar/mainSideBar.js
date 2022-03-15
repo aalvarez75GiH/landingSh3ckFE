@@ -22,7 +22,9 @@ const MainSideBar = () => {
         handlingIsSignedInGoogle, activatingForm,
         gettingLoginResponseData, handlingIsLoggedIn,
         handlingIsLoggedOut, openingContactSection,
-        settingCurrentUser,
+        settingCurrentUser, settingLevel, settingPreviousLevel,
+        settingCityOfCheckOrder, settingCityIDAtCheckOrder,
+        activatingCitySectionButton, cityChose
     } = bindActionCreators(actionCreators, dispatch)
     const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
     const username = useSelector((state) => state.homeState.currentUser)
@@ -52,6 +54,12 @@ const MainSideBar = () => {
             openingMainSideBar(!mainSideBarOpen)  //action
             gettingLoginResponseData(null) //action
             openingContactSection(false) //action
+            settingLevel('Starting')
+            settingPreviousLevel('')
+            settingCityOfCheckOrder('')
+            settingCityIDAtCheckOrder('')
+            activatingCitySectionButton(false)
+            cityChose('')
         }
         if (loggedIn){
             console.log('pasa por loggedIn')
@@ -63,6 +71,12 @@ const MainSideBar = () => {
             handlingIsLoggedOut(true) //action
             openingContactSection(false) //action
             settingCurrentUser(null) //action
+            settingLevel('Starting')
+            settingPreviousLevel('')
+            settingCityOfCheckOrder('')
+            settingCityIDAtCheckOrder('')
+            activatingCitySectionButton(false)
+            cityChose('')
         }
         
         

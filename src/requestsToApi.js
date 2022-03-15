@@ -17,7 +17,7 @@ export const addingGoogleUserToDB = async(token) => {
         headers:{
             'Content-Type': 'application/json',
         },
-    })
+    })  
 } 
 
 export const addingInterestedUserToDB = async(interestedUser) => {

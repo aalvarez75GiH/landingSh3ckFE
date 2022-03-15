@@ -24,16 +24,16 @@ const CheckersSection = () => {
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
     
     const test = () => {
-        settingLevel('level4')
-        settingPreviousLevel('level3')
+        settingLevel('summary')
+        settingPreviousLevel('checkers')
     }
     const comeBack = () => {
-        settingLevel('level2')
-        settingPreviousLevel('level3')
+        settingLevel('category')
+        settingPreviousLevel('checkers')
     }
     return (
         <CheckerSectionContainer
-        initial={previous_level === 'level4' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
+        initial={previous_level === 'summary' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}
         exit={{ opacity: 0 }}
