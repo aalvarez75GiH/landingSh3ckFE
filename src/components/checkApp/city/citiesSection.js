@@ -9,12 +9,13 @@ import city_icon_white from '../../../images/city_icon_3_white.svg'
 import '../../../sh3ck.css'
 import arrow_icon from '../../../images/3927254_arrow_arrow right_caret_caret right_chevron_icon.svg'
 import arrow_icon_white from '../../../images/rigth_arrow_white.svg'
+import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 import { 
     CitySectionContainer, CitySectionWrapper, 
-    CityItem, CityItemContainer, CityItemIcon,
-    CityItemName, CityItemArrow, CitySectionTitle,
-    CityTitleContainer, CityIcon, ArrowIcon,
-    CitySectionButton
+    CityItemContainer,  CitySectionTitle,
+    CityTitleContainer, CitySectionButton, 
+    BackwardSection, BackwardLeftArrowIcon,
+    LeftArrow, BackwardLabel
     
 } from './cityElements.js'
 
@@ -63,7 +64,6 @@ const CitiesSection = () => {
         settingCityOfCheckOrder(city.name)
         settingCityIDAtCheckOrder(city._id)
         activatingCitySectionButton(true)
-        console.log(cities[index]._id)
         cityChose(cities[index]._id)
                      
     }
@@ -83,16 +83,8 @@ const CitiesSection = () => {
             return 'cityItemName'
         }
     }
-    const toggleActiveStyle_arrowIcon = (index) => {
-        if (cities[index]._id === active ){
-            return 'cityItemArrow_active'
-        }else{
-            return 'cityItemArrow'
-        }
-    }
-
-    
-    
+ 
+   
     console.log(active)
     const renderingCitiesList = cities.map((city, index) => {
         return (
@@ -110,26 +102,8 @@ const CitiesSection = () => {
                 <div className={toggleActiveStyle_cityName(index)}>
                     {city.name}
                 </div>
-                {/* <div className={toggleActiveStyle_arrowIcon(index)}>
-                    <img src={cities[index]._id === active ? arrow_icon : arrow_icon} className="arrowIcon" alt="test2"/>
-                </div> */}
-
             </div>
-            {/* <CityItem
-            id={city._id}
-            onClick={() => toggleActive(index)}
-            className={toggleActiveStyle(index)}
-            >
-                <CityItemIcon>
-                    <CityIcon  src={city_icon}></CityIcon>
-                </CityItemIcon>
-                <CityItemName>
-                    {city.name}       
-                </CityItemName>
-                <CityItemArrow>
-                    <ArrowIcon  src={arrow_icon}></ArrowIcon>
-                </CityItemArrow>
-            </CityItem> */}
+            
             </>
         )
     })
@@ -144,6 +118,20 @@ const CitiesSection = () => {
         exit={{ opacity: 0 }}
         >
             <CitySectionWrapper>
+                <BackwardSection
+                onClick={comeBack}
+                >
+                    <BackwardLeftArrowIcon>
+                            <LeftArrow
+                            src={arrow_icon_left}
+                            >
+
+                            </LeftArrow>
+                    </BackwardLeftArrowIcon>
+                    <BackwardLabel>
+                        Atrás
+                    </BackwardLabel>
+                </BackwardSection>
                 <CityTitleContainer>
                     <CitySectionTitle>Ciudades donde chequeamos</CitySectionTitle>
                 </CityTitleContainer>

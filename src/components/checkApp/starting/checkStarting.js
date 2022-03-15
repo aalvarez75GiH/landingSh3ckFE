@@ -18,8 +18,11 @@ const CheckStarting = () => {
         settingLevel, activatingForm, openingRegView,  
         settingCurrentUser, gettingLoginResponseData,
         openingContactSection,handlingIsLoggedIn, 
-        handlingIsSignedInGoogle, settingResponse, gettingGoogleLoginData,
-        gettingCities,settingPreviousLevel  
+        handlingIsSignedInGoogle, settingResponse, 
+        gettingGoogleLoginData,gettingCities,
+        settingPreviousLevel,settingCityOfCheckOrder,
+        settingCityIDAtCheckOrder, activatingCitySectionButton,
+        cityChose 
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
@@ -36,6 +39,13 @@ const CheckStarting = () => {
         gettingLoginResponseData(null) //action
         settingResponse(null)
         settingCurrentUser(null) //action
+
+        settingLevel('Starting')
+        settingPreviousLevel('')
+        settingCityOfCheckOrder('')
+        settingCityIDAtCheckOrder('')
+        activatingCitySectionButton(false)
+        cityChose('')
     }
 
     const startingProcess = async() => {

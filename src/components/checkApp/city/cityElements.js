@@ -38,8 +38,33 @@ background-color: #eeeeee;
 width: 100%;
 height: auto;
 background-color: #eeeeee;
-
 }
+`
+export const BackwardSection = styled.div`
+display: flex;
+align-items: center ;
+width: 95%;
+height: 40px;
+background-color: #ffffff;
+margin-top: 2%;
+
+`
+export const BackwardLabel = styled.p `
+width: 150px;
+height: 20px;
+font-weight: 600;
+
+` 
+export const BackwardLeftArrowIcon = styled.div `
+display: flex;
+justify-content: center;
+align-items: center;
+width: 10%;
+height: 40px;
+`
+export const LeftArrow = styled.img `
+width: 20px;
+height: 20px;
 `
 export const CityTitleContainer = styled.div`
 display: flex;
