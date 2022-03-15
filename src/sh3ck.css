@@ -1643,6 +1643,78 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 87%;
 }
 
+/* ******************citySection: checkApp*************************** */
+
+.cityItem {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 100px;
+    background-color: #ffffff ;
+    margin: 1%;
+}
+.cityItem_coloured {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 100px;
+    background-color: #00a307;
+    /* background-color: #FAD570 ; */
+    margin: 1%;
+}
+.cityItemIcon {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin-left: 2% ;
+}
+.cityIcon {
+    width: 50px;
+    height: 50px;
+}
+.cityItemName {
+    display: flex ;
+    align-items: center ;
+    font-size: 1.3rem ;
+    width: 60%;
+    height: 40px;
+    margin-left: 4% ;
+}
+.cityItemName_coloured{
+    display: flex ;
+    align-items: center ;
+    font-size: 1.3rem ;
+    width: 60%;
+    height: 40px;
+    margin-left: 4%;
+    color: #ffffff
+}
+
+.cityItemArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 40px;
+    opacity: 0;
+}
+.cityItemArrow_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 40px;
+    opacity: 1;
+}
+.arrowIcon {
+    width: 30px;
+    height: 30px;
+
+}
+/* ********************************************** */
+
 /* *************** Responsive design ***********************/
 /* ********  Desktop Responsive Design ******************* */
 
@@ -1715,6 +1787,31 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 115px;
     }
   
+    /* ******************citySection: checkApp*************************** */
+
+.cityItem {
+    width: 95%;
+    height: 150px;
+    margin: 0.5%;
+}
+.cityItem_coloured {
+    width: 95%;
+    height: 150px;
+}
+.cityItemIcon {
+    width: 90px;
+    height: 90px;
+}
+.cityIcon {
+    width: 70px;
+    height: 70px;
+}
+.cityItemName {
+  font-size: 2rem ;  
+}
+.cityItemName_coloured{
+    font-size: 2rem ;
+}
     
 }
 
@@ -1845,7 +1942,36 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         
     }
 
+        /* ******************citySection: checkApp*************************** */
+
+.cityItem {
+    width: 95%;
+    height: 150px;
+    margin: 0.5%;
 }
+.cityItem_coloured {
+    width: 95%;
+    height: 150px;
+    margin: 0.5%;
+
+}
+.cityItemIcon {
+    width: 90px;
+    height: 90px;
+}
+.cityIcon {
+    width: 70px;
+    height: 70px;
+}
+.cityItemName {
+  font-size: 2rem ;  
+}
+.cityItemName_coloured{
+    font-size: 2rem ;
+}
+    
+}
+
 
 @media (max-width:1366px) and (min-width:1280px){
     
@@ -2032,6 +2158,31 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 22%;
     }
 
+    .cityItem {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    }
+    .cityItem_coloured {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    
+    }
+    .cityItemIcon {
+        width: 90px;
+        height: 90px;
+    }
+    .cityIcon {
+        width: 70px;
+        height: 70px;
+    }
+    .cityItemName {
+      font-size: 2rem ;  
+    }
+    .cityItemName_coloured{
+        font-size: 2rem ;
+    }
 }
 
 
@@ -2174,6 +2325,32 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 500px; */
         margin-top: 55%;
         
+    }
+
+    .cityItem {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    }
+    .cityItem_coloured {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    
+    }
+    .cityItemIcon {
+        width: 90px;
+        height: 90px;
+    }
+    .cityIcon {
+        width: 70px;
+        height: 70px;
+    }
+    .cityItemName {
+      font-size: 2rem ;  
+    }
+    .cityItemName_coloured{
+        font-size: 2rem ;
     }
 
 }
@@ -2721,6 +2898,31 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         margin-bottom: 2%;
     }
 
+    .cityItem {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    }
+    .cityItem_coloured {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    
+    }
+    .cityItemIcon {
+        width: 90px;
+        height: 90px;
+    }
+    .cityIcon {
+        width: 70px;
+        height: 70px;
+    }
+    .cityItemName {
+      font-size: 2rem ;  
+    }
+    .cityItemName_coloured{
+        font-size: 2rem ;
+    }
   
 }
 
@@ -3308,6 +3510,32 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
        font-size: 24px;
     }
 
+    .cityItem {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    }
+    .cityItem_coloured {
+        width: 95%;
+        height: 150px;
+        margin: 0.5%;
+    
+    }
+    .cityItemIcon {
+        width: 90px;
+        height: 90px;
+    }
+    .cityIcon {
+        width: 70px;
+        height: 70px;
+    }
+    .cityItemName {
+      font-size: 2rem ;  
+    }
+    .cityItemName_coloured{
+        font-size: 2rem ;
+    }
+  
 }
 /* ********  Phones Responsive Design ******************* */
 @media (max-width:560px) and (min-width: 480px){
@@ -3732,20 +3960,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         
     }
 
-    /* .loginSideBarFormDescription {
-        width: 95%;
-    }
-    .loginSideBarFormDescription p {
-        font-size: 1.5rem;
-    }
-    .loginSideBoxContainer {
-        width: 85%
-    }
-    
-    .loginSideBoxContainer { 
-        height: auto;
-        margin-top: 10%;
-    } */
+
     .input {
         height: 85px;
         font-size: 1.3rem;
@@ -3919,29 +4134,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 85px;
     }
 
-        /* ************** checkSection ************** */
 
-/* .checkSectionContainer {
-    width: 100%;
-    margin-top: unset;
-    margin-left: unset;
-}
-.checkSection-formTitle h1 {
-    font-size: 1.6rem;
-}
-
-.checkSection-BtnWrap {
-    margin-top: 95%;
-}
-
-.checkSection-checkBtn {
-    width: 80%;
-}
-
-.checkSection-exitBtn {
-    width: 80%;
-  
-} */
     
     /* ************ FooterSection **************************** */
 
@@ -4036,6 +4229,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
        color: #ffffff;
        font-size: 24px;
     }
+
 }
 
 @media (max-width:480px) and (min-width: 414px){
@@ -4758,6 +4952,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
        color: #ffffff;
        font-size: 24px;
     }
+
+    
 
 }
 
@@ -5599,75 +5795,31 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 }
 
 /* ********************************************* */
-
 .cityItem {
-    display: flex;
-    align-items: center;
-    width: 95%;
-    height: 100px;
-    background-color: #ffffff ;
-    margin: 1%;
+   height: 100px;
 }
 .cityItem_coloured {
-    display: flex;
-    align-items: center;
     width: 95%;
     height: 100px;
-    background-color: #00a307;
-    /* background-color: #FAD570 ; */
-    margin: 1%;
+    margin: 0.5%;
+
 }
 .cityItemIcon {
-    display:flex;
-    justify-content: center;
-    align-items: center;
     width: 70px;
     height: 70px;
-    margin-left: 2% ;
 }
 .cityIcon {
     width: 50px;
     height: 50px;
 }
+
 .cityItemName {
-    display: flex ;
-    align-items: center ;
-    font-size: 1.3rem ;
-    width: 60%;
-    height: 40px;
-    margin-left: 4% ;
+  font-size: 1.3rem;  
 }
 .cityItemName_coloured{
-    display: flex ;
-    align-items: center ;
     font-size: 1.3rem ;
-    width: 60%;
-    height: 40px;
-    margin-left: 4%;
-    color: #ffffff
 }
 
-.cityItemArrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 40px;
-    opacity: 0;
-}
-.cityItemArrow_active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 40px;
-    opacity: 1;
-}
-.arrowIcon {
-    width: 30px;
-    height: 30px;
-
-}
 /* ********************************************** */
     
 }
@@ -6342,6 +6494,35 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
        color: #ffffff;
        font-size: 24px;
     }
+
+    /* ********************************************* */
+.cityItem {
+    height: 100px;
+ }
+ .cityItem_coloured {
+     width: 95%;
+     height: 100px;
+     margin: 0.5%;
+ 
+ }
+ .cityItemIcon {
+     width: 70px;
+     height: 70px;
+ }
+ .cityIcon {
+     width: 50px;
+     height: 50px;
+ }
+ 
+ .cityItemName {
+   font-size: 1.2rem;  
+ }
+ .cityItemName_coloured{
+     font-size: 1.3rem ;
+ }
+ 
+ /* ********************************************** */
+    /* ********************************************** */
 }
 
 
