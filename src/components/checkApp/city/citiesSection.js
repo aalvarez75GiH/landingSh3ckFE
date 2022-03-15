@@ -151,7 +151,9 @@ const CitiesSection = () => {
                 </CityItemContainer>
                 {
                    button_activated &&
-                    <CitySectionButton>
+                    <CitySectionButton
+                    onClick={handlinglevels}
+                    >
                         Siguiente
                     </CitySectionButton>
 
