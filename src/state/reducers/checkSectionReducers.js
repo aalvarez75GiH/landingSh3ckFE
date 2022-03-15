@@ -13,6 +13,7 @@ const checkSectionReducer = (
         seller: '',
         link: '',
         city: '',
+        city_id: '',
         isOpen: false
     }, action) => {
         switch (action.type) {
@@ -25,6 +26,10 @@ const checkSectionReducer = (
 
         case 'isOpen':
             return  {...state, isOpen: action.payload}
+        case 'cityToOrder':
+            return {...state, city: action.payload}
+        case 'cityID': 
+            return {...state, city_id: action.payload}
         default:
             return state    
     }

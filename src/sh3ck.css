@@ -5597,6 +5597,78 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-size: 1.2rem;
 
 }
+
+/* ********************************************* */
+
+.cityItem {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 100px;
+    background-color: #ffffff ;
+    margin: 1%;
+}
+.cityItem_coloured {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 100px;
+    background-color: #00a307;
+    /* background-color: #FAD570 ; */
+    margin: 1%;
+}
+.cityItemIcon {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin-left: 2% ;
+}
+.cityIcon {
+    width: 50px;
+    height: 50px;
+}
+.cityItemName {
+    display: flex ;
+    align-items: center ;
+    font-size: 1.3rem ;
+    width: 60%;
+    height: 40px;
+    margin-left: 4% ;
+}
+.cityItemName_coloured{
+    display: flex ;
+    align-items: center ;
+    font-size: 1.3rem ;
+    width: 60%;
+    height: 40px;
+    margin-left: 4%;
+    color: #ffffff
+}
+
+.cityItemArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 40px;
+    opacity: 0;
+}
+.cityItemArrow_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 40px;
+    opacity: 1;
+}
+.arrowIcon {
+    width: 30px;
+    height: 30px;
+
+}
+/* ********************************************** */
     
 }
 

@@ -193,8 +193,52 @@ export const settingisOpen = (status) => {
     }
 }
 
+export const settingCityOfCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'cityToOrder',
+            payload: value
+        })
+}
+}
 
+export const settingCityIDAtCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'cityID',
+            payload: value
+        })
+}
+}
 
+// ****** CheckApp Actions creators ***************
+ 
+export const gettingCities = (response) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'cities_list',
+            payload: response
+        })
+    }
+}
+
+export const cityChose = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_city',
+            payload: value
+        })
+    }
+}
+
+export const activatingCitySectionButton = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_button',
+            payload: status
+        })
+    }
+}
 
 
 

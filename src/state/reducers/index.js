@@ -4,7 +4,7 @@ import heroSectionReducer from './heroSectionReducers'
 import contactSectionReducer from './contactSectionReducers'
 import homeReducers from './homeReducers'
 import checkSectionReducer from './checkSectionReducers'
-import checkAppReducer from './checkAppReducers'
+import citySectionReducer from './checkApp/cityReducers'
 const reducers = combineReducers({
     // account: sideBarReducer,
     sideBarState: sideBarReducer,
@@ -12,7 +12,7 @@ const reducers = combineReducers({
     contactSectionState: contactSectionReducer,
     homeState: homeReducers,
     checkSectionState: checkSectionReducer,
-    checkAppState: checkAppReducer 
+    cityState: citySectionReducer 
 
 })
 

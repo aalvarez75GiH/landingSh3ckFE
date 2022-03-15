@@ -27,6 +27,7 @@ background-color: #eeeeee;
 export const CityTitleContainer = styled.div`
 display: flex;
 align-items: center;
+justify-content: center ;
 width: 95%;
 height: 100px;
 background-color: #ffffff;
@@ -54,10 +55,11 @@ display: flex;
 align-items: center;
 width: 95%;
 height: 100px;
-background-color: #ffffff;
+background-color: ${({ city_id, city  }) => city_id === '622e2e26b067d9d08fcde6a3' && city === 'Caracas' ? '#55F199' : '#ffffff' };
 margin: 1%;
 /* border: 1px solid #010606 ; */
 `
+
 export const CityItemIcon = styled.div`
 display:flex;
 justify-content: center;
@@ -112,5 +114,15 @@ border-style: none;
 font-size: 1.5rem;
 color: #ffffff;
 margin-left: 5%;
-
 `
+export const CitySectionButton = styled.button`
+width: 95%;
+height: 90px;
+background-color: #010606;
+border-style: none ;
+margin-top: 1%;
+color: #ffffff;
+font-size: 1.3rem;
+`
+
+

@@ -3,6 +3,7 @@ import { infoCheck } from '../../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
+import { getRequestToCities } from '../../../requestsToApi'
 import { 
     CheckSectionContainer, CheckSectionWrapper, 
     CheckSectionBtnWrap,CheckSectionCheckBtn,
@@ -17,7 +18,8 @@ const CheckStarting = () => {
         settingLevel, activatingForm, openingRegView,  
         settingCurrentUser, gettingLoginResponseData,
         openingContactSection,handlingIsLoggedIn, 
-        handlingIsSignedInGoogle, settingResponse, gettingGoogleLoginData,  
+        handlingIsSignedInGoogle, settingResponse, gettingGoogleLoginData,
+        gettingCities  
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
@@ -36,7 +38,7 @@ const CheckStarting = () => {
         settingCurrentUser(null) //action
     }
 
-    const test = () => {
+    const test = async() => {
         settingLevel('level1')
     }
     return (
