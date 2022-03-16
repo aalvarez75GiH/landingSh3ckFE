@@ -158,6 +158,7 @@ border-style: none ;
 margin-top: 1%;
 color: #ffffff;
 font-size: 2rem;
+opacity: ${({ button_activated })=> (button_activated ? 1 : 0)};
 
 @media (max-width:414px) and (min-width: 360px){
 font-size: 1.3rem;

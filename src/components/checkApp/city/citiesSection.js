@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { Link as LinkS } from 'react-scroll'
 // import { infoCheck } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
@@ -38,6 +39,7 @@ const CitiesSection = () => {
     const active = useSelector((state) => state.cityState.active_city)
     const button_activated = useSelector((state) => state.cityState.button_activated)
          
+    const trackButton = useRef()
     
 
     useEffect(() => {
@@ -65,7 +67,6 @@ const CitiesSection = () => {
         settingCityIDAtCheckOrder(city._id)
         activatingCitySectionButton(true)
         cityChose(cities[index]._id)
-                     
     }
 
     const toggleActiveStyle = (index) => {
@@ -89,7 +90,13 @@ const CitiesSection = () => {
     const renderingCitiesList = cities.map((city, index) => {
         return (
             <>
-            <div 
+            <LinkS
+            to="cityContainer"  
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500} 
             key={city._id}
             onClick={() => toggleActive(city,index)}
             className={toggleActiveStyle(index)}>
@@ -102,7 +109,7 @@ const CitiesSection = () => {
                 <div className={toggleActiveStyle_cityName(index)}>
                     {city.name}
                 </div>
-            </div>
+            </LinkS>
             
             </>
         )
@@ -112,6 +119,7 @@ const CitiesSection = () => {
     return (
         
         <CitySectionContainer
+        // id="cityContainer"
         initial={previous_level === 'category' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}
@@ -138,15 +146,28 @@ const CitiesSection = () => {
                 <CityItemContainer>
                     {renderingCitiesList}
                 </CityItemContainer>
-                {
+                
+                {/* {
                    button_activated &&
                     <CitySectionButton
+                    id="cityContainer"
                     onClick={handlinglevels}
                     >
                         Siguiente
                     </CitySectionButton>
 
-                }
+                } */}
+                {/* {
+                   button_activated && */}
+                    <CitySectionButton
+                    button_activated={button_activated}
+                    id="cityContainer"
+                    onClick={handlinglevels}
+                    >
+                        Siguiente
+                    </CitySectionButton>
+
+                {/* } */}
             </CitySectionWrapper>
         </CitySectionContainer>
 
