@@ -47,3 +47,27 @@ export const getRequestToCities = async() => {
     })
     return response.data
 }
+
+export const getRequestToCategories = async() => {
+    const token = localStorage.getItem("SH3CK_TOKEN")
+    console.log(token)
+    const response = await axios.get(`${URL_CLOUD_BACKEND}/api/category`, {
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }, 
+    })
+    return response.data
+}
+
+export const getRequestToServiceTime = async() => {
+    const token = localStorage.getItem("SH3CK_TOKEN")
+    console.log(token)
+    const response = await axios.get(`${URL_CLOUD_BACKEND}/api/times`, {
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }, 
+    })
+    return response.data
+}

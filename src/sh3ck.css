@@ -1643,7 +1643,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 87%;
 }
 
-/* ******************citySection: checkApp*************************** */
+/* ****************** CheckApp: citySection *************************** */
 
 .cityItem {
     display: flex;
@@ -1658,8 +1658,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     align-items: center;
     width: 95%;
     height: 100px;
-    background-color: #00a307;
-    /* background-color: #FAD570 ; */
+    /* background-color: #00a307; */
+    background-color: #FAD570 ;
     margin: 1%;
 }
 .cityItemIcon {
@@ -1680,17 +1680,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-size: 1.3rem ;
     width: 60%;
     height: 40px;
-    margin-left: 4% ;
+    margin-left: 4%;
+    color: #010606;
 }
-.cityItemName_coloured{
+/* .cityItemName_coloured{
     display: flex ;
     align-items: center ;
     font-size: 1.3rem ;
     width: 60%;
     height: 40px;
     margin-left: 4%;
-    color: #ffffff
-}
+    color: #010606
+} */
 
 .cityItemArrow {
     display: flex;
@@ -1713,6 +1714,91 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     height: 30px;
 
 }
+
+
+/* ****************** checkApp: categorySection *************************** */
+.categoryTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    margin: 10px;
+    border-radius: 15px ;
+    background-color: #ffffff;
+}
+
+.TileImg {
+    width: 50px;
+    height: 50px;
+}
+.categoryName {
+    text-align: center;
+    margin-top: 8%;
+    font-size: 0.8rem;
+}
+.activatedBar {
+    /* width: 65%;
+    height: 5px;
+    background-color: #00a307;
+    margin-top: 5%; */
+    opacity: 0;
+}
+.activatedBar_active {
+    width: 65%;
+    height: 5px;
+    background-color: #00a307;
+    margin-top: 5%;
+    opacity: 1;
+}
+
+.categoryIcon {
+    width: 70px;
+}
+
+/* ****************** checkApp: ServiceTime Section *************************** */
+.serviceTimeTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    margin: 10px;
+    border: 2px solid #010606;
+    border-radius: 15px ;
+    background-color: #ffffff;
+}
+.serviceTimeCaption {
+    font-size: 2.5rem;
+}
+
+/* ****************** checkApp: Overall *************************** */
+
+.CheckAppButton {
+    width: 95%;
+    height: 90px;
+    background-color: #010606;
+    border-style: none ;
+    margin-top: 1%;
+    color: #ffffff;
+    font-size: 2rem;
+    opacity: 0;
+    
+}
+.CheckAppButton_activated {
+    width: 95%;
+    height: 90px;
+    background-color: #00a307;
+    border-style: none ;
+    margin-top: 1%;
+    color: #ffffff;
+    font-size: 2rem;
+    opacity: 1;
+    
+}
+
 /* ********************************************** */
 
 /* *************** Responsive design ***********************/
@@ -5585,7 +5671,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     /* **************test ****************** */
     .superContainer {
         width: 100%;
-        height: 100vh;
+        height: auto;
         background-color: #eeeeee;
     }
     .checkSectionTestContainer {
@@ -5818,6 +5904,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 }
 .cityItemName_coloured{
     font-size: 1.3rem ;
+}
+
+.CheckAppButton, .CheckAppButton_activated {
+   font-size: 1.3rem;
 }
 
 /* ********************************************** */
@@ -6368,7 +6458,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
    /* ************** checkSection ************** */
    .superContainer {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: #eeeeee;
 }  
    /* .checkSectionContainer {
@@ -6519,6 +6609,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
  }
  .cityItemName_coloured{
      font-size: 1.3rem ;
+ }
+
+ .CheckAppButton, .CheckAppButton_activated {
+    font-size: 1.3rem;
  }
  
  /* ********************************************** */

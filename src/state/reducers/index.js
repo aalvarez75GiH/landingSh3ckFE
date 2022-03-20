@@ -5,6 +5,10 @@ import contactSectionReducer from './contactSectionReducers'
 import homeReducers from './homeReducers'
 import checkSectionReducer from './checkSectionReducers'
 import citySectionReducer from './checkApp/cityReducers'
+import categoryAndSTReducers from './checkApp/categoryAndSTReducers'
+import overallCheckAppReducers from './checkApp/overalCheckAppReducers' 
+import productToCheckReducer from './checkApp/productTocheckreducers'
+
 const reducers = combineReducers({
     // account: sideBarReducer,
     sideBarState: sideBarReducer,
@@ -12,7 +16,10 @@ const reducers = combineReducers({
     contactSectionState: contactSectionReducer,
     homeState: homeReducers,
     checkSectionState: checkSectionReducer,
-    cityState: citySectionReducer 
+    cityState: citySectionReducer,
+    categoryAndSTState: categoryAndSTReducers,
+    overallCheckAppState: overallCheckAppReducers,
+    productToCheckState: productToCheckReducer 
 
 })
 

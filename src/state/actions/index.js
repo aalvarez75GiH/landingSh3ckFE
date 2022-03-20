@@ -231,7 +231,7 @@ export const cityChose = (value) => {
     }
 }
 
-export const activatingCitySectionButton = (status) => {
+export const activatingCheckAppButton = (status) => {
     return(dispatch) => {
         dispatch({
             type: 'active_button',
@@ -239,6 +239,55 @@ export const activatingCitySectionButton = (status) => {
         })
     }
 }
+
+export const gettingCategories = (response) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'category_list',
+            payload: response
+        })
+    }
+}
+
+export const gettingServiceTimes = (response) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'service_times',
+            payload: response
+        })
+    }
+}
+
+export const productToCheckCategory = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'product_to_check_category',
+            payload: value
+        })
+    }
+}
+
+export const productToCheckID = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'product_to_check_id',
+            payload: value
+        })
+    }
+}
+
+export const categoryChose = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_category',
+            payload: value
+        })
+    }
+} 
+
+
+
+
 
 
 

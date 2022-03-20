@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import { infoCheck } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
+import { getRequestToCategories } from '../../../requestsToApi'
+import { getRequestToServiceTime } from '../../../requestsToApi'
+import { CheckAppButton, CategoryTile, ServiceTimeTile } from '../checkAppUtilities'
+import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 import { 
     CategorySectionContainer, CategorySectionWrapper,
-    CategorySectionBtnWrapp, CategorySectionBtn
+    BackwardSection, BackwardLeftArrowIcon,
+    LeftArrow, BackwardLabel, CategoryTitleContainer,
+    CategorySectionTitle, CategoryItemContainer,
+    ServiceTimeTitleContainer, ServiceTimeTitle,
+    ServiceTimeItemContainer
  
 
 } from './categoryElements.js'
@@ -15,18 +23,53 @@ const CategorySection = () => {
     
     const dispatch = useDispatch()
     const {
-        settingLevel, settingPreviousLevel    
+        settingLevel, settingPreviousLevel,
+        gettingCategories, gettingServiceTimes    
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
-    const test = () => {
-        settingLevel('checkers')
-        settingPreviousLevel('category')
-    }
-  
+    const level = useSelector((state) => state.checkSectionState.level)
+    const button_activated = useSelector((state) => state.cityState.button_activated)
+    const categories = useSelector((state) => state.categoryAndSTState.categories)
+    const service_times = useSelector((state) => state.categoryAndSTState.service_times)
+    console.log(categories)
+
     const comeBack = () => {
         settingLevel('city')
         settingPreviousLevel('category')
     }
+
+    useEffect(()=> {
+        const gettingCategoriesAndServiceTimeFromAPI = async() => {
+            const responseCategories  = await getRequestToCategories()
+            gettingCategories(responseCategories)
+            const responseServiceTime = await getRequestToServiceTime()
+            gettingServiceTimes(responseServiceTime)
+        }
+        gettingCategoriesAndServiceTimeFromAPI()
+    },[])
+
+
+
+    const renderingCategoryList = categories.map((category, index) => { 
+        console.log(category) 
+        console.log(category.image)
+        return (
+            <CategoryTile
+            category={category}
+            index={index}
+            />
+        )
+    })
+
+    const renderingTimeServiceList = service_times.map((ST, index) => {
+        return (
+            <ServiceTimeTile
+            caption={ST.caption}
+            description={ST.description}
+            />
+        )
+    })
+  
     
     return (
         
@@ -37,19 +80,35 @@ const CategorySection = () => {
         exit={{ opacity: 0 }}
         >
             <CategorySectionWrapper>
-                <CategorySectionBtnWrapp>
-                <CategorySectionBtn
-                    onClick={test}
-                    >
-                        Continuar
-                        {/* {language === 'ES' ? infoCheck.checkSectionExitBtn : infoCheck.checkSectionExitBtn_EN} */}
-                    </CategorySectionBtn> 
-                    <CategorySectionBtn
-                    onClick={comeBack}
-                    >
-                        Volver
-                    </CategorySectionBtn>    
-                </CategorySectionBtnWrapp>
+                <BackwardSection
+                onClick={comeBack}
+                >
+                    <BackwardLeftArrowIcon>
+                            <LeftArrow
+                            src={arrow_icon_left}
+                            >
+
+                            </LeftArrow>
+                    </BackwardLeftArrowIcon>
+                    <BackwardLabel>
+                        Atrás
+                    </BackwardLabel>
+                </BackwardSection>
+                <CategoryTitleContainer>
+                        <CategorySectionTitle>Escoge la categoría...</CategorySectionTitle>
+                </CategoryTitleContainer>
+                <CategoryItemContainer>
+                    {renderingCategoryList} 
+                </CategoryItemContainer>
+                <ServiceTimeTitleContainer>
+                    <ServiceTimeTitle>¿En cuanto tiempo lo necesitas?</ServiceTimeTitle>
+                </ServiceTimeTitleContainer>
+                <ServiceTimeItemContainer>
+                    {renderingTimeServiceList} 
+                </ServiceTimeItemContainer>
+                <CheckAppButton
+                button_activated={button_activated}
+                />
             </CategorySectionWrapper>
         </CategorySectionContainer>
 
@@ -57,3 +116,4 @@ const CategorySection = () => {
 }
 
 export default CategorySection
+
