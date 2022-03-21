@@ -8,21 +8,28 @@ export const CitySectionContainer = styled(motion.div) `
 z-index: 999;
 width: 100%;
 height: auto;
-background-color: red;
-display: grid;
+background-color: #ffffff;
+display: flex;
+justify-content: center;
 align-items: center;
-left: 0;
-right: 0;  
+overflow-y: hidden;
 
 @media (max-width:1920px) and (min-width: 1536px){
 width: 100%;
 height: auto;
-background-color: red;
-display: grid;
+background-color: #ffffff;
+display: flex;
+justify-content: center;
 align-items: center;
-left: 0;
-right: 0; 
-    }
+}
+@media (max-width:1536px) and (min-width: 1366px){
+width: 90%;
+height: auto;
+background-color: #eeeeee;
+padding-bottom: 3%;
+margin-top: 2%;
+margin-left: 5%;
+}
 `
 
 export const CitySectionWrapper = styled.div`
@@ -30,14 +37,52 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center ;
-width: 100%;
+width: 50%;
 height: auto;
 background-color: #eeeeee;
+overflow-y: hidden;
 
 @media (max-width:1920px) and (min-width: 1536px){
-width: 100%;
-height: auto;
+/* width: 50%; */
+/* height: auto; */
 background-color: #eeeeee;
+padding-bottom: 3%;
+margin-top: 4%;
+}
+@media (max-width:1536px) and (min-width: 1366px){
+width: 70%;
+/* height: auto; */
+background-color: #eeeeee;
+padding-bottom: 3%;
+margin-top: 4%;
+}
+@media (max-width:1280px) and (min-width: 1098px){
+width: 70% ;
+margin-top: 4%;
+}
+@media (max-width:1098px) and (min-width: 768px){
+width: 70% ;
+margin-top: 4%;
+}
+@media (max-width:768px) and (min-width: 560px){
+width: 95% ;
+margin-top: 4%;
+}
+@media (max-width:560px) and (min-width: 480px){
+width: 95% ;
+margin-top: 4%;
+}
+@media (max-width:480px) and (min-width: 414px){
+width: 95% ;
+margin-top: 4%;
+}
+@media (max-width:414px) and (min-width: 360px){
+width: 95% ;
+margin-top: 4%;
+}
+@media (max-width:360px) and (min-width: 320px){
+width: 95% ;
+margin-top: 4%;
 }
 `
 export const BackwardSection = styled.div`

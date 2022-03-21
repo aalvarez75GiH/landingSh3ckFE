@@ -86,7 +86,7 @@ export const CityTile = ({city,index}) => {
                 <div className="cityItemIcon">
                     <img 
                     src={city_icon_black}
-                    className="cityIcon" alt="test1"/>
+                    className="cityIcon" alt="cityIcon"/>
                 </div>
                 <div className="cityItemName">
                     {city.name}

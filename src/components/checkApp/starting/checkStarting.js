@@ -19,10 +19,9 @@ const CheckStarting = () => {
         settingCurrentUser, gettingLoginResponseData,
         openingContactSection,handlingIsLoggedIn, 
         handlingIsSignedInGoogle, settingResponse, 
-        gettingGoogleLoginData,gettingCities,
-        settingPreviousLevel,settingCityOfCheckOrder,
-        settingCityIDAtCheckOrder, activatingCitySectionButton,
-        cityChose 
+        gettingGoogleLoginData, settingPreviousLevel,
+        settingCityOfCheckOrder,settingCityIDAtCheckOrder, 
+        activatingCheckAppButton, cityChose 
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
@@ -44,7 +43,7 @@ const CheckStarting = () => {
         settingPreviousLevel('')
         settingCityOfCheckOrder('')
         settingCityIDAtCheckOrder('')
-        activatingCitySectionButton(false)
+        activatingCheckAppButton(false)
         cityChose('')
     }
 

@@ -116,12 +116,11 @@ export const CheckSectionBtnWrap = styled.div `
     
 `
 export const CheckSectionCheckBtn = styled.button `
-    width: 40%;
+    width: 80%;
     height: 115px;
     background-color: #010606;
     border-style: none;
-    /* border-radius: 60px; */
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #ffffff;
     margin-left: 5%;
 
@@ -133,6 +132,7 @@ export const CheckSectionCheckBtn = styled.button `
     }
     @media (max-width:560px) and (min-width: 480px){
         width: 80%;
+        height: 70px;
     }
     @media (max-width:480px) and (min-width: 414px){
         width: 80%;
@@ -141,10 +141,14 @@ export const CheckSectionCheckBtn = styled.button `
         width: 80%;
         height: 70px;
     }
+    @media (max-width: 360px) and (min-width: 320px){
+        width: 80%;
+        height: 70px;
+    }
     
 `
 export const CheckSectionExitBtn = styled.button `
-    width: 40%;
+    width: 20%;
     height: 115px;
     background-color: #FAD570;
     border-style: none;
@@ -154,7 +158,7 @@ export const CheckSectionExitBtn = styled.button `
     margin-left: 5%;
     margin-top: 1%;
 
-    @media (max-width:1098px) and (min-width: 768px){
+    /* @media (max-width:1098px) and (min-width: 768px){
         width: 45%;
     }
     @media (max-width:768px) and (min-width: 560px){
@@ -167,14 +171,14 @@ export const CheckSectionExitBtn = styled.button `
         width: 80%;
     }
     @media (max-width:414px) and (min-width: 360px){
-        width: 80%;
+        width: 1000%;
         margin-top: 2%;
         height: 70px;
     }
     @media (max-width: 360px) and (min-width: 320px){
-        width: 80%;
+        width: 20%;
         margin-top: 2%;
         height: 70px;
-    }
+    } */
 
 `
