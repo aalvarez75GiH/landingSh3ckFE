@@ -24,7 +24,7 @@ const MainSideBar = () => {
         handlingIsLoggedOut, openingContactSection,
         settingCurrentUser, settingLevel, settingPreviousLevel,
         settingCityOfCheckOrder, settingCityIDAtCheckOrder,
-        activatingCitySectionButton, cityChose
+        activatingCheckAppButton, cityChose
     } = bindActionCreators(actionCreators, dispatch)
     const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
     const username = useSelector((state) => state.homeState.currentUser)
@@ -58,7 +58,7 @@ const MainSideBar = () => {
             settingPreviousLevel('')
             settingCityOfCheckOrder('')
             settingCityIDAtCheckOrder('')
-            activatingCitySectionButton(false)
+            activatingCheckAppButton(false)
             cityChose('')
         }
         if (loggedIn){
@@ -75,7 +75,7 @@ const MainSideBar = () => {
             settingPreviousLevel('')
             settingCityOfCheckOrder('')
             settingCityIDAtCheckOrder('')
-            activatingCitySectionButton(false)
+            activatingCheckAppButton(false)
             cityChose('')
         }
         

@@ -64,8 +64,8 @@ const CategorySection = () => {
     const renderingTimeServiceList = service_times.map((ST, index) => {
         return (
             <ServiceTimeTile
-            caption={ST.caption}
-            description={ST.description}
+            ST={ST}
+            index={index}
             />
         )
     })

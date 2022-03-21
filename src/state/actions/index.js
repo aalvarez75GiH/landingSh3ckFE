@@ -284,6 +284,41 @@ export const categoryChose = (value) => {
         })
     }
 } 
+export const categoryChoseBoolean = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_category_boolean',
+            payload: status
+        })
+    }
+} 
+
+export const productToCheckServiceTime = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'product_to_check_service_time',
+            payload: value
+        })
+    }
+}
+
+export const productToSTID = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'product_to_check_ST_id',
+            payload: value
+        })
+    }
+}
+
+export const serviceTimeChose = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_service_time',
+            payload: value
+        })
+    }
+} 
 
 
 

@@ -62,8 +62,7 @@ export const CheckSectionWrapper = styled.div `
  
     @media (max-width:414px) and (min-width: 360px){
         height: 100%;
-        background-size: 60% 42%;
-        
+        background-size: 60% 42%;    
     }
 
     @media (max-width:360px) and (min-width: 320px){
@@ -148,8 +147,8 @@ export const CheckSectionCheckBtn = styled.button `
     
 `
 export const CheckSectionExitBtn = styled.button `
-    width: 20%;
-    height: 115px;
+    width: 80%;
+    height: 1px;
     background-color: #FAD570;
     border-style: none;
     color: #010606;
@@ -158,7 +157,7 @@ export const CheckSectionExitBtn = styled.button `
     margin-left: 5%;
     margin-top: 1%;
 
-    /* @media (max-width:1098px) and (min-width: 768px){
+    @media (max-width:1098px) and (min-width: 768px){
         width: 45%;
     }
     @media (max-width:768px) and (min-width: 560px){
@@ -171,14 +170,14 @@ export const CheckSectionExitBtn = styled.button `
         width: 80%;
     }
     @media (max-width:414px) and (min-width: 360px){
-        width: 1000%;
+        width: 80%;
         margin-top: 2%;
         height: 70px;
     }
     @media (max-width: 360px) and (min-width: 320px){
-        width: 20%;
+        width: 80%;
         margin-top: 2%;
         height: 70px;
-    } */
+    }
 
 `

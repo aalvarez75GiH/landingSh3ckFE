@@ -30,6 +30,10 @@ padding-bottom: 3%;
 margin-top: 2%;
 margin-left: 5%;
 }
+@media (max-width:1366px) and (min-width: 1280px){
+margin-top: 2%;
+/* margin-left: 5%; */
+}
 `
 
 export const CitySectionWrapper = styled.div`
@@ -89,15 +93,25 @@ export const BackwardSection = styled.div`
 display: flex;
 align-items: center ;
 width: 95%;
-height: 40px;
+height: 80px;
 background-color: #ffffff;
 margin-top: 2%;
+
+@media (max-width:560px) and (min-width: 320px){
+height: 40px;
+}
 
 `
 export const BackwardLabel = styled.p `
 width: 150px;
 height: 20px;
 font-weight: 600;
+font-size: 1.3rem;
+
+@media (max-width:560px) and (min-width: 320px){
+font-size: 1rem;
+}
+
 
 ` 
 export const BackwardLeftArrowIcon = styled.div `
@@ -110,6 +124,12 @@ height: 40px;
 export const LeftArrow = styled.img `
 width: 20px;
 height: 20px;
+
+@media (max-width:768px) and (min-width: 560px){
+width: 18px;
+height: 18px;
+}
+
 `
 export const CityTitleContainer = styled.div`
 display: flex;

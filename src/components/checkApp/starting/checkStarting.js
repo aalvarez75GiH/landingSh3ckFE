@@ -9,7 +9,7 @@ import {
     CheckSectionBtnWrap,CheckSectionCheckBtn,
     CheckSectionExitBtn
 
-} from '../checkAppElements'
+} from './startingElements.js'
 
 
 const CheckStarting = () => {
@@ -21,7 +21,12 @@ const CheckStarting = () => {
         handlingIsSignedInGoogle, settingResponse, 
         gettingGoogleLoginData, settingPreviousLevel,
         settingCityOfCheckOrder,settingCityIDAtCheckOrder, 
-        activatingCheckAppButton, cityChose 
+        activatingCheckAppButton, cityChose,
+        categoryChoseBoolean, productToCheckCategory,
+        productToCheckID, categoryChose,
+        productToCheckServiceTime, productToSTID,
+        serviceTimeChose
+
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
@@ -44,7 +49,15 @@ const CheckStarting = () => {
         settingCityOfCheckOrder('')
         settingCityIDAtCheckOrder('')
         activatingCheckAppButton(false)
+        categoryChoseBoolean(true)
+        productToCheckCategory('')
+        productToCheckID('')
+        categoryChose('')
         cityChose('')
+        productToCheckServiceTime('')
+        productToSTID('')
+        serviceTimeChose('')
+       
     }
 
     const startingProcess = async() => {

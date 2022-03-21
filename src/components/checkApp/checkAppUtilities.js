@@ -107,11 +107,14 @@ export const CategoryTile = ({
     const {
         productToCheckCategory,
         productToCheckID,
-        categoryChose
+        categoryChose,
+        categoryChoseBoolean
     } = bindActionCreators(actionCreators, dispatch)
     const categories = useSelector((state)=> state.categoryAndSTState.categories)
     const active = useSelector((state) => state.categoryAndSTState.active_category)
+    
     const handlingProductToCheckCategory = () => {
+        categoryChoseBoolean(true)
         productToCheckCategory(category.name)
         productToCheckID(category._id)
         categoryChose(categories[index]._id)
@@ -124,7 +127,13 @@ export const CategoryTile = ({
         }
     }
     return (
-        <div
+        <LinkS
+        to="serviceTimesContainer"  
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={-100}
+        duration={500} 
         key={category._id} 
         onClick={handlingProductToCheckCategory}
         className='categoryTile'>
@@ -136,25 +145,56 @@ export const CategoryTile = ({
             className="categoryName"
             >{category.name}</p>
             <div className={togglingActivatedBar(index)}></div>
-        </div>
+        </LinkS>
     )
 }
 
 export const ServiceTimeTile = ({
-    caption,
-    description
+    ST,
+    index
 }) => {
+    // console.log(ST)
     const dispatch = useDispatch()
     const {
-           
+        productToCheckServiceTime, 
+        productToSTID,
+        serviceTimeChose,
+        activatingCheckAppButton
     } = bindActionCreators(actionCreators, dispatch)
+    
+    const STimes = useSelector((state) => state.categoryAndSTState.service_times)
+    console.log(STimes)
+    const active = useSelector((state) => state.categoryAndSTState.active_service_time)
+    const active_category_boolean = useSelector((state) => state.categoryAndSTState.active_category_boolean)
+    console.log(active)
+    
+    const handlingProductToCheckServiceTime = () => {
+        if(active_category_boolean){
+            console.log(active_category_boolean)
+            productToCheckServiceTime(ST.caption)
+            productToSTID(ST._id)
+            serviceTimeChose(STimes[index]._id)
+            activatingCheckAppButton(true)
+        }else{
+            return
+        }
+        
+    }
 
+    console.log(active_category_boolean)
+    
     return (
-        <div className="serviceTimeTile">
+        <div
+        id='serviceTimesContainer' 
+        onClick={handlingProductToCheckServiceTime}
+        key={ST._id}
+        className={STimes[index]._id === active ? 'serviceTimeTile_active' : 'serviceTimeTile' }>
             <p
-            className="serviceTimeCaption"
-            >{caption}</p>
-            <small>{description}</small>
+            className={active_category_boolean ? 'serviceTimeCaption_active' : 'serviceTimeCaption'} 
+            >{ST.caption}</p>
+            <small
+            className={active_category_boolean ? 'STSmall_active' : 'STSmall'}
+            >{ST.description}</small>
         </div>
     )
 }

@@ -1104,33 +1104,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 }
 
 
-/*  ******  Probably for deletion (Start)  ********* */
-/* .optionsWrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
-    width: 70%;
-    height: 10%;
-    background-color: #eeeeee;
-    color: #010606;
-}
-.notifyMe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-}
 
-.checkAProduct {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-} */
-/*  ******  Probably for deletion (End)  ********* */
 .titleWrapper {
     font-size: 1.9rem;
     height: 11%;
@@ -1219,67 +1193,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-size: 1.4rem;
 
 }
-/* ************** checkSection ************** */
 
-/* .checkSectionContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 1100px;
-    background-color: #eeeeee;
-    margin-top: 2%;
-    margin-left: 5%;
-    position: fixed;
-}
-
-.checkSectionWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1000px;
-    background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
-    background-size: 60% 60%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-}
-
-
-.checkSection-BtnWrap {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 38%;
-    
-}
-
-
-.checkSection-checkBtn {
-    width: 40%;
-    height: 115px;
-    background-color: #010606;
-    border-style: none;
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: 5%;
-}
-
-
-.checkSection-exitBtn {
-    width: 40%;
-    height: 115px;
-    background-color: #FAD570;
-    border-style: none;
-    color: #010606;
-    font-size: 1.5rem;
-    color: #010606;
-    margin-left: 5%;
-    margin-top: 1%;
-} */
 
 .navMobilForCS {
     background-color: #ffffff;
@@ -1722,11 +1636,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     flex-direction: column;
     justify-content: center ;
     align-items: center;
-    width: 110px;
-    height: 110px;
+    width: 200px;
+    height: 130px;
     margin: 10px;
     border-radius: 15px ;
     background-color: #ffffff;
+    margin-left: 20%;
 }
 
 .TileImg {
@@ -1736,19 +1651,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .categoryName {
     text-align: center;
     margin-top: 8%;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .activatedBar {
-    /* width: 65%;
-    height: 5px;
-    background-color: #00a307;
-    margin-top: 5%; */
     opacity: 0;
 }
 .activatedBar_active {
     width: 65%;
     height: 5px;
-    background-color: #00a307;
+    background-color: #FAD570;
     margin-top: 5%;
     opacity: 1;
 }
@@ -1766,12 +1677,35 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     width: 110px;
     height: 110px;
     margin: 10px;
-    border: 2px solid #010606;
+    border: 2px solid #eeeeee;
     border-radius: 15px ;
     background-color: #ffffff;
+    margin-left: 25%;
+}
+.serviceTimeTile_active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px ;
+    background-color: #FAD570;
+    margin-left: 25%;
 }
 .serviceTimeCaption {
     font-size: 2.5rem;
+    color: #666666;
+}
+.serviceTimeCaption_active {
+    font-size: 2.5rem;
+    color: #010606;
+}
+.STSmall {
+    color:#666666;
+}
+.STSmall_active {
+    color:#010606;
 }
 
 /* ****************** checkApp: Overall *************************** */
@@ -2244,6 +2178,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 22%;
     }
 
+/* ************* checkApp: city ************************** */
     .cityItem {
         width: 95%;
         height: 150px;
@@ -2268,6 +2203,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     }
     .cityItemName_coloured{
         font-size: 2rem ;
+    }
+
+    /* ************* checkApp: category ************************** */
+    .categoryTile {
+       width: 175px;
+        
     }
 }
 
@@ -2438,6 +2379,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .cityItemName_coloured{
         font-size: 2rem ;
     }
+
+    .categoryTile {
+        width: 125px;  
+     }
+  
 
 }
 
@@ -3009,6 +2955,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .cityItemName_coloured{
         font-size: 2rem ;
     }
+
+    .categoryTile {
+        width: 125px;
+         
+     }
   
 }
 
@@ -3625,6 +3576,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         font-size: 1.3rem;
         height: 100px;
      }
+
+     .categoryTile {
+        width: 125px;
+         
+     }
 }
 /* ********  Phones Responsive Design ******************* */
 @media (max-width:560px) and (min-width: 480px){
@@ -4070,32 +4026,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     }
     /*************** QASideBar ****************************** */
-/* .QASideBarContainer {
-    position: fixed;
-    z-index: 999;
-    width: 30%;
-    height: auto;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left:100%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity:0;
-} */
-/* .QASideBarContainerOpen {
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: auto;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left: 0%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity: 1;
-} */
+
 .QASideBarFormTitle {
     display: flex;
     align-items: center;
@@ -4322,6 +4253,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     .CheckAppButton, .CheckAppButton_activated {
         font-size: 1.3rem;
         height: 100px;
+     }
+     .categoryTile {
+        width: 125px;
+         
      }
 }
 
@@ -5051,6 +4986,32 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 100px;
      }
 
+     .categoryTile {
+        width: 125px;
+         
+     }
+     .serviceTimeTile {
+        width: 110px;
+        margin: 10px;
+    }
+    .serviceTimeTile_active {
+        width: 120px;
+        margin: unset;
+        border: unset;
+        background-color: #FAD570;
+    }
+    .serviceTimeCaption {
+        color: #666666;
+    }
+    .serviceTimeCaption_active {
+        color: #010606;
+    }
+    .STSmall {
+        color:#666666;
+    }
+    .STSmall_active {
+        color:#010606;
+    }
     
 
 }
@@ -5892,7 +5853,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
 }
 
-/* ********************************************* */
+/* ****************** checkApp: citySection *************************** */
+
 .cityItem {
    height: 100px;
 }
@@ -5923,7 +5885,63 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
    height: 100px;
 }
 
-/* ********************************************** */
+
+/* ****************** checkApp: categorySection *************************** */
+.categoryTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 110px;
+    height: 125px;
+    margin: 10px;
+    border-radius: 15px ;
+    background-color: #ffffff;
+}
+.categoryName {
+    text-align: center;
+    margin-top: 8%;
+    font-size: 0.8rem;
+}
+/* ****************** checkApp: ServiceTime Section *************************** */
+.serviceTimeTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    margin: 10px;
+    border-radius: 15px ;
+}
+.serviceTimeTile_active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: unset;
+    border-radius: 15px ;
+    background-color: #FAD570;
+}
+
+.serviceTimeCaption {
+    font-size: 2.5rem;
+    color: #666666;
+}
+
+.serviceTimeCaption_active {
+    font-size: 2.5rem;
+    color: #010606;
+}
+.STSmall {
+    color:#666666;
+}
+.STSmall_active {
+    color:#010606;
+}
+
     
 }
 
@@ -6788,6 +6806,38 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-size: 1.3rem;
  }
  
+ .categoryTile {
+     width: 85px;
+     height: 120px;
+ }
+ .serviceTimeTile {
+    width: 85px;
+    height: 85px;
+}
+.serviceTimeTile_active {
+    width: 95px;
+    height: 95px;
+    border: unset;
+    margin: unset;
+    background-color: #FAD570;
+}
+.serviceTimeCaption {
+    color: #666666;
+}
+
+.serviceTimeCaption_active {
+    color: #010606;
+}
+.STSmall {
+    font-size: 0.6rem;
+    color:#666666;
+}
+.STSmall_active {
+    font-size: 0.6rem;
+    color:#010606;
+}
+
+
  /* ********************************************** */
     /* ********************************************** */
 }
