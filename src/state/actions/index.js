@@ -320,6 +320,15 @@ export const serviceTimeChose = (value) => {
     }
 } 
 
+export const levelUsed = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'level_used',
+            payload: value
+        })
+    }
+} 
+
 
 
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link as LinkS } from 'react-scroll'
 import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
@@ -15,10 +15,21 @@ export const CheckAppButton = () => {
         activatingCheckAppButton
     } = bindActionCreators(actionCreators, dispatch)
 const level = useSelector((state) => state.checkSectionState.level) 
+const level_used = useSelector((state) => state.checkSectionState.level_used )
 const button_activated = useSelector((state) => state.overallCheckAppState.button_activated)
-console.log(button_activated)
+
     
+    useEffect(() => {
+        if (level === level_used){
+            activatingCheckAppButton(true)   
+        }
+    },[])
+    
+console.log(button_activated)
+    console.log(level_used)
     const handlingLevels = () => {
+    
+       
         if (level === 'city'){
             activatingCheckAppButton(false)
             settingLevel('category')
@@ -31,6 +42,7 @@ console.log(button_activated)
             settingPreviousLevel('category')
             return
         }
+      
     }
 
     return (
@@ -43,16 +55,18 @@ console.log(button_activated)
     )
 }
 // ******************** City Utilities ******************
-export const CityTile = ({city,index}) => {
+export const CityTile = ({ city,index }) => {
     const dispatch = useDispatch()
     const {
         settingCityOfCheckOrder,
         cityChose,
         settingCityIDAtCheckOrder,
-        activatingCheckAppButton    
+        activatingCheckAppButton,
+        levelUsed    
     } = bindActionCreators(actionCreators, dispatch)
 
     const toggleActive = (city, index) => {
+        levelUsed('city')
         settingCityOfCheckOrder(city.name)
         settingCityIDAtCheckOrder(city._id)
         activatingCheckAppButton(true)
@@ -99,10 +113,7 @@ export const CityTile = ({city,index}) => {
 
 // ******************** Category Utilities ******************
 
-export const CategoryTile = ({
-    category,
-    index
-}) => {
+export const CategoryTile = ({ category, index }) => {
     const dispatch = useDispatch()
     const {
         productToCheckCategory,
@@ -147,18 +158,16 @@ export const CategoryTile = ({
         </LinkS>
     )
 }
-
-export const ServiceTimeTile = ({
-    ST,
-    index
-}) => {
+// ******************** Service Times Utilities ******************
+export const ServiceTimeTile = ({ ST, index }) => {
     // console.log(ST)
     const dispatch = useDispatch()
     const {
         productToCheckServiceTime, 
         productToSTID,
         serviceTimeChose,
-        activatingCheckAppButton
+        activatingCheckAppButton,
+        levelUsed
     } = bindActionCreators(actionCreators, dispatch)
     
     const STimes = useSelector((state) => state.categoryAndSTState.service_times)
@@ -169,7 +178,7 @@ export const ServiceTimeTile = ({
     
     const handlingProductToCheckServiceTime = () => {
         if(active_category_boolean){
-            console.log(active_category_boolean)
+            levelUsed('category')
             productToCheckServiceTime(ST.caption)
             productToSTID(ST._id)
             serviceTimeChose(STimes[index]._id)

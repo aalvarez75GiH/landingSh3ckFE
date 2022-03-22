@@ -31,7 +31,8 @@ const CitiesSection = () => {
         settingCityOfCheckOrder,
         cityChose,
         settingCityIDAtCheckOrder,
-        activatingCheckAppButton    
+        activatingCheckAppButton,
+        levelUsed    
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.checkSectionState.previous_level)
     console.log(previous_level)
@@ -52,11 +53,11 @@ const CitiesSection = () => {
     
     
     // console.log(cities)
-    const handlinglevels = () => {
-        settingLevel('category')
-        settingPreviousLevel('city')
-    }
-  
+    // const handlinglevels = () => {
+    //     settingLevel('category')
+    //     settingPreviousLevel('city')
+    // }
+    
     const comeBack = () => {
         settingLevel('Starting')
         settingPreviousLevel('city')
