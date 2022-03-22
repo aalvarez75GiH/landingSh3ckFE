@@ -5,6 +5,7 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
 import city_icon_black from '../../images/city_icon_3.svg'
 import city_icon_white from '../../images/city_icon_3_white.svg'
+import { categoryDone } from '../../state/actions'
 
 // ******************** CheckApp Utilities ******************
 export const CheckAppButton = () => {
@@ -15,18 +16,19 @@ export const CheckAppButton = () => {
         activatingCheckAppButton
     } = bindActionCreators(actionCreators, dispatch)
 const level = useSelector((state) => state.checkSectionState.level) 
-const level_used = useSelector((state) => state.checkSectionState.level_used )
+const levelUsed = useSelector((state) => state.checkSectionState.level_used )
 const button_activated = useSelector((state) => state.overallCheckAppState.button_activated)
 
-    
+let arr = []
+ arr = levelUsed   
     useEffect(() => {
-        if (level === level_used){
-            activatingCheckAppButton(true)   
+        if (arr.includes(level)){
+            activatingCheckAppButton(true)
+            return   
         }
     },[])
     
 console.log(button_activated)
-    console.log(level_used)
     const handlingLevels = () => {
     
        
@@ -62,19 +64,23 @@ export const CityTile = ({ city,index }) => {
         cityChose,
         settingCityIDAtCheckOrder,
         activatingCheckAppButton,
-        levelUsed    
+        levelUsed, Done    
     } = bindActionCreators(actionCreators, dispatch)
-
+    const cities = useSelector((state) => state.cityState.cities)
+    const active = useSelector((state) => state.cityState.active_city)
+    const level_used = useSelector((state) => state.checkSectionState.level_used )
+    let arr = []
+    arr = level_used
+    console.log(arr)
     const toggleActive = (city, index) => {
-        levelUsed('city')
+        if (!arr.includes('city')){
+            levelUsed('city')
+        }
         settingCityOfCheckOrder(city.name)
         settingCityIDAtCheckOrder(city._id)
         activatingCheckAppButton(true)
         cityChose(cities[index]._id)
     }
-    const cities = useSelector((state) => state.cityState.cities)
-    const active = useSelector((state) => state.cityState.active_city)
-
     const toggleActiveStyle = (index) => {
         if (cities[index]._id === active ){
             return 'cityItem_coloured'
@@ -167,18 +173,23 @@ export const ServiceTimeTile = ({ ST, index }) => {
         productToSTID,
         serviceTimeChose,
         activatingCheckAppButton,
-        levelUsed
+        levelUsed, Done
     } = bindActionCreators(actionCreators, dispatch)
     
     const STimes = useSelector((state) => state.categoryAndSTState.service_times)
     console.log(STimes)
     const active = useSelector((state) => state.categoryAndSTState.active_service_time)
     const active_category_boolean = useSelector((state) => state.categoryAndSTState.active_category_boolean)
-    console.log(active)
+    const level_used = useSelector((state) => state.checkSectionState.level_used )
+    let arr = []
+    arr = level_used
+    
     
     const handlingProductToCheckServiceTime = () => {
         if(active_category_boolean){
-            levelUsed('category')
+            if (!arr.includes('category')){
+                levelUsed('category')
+            }
             productToCheckServiceTime(ST.caption)
             productToSTID(ST._id)
             serviceTimeChose(STimes[index]._id)
