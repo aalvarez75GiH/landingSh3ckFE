@@ -139,6 +139,10 @@ width: 95%;
 height: 100px;
 background-color: #010606;
 margin-top: 4% ;
+
+@media (max-width:560px) and (min-width: 320px){
+    height: 40px;
+}
 `
 export const CitySectionTitle = styled.h1 `
 font-size: 1.5rem;
@@ -148,6 +152,9 @@ color: #ffffff;
 
 @media (max-width:1920px) and (min-width: 1536px){
 font-size: 2rem;
+}
+@media (max-width:560px) and (min-width: 360px){
+font-size: 1rem;
 }
 @media (max-width:360px) and (min-width: 320px){
 font-size: 1.3rem;

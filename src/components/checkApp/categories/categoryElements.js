@@ -108,8 +108,9 @@ height: 100px;
 background-color: #010606;
 margin-top: 4% ;
 
-@media (max-width:414px) and (min-width: 320px){
-width: 95% ;
+@media (max-width:560px) and (min-width: 320px){
+width: 95%;
+height: 40px;
 }
 
 `
@@ -123,8 +124,8 @@ color: #ffffff;
 @media (max-width:1920px) and (min-width: 1536px){
 font-size: 2rem;
 }
-@media (max-width:360px) and (min-width: 320px){
-font-size: 1.3rem;
+@media (max-width:560px) and (min-width: 320px){
+font-size: 1rem;
 }
 
 ` 
@@ -162,8 +163,9 @@ height: 100px;
 background-color: #010606;
 margin-top: 4%;
 
-@media (max-width:414px) and (min-width: 320px){
-width: 95% ;
+@media (max-width:560px) and (min-width: 320px){
+width: 95%;
+height: 40px;
 }
 `
 export const ServiceTimeTitle = styled.h1`
@@ -175,8 +177,8 @@ color: #ffffff;
 @media (max-width:1920px) and (min-width: 1536px){
 font-size: 2rem;
 }
-@media (max-width:360px) and (min-width: 320px){
-font-size: 1.3rem;
+@media (max-width:560px) and (min-width: 320px){
+font-size: 1rem;
 }
 
 `
