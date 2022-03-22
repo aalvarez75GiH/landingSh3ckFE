@@ -10,7 +10,8 @@ display: grid;
 /* grid-template-columns: 30% 30% 30% ; */
 align-items: center;
 left: 0;
-right: 0;  
+right: 0;
+overflow-y: hidden;
 
 @media (max-width:1920px) and (min-width: 768px){
 width: 100%;
@@ -41,6 +42,8 @@ align-items: center ;
 width: 100%;
 height: auto;
 background-color: #eeeeee;
+overflow-y: hidden;
+
 
 @media (max-width:1920px) and (min-width: 768px){
 width: 50%;

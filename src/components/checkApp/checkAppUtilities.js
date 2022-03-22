@@ -121,9 +121,9 @@ export const CategoryTile = ({
     } 
     const togglingActivatedBar = (index) => {
         if(categories[index]._id === active){
-            return 'activatedBar_active'
+            return 'categoryTile_active'
         }else{
-            return 'activatedBar'
+            return 'categoryTile'
         }
     }
     return (
@@ -136,7 +136,7 @@ export const CategoryTile = ({
         duration={500} 
         key={category._id} 
         onClick={handlingProductToCheckCategory}
-        className='categoryTile'>
+        className={togglingActivatedBar(index)}>
             <img
             className="categoryIcon" 
             src={category.image} 
@@ -144,7 +144,6 @@ export const CategoryTile = ({
             <p
             className="categoryName"
             >{category.name}</p>
-            <div className={togglingActivatedBar(index)}></div>
         </LinkS>
     )
 }

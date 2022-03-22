@@ -1643,6 +1643,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     background-color: #ffffff;
     margin-left: 20%;
 }
+.categoryTile_active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 200px;
+    height: 130px;
+    margin: 10px;
+    border-radius: 15px ;
+    background-color: #FAD570;
+    margin-left: 20%;
+}
 
 .TileImg {
     width: 50px;
@@ -1652,16 +1664,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     text-align: center;
     margin-top: 8%;
     font-size: 1rem;
-}
-.activatedBar {
-    opacity: 0;
-}
-.activatedBar_active {
-    width: 65%;
-    height: 5px;
-    background-color: #FAD570;
-    margin-top: 5%;
-    opacity: 1;
 }
 
 .categoryIcon {
@@ -2079,85 +2081,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 115px;
     }
     
-
-    /* ************** checkSection ************** */
-
-
-/* .checkSectionContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 1100px;
-    background-color: #eeeeee;
-    margin-top: 10%;
-    margin-left: 5%;
-} */
-
-/* .checkSectionWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1000px;
-    background-image: url('./images/8443731_business_start_up_launch_rocket_icon.svg');
-    background-size: 74% 68%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-} */
-
-
-.checkSection-BtnWrap {
-    /* display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 500px; */
-    /* margin-top: 45%; */
-    
-}
-
-/* 
-.checkSection-checkBtn {
-    width: 40%;
-    height: 115px;
-    background-color: #010606;
-    border-style: none;
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: 5%;
-}
-
-
-.checkSection-exitBtn {
-    width: 40%;
-    height: 115px;
-    background-color: #FAD570;
-    border-style: none;
-    color: #010606;
-    font-size: 1.5rem;
-    color: #010606;
-    margin-left: 5%;
-    margin-top: 1%;
-}
-.checkSection-notNow {
-    margin-left: 7%;
-    margin-top: 3%;
-}
-
-.navMobilForCS {
-    background-color: #ffffff;
-    height: 80px;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-} */
-
-
-    /*********** Info *******************  */
-    
     
     .contactInfoImageContainer img {
         margin-top: 2%;
@@ -2207,9 +2130,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     /* ************* checkApp: category ************************** */
     .categoryTile {
-       width: 175px;
-        
+       width: 175px;   
     }
+    .categoryTile_active {
+        width: 175px;
+        background-color: #00a307;   
+     }
 }
 
 
@@ -2382,6 +2308,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     .categoryTile {
         width: 125px;  
+     }
+     .categoryTile_active {
+        width: 125px;  
+        background-color: #FAD570;
      }
   
 
@@ -2910,20 +2840,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 23%;
     }
 
-    /****** CheckSection  ******/
-    /* .checkSection-BtnWrap {
-        margin-top: 65%;
-        
-    } */
-    /* .checkSection-checkBtn {
-        width: 45%;
-    } */
-    
-    
-    /* .checkSection-exitBtn {
-        width: 45%;
-    } */
-    /* *****  SideBar *********** */
 
     .sideBarLink {
         margin-top: 2%;
@@ -2958,6 +2874,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
     .categoryTile {
         width: 125px;
+         
+     }
+    .categoryTile_active {
+        width: 125px;
+        background-color: #FAD570;
          
      }
   
@@ -3577,10 +3498,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 100px;
      }
 
-     .categoryTile {
+    .categoryTile {
         width: 125px;
          
-     }
+    }
+    .categoryTile_active {
+        width: 125px;
+        background-color: #FAD570;     
+    }
 }
 /* ********  Phones Responsive Design ******************* */
 @media (max-width:560px) and (min-width: 480px){
@@ -4254,10 +4179,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         font-size: 1.3rem;
         height: 100px;
      }
-     .categoryTile {
+    .categoryTile {
         width: 125px;
          
-     }
+    }
+    .categoryTile_active {
+        width: 125px;
+        background-color: #FAD570;
+         
+    }
 }
 
 @media (max-width:480px) and (min-width: 414px){
@@ -4986,10 +4916,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         height: 100px;
      }
 
-     .categoryTile {
+    .categoryTile {
         width: 125px;
          
-     }
+    }
+    .categoryTile_active {
+        width: 125px;
+        background-color: #FAD570;
+    }
      .serviceTimeTile {
         width: 110px;
         margin: 10px;
@@ -5888,15 +5822,26 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
 /* ****************** checkApp: categorySection *************************** */
 .categoryTile {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center ;
-    align-items: center;
+    align-items: center; */
     width: 110px;
     height: 125px;
     margin: 10px;
     border-radius: 15px ;
     background-color: #ffffff;
+}
+.categoryTile_active {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center; */
+    width: 110px;
+    height: 125px;
+    margin: 10px;
+    border-radius: 15px ;
+    background-color: #FAD570;
 }
 .categoryName {
     text-align: center;
@@ -6328,7 +6273,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         align-items: unset;
         width: 100%;
         height: 1600px;
-        background-color: #FAD570;
+        background-color: #00a307;
     }
 
 
@@ -6806,10 +6751,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-size: 1.3rem;
  }
  
- .categoryTile {
+.categoryTile {
      width: 85px;
      height: 120px;
- }
+}
+.categoryTile_active {
+    width: 85px;
+    height: 120px;
+    background-color: #FAD570;
+}
  .serviceTimeTile {
     width: 85px;
     height: 85px;
