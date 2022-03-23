@@ -28,7 +28,6 @@ export const FinishingOrderBtnWrapp = styled.div `
     width: 100%;
     height: 500px;
     margin-top: 38%;
-
 `
 export const FinishingOrderBtn = styled.button `
     width: 40%;
@@ -39,5 +38,4 @@ export const FinishingOrderBtn = styled.button `
     font-size: 1.5rem;
     color: #ffffff;
     margin-left: 5%;
-
 `

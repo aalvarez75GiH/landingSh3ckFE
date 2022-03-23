@@ -23,6 +23,7 @@ const NotificationBox = () => {
     const language = useSelector((state) => state.sideBarState.language)
     const active = useSelector((state) => state.contactSectionState.active)
     const loginResponse = useSelector((state) => state.homeState.loginResponse)
+    // const username = useSelector((state) => state.homeState.currentUser)
     // const response = useSelector((state) => state.contactSectionState.response)
     const response = useSelector((state) => loginResponse ? loginResponse : state.contactSectionState.response)
     const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
@@ -61,8 +62,8 @@ const NotificationBox = () => {
         activatingForm(null) //action
         openingContactSection(false) //action
     }
-
-    const nameSplittedAndCapitalized = capitalizeFirstLetter(response.data)
+    // console.log(username)
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(response.data.name)
     // console.log('splitting response: ', responseSplitted[0])
     if (response){
         if (response.status === 400){

@@ -166,32 +166,6 @@ export const gettingGoogleLoginData = (value) => {
 
 // ****** CheckSection Actions creators ***************
 
-export const settingLevel = (value) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'level',
-            payload: value
-        })
-    }
-}
-
-export const settingPreviousLevel = (value) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'previous_level',
-            payload: value
-        })
-    }
-}
-
-export const settingisOpen = (status) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'isOpen',
-            payload: status
-        })
-    }
-}
 
 export const settingCityOfCheckOrder = (value) => {
     return(dispatch) => {
@@ -211,8 +185,66 @@ export const settingCityIDAtCheckOrder = (value) => {
 }
 }
 
+
+
 // ****** CheckApp Actions creators ***************
- 
+
+// ************** Overall **************************
+export const settingLevel = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'level',
+            payload: value
+        })
+    }
+}
+
+export const settingPreviousLevel = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'previous_level',
+            payload: value
+        })
+    }
+}
+
+export const levelUsed = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'level_used',
+            payload: value
+        })
+    }
+}
+
+export const clearLevelUsed = () => {
+    return(dispatch) => {
+        dispatch({
+            type: 'flush_level_used'
+        })
+    }
+}
+
+export const activatingCheckAppButton = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_button',
+            payload: status
+        })
+    }
+}
+// ************** Check Order User **************************
+export const settingUserInCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'user_check_order',
+            payload: value
+        })
+    }
+}
+
+
+// ************** City **************************
 export const gettingCities = (response) => {
     return(dispatch) => {
         dispatch({
@@ -231,14 +263,7 @@ export const cityChose = (value) => {
     }
 }
 
-export const activatingCheckAppButton = (status) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'active_button',
-            payload: status
-        })
-    }
-}
+// ************** Category and Service Time **************************
 
 export const gettingCategories = (response) => {
     return(dispatch) => {
@@ -320,14 +345,7 @@ export const serviceTimeChose = (value) => {
     }
 } 
 
-export const levelUsed = (value) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'level_used',
-            payload: value
-        })
-    }
-} 
+ 
 
  
  

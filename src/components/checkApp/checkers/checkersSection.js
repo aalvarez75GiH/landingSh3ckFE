@@ -12,7 +12,6 @@ import {
 
 
 const CheckersSection = () => {
-    // const isOpen = useSelector((state) => state.checkSectionState.isOpen) 
     
     const dispatch = useDispatch()
     const {  
@@ -21,7 +20,7 @@ const CheckersSection = () => {
     } = bindActionCreators(actionCreators, dispatch)
     
     // const language = useSelector((state) => state.sideBarState.language)
-    const previous_level = useSelector((state) => state.checkSectionState.previous_level)
+    const previous_level = useSelector((state) => state.checkOrderState.previous_level)
     
     const test = () => {
         settingLevel('summary')

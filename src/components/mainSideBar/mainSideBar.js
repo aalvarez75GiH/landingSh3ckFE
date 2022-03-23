@@ -24,23 +24,26 @@ const MainSideBar = () => {
         handlingIsLoggedOut, openingContactSection,
         settingCurrentUser, settingLevel, settingPreviousLevel,
         settingCityOfCheckOrder, settingCityIDAtCheckOrder,
-        activatingCheckAppButton, cityChose
+        activatingCheckAppButton, cityChose, categoryChoseBoolean,
+        productToCheckCategory, productToCheckID, categoryChose,
+        productToCheckServiceTime, productToSTID,serviceTimeChose,
+        settingUserInCheckOrder, clearLevelUsed
+
     } = bindActionCreators(actionCreators, dispatch)
     const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
     const username = useSelector((state) => state.homeState.currentUser)
     const language = useSelector((state) => state.sideBarState.language)
-    const loginResponse = useSelector((state) => state.homeState.loginResponse)
     const loggedIn = useSelector((state) => state.homeState.loggedIn)
     const loginData = useSelector((state) => state.homeState.loginData)
     const isSignedIn = useSelector((state) => state.homeState.isSignedIn)
     
     const capitalizeFirstLetter = (string) => {
-        // const str = 'flexiple';
         const str2 = string.charAt(0).toUpperCase() + string.slice(1)
         console.log(str2.split(' ')[0]);
         return str2.split(' ')[0]    
     }
-    const nameSplittedAndCapitalized = capitalizeFirstLetter(username ? username : loginResponse.data )
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(username )
+    
 
     const handlingSubmitLogOutUser = async() => {
         
@@ -48,7 +51,6 @@ const MainSideBar = () => {
             console.log('pasa por isSignedIn')
             const auth = window.gapi.auth2.getAuthInstance()
             await auth.signOut()
-            
             handlingIsSignedInGoogle(false) //action
             activatingForm(null) //action
             openingMainSideBar(!mainSideBarOpen)  //action
@@ -60,6 +62,22 @@ const MainSideBar = () => {
             settingCityIDAtCheckOrder('')
             activatingCheckAppButton(false)
             cityChose('')
+            categoryChoseBoolean(true)
+            productToCheckCategory('')
+            productToCheckID('')
+            categoryChose('')
+            cityChose('')
+            productToCheckServiceTime('')
+            productToSTID('')
+            serviceTimeChose('')
+            settingUserInCheckOrder({
+                name: '',
+                email: '',
+                phoneNumber: ''
+            
+            })
+        
+            clearLevelUsed()
         }
         if (loggedIn){
             console.log('pasa por loggedIn')
@@ -77,6 +95,22 @@ const MainSideBar = () => {
             settingCityIDAtCheckOrder('')
             activatingCheckAppButton(false)
             cityChose('')
+            categoryChoseBoolean(true)
+            productToCheckCategory('')
+            productToCheckID('')
+            categoryChose('')
+            cityChose('')
+            productToCheckServiceTime('')
+            productToSTID('')
+            serviceTimeChose('')
+            settingUserInCheckOrder({
+                name: '',
+                email: '',
+                phoneNumber: ''
+            
+            })
+        
+            clearLevelUsed()
         }
         
         
@@ -108,7 +142,6 @@ const MainSideBar = () => {
                                     <img src={loginData.imageUrl || loginData.picture} alt="cdcdcdc" className="avatar" />
                                 </div>
                             }
-                            
                             <h1 className="mainSideBarUserName">{language === 'ES' ? infoMainSideBar.hola : infoMainSideBar.hello} <b>{nameSplittedAndCapitalized}</b> </h1>
                         </div>
                         <div className="mainSideBarContentOptions">

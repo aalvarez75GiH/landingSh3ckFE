@@ -3,7 +3,6 @@ import { infoCheck } from '../../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
-import { getRequestToCities } from '../../../requestsToApi'
 import { 
     CheckSectionContainer, CheckSectionWrapper, 
     CheckSectionBtnWrap,CheckSectionCheckBtn,
@@ -25,12 +24,13 @@ const CheckStarting = () => {
         categoryChoseBoolean, productToCheckCategory,
         productToCheckID, categoryChose,
         productToCheckServiceTime, productToSTID,
-        serviceTimeChose
+        serviceTimeChose, settingUserInCheckOrder,
+        clearLevelUsed, levelUsed
 
     } = bindActionCreators(actionCreators, dispatch)
     
     const language = useSelector((state) => state.sideBarState.language)
-    const previous_level = useSelector((state) => state.checkSectionState.previous_level)
+    const previous_level = useSelector((state) => state.checkOrderState.previous_level)
 
     const gettingOutOfCheckApp = async() => {
         localStorage.removeItem('SH3CK_TOKEN')
@@ -57,6 +57,14 @@ const CheckStarting = () => {
         productToCheckServiceTime('')
         productToSTID('')
         serviceTimeChose('')
+        settingUserInCheckOrder({
+            name: '',
+            email: '',
+            phoneNumber: ''
+
+        })
+       
+        clearLevelUsed()
        
     }
 

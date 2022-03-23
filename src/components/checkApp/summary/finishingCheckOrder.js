@@ -8,7 +8,7 @@ import {
     FinishingOrderBtnWrapp, FinishingOrderBtn
  
 
-} from '../checkAppElements'
+} from './summaryElements.js'
 
 
 const FinishingCheckOrder = () => {
@@ -19,10 +19,10 @@ const FinishingCheckOrder = () => {
         settingCurrentUser, gettingLoginResponseData,
         openingContactSection,handlingIsLoggedIn, 
         handlingIsSignedInGoogle, settingResponse, 
-        gettingGoogleLoginData, settingisOpen,
-        settingLevel, settingPreviousLevel,
-        settingCityOfCheckOrder, settingCityIDAtCheckOrder,
-        activatingCitySectionButton, cityChose
+        gettingGoogleLoginData, settingLevel, 
+        settingPreviousLevel, settingCityOfCheckOrder, 
+        settingCityIDAtCheckOrder, cityChose, 
+        activatingCheckAppButton
 
     } = bindActionCreators(actionCreators, dispatch)
     
@@ -39,12 +39,11 @@ const FinishingCheckOrder = () => {
         gettingLoginResponseData(null) //action
         settingResponse(null)
         settingCurrentUser(null) //action
-        settingisOpen(false)
         settingLevel('Starting')
         settingPreviousLevel('')
         settingCityOfCheckOrder('')
         settingCityIDAtCheckOrder('')
-        activatingCitySectionButton(false)
+        activatingCheckAppButton(false)
         cityChose('')
     }
 

@@ -26,9 +26,8 @@ const CategorySection = () => {
         settingLevel, settingPreviousLevel,
         gettingCategories, gettingServiceTimes    
     } = bindActionCreators(actionCreators, dispatch) 
-    const previous_level = useSelector((state) => state.checkSectionState.previous_level)
-    const level = useSelector((state) => state.checkSectionState.level)
-    const button_activated = useSelector((state) => state.cityState.button_activated)
+    const previous_level = useSelector((state) => state.checkOrderState.previous_level)
+    const level = useSelector((state) => state.checkOrderState.level)
     const categories = useSelector((state) => state.categoryAndSTState.categories)
     const service_times = useSelector((state) => state.categoryAndSTState.service_times)
     console.log(categories)
@@ -106,9 +105,7 @@ const CategorySection = () => {
                 <ServiceTimeItemContainer>
                     {renderingTimeServiceList} 
                 </ServiceTimeItemContainer>
-                <CheckAppButton
-                button_activated={button_activated}
-                />
+                <CheckAppButton />
             </CategorySectionWrapper>
         </CategorySectionContainer>
 

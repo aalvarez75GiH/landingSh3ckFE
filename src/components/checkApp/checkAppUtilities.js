@@ -4,8 +4,6 @@ import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
 import city_icon_black from '../../images/city_icon_3.svg'
-import city_icon_white from '../../images/city_icon_3_white.svg'
-import { categoryDone } from '../../state/actions'
 
 // ******************** CheckApp Utilities ******************
 export const CheckAppButton = () => {
@@ -15,8 +13,8 @@ export const CheckAppButton = () => {
         settingPreviousLevel,
         activatingCheckAppButton
     } = bindActionCreators(actionCreators, dispatch)
-const level = useSelector((state) => state.checkSectionState.level) 
-const levelUsed = useSelector((state) => state.checkSectionState.level_used )
+const level = useSelector((state) => state.overallCheckAppState.level) 
+const levelUsed = useSelector((state) => state.overallCheckAppState.level_used )
 const button_activated = useSelector((state) => state.overallCheckAppState.button_activated)
 
 let arr = []
@@ -60,15 +58,13 @@ console.log(button_activated)
 export const CityTile = ({ city,index }) => {
     const dispatch = useDispatch()
     const {
-        settingCityOfCheckOrder,
-        cityChose,
-        settingCityIDAtCheckOrder,
-        activatingCheckAppButton,
-        levelUsed, Done    
+        settingCityOfCheckOrder, cityChose,
+        settingCityIDAtCheckOrder, activatingCheckAppButton,
+        levelUsed  
     } = bindActionCreators(actionCreators, dispatch)
     const cities = useSelector((state) => state.cityState.cities)
     const active = useSelector((state) => state.cityState.active_city)
-    const level_used = useSelector((state) => state.checkSectionState.level_used )
+    const level_used = useSelector((state) => state.overallCheckAppState.level_used )
     let arr = []
     arr = level_used
     console.log(arr)
@@ -157,7 +153,7 @@ export const CategoryTile = ({ category, index }) => {
             <img
             className="categoryIcon" 
             src={category.image} 
-            alt="xdsxwdcd" />
+            alt="categoryIcon" />
             <p
             className="categoryName"
             >{category.name}</p>
@@ -169,18 +165,16 @@ export const ServiceTimeTile = ({ ST, index }) => {
     // console.log(ST)
     const dispatch = useDispatch()
     const {
-        productToCheckServiceTime, 
-        productToSTID,
-        serviceTimeChose,
-        activatingCheckAppButton,
-        levelUsed, Done
+        productToCheckServiceTime, productToSTID,
+        serviceTimeChose, activatingCheckAppButton,
+        levelUsed 
     } = bindActionCreators(actionCreators, dispatch)
     
     const STimes = useSelector((state) => state.categoryAndSTState.service_times)
     console.log(STimes)
     const active = useSelector((state) => state.categoryAndSTState.active_service_time)
     const active_category_boolean = useSelector((state) => state.categoryAndSTState.active_category_boolean)
-    const level_used = useSelector((state) => state.checkSectionState.level_used )
+    const level_used = useSelector((state) => state.overallCheckAppState.level_used )
     let arr = []
     arr = level_used
     

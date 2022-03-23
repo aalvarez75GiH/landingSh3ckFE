@@ -6,17 +6,15 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import { getRequestToCities } from '../../../requestsToApi'
 import { CityTile, CheckAppButton } from '../checkAppUtilities'
-import city_icon_black from '../../../images/city_icon_3.svg'
-import city_icon_white from '../../../images/city_icon_3_white.svg'
 
 import '../../../sh3ck.css'
 import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 import { 
     CitySectionContainer, CitySectionWrapper, 
     CityItemContainer,  CitySectionTitle,
-    CityTitleContainer, CitySectionButton, 
-    BackwardSection, BackwardLeftArrowIcon,
-    LeftArrow, BackwardLabel
+    CityTitleContainer, BackwardSection, 
+    BackwardLeftArrowIcon, LeftArrow, 
+    BackwardLabel
     
 } from './cityElements.js'
 
@@ -27,22 +25,13 @@ const CitiesSection = () => {
     const {
         settingLevel, 
         settingPreviousLevel, 
-        gettingCities,
-        settingCityOfCheckOrder,
-        cityChose,
-        settingCityIDAtCheckOrder,
-        activatingCheckAppButton,
-        levelUsed    
+        gettingCities,    
     } = bindActionCreators(actionCreators, dispatch) 
-    const previous_level = useSelector((state) => state.checkSectionState.previous_level)
+    const previous_level = useSelector((state) => state.overallCheckAppState.previous_level)
     console.log(previous_level)
     const cities = useSelector((state) => state.cityState.cities)
-    const active = useSelector((state) => state.cityState.active_city)
-    const button_activated = useSelector((state) => state.cityState.button_activated)
          
     
-    
-
     useEffect(() => {
         const gettingCitiesFromAPI = async() => {
             const response  = await getRequestToCities()
@@ -52,11 +41,6 @@ const CitiesSection = () => {
     },[])
     
     
-    // console.log(cities)
-    // const handlinglevels = () => {
-    //     settingLevel('category')
-    //     settingPreviousLevel('city')
-    // }
     
     const comeBack = () => {
         settingLevel('Starting')
@@ -77,7 +61,6 @@ const CitiesSection = () => {
     return (
         
         <CitySectionContainer
-        // id="cityContainer"
         initial={previous_level === 'category' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 
         animate={{ x: 0, opacity: 1 }}
         transition={{ stiffness: 33 }}

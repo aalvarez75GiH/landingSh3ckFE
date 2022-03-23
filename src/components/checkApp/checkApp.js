@@ -7,7 +7,7 @@ import FinishingCheckOrder from './summary/finishingCheckOrder'
 import { useSelector } from 'react-redux'
 
 const CheckApp = () => {
-     const level = useSelector((state) => state.checkSectionState.level)
+     const level = useSelector((state) => state.overallCheckAppState.level)
      console.log(level)
      
     switch (level) {

@@ -4,6 +4,7 @@ import heroSectionReducer from './heroSectionReducers'
 import contactSectionReducer from './contactSectionReducers'
 import homeReducers from './homeReducers'
 import checkSectionReducer from './checkSectionReducers'
+import checkOrderReducer from './checkApp/checkOrderReducers'
 import citySectionReducer from './checkApp/cityReducers'
 import categoryAndSTReducers from './checkApp/categoryAndSTReducers'
 import overallCheckAppReducers from './checkApp/overalCheckAppReducers' 
@@ -15,11 +16,12 @@ const reducers = combineReducers({
     heroSection: heroSectionReducer,
     contactSectionState: contactSectionReducer,
     homeState: homeReducers,
-    checkSectionState: checkSectionReducer,
+    // checkSectionState: checkSectionReducer,
     cityState: citySectionReducer,
     categoryAndSTState: categoryAndSTReducers,
     overallCheckAppState: overallCheckAppReducers,
-    productToCheckState: productToCheckReducer 
+    productToCheckState: productToCheckReducer,
+    checkOrderState: checkOrderReducer 
 
 })
 

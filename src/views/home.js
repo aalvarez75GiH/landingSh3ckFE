@@ -34,7 +34,8 @@ const Home = () => {
     const {  
          activatingSpinner,  
         settingCurrentUser, handlingIsLoggedIn,handlingIsLoggedOut, 
-        handlingIsSignedInGoogle, gettingGoogleLoginData,  
+        handlingIsSignedInGoogle, gettingGoogleLoginData,
+        settingUserInCheckOrder  
     } = bindActionCreators(actionCreators, dispatch)
     
     const QASideBarOpen = useSelector((state) => state.sideBarState.QASideBarOpen)
@@ -59,8 +60,8 @@ const Home = () => {
             const token = localStorage.getItem('SH3CK_TOKEN')
             if (token){
                 const response = await verifyingTokenRequest(token)
-                console.log(response.data)
-                settingCurrentUser(response.data) //action
+                console.log(response.data.name)
+                settingCurrentUser(response.data.name) //action
                 return handlingIsLoggedIn(true) //action
             }
             handlingIsLoggedIn(false) //action
@@ -109,21 +110,27 @@ const Home = () => {
             const data = res.data
             if (res.status === 201){
                 console.log(data)
-                activatingSpinner(false) //action
-                gettingGoogleLoginData(data)    //action
-                settingCurrentUser(data.fullName) //action
-                handlingIsLoggedIn(true)  //action
-                handlingIsLoggedOut(false) //action
+                activatingSpinner(false) 
+                gettingGoogleLoginData(data)    
+                settingCurrentUser(data.fullName) 
+                handlingIsLoggedIn(true)  
+                handlingIsLoggedOut(false) 
                 return res.status
             }
         } catch (error) {
             console.log(error)
             console.log(error.response.data)
-            activatingSpinner(false) //action
-            settingCurrentUser(error.response.data.fullName) //action
-            gettingGoogleLoginData(error.response.data) //action
-            handlingIsLoggedIn(true)  //action
-            handlingIsLoggedOut(false) //action
+            activatingSpinner(false) 
+            settingCurrentUser(error.response.data.fullName) 
+            settingUserInCheckOrder({
+                name: error.response.data.fullName,
+                email: error.response.data.email,
+                phoneNumber: error.response.data.phoneNumber
+
+            })
+            gettingGoogleLoginData(error.response.data) 
+            handlingIsLoggedIn(true)  
+            handlingIsLoggedOut(false) 
         }
 }
 console.log(response)

@@ -25,6 +25,7 @@ const LoginForm = ({ googleTest }) => {
         activatingSpinner,openingQASideBar,
         settingCurrentUser, gettingLoginResponseData, 
         handlingIsLoggedIn, handlingIsLoggedOut,
+        settingUserInCheckOrder
 } = bindActionCreators(actionCreators, dispatch)
 const regView = useSelector((state) => state.contactSectionState.regView)
 const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
@@ -46,13 +47,19 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
                 console.log(data)
                 localStorage.setItem('SH3CK_TOKEN', data.token)
                 const response = await verifyingTokenRequest(data.token)
-                console.log(response)
-                settingCurrentUser(response.data) //action
+                console.log(response.data.name)
+                let name = response.data.name
+                settingUserInCheckOrder({
+                    name: response.data.name,
+                    email: response.data.email,
+                    phoneNumber: response.data.phoneNumber
+
+                })
+                settingCurrentUser(name)
                 gettingLoginResponseData(response)  //action
                 activatingSpinner(false) //action
                 handlingIsLoggedIn(true)
-                handlingIsLoggedOut(false) //action
-                console.log('Usuaurio encontrado y hace login')    
+                handlingIsLoggedOut(false) //action    
             } catch (error) {
                 console.log(error)
                 gettingLoginResponseData(error.response)
