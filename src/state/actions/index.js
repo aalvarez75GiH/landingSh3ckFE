@@ -346,9 +346,17 @@ export const serviceTimeChose = (value) => {
 } 
 
  
-
+// ************** Checkers Section  **************************
  
  
+export const settingCheckers = (response) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'checkers_list',
+            payload: response
+        })
+    }
+}
 
 
 

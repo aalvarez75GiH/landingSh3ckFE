@@ -2,42 +2,180 @@ import styled from 'styled-components/macro'
 import { motion } from 'framer-motion'
 
 export const CheckerSectionContainer = styled(motion.div) `
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    display: grid;
-    align-items: center;
-    left: 0;
-    right: 0;    
+z-index: 999;
+width: 100%;
+height: auto;
+background-color: red;
+display: grid;
+align-items: center;
+left: 0;
+right: 0;
+overflow-y: hidden;  
+@media (max-width:1920px) and (min-width: 768px){
+width: 100%;
+height: auto;
+background-color: #ffffff;
+display: grid;
+align-items: center;
+left: 0;
+right: 0; 
+}
+@media (max-width:768px) and (min-width: 560px){
+width: 100%;
+height: auto;
+background-color: #ffffff;
+display: grid;
+align-items: center;
+left: 0;
+right: 0; 
+}  
 `
 export const CheckerSectionWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1000px;
-    background-color: blueviolet;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center ;
+width: 100%;
+height: auto;
+background-color: #eeeeee;
+overflow-y: hidden;
+
+
+@media (max-width:1920px) and (min-width: 768px){
+width: 50%;
+height: auto;
+background-color: #eeeeee;
+margin-left: 25%;
+margin-top: 3%;
+}
+@media (max-width:768px) and (min-width: 480px){
+width: 100%;
+height: auto;
+background-color: #eeeeee;
+margin-left: 0%;
+/* margin-top: 3%; */
+}
+`
+export const BackwardSection = styled.div`
+display: flex;
+align-items: center ;
+width: 95%;
+height: 40px;
+background-color: #ffffff;
+margin-top: 2%;
+
+`
+export const BackwardLabel = styled.p `
+width: 150px;
+height: 20px;
+font-weight: 600;
+
+` 
+export const BackwardLeftArrowIcon = styled.div `
+display: flex;
+justify-content: center;
+align-items: center;
+width: 10%;
+height: 40px;
+`
+export const LeftArrow = styled.img `
+width: 20px;
+height: 20px;
 `
 
-export const CheckerSectionBtnWrapp = styled.div `
+export const CheckersTitleContainer = styled.div`
+display: flex;
+align-items: center ;
+justify-content: flex-start ;
+width: 90%;
+height: 100px;
+background-color: #010606;
+margin-top: 4% ;
+
+@media (max-width:560px) and (min-width: 320px){
+width: 95%;
+height: 40px;
+}
+
+`
+
+export const CheckersSectionTitle = styled.h1 `
+font-size: 1.5rem;
+font-weight: 400;
+margin-left: 5%;
+color: #ffffff;
+
+@media (max-width:1920px) and (min-width: 1536px){
+font-size: 2rem;
+}
+@media (max-width:560px) and (min-width: 320px){
+font-size: 1rem;
+}
+
+` 
+
+export const CheckerItemContainerGrid = styled.div `
+display: grid;
+grid-template-columns: 30% 30% 30%;
+gap: 10px;
+align-items: center ;
+width: 90%;
+height: auto;
+background-color: #ffffff;
+margin-top: 2%;
+
+@media (max-width:414px) and (min-width:320px) {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 16px;
+    align-items: center ;
+    width: 95%;
+    height: auto;
+    background-color: #ffffff;
+    margin-top: 2%;
+
+}
+`
+export const CheckerItemContainerFlex = styled.div `
+display: flex;
+align-items: center ;
+width: 90%;
+height: auto;
+background-color: #ffffff;
+margin-top: 2%;
+
+@media (max-width:414px) and (min-width:320px) {
     display: flex;
+    flex-direction:column;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 38%;
+    align-items: center ;
+    width: 95%;
+    height: auto;
+    background-color: #ffffff;
+    margin-top: 2%;
 
+}
 `
-export const CheckerSectionBtn = styled.button `
-    width: 40%;
-    height: 115px;
-    background-color: #FAD570;
-    border-style: none;
-    /* border-radius: 60px; */
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: 5%;
 
-`
+// export const CheckerSectionBtnWrapp = styled.div `
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 100%;
+//     height: 500px;
+//     margin-top: 38%;
+
+// `
+// export const CheckerSectionBtn = styled.button `
+//     width: 40%;
+//     height: 115px;
+//     background-color: #FAD570;
+//     border-style: none;
+//     /* border-radius: 60px; */
+//     font-size: 1.5rem;
+//     color: #ffffff;
+//     margin-left: 5%;
+
+// `

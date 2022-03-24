@@ -9,7 +9,7 @@ import citySectionReducer from './checkApp/cityReducers'
 import categoryAndSTReducers from './checkApp/categoryAndSTReducers'
 import overallCheckAppReducers from './checkApp/overalCheckAppReducers' 
 import productToCheckReducer from './checkApp/productTocheckreducers'
-
+import checkersReducer from './checkApp/checkersReducers'
 const reducers = combineReducers({
     // account: sideBarReducer,
     sideBarState: sideBarReducer,
@@ -21,7 +21,8 @@ const reducers = combineReducers({
     categoryAndSTState: categoryAndSTReducers,
     overallCheckAppState: overallCheckAppReducers,
     productToCheckState: productToCheckReducer,
-    checkOrderState: checkOrderReducer 
+    checkOrderState: checkOrderReducer,
+    checkersState: checkersReducer 
 
 })
 

@@ -212,6 +212,34 @@ export const ServiceTimeTile = ({ ST, index }) => {
     )
 }
 
+// ******************** Checkers Section Utilities ******************
 
+export const CheckerTile = ({ checker, index }) => {
+    const dispatch = useDispatch()
+    const {
+      
+    } = bindActionCreators(actionCreators, dispatch)
 
+    console.log(checker.picture)
+    return (
+        <LinkS
+        to="serviceTimesContainer"  
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={-100}
+        duration={500} 
+        key={checker._id} 
+        // onClick={}
+        className="checkerTile">
+            <div className="checkerItemAvatar">
+                    <img 
+                    src={checker.picture}
+                    className="checkerAvatar" alt="avatar"/>
+                    
+            </div>
+            <p>{checker.fullName}</p>
+        </LinkS>
+    )
+}
 

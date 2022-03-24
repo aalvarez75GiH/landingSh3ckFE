@@ -5886,7 +5886,27 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .STSmall_active {
     color:#010606;
 }
-
+/* ****************** checkApp: Checkers Section *************************** */
+.checkerTile {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 95px;
+    margin: 10px;
+    /* border-radius: 15px ; */
+    background-color: #FAD570;
+}
+.checkerItemAvatar{
+    width: 17%;
+    height: 65px;
+    margin-left: 2%;
+}
+.checkerItemAvatar img {
+    width: 60px;
+}
+.checkerTile p {
+    margin-left: 2%;
+}
     
 }
 
