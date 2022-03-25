@@ -214,7 +214,10 @@ export const ServiceTimeTile = ({ ST, index }) => {
 
 // ******************** Checkers Section Utilities ******************
 
+
+
 export const CheckerTile = ({ checker, index }) => {
+    console.log(checker)
     const dispatch = useDispatch()
     const {
       
@@ -233,12 +236,50 @@ export const CheckerTile = ({ checker, index }) => {
         // onClick={}
         className="checkerTile">
             <div className="checkerItemAvatar">
-                    <img 
+                    <div 
+                    className='avatar'
+                    style={{
+                        width: '130px',
+                        height: '130px',
+                        borderRadius: '50%',
+                        backgroundImage: `url(${checker.picture})`,
+                        backgroundSize: 'cover',
+                        marginLeft: '6%',
+                        marginTop: '15%'
+
+                        
+                    }}
+                    >
+
+                    </div>
+                    {/* <img 
                     src={checker.picture}
-                    className="checkerAvatar" alt="avatar"/>
+                className="checkerAvatar" alt="avatar"/> */}
+                <span className="checkerRoute">ver ruta</span>
                     
             </div>
-            <p>{checker.fullName}</p>
+            <div className="checkerInfoContainer">
+            <div className="checkerInfo">
+                    <div className="checkerInfo__name">
+                        <h1>{checker.fullName}</h1>
+                    </div>
+                    <div className="checkerInfo__ciudad">
+                        <h3>{checker.city_name}</h3>
+                    </div>
+                    <div className="checkerInfo__rating">
+                        <h3>Rating:</h3><h4>{checker.rating}</h4>
+                    </div>
+                    <div className="checkerInfo__categoria">
+                        <h3>Chequea:</h3> <h4>{checker.category_name}</h4>
+                    </div>
+                    {/* <div className="checkerInfo__categoria">
+                         <h4>Automóviles</h4>
+                    </div> */}
+                </div>
+                <div className="checkerBioButton">
+                    <p>¿Que dicen de esta persona?</p>  
+                </div>
+            </div>
         </LinkS>
     )
 }

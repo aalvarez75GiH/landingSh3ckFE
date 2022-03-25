@@ -114,34 +114,34 @@ font-size: 1rem;
 
 ` 
 
-export const CheckerItemContainerGrid = styled.div `
-display: grid;
-grid-template-columns: 30% 30% 30%;
-gap: 10px;
-align-items: center ;
-width: 90%;
-height: auto;
-background-color: #ffffff;
-margin-top: 2%;
+// export const CheckerItemContainerGrid = styled.div `
+// display: grid;
+// grid-template-columns: 30% 30% 30%;
+// gap: 10px;
+// align-items: center ;
+// width: 90%;
+// height: auto;
+// background-color: #ffffff;
+// margin-top: 2%;
 
-@media (max-width:414px) and (min-width:320px) {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    gap: 16px;
-    align-items: center ;
-    width: 95%;
-    height: auto;
-    background-color: #ffffff;
-    margin-top: 2%;
+// @media (max-width:414px) and (min-width:320px) {
+//     display: grid;
+//     grid-template-columns: 30% 30% 30%;
+//     gap: 16px;
+//     align-items: center ;
+//     width: 95%;
+//     height: auto;
+//     background-color: #ffffff;
+//     margin-top: 2%;
 
-}
-`
+// }
+// `
 export const CheckerItemContainerFlex = styled.div `
 display: flex;
 align-items: center ;
 width: 90%;
 height: auto;
-background-color: #ffffff;
+background-color: #eeeeee;
 margin-top: 2%;
 
 @media (max-width:414px) and (min-width:320px) {
@@ -152,30 +152,8 @@ margin-top: 2%;
     align-items: center ;
     width: 95%;
     height: auto;
-    background-color: #ffffff;
+    background-color: #eeeeee;
     margin-top: 2%;
 
 }
 `
-
-// export const CheckerSectionBtnWrapp = styled.div `
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     align-items: center;
-//     width: 100%;
-//     height: 500px;
-//     margin-top: 38%;
-
-// `
-// export const CheckerSectionBtn = styled.button `
-//     width: 40%;
-//     height: 115px;
-//     background-color: #FAD570;
-//     border-style: none;
-//     /* border-radius: 60px; */
-//     font-size: 1.5rem;
-//     color: #ffffff;
-//     margin-left: 5%;
-
-// `

@@ -5889,25 +5889,115 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 /* ****************** checkApp: Checkers Section *************************** */
 .checkerTile {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     width: 95%;
-    height: 95px;
+    height: 250px;
     margin: 10px;
     /* border-radius: 15px ; */
-    background-color: #FAD570;
+    background-color: #ffffff;
+    /* border-radius: 10px; */
+    /* border: 1px solid #6666; */
 }
 .checkerItemAvatar{
-    width: 17%;
-    height: 65px;
-    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    /* margin-left: 2%; */
 }
-.checkerItemAvatar img {
+
+.checkerAvatar {
     width: 60px;
+    border-radius: 50%;
+
+}
+.checkerRoute {
+    margin-left: 30%;
+    margin-top: 10%;
 }
 .checkerTile p {
     margin-left: 2%;
 }
-    
+
+.checkerInfoContainer {
+    width: 58%;
+    height: 100%;
+    background-color: #ffffff;
+    /* border: 2px solid #010606; */
+}
+
+.checkerInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    /* background-color: #00a307; */
+}
+.checkerInfo__name {
+    font-size: 0.8rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+.checkerInfo__name h1 {
+    font-weight: 500;
+}
+.checkerInfo__ciudad {
+    /* font-size: 1rem; */
+    margin-top: 3%;
+    margin-left: 1%;
+}
+.checkerInfo__ciudad  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.checkerInfo__categoria{
+    display: flex;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+.checkerInfo__categoria  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.checkerInfo__categoria  h4 {
+    font-size: 0.9rem;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+.checkerInfo__rating {
+    display: flex;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+.checkerInfo__rating  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+/* .checkerInfo__rating {
+    font-size: 1rem;
+    font-weight: 500;
+} */
+.checkerInfo__rating h4 {
+    font-size: 0.9rem;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerBioButton {
+    width: 90%;
+    height: 50px;
+    background-color: #010606;
+    border-radius: 45px;
+    margin-top: 4%;
+    color:#ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
 }
 
 @media (max-width: 360px) and (min-width: 320px){
