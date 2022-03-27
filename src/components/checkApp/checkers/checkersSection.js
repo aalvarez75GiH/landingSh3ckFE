@@ -5,7 +5,10 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 import { CheckAppButton, CheckerTile  } from '../checkAppUtilities'
-import { getRequestToCheckers } from '../../../requestsToApi'
+// import { getRequestToCheckersbyCity } from '../../../requestsToApi'
+import { getRequestToCheckers, getRequestToCheckersByCity, 
+    getRequestToCheckersByCategory, getRequestToCheckersByCityAndCategory 
+} from '../../../requestsToApi'
 import { 
     CheckerSectionContainer, CheckerSectionWrapper,
     CheckerSectionBtnWrapp, CheckerSectionBtn,
@@ -30,10 +33,14 @@ const CheckersSection = () => {
     const previous_level = useSelector((state) => state.checkOrderState.previous_level)
     const city_id = useSelector((state) => state.checkOrderState.city_id)
     const checkers = useSelector((state) => state.checkersState.checkers)
+    const category_id = useSelector((state) => state.productToCheckState.category_id)
+    const service_time_id = useSelector((state) => state.productToCheckState.service_time_id)
+
     
     useEffect(()=> {
         const gettingCheckers = async() => {
-            const responseCheckers  = await getRequestToCheckers(city_id)
+            // const responseCheckers  = await getRequestToCheckersbyCity(city_id)
+            const responseCheckers  = await getRequestToCheckersByCity(city_id)
             console.log(responseCheckers)
             settingCheckers(responseCheckers)
         }
@@ -68,28 +75,27 @@ const CheckersSection = () => {
         exit={{ opacity: 0 }}
         >
             <CheckerSectionWrapper>
-            <BackwardSection
-                onClick={comeBack}
-                >
-                    <BackwardLeftArrowIcon>
-                            <LeftArrow
-                            src={arrow_icon_left}
-                            >
+                <BackwardSection
+                    onClick={comeBack}
+                    >
+                        <BackwardLeftArrowIcon>
+                                <LeftArrow
+                                src={arrow_icon_left}
+                                >
 
-                            </LeftArrow>
-                    </BackwardLeftArrowIcon>
-                    <BackwardLabel>
-                        Atrás
-                    </BackwardLabel>
-            </BackwardSection>
-            <CheckersTitleContainer>
-                <CheckersSectionTitle>Escoge el chequeador...</CheckersSectionTitle>
-            </CheckersTitleContainer>
-            <CheckerItemContainerFlex>
-                {renderingCheckersList}
-            </CheckerItemContainerFlex>
-            <CheckAppButton />
-                
+                                </LeftArrow>
+                        </BackwardLeftArrowIcon>
+                        <BackwardLabel>
+                            Atrás
+                        </BackwardLabel>
+                </BackwardSection>
+                <CheckersTitleContainer>
+                    <CheckersSectionTitle>Escoge el chequeador...</CheckersSectionTitle>
+                </CheckersTitleContainer>
+                <CheckerItemContainerFlex>
+                    {renderingCheckersList}
+                </CheckerItemContainerFlex>
+                <CheckAppButton />  
             </CheckerSectionWrapper>
         </CheckerSectionContainer>
 

@@ -72,14 +72,71 @@ export const getRequestToServiceTime = async() => {
     return response.data
 }
 
-export const getRequestToCheckers = async(city_id) => {
+// filtering by city
+export const getRequestToCheckersByCity = async(city_id) => {
     const token = localStorage.getItem("SH3CK_TOKEN")
     console.log(token)
-    const response = await axios.get(`${URL_BACKEND}/api/checkers/${city_id}/searches`, {
+    const response = await axios.get(`${URL_BACKEND}/api/checkers/${city_id}/cities`,{
         headers:{
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`   
-        }, 
+        }
+        
     })
     return response.data
 }
+// filtering by category
+export const getRequestToCheckersByCategory = async(category_id) => {
+    const token = localStorage.getItem("SH3CK_TOKEN")
+    console.log(token)
+    const response = await axios.get(`${URL_BACKEND}/api/checkers/${category_id}/categories`,{
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }
+        
+    })
+    return response.data
+}
+// filtering by city and category
+export const getRequestToCheckersByCityAndCategory = async(city_id, category_id) => {
+    const token = localStorage.getItem("SH3CK_TOKEN")
+    console.log(token)
+    const response = await axios.get(`${URL_BACKEND}/api/checkers/${city_id}/${category_id}/cityAndCategory`,{
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }
+        
+    })
+    return response.data
+}
+
+export const getRequestToCheckers = async(city_id, category_id, service_time_id) => {
+    const token = localStorage.getItem("SH3CK_TOKEN")
+    console.log(token)
+    const response = await axios.get(`${URL_BACKEND}/api/checkers/${city_id}/${category_id}/${service_time_id}/searches`,{
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }
+        
+    })
+    return response.data
+}
+
+// filtering by city
+
+// export const getRequestToCheckersbyCity = async(city_id) => {
+//     const token = localStorage.getItem("SH3CK_TOKEN")
+//     console.log(token)
+//     const response = await axios.get(`${URL_BACKEND}/api/checkers/${city_id}/searches`,{
+//         headers:{
+//             'Content-Type': 'application/json',
+//             Authorization: `Bearer ${token}`   
+//         }
+        
+//     })
+//     return response.data
+// }
+

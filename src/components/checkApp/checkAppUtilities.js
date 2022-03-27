@@ -4,6 +4,7 @@ import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
 import city_icon_black from '../../images/city_icon_3.svg'
+import alternate_picture from '../../images/avatar_1.png'
 
 // ******************** CheckApp Utilities ******************
 export const CheckAppButton = () => {
@@ -214,16 +215,56 @@ export const ServiceTimeTile = ({ ST, index }) => {
 
 // ******************** Checkers Section Utilities ******************
 
-
-
+export const CategoryLabelComponent = ({ checker }) => {
+    return (
+        <>
+        {
+        checker.category[1] ?
+        <div className="checkerInfo__categoria">
+            <h3>Chequea:</h3> <h4>{checker.category[0].category_name},</h4> 
+        </div>    
+        :
+        <div className="checkerInfo__categoria">
+            <h3>Chequea:</h3> <h4>{checker.category[0].category_name}</h4> 
+        </div>
+        }
+        {
+            checker.category[1] ?
+        <div className="checkerInfo__categoria">
+            <h4>{checker.category[1].category_name}</h4>
+        </div>
+        :
+        null
+        }
+        </>
+    )
+}
+ 
 export const CheckerTile = ({ checker, index }) => {
-    console.log(checker)
+    
+    console.log(checker.category[0].category_name)
     const dispatch = useDispatch()
     const {
       
     } = bindActionCreators(actionCreators, dispatch)
 
-    console.log(checker.picture)
+    console.log(checker.category)
+    
+    const capitalizeFirstLetter = (string) => {
+        const str2 = string.charAt(0).toUpperCase()+ string.slice(1)
+        console.log(str2.split(' ')[0]);
+        return str2    
+    }
+    const checkerNameCapitalized = capitalizeFirstLetter(checker.fullName )
+
+    const  validateURL = (value) => {
+        return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+    }
+
+    const validatingAwsUrl = validateURL(checker.picture)
+    console.log(validatingAwsUrl)
+
+
     return (
         <LinkS
         to="serviceTimesContainer"  
@@ -242,7 +283,8 @@ export const CheckerTile = ({ checker, index }) => {
                         width: '130px',
                         height: '130px',
                         borderRadius: '50%',
-                        backgroundImage: `url(${checker.picture})`,
+                        // backgroundImage: `url(${checker.picture})`,
+                        backgroundImage: `url(${validatingAwsUrl ? checker.picture : alternate_picture })`,
                         backgroundSize: 'cover',
                         marginLeft: '6%',
                         marginTop: '15%'
@@ -252,16 +294,13 @@ export const CheckerTile = ({ checker, index }) => {
                     >
 
                     </div>
-                    {/* <img 
-                    src={checker.picture}
-                className="checkerAvatar" alt="avatar"/> */}
                 <span className="checkerRoute">ver ruta</span>
                     
             </div>
             <div className="checkerInfoContainer">
             <div className="checkerInfo">
                     <div className="checkerInfo__name">
-                        <h1>{checker.fullName}</h1>
+                        <h1>{checkerNameCapitalized}</h1>
                     </div>
                     <div className="checkerInfo__ciudad">
                         <h3>{checker.city_name}</h3>
@@ -269,12 +308,8 @@ export const CheckerTile = ({ checker, index }) => {
                     <div className="checkerInfo__rating">
                         <h3>Rating:</h3><h4>{checker.rating}</h4>
                     </div>
-                    <div className="checkerInfo__categoria">
-                        <h3>Chequea:</h3> <h4>{checker.category_name}</h4>
-                    </div>
-                    {/* <div className="checkerInfo__categoria">
-                         <h4>Automóviles</h4>
-                    </div> */}
+                    <CategoryLabelComponent checker={checker}/>
+                   
                 </div>
                 <div className="checkerBioButton">
                     <p>¿Que dicen de esta persona?</p>  
