@@ -5967,12 +5967,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 }
 .checkerInfo__rating {
     display: flex;
+    align-items: center;
     margin-top: 3%;
     margin-left: 1%;
 }
 .checkerInfo__rating  h3 {
     font-size: 1rem;
     font-weight: 600;
+    margin-right: 2%;
 }
 /* .checkerInfo__rating {
     font-size: 1rem;
@@ -5980,7 +5982,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 } */
 .checkerInfo__rating h4 {
     font-size: 0.9rem;
-    margin-left: 2%;
+    margin-left: 4%;
     margin-top: 1%;
     font-weight: 300;
 }
@@ -5997,7 +5999,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     align-items: center;
     font-size: 0.8rem;
 }
-
+.checkerBioButton p {
+    font-size: 1rem;
+    font-weight: 500;
+}
 }
 
 @media (max-width: 360px) and (min-width: 320px){
