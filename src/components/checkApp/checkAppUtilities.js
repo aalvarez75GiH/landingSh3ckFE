@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react'
+<<<<<<< HEAD
 import { Stack, Rating } from '@mui/material'
+=======
+import { Rating } from '@mui/material'
+>>>>>>> sh3ckApp
 import { Link as LinkS } from 'react-scroll'
 import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
@@ -310,14 +314,22 @@ export const CheckerTile = ({ checker, index }) => {
                      <Rating value={4} readOnly/>
                     </Stack> */}
                     <div className="checkerInfo__rating">
+<<<<<<< HEAD
                     <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
                         {/* <h4>{checker.rating}</h4> */}
+=======
+                        <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
+>>>>>>> sh3ckApp
                     </div>
                     <CategoryLabelComponent checker={checker}/>
                    
                 </div>
                 <div className="checkerBioButton">
+<<<<<<< HEAD
                     <p>Ver más...</p>  
+=======
+                    <p>Ver más</p>  
+>>>>>>> sh3ckApp
                 </div>
             </div>
         </LinkS>
