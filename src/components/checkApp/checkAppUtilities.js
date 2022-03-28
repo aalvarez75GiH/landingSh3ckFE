@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Rating } from '@mui/material'
 import { Link as LinkS } from 'react-scroll'
 import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
@@ -306,13 +307,13 @@ export const CheckerTile = ({ checker, index }) => {
                         <h3>{checker.city_name}</h3>
                     </div>
                     <div className="checkerInfo__rating">
-                        <h3>Rating:</h3><h4>{checker.rating}</h4>
+                        <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
                     </div>
                     <CategoryLabelComponent checker={checker}/>
                    
                 </div>
                 <div className="checkerBioButton">
-                    <p>¿Que dicen de esta persona?</p>  
+                    <p>Ver más</p>  
                 </div>
             </div>
         </LinkS>
