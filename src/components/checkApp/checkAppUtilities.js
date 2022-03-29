@@ -6,6 +6,16 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
 import city_icon_black from '../../images/city_icon_3.svg'
 import alternate_picture from '../../images/avatar_1.png'
+import arrow_icon_left from '../../images/arrow_left_back_icon.svg'
+import { getRequestToServiceTimebyId } from './../../requestsToApi'
+import {
+    BackwardSection, 
+    BackwardLeftArrowIcon,
+    LeftArrow, BackwardLabel 
+
+} from '../checkApp/checkAppUtilitiesElements'
+import { checkerChose } from '../../state/actions'
+
 
 // ******************** CheckApp Utilities ******************
 export const CheckAppButton = () => {
@@ -241,41 +251,67 @@ export const CategoryLabelComponent = ({ checker }) => {
     )
 }
  
+// Function used to capitalized Full Names
+export const capitalizeFullName = (nameToCapitalize) => {
+    const fullNameArray = nameToCapitalize.split(' ')
+    for (let i = 0; i < fullNameArray.length; i++){
+       fullNameArray[i] = fullNameArray[i][0].toUpperCase() + fullNameArray[i].substr(1)
+    }
+    let result = fullNameArray.join(' ')
+    console.log(result)
+    return result    
+}
+
+
+
 export const CheckerTile = ({ checker, index }) => {
     
     console.log(checker.category[0].category_name)
     const dispatch = useDispatch()
     const {
-      
+        settingCheckerFromCheckOrder,
+        checkerChose, activatingCheckerInterface,
+        settingBaseAtCheckOrder
+
     } = bindActionCreators(actionCreators, dispatch)
 
-    console.log(checker.category)
+    const checkers = useSelector((state) => state.checkersState.checkers)
+    const price = useSelector((state) => state.checkOrderState.price)
+    const active_service_time = useSelector((state) => state.categoryAndSTState.active_service_time)
     
-    const capitalizeFirstLetter = (string) => {
-        const str2 = string.charAt(0).toUpperCase()+ string.slice(1)
-        console.log(str2.split(' ')[0]);
-        return str2    
-    }
-    const checkerNameCapitalized = capitalizeFirstLetter(checker.fullName )
+    console.log(active_service_time)
 
+    useEffect(() => {
+        const gettingSTBase = async() => {
+            const response  = await getRequestToServiceTimebyId(active_service_time)
+            console.log(response)
+            settingBaseAtCheckOrder(response.base)
+        }
+        gettingSTBase()
+    },[])
+
+    console.log(checker.category)
+    const checkerNameCapitalized = capitalizeFullName(checker.fullName )
+    
+ 
     const  validateURL = (value) => {
         return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
     }
 
-    const validatingAwsUrl = validateURL(checker.picture)
-    console.log(validatingAwsUrl)
+    const toggleActive = (checker, index) => {
+        console.log('activating one checker... ')
+        console.log(checker.fullName)
+        settingCheckerFromCheckOrder(checker)
+        checkerChose(checkers[index]._id)
+        activatingCheckerInterface(true)
+       
+    }
 
 
     return (
-        <LinkS
-        to="serviceTimesContainer"  
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500} 
+        <div 
         key={checker._id} 
-        // onClick={}
+        onClick={() => toggleActive(checker, index)}
         className="checkerTile">
             <div className="checkerItemAvatar">
                     <div 
@@ -284,43 +320,99 @@ export const CheckerTile = ({ checker, index }) => {
                         width: '130px',
                         height: '130px',
                         borderRadius: '50%',
-                        // backgroundImage: `url(${checker.picture})`,
-                        backgroundImage: `url(${validatingAwsUrl ? checker.picture : alternate_picture })`,
+                        backgroundImage: `url(${validateURL(checker.picture) ? checker.picture : alternate_picture })`,
                         backgroundSize: 'cover',
                         marginLeft: '6%',
-                        marginTop: '15%'
-
-                        
+                        marginTop: '15%'  
                     }}
                     >
 
                     </div>
-                <span className="checkerRoute">ver ruta</span>
+                <span className="checkerPrice">{price}$</span>
                     
             </div>
-            <div className="checkerInfoContainer">
-                <div className="checkerInfo">
-                    <div className="checkerInfo__name">
-                        <h1>{checkerNameCapitalized}</h1>
+            {
+                !checker.category[1] ?
+                <div className="checkerInfoContainer_modified">
+                    <div className="checkerInfo">
+                        <div className="checkerInfo__name">
+                            <h1>{checkerNameCapitalized}</h1>
+                        </div>
+                        <div className="checkerInfo__ciudad">
+                            <h3>{checker.city_name}</h3>
+                        </div>
+                        <div className="checkerInfo__rating">
+                            <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
+                        </div>
+                        <CategoryLabelComponent checker={checker}/>
                     </div>
-                    <div className="checkerInfo__ciudad">
-                        <h3>{checker.city_name}</h3>
+                    <div className="checkerBioButton">
+                        <p>Ver más</p>  
                     </div>
-                    {/* <Stack spacing={1}>
-                     <Rating value={4} readOnly/>
-                    </Stack> */}
-                    <div className="checkerInfo__rating">
-                    <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
-                        {/* <h4>{checker.rating}</h4> */}
+            </div> 
+            :
+                <div className="checkerInfoContainer">
+                    <div className="checkerInfo">
+                        <div className="checkerInfo__name">
+                            <h1>{checkerNameCapitalized}</h1>
+                        </div>
+                        <div className="checkerInfo__ciudad">
+                            <h3>{checker.city_name}</h3>
+                        </div>
+                        <div className="checkerInfo__rating">
+                            <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
+                        </div>
+                        <CategoryLabelComponent checker={checker}/>
                     </div>
-                    <CategoryLabelComponent checker={checker}/>
-                   
-                </div>
-                <div className="checkerBioButton">
-                    <p>Ver más...</p>  
-                </div>
+                    <div className="checkerBioButton">
+                        <p>Ver más</p>  
+                    </div>
             </div>
-        </LinkS>
+            }
+         
+        </div>
     )
 }
 
+export const BackwardSectionComponent = ({comeBack}) => {
+    return(
+        <BackwardSection
+        onClick={comeBack}
+        >
+            <BackwardLeftArrowIcon>
+                <LeftArrow
+                src={arrow_icon_left}
+                >
+                </LeftArrow>
+            </BackwardLeftArrowIcon>
+            <BackwardLabel>
+                Atrás
+            </BackwardLabel>
+
+        </BackwardSection>
+    )
+}
+
+export const CheckerSectionAvatar = ({ checker }) => {
+
+    const  validateURL = (value) => {
+        return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+    }
+    
+   return (
+        <div 
+        className='onlyOneChecker_avatar'
+        style={{
+            width: '130px',
+            height: '130px',
+            borderRadius: '50%',
+            backgroundImage: `url(${validateURL(checker.picture) ? checker.picture : alternate_picture })`,
+            backgroundSize: 'cover',
+            marginLeft: '6%',
+            // marginTop: '20%'  
+        }}
+        >
+        </div>
+    )
+   
+}

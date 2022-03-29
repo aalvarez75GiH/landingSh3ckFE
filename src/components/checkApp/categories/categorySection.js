@@ -5,7 +5,7 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import { getRequestToCategories } from '../../../requestsToApi'
 import { getRequestToServiceTime } from '../../../requestsToApi'
-import { CheckAppButton, CategoryTile, ServiceTimeTile } from '../checkAppUtilities'
+import { CheckAppButton, CategoryTile, ServiceTimeTile, BackwardSectionComponent } from '../checkAppUtilities'
 import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 import { 
     CategorySectionContainer, CategorySectionWrapper,
@@ -79,20 +79,9 @@ const CategorySection = () => {
         exit={{ opacity: 0 }}
         >
             <CategorySectionWrapper>
-                <BackwardSection
-                onClick={comeBack}
-                >
-                    <BackwardLeftArrowIcon>
-                            <LeftArrow
-                            src={arrow_icon_left}
-                            >
-
-                            </LeftArrow>
-                    </BackwardLeftArrowIcon>
-                    <BackwardLabel>
-                        Atrás
-                    </BackwardLabel>
-                </BackwardSection>
+                <BackwardSectionComponent
+                comeBack={comeBack}
+                />
                 <CategoryTitleContainer>
                         <CategorySectionTitle>Escoge la categoría...</CategorySectionTitle>
                 </CategoryTitleContainer>

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import { getRequestToCities } from '../../../requestsToApi'
-import { CityTile, CheckAppButton } from '../checkAppUtilities'
+import { CityTile, CheckAppButton, BackwardSectionComponent } from '../checkAppUtilities'
 
 import '../../../sh3ck.css'
 import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
@@ -67,20 +67,9 @@ const CitiesSection = () => {
         exit={{ opacity: 0 }}
         >
             <CitySectionWrapper>
-                <BackwardSection
-                onClick={comeBack}
-                >
-                    <BackwardLeftArrowIcon>
-                            <LeftArrow
-                            src={arrow_icon_left}
-                            >
-
-                            </LeftArrow>
-                    </BackwardLeftArrowIcon>
-                    <BackwardLabel>
-                        Atrás
-                    </BackwardLabel>
-                </BackwardSection>
+                <BackwardSectionComponent
+                comeBack={comeBack}
+                />
                 <CityTitleContainer>
                     <CitySectionTitle>Ciudades donde chequeamos</CitySectionTitle>
                 </CityTitleContainer>

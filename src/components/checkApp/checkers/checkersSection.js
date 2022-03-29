@@ -3,16 +3,14 @@ import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
-import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
-import { CheckAppButton, CheckerTile  } from '../checkAppUtilities'
+import { CheckAppButton, CheckerTile, BackwardSectionComponent  } from '../checkAppUtilities'
 // import { getRequestToCheckersbyCity } from '../../../requestsToApi'
 import { getRequestToCheckers, getRequestToCheckersByCity, 
     getRequestToCheckersByCategory, getRequestToCheckersByCityAndCategory 
 } from '../../../requestsToApi'
 import { 
     CheckerSectionContainer, CheckerSectionWrapper,
-    CheckerSectionBtnWrapp, CheckerSectionBtn,
-    BackwardSection,BackwardLeftArrowIcon,
+    CheckerSectionBtnWrapp, CheckerSectionBtn, BackwardLeftArrowIcon,
     LeftArrow, BackwardLabel, CheckersTitleContainer,
     CheckersSectionTitle, CheckerItemContainerGrid,
     CheckerItemContainerFlex
@@ -33,8 +31,9 @@ const CheckersSection = () => {
     const previous_level = useSelector((state) => state.checkOrderState.previous_level)
     const city_id = useSelector((state) => state.checkOrderState.city_id)
     const checkers = useSelector((state) => state.checkersState.checkers)
-    const category_id = useSelector((state) => state.productToCheckState.category_id)
-    const service_time_id = useSelector((state) => state.productToCheckState.service_time_id)
+    
+    // const category_id = useSelector((state) => state.productToCheckState.category_id)
+    // const service_time_id = useSelector((state) => state.productToCheckState.service_time_id)
 
     
     useEffect(()=> {
@@ -66,6 +65,8 @@ const CheckersSection = () => {
             )
 
         })
+
+     
    
     return (
         <CheckerSectionContainer
@@ -75,20 +76,9 @@ const CheckersSection = () => {
         exit={{ opacity: 0 }}
         >
             <CheckerSectionWrapper>
-                <BackwardSection
-                    onClick={comeBack}
-                    >
-                        <BackwardLeftArrowIcon>
-                                <LeftArrow
-                                src={arrow_icon_left}
-                                >
-
-                                </LeftArrow>
-                        </BackwardLeftArrowIcon>
-                        <BackwardLabel>
-                            Atrás
-                        </BackwardLabel>
-                </BackwardSection>
+                <BackwardSectionComponent
+                comeBack={comeBack}
+                />
                 <CheckersTitleContainer>
                     <CheckersSectionTitle>Escoge el chequeador...</CheckersSectionTitle>
                 </CheckersTitleContainer>
@@ -104,17 +94,3 @@ const CheckersSection = () => {
 
 export default CheckersSection
 
-{/* <CheckerSectionBtnWrapp>
-                    <CheckerSectionBtn
-                    onClick={test}
-                    >
-                        Continuar
-                       
-                    </CheckerSectionBtn> 
-                    <CheckerSectionBtn
-                    onClick={comeBack}
-                    >
-                        Volver
-                       
-                    </CheckerSectionBtn>    
-                </CheckerSectionBtnWrapp> */}

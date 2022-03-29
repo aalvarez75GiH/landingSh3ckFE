@@ -72,6 +72,12 @@ export const getRequestToServiceTime = async() => {
     return response.data
 }
 
+export const getRequestToServiceTimebyId = async(id) => {
+    console.log(id)
+    const response = await axios.get(`${URL_BACKEND}/api/times/${id}`)
+    return response.data
+}
+
 // filtering by city
 export const getRequestToCheckersByCity = async(city_id) => {
     const token = localStorage.getItem("SH3CK_TOKEN")
