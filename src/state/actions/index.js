@@ -404,7 +404,16 @@ export const activatingCheckerInterface = (status) => {
     }
 }
 
+// ************** Check Types  **************************
 
+export const gettingCheckTypesFromApi = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'get_check_type',
+            payload: value
+        })
+    }
+}
 
 
 

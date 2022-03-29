@@ -253,3 +253,90 @@ export const CheckerBioButtonP = styled.p `
 font-size: 1rem;
 font-weight: 500;
 `
+
+export const CheckTypeTileContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 95%;
+height: 265px;
+background-color: #ffffff;
+margin-bottom: 3%;
+`
+export const CheckTypeTileTitle = styled.span`
+display: flex;
+align-items: center;
+padding-left: 4%;
+width: 100%;
+height: 40px;
+background-color: #ffffff;
+
+`
+
+export const CheckTypeTileInfo = styled.div `
+display: flex;
+align-items: center;
+width: 95%;
+height: 200px;
+background-color: #eeeeee;
+border-radius: 20px;
+
+
+`
+export const CheckTypeTileInfoPrice = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 40%;
+height: 90%;
+background-color: transparent;
+`
+export const CheckTypeTileInfoCaption = styled.div`
+/* display: flex; */
+/* flex-direction: column; */
+justify-content: center;
+width: 65%;
+height: 90%;
+background-color: transparent;
+`
+
+export const CheckTypeTileInfoPriceLabel = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 80%;
+background-color: transparent;
+`
+
+export const CheckTypeTileInfoPriceDesc = styled.small`
+width: 100%;
+height: 10%;
+background-color: transparent;
+padding-left: 8% ;
+/* font-size: 0.8rem; */
+`
+
+export const Price = styled.h1`
+font-size: 4rem;
+`
+
+export const CheckTypeCaption = styled.h1`
+margin-top: 15%;
+font-size: 1.4rem;
+margin-left: 13%;
+
+`
+export const CheckerProfileButtonContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 95%;
+height: 265px;
+background-color: #ffffff;
+margin-bottom: 3%;
+
+`

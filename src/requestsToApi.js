@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const URL_BACKEND = 'http://192.168.1.102:5000'
-const URL_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
+const URL_BACKEND = 'http://192.168.1.102:5000'
+// const URL_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
 
 export const verifyingTokenRequest = async(token) => {
     return await axios.get(`${URL_BACKEND}/api/users/me`, {
@@ -131,18 +131,13 @@ export const getRequestToCheckers = async(city_id, category_id, service_time_id)
     return response.data
 }
 
-// filtering by city
-
-// export const getRequestToCheckersbyCity = async(city_id) => {
-//     const token = localStorage.getItem("SH3CK_TOKEN")
-//     console.log(token)
-//     const response = await axios.get(`${URL_BACKEND}/api/checkers/${city_id}/searches`,{
-//         headers:{
-//             'Content-Type': 'application/json',
-//             Authorization: `Bearer ${token}`   
-//         }
-        
-//     })
+// export const getRequestToCheckType = async() => {
+//     const response = await axios.get(`${URL_BACKEND}/api/checkTypes`)
 //     return response.data
 // }
+
+export const getRequestToCheckType = async() => {
+    const response = await axios.get(`${URL_BACKEND}/api/checkTypes`)
+    return response.data
+}
 

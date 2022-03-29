@@ -76,7 +76,9 @@ const CitiesSection = () => {
                 <CityItemContainer>
                     {renderingCitiesList}
                 </CityItemContainer>
-                    <CheckAppButton />
+                    <CheckAppButton 
+                    buttonLabel='Siguiente'
+                    />
             </CitySectionWrapper>
         </CitySectionContainer>
 

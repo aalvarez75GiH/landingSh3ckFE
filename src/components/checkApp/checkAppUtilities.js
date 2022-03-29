@@ -18,7 +18,7 @@ import { checkerChose } from '../../state/actions'
 
 
 // ******************** CheckApp Utilities ******************
-export const CheckAppButton = () => {
+export const CheckAppButton = ({ buttonLabel }) => {
     const dispatch = useDispatch()
     const {
         settingLevel,
@@ -62,7 +62,7 @@ console.log(button_activated)
         id="cityContainer"
         onClick={handlingLevels}
         className={button_activated ? "CheckAppButton_activated" : "CheckAppButton"  }>
-            Siguiente
+            {buttonLabel}
         </button>
     )
 }
@@ -271,7 +271,7 @@ export const CheckerTile = ({ checker, index }) => {
     const {
         settingCheckerFromCheckOrder,
         checkerChose, activatingCheckerInterface,
-        settingBaseAtCheckOrder
+        settingBaseAtCheckOrder, activatingCheckAppButton
 
     } = bindActionCreators(actionCreators, dispatch)
 
@@ -304,6 +304,7 @@ export const CheckerTile = ({ checker, index }) => {
         settingCheckerFromCheckOrder(checker)
         checkerChose(checkers[index]._id)
         activatingCheckerInterface(true)
+        activatingCheckAppButton(true)
        
     }
 
