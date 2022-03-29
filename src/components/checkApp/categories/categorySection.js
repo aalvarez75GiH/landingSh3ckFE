@@ -94,7 +94,9 @@ const CategorySection = () => {
                 <ServiceTimeItemContainer>
                     {renderingTimeServiceList} 
                 </ServiceTimeItemContainer>
-                <CheckAppButton />
+                <CheckAppButton 
+                buttonLabel='Siguiente'
+                />
             </CategorySectionWrapper>
         </CategorySectionContainer>
 

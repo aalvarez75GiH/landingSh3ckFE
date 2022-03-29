@@ -23,7 +23,7 @@ const CheckersSection = () => {
     const dispatch = useDispatch()
     const {  
         settingLevel, settingPreviousLevel,
-        settingCheckers
+        settingCheckers, 
 
     } = bindActionCreators(actionCreators, dispatch)
     
