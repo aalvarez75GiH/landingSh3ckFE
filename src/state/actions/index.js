@@ -167,23 +167,6 @@ export const gettingGoogleLoginData = (value) => {
 // ****** CheckSection Actions creators ***************
 
 
-export const settingCityOfCheckOrder = (value) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'cityToOrder',
-            payload: value
-        })
-}
-}
-
-export const settingCityIDAtCheckOrder = (value) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'cityID',
-            payload: value
-        })
-}
-}
 
 
 
@@ -233,7 +216,7 @@ export const activatingCheckAppButton = (status) => {
         })
     }
 }
-// ************** Check Order User **************************
+// ************** Check Order **************************
 export const settingUserInCheckOrder = (value) => {
     return(dispatch) => {
         dispatch({
@@ -241,6 +224,50 @@ export const settingUserInCheckOrder = (value) => {
             payload: value
         })
     }
+}
+
+export const settingCityOfCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'cityToOrder',
+            payload: value
+        })
+}
+}
+
+export const settingCityIDAtCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'cityID',
+            payload: value
+        })
+}
+}
+export const settingBaseAtCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'set_base',
+            payload: value
+        })
+}
+}
+// export const settingCheckerIDAtCheckOrder = (value) => {
+//     return(dispatch) => {
+//         dispatch({
+//             type: 'checkerID',
+//             payload: value
+//         })
+// }
+// }
+
+
+export const settingCheckerFromCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'checkerFromOrder',
+            payload: value
+        })
+}
 }
 
 
@@ -346,7 +373,7 @@ export const serviceTimeChose = (value) => {
 } 
 
  
-// ************** Checkers Section  **************************
+// ************** Checkers  **************************
  
  
 export const settingCheckers = (response) => {
@@ -358,6 +385,24 @@ export const settingCheckers = (response) => {
     }
 }
 
+
+export const checkerChose = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_checker',
+            payload: value
+        })
+    }
+}
+
+export const activatingCheckerInterface = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activing_checker_gui',
+            payload: status
+        })
+    }
+}
 
 
 

@@ -5,7 +5,7 @@ const checkOrderReducer = (
             email: '',
             phoneNumber: ''
         },
-        checker:'',
+        checker:{},
         creation_time: '',
         due_Date_time: '',
         productToCheck: {},
@@ -33,7 +33,10 @@ const checkOrderReducer = (
                 return {...state, city: action.payload}
             case 'cityID': 
                 return {...state, city_id: action.payload}
-
+            case 'checkerFromOrder': 
+                return {...state, checker: action.payload}
+            case 'set_base':
+                return {...state, price: action.payload}
             default:
                 return state    
     }

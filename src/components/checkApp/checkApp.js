@@ -4,10 +4,13 @@ import CitiesSection from './city/citiesSection'
 import CategorySection from './categories/categorySection'
 import CheckersSection from './checkers/checkersSection'
 import FinishingCheckOrder from './summary/finishingCheckOrder'
+import CheckerProfile from './checkers/checkerProfile'
 import { useSelector } from 'react-redux'
 
 const CheckApp = () => {
      const level = useSelector((state) => state.overallCheckAppState.level)
+     const active = useSelector((state) => state.checkersState.checker_gui_active)
+
      console.log(level)
      
     switch (level) {
@@ -21,7 +24,17 @@ const CheckApp = () => {
             return <CategorySection />
         
         case 'checkers':
-            return <CheckersSection />
+            return (
+                <>
+                {
+                    active ?
+                    <CheckerProfile />
+                    :
+                    <CheckersSection />
+
+                }
+                </>
+            )
         case 'summary': 
         return <FinishingCheckOrder />
         
