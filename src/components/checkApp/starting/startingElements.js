@@ -9,11 +9,12 @@ export const CheckSectionContainer = styled(motion.div) `
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 1100px;
+    /* height: 1100px; */
+    height: auto;
     background-color: #eeeeee;
     margin-top: 2%;
     margin-left: 5%;
-    position: fixed;
+    /* position: fixed; */
     left: 0;
 
     @media (max-width:560px) and (min-width: 480px){
@@ -50,7 +51,8 @@ export const CheckSectionWrapper = styled.div `
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 1000px;
+    /* height: 1000px; */
+    height: auto;
     background-image: url(${image});
     background-size: 60% 60%;
     background-repeat: no-repeat;
@@ -115,7 +117,7 @@ export const CheckSectionBtnWrap = styled.div `
     
 `
 export const CheckSectionCheckBtn = styled.button `
-    width: 80%;
+    width: 40%;
     height: 115px;
     background-color: #010606;
     border-style: none;
@@ -123,18 +125,19 @@ export const CheckSectionCheckBtn = styled.button `
     color: #ffffff;
     margin-left: 5%;
 
+    @media (max-width:1366px) and (min-width: 1098px){
+        width: 50%;
+    }
+
     @media (max-width:1098px) and (min-width: 768px){
-        width: 45%;
+        width: 60%;
     }
     @media (max-width:768px) and (min-width: 560px){
         width: 60%;
     }
-    @media (max-width:560px) and (min-width: 480px){
+    @media (max-width:560px) and (min-width: 414px){
         width: 80%;
         height: 70px;
-    }
-    @media (max-width:480px) and (min-width: 414px){
-        width: 80%;
     }
     @media (max-width:414px) and (min-width: 360px){
         width: 80%;
@@ -147,8 +150,8 @@ export const CheckSectionCheckBtn = styled.button `
     
 `
 export const CheckSectionExitBtn = styled.button `
-    width: 80%;
-    height: 1px;
+    width: 40%;
+    height: 115px;
     background-color: #FAD570;
     border-style: none;
     color: #010606;
@@ -157,17 +160,18 @@ export const CheckSectionExitBtn = styled.button `
     margin-left: 5%;
     margin-top: 1%;
 
+    @media (max-width:1366px) and (min-width: 1098px){
+        width: 50%;
+    }
     @media (max-width:1098px) and (min-width: 768px){
-        width: 45%;
+        width: 60%;
     }
     @media (max-width:768px) and (min-width: 560px){
         width: 60%;
     }
-    @media (max-width:560px) and (min-width: 480px){
+    @media (max-width:560px) and (min-width: 414px){
         width: 80%;
-    }
-    @media (max-width:480px) and (min-width: 414px){
-        width: 80%;
+        height: 70px;
     }
     @media (max-width:414px) and (min-width: 360px){
         width: 80%;

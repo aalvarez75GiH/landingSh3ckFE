@@ -350,87 +350,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 20%;
 }
 
-/*************** LoginSideBar ****************************** */
-           
-/*** Open  ***/
-/* .loginSideBarContainer {
-    position: fixed;
-    z-index: 999;
-    width: 30%;
-    height: 100%;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left:100%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity:0;
-}
-
-.loginSideBarContainerOpen {  
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left: 0%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity: 1;
-}
-
-.loginContactForms {       
-    position: relative;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-}
-.loginContactForms h2 {
-    margin-top: 5%;
-    margin-left: 8%;
-    margin-bottom: 3%;
-}
-
-.loginSideBarIcon {     
-    position: absolute;
-    top: 1.2rem;
-    right: 1.5rem;
-    background: transparent;
-    font-size: 2rem;
-    cursor: pointer;
-    outline: none;
-}
-
-.loginCloseIcon {       
-    color: #ffffff;
-    
-}
-
-.loginSideHeader {    
-    width: 100%;
-    height: 80px;
-    background-color: #010606;
-}
-
-
-.loginSideBarFormDescription p {
-    width: 100%;
-}
-
-.loginSideBoxContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 45%;
-    background-color: #ffffff;
-    width: 34%;
-    margin-left: 8%;
-}
-************** QASideBar ****************************** */
+/* ************** QASideBar ****************************** */
 .QASideBarContainer {
     /* position: fixed; */
     z-index: 999;
@@ -1557,6 +1477,32 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 87%;
 }
 
+/* ****************** checkApp: Overall *************************** */
+
+.CheckAppButton {
+    width: 95%;
+    height: 110px;
+    background-color: #010606;
+    border-style: none ;
+    margin-top: 1%;
+    color: #ffffff;
+    font-size: 2rem;
+    opacity: 0;
+    
+}
+.CheckAppButton_activated {
+    width: 95%;
+    height: 110px;
+    background-color: #00a307;
+    border-style: none ;
+    margin-top: 3%;
+    color: #ffffff;
+    font-size: 2rem;
+    opacity: 1;
+    margin-bottom: 3%;
+    
+}
+
 /* ****************** CheckApp: citySection *************************** */
 
 .cityItem {
@@ -1597,15 +1543,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 4%;
     color: #010606;
 }
-/* .cityItemName_coloured{
-    display: flex ;
-    align-items: center ;
-    font-size: 1.3rem ;
-    width: 60%;
-    height: 40px;
-    margin-left: 4%;
-    color: #010606
-} */
 
 .cityItemArrow {
     display: flex;
@@ -1710,32 +1647,134 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     color:#010606;
 }
 
-/* ****************** checkApp: Overall *************************** */
+/* ****************** checkApp: Checkers Section *************************** */
+.checkerTile {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background-color: #ffffff;
+    margin: 10px;
+}
+.checkerItemAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+.checkerPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 68%;
+    height: 19%;
+    width: 26%;
+    /* margin-left: 5%; */
+    margin-top: 5%;
+    font-size: 1.5rem;
+    background-color: #ffffff;
+    color: #010606;
+    border: 2px solid #010606;
+}
+/* .checkerInfoContainer{
+    width: 70%;
+} */
 
-.CheckAppButton {
-    width: 95%;
-    height: 110px;
+.checkerInfoContainer {
+    width: 58%;
+    height: 100%;
+    background-color: #ffffff;
+    /* border: 2px solid #010606; */
+}
+
+.checkerInfoContainer_modified {
+    width: 58%;
+    height: 85%;
+    margin-top: 5%;
+    background-color: #ffffff;
+}
+
+.checkerInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    /* background-color: #00a307; */
+}
+
+.checkerInfo__name {
+    font-size: 1.8rem;
+    margin-top: 5%;
+    margin-left: 1%;
+    font-weight: 500;
+}
+
+.checkerInfo__name h1 {
+    font-weight: 500;
+}
+
+.checkerInfo__ciudad {
+    margin-top: 3%;
+    margin-left: 1%;
+}
+
+.checkerInfo__ciudad  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.checkerInfo__categoria{
+    display: flex;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+.checkerInfo__categoria  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.checkerInfo__categoria  h4 {
+    font-size: 1.4rem;
+    margin-left: 2%;
+    /* margin-top: 1%; */
+    font-weight: 300;
+}
+.checkerInfo__rating {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+
+.checkerInfo__rating  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-right: 2%;
+}
+
+.checkerInfo__rating h4 {
+    font-size: 1.4rem;
+    margin-left: 4%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerBioButton {
+    width: 50%;
+    height: 65px;
     background-color: #010606;
-    border-style: none ;
-    margin-top: 1%;
-    color: #ffffff;
-    font-size: 2rem;
-    opacity: 0;
-    
-}
-.CheckAppButton_activated {
-    width: 95%;
-    height: 110px;
-    background-color: #00a307;
-    border-style: none ;
-    margin-top: 1%;
-    color: #ffffff;
-    font-size: 2rem;
-    opacity: 1;
-    
+    border-radius: 45px;
+    margin-top: 5%;
+    color:#ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
 }
 
-/* ********************************************** */
+.checkerBioButton p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
 
 /* *************** Responsive design ***********************/
 /* ********  Desktop Responsive Design ******************* */
@@ -1991,7 +2030,21 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .cityItemName_coloured{
     font-size: 2rem ;
 }
-    
+
+/* ****************** checkApp: Checkers Section *************************** */
+
+
+.checkerInfo__name {
+    font-size: 1.6rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+
+.checkerBioButton {
+    margin-left: 65%;
+}
+
 }
 
 
@@ -2134,8 +2187,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     }
     .categoryTile_active {
         width: 175px;
-        background-color: #00a307;   
+        background-color: #FAD570;   
      }
+
+     /* ****************** checkApp: Checkers Section *************************** */
+
+
+.checkerInfo__name {
+    font-size: 1.6rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
 }
 
 
@@ -2314,6 +2377,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         background-color: #FAD570;
      }
   
+     /* ****************** checkApp: Checkers Section *************************** */
+
+
+.checkerInfo__name {
+    font-size: 1.6rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
 
 }
 
@@ -2882,6 +2954,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
          
      }
   
+     /* ****************** checkApp: Checkers Section *************************** */
+
+
+.checkerInfo__name {
+    font-size: 1.6rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+
 }
 
 
@@ -3506,10 +3588,25 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         width: 125px;
         background-color: #FAD570;     
     }
+
+    /* ****************** checkApp: Checkers Section *************************** */
+
+
+    .checkerInfo__name {
+        font-size: 1.6rem;
+        margin-top: 5%;
+        margin-left: 1%;
+    }
+
+    .checkerPrice {
+        width: 30%;
+        height: 18%;
+    }
+    
+
 }
 /* ********  Phones Responsive Design ******************* */
 @media (max-width:560px) and (min-width: 480px){
- 
     .navMenuMobil {
         display: none;
     } 
@@ -4188,6 +4285,75 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         background-color: #FAD570;
          
     }
+
+
+    /* ****************** checkApp: Checkers Section *************************** */
+.checkerTile {
+    height: 300px;
+    margin: 10px;
+
+}
+.checkerItemAvatar{
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.checkerPrice {
+    width: 30%;
+    margin-top: 6%;
+    font-size: 1.2rem;
+}
+.checkerTile p {
+    margin-left: 2%;
+}
+
+.checkerInfo__name {
+    font-size: 0.8rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.checkerInfo__ciudad  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.checkerInfo__categoria  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.checkerInfo__categoria  h4 {
+    font-size: 0.9rem;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerInfo__rating  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 2%;
+}
+
+.checkerInfo__rating h4 {
+    font-size: 0.9rem;
+    margin-left: 4%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerBioButton {
+    width: 90%;
+    height: 50px;
+    margin-top: 4%;
+    margin-left: 0%;
+  }
+.checkerBioButton p {
+    font-size: 1rem;
+}
+
 }
 
 @media (max-width:480px) and (min-width: 414px){
@@ -4607,48 +4773,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         margin-bottom: 30%;
     }
     
-    /* .loginSideBarFormDescription {
-        width: 95%;
-    }
-    .loginSideBarFormDescription p {
-        font-size: 1.5rem;
-    }
-    .loginSideBoxContainer {
-        width: 85%
-    }
-    
-    .loginSideBoxContainer { 
-        height: auto;
-        margin-top: 10%;
-    } */
+   
     
     /*************** QASideBar ****************************** */
-/* .QASideBarContainer {
-    position: fixed;
-    z-index: 999;
-    width: 30%;
-    height: auto;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left:100%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity:0;
-} */
-/* .QASideBarContainerOpen {
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: auto;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left: 0%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity: 1;
-} */
+
 .QASideBarFormTitle {
     display: flex;
     align-items: center;
@@ -4789,33 +4917,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         
     }
 
-    /* *****  checkSection *********** */
-
-
-/* .checkSectionContainer {
-    width: 100%;
-    margin-top: unset;
-    margin-left: unset;
-}
-.checkSection-formTitle h1 {
-    font-size: 1.5rem;
-}
-
-.checkSection-BtnWrap {
-    margin-top: 95%;
-}
-
-
-.checkSection-checkBtn {
-    width: 80%;
-
-}
-
-.checkSection-exitBtn {
-    width: 80%;
-}
-    */
-
     /* ************ FooterSection **************************** */
 
     .footerContainer {
@@ -4947,6 +5048,75 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         color:#010606;
     }
     
+ 
+
+/* ****************** checkApp: Checkers Section *************************** */
+.checkerTile {
+    height: 300px;
+    margin: 10px;
+
+}
+.checkerItemAvatar{
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.checkerPrice {
+    width: 35%;
+    margin-top: 6%;
+    font-size: 1.2rem;
+}
+.checkerTile p {
+    margin-left: 2%;
+}
+
+.checkerInfo__name {
+    font-size: 0.8rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.checkerInfo__ciudad  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.checkerInfo__categoria  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.checkerInfo__categoria  h4 {
+    font-size: 0.9rem;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerInfo__rating  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 2%;
+}
+
+.checkerInfo__rating h4 {
+    font-size: 0.9rem;
+    margin-left: 4%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerBioButton {
+    width: 90%;
+    height: 50px;
+    margin-top: 4%;
+    margin-left: 0%;
+}
+.checkerBioButton p {
+    font-size: 1rem;
+}
+     /* ****************** checkApp: Checkers Section *************************** */
 
 }
 
@@ -5508,32 +5678,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     }
 
        /*************** QASideBar ****************************** */
-/* .QASideBarContainer {
-    position: fixed;
-    z-index: 999;
-    width: 30%;
-    height: auto;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left:100%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity:0;
-} */
-/* .QASideBarContainerOpen {
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: auto;
-    background-color: #eeeeee;
-    display: grid;
-    align-items: center;
-    left: 0%;
-    right: 0%;
-    transition: 0.6s ease-in-out;
-    opacity: 1;
-} */
+
 
 .QASideBarFormTitle {
     display: flex;
@@ -5606,30 +5751,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
         background-color: #FAD570;
         margin-top: 10%;
     }
-     /* ************************************* */
-    /* .checkSectionWrapper {
-        height: 100%;
-        background-size: 60% 42%;
-    }
-    
-    .checkSection-BtnWrap {
-        
-        margin-top: 20%;
-        height: 100%;
-    }
-
-
-    .checkSection-checkBtn {
-        width: 80%;
-        height: 70px;
-    }
-
-    .checkSection-exitBtn {
-        width: 80%;
-        margin-top: 2%;
-        height: 70px;
-    }
-    */
+ 
     /* ************ FooterSection **************************** */
 
     .footerContainer {
@@ -5886,31 +6008,19 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .STSmall_active {
     color:#010606;
 }
+
 /* ****************** checkApp: Checkers Section *************************** */
 .checkerTile {
-    display: flex;
-    /* align-items: center; */
-    width: 100%;
     height: 250px;
     margin: 10px;
-    /* border-radius: 15px ; */
-    background-color: #ffffff;
-    /* border-radius: 10px; */
-    /* border: 1px solid #6666; */
+
 }
 .checkerItemAvatar{
-    display: flex;
     flex-direction: column;
     width: 40%;
     height: 100%;
-    /* margin-left: 2%; */
 }
 
-.checkerAvatar {
-    width: 60px;
-    border-radius: 50%;
-
-}
 .checkerPrice {
     display: flex;
     justify-content: center;
@@ -5918,7 +6028,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     border-radius: 68%;
     height: 18%;
     width: 30%;
-    margin-left: 35%;
     margin-top: 6%;
     font-size: 1.2rem;
     background-color: #ffffff;
@@ -5929,40 +6038,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 2%;
 }
 
-.checkerInfoContainer {
-    width: 58%;
-    height: 100%;
-    background-color: #ffffff;
-    /* border: 2px solid #010606; */
-}
-
-.checkerInfoContainer_modified {
-    width: 58%;
-    height: 85%;
-    margin-top: 5%;
-    background-color: #ffffff;
-}
-
-.checkerInfo {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 60%;
-    /* background-color: #00a307; */
-}
-
 .checkerInfo__name {
     font-size: 0.8rem;
     margin-top: 5%;
-    margin-left: 1%;
-}
-
-.checkerInfo__name h1 {
-    font-weight: 500;
-}
-
-.checkerInfo__ciudad {
-    margin-top: 3%;
     margin-left: 1%;
 }
 
@@ -5971,11 +6049,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     font-weight: 600;
 }
 
-.checkerInfo__categoria{
-    display: flex;
-    margin-top: 3%;
-    margin-left: 1%;
-}
+
 .checkerInfo__categoria  h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -5985,12 +6059,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-left: 2%;
     margin-top: 1%;
     font-weight: 300;
-}
-.checkerInfo__rating {
-    display: flex;
-    align-items: center;
-    margin-top: 3%;
-    margin-left: 1%;
 }
 
 .checkerInfo__rating  h3 {
@@ -6009,20 +6077,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .checkerBioButton {
     width: 90%;
     height: 50px;
-    background-color: #010606;
-    border-radius: 45px;
     margin-top: 4%;
-    color:#ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8rem;
+    margin-left: 0%;
 }
-
 .checkerBioButton p {
     font-size: 1rem;
-    font-weight: 500;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> sh3ckApp
 }
 
 @media (max-width: 360px) and (min-width: 320px){
@@ -6922,6 +6987,80 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     color:#010606;
 }
 
+/* ****************** checkApp: Checkers Section *************************** */
+.checkerTile {
+    height: 250px;
+    margin: 10px;
+
+}
+.checkerItemAvatar{
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.checkerPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 68%;
+    height: 18%;
+    width: 35%;
+    margin-top: 6%;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    color: #010606;
+    border: 2px solid #010606;
+}
+.checkerTile p {
+    margin-left: 2%;
+}
+
+.checkerInfo__name {
+    font-size: 0.7rem;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.checkerInfo__ciudad  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+.checkerInfo__categoria  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.checkerInfo__categoria  h4 {
+    font-size: 0.9rem;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerInfo__rating  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 2%;
+}
+
+.checkerInfo__rating h4 {
+    font-size: 0.8rem;
+    margin-left: 4%;
+    margin-top: 1%;
+    font-weight: 300;
+}
+
+.checkerBioButton {
+    width: 90%;
+    height: 50px;
+    margin-top: 4%;
+    margin-left: 0%;
+}
+.checkerBioButton p {
+    font-size: 0.8rem;
+}
 
  /* ********************************************** */
     /* ********************************************** */

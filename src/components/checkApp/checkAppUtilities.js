@@ -245,8 +245,11 @@ export const CategoryLabelComponent = ({ checker }) => {
             <h4>{checker.category[1].category_name}</h4>
         </div>
         :
-        null
+        <div className="checkerInfo__categoria">
+            <h4></h4>
+        </div>
         }
+        
         </>
     )
 }
@@ -332,6 +335,7 @@ export const CheckerTile = ({ checker, index }) => {
                 <span className="checkerPrice">{price}$</span>
                     
             </div>
+           
             {
                 !checker.category[1] ?
                 <div className="checkerInfoContainer_modified">
@@ -368,7 +372,7 @@ export const CheckerTile = ({ checker, index }) => {
                     <div className="checkerBioButton">
                         <p>Ver más</p>  
                     </div>
-            </div>
+                </div>
             }
          
         </div>
@@ -410,7 +414,7 @@ export const CheckerSectionAvatar = ({ checker }) => {
             backgroundImage: `url(${validateURL(checker.picture) ? checker.picture : alternate_picture })`,
             backgroundSize: 'cover',
             marginLeft: '6%',
-            // marginTop: '20%'  
+            marginTop: '20%'  
         }}
         >
         </div>
