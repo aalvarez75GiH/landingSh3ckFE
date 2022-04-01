@@ -69,18 +69,9 @@ margin-top: 3%;
 }
 @media (max-width:768px) and (min-width: 320px){
 width: 100%;
-/* margin-left: 3%; */
 }
+/* modifying test */
 
-/* @media (max-width:560px) and (min-width: 480px){
-width: 100%;
-margin-left: 3%;
-}
-
-@media (max-width:480px) and (min-width: 320px){
-width: 100%;
-
-} */
 `
 
 
