@@ -36,10 +36,7 @@ margin-top: 4%;
 width: 50%;
 margin-left: 25%;
 }
-/* @media (max-width:1536px) and (min-width: 1366px){
-width: 50%;
-margin-left: 25%;
-} */
+
 
 @media (max-width:1280px) and (min-width: 768px){
 width: 85% ;
@@ -52,17 +49,6 @@ width: 95% ;
 margin-top: 4%;
 margin-left: 3%;
 }
-/* @media (max-width:1280px) and (min-width: 768px){
-width: 85% ;
-margin-top: 4%;
-margin-left: 7% ;
-}
-@media (max-width:768px) and (min-width: 320px){
-width: 95%;
-background-color: #eeeeee;
-margin-left: 0%;
-
-} */
     
 `
 
