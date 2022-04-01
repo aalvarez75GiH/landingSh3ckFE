@@ -3,16 +3,14 @@ import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
-import { CheckAppButton, CheckerTile, BackwardSectionComponent  } from '../checkAppUtilities'
+import { CheckerTile, BackwardSectionComponent  } from '../checkAppUtilities'
 // import { getRequestToCheckersbyCity } from '../../../requestsToApi'
 import { getRequestToCheckers, getRequestToCheckersByCity, 
     getRequestToCheckersByCategory, getRequestToCheckersByCityAndCategory 
 } from '../../../requestsToApi'
 import { 
     CheckerSectionContainer, CheckerSectionWrapper,
-    CheckerSectionBtnWrapp, CheckerSectionBtn, BackwardLeftArrowIcon,
-    LeftArrow, BackwardLabel, CheckersTitleContainer,
-    CheckersSectionTitle, CheckerItemContainerGrid,
+    CheckersTitleContainer, CheckersSectionTitle,
     CheckerItemContainerFlex
 
 } from './checkersElements.js'
@@ -85,7 +83,6 @@ const CheckersSection = () => {
                 <CheckerItemContainerFlex>
                     {renderingCheckersList}
                 </CheckerItemContainerFlex>
-                <CheckAppButton />  
             </CheckerSectionWrapper>
         </CheckerSectionContainer>
 

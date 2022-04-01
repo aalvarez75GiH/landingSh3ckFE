@@ -17,6 +17,7 @@ import {
     CheckerProfileTile,
     CheckerItemAvatar, 
     CheckerInfoContainer,
+    CheckerProfileInfo,
     CheckerInfoName,
     CheckerInfoCiudad,
     CheckerInfoRating,
@@ -35,9 +36,9 @@ import {
     CheckTypeTileInfoPriceDesc,
     Price, CheckTypeCaption,
     CheckerProfileButtonContainer,
-
-    
-
+    CheckerProfileItemsContainer,
+    CheckTypeBioButton,
+    CheckTypeBioButtonP
 } from './checkersElements.js'
 
 
@@ -49,8 +50,7 @@ const CheckerProfile = () => {
         settingPreviousLevel,
         activatingCheckerInterface,
         settingCheckerFromCheckOrder,
-        gettingCheckTypesFromApi,
-        activatingCheckAppButton
+        gettingCheckTypesFromApi
     } = bindActionCreators(actionCreators, dispatch)
 
     const checker = useSelector((state) => state.checkOrderState.checker)
@@ -110,6 +110,7 @@ const CheckerProfile = () => {
                 <CheckersTitleContainer>
                     <CheckersSectionTitle>Perfil del Chequeador</CheckersSectionTitle>
                 </CheckersTitleContainer>
+                <CheckerProfileItemsContainer>
                 <CheckerProfileTile>
                     <CheckerItemAvatar>
                         <CheckerSectionAvatar
@@ -117,47 +118,49 @@ const CheckerProfile = () => {
                         />
                     </CheckerItemAvatar>
                     <CheckerInfoContainer>
-                        <CheckerInfoName>
-                            <CheckerInfoNameH1>{checkerNameCapitalized}</CheckerInfoNameH1>
-                        </CheckerInfoName>
-                        <CheckerInfoCiudad>
-                            <CheckerInfoCiudadH3>{checker.city_name}</CheckerInfoCiudadH3>
-                        </CheckerInfoCiudad>
-                        <CheckerInfoRating>
-                            <CheckerInfoRatingH3>Rating:</CheckerInfoRatingH3><Rating value={checker.rating} readOnly /><CheckerInfoRatingH4>({checker.rating})</CheckerInfoRatingH4>
-                        </CheckerInfoRating>
-                        <CategoryLabelComponent checker={checker}/>                        
+                        <CheckerProfileInfo>
+                            <CheckerInfoName>
+                                <CheckerInfoNameH1>{checkerNameCapitalized}</CheckerInfoNameH1>
+                            </CheckerInfoName>
+                            <CheckerInfoCiudad>
+                                <CheckerInfoCiudadH3>{checker.city_name}</CheckerInfoCiudadH3>
+                            </CheckerInfoCiudad>
+                            <CheckerInfoRating>
+                                <CheckerInfoRatingH3>Rating:</CheckerInfoRatingH3><Rating value={checker.rating} readOnly /><CheckerInfoRatingH4>({checker.rating})</CheckerInfoRatingH4>
+                            </CheckerInfoRating>
+                            <CategoryLabelComponent checker={checker}/>                        
+                        </CheckerProfileInfo>
                         <CheckerBioButton>
                             <CheckerBioButtonP>Ver un poco más</CheckerBioButtonP>
                         </CheckerBioButton>
                     </CheckerInfoContainer>
                 </CheckerProfileTile>
                 {/* {renderingCheckTypeTiles} */}
-                <CheckTypeTileContainer>
-                    <CheckTypeTileTitle>Tipo de chequeo</CheckTypeTileTitle>
-                    <CheckTypeTileInfo>
-                        <CheckTypeTileInfoPrice>
-                            <CheckTypeTileInfoPriceLabel>
-                                <Price>{service_time_price}$</Price>
-                            </CheckTypeTileInfoPriceLabel>
-                            <CheckTypeTileInfoPriceDesc>Tiempo de respuesta</CheckTypeTileInfoPriceDesc>
-                            <CheckTypeTileInfoPriceDesc>+ tipo de chequeo</CheckTypeTileInfoPriceDesc>
-                        </CheckTypeTileInfoPrice>
-                        <CheckTypeTileInfoCaption>
-                            <CheckTypeCaption>{check_types[0] ? check_types[0].caption : 'its empty'}</CheckTypeCaption>
-                            <CheckerBioButton>¿Que esta incluido?</CheckerBioButton>
-                        </CheckTypeTileInfoCaption>
+                    <CheckTypeTileContainer>
+                        <CheckTypeTileTitle>Tipo de chequeo</CheckTypeTileTitle>
+                        <CheckTypeTileInfo>
+                            <CheckTypeTileInfoPrice>
+                                <CheckTypeTileInfoPriceLabel>
+                                    <Price>{service_time_price}$</Price>
+                                </CheckTypeTileInfoPriceLabel>
+                                <CheckTypeTileInfoPriceDesc>Tiempo de respuesta</CheckTypeTileInfoPriceDesc>
+                                <CheckTypeTileInfoPriceDesc>+ tipo de chequeo</CheckTypeTileInfoPriceDesc>
+                            </CheckTypeTileInfoPrice>
+                            <CheckTypeTileInfoCaption>
+                                <CheckTypeCaption>{check_types[0] ? check_types[0].caption : 'its empty'}</CheckTypeCaption>
+                                <CheckTypeBioButton>
+                                    <CheckTypeBioButtonP>¿Que esta incluido?</CheckTypeBioButtonP>
+                                </CheckTypeBioButton>
+                            </CheckTypeTileInfoCaption>
 
-                    </CheckTypeTileInfo>
-                </CheckTypeTileContainer>
-                <CheckerProfileButtonContainer>
-                    <CheckAppButton
-                    buttonLabel='Escoger éste...'
-                    />
-                        {/* <CheckerProfileButton>
-                            <CheckerProfileButtonP>Colóca tu orden</CheckerProfileButtonP>
-                        </CheckerProfileButton>*/}
-                </CheckerProfileButtonContainer> 
+                        </CheckTypeTileInfo>
+                    </CheckTypeTileContainer>
+                </CheckerProfileItemsContainer>
+                    <CheckerProfileButtonContainer>
+                        <CheckAppButton
+                        buttonLabel='Escoger éste...'
+                        />
+                    </CheckerProfileButtonContainer> 
             </CheckerProfileWrapper>
 
         </CheckerProfileContainer>
