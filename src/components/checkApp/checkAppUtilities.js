@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Rating } from '@mui/material'
+import { Stack, Rating } from '@mui/material'
 import { Link as LinkS } from 'react-scroll'
 import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'

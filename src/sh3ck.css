@@ -6083,8 +6083,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 .checkerBioButton p {
     font-size: 1rem;
 }
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> sh3ckApp
 }
 
 @media (max-width: 360px) and (min-width: 320px){
