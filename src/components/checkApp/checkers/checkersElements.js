@@ -70,7 +70,7 @@ margin-top: 3%;
 @media (max-width:768px) and (min-width: 320px){
 width: 100%;
 }
-/* modifying test */
+/* modifying test 2 */
 
 `
 
