@@ -2,14 +2,12 @@ import styled from 'styled-components/macro'
 import { motion } from 'framer-motion'
 
 export const CategorySectionContainer = styled(motion.div) `
-z-index: 999;
 width: 100%;
 height: auto;
 background-color: #ffffff;
-display: grid;
+display: flex;
+justify-content: center;
 align-items: center;
-left: 0;
-right: 0;
 overflow-y: hidden;
     
 `
@@ -19,35 +17,19 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center ;
-width: 100%;
+width: 50%;
 height: auto;
 background-color: #eeeeee;
 overflow-y: hidden;
-
-
-@media (max-width:1920px) and (min-width: 1536px){
-width: 50%;
-height: auto;
-background-color: #eeeeee;
-margin-left: 25%;
 margin-top: 4%;
-}
-@media (max-width:1536px) and (min-width: 1280px){
-width: 50%;
-margin-left: 25%;
-}
 
 
 @media (max-width:1280px) and (min-width: 768px){
-width: 85% ;
-margin-top: 4%;
-margin-left: 7%;
+width: 85%;
 }
 
 @media (max-width:768px) and (min-width: 320px){
-width: 95% ;
-margin-top: 4%;
-margin-left: 3%;
+width: 95%;
 }
     
 `

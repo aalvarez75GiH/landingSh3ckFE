@@ -1668,7 +1668,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     border-radius: 68%;
     height: 19%;
     width: 26%;
-    /* margin-left: 5%; */
     margin-top: 5%;
     font-size: 1.5rem;
     background-color: #ffffff;
@@ -2033,9 +2032,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
 /* ****************** checkApp: Checkers Section *************************** */
 
-
+.checkerPrice {
+    width: 30%;
+}
 .checkerInfo__name {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-top: 5%;
     margin-left: 1%;
 }
@@ -2194,9 +2195,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
 
 
 .checkerInfo__name {
-    font-size: 1.6rem;
-    margin-top: 5%;
-    margin-left: 1%;
+    font-size: 1.4rem;
+    /* margin-top: 5%;
+    margin-left: 1%; */
+}
+.checkerPrice {
+    width: 35%;
 }
 
 }
@@ -2379,12 +2383,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
   
      /* ****************** checkApp: Checkers Section *************************** */
 
-
-.checkerInfo__name {
-    font-size: 1.6rem;
-    margin-top: 5%;
-    margin-left: 1%;
-}
+     .checkerPrice {
+        width: 23%;
+    }
+    .checkerInfo__name {
+        font-size: 1.6rem;
+        margin-top: 5%;
+        margin-left: 1%;
+    }
 
 
 }

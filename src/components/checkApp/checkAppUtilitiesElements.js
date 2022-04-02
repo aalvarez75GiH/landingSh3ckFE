@@ -28,6 +28,8 @@ height: 40px;
 }
 
 @media (max-width:560px) and (min-width: 320px){
+display: flex;
+align-items: center;
 font-size: 1rem;
 }
 ` 

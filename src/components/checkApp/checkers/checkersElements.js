@@ -7,70 +7,33 @@ import image from '../../../images/avatar_1.png'
 export const CheckerSectionContainer = styled(motion.div) `
 width: 100%;
 height: auto;
-background-color: red;
-display: grid;
+background-color: #ffffff;
+display: flex;
+justify-content: center;
 align-items: center;
 overflow-y: hidden; 
 
-@media (max-width:1920px) and (min-width: 768px){
-width: 100%;
-height: auto;
-background-color: #ffffff;
-display: grid;
-align-items: center;
-left: 0;
-right: 0; 
-}
-@media (max-width:768px) and (min-width: 560px){
-width: 100%;
-height: auto;
-background-color: #ffffff;
-display: grid;
-align-items: center;
-left: 0;
-right: 0; 
-}  
+
 `
 export const CheckerSectionWrapper = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center ;
-width: 100%;
+width: 50%;
 height: auto;
 background-color: #eeeeee;
 overflow-y: hidden;
+margin-top: 4%;
 
 
-@media (max-width:1920px) and (min-width: 1536px){
-width: 50%;
-margin-left: 25%;
-margin-top: 3%;
-}
-@media (max-width:1536px) and (min-width: 1366px){
-width: 65%;
-margin-left: 20%;
-margin-top: 3%;
-}
-@media (max-width:1366px) and (min-width: 1280px){
-width: 70%;
-margin-left: 20%;
-margin-top: 3%;
-}
-@media (max-width:1280px) and (min-width: 1098px){
-width: 75%;
-margin-left: 13%;
-margin-top: 3%;
-}
-@media (max-width:1098px) and (min-width: 768px){
+@media (max-width:1280px) and (min-width: 768px){
 width: 85%;
-margin-left: 8%;
-margin-top: 3%;
 }
+
 @media (max-width:768px) and (min-width: 320px){
-width: 100%;
+width: 95%;
 }
-/* modifying test 2 */
 
 `
 
@@ -97,9 +60,10 @@ font-weight: 400;
 margin-left: 5%;
 color: #ffffff;
 
-@media (max-width:1920px) and (min-width: 1536px){
+@media (max-width:1920px) and (min-width: 560px){
 font-size: 2rem;
 }
+
 @media (max-width:560px) and (min-width: 320px){
 font-size: 1rem;
 }
@@ -123,71 +87,31 @@ margin-top: 2%;
 export const CheckerProfileContainer = styled(motion.div) `
 width: 100%;
 height: auto;
-background-color: red;
-display: flex;
-align-items: center;
-overflow-y: hidden;
-@media (max-width:1920px) and (min-width: 768px){
-width: 100%;
-height: auto;
 background-color: #ffffff;
 display: flex;
+justify-content: center;
 align-items: center;
-left: 0;
-right: 0; 
-}
-@media (max-width:768px) and (min-width: 560px){
-width: 100%;
-height: auto;
-background-color: #ffffff;
-display: flex;
-align-items: center;
-left: 0;
-right: 0; 
-} 
-
+overflow-y: hidden; 
+ 
 `
 export const CheckerProfileWrapper = styled.div `
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center ;
-width: 100%;
+width: 50%;
 height: auto;
 background-color: #eeeeee;
 overflow-y: hidden;
+margin-top: 4%;
 
-
-@media (max-width:1920px) and (min-width: 1536px){
-width: 50%;
-margin-left: 25%;
-margin-top: 3%;
-}
-@media (max-width:1536px) and (min-width: 1366px){
-width: 65%;
-margin-left: 20%;
-margin-top: 3%;
-}
-@media (max-width:1366px) and (min-width: 1280px){
-width: 70%;
-margin-left: 20%;
-margin-top: 3%;
-}
-@media (max-width:1280px) and (min-width: 1098px){
-width: 75%;
-margin-left: 13%;
-margin-top: 3%;
-}
-@media (max-width:1098px) and (min-width: 768px){
+@media (max-width:1280px) and (min-width: 768px){
 width: 85%;
-margin-left: 8%;
-margin-top: 3%;
-}
-@media (max-width:768px) and (min-width: 480px){
-width: 100%;
-margin-left: 0%;
 }
 
+@media (max-width:768px) and (min-width: 320px){
+width: 95%;
+}
 
 `
 
@@ -242,10 +166,8 @@ height: 60%;
 `
 
 export const CheckerInfoName = styled.div`
-font-size: 1.8rem;
 margin-top: 5%;
 margin-left: 1%;
-font-weight: 500;
 
 @media (max-width:768px) and (min-width: 560px){
 font-size: 1.6rem;
@@ -267,10 +189,23 @@ margin-left: 1%;
 `
 export const CheckerInfoNameH1 = styled.h1`
 font-weight: 500;
-
+@media (max-width:1536px) and (min-width: 1366px){
+font-size: 3rem;
+}
+@media (max-width:1366px) and (min-width: 560px){
+font-size: 2.9rem;
+}
+@media (max-width:560px) and (min-width: 480px){
+font-size: 2.1rem;
+}
+@media (max-width:480px) and (min-width: 414px){
+font-size: 2rem;
+}
+@media (max-width:414px) and (min-width: 360px){
+font-size: 1.6rem;
+}
 @media (max-width:360px) and (min-width: 320px){
 font-size: 1.3rem;
-
 }
 `
 export const CheckerInfoCiudad = styled.div `
@@ -318,6 +253,10 @@ margin-left: 4%;
 margin-top: 1%;
 font-weight: 300;
 
+@media (max-width: 1366px) and (min-width:414px){
+    margin-top: 0%;
+        
+}
 @media (max-width: 414px) and (min-width:320px){
     font-size: 0.8rem;
     margin-left: 4%;
@@ -343,8 +282,14 @@ margin-left: 50%;
     margin-left: 65% ;
 }
 
-@media (max-width: 1366px) and (min-width:560px){
-    margin-left: 50% ;
+
+@media (max-width: 1366px) and (min-width:1280px){
+    margin-left: 50%;
+    width: 65%;
+}
+@media (max-width: 1280px) and (min-width:560px){
+    width: 55%;
+    margin-left: 50%;
 }
 
 @media (max-width: 560px) and (min-width:320px){
@@ -535,10 +480,13 @@ font-weight: 500;
 
 @media (max-width: 1920px) and (min-width:560px){
 font-size: 1.4rem;
-}
 
-@media (max-width: 560px){
-    font-size: 1rem;
+}
+@media (max-width: 560px) and (min-width:360px){
+font-size: 0.9rem;
+}
+@media (max-width: 360px){
+    font-size: 0.8rem;
 }
 
 `
