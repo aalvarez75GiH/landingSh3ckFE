@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import { CheckerTile, BackwardSectionComponent  } from '../checkAppUtilities'
+import { CheckerProfileTileComponent } from './checkersSubComponents'
 
 import { getRequestToCheckers, getRequestToCheckersByCity, 
     getRequestToCheckersByCategory, getRequestToCheckersByCityAndCategory 

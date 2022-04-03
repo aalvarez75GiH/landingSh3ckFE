@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { BackwardSectionComponent, CheckerSectionAvatar, 
-        capitalizeFullName, CategoryLabelComponent,
+import { 
+        BackwardSectionComponent, 
+        capitalizeFullName, 
         CheckAppButton 
     } from '../../checkApp/checkAppUtilities'
+import {  CategoryLabelComponent } from './checkersSubComponents'
 import { actionCreators } from '../../../state'
 import { getRequestToCheckType } from '../../../requestsToApi'
 import { Rating } from '@mui/material'
-
+import { CheckerSectionAvatar } from './checkersSubComponents'
 import {
     CheckerProfileContainer,
     CheckerProfileWrapper,
@@ -40,7 +42,7 @@ import {
     CheckTypeBioButton,
     CheckTypeBioButtonP
 } from './checkersElements.js'
-
+import { CheckerProfileTileComponent } from './checkersSubComponents'
 
 
 const CheckerProfile = () => {
@@ -111,7 +113,8 @@ const CheckerProfile = () => {
                     <CheckersSectionTitle>Perfil del Chequeador</CheckersSectionTitle>
                 </CheckersTitleContainer>
                 <CheckerProfileItemsContainer>
-                <CheckerProfileTile>
+                    <CheckerProfileTileComponent/>
+                {/* <CheckerProfileTile>
                     <CheckerItemAvatar>
                         <CheckerSectionAvatar
                         checker={checker}
@@ -134,7 +137,7 @@ const CheckerProfile = () => {
                             <CheckerBioButtonP>Ver un poco más</CheckerBioButtonP>
                         </CheckerBioButton>
                     </CheckerInfoContainer>
-                </CheckerProfileTile>
+                </CheckerProfileTile> */}
                 {/* {renderingCheckTypeTiles} */}
                     <CheckTypeTileContainer>
                         <CheckTypeTileTitle>Tipo de chequeo</CheckTypeTileTitle>

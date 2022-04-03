@@ -31,8 +31,11 @@ margin-top: 4%;
 width: 85%;
 }
 
-@media (max-width:768px) and (min-width: 320px){
+@media (max-width:768px) and (min-width: 414px){
 width: 95%;
+}
+@media (max-width:414px) and (min-width: 320px){
+width: 100%;
 }
 
 `
@@ -109,8 +112,11 @@ margin-top: 4%;
 width: 85%;
 }
 
-@media (max-width:768px) and (min-width: 320px){
+@media (max-width:768px) and (min-width: 414px){
 width: 95%;
+}
+@media (max-width:414px) and (min-width: 320px){
+width: 100%;
 }
 
 `
