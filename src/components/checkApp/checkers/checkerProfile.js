@@ -16,19 +16,6 @@ import {
     CheckerProfileWrapper,
     CheckersTitleContainer,
     CheckersSectionTitle,
-    CheckerProfileTile,
-    CheckerItemAvatar, 
-    CheckerInfoContainer,
-    CheckerProfileInfo,
-    CheckerInfoName,
-    CheckerInfoCiudad,
-    CheckerInfoRating,
-    CheckerInfoNameH1,
-    CheckerInfoCiudadH3,
-    CheckerInfoRatingH3,
-    CheckerInfoRatingH4,
-    CheckerBioButton,
-    CheckerBioButtonP,
     CheckTypeTileContainer,
     CheckTypeTileTitle,
     CheckTypeTileInfo,
@@ -114,30 +101,6 @@ const CheckerProfile = () => {
                 </CheckersTitleContainer>
                 <CheckerProfileItemsContainer>
                     <CheckerProfileTileComponent/>
-                {/* <CheckerProfileTile>
-                    <CheckerItemAvatar>
-                        <CheckerSectionAvatar
-                        checker={checker}
-                        />
-                    </CheckerItemAvatar>
-                    <CheckerInfoContainer>
-                        <CheckerProfileInfo>
-                            <CheckerInfoName>
-                                <CheckerInfoNameH1>{checkerNameCapitalized}</CheckerInfoNameH1>
-                            </CheckerInfoName>
-                            <CheckerInfoCiudad>
-                                <CheckerInfoCiudadH3>{checker.city_name}</CheckerInfoCiudadH3>
-                            </CheckerInfoCiudad>
-                            <CheckerInfoRating>
-                                <CheckerInfoRatingH3>Rating:</CheckerInfoRatingH3><Rating value={checker.rating} readOnly /><CheckerInfoRatingH4>({checker.rating})</CheckerInfoRatingH4>
-                            </CheckerInfoRating>
-                            <CategoryLabelComponent checker={checker}/>                        
-                        </CheckerProfileInfo>
-                        <CheckerBioButton>
-                            <CheckerBioButtonP>Ver un poco más</CheckerBioButtonP>
-                        </CheckerBioButton>
-                    </CheckerInfoContainer>
-                </CheckerProfileTile> */}
                 {/* {renderingCheckTypeTiles} */}
                     <CheckTypeTileContainer>
                         <CheckTypeTileTitle>Tipo de chequeo</CheckTypeTileTitle>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Stack, Rating } from '@mui/material'
+import { Rating } from '@mui/material'
 import { Link as LinkS } from 'react-scroll'
 import  { useSelector, useDispatch }  from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
@@ -257,7 +257,7 @@ export const CheckerTile = ({ checker, index }) => {
     const price = useSelector((state) => state.checkOrderState.price)
     const active_service_time = useSelector((state) => state.categoryAndSTState.active_service_time)
     
-    console.log(active_service_time)
+    console.log(checker)
 
     useEffect(() => {
         const gettingSTBase = async() => {
@@ -271,6 +271,9 @@ export const CheckerTile = ({ checker, index }) => {
     console.log(checker.category)
     const checkerNameCapitalized = capitalizeFullName(checker.fullName )
     
+    // const settingOverallRating = () => {
+    //     checker.
+    // }
  
     const  validateURL = (value) => {
         return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
@@ -286,6 +289,8 @@ export const CheckerTile = ({ checker, index }) => {
        
     }
 
+    const ratingTruncked = checker.rating.toFixed(1)
+    console.log(ratingTruncked)
 
     return (
         <div 
@@ -322,7 +327,12 @@ export const CheckerTile = ({ checker, index }) => {
                             <h3>{checker.city_name}</h3>
                         </div>
                         <div className="checkerInfo__rating">
-                            <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
+                            <h3>Rating:</h3>
+                            <Rating 
+                            value={ratingTruncked === '0.0' ? 5 : ratingTruncked} 
+                            readOnly 
+                            precision={0.5}
+                            /> <h4>({ratingTruncked})</h4>
                         </div>
                         <CategoryLabelComponent checker={checker}/>
                     </div>
@@ -340,7 +350,12 @@ export const CheckerTile = ({ checker, index }) => {
                             <h3>{checker.city_name}</h3>
                         </div>
                         <div className="checkerInfo__rating">
-                            <h3>Rating:</h3><Rating value={checker.rating} readOnly /> <h4>({checker.rating})</h4>
+                            <h3>Rating:</h3>
+                            <Rating 
+                            value={ratingTruncked === '0.0' ? 5  : ratingTruncked} 
+                            readOnly 
+                            precision={0.5} 
+                            /> <h4>({ratingTruncked})</h4>
                         </div>
                         <CategoryLabelComponent checker={checker}/>
                     </div>
@@ -373,10 +388,3 @@ export const BackwardSectionComponent = ({comeBack}) => {
         </BackwardSection>
     )
 }
-// ************************************************************************
-
-
-// ************************************************************************
-
-// **************** This is component
-

@@ -403,6 +403,14 @@ export const activatingCheckerInterface = (status) => {
         })
     }
 }
+export const activatingCheckerStatisticsInterface = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activing_checker_stats',
+            payload: status
+        })
+    }
+}
 
 // ************** Check Types  **************************
 

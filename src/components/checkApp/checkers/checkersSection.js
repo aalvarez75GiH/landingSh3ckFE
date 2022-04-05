@@ -23,6 +23,9 @@ const CheckersSection = () => {
     const {  
         settingLevel, settingPreviousLevel,
         settingCheckers, 
+        settingCheckerFromCheckOrder,
+        checkerChose, activatingCheckerInterface,
+        activatingCheckAppButton
 
     } = bindActionCreators(actionCreators, dispatch)
     
@@ -54,7 +57,7 @@ const CheckersSection = () => {
         settingPreviousLevel('checkers')
     }
 
-   
+  
         const renderingCheckersList = checkers.map((checker, index) => {
             return (
                 <CheckerTile 

@@ -507,3 +507,63 @@ background-color: #ffffff;
 margin-bottom: 3%;
 
 `
+
+// *************  checkers Ratings
+
+export const CheckerRatingsTile = styled.div`
+width: 100%;
+height: auto;
+margin: 10px;
+background-color: #ffffff;
+display: grid;
+grid-template-columns: 33.3% 33.3% 33.3%;
+grid-template-rows: auto;
+`
+
+export const CheckerRating = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center; 
+width: 100%;
+height: 180px;
+/* background-color: purple; */
+/* border: 1px solid #010606; */
+
+`
+export const CheckerRatingImg = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 80%;
+height: 65%;
+background-color: #FAD570;
+border-radius: 68%;
+margin-top: 8%;
+/* margin-left: 15%;  */
+/* margin-top: 7%; */
+`
+
+export const RatingImg = styled.img`
+width: 100px;
+height: 70px;
+`
+export const CheckDescriptionContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: auto;
+margin-top: 8%;
+margin-left: 5% ;
+`
+export const CheckerRatingDescription = styled.span`
+font-size: 1rem;
+`
+export const RatingContainer = styled.div`
+width: 90%;
+height: 20%;
+/* background-color: #eeeeee ; */
+margin-top: 8%;
+margin-left: 1%;
+`

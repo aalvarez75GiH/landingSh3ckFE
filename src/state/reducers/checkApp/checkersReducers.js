@@ -2,7 +2,8 @@ const checkersReducer = (
     state={
         checkers: [],
         active_checker: {},
-        checker_gui_active: false
+        checker_gui_active: false,
+        checker_stats_active: false
         
     }, action) => {
         switch (action.type) {
@@ -12,6 +13,8 @@ const checkersReducer = (
                 return {...state, active_checker: action.payload}
             case 'activing_checker_gui':
                 return {...state, checker_gui_active: action.payload}
+            case 'activing_checker_stats':
+                return {...state, checker_stats_active: action.payload}
             default:
             return state    
     }
