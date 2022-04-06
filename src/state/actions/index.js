@@ -164,11 +164,6 @@ export const gettingGoogleLoginData = (value) => {
     }
 } 
 
-// ****** CheckSection Actions creators ***************
-
-
-
-
 
 // ****** CheckApp Actions creators ***************
 
@@ -251,15 +246,6 @@ export const settingBaseAtCheckOrder = (value) => {
         })
 }
 }
-// export const settingCheckerIDAtCheckOrder = (value) => {
-//     return(dispatch) => {
-//         dispatch({
-//             type: 'checkerID',
-//             payload: value
-//         })
-// }
-// }
-
 
 export const settingCheckerFromCheckOrder = (value) => {
     return(dispatch) => {
@@ -411,6 +397,15 @@ export const activatingCheckerStatisticsInterface = (status) => {
         })
     }
 }
+
+export const settingReviews = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type:'set_reviews',
+            payload: value
+        })
+    }
+} 
 
 // ************** Check Types  **************************
 

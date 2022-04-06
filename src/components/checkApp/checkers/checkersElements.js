@@ -561,9 +561,56 @@ export const CheckerRatingDescription = styled.span`
 font-size: 1rem;
 `
 export const RatingContainer = styled.div`
+display: flex;
+justify-content: center;
 width: 90%;
 height: 20%;
 /* background-color: #eeeeee ; */
 margin-top: 8%;
 margin-left: 1%;
+`
+
+export const CheckersReviewsContainer = styled.div`
+width: 95%;
+height: auto;
+margin: 10px;
+background-color: #eeeeee;
+
+`
+export const ReviewTile = styled.div `
+display: flex;
+width: 100%;
+height: 200px;
+margin-bottom: 2%;
+background-color: #ffffff;
+
+`
+export const ReviewUserAvatarContainer = styled.div`
+width: 30%;
+height: 100%;
+background-color: #ffffff;
+`
+export const ReviewUserCommentContainer = styled.div`
+display: flex;
+align-items: center;
+width: 70%;
+height: 100%;
+background-color: #ffffff;
+font-style: italic;
+color: #666666 ;
+
+`
+export const ReviewAvatar = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+`
+export const Avatar = styled.img`
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+
 `

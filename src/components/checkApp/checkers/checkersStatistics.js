@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { 
-        BackwardSectionComponent, 
-        capitalizeFullName, 
-        CheckAppButton 
-    } from '../../checkApp/checkAppUtilities'
-import {  CategoryLabelComponent } from './checkersSubComponents'
+import { BackwardSectionComponent } from '../../checkApp/checkAppUtilities'
+import { ReviewTileComponent } from './checkersSubComponents'
 import { actionCreators } from '../../../state'
-import { getRequestToCheckType } from '../../../requestsToApi'
+import { getRequestToCheckerReview } from '../../../requestsToApi'
 import { Rating } from '@mui/material'
-import { CheckerSectionAvatar } from './checkersSubComponents'
 import rating_r_image from '../../../images/responsibility.svg'
 import rating_p_image from '../../../images/alarm-on.svg'
 import rating_k_image from '../../../images/heart.svg'
 import rating_kw_image from '../../../images/study.svg'
 import rating_t_image from '../../../images/honesty.svg'
 import rating_c_image from '../../../images/communication (1).svg'
+import user_comment_generic from '../../../images/user_comment.svg'
 import {
     CheckerProfileContainer,
     CheckerProfileWrapper,
@@ -29,20 +25,36 @@ import {
     RatingImg,
     CheckDescriptionContainer,
     CheckerRatingDescription,
-    RatingContainer
-
+    RatingContainer,
+    CheckersReviewsContainer,
+    ReviewTile,
+    ReviewUserAvatarContainer,
+    ReviewUserCommentContainer,
+    ReviewAvatar,
+    Avatar
 } from './checkersElements.js'
-import { CheckerStatisticsTileComponent } from './checkersSubComponents'
+
 
 const CheckerStatistics = () => {
     const dispatch = useDispatch()
     const {  
-        activatingCheckerStatisticsInterface
+        activatingCheckerStatisticsInterface,
+        settingReviews
     } = bindActionCreators(actionCreators, dispatch)
 
     const checker = useSelector((state) => state.checkOrderState.checker)
-    console.log(checker)
+    const active_checker_reviews = useSelector((state) => state.checkersState.active_checker_reviews)
+    console.log(checker._id)
+    console.log(active_checker_reviews)
     
+    useEffect(()=> {
+        const gettingReviews = async() => {
+            const response = await getRequestToCheckerReview(checker._id)
+            settingReviews(response)
+            // console.log(response)
+        }
+        gettingReviews()
+    },[])
 const comeBack = () => {
     activatingCheckerStatisticsInterface(false)
 }
@@ -56,7 +68,31 @@ const ratingsDivided = {
     rating_c_divided: (checker.ratings.rating_c/checker.number_of_checks)
 }
 console.log(ratingsDivided)
+
+
  
+const renderingReviewComponent = active_checker_reviews.map((review) => {
+    const  validateURL = (value) => {
+        return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+    }
+    return(
+        <ReviewTile>
+               <ReviewUserAvatarContainer>
+                    <ReviewAvatar>
+                        <Avatar
+                        src={validateURL(review.user_picture) ? review.user_picture : user_comment_generic } 
+                        // src={review.user_picture}
+                        />
+                    </ReviewAvatar>
+                </ReviewUserAvatarContainer>
+                <ReviewUserCommentContainer>
+                    "{review.comment}"
+                </ReviewUserCommentContainer>
+
+        </ReviewTile>
+            // <ReviewTileComponent/>  
+    )
+}) 
     return (
      
         <CheckerProfileContainer
@@ -84,7 +120,7 @@ console.log(ratingsDivided)
                                 <CheckerRatingDescription>Responsabilidad</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_r_divided} readOnly precision={0.5} />
+                                <Rating value={ratingsDivided.rating_r_divided} readOnly precision={0.5} size="small" />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -98,7 +134,7 @@ console.log(ratingsDivided)
                                 <CheckerRatingDescription>Puntualidad</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_p_divided} readOnly precision={0.5} />
+                                <Rating value={ratingsDivided.rating_p_divided} readOnly precision={0.5} size="small" />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -112,7 +148,7 @@ console.log(ratingsDivided)
                                 <CheckerRatingDescription>Amabilidad</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_k_divided} readOnly precision={0.5} />
+                                <Rating value={ratingsDivided.rating_k_divided} readOnly precision={0.5} size="small" />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -126,7 +162,7 @@ console.log(ratingsDivided)
                                 <CheckerRatingDescription>Conocimiento</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_kw_divided} readOnly precision={0.5} />
+                                <Rating value={ratingsDivided.rating_kw_divided} readOnly precision={0.5} size="small" />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -140,7 +176,7 @@ console.log(ratingsDivided)
                                 <CheckerRatingDescription>Confianza</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_t_divided} readOnly precision={0.5} />
+                                <Rating value={ratingsDivided.rating_t_divided} readOnly precision={0.5} size="small" />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -154,17 +190,18 @@ console.log(ratingsDivided)
                                 <CheckerRatingDescription>Comunicativo</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_c_divided} readOnly precision={0.5} />
+                                <Rating value={ratingsDivided.rating_c_divided} readOnly precision={0.5} size="small" />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
                     </CheckerRatingsTile>
                 </CheckerProfileItemsContainer>
-                    {/* <CheckerProfileButtonContainer>
-                        <CheckAppButton
-                        buttonLabel='Escoger éste...'
-                        />
-                    </CheckerProfileButtonContainer>  */}
+                <CheckersTitleContainer>
+                    <CheckersSectionTitle>Algunos comentarios...</CheckersSectionTitle>
+                </CheckersTitleContainer>
+                <CheckersReviewsContainer>
+                    {renderingReviewComponent}
+                </CheckersReviewsContainer>
             </CheckerProfileWrapper>
 
         </CheckerProfileContainer>

@@ -60,7 +60,8 @@ const CheckStarting = () => {
         settingUserInCheckOrder({
             name: '',
             email: '',
-            phoneNumber: ''
+            phoneNumber: '',
+            picture:'',
 
         })
        

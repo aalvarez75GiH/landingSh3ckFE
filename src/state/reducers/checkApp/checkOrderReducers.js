@@ -3,7 +3,8 @@ const checkOrderReducer = (
         user:{
             name:'',
             email: '',
-            phoneNumber: ''
+            phoneNumber: '',
+            picture:''
         },
         checker:{},
         creation_time: '',
@@ -25,7 +26,8 @@ const checkOrderReducer = (
                     user:{
                         name: action.payload.name,
                         email: action.payload.email,
-                        phoneNumber: action.payload.phoneNumber
+                        phoneNumber: action.payload.phoneNumber,
+                        picture: action.payload.picture
                     }
                 }  
 

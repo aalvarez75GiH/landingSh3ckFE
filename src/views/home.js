@@ -125,7 +125,8 @@ const Home = () => {
             settingUserInCheckOrder({
                 name: error.response.data.fullName,
                 email: error.response.data.email,
-                phoneNumber: error.response.data.phoneNumber
+                phoneNumber: error.response.data.phoneNumber,
+                // picture: error.response.data.picture
 
             })
             gettingGoogleLoginData(error.response.data) 

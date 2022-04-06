@@ -16,7 +16,12 @@ import {
     CheckerInfoRatingH3,
     CheckerInfoRatingH4,
     CheckerBioButton,
-    CheckerBioButtonP
+    CheckerBioButtonP,
+    ReviewTile,
+    ReviewUserAvatarContainer,
+    ReviewUserCommentContainer,
+    ReviewAvatar,
+    Avatar
 } from '../../checkApp/checkers/checkersElements.js'
 import alternate_picture from '../../../images/avatar_1.png'
 import { capitalizeFullName } from '../checkAppUtilities'
@@ -169,4 +174,3 @@ export const CheckerStatisticsTileComponent = () => {
         </CheckerProfileTile>
     )
 }
-

@@ -131,13 +131,12 @@ export const getRequestToCheckers = async(city_id, category_id, service_time_id)
     return response.data
 }
 
-// export const getRequestToCheckType = async() => {
-//     const response = await axios.get(`${URL_BACKEND}/api/checkTypes`)
-//     return response.data
-// }
-
 export const getRequestToCheckType = async() => {
     const response = await axios.get(`${URL_BACKEND}/api/checkTypes`)
     return response.data
 }
 
+export const getRequestToCheckerReview = async(id) => {
+    const response = await axios.get(`${URL_BACKEND}/api/reviews/${id}`)
+    return response.data
+}

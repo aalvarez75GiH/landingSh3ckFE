@@ -52,7 +52,8 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
                 settingUserInCheckOrder({
                     name: response.data.name,
                     email: response.data.email,
-                    phoneNumber: response.data.phoneNumber
+                    phoneNumber: response.data.phoneNumber,
+                    picture: response.data.picture
 
                 })
                 settingCurrentUser(name)

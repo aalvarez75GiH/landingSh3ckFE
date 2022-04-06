@@ -5,14 +5,12 @@ import { IoMdCart } from 'react-icons/io'
 import { FiLogOut } from 'react-icons/fi'
 import { MdSaveAlt } from 'react-icons/md'
 import { infoMainSideBar } from '../../utils/data'
+import SmallAvatarComponent from './smallAvatarComponent.js'
 
 
 import { actionCreators } from '../../state'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-
-// import LoginForm from '../contactSection/loginForm'
-
 
 const MainSideBar = () => {
     const dispatch = useDispatch()
@@ -27,7 +25,7 @@ const MainSideBar = () => {
         activatingCheckAppButton, cityChose, categoryChoseBoolean,
         productToCheckCategory, productToCheckID, categoryChose,
         productToCheckServiceTime, productToSTID,serviceTimeChose,
-        settingUserInCheckOrder, clearLevelUsed
+        settingUserInCheckOrder, clearLevelUsed, gettingGoogleLoginData
 
     } = bindActionCreators(actionCreators, dispatch)
     const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
@@ -36,6 +34,8 @@ const MainSideBar = () => {
     const loggedIn = useSelector((state) => state.homeState.loggedIn)
     const loginData = useSelector((state) => state.homeState.loginData)
     const isSignedIn = useSelector((state) => state.homeState.isSignedIn)
+    const user = useSelector((state) => state.checkOrderState.user)
+    console.log(user)
     
     const capitalizeFirstLetter = (string) => {
         const str2 = string.charAt(0).toUpperCase() + string.slice(1)
@@ -44,6 +44,9 @@ const MainSideBar = () => {
     }
     const nameSplittedAndCapitalized = capitalizeFirstLetter(username )
     
+    const  validateURL = (value) => {
+        return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+    }
 
     const handlingSubmitLogOutUser = async() => {
         
@@ -73,10 +76,11 @@ const MainSideBar = () => {
             settingUserInCheckOrder({
                 name: '',
                 email: '',
-                phoneNumber: ''
+                phoneNumber: '',
+                picture: ''
             
             })
-        
+            gettingGoogleLoginData(null)
             clearLevelUsed()
         }
         if (loggedIn){
@@ -109,13 +113,13 @@ const MainSideBar = () => {
                 phoneNumber: ''
             
             })
-        
+            gettingGoogleLoginData(null)
             clearLevelUsed()
         }
         
         
     }
-
+     
     if (loggedIn && mainSideBarOpen){
        return (
        <aside
@@ -133,13 +137,19 @@ const MainSideBar = () => {
                     <div className="mainSideBarContent">
                         <div className="mainSideBarContentUser">
                             {
-                               !loginData ?  
-                                <div className="mainSideBarUserIcon">
-                                    <BiUserCheck />
-                                </div>
+                               !loginData ?
+                                    validateURL(user.picture) ?                               
+                                        <SmallAvatarComponent/>
+                                        // <div className="mainSideBarUserImage">
+                                        //     <img src={user.picture} alt="my pic" className="avatar" />
+                                        // </div>
+                                        :
+                                        <div className="mainSideBarUserIcon">
+                                            <BiUserCheck />
+                                        </div>
                                 :
                                 <div className="mainSideBarUserImage">
-                                    <img src={loginData.imageUrl || loginData.picture} alt="cdcdcdc" className="avatar" />
+                                    <img src={loginData.imageUrl || loginData.picture} alt="Sh3ch" className="avatar" />
                                 </div>
                             }
                             <h1 className="mainSideBarUserName">{language === 'ES' ? infoMainSideBar.hola : infoMainSideBar.hello} <b>{nameSplittedAndCapitalized}</b> </h1>
