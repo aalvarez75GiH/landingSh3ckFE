@@ -13,6 +13,7 @@ import rating_kw_image from '../../../images/study.svg'
 import rating_t_image from '../../../images/honesty.svg'
 import rating_c_image from '../../../images/communication (1).svg'
 import user_comment_generic from '../../../images/user_comment.svg'
+import useMobilDetection from '../../../utils/mobilDetection'
 import {
     CheckerProfileContainer,
     CheckerProfileWrapper,
@@ -36,6 +37,11 @@ import {
 
 
 const CheckerStatistics = () => {
+    const mobil = useMobilDetection()  
+    const screenWidth = mobil.screenWidth
+    console.log(screenWidth)
+
+
     const dispatch = useDispatch()
     const {  
         activatingCheckerStatisticsInterface,
@@ -69,6 +75,14 @@ const ratingsDivided = {
 }
 console.log(ratingsDivided)
 
+const gettingScreenWidth = () => {
+    if (screenWidth <= 1920 && screenWidth > 560){
+        return 'large'
+    }
+    if (screenWidth <= 560 && screenWidth > 320){
+        return 'small'
+    }
+}
 
  
 const renderingReviewComponent = active_checker_reviews.map((review) => {
@@ -120,7 +134,12 @@ const renderingReviewComponent = active_checker_reviews.map((review) => {
                                 <CheckerRatingDescription>Responsabilidad</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_r_divided} readOnly precision={0.5} size="small" />
+                                <Rating 
+                                value={ratingsDivided.rating_r_divided} 
+                                readOnly precision={0.5} 
+                                // size={screenWidth <= 1920 && screenWidth >= 1536 ? 'large' : 'small'} 
+                                size = {gettingScreenWidth()}
+                                />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -134,7 +153,12 @@ const renderingReviewComponent = active_checker_reviews.map((review) => {
                                 <CheckerRatingDescription>Puntualidad</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_p_divided} readOnly precision={0.5} size="small" />
+                                <Rating 
+                                value={ratingsDivided.rating_p_divided} 
+                                readOnly precision={0.5} 
+                                // size="small"
+                                size = {gettingScreenWidth()} 
+                                />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -148,7 +172,11 @@ const renderingReviewComponent = active_checker_reviews.map((review) => {
                                 <CheckerRatingDescription>Amabilidad</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_k_divided} readOnly precision={0.5} size="small" />
+                                <Rating 
+                                value={ratingsDivided.rating_k_divided} 
+                                readOnly precision={0.5} 
+                                size = {gettingScreenWidth()} 
+                                />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -162,7 +190,11 @@ const renderingReviewComponent = active_checker_reviews.map((review) => {
                                 <CheckerRatingDescription>Conocimiento</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_kw_divided} readOnly precision={0.5} size="small" />
+                                <Rating 
+                                value={ratingsDivided.rating_kw_divided} 
+                                readOnly precision={0.5} 
+                                size = {gettingScreenWidth()} 
+                                />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -176,7 +208,11 @@ const renderingReviewComponent = active_checker_reviews.map((review) => {
                                 <CheckerRatingDescription>Confianza</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_t_divided} readOnly precision={0.5} size="small" />
+                                <Rating 
+                                value={ratingsDivided.rating_t_divided} 
+                                readOnly precision={0.5} 
+                                size = {gettingScreenWidth()} 
+                                />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>
@@ -190,7 +226,11 @@ const renderingReviewComponent = active_checker_reviews.map((review) => {
                                 <CheckerRatingDescription>Comunicativo</CheckerRatingDescription>
                             </CheckDescriptionContainer>
                             <RatingContainer>
-                                <Rating value={ratingsDivided.rating_c_divided} readOnly precision={0.5} size="small" />
+                                <Rating 
+                                value={ratingsDivided.rating_c_divided} 
+                                readOnly precision={0.5} 
+                                size = {gettingScreenWidth()} 
+                                />
                                 {/* <Rating/> */}
                             </RatingContainer>
                         </CheckerRating>

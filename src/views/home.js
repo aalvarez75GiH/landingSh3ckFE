@@ -17,6 +17,7 @@ import LoadingSpinner from '../utils/loadingSpinner'
 // import CheckSection from '../components/checkSection/checkSection'
 import CheckApp from '../components/checkApp/checkApp'
 import NotificationBox from '../components/notifications/NotificationBox'
+import NotificationUI from '../components/notifications/notificationUI'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../components/notifications/notificationData'
 import { verifyingTokenRequest, addingGoogleUserToDB } from '../requestsToApi'
 // ************************* Redux imports
@@ -159,7 +160,7 @@ console.log(response)
             <LoadingSpinner/>
             
             {response || loginResponse  ?
-            <NotificationBox />
+            <NotificationUI />
              :
              null
             }

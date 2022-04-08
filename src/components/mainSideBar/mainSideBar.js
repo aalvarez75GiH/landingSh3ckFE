@@ -17,15 +17,15 @@ const MainSideBar = () => {
     // const {  openingMainSideBar, openingQASideBar } = bindActionCreators(actionCreators, dispatch)
     const {  
         openingMainSideBar, openingQASideBar,
-        handlingIsSignedInGoogle, activatingForm,
-        gettingLoginResponseData, handlingIsLoggedIn,
+        handlingIsSignedInGoogle, activatingForm, handlingIsLoggedIn,
         handlingIsLoggedOut, openingContactSection,
         settingCurrentUser, settingLevel, settingPreviousLevel,
         settingCityOfCheckOrder, settingCityIDAtCheckOrder,
         activatingCheckAppButton, cityChose, categoryChoseBoolean,
         productToCheckCategory, productToCheckID, categoryChose,
         productToCheckServiceTime, productToSTID,serviceTimeChose,
-        settingUserInCheckOrder, clearLevelUsed, gettingGoogleLoginData
+        settingUserInCheckOrder, clearLevelUsed, gettingGoogleLoginData,
+        settingResponse
 
     } = bindActionCreators(actionCreators, dispatch)
     const mainSideBarOpen = useSelector((state) => state.homeState.mainSideBarOpen)
@@ -57,7 +57,7 @@ const MainSideBar = () => {
             handlingIsSignedInGoogle(false) //action
             activatingForm(null) //action
             openingMainSideBar(!mainSideBarOpen)  //action
-            gettingLoginResponseData(null) //action
+            settingResponse(null) //action
             openingContactSection(false) //action
             settingLevel('Starting')
             settingPreviousLevel('')
@@ -86,7 +86,7 @@ const MainSideBar = () => {
         if (loggedIn){
             console.log('pasa por loggedIn')
             localStorage.removeItem('SH3CK_TOKEN')
-            gettingLoginResponseData(null) //action
+            settingResponse(null) //action
             activatingForm(null) //action
             openingMainSideBar(!mainSideBarOpen) //action
             handlingIsLoggedIn(false) //action
@@ -140,9 +140,6 @@ const MainSideBar = () => {
                                !loginData ?
                                     validateURL(user.picture) ?                               
                                         <SmallAvatarComponent/>
-                                        // <div className="mainSideBarUserImage">
-                                        //     <img src={user.picture} alt="my pic" className="avatar" />
-                                        // </div>
                                         :
                                         <div className="mainSideBarUserIcon">
                                             <BiUserCheck />

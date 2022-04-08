@@ -526,9 +526,40 @@ flex-direction: column;
 justify-content: center;
 align-items: center; 
 width: 100%;
+height: 385px;
+
+@media (max-width: 1536px) and (min-width:1366px){
+height: 330px;
+
+}
+@media (max-width: 1366px) and (min-width:1280px){
+height: 300px;
+
+}
+@media (max-width: 1280px) and (min-width:768px){
+height: 385px;
+
+}
+@media (max-width: 768px) and (min-width:560px){
+height: 320px;
+
+}
+@media (max-width: 560px) and (min-width:480px){
+height: 235px;
+
+}
+@media (max-width: 480px) and (min-width:414px){
+height: 200px;
+
+}
+@media (max-width: 414px) and (min-width:360px){
 height: 180px;
-/* background-color: purple; */
-/* border: 1px solid #010606; */
+
+}
+@media (max-width: 360px) and (min-width:320px){
+height: 165px;
+
+}
 
 `
 export const CheckerRatingImg = styled.div`
@@ -540,13 +571,31 @@ height: 65%;
 background-color: #FAD570;
 border-radius: 68%;
 margin-top: 8%;
-/* margin-left: 15%;  */
-/* margin-top: 7%; */
+
+@media (max-width: 1280px) and (min-width:1098px){
+width: 65%;
+}
 `
 
 export const RatingImg = styled.img`
 width: 100px;
+height: 100px;
+/* @media (max-width: 1920px) and (min-width:560px){
+height: 100px;
+
+} */
+@media (max-width: 560px) and (min-width:414px){
+height: 75px;
+
+}
+@media (max-width: 414px) and (min-width:360px){
 height: 70px;
+
+}
+@media (max-width: 360px) and (min-width:320px){
+height: 60px;
+
+}
 `
 export const CheckDescriptionContainer = styled.div`
 display: flex;
@@ -558,14 +607,17 @@ margin-top: 8%;
 margin-left: 5% ;
 `
 export const CheckerRatingDescription = styled.span`
+font-size: 1.5rem;
+
+@media (max-width: 560px) and (min-width:320px){
 font-size: 1rem;
+}
 `
 export const RatingContainer = styled.div`
 display: flex;
 justify-content: center;
 width: 90%;
 height: 20%;
-/* background-color: #eeeeee ; */
 margin-top: 8%;
 margin-left: 1%;
 `

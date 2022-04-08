@@ -12,6 +12,7 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import { verifyingTokenRequest, requestToLoginUsers } from '../../requestsToApi'
 
 
+
 const validationSchema = yup.object({
     email: yup.string().email('Por favor introduce una dirección de correo válida').required('hola, no te olvídes de colocar tu correo electrónico'),
     pin: yup.string().min(4).max(4).required('No te olvides de colocar tu PIN de seguridad'),   
@@ -23,14 +24,14 @@ const LoginForm = ({ googleTest }) => {
     const {   
         openingRegView, openingForgotPINView,   
         activatingSpinner,openingQASideBar,
-        settingCurrentUser, gettingLoginResponseData, 
-        handlingIsLoggedIn, handlingIsLoggedOut,
-        settingUserInCheckOrder
+        settingCurrentUser, handlingIsLoggedIn, 
+        handlingIsLoggedOut, settingUserInCheckOrder,
+        settingResponse, activatingForm
 } = bindActionCreators(actionCreators, dispatch)
 const regView = useSelector((state) => state.contactSectionState.regView)
 const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
 const language = useSelector((state) => state.sideBarState.language)
-
+const active = useSelector((state) => state.contactSectionState.active)
 const [typeOfPIN, setTypeOfPIN ] = useState(false)
 
 
@@ -47,6 +48,7 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
                 console.log(data)
                 localStorage.setItem('SH3CK_TOKEN', data.token)
                 const response = await verifyingTokenRequest(data.token)
+                console.log(response)
                 console.log(response.data.name)
                 let name = response.data.name
                 settingUserInCheckOrder({
@@ -57,14 +59,16 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
 
                 })
                 settingCurrentUser(name)
-                gettingLoginResponseData(response)  //action
-                activatingSpinner(false) //action
+                // gettingLoginResponseData(response)  
+                settingResponse(response)
+                activatingSpinner(false) 
                 handlingIsLoggedIn(true)
-                handlingIsLoggedOut(false) //action    
+                handlingIsLoggedOut(false)     
             } catch (error) {
-                console.log(error)
-                gettingLoginResponseData(error.response)
-                activatingSpinner(false) //action
+                console.log(error.response)
+                // gettingLoginResponseData(error.response)
+                settingResponse(error.response)
+                activatingSpinner(false) 
             }
         },3000)
         
@@ -86,19 +90,30 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
     const togglingPINVisibility = () => {
         setTypeOfPIN(!typeOfPIN)
     }
-
-    if (regView){
-        return(
-            <RegisterForm />
-        )
+    
+    const activatingRegForm = () => {
+        openingRegView(!regView)
+        activatingForm('check')
     }
 
-    if (forgotPIN){
-        return(
-            <ForgotPINForm />
-        ) 
+    // if (active === 'check' && regView){
+    //     return(
+    //         <RegisterForm />
+    //     )
+    // }
+
+    // if (active === 'forgot_pin' && forgotPIN){
+    //     return(
+    //         <ForgotPINForm />
+    //     ) 
         
+    // }
+
+    const activatingForgotPINDeactivatingLoginForm = () => {
+        openingForgotPINView(!forgotPIN)
+        activatingForm('forgotPIN')
     }
+
 
     return (
         <div className="boxContainer">
@@ -152,12 +167,12 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
                     {/* </Link> */}
                 </button>
                 <button
-                onClick={() => openingRegView(!regView)}
+                onClick={activatingRegForm}
                 className="regButton"
                 type="submit"
                 >{language === 'ES' ? infoContact.loginFormRegBtn : infoContact.loginFormRegBtn_EN}</button>
                 <span
-                onClick={() => openingForgotPINView(!forgotPIN)} 
+                onClick={activatingForgotPINDeactivatingLoginForm} 
                 className="forgotPINSpan">{language === 'ES' ? infoContact.loginFormSpan : infoContact.loginFormSpan_EN}</span>
                 <GoogleAuth5
                 googleTest={googleTest}

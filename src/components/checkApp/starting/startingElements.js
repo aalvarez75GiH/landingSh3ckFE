@@ -1,23 +1,56 @@
 import styled from 'styled-components/macro'
 import { motion } from 'framer-motion'
-import image from '../../../images/8443731_business_start_up_launch_rocket_icon.svg'
-
 
 export const CheckSectionContainer = styled(motion.div) `
+    position: fixed ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    /* height: 1100px; */
-    height: auto;
+    width: 100%;
+    height: 80vh;
     background-color: #eeeeee;
-    margin-top: 2%;
-    margin-left: 5%;
-    /* position: fixed; */
-    left: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
+    @media (max-width:1920px) and (min-width: 1536px){
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+    @media (max-width:1536px) and (min-width: 1366px) {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 2%;
+        /* height: 60%; */
+    }
+    @media (max-width:1366px) and (min-width: 1280px) {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+        /* height: 60%; */
+    }
+    @media (max-width:1280px) and (min-width: 1098px) {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+    
+    }
+    @media (max-width:1098px) and (min-width: 768px) {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+    
+    }
+    @media (max-width:768px) and (min-width: 560px) {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+    
+    }
+    
 
-    @media (max-width:560px) and (min-width: 480px){
+    /* @media (max-width:560px) and (min-width: 480px){
         width: 100%;
         margin-top: unset;
         margin-left: unset;
@@ -29,21 +62,21 @@ export const CheckSectionContainer = styled(motion.div) `
     }
     @media (max-width:414px) and (min-width: 360px){
         width: 100%;
-        height: 100vh;
+        height: auto;
         overflow-y: hidden;
         background-color: #eeeeee;
         margin-top: 0%;
         margin-left: unset;
         
-    }
+    } */
 
-    @media (max-width:360px) and (min-width: 320px){
+    /* @media (max-width:360px) and (min-width: 320px){
         width: 100%;
         height: 650px;
         background-color: #eeeeee;
         margin-top: 0%;
         margin-left: unset;
-    }
+    } */
 
 `
 
@@ -51,27 +84,63 @@ export const CheckSectionWrapper = styled.div `
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* height: 1000px; */
-    height: auto;
-    background-image: url(${image});
-    background-size: 60% 60%;
-    background-repeat: no-repeat;
-    background-position-x: center;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
     
-    @media (max-width:1536px) and (min-width: 1366px) {
+    
+    /* @media (max-width:1536px) and (min-width: 1366px) {
         background-size: 40% 60%;
     }
  
     @media (max-width:414px) and (min-width: 360px){
-        height: 100%;
+        height: auto;
         background-size: 60% 42%;    
-    }
+    } */
 
-    @media (max-width:360px) and (min-width: 320px){
+    /* @media (max-width:360px) and (min-width: 320px){
         height: 100%;
     background-size: 60% 42%;
-    }
+    } */
 
+`
+
+export const CheckStartingImageContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 50%;
+/* background-color: red; */
+@media (max-width:1920px) and (min-width: 1536px) {
+        height: 60%;
+}
+@media (max-width:1536px) and (min-width: 1366px) {
+        height: 65%;
+        
+}
+@media (max-width:1366px) and (min-width: 1280px) {
+        height: 65%;
+        
+}
+@media (max-width:1280px) and (min-width: 1098px) {
+        height: 70%;
+        
+}
+@media (max-width:1098px) and (min-width: 768px) {
+        height: 65%;
+        margin-left: 2%;  
+}
+@media (max-width:768px) and (min-width: 320px) {
+        height: 55%;
+        margin-left: 2%;  
+}
+
+`
+export  const CheckStartingImage = styled.img`
+width: 80%;
+height: 80%;
+/* background-color: green; */
 `
 
 export const CheckSectionBtnWrap = styled.div `
@@ -80,10 +149,20 @@ export const CheckSectionBtnWrap = styled.div `
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 500px;
-    margin-top: 38%;
+    height: 40%;
 
-    @media (max-width:1536px) and (min-width: 1366px) {
+    @media (max-width:1366px) and (min-width: 1280px) {
+        height: 20%;
+    }
+    @media (max-width:1280px) and (min-width: 560px) {
+        height: 23%;
+    }
+    @media (max-width:560px) and (min-width: 320px) {
+        height: 23%;
+    }
+    /* margin-top: 38%; */
+    
+    /* @media (max-width:1536px) and (min-width: 1366px) {
         margin-top: 45%;
     }
     @media (max-width:1366px) and (min-width: 1280px){
@@ -106,12 +185,12 @@ export const CheckSectionBtnWrap = styled.div `
     }
     @media (max-width:414px) and (min-width: 360px){
         margin-top: 20%;
-        height: 100%;
+        height: 30%;
     }
 
     @media (max-width:360px) and (min-width: 320px){
         margin-top: 40%;
-    }
+    } */
 
    
     
@@ -133,11 +212,11 @@ export const CheckSectionCheckBtn = styled.button `
         width: 60%;
     }
     @media (max-width:768px) and (min-width: 560px){
-        width: 60%;
+        width: 70%;
     }
     @media (max-width:560px) and (min-width: 414px){
-        width: 80%;
-        height: 70px;
+        width: 70%;
+        height: 80px;
     }
     @media (max-width:414px) and (min-width: 360px){
         width: 80%;
@@ -167,11 +246,11 @@ export const CheckSectionExitBtn = styled.button `
         width: 60%;
     }
     @media (max-width:768px) and (min-width: 560px){
-        width: 60%;
+        width: 70%;
     }
     @media (max-width:560px) and (min-width: 414px){
-        width: 80%;
-        height: 70px;
+        width: 70%;
+        height: 80px;
     }
     @media (max-width:414px) and (min-width: 360px){
         width: 80%;

@@ -35,7 +35,8 @@ const NextStepSection = ({
 
     const renderingRegUsersForm = () => {
         openingContactSection(true)
-        activatingForm('check')
+        // activatingForm('check')
+        activatingForm('login_form')
         openingRegView(false)
         openingForgotPINView(false)
     }

@@ -34,10 +34,7 @@ const CheckersSection = () => {
     const city_id = useSelector((state) => state.checkOrderState.city_id)
     const checkers = useSelector((state) => state.checkersState.checkers)
     
-    // const category_id = useSelector((state) => state.productToCheckState.category_id)
-    // const service_time_id = useSelector((state) => state.productToCheckState.service_time_id)
 
-    
     useEffect(()=> {
         const gettingCheckers = async() => {
             // const responseCheckers  = await getRequestToCheckersbyCity(city_id)

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const URL_BACKEND = 'http://192.168.1.102:5000'
-const URL_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
+const URL_BACKEND = 'http://192.168.1.102:5000'
+// const URL_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
 
 export const verifyingTokenRequest = async(token) => {
     return await axios.get(`${URL_BACKEND}/api/users/me`, {
@@ -33,7 +33,7 @@ export const addingRegularUsersToDB = async(user) => {
 }
 
 export const requestToGenerateNewPIN = async(dataToRequest) => {
-    return await axios.put(`${URL_BACKEND}/api/users/newPIN`, dataToRequest)
+    return await axios.put(`${URL_BACKEND}/api/users/${dataToRequest.email}/newPIN`)
 }
 
 export const getRequestToCities = async() => {

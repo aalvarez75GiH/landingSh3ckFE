@@ -59,9 +59,7 @@ const CheckerProfile = () => {
         activatingCheckerInterface(false)
         settingCheckerFromCheckOrder('')
     }
-    const checkerNameCapitalized = capitalizeFullName(checker.fullName )
-
-
+    
     // const renderingCheckTypeTiles = check_types.map((check_type) => {
     //     return(
     //         <CheckTypeTileContainer>

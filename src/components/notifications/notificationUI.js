@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../state'
 
-const NotificationBox = () => {
+const NotificationUI = () => {
     let responseData
     const dispatch = useDispatch()
     const {  
@@ -23,10 +23,11 @@ const NotificationBox = () => {
     const language = useSelector((state) => state.sideBarState.language)
     const active = useSelector((state) => state.contactSectionState.active)
     const loginResponse = useSelector((state) => state.homeState.loginResponse)
-    const response = useSelector((state) => loginResponse ? loginResponse : state.contactSectionState.response)
+    const response = useSelector((state) => state.contactSectionState.response)
     const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
     console.log(response)
-    const url = response.config.url
+    console.log(loginResponse)
+    const url = response ? response.config.url : loginResponse.config.url
     // const url_regUsers = "https://intense-atoll-00786.herokuapp.com/api/users"
     const url_interestedUsers = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
    
@@ -34,7 +35,7 @@ const NotificationBox = () => {
     if (response && active === 'interested'){
         responseData = responseDataInterested 
     }
-    if (response && forgotPIN){
+    if (response && active === 'forgotPIN'){
         responseData = responseDataNewPIN
     }
     if (response && active === 'check'){
@@ -59,9 +60,9 @@ const NotificationBox = () => {
         openingContactSection(false) //action
     }
     // console.log(username)
-    const nameSplittedAndCapitalized = capitalizeFirstLetter(loginResponse ? response.data.name : response.data)
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(loginResponse ? loginResponse.data.name : response.data.name)
     // console.log('splitting response: ', responseSplitted[0])
-    if (response){
+    if (response ){
         if (response.status === 400){
             return (
             // <div className="notificationContainer">
@@ -103,7 +104,7 @@ const NotificationBox = () => {
             </div>   
             )
         }
-        if (response.status === 409){
+        if (response.status === 409 ){
             return (
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS 
@@ -142,7 +143,7 @@ const NotificationBox = () => {
             </div>   
             )
         }
-        if (response.status === 201){
+        if (response.status === 201 ){
             return (
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS
@@ -181,7 +182,7 @@ const NotificationBox = () => {
             </div>
             )
         }
-        if (response.status === 200){
+        if (response.status === 200 ){
             return (
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS
@@ -232,4 +233,4 @@ const NotificationBox = () => {
    
 }
 
-export default NotificationBox
+export default NotificationUI

@@ -8,6 +8,8 @@ import { infoContact } from '../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../state'
+import RegisterForm from './registerForm'
+import ForgotPINForm from './forgotPINForm'
 
 
 const ContactSection = ({ googleTest }) => {
@@ -71,10 +73,23 @@ return (
              null
             }
             
-            { active === 'check'  && !loggedIn  ? 
+            { active === 'login_form'  && !loggedIn  ? 
             <LoginForm
             googleTest={googleTest}
             />
+            :
+            null
+            }
+            
+            { active === 'check'  && !loggedIn  ? 
+            <RegisterForm
+            googleTest={googleTest}
+            />
+            :
+            null
+            }
+            { active === 'forgotPIN'  && !loggedIn  ? 
+            <ForgotPINForm/>
             :
             null
             }

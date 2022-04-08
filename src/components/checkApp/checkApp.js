@@ -10,8 +10,8 @@ import { useSelector } from 'react-redux'
 
 const CheckApp = () => {
      const level = useSelector((state) => state.overallCheckAppState.level)
-     const active = useSelector((state) => state.checkersState.checker_gui_active)
-     const active2 = useSelector((state) => state.checkersState.checker_stats_active)
+     const checker_profile_active = useSelector((state) => state.checkersState.checker_gui_active)
+     const checker_stats_active = useSelector((state) => state.checkersState.checker_stats_active)
 
      console.log(level)
      
@@ -29,9 +29,9 @@ const CheckApp = () => {
             return (
                 <>
                 {
-                    active ?
-                     active2 ?
-                      <CheckerStatistics/>
+                    checker_profile_active ?
+                        checker_stats_active ?
+                            <CheckerStatistics/>
                       :
                     <CheckerProfile />
                     // <CheckerStatistics/>

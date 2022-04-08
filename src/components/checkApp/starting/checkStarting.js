@@ -3,10 +3,12 @@ import { infoCheck } from '../../../utils/data'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
+import image from '../../../images/8443731_business_start_up_launch_rocket_icon.svg'
 import { 
     CheckSectionContainer, CheckSectionWrapper, 
     CheckSectionBtnWrap,CheckSectionCheckBtn,
-    CheckSectionExitBtn
+    CheckSectionExitBtn, CheckStartingImageContainer,
+    CheckStartingImage
 
 } from './startingElements.js'
 
@@ -82,6 +84,11 @@ const CheckStarting = () => {
         
         >
             <CheckSectionWrapper>
+                <CheckStartingImageContainer>
+                    <CheckStartingImage
+                    src={image}
+                    />
+                </CheckStartingImageContainer>
                 <CheckSectionBtnWrap>
                     <CheckSectionCheckBtn
                     onClick={startingProcess}

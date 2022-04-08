@@ -10,7 +10,6 @@ import { addingRegularUsersToDB } from '../../requestsToApi'
 
 const validationSchema = yup.object({
     fullName: yup.string().min(3).max(100).required('hola, no te olvides de colocar tu nombre completo'),
-    // password: yup.string().min(6).max(200).required('No te olvides de colocar tu clave'),
     email: yup.string().email('Por favor introduce una dirección de correo válida').required('No te olvides de colocar tu correo electrónico'),
     phoneNumber: yup.string().length(11).required('No te olvides de colocar tu número de teléfono')
 })
@@ -20,9 +19,8 @@ const RegisterForm = ({ googleTest }) => {
     
     const dispatch = useDispatch()
     const {   
-        openingRegView, openingContactSection, 
-        activatingSpinner, settingResponse,
-        openingForgotPINView,  
+        openingRegView, activatingSpinner, 
+        settingResponse, openingForgotPINView,  
     } = bindActionCreators(actionCreators, dispatch)
     const language = useSelector((state) => state.sideBarState.language)
 
@@ -44,7 +42,7 @@ const RegisterForm = ({ googleTest }) => {
                     if (response.status === 201){
                         settingResponse(response)
                         activatingSpinner(false)
-                        openingContactSection(false)
+                        // openingContactSection(false)
                         settinRegViewAndForgotPINToFalse()
                         console.log('Gracias por registrarte')
                         return response.status
