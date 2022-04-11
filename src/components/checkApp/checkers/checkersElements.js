@@ -56,6 +56,41 @@ height: 40px;
 }
 
 `
+export const CheckersOptionsContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: flex-start;
+width: 95%;
+height: 70px;
+background-color: #eeeeee;
+margin-top: 4%;
+`
+
+export const CheckerTypeButton1 = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: auto;
+height: 70%;
+background-color: ${({ checkers_type }) => checkers_type === 'checkers'  ? '#FAD570' : '#010606' };
+padding: 5%;
+border-radius: 100px;
+margin-left: 3%;
+color: ${({ checkers_type }) => checkers_type === 'checkers'  ? '#010606' : '#ffffff' }; ;
+`
+export const CheckerTypeButton2 = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: auto;
+height: 70%;
+/* background-color: #FAD570; */
+background-color: ${({ checkers_type }) => checkers_type === 'authCenters'  ? '#FAD570' : '#010606' };
+padding: 5%;
+border-radius: 100px;
+margin-left: 3%;
+color: ${({ checkers_type }) => checkers_type === 'authCenters' ? '#010606' : '#ffffff' }; ;
+`
 
 export const CheckersSectionTitle = styled.h1 `
 font-size: 1.5rem;

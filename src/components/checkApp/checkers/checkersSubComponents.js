@@ -16,12 +16,7 @@ import {
     CheckerInfoRatingH3,
     CheckerInfoRatingH4,
     CheckerBioButton,
-    CheckerBioButtonP,
-    ReviewTile,
-    ReviewUserAvatarContainer,
-    ReviewUserCommentContainer,
-    ReviewAvatar,
-    Avatar
+    CheckerBioButtonP
 } from '../../checkApp/checkers/checkersElements.js'
 import alternate_picture from '../../../images/avatar_1.png'
 import { capitalizeFullName } from '../checkAppUtilities'
@@ -88,8 +83,12 @@ export const CheckerProfileTileComponent = () => {
 
     } = bindActionCreators(actionCreators, dispatch)
 
+    
     const checker = useSelector((state) => state.checkOrderState.checker)
-    const checkerNameCapitalized = capitalizeFullName(checker.fullName )
+    const authCenter = useSelector((state) => state.checkOrderState.authCenter)
+    const checkers_type = useSelector((state) => state.checkersState.checkers_type)
+    // const checkerNameCapitalized = capitalizeAuthCenterFullName(checker.businessName)
+    const checkerNameCapitalized = capitalizeFullName(checkers_type === 'authCenters' ? checker.businessName  : checker.fullName)
     const ratingTruncked = checker.rating.toFixed(1)
 
     const toggleActive = (checker, index) => {
@@ -142,7 +141,8 @@ export const CheckerStatisticsTileComponent = () => {
     } = bindActionCreators(actionCreators, dispatch)
 
     const checker = useSelector((state) => state.checkOrderState.checker)
-    const checkerNameCapitalized = capitalizeFullName(checker.fullName )
+    const checkers_type = useSelector((state) => state.checkersState.checkers_type)
+    const checkerNameCapitalized = capitalizeFullName(checkers_type === 'authCenters' ? checker.businessName  : checker.fullName )
     const ratingTruncked = checker.rating.toFixed(1)
 
     return(

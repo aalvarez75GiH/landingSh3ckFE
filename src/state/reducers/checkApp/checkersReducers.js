@@ -4,7 +4,9 @@ const checkersReducer = (
         active_checker: {},
         checker_gui_active: false,
         checker_stats_active: false,
-        active_checker_reviews: []
+        active_checker_reviews: [],
+        authCenters: [],
+        checkers_type: 'checkers'
     }, action) => {
         switch (action.type) {
             case 'checkers_list':
@@ -17,6 +19,10 @@ const checkersReducer = (
                 return {...state, checker_stats_active: action.payload}
             case 'set_reviews':
                 return {...state, active_checker_reviews: action.payload}
+            case 'auth_centers_list': 
+                return {...state, authCenters: action.payload}
+            case 'checkers_type':
+                return {...state, checkers_type: action.payload}
             default:
             return state    
     }

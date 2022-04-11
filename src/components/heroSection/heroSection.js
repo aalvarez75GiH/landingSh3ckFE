@@ -35,7 +35,7 @@ const internalOpening = () => {
 const handlingContactSection = () => {
     internalOpening()
     openingContactSection(true)
-    activatingForm('check')
+    activatingForm('login_form')
 }
 
  const detectingOffset = () => {

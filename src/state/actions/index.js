@@ -359,7 +359,7 @@ export const serviceTimeChose = (value) => {
 } 
 
  
-// ************** Checkers  **************************
+// ************** Checkers and Auth centers  **************************
  
  
 export const settingCheckers = (response) => {
@@ -405,7 +405,27 @@ export const settingReviews = (value) => {
             payload: value
         })
     }
-} 
+}
+
+export const settingAuthCenters = (response) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'auth_centers_list',
+            payload: response
+        })
+    }
+}
+
+export const settingTypeOfChecker = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'checkers_type',
+            payload: value
+        })
+    }
+}
+
+
 
 // ************** Check Types  **************************
 

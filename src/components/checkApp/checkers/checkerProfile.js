@@ -9,8 +9,6 @@ import {
 import {  CategoryLabelComponent } from './checkersSubComponents'
 import { actionCreators } from '../../../state'
 import { getRequestToCheckType } from '../../../requestsToApi'
-import { Rating } from '@mui/material'
-import { CheckerSectionAvatar } from './checkersSubComponents'
 import {
     CheckerProfileContainer,
     CheckerProfileWrapper,
@@ -42,7 +40,6 @@ const CheckerProfile = () => {
         gettingCheckTypesFromApi
     } = bindActionCreators(actionCreators, dispatch)
 
-    const checker = useSelector((state) => state.checkOrderState.checker)
     const service_time_price = useSelector((state) => state.checkOrderState.price)
     const check_types = useSelector((state) => state.checkTypeState.check_types)
    
