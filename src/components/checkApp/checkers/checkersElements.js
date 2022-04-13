@@ -1,8 +1,6 @@
 import styled from 'styled-components/macro'
 import { motion } from 'framer-motion'
-import { css } from '@emotion/react'
-import image from '../../../images/avatar_1.png'
-
+import { Link as LinkS } from 'react-scroll'
 
 export const CheckerSectionContainer = styled(motion.div) `
 width: 100%;
@@ -76,7 +74,7 @@ background-color: ${({ checkers_type }) => checkers_type === 'checkers'  ? '#FAD
 padding: 5%;
 border-radius: 100px;
 margin-left: 3%;
-color: ${({ checkers_type }) => checkers_type === 'checkers'  ? '#010606' : '#ffffff' }; ;
+color: ${({ checkers_type }) => checkers_type === 'checkers'  ? '#010606' : '#ffffff' }; 
 `
 export const CheckerTypeButton2 = styled.div`
 display: flex;
@@ -141,6 +139,7 @@ width: 50%;
 height: auto;
 background-color: #eeeeee;
 overflow-y: hidden;
+overflow-x: hidden;
 margin-top: 4%;
 
 @media (max-width:1280px) and (min-width: 768px){
@@ -319,6 +318,7 @@ align-items: center;
 font-size: 0.8rem;
 margin-left: 50%;
 
+
 @media (max-width: 1536px) and (min-width:1366px){
     margin-left: 65% ;
 }
@@ -336,10 +336,8 @@ margin-left: 50%;
 @media (max-width: 560px) and (min-width:320px){
 width: 90%;
 height: 50px;
-background-color: #010606;
 border-radius: 45px;
 margin-top: 8%;
-color:#ffffff;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -360,8 +358,13 @@ font-size: 1rem;
 }
 `
 // *************  check type Tile
-
-export const CheckTypeTileContainer = styled.div`
+export const CheckTypeContainer = styled.div`
+width: 100%;
+height: 350px;
+background-color: green;
+margin-bottom: 3%;
+`
+export const CheckTypeTileContainer = styled(motion.div)`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -369,8 +372,21 @@ justify-content: center;
 width: 100%;
 height: 350px;
 background-color: #ffffff;
-margin-bottom: 3%;
+
 `
+export const CheckTypeTileContainer2 = styled(motion.div)`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 350px;
+background-color: #ffffff;
+position: relative;
+top: -100%;
+
+`
+
 export const CheckTypeTileTitle = styled.span`
 display: flex;
 align-items: center;
@@ -378,20 +394,28 @@ padding-left: 4%;
 width: 100%;
 height: 40px;
 background-color: #ffffff;
-font-size: 1.4rem;
+font-size: 1rem;
 
 `
 
-export const CheckTypeTileInfo = styled.div `
+export const CheckTypeTileInfo = styled(LinkS) `
 display: flex;
 align-items: center;
 width: 95%;
 height: 280px;
-background-color: #eeeeee;
+background-color: ${({ check_type }) => check_type._id === '6243151a821ae231895b11c8' ? '#FAD570' : '#eeeeee'};
 border-radius: 20px;
 
-
 `
+export const CheckTypeTileInfo2 = styled(LinkS)`
+display: flex;
+align-items: center;
+width: 95%;
+height: 280px;
+background-color: ${({ check_type }) => check_type._id === '6243156a821ae231895b11ce' ? '#FAD570' : '#eeeeee'};
+border-radius: 20px;
+`
+
 export const CheckTypeTileInfoPrice = styled.div`
 display: flex;
 flex-direction: column;
@@ -439,6 +463,29 @@ padding-top: 6%;
     width: 101% ;
     height: 8%;
     font-size: 0.7rem;
+    padding-left: 16%;
+}
+@media (max-width: 360px) and (min-width:320px){
+    height: 8%;
+    font-size: 0.6rem;
+    padding-left: 16%;
+}
+`
+export const CheckTypeDesc = styled.small`
+width: 100%;
+height: 10%;
+background-color: transparent;
+padding-left: 25%;
+font-size: 1.2rem;
+padding-top: 6%;
+
+@media (max-width: 560px) and (min-width:480px){
+    padding-left: 20%;
+}
+@media (max-width: 480px) and (min-width:360px){
+    width: 101% ;
+    height: 8%;
+    font-size: 0.8rem;
     padding-left: 16%;
 }
 @media (max-width: 360px) and (min-width:320px){
@@ -531,6 +578,7 @@ font-size: 0.9rem;
 }
 
 `
+
 export const CheckerProfileButtonContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -538,9 +586,108 @@ align-items: center;
 justify-content: center;
 width: 95%;
 height: auto;
-background-color: #ffffff;
+background-color: #eeeeee;
 margin-bottom: 3%;
 
+`
+
+// export const CheckTypeSliceButtonContainer = styled.div`
+// width: 95%;
+// height: 40px;
+// background-color: blue;
+// `
+export const CheckTypeSliceButtonContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: flex-end;
+width: 95%;
+height: 40px;
+background-color: #ffffff;
+margin-top: 2%;
+
+@media (max-width:1920px) and (min-width: 560px){
+height: 80px;
+}
+
+@media (max-width:560px) and (min-width: 320px){
+height: 40px;
+}
+`
+export const ForwardRightArrowIcon = styled.div `
+display: flex;
+justify-content: center;
+align-items: center;
+width: 45%;
+height: 40px;
+`
+export const RightArrow = styled.img `
+width: 20px;
+height: 20px;
+@media (max-width:1920px) and (min-width: 768px){
+width: 35px;
+height: 35px;
+}
+@media (max-width:768px) and (min-width: 560px){
+width: 18px;
+height: 18px;
+}
+`
+export const CheckTypeSliceButton = styled.div`
+/* width: 95%; */
+/* height: 40px; */
+background-color: blue;
+`
+export const ForwardLabel = styled.p `
+width: 120px;
+height: 20px;
+font-weight: 600;
+
+@media (max-width:1920px) and (min-width: 560px){
+font-size: 2rem;
+height: 40px;
+}
+
+@media (max-width:560px) and (min-width: 320px){
+display: flex;
+align-items: center;
+font-size: 1rem;
+}
+` 
+export const BackwardLabel = styled.p`
+width: 320px;
+height: 20px;
+font-weight: 600;
+margin-left: 5%;
+
+@media (max-width:1920px) and (min-width: 560px){
+font-size: 2rem;
+height: 40px;
+}
+
+@media (max-width:560px) and (min-width: 320px){
+display: flex;
+align-items: center;
+font-size: 1rem;
+}
+`
+export const BackwardLeftArrowIcon = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 40px;
+`
+export const LeftArrow = styled.img`
+width: 20px;
+height: 20px;
+@media (max-width:1920px) and (min-width: 768px){
+width: 35px;
+height: 35px;
+}
+@media (max-width:768px) and (min-width: 560px){
+width: 18px;
+height: 18px;
+}
 `
 
 // *************  checkers Ratings

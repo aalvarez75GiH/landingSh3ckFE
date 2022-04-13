@@ -256,6 +256,15 @@ export const settingCheckerFromCheckOrder = (value) => {
 }
 }
 
+export const settingCheckTypeAtCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'set_check_type_check_order',
+            payload: value
+        })
+    }
+}
+
 
 // ************** City **************************
 export const gettingCities = (response) => {
@@ -438,6 +447,14 @@ export const gettingCheckTypesFromApi = (value) => {
     }
 }
 
+export const activatingCheckType = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activating_check_type',
+            payload: status
+        })
+    }
+}
 
 
 

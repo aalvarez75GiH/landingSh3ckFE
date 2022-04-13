@@ -62,6 +62,13 @@ const Home = () => {
             if (token){
                 const response = await verifyingTokenRequest(token)
                 console.log(response.data.name)
+                settingUserInCheckOrder({
+                    name: response.data.name,
+                    email: response.data.email,
+                    phoneNumber: response.data.phoneNumber,
+                    picture: response.data.picture
+
+                })
                 settingCurrentUser(response.data.name) //action
                 return handlingIsLoggedIn(true) //action
             }

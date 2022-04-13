@@ -6,7 +6,7 @@ import { actionCreators } from '../../../state'
 import { CheckerTile, BackwardSectionComponent, AuthCenterTile  } from '../checkAppUtilities'
 import { CheckerProfileTileComponent } from './checkersSubComponents'
 
-import {  getRequestToCheckersByCity, getRequestToAllAuthCenters } from '../../../requestsToApi'
+import {  getRequestToCheckersByCity, getRequestToAllAuthCenters, getRequestToCheckType } from '../../../requestsToApi'
 import { 
     CheckerSectionContainer, CheckerSectionWrapper,
     CheckersTitleContainer, CheckersSectionTitle,
@@ -21,16 +21,17 @@ const CheckersSection = () => {
     const {  
         settingLevel, settingPreviousLevel,
         settingCheckers, settingAuthCenters,
-        settingTypeOfChecker
+        settingTypeOfChecker,gettingCheckTypesFromApi
     } = bindActionCreators(actionCreators, dispatch)
     
     // const language = useSelector((state) => state.sideBarState.language)
     const previous_level = useSelector((state) => state.checkOrderState.previous_level)
     const city_id = useSelector((state) => state.checkOrderState.city_id)
+    const category_id = useSelector((state) => state.productToCheckState.category_id)
     const checkers = useSelector((state) => state.checkersState.checkers)
     const authCenters = useSelector((state) => state.checkersState.authCenters)
     const checkers_type = useSelector((state) => state.checkersState.checkers_type)
-    const active = useSelector((state) => state.checkersState.checkers_type_button_active)
+
 
     useEffect(()=> {
         const gettingCheckersAndAuthCenters = async() => {
@@ -38,9 +39,13 @@ const CheckersSection = () => {
             const responseCheckers  = await getRequestToCheckersByCity(city_id)
             console.log(responseCheckers)
             const responseAuthCenters = await getRequestToAllAuthCenters()
+            const responseCheckTypes = await getRequestToCheckType()
+            // const responseAuthCenters = await getRequestToAuthCentersByCityAndCategory(city_id, category_id)
             console.log(responseAuthCenters)
+            console.log(responseCheckTypes)
             settingCheckers(responseCheckers)
             settingAuthCenters(responseAuthCenters)
+            gettingCheckTypesFromApi(responseCheckTypes)
         }
         gettingCheckersAndAuthCenters()
     },[])
@@ -76,8 +81,6 @@ const CheckersSection = () => {
 
         })
 
-     
-   
     return (
         <CheckerSectionContainer
         initial={previous_level === 'summary' ? { x: '-100vw', opacity: 0  } : { x: '100vw', opacity: 0  }} 

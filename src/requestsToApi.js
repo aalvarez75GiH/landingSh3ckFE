@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// const URL_BACKEND = 'http://192.168.1.102:5000'
+// const URL_BACKEND = 'http://192.168.1.100:5000'
 const URL_BACKEND = 'https://intense-atoll-00786.herokuapp.com'
 
 export const verifyingTokenRequest = async(token) => {
@@ -149,4 +149,12 @@ export const getRequestToAllAuthCenters = async() => {
     return response.data    
 }
     
+export const getRequestToAuthCentersByCity = async(city_id) => {
+    const response = await axios.get(`${URL_BACKEND}/api/authCenters/${city_id}/cities`)
+    return response.data
+}
 
+export const getRequestToAuthCentersByCityAndCategory = async(city_id, category_id) => {
+    const response = await axios.get(`${URL_BACKEND}/api/authCenters/${city_id}/${category_id}/cityAndCategory`)
+    return response.data
+}

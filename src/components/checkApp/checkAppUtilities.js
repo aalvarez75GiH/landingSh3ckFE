@@ -285,7 +285,7 @@ export const CheckerTile = ({ checker, index }) => {
         settingCheckerFromCheckOrder(checker)
         checkerChose(checkers_type === 'authCenter' ? authCenters[index]._id  : checkers[index]._id)
         activatingCheckerInterface(true)
-        activatingCheckAppButton(true)
+        // activatingCheckAppButton(true)
        
     }
 
@@ -381,139 +381,7 @@ export const CheckerTile = ({ checker, index }) => {
     )
 }
 
-// export const AuthCenterTile = ({ checker, index }) => {
-    
-//     console.log(checker.category[0].category_name)
-//     const dispatch = useDispatch()
-//     const {
-//         settingCheckerFromCheckOrder,
-//         checkerChose, activatingCheckerInterface,
-//         settingBaseAtCheckOrder, activatingCheckAppButton
 
-//     } = bindActionCreators(actionCreators, dispatch)
-
-//     const authCenters = useSelector((state) => state.checkersState.authCenters)
-//     const price = useSelector((state) => state.checkOrderState.price)
-//     const active_service_time = useSelector((state) => state.categoryAndSTState.active_service_time)
-    
-//     console.log(checker)
-
-//     useEffect(() => {
-//         const gettingSTBase = async() => {
-//             const response  = await getRequestToServiceTimebyId(active_service_time)
-//             console.log(response)
-//             settingBaseAtCheckOrder(response.base)
-//         }
-//         gettingSTBase()
-//     },[])
-
-//     console.log(checker.category)
-//     const checkerNameCapitalized = capitalizeFullName(checker.businessName )
-    
-//     // const settingOverallRating = () => {
-//     //     checker.
-//     // }
- 
-//     const  validateURL = (value) => {
-//         return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
-//     }
-
-//     const toggleActive = (checker, index) => {
-//         console.log(checker.businessName)
-//         settingCheckerFromCheckOrder(checker)
-//         checkerChose(authCenters[index]._id)
-//         activatingCheckerInterface(true)
-//         activatingCheckAppButton(true)
-       
-//     }
-
-//     const ratingTruncked = checker.rating.toFixed(1)
-//     console.log(ratingTruncked)
-
-//     return (
-//         <div 
-//         key={checker._id} 
-//         onClick={() => toggleActive(checker, index)}
-//         className="checkerTile">
-//             <div className="checkerItemAvatar">
-//                     <div 
-//                     className='avatar'
-//                     style={{
-//                         width: '130px',
-//                         height: '130px',
-//                         borderRadius: '50%',
-//                         backgroundImage: `url(${validateURL(checker.picture) ? checker.picture : alternate_picture })`,
-//                         backgroundSize: 'cover',
-//                         marginLeft: '6%',
-//                         marginTop: '15%'  
-//                     }}
-//                     >
-
-//                     </div>
-//                 <span className="checkerPrice">{price}$</span>
-                    
-//             </div>
-           
-//             {
-//                 !checker.category[1] ?
-//                 <div className="checkerInfoContainer_modified">
-//                     <div className="checkerInfo">
-//                         <div 
-//                         style={{
-//                             fontSize: authCenters ? '0.6rem' : '0.8rem'
-//                         }}
-//                         className="checkerInfo__name">
-//                             <h1>{checkerNameCapitalized}</h1>
-//                         </div>
-//                         <div className="checkerInfo__ciudad">
-//                             <h3>{checker.city_name}</h3>
-//                         </div>
-//                         <div className="checkerInfo__rating">
-//                             <h3>Rating:</h3>
-//                             <Rating 
-//                             value={ratingTruncked === '0.0' ? 5 : ratingTruncked} 
-//                             readOnly 
-//                             precision={0.5}
-//                             /> <h4>({ratingTruncked})</h4>
-//                         </div>
-//                         <CategoryLabelComponent checker={checker}/>
-//                     </div>
-//                     <div className="checkerBioButton">
-//                         <p>Ver más</p>  
-//                     </div>
-//             </div> 
-//             :
-//                 <div className="checkerInfoContainer">
-//                     <div className="checkerInfo">
-//                         <div 
-//                         style={{
-//                             fontSize: authCenters ? '0.6rem' : '0.8rem'
-//                         }}
-//                         className="checkerInfo__name">
-//                             <h1>{checkerNameCapitalized}</h1>
-//                         </div>
-//                         <div className="checkerInfo__ciudad">
-//                             <h3>{checker.city_name}</h3>
-//                         </div>
-//                         <div className="checkerInfo__rating">
-//                             <h3>Rating:</h3>
-//                             <Rating 
-//                             value={ratingTruncked === '0.0' ? 5  : ratingTruncked} 
-//                             readOnly 
-//                             precision={0.5} 
-//                             /> <h4>({ratingTruncked})</h4>
-//                         </div>
-//                         <CategoryLabelComponent checker={checker}/>
-//                     </div>
-//                     <div className="checkerBioButton">
-//                         <p>Ver más</p>  
-//                     </div>
-//                 </div>
-//             }
-         
-//         </div>
-//     )
-// }
 
 // **************** This is the section to go Backward in the whole checkApp
 export const BackwardSectionComponent = ({comeBack}) => {

@@ -125,7 +125,7 @@ export const CheckerProfileTileComponent = () => {
                 <CheckerBioButton
                 onClick={toggleActive}
                 >
-                    <CheckerBioButtonP>Ver un poco más</CheckerBioButtonP>
+                    <CheckerBioButtonP>Reputación</CheckerBioButtonP>
                 </CheckerBioButton>
             </CheckerInfoContainer>
         </CheckerProfileTile>

@@ -11,7 +11,7 @@ const checkOrderReducer = (
         due_Date_time: '',
         productToCheck: {},
         status: 'active',
-        check_type: '',
+        check_type: {},
         price: '',
         seller: '',
         link: '',
@@ -39,6 +39,8 @@ const checkOrderReducer = (
                 return {...state, checker: action.payload}
             case 'set_base':
                 return {...state, price: action.payload}
+            case 'set_check_type_check_order':
+                return {...state, check_type: action.payload}
             default:
                 return state    
     }

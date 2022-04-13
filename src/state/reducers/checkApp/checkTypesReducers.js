@@ -1,13 +1,13 @@
 const checkTypeReducer = (
     state={
         check_types: [],
-        active_check_type: {},
+        check_type_active: false,
     }, action) => {
         switch (action.type) {
             case 'get_check_type':
                 return  {...state, check_types: action.payload}
-            case 'active_check_type':
-                return {...state, active_check_type: action.payload }
+            case 'activating_check_type':
+                return {...state, check_type_active: action.payload }
         
         default:
             return state    
