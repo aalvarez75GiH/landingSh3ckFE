@@ -53,14 +53,16 @@ const CheckerProfile = () => {
         settingCheckerFromCheckOrder,
         settingCheckTypeAtCheckOrder,
         activatingCheckAppButton,
-        activatingCheckType
+        activatingCheckType,levelUsed
     } = bindActionCreators(actionCreators, dispatch)
 
     const service_time_price = useSelector((state) => state.checkOrderState.price)
     const check_types = useSelector((state) => state.checkTypeState.check_types)
     const check_type = useSelector((state) => state.checkOrderState.check_type)
     const check_type_active = useSelector((state) => state.checkTypeState.check_type_active)
-    
+    const level_used = useSelector((state) => state.overallCheckAppState.level_used )
+    let arr = []
+    arr = level_used
     const [checkTypeIndex, setCheckTypeIndex] = useState(0)
     const [ secondCheckType, setSecondCheckType] = useState(false)
   const comeBack = () => {
@@ -78,6 +80,9 @@ const CheckerProfile = () => {
 
     const settingCheckTypeStandardAtOrder = () => {
         console.log(check_types[0])
+        if (!arr.includes('checkers')){
+            levelUsed('checkers')
+        }
         settingCheckTypeAtCheckOrder(check_types[0])
         activatingCheckAppButton(true)
         activatingCheckType(true)
@@ -85,6 +90,9 @@ const CheckerProfile = () => {
     
     const settingCheckTypePlusAtOrder = () => {
         console.log(check_types[0])
+        if (!arr.includes('checkers')){
+            levelUsed('checkers')
+        }
         settingCheckTypeAtCheckOrder(check_types[1])
         activatingCheckAppButton(true)
         activatingCheckType(true)

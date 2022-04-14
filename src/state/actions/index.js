@@ -447,14 +447,15 @@ export const gettingCheckTypesFromApi = (value) => {
     }
 }
 
-export const activatingCheckType = (status) => {
+export const activatingCheckTypeDescription = (status) => {
     return(dispatch) => {
         dispatch({
-            type: 'activating_check_type',
+            type: 'activating_check_type_description',
             payload: status
         })
     }
 }
+
 
 
 

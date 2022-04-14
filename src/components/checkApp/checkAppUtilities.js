@@ -56,6 +56,12 @@ console.log(button_activated)
             settingPreviousLevel('category')
             return
         }
+        if (level === 'checkers'){
+            activatingCheckAppButton(false)
+            settingLevel('payment')
+            settingPreviousLevel('checkers')
+            return
+        }
       
     }
 
@@ -251,7 +257,7 @@ export const CheckerTile = ({ checker, index }) => {
     const {
         settingCheckerFromCheckOrder,
         checkerChose, activatingCheckerInterface,
-        settingBaseAtCheckOrder, activatingCheckAppButton
+        settingBaseAtCheckOrder, levelUsed, activatingCheckAppButton
 
     } = bindActionCreators(actionCreators, dispatch)
 
@@ -260,8 +266,9 @@ export const CheckerTile = ({ checker, index }) => {
     const price = useSelector((state) => state.checkOrderState.price)
     const active_service_time = useSelector((state) => state.categoryAndSTState.active_service_time)
     const checkers_type = useSelector((state) => state.checkersState.checkers_type)
+   
     console.log(checker)
-
+   
     useEffect(() => {
         const gettingSTBase = async() => {
             const response  = await getRequestToServiceTimebyId(active_service_time)
@@ -280,12 +287,9 @@ export const CheckerTile = ({ checker, index }) => {
     }
 
     const toggleActive = (checker, index) => {
-        console.log('activating one checker... ')
-        console.log(checkers_type === 'authCenter' ? checker.businessName : checker.fullName)
         settingCheckerFromCheckOrder(checker)
         checkerChose(checkers_type === 'authCenter' ? authCenters[index]._id  : checkers[index]._id)
         activatingCheckerInterface(true)
-        // activatingCheckAppButton(true)
        
     }
 

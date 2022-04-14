@@ -5,7 +5,9 @@ import CategorySection from './categories/categorySection'
 import CheckersSection from './checkers/checkersSection'
 import FinishingCheckOrder from './summary/finishingCheckOrder'
 import CheckerProfile from './checkers/checkerProfile'
+import CheckerProfileTest from './checkers/checkerProfileTest'
 import CheckerStatistics from './checkers/checkersStatistics'
+import PaymentSection from './payment/paymentSection'
 import { useSelector } from 'react-redux'
 
 const CheckApp = () => {
@@ -33,7 +35,7 @@ const CheckApp = () => {
                         checker_stats_active ?
                             <CheckerStatistics/>
                       :
-                    <CheckerProfile />
+                    <CheckerProfileTest />
                     // <CheckerStatistics/>
                     :
                     <CheckersSection />
@@ -41,8 +43,10 @@ const CheckApp = () => {
                 }
                 </>
             )
+        case 'payment':
+            return <PaymentSection/>
         case 'summary': 
-        return <FinishingCheckOrder />
+            return <FinishingCheckOrder />
         
         default:
             return <CheckStarting/> 
