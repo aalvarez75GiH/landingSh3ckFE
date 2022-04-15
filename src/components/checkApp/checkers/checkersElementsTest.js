@@ -507,13 +507,13 @@ padding-top: 6%;
 @media (max-width: 480px) and (min-width:360px){
     width: 101%;
     height: 8%;
-    font-size: 0.8rem;
-    padding-left: 16%;
+    font-size: 1rem;
+    padding-left: 23%;
 }
 @media (max-width: 360px) and (min-width:320px){
     height: 8%;
-    font-size: 0.6rem;
-    padding-left: 16%;
+    font-size: 0.9rem;
+    padding-left: 23%;
 }
 `
 
