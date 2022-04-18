@@ -358,6 +358,15 @@ export const productToSTID = (value) => {
     }
 }
 
+export const productToSTBase = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'product_to_check_ST_base',
+            payload: value
+        })
+    }
+}
+
 export const serviceTimeChose = (value) => {
     return(dispatch) => {
         dispatch({
@@ -456,8 +465,28 @@ export const activatingCheckTypeDescription = (status) => {
     }
 }
 
+export const settingCheckTypeBaseAtCheckTypeState = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'setting_check_type_base_at_state',
+            payload: value
+        })
+    }
+}
 
 
+
+// ************** Payments   **************************
+
+
+export const activatingPaymentDetailsUI = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activating_payment_details_ui',
+            payload: status
+        })
+    }
+}
 
 
 

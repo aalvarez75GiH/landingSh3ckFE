@@ -257,7 +257,8 @@ export const CheckerTile = ({ checker, index }) => {
     const {
         settingCheckerFromCheckOrder,
         checkerChose, activatingCheckerInterface,
-        settingBaseAtCheckOrder, levelUsed, activatingCheckAppButton
+        settingBaseAtCheckOrder, productToSTBase, 
+        levelUsed, activatingCheckAppButton
 
     } = bindActionCreators(actionCreators, dispatch)
 
@@ -274,6 +275,7 @@ export const CheckerTile = ({ checker, index }) => {
             const response  = await getRequestToServiceTimebyId(active_service_time)
             console.log(response)
             settingBaseAtCheckOrder(response.base)
+            productToSTBase(response.base)
         }
         gettingSTBase()
     },[])

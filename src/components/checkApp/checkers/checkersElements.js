@@ -360,17 +360,16 @@ font-size: 1rem;
 // *************  check type Tile
 export const CheckTypeContainer = styled.div`
 width: 100%;
-height: 350px;
+height: 30vh;
 background-color: green;
 margin-bottom: 3%;
 `
 export const CheckTypeTileContainer = styled(motion.div)`
 display: flex;
-flex-direction: column;
+justify-content: space-around;
 align-items: center;
-justify-content: center;
 width: 100%;
-height: 350px;
+height: 30vh;
 background-color: #ffffff;
 
 `
@@ -380,10 +379,24 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 width: 100%;
-height: 350px;
+height: 295px;
 background-color: #ffffff;
 position: relative;
 top: -100%;
+
+@media (max-width: 1920px) and (min-width:560px){
+height: 650px;
+}
+@media (max-width: 560px) and (min-width:480px){
+height: 480px;
+}
+@media (max-width: 480px) and (min-width:414px){
+height: 450px;
+}
+
+@media (max-width: 414px) and (min-width:360px){
+height: 405px;
+}
 
 `
 
@@ -393,27 +406,56 @@ align-items: center;
 padding-left: 4%;
 width: 100%;
 height: 40px;
-background-color: #ffffff;
+background-color: #010606;
+color: #ffffff;
 font-size: 1rem;
+margin-bottom: 2%;
 
+@media (max-width: 1920px) and (min-width:560px){
+height: 100px;
+font-size: 2rem ;
+}
 `
 
 export const CheckTypeTileInfo = styled(LinkS) `
 display: flex;
 align-items: center;
-width: 95%;
-height: 280px;
-background-color: ${({ check_type }) => check_type._id === '6243151a821ae231895b11c8' ? '#FAD570' : '#eeeeee'};
+justify-content:center;
+flex-direction: column;
+width: 45%;
+height: 180px;
+background-color: ${({ check_type, check_type_active }) => check_type._id === check_type_active._id ? '#FAD570' : '#eeeeee'};
 border-radius: 20px;
+
+@media (max-width: 1920px) and (min-width:560px){
+height: 275px;
+}
 
 `
 export const CheckTypeTileInfo2 = styled(LinkS)`
 display: flex;
 align-items: center;
+flex-direction: column;
 width: 95%;
 height: 280px;
-background-color: ${({ check_type }) => check_type._id === '6243156a821ae231895b11ce' ? '#FAD570' : '#eeeeee'};
+/* background-color: ${({ check_type }) => check_type._id === '6243156a821ae231895b11ce' ? '#FAD570' : '#eeeeee'}; */
+background-color: ${({ check_type, check_type_active }) => check_type._id === check_type_active._id ? '#FAD570' : '#eeeeee'};
 border-radius: 20px;
+
+@media (max-width: 1920px) and (min-width:560px){
+height: 460px;
+}
+@media (max-width: 560px) and (min-width:480px){
+height: 350px;
+}
+@media (max-width: 480px) and (min-width:414px){
+height: 320px;
+}
+@media (max-width: 414px) and (min-width:320px){
+height: 280px;
+}
+
+
 `
 
 export const CheckTypeTileInfoPrice = styled.div`
@@ -421,8 +463,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 40%;
-height: 90%;
+width: 100%;
+height: 25%;
 background-color: transparent;
 `
 export const CheckTypeTileInfoPriceLabel = styled.div`
@@ -434,18 +476,39 @@ height: 35%;
 background-color: transparent;
 `
 
-export const Price = styled.h1`
-font-size: 7rem;
+export const CheckTypeActiveIconContainer = styled.div`
+display: flex;
+width: 20%;
+height: 30px;
+margin-left: 60%;
+padding-top: 8%;
+opacity: ${({ check_type, check_type_active }) => check_type._id === check_type_active._id ? 1 : 0};
 
+@media (max-width: 1920px) and (min-width:560px){
+height: 40px;
+padding-top: 0%;
+}
 @media (max-width: 560px) and (min-width:480px){
-    font-size: 5rem;
+padding-top: 4%;
 }
-@media (max-width: 480px) and (min-width:360px){
-    font-size: 4rem;
+`
+export const CheckTypeActiveIcon = styled.img`
+width: 30px;
+height: 30px;
+
+@media (max-width: 1920px) and (min-width:560px){
+width: 40px;
+height: 40px;
 }
-@media (max-width: 360px) and (min-width:320px){
-    font-size: 3.5rem;
+`
+
+export const Price = styled.h1`
+font-size: 4rem;
+
+@media (max-width: 560px) and (min-width:320px){
+    font-size: 3rem;
 }
+
 
 `
 export const CheckTypeTileInfoPriceDesc = styled.small`
@@ -479,35 +542,82 @@ padding-left: 25%;
 font-size: 1.2rem;
 padding-top: 6%;
 
+@media (max-width: 1920px) and (min-width:1280px){
+    padding-left: 18%;
+    padding-top: 3%;
+}
+@media (max-width: 1280px) and (min-width:1098px){
+    padding-left: 30%;
+    padding-top: 3%;
+}
+@media (max-width: 1098px) and (min-width:768px){
+    padding-left: 26%;
+    padding-top: 3%;
+}
+@media (max-width: 768px) and (min-width:560px){
+    padding-left: 22%;
+    padding-top: 3%;
+}
+
 @media (max-width: 560px) and (min-width:480px){
     padding-left: 20%;
 }
 @media (max-width: 480px) and (min-width:360px){
-    width: 101% ;
+    width: 101%;
     height: 8%;
-    font-size: 0.8rem;
-    padding-left: 16%;
+    font-size: 1rem;
+    padding-left: 23%;
 }
 @media (max-width: 360px) and (min-width:320px){
     height: 8%;
-    font-size: 0.6rem;
-    padding-left: 16%;
+    font-size: 0.9rem;
+    padding-left: 23%;
 }
 `
 
 export const CheckTypeTileInfoCaption = styled.div`
-width: 60%;
-height: 90%;
+width: 100%;
+height: 25%;
 background-color: transparent;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-bottom: 8%;
 
+`
+export const CheckTypeTileInfoCaptionDescription = styled.div`
+width: 100%;
+height: 55%;
+background-color: transparent;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 8%;
 `
 export const CheckTypeCaption = styled.h1`
 margin-top: 8%;
 font-size: 3rem;
+
+@media (max-width: 1536px) and (min-width:560px){
+    font-size: 2.5rem;
+}
+
+@media (max-width: 560px) and (min-width:414px){
+    font-size: 1.7rem;
+}
+@media (max-width: 414px) and (min-width:360px){
+    font-size: 1.4rem;
+}
+@media (max-width: 360px) and (min-width:320px){
+    font-size: 1.2rem;
+}
+`
+
+export const CheckTypeCaptionDescription = styled.h1`
+margin-top: 8%;
+font-size: 4rem;
 
 @media (max-width: 768px) and (min-width:560px){
     margin-left: 5% ;
@@ -516,11 +626,12 @@ font-size: 3rem;
     font-size: 2.5rem;
 }
 @media (max-width: 480px) and (min-width:414px){
-    font-size: 2.3rem;
+    font-size: 3rem;
 }
-@media (max-width: 480px) and (min-width:320px){
-    font-size: 1.7rem;
+@media (max-width: 414px) and (min-width:320px){
+    font-size: 2rem;
 }
+
 `
 
 export const CheckTypeBioButton = styled.div`
@@ -588,6 +699,7 @@ width: 95%;
 height: auto;
 background-color: #eeeeee;
 margin-bottom: 3%;
+/* margin-top: 17%; */
 
 `
 
@@ -676,6 +788,14 @@ justify-content: center;
 align-items: center;
 width: 100%;
 height: 40px;
+margin-top: 5%;
+margin-left: 5%;
+@media (max-width:1920px) and (min-width: 414px){
+display: flex;
+justify-content: flex-start;
+margin-left: 5%;
+
+}
 `
 export const LeftArrow = styled.img`
 width: 20px;

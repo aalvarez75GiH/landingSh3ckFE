@@ -4,7 +4,8 @@ const productToCheckReducer = (
         category_id:'',
         subCategory:'',
         service_time: '',
-        service_time_id: ''
+        service_time_id: '',
+        service_time_base: null
                 
     }, action) => {
         switch (action.type) {
@@ -18,6 +19,9 @@ const productToCheckReducer = (
                 return  {...state, service_time: action.payload}
             case 'product_to_check_ST_id':
                 return  {...state, service_time_id: action.payload}
+            case 'product_to_check_ST_base':
+                return  {...state, service_time_base: action.payload}
+
 
         default:
             return state    

@@ -11,6 +11,7 @@ import overallCheckAppReducers from './checkApp/overalCheckAppReducers'
 import productToCheckReducer from './checkApp/productTocheckreducers'
 import checkersReducer from './checkApp/checkersReducers'
 import checkTypeReducer from './checkApp/checkTypesReducers'
+import paymentsReducer from './checkApp/paymentsReducers'
 const reducers = combineReducers({
     // account: sideBarReducer,
     sideBarState: sideBarReducer,
@@ -24,7 +25,8 @@ const reducers = combineReducers({
     productToCheckState: productToCheckReducer,
     checkOrderState: checkOrderReducer,
     checkersState: checkersReducer,
-    checkTypeState: checkTypeReducer 
+    checkTypeState: checkTypeReducer,
+    paymentsState: paymentsReducer  
 
 })
 
