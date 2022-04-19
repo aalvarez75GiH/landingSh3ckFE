@@ -360,18 +360,28 @@ font-size: 1rem;
 // *************  check type Tile
 export const CheckTypeContainer = styled.div`
 width: 100%;
-height: 30vh;
-background-color: green;
+/* height: 55vh; */
+height: 350px;
+/* background-color: blue; */
 margin-bottom: 3%;
+display: flex;
+flex-direction: column;
 `
 export const CheckTypeTileContainer = styled(motion.div)`
 display: flex;
 justify-content: space-around;
 align-items: center;
 width: 100%;
-height: 30vh;
+height: 350px;
 background-color: #ffffff;
 
+`
+
+export const CheckTypeDescTest = styled(motion.div)`
+width: 100%;
+height: 145px;
+background-color: #fae29d;
+/* color: #ffffff */
 `
 export const CheckTypeTileContainer2 = styled(motion.div)`
 display: flex;
@@ -534,13 +544,29 @@ padding-top: 6%;
     padding-left: 16%;
 }
 `
+export const CheckTypeDescDiv = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 40%;
+height: 100%;
+`
+export const CheckTypeDescDiv2 = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+width: 60%;
+height: 100%;
+`
+
 export const CheckTypeDesc = styled.small`
 width: 100%;
 height: 10%;
 background-color: transparent;
-padding-left: 25%;
 font-size: 1.2rem;
-padding-top: 6%;
+
+
 
 @media (max-width: 1920px) and (min-width:1280px){
     padding-left: 18%;
@@ -564,9 +590,9 @@ padding-top: 6%;
 }
 @media (max-width: 480px) and (min-width:360px){
     width: 101%;
-    height: 8%;
-    font-size: 1rem;
-    padding-left: 23%;
+    height: 20%;
+    font-size: 0.9rem;
+    /* padding-left: 23%; */
 }
 @media (max-width: 360px) and (min-width:320px){
     height: 8%;
@@ -588,13 +614,13 @@ margin-bottom: 8%;
 `
 export const CheckTypeTileInfoCaptionDescription = styled.div`
 width: 100%;
-height: 55%;
+height: 100%;
 background-color: transparent;
 display: flex;
-flex-direction: column;
+/* flex-direction: column; */
 justify-content: center;
 align-items: center;
-margin-bottom: 8%;
+margin-left: 0%;
 `
 export const CheckTypeCaption = styled.h1`
 margin-top: 8%;
@@ -616,8 +642,8 @@ font-size: 3rem;
 `
 
 export const CheckTypeCaptionDescription = styled.h1`
-margin-top: 8%;
-font-size: 4rem;
+/* margin-top: 8%; */
+font-size: 2rem;
 
 @media (max-width: 768px) and (min-width:560px){
     margin-left: 5% ;
@@ -629,7 +655,7 @@ font-size: 4rem;
     font-size: 3rem;
 }
 @media (max-width: 414px) and (min-width:320px){
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 
 `
@@ -699,15 +725,14 @@ width: 95%;
 height: auto;
 background-color: #eeeeee;
 margin-bottom: 3%;
-/* margin-top: 17%; */
+
+@media (max-width:414px) and (min-width: 320px){
+width: 100%;
+
+}
 
 `
 
-// export const CheckTypeSliceButtonContainer = styled.div`
-// width: 95%;
-// height: 40px;
-// background-color: blue;
-// `
 export const CheckTypeSliceButtonContainer = styled.div`
 display: flex;
 align-items: center;

@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { 
-        BackwardSectionComponent, 
-        capitalizeFullName, 
-        CheckAppButton 
-    } from '../../checkApp/checkAppUtilities'
-import {  CategoryLabelComponent } from './checkersSubComponents'
+import { BackwardSectionComponent, CheckAppButton } from '../../checkApp/checkAppUtilities'
 import { actionCreators } from '../../../state'
-import { getRequestToCheckType } from '../../../requestsToApi'
-import arrow_icon_right from '../../../images/3927254_arrow_arrow right_caret_caret right_chevron_icon.svg'
-import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 import accept_icon from '../../../images/2472241_accept_check_green_ok_success_icon.svg'
 import {
     CheckerProfileContainer,
@@ -25,24 +17,13 @@ import {
     CheckTypeTileInfoCaption,
     CheckTypeTileInfoCaptionDescription,
     CheckTypeTileInfoPriceLabel,
-    // CheckTypeTileInfoPriceDesc,
     Price, CheckTypeCaption,
+    CheckTypeDescDiv,
+    CheckTypeDescDiv2,
     CheckTypeCaptionDescription,
     CheckerProfileButtonContainer,
     CheckerProfileItemsContainer,
-    CheckTypeBioButton,
-    CheckTypeBioButtonP,
-    CheckTypeSliceButtonContainer,
-    BackwardLeftArrowIcon,
-    BackwardLeftArrowIconDescription,
-    // ForwardRightArrowIcon,
-    // RightArrow,
-    // ForwardLabel,
-    BackwardLabel,
-    // BackwardLeftArrowIcon,
-    LeftArrow,
-    CheckTypeTileContainer2,
-    CheckTypeTileInfo2,
+    CheckTypeDescTest,
     CheckTypeDesc,
     CheckTypeActiveIconContainer,
     CheckTypeActiveIcon
@@ -86,6 +67,12 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
     return(
         <>
         <CheckTypeTileInfo
+        to="checkerProfileButton"  
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={-100}
+        duration={500} 
         check_type={check_type}
         check_type_active={check_type_active}
         onClick={settingPriceAndCheckTypeAtOrder}
@@ -115,22 +102,63 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
     )
 }
 
+export const AnimateHeight = ({
+    ease,
+    variants,
+    check_type_active_description,
+  }) => {
+    const check_type = useSelector((state) => state.checkOrderState.check_type)
+    
+    return (
+      <CheckTypeDescTest
+        initial={check_type_active_description ? "open" : "collapsed"}
+        animate={check_type_active_description ? "open" : "collapsed"}
+        inherit={false}
+        variants={variants}
+        transition={{
+            ease: "easeInOut",
+            duration: 0.2,
+            stiffness: 50
+
+        }}
+      >
+            {
+              check_type._id === '6243151a821ae231895b11c8' ?
+                <CheckTypeTileInfoCaptionDescription>
+                    <CheckTypeDescDiv>
+                        <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>
+                    </CheckTypeDescDiv>
+                <CheckTypeDescDiv2>
+                        <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
+                        <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
+                  </CheckTypeDescDiv2>
+              </CheckTypeTileInfoCaptionDescription>
+              : null
+            }
+            {
+                check_type._id === '6243156a821ae231895b11ce' ?
+                <CheckTypeTileInfoCaptionDescription>
+                <CheckTypeDescDiv>
+                    <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>                                
+                </CheckTypeDescDiv>
+                <CheckTypeDescDiv2>
+                    <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
+                    <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
+                    <CheckTypeDesc>Compra y delivery del prodúcto</CheckTypeDesc>
+                </CheckTypeDescDiv2>
+                </CheckTypeTileInfoCaptionDescription>
+                :
+                null
+            }
+      </CheckTypeDescTest>
+    )
+  }
+
 const CheckerProfile = () => {
     const dispatch = useDispatch()
-    const {  
-        settingLevel, 
-        settingPreviousLevel,
-        activatingCheckerInterface,
-        settingCheckerFromCheckOrder,
-        settingCheckTypeAtCheckOrder,
-        activatingCheckAppButton,
-        activatingCheckType,
-        activatingCheckTypeDescription
-    } = bindActionCreators(actionCreators, dispatch)
+    const {  activatingCheckerInterface, settingCheckerFromCheckOrder } = bindActionCreators(actionCreators, dispatch)
 
     const check_types = useSelector((state) => state.checkTypeState.check_types)
-    const check_type = useSelector((state) => state.checkOrderState.check_type)
-    const check_type_active = useSelector((state) => state.checkOrderState.check_type)
     const check_type_active_description = useSelector((state) => state.checkTypeState.check_type_active_description)
        
 
@@ -139,11 +167,7 @@ const CheckerProfile = () => {
         settingCheckerFromCheckOrder('')
     }
     
-    const deactivatingCheckDescriptionUI = () => {
-        activatingCheckTypeDescription(false)
-    }
-    
-    
+
     const renderingCheckTypes = check_types.map((checkType, index) => {
         return(
             <CheckTypeTileInfoComponent
@@ -153,6 +177,16 @@ const CheckerProfile = () => {
         )
 
     })
+    const variants = {
+        open: {
+          opacity: 1,
+          height: "145px",
+          x: 0,
+          y: 0
+        },
+        collapsed: { opacity: 0, height: 0, x: 0, y: -100 }
+      }
+
     console.log(renderingCheckTypes) 
     return (
      
@@ -167,92 +201,31 @@ const CheckerProfile = () => {
                 comeBack={comeBack}
                 />
                 <CheckersTitleContainer>
-                    <CheckersSectionTitle>Chequeador y tipo de Chequeo</CheckersSectionTitle>
+                    <CheckersSectionTitle>Chequeador y tipo de Chequeo (Test)</CheckersSectionTitle>
                 </CheckersTitleContainer>
                 <CheckerProfileItemsContainer>
                     <CheckerProfileTileComponent/>
                 <CheckTypeTileTitle>Tipo de chequeo</CheckTypeTileTitle>
-                <CheckTypeContainer>
+                <CheckTypeContainer
+                initial={{ height: '350px'  }} 
+                animate={{ 
+                    height: check_type_active_description ? '485px' : '350px', 
+                    opacity: check_type_active_description ? 1 : 0 }}
+                transition={{ stiffness: 33 }}
+                exit={{ opacity: 0 }}
+                >
                     <CheckTypeTileContainer>
                         {renderingCheckTypes}
                     </CheckTypeTileContainer>
-                    {/* ************************************************************* */}
-                    <CheckTypeTileContainer2
-                    // initial={{ opacity: 0, y: 50 }}
-                    initial={{ x: '100vw'}}
-                    animate={{  
-                        x: check_type_active_description ? 0 : '100vw', 
-                        opacity: check_type_active_description ? 1 : 0 
-                    }}
-                    transition={{ stiffness: 33 }}
-                    exit={{  opacity: 0 }}>
-                        <CheckTypeTileInfo2
-                        check_type={check_type}
-                        check_type_active={check_type_active}
-                        to="cityContainer"  
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
+                    <AnimateHeight
+                    variants={variants}
+                    check_type_active_description={check_type_active_description}
+                        
                     >
-                        <BackwardLeftArrowIcon
-                        onClick={deactivatingCheckDescriptionUI}
-                        >
-                            <LeftArrow
-                            src={arrow_icon_left}
-                            >
-                            </LeftArrow>
-                            <BackwardLabel>
-                                Volver
-                            </BackwardLabel>
-                        </BackwardLeftArrowIcon>
-                        {
-                            check_type._id === '6243151a821ae231895b11c8' ?
-                            <CheckTypeTileInfoCaptionDescription>
-                                <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>
-                                <CheckTypeDesc>Incluye:</CheckTypeDesc>
-                                <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
-                                <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
-                            </CheckTypeTileInfoCaptionDescription>
-                            :
-                            null
-                        }
-                        {
-                            check_type._id === '6243156a821ae231895b11ce' ?
-                            <CheckTypeTileInfoCaptionDescription>
-                                <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>                                
-                                <CheckTypeDesc>Incluye:</CheckTypeDesc>
-                                <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
-                                <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
-                                <CheckTypeDesc>Compra y delivery del prodúcto</CheckTypeDesc>
-                            </CheckTypeTileInfoCaptionDescription>
-                            :
-                            null
-                        }
-                            
-                        </CheckTypeTileInfo2>
-                        {/* <CheckTypeSliceButtonContainer
-                            checkType_1={true}
-                            onClick={deactivatingCheckDescriptionUI}
-                            >
-                                <BackwardLeftArrowIcon>
-                                <LeftArrow
-                                src={arrow_icon_left}
-                                >
-                                </LeftArrow>
-                                <BackwardLabel>
-                                    Volver
-                                </BackwardLabel>
-                                </BackwardLeftArrowIcon>
-                            </CheckTypeSliceButtonContainer> */}
-                    </CheckTypeTileContainer2>
-
-                    {/* ***************************************************************************** */}
+                    </AnimateHeight>
+                     
                 </CheckTypeContainer>
                 </CheckerProfileItemsContainer>
-                {/* { */}
-                    {/* check_type_active ? */}
                     <CheckerProfileButtonContainer
                     id="checkerProfileButton"
                     >
@@ -260,8 +233,6 @@ const CheckerProfile = () => {
                         buttonLabel='Escoger éste...'
                         />
                     </CheckerProfileButtonContainer> 
-                    {/* : null
-                } */}
             </CheckerProfileWrapper>
 
         </CheckerProfileContainer>

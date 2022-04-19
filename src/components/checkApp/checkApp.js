@@ -4,8 +4,7 @@ import CitiesSection from './city/citiesSection'
 import CategorySection from './categories/categorySection'
 import CheckersSection from './checkers/checkersSection'
 import FinishingCheckOrder from './summary/finishingCheckOrder'
-// import CheckerProfile from './checkers/checkerProfile'
-import CheckerProfileTest from './checkers/checkerProfileTest'
+import CheckerProfile from './checkers/checkerProfile'
 import CheckerStatistics from './checkers/checkersStatistics'
 import PaymentSection from './payment/paymentSection'
 import { useSelector } from 'react-redux'
@@ -26,7 +25,6 @@ const CheckApp = () => {
 
         case 'category':
             return <CategorySection />
-        
         case 'checkers':
             return (
                 <>
@@ -35,7 +33,7 @@ const CheckApp = () => {
                         checker_stats_active ?
                             <CheckerStatistics/>
                       :
-                    <CheckerProfileTest />
+                    <CheckerProfile />
                     // <CheckerStatistics/>
                     :
                     <CheckersSection />

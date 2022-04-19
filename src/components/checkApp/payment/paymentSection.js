@@ -23,7 +23,7 @@ import {
 } from './paymentElements.js'
 import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
 
-import { BackwardLeftArrowIcon, LeftArrow, BackwardLabel } from '../../checkApp/checkers/checkersElementsTest'
+import { BackwardLeftArrowIcon, LeftArrow, BackwardLabel } from '../../checkApp/checkers/checkersElements'
 
 
 const PaymentSection = () => {
