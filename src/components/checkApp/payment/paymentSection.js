@@ -1,29 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
-// import { getRequestToCities } from '../../../requestsToApi'
+import { AnimateHeight } from '../../checkApp/checkAppUtilities'
+import zelle_image from '../../../images/zelle-icon.png'
 import { CheckAppButton, BackwardSectionComponent } from '../checkAppUtilities'
-// import '../../../sh3ck.css'
 import { 
     PaymentSectionContainer,PaymentSectionWrapper,
     PaymentTitleContainer, PaymentSectionTitle,
     PaymentInfoContainer, PaymentInfoLabel,
     InfoLabel, PaymentInfoPriceLabel,
     PriceLabel, PaymentInfoSeeOrderContainer,
-    SeeOrderButton, PaymentDetailContainer,
-    PaymentDetailInfoContainer, PaymentDetailST,
-    PaymentDetailCT, PaymentDetailSTLabel, PaymentDetailSTDesc,
-    PaymentDetailSTPrice,PaymentDetailCTLabel,PaymentDetailCTDesc,
-    PaymentDetailCTPrice
-
-
+    SeeOrderButton,CheckPaymentTypesContainer, 
+    CheckPaymentTypeOf, CheckPaymentType, CheckPaymentIcon
 } from './paymentElements.js'
-import arrow_icon_left from '../../../images/arrow_left_back_icon.svg'
-
-import { BackwardLeftArrowIcon, LeftArrow, BackwardLabel } from '../../checkApp/checkers/checkersElements'
+import { CheckPaymentTypeTileComponent } from './paymentSubComponents'
+import { getRequestToPayments } from '../../../requestsToApi'
 
 
 const PaymentSection = () => {
@@ -32,42 +26,46 @@ const PaymentSection = () => {
     const {
         settingLevel, 
         settingPreviousLevel,
-        activatingPaymentDetailsUI     
+        activatingPaymentDetailsUI,
+        activatingDescriptionTile,
+        gettingPaymentsTypesFromApi     
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.overallCheckAppState.previous_level)
-    const active_payment_details_ui = useSelector((state) => state.paymentsState.active_payment_details_ui)
     const order_total_price = useSelector((state) => state.checkOrderState.price)
-    const service_time_base = useSelector((state) => state.productToCheckState.service_time_base)
-    const check_type_base = useSelector((state) => state.checkTypeState.check_type_base)
-    // useEffect(() => {
-    //     const gettingCitiesFromAPI = async() => {
-    //         const response  = await getRequestToCities()
-    //         gettingCities(response)
-    //     }
-    //     gettingCitiesFromAPI()
-    // },[])
+    const payments = useSelector((state) => state.paymentsState.payments)
     
-    
-    
+    useEffect(() => {
+        const gettingPaymentsTypes = async() => {
+            const responseAllPayments = await getRequestToPayments()
+            console.log(responseAllPayments)
+            gettingPaymentsTypesFromApi(responseAllPayments)
+        }
+        gettingPaymentsTypes()
+    },[])
+
     const comeBack = () => {
         settingLevel('checkers')
         settingPreviousLevel('payment')
     }
 
 
-    // const renderingCitiesList = cities.map((city, index) => {  
-    //     return (
-    //         <CityTile
-    //         city={city}
-    //         index={index}
-    //         />
-    //     )
-    // })
-  
-    const deactivatingPaymentDetailUI = () => {
-        activatingPaymentDetailsUI(false)
-    }
+    const variants = {
+        open: {
+          opacity: 1,
+          height: "145px",
+          x: 0,
+          y: 0
+        },
+        collapsed: { opacity: 0, height: 0, x: 0, y: -100 }
+      }
 
+    const renderingPaymentsTiles = payments.map((payment) => {
+        return (
+            <CheckPaymentTypeTileComponent
+            payment={payment}
+            />
+        )
+    })
     return (
         
         <PaymentSectionContainer
@@ -91,48 +89,35 @@ const PaymentSection = () => {
                         <PriceLabel>{order_total_price}$</PriceLabel>
                     </PaymentInfoPriceLabel>
                     <PaymentInfoSeeOrderContainer
-                    onClick={() => activatingPaymentDetailsUI(true)}
+                    // onClick={() => activatingCheckTypeDescription(true)}
+                    onClick={() => activatingDescriptionTile(true)}
                     >
                             <SeeOrderButton>Detálles</SeeOrderButton>
                     </PaymentInfoSeeOrderContainer>
                 </PaymentInfoContainer>
-                <PaymentDetailContainer
-                initial={{ x: '100vw' }}
-                animate={{  
-                    x: active_payment_details_ui ? 0 : '100vw', 
-                    opacity: active_payment_details_ui ? 1 : 0 
-                }}
-                transition={{ stiffness: 33 }}
-                exit={{  opacity: 0 }}
-                >
-                    <BackwardLeftArrowIcon
-                        onClick={deactivatingPaymentDetailUI}
-                        >
-                            <LeftArrow
-                            src={arrow_icon_left}
-                            >
-                            </LeftArrow>
-                            <BackwardLabel>
-                                Volver
-                            </BackwardLabel>
-                        </BackwardLeftArrowIcon>
-                        <PaymentDetailInfoContainer>
-                            <PaymentDetailST>
-                                <PaymentDetailSTLabel>Tiempo de servicio:</PaymentDetailSTLabel>
-                                <PaymentDetailSTDesc>(Máximo 4 horas)</PaymentDetailSTDesc>
-                                <PaymentDetailSTPrice>{service_time_base}$</PaymentDetailSTPrice>
-                            </PaymentDetailST>
-                            <PaymentDetailCT>
-                                <PaymentDetailCTLabel>Tipo de chequeo:</PaymentDetailCTLabel>
-                                <PaymentDetailCTDesc>(Estándar)</PaymentDetailCTDesc>
-                                <PaymentDetailCTPrice>{check_type_base}$</PaymentDetailCTPrice>
-                            </PaymentDetailCT>                       
+                <AnimateHeight
+                type="payment_description"
+                variants={variants}
+                />
+                <PaymentTitleContainer>
+                    <PaymentSectionTitle>Pagar a través de: </PaymentSectionTitle>
+                </PaymentTitleContainer>
+                <CheckPaymentTypesContainer>
+                    <CheckPaymentTypeOf>
+                        {renderingPaymentsTiles}
+                        {/* <CheckPaymentType>
+                            <CheckPaymentIcon
+                            src={zelle_image}
+                            />
+                        </CheckPaymentType>
+                        <CheckPaymentType>
 
+                        </CheckPaymentType>
+                        <CheckPaymentType>
 
-                        </PaymentDetailInfoContainer>
-                    
-                </PaymentDetailContainer>
-                
+                        </CheckPaymentType> */}
+                    </CheckPaymentTypeOf>
+                </CheckPaymentTypesContainer>
                 <CheckAppButton 
                 buttonLabel='Siguiente'
                 />

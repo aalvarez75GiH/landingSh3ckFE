@@ -33,12 +33,8 @@ margin-top: 4%;
 width: 85%;
 }
 
-@media (max-width:768px) and (min-width: 414px){
+@media (max-width:768px) and (min-width: 320px){
 width: 95%;
-}
-
-@media (max-width:414px) and (min-width: 320px){
-width: 100%;
 }
 
 `
@@ -46,13 +42,13 @@ export const PaymentTitleContainer = styled.div`
 display: flex;
 align-items: center ;
 justify-content: flex-start ;
-width: 95%;
+width: 100%;
 height: 100px;
 background-color: #010606;
 margin-top: 4% ;
 
 @media (max-width:560px) and (min-width: 320px){
-width: 95%;
+width: 100%;
 height: 40px;
 }
 `
@@ -75,7 +71,7 @@ export const PaymentInfoContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 95%;
+width: 100%;
 height: 20vh;
 background-color: #eeeeee;
 margin-top: 2%;
@@ -130,60 +126,41 @@ font-size: 0.8rem;
 
 `
 
-export const PaymentDetailContainer = styled(motion.div)`
-display: flex;
-/* align-items: center; */
-/* justify-content: center; */
-flex-direction: column;
-width: 95%;
-height: 30vh;
-background-color: #FAD570;
-margin-top: 2%;
-position: absolute;
-top: 29%;
-opacity: 0;
-`
-export const PaymentDetailInfoContainer = styled.div`
-display: flex;
-width: 85%;
-height: 150px;
-margin-left: 8%;
+export const CheckPaymentTypesContainer = styled.div`
 margin-top: 5%;
-/* background-color: purple; */
+width: 100%;
+height: auto;
+background-color: #eeeeee;
 
 `
-export const PaymentDetailST = styled.div`
+
+export const CheckPaymentTypeOf = styled.div`
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+height: 12vh;
+/* background-color: #FAD; */
+
+`
+
+export const CheckPaymentType = styled.div`
 display: flex;
 justify-content: center;
-align-items: center;
 flex-direction: column;
-width: 50%;
-height: 100%;
-background-color: #fbe29d;
-`
-export const PaymentDetailCT = styled.div`
-display: flex;
-justify-content: center;
 align-items: center;
-flex-direction: column;
-width: 50%;
-height: 100%;
-background-color: #fbe29d;
-margin-left: 2%;
-`
+width: 30%;
+height: 12vh;
+/* background-color: blue; */
+` 
 
-export const PaymentDetailSTLabel = styled.h4``
-export const PaymentDetailSTDesc = styled.h4`
-font-weight: 300;
-`
+export const CheckPaymentIcon = styled.img`
+/* margin-top: 15%; */
+width: 55px;
+height: 55px;
 
-export const PaymentDetailSTPrice = styled.h1`
-font-size: 2.5rem;
 `
-export const PaymentDetailCTLabel = styled.h4``
-export const PaymentDetailCTDesc = styled.h4`
-font-weight: 300;
-`
-export const PaymentDetailCTPrice = styled.h1`
-font-size: 2.5rem;
+export const CheckPaymentCaption = styled.small `
+margin-top: 10%;
+
 `

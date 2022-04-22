@@ -211,6 +211,15 @@ export const activatingCheckAppButton = (status) => {
         })
     }
 }
+
+export const activatingDescriptionTile = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activating_description_tile',
+            payload: status
+        })
+    }
+}
 // ************** Check Order **************************
 export const settingUserInCheckOrder = (value) => {
     return(dispatch) => {
@@ -478,6 +487,14 @@ export const settingCheckTypeBaseAtCheckTypeState = (value) => {
 
 // ************** Payments   **************************
 
+export const gettingPaymentsTypesFromApi = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'payments_list',
+            payload: value
+        })
+    }
+}
 
 export const activatingPaymentDetailsUI = (status) => {
     return(dispatch) => {

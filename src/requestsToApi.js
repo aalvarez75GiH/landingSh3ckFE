@@ -158,3 +158,10 @@ export const getRequestToAuthCentersByCityAndCategory = async(city_id, category_
     const response = await axios.get(`${URL_BACKEND}/api/authCenters/${city_id}/${category_id}/cityAndCategory`)
     return response.data
 }
+
+// ******************** Payments Requests ****************************
+
+export const getRequestToPayments = async() => {
+    const response = await axios.get(`${URL_BACKEND}/api/payments`) 
+    return response.data    
+}

@@ -15,19 +15,14 @@ import {
     CheckTypeTileInfo,
     CheckTypeTileInfoPrice,
     CheckTypeTileInfoCaption,
-    CheckTypeTileInfoCaptionDescription,
     CheckTypeTileInfoPriceLabel,
     Price, CheckTypeCaption,
-    CheckTypeDescDiv,
-    CheckTypeDescDiv2,
-    CheckTypeCaptionDescription,
     CheckerProfileButtonContainer,
     CheckerProfileItemsContainer,
-    CheckTypeDescTest,
-    CheckTypeDesc,
     CheckTypeActiveIconContainer,
     CheckTypeActiveIcon
 } from './checkersElements.js'
+import { AnimateHeight } from '../../checkApp/checkAppUtilities'
 import { CheckerProfileTileComponent } from './checkersSubComponents'
 
 const CheckTypeTileInfoComponent = ({ check_type, index }) => {
@@ -35,7 +30,8 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
         
     const {  settingCheckTypeAtCheckOrder, levelUsed, 
         activatingCheckTypeDescription, activatingCheckAppButton,
-        settingBaseAtCheckOrder, settingCheckTypeBaseAtCheckTypeState
+        settingBaseAtCheckOrder, settingCheckTypeBaseAtCheckTypeState,
+        activatingDescriptionTile
     } = bindActionCreators(actionCreators, dispatch)
     console.log(check_type)
     const check_type_active = useSelector((state) => state.checkOrderState.check_type)
@@ -52,7 +48,7 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
         }
         settingCheckTypeAtCheckOrder(check_type)
         activatingCheckAppButton(true)
-        activatingCheckTypeDescription(true)
+        activatingDescriptionTile(true)
     }
 
     let totalPrice = service_time_base + check_type.base
@@ -102,57 +98,8 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
     )
 }
 
-export const AnimateHeight = ({
-    ease,
-    variants,
-    check_type_active_description,
-  }) => {
-    const check_type = useSelector((state) => state.checkOrderState.check_type)
     
-    return (
-      <CheckTypeDescTest
-        initial={check_type_active_description ? "open" : "collapsed"}
-        animate={check_type_active_description ? "open" : "collapsed"}
-        inherit={false}
-        variants={variants}
-        transition={{
-            ease: "easeInOut",
-            duration: 0.2,
-            stiffness: 50
-
-        }}
-      >
-            {
-              check_type._id === '6243151a821ae231895b11c8' ?
-                <CheckTypeTileInfoCaptionDescription>
-                    <CheckTypeDescDiv>
-                        <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>
-                    </CheckTypeDescDiv>
-                <CheckTypeDescDiv2>
-                        <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
-                        <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
-                  </CheckTypeDescDiv2>
-              </CheckTypeTileInfoCaptionDescription>
-              : null
-            }
-            {
-                check_type._id === '6243156a821ae231895b11ce' ?
-                <CheckTypeTileInfoCaptionDescription>
-                <CheckTypeDescDiv>
-                    <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>                                
-                </CheckTypeDescDiv>
-                <CheckTypeDescDiv2>
-                    <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
-                    <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
-                    <CheckTypeDesc>Compra y delivery del prodúcto</CheckTypeDesc>
-                </CheckTypeDescDiv2>
-                </CheckTypeTileInfoCaptionDescription>
-                :
-                null
-            }
-      </CheckTypeDescTest>
-    )
-  }
+  
 
 const CheckerProfile = () => {
     const dispatch = useDispatch()
@@ -218,6 +165,7 @@ const CheckerProfile = () => {
                         {renderingCheckTypes}
                     </CheckTypeTileContainer>
                     <AnimateHeight
+                    type='check_type_description'
                     variants={variants}
                     check_type_active_description={check_type_active_description}
                         

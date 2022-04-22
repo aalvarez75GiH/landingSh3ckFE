@@ -3,7 +3,8 @@ const overallCheckAppReducer = (
         level: 'Starting',
         previous_level: '',
         level_used: [],
-        button_activated: false
+        button_activated: false,
+        desc_tile_active: false
         
     }, action) => {
         switch (action.type) {
@@ -19,6 +20,8 @@ const overallCheckAppReducer = (
                 return  {...state, level_used:  [...state.level_used, action.payload]}
             case 'flush_level_used':
                 return  { ...state, level_used: []}
+            case 'activating_description_tile':
+                return  {...state, desc_tile_active: action.payload}
 
             default:
             return state    

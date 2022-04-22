@@ -7,11 +7,19 @@ import { actionCreators } from '../../state'
 import city_icon_black from '../../images/city_icon_3.svg'
 
 import arrow_icon_left from '../../images/arrow_left_back_icon.svg'
+import { FaTimes } from 'react-icons/fa'
 import { getRequestToServiceTimebyId } from './../../requestsToApi'
 import {
     BackwardSection, 
     BackwardLeftArrowIcon,
     LeftArrow, BackwardLabel,
+    CheckTypeDescTest,CheckTypeTileInfoCaptionDescription,
+    CheckTypeDescDiv,CheckTypeDescDiv2,CheckTypeDesc,
+    CheckTypeCaptionDescription, PaymentDescContainer,
+    ServiceTimeDescContainer,
+    ServiceTimeTitle, ServiceTimeDesc, ServiceTimeBase,
+    CheckTypeDescContainer, CheckTypeTitle, CheckTypeBase,
+    CheckTypeDescription, PaymenyDescClose, CloseIcon
 } from '../checkApp/checkAppUtilitiesElements'
 import alternate_picture from '../../images/avatar_1.png'
 import alternate_authCenter_picture from '../../images/alternative_authCenter_avatar.png'
@@ -25,7 +33,8 @@ export const CheckAppButton = ({ buttonLabel }) => {
     const {
         settingLevel,
         settingPreviousLevel,
-        activatingCheckAppButton
+        activatingCheckAppButton,
+        activatingDescriptionTile
     } = bindActionCreators(actionCreators, dispatch)
 const level = useSelector((state) => state.overallCheckAppState.level) 
 const levelUsed = useSelector((state) => state.overallCheckAppState.level_used )
@@ -59,6 +68,7 @@ console.log(button_activated)
         if (level === 'checkers'){
             activatingCheckAppButton(false)
             settingLevel('payment')
+            activatingDescriptionTile(false)
             settingPreviousLevel('checkers')
             return
         }
@@ -74,6 +84,97 @@ console.log(button_activated)
         </button>
     )
 }
+
+export const AnimateHeight = ({
+    type,
+    variants
+  }) => {
+    const dispatch = useDispatch()
+    const { activatingDescriptionTile } = bindActionCreators(actionCreators, dispatch) 
+    const check_type = useSelector((state) => state.checkOrderState.check_type)
+    const service_time_base = useSelector((state) => state.productToCheckState.service_time_base)
+    const check_type_base = useSelector((state) => state.checkTypeState.check_type_base)
+    const desc_tile_active = useSelector((state) => state.overallCheckAppState.desc_tile_active)
+    
+    if (type === 'check_type_description'){
+        return (
+            <CheckTypeDescTest
+              initial={desc_tile_active ? "open" : "collapsed"}
+              animate={desc_tile_active ? "open" : "collapsed"}
+              inherit={false}
+              variants={variants}
+              transition={{
+                  ease: "easeInOut",
+                  duration: 0.2,
+                  stiffness: 50
+      
+              }}
+            >
+                  {
+                    check_type._id === '6243151a821ae231895b11c8' ?
+                      <CheckTypeTileInfoCaptionDescription>
+                          <CheckTypeDescDiv>
+                              <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>
+                          </CheckTypeDescDiv>
+                      <CheckTypeDescDiv2>
+                              <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
+                              <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
+                        </CheckTypeDescDiv2>
+                    </CheckTypeTileInfoCaptionDescription>
+                    : null
+                  }
+                  {
+                      check_type._id === '6243156a821ae231895b11ce' ?
+                      <CheckTypeTileInfoCaptionDescription>
+                      <CheckTypeDescDiv>
+                          <CheckTypeCaptionDescription>{check_type.caption}</CheckTypeCaptionDescription>                                
+                      </CheckTypeDescDiv>
+                      <CheckTypeDescDiv2>
+                          <CheckTypeDesc>Chequéo del producto</CheckTypeDesc>
+                          <CheckTypeDesc>video en tiempo real + fótos</CheckTypeDesc>
+                          <CheckTypeDesc>Compra y delivery del prodúcto</CheckTypeDesc>
+                      </CheckTypeDescDiv2>
+                      </CheckTypeTileInfoCaptionDescription>
+                      :
+                      null
+                  }
+            </CheckTypeDescTest>
+        )}
+        if (type === 'payment_description'){
+            return (
+                <PaymentDescContainer
+                  initial={desc_tile_active ? "open" : "collapsed"}
+                  animate={desc_tile_active ? "open" : "collapsed"}
+                  inherit={false}
+                  variants={variants}
+                  transition={{
+                      ease: "easeInOut",
+                      duration: 0.2,
+                      stiffness: 50
+          
+                  }}
+                >
+                    <PaymenyDescClose>
+                        <FaTimes
+                        onClick={() => activatingDescriptionTile(false)}
+                        />
+                    </PaymenyDescClose>
+                    <ServiceTimeDescContainer>
+                        <ServiceTimeTitle>Tiempo de servicio:</ServiceTimeTitle>
+                        <ServiceTimeDesc>(Máximo 4 horas)</ServiceTimeDesc>
+                        <ServiceTimeBase>{service_time_base}$</ServiceTimeBase>
+                    </ServiceTimeDescContainer>
+                    
+                    <CheckTypeDescContainer>
+                        <CheckTypeTitle>Tipo de chequeo:</CheckTypeTitle>
+                        <CheckTypeDescription>(Estándar)</CheckTypeDescription>
+                        <CheckTypeBase>{check_type_base}$</CheckTypeBase>
+                    </CheckTypeDescContainer>
+                </PaymentDescContainer>
+            )   
+        }
+    }
+
 // ******************** City Utilities ******************
 export const CityTile = ({ city,index }) => {
     const dispatch = useDispatch()
