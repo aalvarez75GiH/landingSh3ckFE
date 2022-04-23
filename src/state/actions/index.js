@@ -220,6 +220,7 @@ export const activatingDescriptionTile = (status) => {
         })
     }
 }
+
 // ************** Check Order **************************
 export const settingUserInCheckOrder = (value) => {
     return(dispatch) => {
@@ -274,6 +275,14 @@ export const settingCheckTypeAtCheckOrder = (value) => {
     }
 }
 
+export const settingPaymentInCheckOrder = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'payment_check_order',
+            payload: value
+        })
+    }
+}
 
 // ************** City **************************
 export const gettingCities = (response) => {
@@ -500,6 +509,15 @@ export const activatingPaymentDetailsUI = (status) => {
     return(dispatch) => {
         dispatch({
             type: 'activating_payment_details_ui',
+            payload: status
+        })
+    }
+}
+
+export const activatingPaymentInstructions = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activating_payment_instructions',
             payload: status
         })
     }

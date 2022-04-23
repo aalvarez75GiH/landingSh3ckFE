@@ -17,8 +17,10 @@ const checkOrderReducer = (
         link: '',
         city: '',
         city_id: '',
+        payment: {
+            name: 'nothing'
+        }
         
-
     }, action) => {
         switch (action.type) {
             case 'user_check_order':
@@ -41,6 +43,8 @@ const checkOrderReducer = (
                 return {...state, price: action.payload}
             case 'set_check_type_check_order':
                 return {...state, check_type: action.payload}
+            case 'payment_check_order':
+                return {...state, payment: action.payload}
             default:
                 return state    
     }

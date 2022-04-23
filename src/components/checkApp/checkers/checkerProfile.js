@@ -131,7 +131,7 @@ const CheckerProfile = () => {
           x: 0,
           y: 0
         },
-        collapsed: { opacity: 0, height: 0, x: 0, y: -100 }
+        collapsed: { opacity: 0, height: 0, x: 0, y: 0 }
       }
 
     console.log(renderingCheckTypes) 

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import { AnimateHeight } from '../../checkApp/checkAppUtilities'
+import {AnimateHeightPayments} from './paymentSubComponents'
 import zelle_image from '../../../images/zelle-icon.png'
 import { CheckAppButton, BackwardSectionComponent } from '../checkAppUtilities'
 import { 
@@ -28,17 +29,20 @@ const PaymentSection = () => {
         settingPreviousLevel,
         activatingPaymentDetailsUI,
         activatingDescriptionTile,
-        gettingPaymentsTypesFromApi     
+        gettingPaymentsTypesFromApi,
+        settingPaymentInCheckOrder     
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.overallCheckAppState.previous_level)
     const order_total_price = useSelector((state) => state.checkOrderState.price)
     const payments = useSelector((state) => state.paymentsState.payments)
-    
+    const payment = useSelector((state) => state.checkOrderState.payment)
+    console.log(payment)
     useEffect(() => {
         const gettingPaymentsTypes = async() => {
             const responseAllPayments = await getRequestToPayments()
             console.log(responseAllPayments)
             gettingPaymentsTypesFromApi(responseAllPayments)
+            // settingPaymentInCheckOrder(responseAllPayments[0])
         }
         gettingPaymentsTypes()
     },[])
@@ -56,10 +60,10 @@ const PaymentSection = () => {
           x: 0,
           y: 0
         },
-        collapsed: { opacity: 0, height: 0, x: 0, y: -100 }
+        collapsed: { opacity: 0, height: 0, x: 0, y: 0 }
       }
 
-    const renderingPaymentsTiles = payments.map((payment) => {
+    const renderingPaymentsTiles = payments.map((payment, index) => {
         return (
             <CheckPaymentTypeTileComponent
             payment={payment}
@@ -105,19 +109,16 @@ const PaymentSection = () => {
                 <CheckPaymentTypesContainer>
                     <CheckPaymentTypeOf>
                         {renderingPaymentsTiles}
-                        {/* <CheckPaymentType>
-                            <CheckPaymentIcon
-                            src={zelle_image}
-                            />
-                        </CheckPaymentType>
-                        <CheckPaymentType>
-
-                        </CheckPaymentType>
-                        <CheckPaymentType>
-
-                        </CheckPaymentType> */}
                     </CheckPaymentTypeOf>
                 </CheckPaymentTypesContainer>
+                {/* <AnimateHeight
+                type="payment_description"
+                variants={variants}
+                /> */}
+                <AnimateHeightPayments
+                type={payment.name}
+                variants={variants}
+                />
                 <CheckAppButton 
                 buttonLabel='Siguiente'
                 />

@@ -1,5 +1,6 @@
 import  styled from 'styled-components/macro'
 import { motion } from 'framer-motion'
+import { Link as LinkS } from 'react-scroll'
 
 export const PaymentSectionContainer = styled(motion.div) `
 /* position: fixed; */
@@ -139,12 +140,12 @@ display: flex;
 justify-content: space-evenly;
 align-items: center;
 width: 100%;
-height: 12vh;
+height: 15vh;
 /* background-color: #FAD; */
 
 `
 
-export const CheckPaymentType = styled.div`
+export const CheckPaymentType = styled(LinkS)`
 display: flex;
 justify-content: center;
 flex-direction: column;
@@ -162,5 +163,69 @@ height: 55px;
 `
 export const CheckPaymentCaption = styled.small `
 margin-top: 10%;
+font-weight: 700;
 
+`
+
+export const CheckPaymentActiveBar = styled.div`
+width: 75%;
+height: 5px;
+/* background-color: green; */
+background-color:${({ payment, active_payment }) => payment._id === active_payment._id ? 'green' : 'transparent'};
+margin-top: 5%;
+`
+
+// Animete heights Payments
+
+export const PaymentInstContainer = styled(motion.div)`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 145px;
+background-color:${({ type }) => type === 'Pago Móvil' ? '#dfecff' : type === 'Zelle' ? '#dccbf6' : '#FAD570'};
+margin-top: 2%;
+
+`
+
+export const PaymentsInsDetails = styled.div`
+width: 90%;
+height: 90%;
+/* background-color: #010106; */
+/* border: 1px solid #010606; */
+margin-top: 2%;
+`
+export const PaymentsInsTitle = styled.p`
+font-weight: 600;
+`
+export const InstructionsContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 40%;
+/* background-color: purple; */
+margin-top: 2%;
+`
+export const Instruction = styled.div`
+display: flex;
+align-items: center;
+width: 100%;
+height: 90%;
+margin-top: 10%;
+/* background-color: yellow; */
+`
+
+export const InstructionImg = styled.img`
+width: 40px;
+height: 40px;
+`
+export const InstructionCaption = styled.p`
+margin-left: 5%;
+`
+
+export const MobilPaymentInfo = styled.div`
+width: 80%;
+height: 50%;
+margin-left: 20%;
+margin-top: 10%;
 `
