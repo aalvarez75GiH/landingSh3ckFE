@@ -42,7 +42,7 @@ const PaymentSection = () => {
             const responseAllPayments = await getRequestToPayments()
             console.log(responseAllPayments)
             gettingPaymentsTypesFromApi(responseAllPayments)
-            // settingPaymentInCheckOrder(responseAllPayments[0])
+
         }
         gettingPaymentsTypes()
     },[])
@@ -93,7 +93,6 @@ const PaymentSection = () => {
                         <PriceLabel>{order_total_price}$</PriceLabel>
                     </PaymentInfoPriceLabel>
                     <PaymentInfoSeeOrderContainer
-                    // onClick={() => activatingCheckTypeDescription(true)}
                     onClick={() => activatingDescriptionTile(true)}
                     >
                             <SeeOrderButton>Detálles</SeeOrderButton>
@@ -111,10 +110,6 @@ const PaymentSection = () => {
                         {renderingPaymentsTiles}
                     </CheckPaymentTypeOf>
                 </CheckPaymentTypesContainer>
-                {/* <AnimateHeight
-                type="payment_description"
-                variants={variants}
-                /> */}
                 <AnimateHeightPayments
                 type={payment.name}
                 variants={variants}
