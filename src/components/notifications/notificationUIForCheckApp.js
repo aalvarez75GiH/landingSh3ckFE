@@ -5,12 +5,12 @@ import { FaTimes } from 'react-icons/fa'
 import { regularCopy } from './notificationData'
 import { Link as LinkS } from 'react-scroll'
 import { OffsetHandler } from '../../utils/settingOffsets'
-import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN, responseDataPayment } from '../../components/notifications/notificationData'
+import { responseDataPayment } from '../../components/notifications/notificationData'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../state'
 
-const NotificationUI = () => {
+const NotificationUIForCheckApp = () => {
     let responseData
     const dispatch = useDispatch()
     const {  
@@ -22,32 +22,21 @@ const NotificationUI = () => {
 
     const language = useSelector((state) => state.sideBarState.language)
     const active = useSelector((state) => state.contactSectionState.active)
-    const loginResponse = useSelector((state) => state.homeState.loginResponse)
     const response = useSelector((state) => state.contactSectionState.response)
-    const forgotPIN = useSelector((state) => state.contactSectionState.forgotPIN)
+    const user = useSelector((state) => state.checkOrderState.user)
+    const amount =  useSelector((state) => state.checkOrderState.price)
+    const provisional_ref_number = useSelector((state) => state.paymentsState.provisional_ref_number)
+    console.log(amount)
     console.log(response)
-    console.log(loginResponse)
-    const url = response ? response.config.url : loginResponse.config.url
-    // const url_regUsers = "https://intense-atoll-00786.herokuapp.com/api/users"
-    const url_interestedUsers = "https://intense-atoll-00786.herokuapp.com/api/interestedUsers"
-   
     
-    if (response && active === 'interested'){
-        responseData = responseDataInterested 
+    if(response.amount < amount){
+        console.log('Pago menos...')
     }
-    if (response && active === 'forgotPIN'){
-        responseData = responseDataNewPIN
+    // const url = response ? response.config.url : loginResponse.config.url
+    
+    if (response && active === 'payment_ui'){
+        responseData = responseDataPayment
     }
-    if (response && active === 'check'){
-        responseData = responseDataRegister
-    }
-    if (response && active === 'login_form'){
-        responseData = responseDataLogin
-    } 
-    // if (response && active === 'payment_ui'){
-    //     responseData = responseDataPayment
-    //     console.log(active)
-    // }
 
     
     const capitalizeFirstLetter = (string) => {
@@ -58,55 +47,13 @@ const NotificationUI = () => {
 
     const closingNotification = () => {
         settingResponse(null)
-        gettingLoginResponseData(null) //action
-        activatingForm(null) //action
-        openingContactSection(false) //action
+        activatingForm(null) 
     }
     // console.log(username)
-    const nameSplittedAndCapitalized = capitalizeFirstLetter(loginResponse ? loginResponse.data.name : response.data.name)
+    const nameSplittedAndCapitalized = capitalizeFirstLetter(user.name)
     // console.log('splitting response: ', responseSplitted[0])
-    if (response ){
-        if (response.status === 400){
-            return (
-            // <div className="notificationContainer">
-            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
-                <LinkS 
-                onClick={closingNotification}
-                to="nextStepSection"  
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={OffsetHandler('checkAProduct')}
-                duration={500} 
-                className="closeIconContainer">
-                    <FaTimes/>
-                </LinkS>
-                <div className="notificationWrapper">
-                    <img src={foundImage} alt="successImage" />
-                    <div className="notificationName"> 
-                        <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>    
-                        </span>    
-                    </div>
-                    <div className="notificationResponse">
-                    {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN}
-                    </div>
-                    
-                    <LinkS 
-                    className="notificationBtn"
-                    onClick={closingNotification}
-                    to="nextStepSection"  
-                    activeClass="active"
-                    spy={true}
-                    smooth={true}
-                    offset={OffsetHandler('checkAProduct')}
-                    duration={500}
-                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>     
-                </div>
-            </div>   
-            )
-        }
-        if (response.status === 409 ){
+    if (response){
+        if (response.status === 404){
             return (
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS 
@@ -115,7 +62,7 @@ const NotificationUI = () => {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={OffsetHandler('checkAProduct')}
+                // offset={OffsetHandler('checkAProduct')}
                 duration={500}
                 className="closeIconContainer">
                     <FaTimes/>
@@ -124,18 +71,19 @@ const NotificationUI = () => {
                     <img src={foundImage} alt="successImage" />
                     <div className="notificationName"> 
                         <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>  
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                    {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN}
+                        No encontramos el # de referencia: {provisional_ref_number} del pago en nuestra Base de datos
+                    {/* {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN} */}
                     </div>
                     <LinkS
                     to="nextStepSection"  
                     activeClass="active"
                     spy={true}
                     smooth={true}
-                    offset={OffsetHandler('checkAProduct')}
+                    // offset={OffsetHandler('checkAProduct')}
                     duration={500} 
                     className="notificationBtn"
                     onClick={closingNotification}
@@ -144,7 +92,7 @@ const NotificationUI = () => {
             </div>   
             )
         }
-        if (response.status === 201 ){
+        if (response.reference_number && response.amount === amount){
             return (
             <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
                 <LinkS
@@ -152,46 +100,7 @@ const NotificationUI = () => {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={url === url_interestedUsers ? -5000 : OffsetHandler('checkAProduct') }
-                duration={url === url_interestedUsers ? 1000 : 500} 
-                onClick={closingNotification}
-                className="closeIconContainer">
-                    <FaTimes/>
-                </LinkS>
-                <div className="notificationWrapper">
-                    <img src={successImage} alt="successImage" />
-                    <div className="notificationName">
-                        <span className="notificationSpan">
-                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>    
-                        </span>    
-                    </div>
-                    <div className="notificationResponse">
-                    {language === 'ES' ? responseData.successMessage : responseData.successMessage_EN }
-                    </div>
-                    <LinkS
-                    to="nextStepSection"  
-                    activeClass="active"
-                    spy={true}
-                    smooth={true}
-                    offset={url === url_interestedUsers ? -5000 : OffsetHandler('checkAProduct') }
-                    duration={url === url_interestedUsers ? 1000 : 500} 
-                    className="notificationBtn"
-                    onClick={closingNotification}
-                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
-                </div>
-                
-            </div>
-            )
-        }
-        if (response.status === 200 ){
-            return (
-            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
-                <LinkS
-                to="nextStepSection"  
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={OffsetHandler('checkAProduct')}
+                // offset={OffsetHandler('checkAProduct')}
                 duration={500} 
                 onClick={closingNotification}
                 className="closeIconContainer">
@@ -205,14 +114,23 @@ const NotificationUI = () => {
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                        {language === 'ES' ? responseData.successMessage : responseData.successMessage_EN }
+                        <b>{language === 'ES' ? responseData.successMessage : responseData.successMessage_EN }</b>
+                    </div>
+                    <div className="notificationResponse">
+                        # de referencia: {response.reference_number}
+                    </div>
+                    <div className="notificationResponse">
+                        Tu número de teléfono: {user.phoneNumber}
+                    </div>
+                    <div className="notificationResponse">
+                        El monto tránsferido: {response.amount}$
                     </div>
                     <LinkS
                     to="nextStepSection"  
                     activeClass="active"
                     spy={true}
                     smooth={true}
-                    offset={OffsetHandler('checkAProduct')}
+                    // offset={OffsetHandler('checkAProduct')}
                     duration={500}
                     className="notificationBtn"
                     onClick={closingNotification}
@@ -222,11 +140,45 @@ const NotificationUI = () => {
             </div>
             )
         }
-        if (response.status === 500) {
+        if (response.amount < amount ){
             return (
-                <div>
-                    <b>{language === 'Es' ? regularCopy.error500Copy : regularCopy.continueBtnCopy_EN}</b>
+                <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
+                <LinkS 
+                onClick={closingNotification}
+                to="nextStepSection"  
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                // offset={OffsetHandler('checkAProduct')}
+                duration={500}
+                className="closeIconContainer">
+                    <FaTimes/>
+                </LinkS>
+                <div className="notificationWrapper">
+                    <img src={foundImage} alt="successImage" />
+                    <div className="notificationName"> 
+                        <span className="notificationSpan">
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>  
+                        </span>    
+                    </div>
+                    <div className="notificationResponse">
+                    {language === 'ES' ? responseData.errorMessageForPaymentDisparity : responseData.errorMessage_EN}
+                    </div>
+                    <div className="notificationResponse">
+                    {language === 'ES' ? responseData.errorMessageForPaymentDisparity2 : responseData.errorMessage_EN}
+                    </div>
+                    <LinkS
+                    to="nextStepSection"  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    // offset={OffsetHandler('checkAProduct')}
+                    duration={500} 
+                    className="notificationBtn"
+                    onClick={closingNotification}
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
                 </div>
+            </div>
             )
         }
     }
@@ -234,4 +186,4 @@ const NotificationUI = () => {
    
 }
 
-export default NotificationUI
+export default NotificationUIForCheckApp

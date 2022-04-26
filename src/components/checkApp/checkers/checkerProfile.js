@@ -111,7 +111,7 @@ const CheckerProfile = () => {
 
   const comeBack = () => {
         activatingCheckerInterface(false)
-        settingCheckerFromCheckOrder('')
+        // settingCheckerFromCheckOrder('')
     }
     
 

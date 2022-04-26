@@ -5,7 +5,7 @@ import { FaTimes } from 'react-icons/fa'
 import { regularCopy } from './notificationData'
 import { Link as LinkS } from 'react-scroll'
 import { OffsetHandler } from '../../utils/settingOffsets'
-import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../../components/notifications/notificationData'
+import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN, responseDataPayment } from '../../components/notifications/notificationData'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../state'
@@ -40,9 +40,13 @@ const NotificationBox = () => {
     if (response && active === 'check'){
         responseData = responseDataRegister
     }
-    if (response && active === 'login_form'){
+    if (loginResponse && active === 'check'){
         responseData = responseDataLogin
     } 
+    if (response && active === 'payment_ui'){
+        responseData = responseDataPayment
+        console.log(active)
+    }
     
 
     
@@ -123,6 +127,46 @@ const NotificationBox = () => {
                         <span className="notificationSpan">
                             <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>
                             {/* <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{responseSplitted[0]}</b>      */}
+                        </span>    
+                    </div>
+                    <div className="notificationResponse">
+                    {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN}
+                    </div>
+                    <LinkS
+                    to="nextStepSection"  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={OffsetHandler('checkAProduct')}
+                    duration={500} 
+                    className="notificationBtn"
+                    onClick={closingNotification}
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
+                </div>
+            </div>   
+            )
+        }
+        if (response.status === 404){
+            return (
+            <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
+                <LinkS 
+                onClick={closingNotification}
+                to="nextStepSection"  
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={OffsetHandler('checkAProduct')}
+                duration={500}
+                className="closeIconContainer">
+                    <FaTimes/>
+                </LinkS>
+                <div className="notificationWrapper">
+                    <img src={foundImage} alt="successImage" />
+                    <div className="notificationName"> 
+                        <span className="notificationSpan">
+                            {/* <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b> */}
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}</b>
+                            
                         </span>    
                     </div>
                     <div className="notificationResponse">

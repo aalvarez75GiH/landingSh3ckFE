@@ -523,6 +523,24 @@ export const activatingPaymentInstructions = (status) => {
     }
 }
 
+export const settingActivePaymentType = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'active_payment_type',
+            payload: value
+        })
+    }
+}
+
+export const provisionalRefNumber = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'provisional_ref_number',
+            payload: value
+        })
+    }
+}
+
 
 
 

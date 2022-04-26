@@ -171,7 +171,7 @@ export const CheckPaymentActiveBar = styled.div`
 width: 75%;
 height: 5px;
 /* background-color: green; */
-background-color:${({ payment, active_payment }) => payment._id === active_payment._id ? 'green' : 'transparent'};
+background-color:${({ payment, active_payment_type }) => payment._id === active_payment_type._id ? 'green' : 'transparent'};
 margin-top: 5%;
 `
 
@@ -181,20 +181,23 @@ export const PaymentInstContainer = styled(motion.div)`
 display: flex;
 justify-content: center;
 align-items: center;
+flex-direction: column;
 width: 100%;
 height: 145px;
-background-color:${({ type }) => type === 'Pago Móvil' ? '#dfecff' : type === 'Zelle' ? '#dccbf6' : '#FAD570'};
+background-color:${({ type }) => type === 'Pago Móvil' ? '#dfecff' : type === 'Zelle' ? '#dccbf6' : type === 'Transferencia' ? '#FAD570' : '#FAD570'};
 margin-top: 2%;
 
 `
 
 export const PaymentsInsDetails = styled.div`
 width: 90%;
-height: 90%;
+height: 60%;
 /* background-color: #010106; */
 /* border: 1px solid #010606; */
-margin-top: 2%;
+margin-top: 10%;
+margin-bottom:10%;
 `
+
 export const PaymentsInsTitle = styled.p`
 font-weight: 600;
 `
@@ -228,4 +231,29 @@ width: 80%;
 height: 50%;
 margin-left: 20%;
 margin-top: 10%;
+`
+
+export const PaymentsForm = styled.form`
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+width:100%;
+height: 100%;
+` 
+
+export const ReferenceNumberInput = styled.input`
+width: 95%;
+height: 70px;
+border-style: none;
+padding: 5%;
+font-size: 1.2rem;
+outline: none;
+`
+
+export const TrickDiv = styled.div`
+width: 100%;
+height: 1px;
+background-color: green;
+opacity: 0;
 `

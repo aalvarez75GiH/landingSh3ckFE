@@ -17,6 +17,7 @@ import LoadingSpinner from '../utils/loadingSpinner'
 // import CheckSection from '../components/checkSection/checkSection'
 import CheckApp from '../components/checkApp/checkApp'
 import NotificationBox from '../components/notifications/NotificationBox'
+import NotificationUIForCheckApp from '../components/notifications/notificationUIForCheckApp'
 import NotificationUI from '../components/notifications/notificationUI'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../components/notifications/notificationData'
 import { verifyingTokenRequest, addingGoogleUserToDB } from '../requestsToApi'
@@ -152,6 +153,12 @@ console.log(response)
         : 
         loggedIn  ?
         <div className="superContainer">
+            <LoadingSpinner/>
+             {response || loginResponse  ?
+            <NotificationUIForCheckApp />
+             :
+             null
+            }
             <MainSideBar />
             <NavBarForCS /> 
             <CheckApp />

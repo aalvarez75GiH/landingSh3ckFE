@@ -7,7 +7,7 @@ import { actionCreators } from '../../../state'
 import { AnimateHeight } from '../../checkApp/checkAppUtilities'
 import {AnimateHeightPayments} from './paymentSubComponents'
 import zelle_image from '../../../images/zelle-icon.png'
-import { CheckAppButton, BackwardSectionComponent } from '../checkAppUtilities'
+import { BackwardSectionComponent } from '../checkAppUtilities'
 import { 
     PaymentSectionContainer,PaymentSectionWrapper,
     PaymentTitleContainer, PaymentSectionTitle,
@@ -15,11 +15,10 @@ import {
     InfoLabel, PaymentInfoPriceLabel,
     PriceLabel, PaymentInfoSeeOrderContainer,
     SeeOrderButton,CheckPaymentTypesContainer, 
-    CheckPaymentTypeOf, CheckPaymentType, CheckPaymentIcon
+    CheckPaymentTypeOf, TrickDiv
 } from './paymentElements.js'
 import { CheckPaymentTypeTileComponent } from './paymentSubComponents'
 import { getRequestToPayments } from '../../../requestsToApi'
-
 
 const PaymentSection = () => {
 
@@ -27,16 +26,14 @@ const PaymentSection = () => {
     const {
         settingLevel, 
         settingPreviousLevel,
-        activatingPaymentDetailsUI,
         activatingDescriptionTile,
-        gettingPaymentsTypesFromApi,
-        settingPaymentInCheckOrder     
+        gettingPaymentsTypesFromApi     
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.overallCheckAppState.previous_level)
     const order_total_price = useSelector((state) => state.checkOrderState.price)
     const payments = useSelector((state) => state.paymentsState.payments)
-    const payment = useSelector((state) => state.checkOrderState.payment)
-    console.log(payment)
+    const active_payment_type = useSelector((state) => state.paymentsState.active_payment_type)
+   
     useEffect(() => {
         const gettingPaymentsTypes = async() => {
             const responseAllPayments = await getRequestToPayments()
@@ -110,13 +107,8 @@ const PaymentSection = () => {
                         {renderingPaymentsTiles}
                     </CheckPaymentTypeOf>
                 </CheckPaymentTypesContainer>
-                <AnimateHeightPayments
-                type={payment.name}
-                variants={variants}
-                />
-                <CheckAppButton 
-                buttonLabel='Siguiente'
-                />
+                <AnimateHeightPayments type={active_payment_type.name} />
+                <TrickDiv id="ancor"></TrickDiv>
             </PaymentSectionWrapper>
         </PaymentSectionContainer>
 

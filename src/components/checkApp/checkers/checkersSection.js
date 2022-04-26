@@ -35,14 +35,9 @@ const CheckersSection = () => {
 
     useEffect(()=> {
         const gettingCheckersAndAuthCenters = async() => {
-            // const responseCheckers  = await getRequestToCheckersbyCity(city_id)
             const responseCheckers  = await getRequestToCheckersByCity(city_id)
-            console.log(responseCheckers)
             const responseAuthCenters = await getRequestToAllAuthCenters()
             const responseCheckTypes = await getRequestToCheckType()
-            // const responseAuthCenters = await getRequestToAuthCentersByCityAndCategory(city_id, category_id)
-            console.log(responseAuthCenters)
-            console.log(responseCheckTypes)
             settingCheckers(responseCheckers)
             settingAuthCenters(responseAuthCenters)
             gettingCheckTypesFromApi(responseCheckTypes)
@@ -111,7 +106,6 @@ const CheckersSection = () => {
                 </CheckersOptionsContainer>
                 <CheckerItemContainerFlex>
                     {checkers_type === 'authCenters' ? renderingAuthCentersList : renderingCheckersList}
-                    {/* {renderingCheckersList} */}
                 </CheckerItemContainerFlex>
             </CheckerSectionWrapper>
         </CheckerSectionContainer>
