@@ -257,3 +257,42 @@ height: 1px;
 background-color: green;
 opacity: 0;
 `
+
+export const BankSimButton = styled.div`
+width: 50px;
+height: 30px;
+background-color: #010606;
+
+`
+
+export const BankSimInput = styled.input`
+width: 50px;
+height: 30px;
+`
+
+export const BankForm = styled.form`
+display: flex;
+justify-content: center;
+/* flex-direction: column; */
+align-items: center;
+width:100%;
+height: 100%;
+
+`
+
+export const TextField = styled.input`
+width: 50px;
+height: 30px;
+
+`
+
+export const CustomButton = styled.button`
+width: 50px;
+height: 30px;
+background-color: #010606;
+`
+
+export const BanckFormContainer = styled.div`
+display: flex;
+
+`

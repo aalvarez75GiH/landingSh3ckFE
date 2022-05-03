@@ -76,7 +76,6 @@ const NotificationUIForCheckApp = () => {
                     </div>
                     <div className="notificationResponse">
                         No encontramos el # de referencia: {provisional_ref_number} del pago en nuestra Base de datos
-                    {/* {language === 'ES' ? responseData.errorMessage : responseData.errorMessage_EN} */}
                     </div>
                     <LinkS
                     to="nextStepSection"  
@@ -140,6 +139,7 @@ const NotificationUIForCheckApp = () => {
             </div>
             )
         }
+        
         if (response.amount < amount ){
             return (
                 <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
@@ -162,10 +162,59 @@ const NotificationUIForCheckApp = () => {
                         </span>    
                     </div>
                     <div className="notificationResponse">
-                    {language === 'ES' ? responseData.errorMessageForPaymentDisparity : responseData.errorMessage_EN}
+                        El mónto que hemos recibido es menor que el mónto de la orden de chequéo que estás colocándo
                     </div>
                     <div className="notificationResponse">
-                    {language === 'ES' ? responseData.errorMessageForPaymentDisparity2 : responseData.errorMessage_EN}
+                        <p>Mónto recibido por el banco: <b>{response.amount}$</b></p> 
+                        <p>Mónto de la órden de chequeo: <b>{amount}$</b></p> 
+                    </div>
+                    <div className="notificationResponse">
+                    Pónte en contácto con el departamento de cobranzas o soporte técnico
+                    </div>
+                    <LinkS
+                    to="nextStepSection"  
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    // offset={OffsetHandler('checkAProduct')}
+                    duration={500} 
+                    className="notificationBtn"
+                    onClick={closingNotification}
+                    >{language === 'Es' ? regularCopy.continueBtnCopy : regularCopy.continueBtnCopy_EN}</LinkS>
+                </div>
+            </div>
+            )
+        }
+        if (response.amount > amount ){
+            return (
+                <div className={response ? 'notificationContainer_open' : 'notificationContainer'}>
+                <LinkS 
+                onClick={closingNotification}
+                to="nextStepSection"  
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                // offset={OffsetHandler('checkAProduct')}
+                duration={500}
+                className="closeIconContainer">
+                    <FaTimes/>
+                </LinkS>
+                <div className="notificationWrapper">
+                    <img src={foundImage} alt="successImage" />
+                    <div className="notificationName"> 
+                        <span className="notificationSpan">
+                            <b>{language === 'ES' ? regularCopy.hola : regularCopy.hello} {''}{nameSplittedAndCapitalized}</b>  
+                        </span>    
+                    </div>
+                    <div className="notificationResponse">
+                        El mónto que hemos recibido es mayor que el mónto de la orden de chequeo que estás colocando 
+                    </div>
+                    <div className="notificationResponse">
+                        <p>Mónto recibido por el banco: <b>{response.amount}$</b></p> 
+                        <p>Mónto de la órden de chequeo: <b>{amount}$</b></p> 
+                    </div>
+                    <div className="notificationResponse">
+                        Pónte en contácto con el departamento de cobranzas o soporte técnico
                     </div>
                     <LinkS
                     to="nextStepSection"  

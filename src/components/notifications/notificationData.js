@@ -44,10 +44,6 @@ export const regularCopy = {
 
 export const responseDataPayment = {
     errorCode: 404,
-    errorMessage:` No encontramos el # de referencia del pago en nuestra Base de datos`,
-    errorMessageForPaymentDisparity: `El mónto que hemos recibido no coincide con el précio de la orden `,
-    errorMessageForPaymentDisparity2: `Ponte en contacto con el departamento de cobranzas o soporte técnico `,
-    errorMessage_EN:`We couldn't find you at our Data base. In order to generate a new PIN number you should be registered with us.`,
     successCode: 200,
     successMessage:`Listo, hemos verificado el pago que has realizado:`,
     successMessage_EN:`Done, We've generated a new 4 digits PIN number and it was sent to you to your Email address`,

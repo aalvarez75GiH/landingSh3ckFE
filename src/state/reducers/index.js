@@ -12,6 +12,7 @@ import productToCheckReducer from './checkApp/productTocheckreducers'
 import checkersReducer from './checkApp/checkersReducers'
 import checkTypeReducer from './checkApp/checkTypesReducers'
 import paymentsReducer from './checkApp/paymentsReducers'
+import adminAppReducer from './adminApp/adminAppReducers'
 const reducers = combineReducers({
     // account: sideBarReducer,
     sideBarState: sideBarReducer,
@@ -26,7 +27,8 @@ const reducers = combineReducers({
     checkOrderState: checkOrderReducer,
     checkersState: checkersReducer,
     checkTypeState: checkTypeReducer,
-    paymentsState: paymentsReducer  
+    paymentsState: paymentsReducer,  
+    adminAppState: adminAppReducer
 
 })
 

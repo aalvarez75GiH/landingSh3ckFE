@@ -25,7 +25,7 @@ import {
 import { AnimateHeight } from '../../checkApp/checkAppUtilities'
 import { CheckerProfileTileComponent } from './checkersSubComponents'
 
-const CheckTypeTileInfoComponent = ({ check_type, index }) => {
+const CheckTypeTileInfoComponent = ({ check_type }) => {
     const dispatch = useDispatch()
         
     const {  settingCheckTypeAtCheckOrder, levelUsed, 
@@ -40,7 +40,7 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
     let arr = []
     arr = level_used
 
-    const settingCheckTypeStandardAtOrder = (check_type) => {
+    const settingCheckTypeAtOrderAndDescTile = (check_type) => {
         console.log(check_type)
         
         if (!arr.includes('checkers')){
@@ -54,9 +54,9 @@ const CheckTypeTileInfoComponent = ({ check_type, index }) => {
     let totalPrice = service_time_base + check_type.base
     
     const settingPriceAndCheckTypeAtOrder = () => {
-        settingBaseAtCheckOrder(totalPrice)
+        // settingBaseAtCheckOrder(totalPrice)
         settingCheckTypeBaseAtCheckTypeState(check_type.base)
-        settingCheckTypeStandardAtOrder(check_type)
+        settingCheckTypeAtOrderAndDescTile(check_type)
     }
     
   
@@ -115,11 +115,10 @@ const CheckerProfile = () => {
     }
     
 
-    const renderingCheckTypes = check_types.map((checkType, index) => {
+    const renderingCheckTypes = check_types.map((checkType) => {
         return(
             <CheckTypeTileInfoComponent
             check_type={checkType}
-            index={index}
             />
         )
 

@@ -14,10 +14,12 @@ import ContactSection from '../components/contactSection/contactSection'
 import NextStepSection from '../components/nextStepSection.js/nextStepSection'
 import FooterSection from '../components/footerSection/footerSection'
 import LoadingSpinner from '../utils/loadingSpinner'
+import AdminApp from '../components/adminApp/adminApp'
 // import CheckSection from '../components/checkSection/checkSection'
 import CheckApp from '../components/checkApp/checkApp'
 import NotificationBox from '../components/notifications/NotificationBox'
 import NotificationUIForCheckApp from '../components/notifications/notificationUIForCheckApp'
+import NotificationUIForAdmin from '../components/notifications/adminAppNotifications/notificationUIForAdmin'
 import NotificationUI from '../components/notifications/notificationUI'
 // import { responseDataInterested, responseDataRegister, responseDataLogin, responseDataNewPIN } from '../components/notifications/notificationData'
 import { verifyingTokenRequest, addingGoogleUserToDB } from '../requestsToApi'
@@ -44,6 +46,7 @@ const Home = () => {
     const loggedIn = useSelector((state) => state.homeState.loggedIn)
     const response = useSelector((state) => state.contactSectionState.response)
     const loginResponse = useSelector((state) => state.homeState.loginResponse)
+    const adminActive = useSelector((state) => state.adminAppState.admin_app_active)
     
     
     const mobil = useMobilDetect()
@@ -169,7 +172,24 @@ console.log(response)
         QASideBarOpen && !loggedIn ?
         <QASideBar />
         : 
-        !loggedIn ? 
+        !loggedIn && adminActive ? 
+            <>
+            <LoadingSpinner/>
+            {response   ?
+            <NotificationUIForAdmin/>
+            :
+            null
+            }
+            <AdminApp/>
+            </>
+        : null
+ 
+     }
+     {
+        QASideBarOpen && !loggedIn ?
+        <QASideBar />
+        : 
+        !loggedIn && !adminActive ? 
             <>
             <LoadingSpinner/>
             
@@ -186,7 +206,7 @@ console.log(response)
             : <NavBar />
             }
             <HeroSection />
-             <VideoSection />
+            <VideoSection />
             <HiwSection />
             <NextStepSection/>
             {
@@ -197,11 +217,11 @@ console.log(response)
             :
             null
             }
-            <FooterSection/> 
-                
+            
+            <FooterSection/>    
             </>
-            : null
-                
+        : null
+ 
      }
 
             

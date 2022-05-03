@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { actionCreators } from '../../../state'
 import { CheckAppButton } from '../../checkApp/checkAppUtilities'
-import { getRequestToOneTransaction } from '../../../requestsToApi'
+import { getRequestToOneTransaction, postRequestToBankSimUsers, postRequestToBankSimSh3ck } from '../../../requestsToApi'
 
 import { useFormik } from 'formik'
 import * as yup from 'yup'
@@ -15,7 +15,7 @@ import {
     PaymentsInsTitle, InstructionsContainer, 
     Instruction, InstructionImg, 
     InstructionCaption, MobilPaymentInfo,
-    PaymentsForm, ReferenceNumberInput
+    PaymentsForm, ReferenceNumberInput, BankSimButton, BankSimInput, BankForm, TextField, CustomButton, BanckFormContainer
 
 } from './paymentElements.js'
 
@@ -76,6 +76,13 @@ export const AnimateHeightPayments = ({ type }) => {
     const active_payment_type = useSelector((state) => state.paymentsState.active_payment_type)
     const user = useSelector((state) => state.checkOrderState.user)
     const amount =  useSelector((state) => state.checkOrderState.price)
+
+    const [amountValue, setAmountValue] = useState(0)
+    
+    const onInputChangeAmount = (e) => {
+        setAmountValue(e.target.value)
+        console.log(amountValue)
+    }
     const variants = {
         open: {
           opacity: 1,
@@ -98,7 +105,7 @@ export const AnimateHeightPayments = ({ type }) => {
             bank: active_payment_type.bank_name,
             phoneNumber:user.phoneNumber,
             amount: amount,
-            data: date_formatted,
+            date: date_formatted,
             reference_number: values.referenceNumber
         }
         setTimeout(async() => {
@@ -112,6 +119,12 @@ export const AnimateHeightPayments = ({ type }) => {
                     return
                 }
                 if (responseFromTransactions.amount < amount){
+                    settingResponse(responseFromTransactions)
+                    activatingSpinner(false)
+                    console.log(responseFromTransactions)
+                    return
+                }
+                if (responseFromTransactions.amount > amount){
                     settingResponse(responseFromTransactions)
                     activatingSpinner(false)
                     console.log(responseFromTransactions)
@@ -143,6 +156,36 @@ export const AnimateHeightPayments = ({ type }) => {
 
     }
 
+        
+    const submitBankForm = async(amount) => {
+        const date = new Date()
+        const date_formatted = new Intl.DateTimeFormat(['ban', 'id']).format(date)
+        const randomReferenceNumber = Math.floor(1000000000 + Math.random() * 9000000000)
+        const reference_number = randomReferenceNumber.toString()
+        console.log('i am the bank simulator')
+        console.log(amount)
+        let dataUser = {
+            fullName: user.name,
+            email: user.email,
+            date: date_formatted,
+            amount: amount,
+            reference_number: reference_number,
+            account_number: "0154*********234",
+            beneficiary: "Sh3ck C.A",
+            sh3ck_email: "mariangelalvarez1987@gmail.com"
+        }
+        try {
+            const responseBankUser = await postRequestToBankSimUsers(dataUser)
+            if(responseBankUser.status === 200){
+                const responseBankSh3ck = await postRequestToBankSimSh3ck(dataUser)
+                console.log(responseBankSh3ck)
+            }
+            console.log(responseBankUser)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
     console.log(formik.values)
  
     if (type === "Pago Móvil"){
@@ -205,6 +248,36 @@ export const AnimateHeightPayments = ({ type }) => {
                     autoComplete="on"
                     />
                 </PaymentsForm>
+                <BankForm
+                onSubmit={e => {
+                  e.preventDefault();
+                  submitBankForm(amountValue);
+                }}>
+                <BanckFormContainer>
+                  <TextField
+                    variant="outlined"
+                    margin="normal"
+                    id="amount"
+                    name="amount"
+                    label="Amount"
+                    value={amountValue}
+                    onChange={(e) => onInputChangeAmount(e)}
+                  />
+                  <CustomButton
+                    
+                  />
+                </BanckFormContainer>
+              </BankForm>
+                {/* <BankSimInput
+                name="bank"
+                type='number'
+                value={0}
+                />
+                <BankSimButton
+                onClick={handlingSimulationRequest()}
+                >
+
+                </BankSimButton> */}
             </PaymentInstContainer>
         )
     }
@@ -254,7 +327,7 @@ export const AnimateHeightPayments = ({ type }) => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     name="referenceNumber"
-                    onFocus={() => activatingCheckAppButton(true)}
+                    onFocus={activatingButtonAndSettingActive}
                     style={{
                         borderBottom: `${formik.touched.referenceNumber && formik.errors.referenceNumber ? '2px solid red' : '1px solid rgba(200,200,200, 0.3 )'}`
                     }}

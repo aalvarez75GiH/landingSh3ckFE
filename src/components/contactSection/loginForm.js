@@ -162,9 +162,7 @@ const [typeOfPIN, setTypeOfPIN ] = useState(false)
                 className="sendDataBtn"
                 type="submit"
                 >
-                    {/* <Link to={`/app`}> */}
-                        {language === 'ES' ? infoContact.loginFormSendBtn : infoContact.loginFormSendBtn_EN}
-                    {/* </Link> */}
+                    {language === 'ES' ? infoContact.loginFormSendBtn : infoContact.loginFormSendBtn_EN}
                 </button>
                 <button
                 onClick={activatingRegForm}

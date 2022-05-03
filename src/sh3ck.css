@@ -1366,6 +1366,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", en
     margin-bottom: 5%;
     font-size: 1rem;
 }
+
+.notificationDescription {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
 .notificationBtn {
     display: flex;
     justify-content: center;

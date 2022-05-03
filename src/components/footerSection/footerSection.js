@@ -1,11 +1,27 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { infoFooter } from '../../utils/data'
-import { useSelector } from 'react-redux'
+import  { useSelector, useDispatch }  from 'react-redux'
+import { bindActionCreators } from '@reduxjs/toolkit'
+import { actionCreators } from '../../state'
 
 
 const FooterSection = () => {
+    const dispatch = useDispatch()
+    const {
+        activatingAdminApp, activatingForm,
+        activatingCheckAppButton,activatingAdminAppLoginForm
+
+    } = bindActionCreators(actionCreators, dispatch)
     const language = useSelector((state) => state.sideBarState.language)
+    
+    const activatingAdminAppAndForm = () => {
+        activatingAdminApp(true)
+        activatingCheckAppButton(true)
+        // activatingForm('login_form')
+        activatingAdminAppLoginForm(true)
+    }
+    
     return (
         <div className="footerContainer">
             <div className="footerWrap">
@@ -36,10 +52,12 @@ const FooterSection = () => {
                         </div>
                         <div className="footerLinkItems">
                             <h1 className="footerLinkTitle">{language === 'ES' ? infoFooter.footerH4 : infoFooter.footerH4_EN}</h1>
-                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P1 : infoFooter.footerH4P1_EN}</p>
+                            <p 
+                            onClick={activatingAdminAppAndForm }
+                            className="footerLink">{language === 'ES' ? infoFooter.footerH4P1 : infoFooter.footerH4P1_EN}</p>
                             <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P2 : infoFooter.footerH4P2_EN}</p>
-                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P4 : infoFooter.footerH4P3_EN}</p>
-                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P1 : infoFooter.footerH4P4_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P3 : infoFooter.footerH4P3_EN}</p>
+                            <p className="footerLink">{language === 'ES' ? infoFooter.footerH4P4 : infoFooter.footerH4P4_EN}</p>
                         </div>
 
                     </div>

@@ -27,24 +27,34 @@ const PaymentSection = () => {
         settingLevel, 
         settingPreviousLevel,
         activatingDescriptionTile,
-        gettingPaymentsTypesFromApi     
+        gettingPaymentsTypesFromApi,
+        settingCheckTypeAtCheckOrder,
+        activatingCheckAppButton,
+        settingBaseAtCheckOrder     
     } = bindActionCreators(actionCreators, dispatch) 
     const previous_level = useSelector((state) => state.overallCheckAppState.previous_level)
     const order_total_price = useSelector((state) => state.checkOrderState.price)
     const payments = useSelector((state) => state.paymentsState.payments)
     const active_payment_type = useSelector((state) => state.paymentsState.active_payment_type)
-   
+    const service_time_base = useSelector((state) => state.productToCheckState.service_time_base)
+    const check_type_base = useSelector((state) => state.checkTypeState.check_type_base)
+    
+    let totalPrice = service_time_base + check_type_base
+    
     useEffect(() => {
         const gettingPaymentsTypes = async() => {
             const responseAllPayments = await getRequestToPayments()
             console.log(responseAllPayments)
             gettingPaymentsTypesFromApi(responseAllPayments)
-
+            settingBaseAtCheckOrder(totalPrice)
         }
         gettingPaymentsTypes()
+
     },[])
 
     const comeBack = () => {
+        activatingCheckAppButton(false)
+        // settingCheckTypeAtCheckOrder({})
         settingLevel('checkers')
         settingPreviousLevel('payment')
     }

@@ -180,3 +180,48 @@ export const getRequestToOneTransaction = async(reference_number) => {
     })
     return response.data
 }
+
+export const postRequestToTransactions = async(transaction, token) => {
+    console.log(transaction)
+    const response = await axios.post(`${URL_BACKEND}/api/transactions`,transaction,{
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`   
+        }
+    })
+    return response
+}
+// export const addingRegularUsersToDB = async(user) => {
+//     return await axios.post(`${URL_BACKEND}/api/users`, user)
+// }
+
+// ******************** Admin App Requests ****************************
+
+export const requestToLoginAdminUsers = async(user) => {
+    return await axios.post(`${URL_BACKEND}/api/admin/login`, user)
+}
+
+
+
+export const verifyingAdminTokenRequest = async(token) => {
+    return await axios.get(`${URL_BACKEND}/api/admin/me`, {
+    headers:{
+        Authorization: `Bearer ${token}` 
+    }})
+    
+}
+
+// ******************** Bank simulation Requests ****************************
+
+export const postRequestToBankSimUsers = async(dataUser) => {
+    console.log(dataUser)
+    const response = await axios.post(`${URL_BACKEND}/api/transactions/bankUser`, dataUser)
+    return response
+}
+export const postRequestToBankSimSh3ck = async(transaction) => {
+    console.log(transaction)
+    const response = await axios.post(`${URL_BACKEND}/api/transactions/bankSh3ck`, transaction)
+    return response
+}
+
+

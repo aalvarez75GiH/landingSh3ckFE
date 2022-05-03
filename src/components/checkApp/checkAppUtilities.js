@@ -51,7 +51,6 @@ let arr = []
     
 console.log(button_activated)
     const handlingLevels = () => {
-    
        
         if (level === 'city'){
             activatingCheckAppButton(false)
@@ -365,7 +364,7 @@ export const CheckerTile = ({ checker, index }) => {
 
     const checkers = useSelector((state) => state.checkersState.checkers)
     const authCenters = useSelector((state) => state.checkersState.authCenters)
-    const price = useSelector((state) => state.checkOrderState.price)
+    const temporary_price =  useSelector((state) => state.productToCheckState.service_time_base)
     const active_service_time = useSelector((state) => state.categoryAndSTState.active_service_time)
     const checkers_type = useSelector((state) => state.checkersState.checkers_type)
    
@@ -375,7 +374,7 @@ export const CheckerTile = ({ checker, index }) => {
         const gettingSTBase = async() => {
             const response  = await getRequestToServiceTimebyId(active_service_time)
             console.log(response)
-            settingBaseAtCheckOrder(response.base)
+            // settingBaseAtCheckOrder(response.base)
             productToSTBase(response.base)
         }
         gettingSTBase()
@@ -423,7 +422,7 @@ export const CheckerTile = ({ checker, index }) => {
                 style={{
                     marginTop: `${checkers_type === 'authCenters' ? '15%' : '6%'}`
                 }}
-                className="checkerPrice">{price}$</span>
+                className="checkerPrice">{temporary_price}$</span>
                     
             </div>
            

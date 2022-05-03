@@ -541,11 +541,46 @@ export const provisionalRefNumber = (value) => {
     }
 }
 
+// ************** Admin App   **************************
 
+// ************** Overall **************************
+export const activatingAdminApp = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'activating_admin_app',
+            payload: status
+        })
+    }
+}
 
+export const activatingAdminAppLoginForm = (status) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'admin_app_login_form_active',
+            payload: status
+        })
+    }
+}
 
+export const settingAdminUser = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'setting_admin_user',
+            payload: value
+        })
+    }
+}
 
+// ************** roles **************************
 
+export const settingAdminRole = (value) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'setting_admin_role',
+            payload: value
+        })
+    }
+}
 
 
 
