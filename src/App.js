@@ -12,8 +12,8 @@ const App = () => {
     
     return (
         <Router>
-            <EmilioApp/>
-            {/* <Home/> */}
+            {/* <EmilioApp/> */}
+            <Home/>
             <Routes>
                 {/* <Route path="/" exact={true} element={<Home />}/> */}
                 {/* <Route path="/checkStarting" exact={true} element={<CheckStarting />}/>
