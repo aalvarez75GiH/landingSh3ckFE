@@ -172,7 +172,7 @@ export const AnimateHeightPayments = ({ type }) => {
             reference_number: reference_number,
             account_number: "0154*********234",
             beneficiary: "Sh3ck C.A",
-            sh3ck_email: "mariangelalvarez1987@gmail.com"
+            sh3ck_email: "mariangel_alvarez@hotmail.com"
         }
         try {
             const responseBankUser = await postRequestToBankSimUsers(dataUser)
@@ -268,16 +268,6 @@ export const AnimateHeightPayments = ({ type }) => {
                   />
                 </BanckFormContainer>
               </BankForm>
-                {/* <BankSimInput
-                name="bank"
-                type='number'
-                value={0}
-                />
-                <BankSimButton
-                onClick={handlingSimulationRequest()}
-                >
-
-                </BankSimButton> */}
             </PaymentInstContainer>
         )
     }

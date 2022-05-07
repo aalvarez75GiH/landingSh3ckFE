@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './views/home'
+import EmilioApp from './components/mremilio/emilio_app'
 // import CitiesSection from './components/checkApp/citiesSection'
 // import CheckersSection from './components/checkApp/checkersSection'
 // import ContactSection from './components/contactSection/contactSection'
@@ -11,7 +12,8 @@ const App = () => {
     
     return (
         <Router>
-            <Home/>
+            <EmilioApp/>
+            {/* <Home/> */}
             <Routes>
                 {/* <Route path="/" exact={true} element={<Home />}/> */}
                 {/* <Route path="/checkStarting" exact={true} element={<CheckStarting />}/>
